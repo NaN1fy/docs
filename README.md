@@ -8,7 +8,7 @@ Questo branch contiene i sorgenti in formato `.tex` della documentazione di prog
 Questa GitHub Action, chiamata "compile LaTeX documents", permette di compilare automaticamente i sorgenti LaTeX presenti nella branch `sources`.
 ### Come funziona?
 L'azione può essere attivata in due modi:
-- Automaticamente tramite push: Quando si effettua un push di modifiche alla branch `source`, l'azione viene eseguita automaticamente.
+- Automaticamente tramite push: Quando si effettua un push di modifiche alla branch `sources`, l'azione viene eseguita automaticamente.
 - Manualmente nel repository GitHub: È possibile attivare manualmente l'azione tramite la scheda `Actions` > `compile LaTeX documents` > `Run workflow`.
 ### Directory di lavoro
 Affinché l'azione funzioni correttamente, i sorgenti LaTeX principali devono essere posizionati nella directory `documents/**/*.tex`. Ecco una rappresentazione grafica della struttura delle cartelle:
