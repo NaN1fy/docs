@@ -53,6 +53,12 @@ jobs:
             pdflatex -output-directory "$(dirname "$file")" "$file"; done'     
       - name: set timestamp and version for builds of changed files and replace the old ones in the local copy of `main`
         run: |
+          pwd
+          ls -la
+          cd documents/test
+          ls -la
+          cd ..
+          cd ..
           shopt -s globstar
           for f in documents/**/*.tex; do
             [[ ! -f "$f" ]] && continue
