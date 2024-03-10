@@ -14,12 +14,12 @@ L'azione può essere attivata in due modi:
 Affinché l'azione funzioni correttamente, i sorgenti LaTeX principali devono essere posizionati nella directory `documents/**/*.tex`. Ecco una rappresentazione grafica della struttura delle cartelle:
 ```
 documents
-└── documentazione1
-    └── documentazione1.tex
-    └── sections
-        └──  section1.tex
-        └──  section2.tex
-        ...
+├── documentazione1
+│   ├── documentazione1.tex
+│   └── sections
+│       ├──  section1.tex
+│       └──  section2.tex
+│       ...
 └── documentazione2
     └── documentazione2.tex
 ...
