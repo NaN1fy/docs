@@ -21,7 +21,7 @@ jobs:
         with:
           ref: main
           path: main
-          token: ${{secrets.PUSH_TOKEN}} 
+          token: ${{secrets.NAN1FY_ACTION_COMPILE}} 
       - name: move main to runner.temp
         run: |
           mv main "${RUNNER_TEMP}"
