@@ -16,7 +16,7 @@ Affinché l'azione funzioni correttamente, i sorgenti LaTeX principali devono es
 documents
 └── documentazione1
     └── documentazione1.tex
-    └──  sections
+    └── sections
         └──  section1.tex
         └──  section2.tex
         ...
