@@ -1,0 +1,76 @@
+name: compile LaTeX documents
+on:
+  #schedule:      
+  #  - cron: '0 0 * * *'
+  push:
+    branches:
+      - sources
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: checkout the builds repo
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: main
+          token: ${{secrets.PUSH_TOKEN}} 
+      - name: move main to runner.temp
+        run: |
+          mv main "${RUNNER_TEMP}"
+      - name: restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
+      - name: get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          separator: ","
+          files: |
+            documents/**/*.tex
+      - name: delete ignored and unchanged LaTeX documents
+        run: |
+          shopt -s globstar
+          ls documents/**/*.tex > .all
+          echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
+          comm -23 .all .changed >> .latexignore
+          while IFS= read -r f; do rm -rf "${f}"; done < .latexignore
+      - name: LaTeX compilation with docker container
+        run:  |
+          docker run -e "XDG_CACHE_HOME=/root" \
+            --user $(id -u):$(id -g) \
+            -v ${{ github.workspace }}:/root \
+            --rm kjarosh/latex:2023.1-small \
+            sh -c 'cd /root && \
+            find documents -type f -name "*.tex" | \
+            while read -r file; do \
+            pdflatex -output-directory "$(dirname "$file")" "$file"; done'     
+      - name: set timestamp and version for builds of changed files and replace the old ones in the local copy of `main`
+        run: |
+          shopt -s globstar
+          for f in documents/**/*.tex; do
+            [[ ! -f "$f" ]] && continue
+            rm -f "${RUNNER_TEMP}/main/${f%.tex}"*
+            touch -amd "$( date -R -r "$f" )" "${f%.tex}.pdf"
+            version=$(grep "^\s*% changelog:" "$f" | cut -d '"' -f2 | cut -d ',' -f1 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
+            [[ ! -z "$version" ]] && mv "${f%.tex}.pdf" "${f%.tex}_v${version}.pdf" && f="${f%.tex}_v${version}.tex"
+            rsync -aR "${f%.tex}.pdf" "${RUNNER_TEMP}/main"
+          done
+      - name: push to builds repository
+        run: |
+          pushd "${RUNNER_TEMP}/main"
+          git config --local user.name "github-actions-bot[LaTeX-compile]"
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Automatic LaTeX compilation $(date +%Y-%m-%d)" \
+            -m "Triggered by ${{ github.actor }} pushing changes to the source branch at $(date +%H:%M:%S)." \
+            || continue
+          git push
+        env:
+          TZ: Europe/Rome
