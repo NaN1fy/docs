@@ -27,7 +27,7 @@ documents
 I file `.pdf` compilati saranno generati nella stessa cartella del file sorgente LaTeX principale, ma saranno presenti nella branch `main` .
 
 ### Versionamento dei file
-Possiamo versionare i documenti compilati anche per nome del file , per farlo è necessario aggiungere un commento nel `.tex` principale secondo il seguente formato:
+Possiamo versionare i documenti compilati anche per nome del file (non obbligatorio ma altamente consigliato), per farlo è necessario aggiungere un commento nel `.tex` principale secondo il seguente formato:
 ```
 % changelog: "X.X, YYYY-MM-DD, Autore, Descrizione della modifica"
 ```
