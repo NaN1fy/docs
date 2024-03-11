@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - sources
+    paths:
+      - 'documents/**'
+    
   workflow_dispatch:
 permissions:
   contents: write
@@ -60,7 +63,7 @@ jobs:
           cd ..
           cd ..
           shopt -s globstar
-          for f in documents/**/*.tex; do
+          for f in documents/*/*.tex; do
             [[ ! -f "$f" ]] && continue
             rm -f "${RUNNER_TEMP}/main/${f%.tex}"*
             touch -amd "$( date -R -r "$f" )" "${f%.tex}.pdf"
