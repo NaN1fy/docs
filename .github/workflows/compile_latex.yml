@@ -51,7 +51,7 @@ jobs:
             -v ${{ github.workspace }}:/root \
             --rm kjarosh/latex:2023.1-small \
             sh -c 'cd /root && \
-            find documents -type f -name "*.tex" | \
+            find documents -mindepth 1 -maxdepth 1 -type f -name "*.tex" | \
             while read -r file; do \
             pdflatex -output-directory "$(dirname "$file")" "$file"; done'     
       - name: set timestamp and version for builds of changed files and replace the old ones in the local copy of `main`
