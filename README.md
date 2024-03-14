@@ -23,13 +23,13 @@ Affinché l'azione funzioni correttamente, i sorgenti LaTeX principali devono es
 │       │           ├── *.tex
 │       │           └── *.tex
 │       └── /esterni
-...            ...
+...     ...       
 ├── /lettera_di_presentazione
 |   ├── *_main.tex
-|   └── sections
+|   └── /sections
 │       ├──  *.tex
 │       └──  *.tex
-...
+...     ...
 ```
 I file `.pdf` compilati saranno generati nella stessa cartella del file sorgente LaTeX principale, ma nella branch `main` .
 
