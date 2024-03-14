@@ -11,20 +11,27 @@ L'azione può essere attivata in due modi:
 - Automaticamente tramite push: Quando si effettua un push di modifiche alla cartella `documents` nella branch `sources`, l'azione viene eseguita automaticamente.
 - Manualmente nel repository GitHub: È possibile attivare manualmente l'azione tramite la scheda `Actions` > `compile LaTeX documents` > `Run workflow`.
 ### Directory di lavoro
-Affinché l'azione funzioni correttamente, i sorgenti LaTeX principali devono essere posizionati nella directory `documents/**/*.tex`. Ecco una rappresentazione grafica della struttura delle cartelle:
+Affinché l'azione funzioni correttamente, i sorgenti LaTeX principali devono essere posizionati nelle directory `documents/**/*.tex` e il file principale (quello che contiene ` \documentclass[]{}` per intenderci) deve contenere `_main.tex` come appendice (p. e `VE_YYYY_MM_DD_main.tex`) Ecco una rappresentazione grafica della struttura delle cartelle:
 ```
-documents
-├── documentazione1
-│   ├── documentazione1.tex
-│   └── sections
-│       ├──  section1.tex
-│       └──  section2.tex
-│       ...
-└── documentazione2
-    └── documentazione2.tex
+/documents
+├── /candidatura
+│   └── /verbali
+│       ├── /interni
+|       |   └── /VE_YYYY_MM_DD
+|       |       ├── *_main.tex
+│       │       └── /sections
+│       │           ├── *.tex
+│       │           └── *.tex
+│       └── /esterni
+...            ...
+├── /lettera_di_presentazione
+|   ├── *_main.tex
+|   └── sections
+│       ├──  *.tex
+│       └──  *.tex
 ...
 ```
-I file `.pdf` compilati saranno generati nella stessa cartella del file sorgente LaTeX principale, ma saranno presenti nella branch `main` .
+I file `.pdf` compilati saranno generati nella stessa cartella del file sorgente LaTeX principale, ma nella branch `main` .
 
 ### Versionamento dei file
 Possiamo versionare i documenti compilati anche per nome del file (non obbligatorio ma altamente consigliato), per farlo è necessario aggiungere un commento nel `.tex` principale secondo il seguente formato:
