@@ -53,7 +53,6 @@ jobs:
             tlmgr install subfiles cbfonts-fd lipsum footmisc csquotes plex fontaxes mathabx textgreek makecell wrapfig siunitx adjustbox floatflt capt-of varwidth   
       - name: set timestamp and version for builds of changed files and replace the old ones in the local copy of `main`
         run: |
-          ls documents/candidatura/ore
           shopt -s globstar
           shopt -s extglob
           for f in documents/**/!(*template*)/*_main*.tex; do
