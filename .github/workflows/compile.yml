@@ -58,7 +58,6 @@ jobs:
           for f in documents/**/!(*template*)/*_main*.tex; do
             [[ ! -f "$f" ]] && continue
             rm -f "${RUNNER_TEMP}/main/${f%.tex}"*
-            ls documents/candidatura/ore
             sudo touch -amd "$( date -R -r "$f" )" "${f%.tex}.pdf"
             version=$(grep "^\s*% changelog:" "$f" | cut -d '"' -f2 | cut -d ',' -f1 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
             [[ ! -z "$version" ]] && mv "${f%.tex}.pdf" "${f%.tex}_v${version}.pdf" && f="${f%.tex}_v${version}.tex"
