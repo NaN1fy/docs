@@ -38,4 +38,4 @@ Possiamo versionare i documenti compilati anche per nome del file (non obbligato
 ```
 % changelog: "X.X, YYYY-MM-DD, Autore, Descrizione della modifica"
 ```
-Il nome del file `.pdf` sarà modificato aggiungendo `_vX.X` alla fine del nome del file.
+Il nome del file `.pdf` sarà modificato aggiungendo `_vX.X.X` alla fine del nome del file.
