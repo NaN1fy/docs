@@ -17,7 +17,7 @@ Affinché l'azione funzioni correttamente, i sorgenti LaTeX principali devono es
 ├── /candidatura
 │   └── /verbali
 │       ├── /interni
-|       |   └── /VE_YYYY_MM_DD
+|       |   └── /VI_YYYY_MM_DD
 |       |       ├── *_main.tex
 │       │       └── /sections
 │       │           ├── *.tex
