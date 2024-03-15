@@ -1,0 +1,68 @@
+% changelog: "1.1, 2024-03-08, Linda Barbiero, Aggiunto brainstorming domande"
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- TITOLO -- %
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-03-08}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- INETESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/NaN1fy_logo.png}} 
+    \fancyhead[L]{\leftmark} 
+   	\renewcommand{\headrulewidth}{1pt} 
+  	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+\begin{document}
+	\input{sections/frontespizio}
+	\pagestyle{mystyle}
+	\input{sections/registro_modifiche}
+	\newpage
+	\tableofcontents
+	\clearpage
+	\newpage
+	\justifying
+	\input{sections/partecipanti_sintesi}
+\end{document}
