@@ -17,16 +17,16 @@ Affinché l'azione funzioni correttamente, i sorgenti LaTeX principali devono es
 ├── /candidatura
 │   └── /verbali
 │       ├── /interni
-|       |   └── /VI_YYYY_MM_DD
-|       |       ├── *_main.tex
+│       │   └── /VI_YYYY_MM_DD
+│       │       ├── *_main.tex
 │       │       └── /sections
 │       │           ├── *.tex
 │       │           └── *.tex
 │       └── /esterni
 ...     ...       
 ├── /lettera_di_presentazione
-|   ├── *_main.tex
-|   └── /sections
+│   ├── *_main.tex
+│   └── /sections
 │       ├──  *.tex
 │       └──  *.tex
 ...     ...
