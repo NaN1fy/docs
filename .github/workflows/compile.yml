@@ -48,8 +48,7 @@ jobs:
           work_in_root_file_dir: true
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
           pre_compile: |
-            curl -kLo update-tlmgr-latest.sh https://mirror.ctan.org/systems/texlive/tlnet/update-tlmgr-latest.sh
-            sh update-tlmgr-latest.sh -- --upgrade
+            
             tlmgr install subfiles cbfonts-fd lipsum footmisc csquotes plex fontaxes mathabx textgreek makecell wrapfig siunitx adjustbox floatflt capt-of varwidth   
       - name: set timestamp and version for builds of changed files and replace the old ones in the local copy of `main`
         run: |
