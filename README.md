@@ -36,6 +36,6 @@ I file `.pdf` compilati saranno generati nella stessa cartella del file sorgente
 ### Versionamento dei file
 Possiamo versionare i documenti compilati anche per nome del file (non obbligatorio ma altamente consigliato), per farlo è necessario aggiungere un commento nel `.tex` principale secondo il seguente formato:
 ```
-% changelog: "X.X, YYYY-MM-DD, Autore, Descrizione della modifica"
+% changelog: "X.X.X, YYYY-MM-DD, Autore, Descrizione della modifica"
 ```
 Il nome del file `.pdf` sarà modificato aggiungendo `_vX.X.X` alla fine del nome del file.
