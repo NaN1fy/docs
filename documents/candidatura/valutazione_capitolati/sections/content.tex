@@ -1,65 +1,90 @@
-\section{Capitolato scelto CX - ...}
+\section{Capitolato scelto C6 - SyncCity: Smart City Monitoring Platform}
 \subsection{Descrizione}
 \begin{itemize}
     \setlength\itemsep{0em}
-    \item Proponente: 
-    \item Committenti: prof. Vardanega e prof. Cardin
-    \item Obiettivo:
+    \item Proponente: Sync Lab
+    \item Committenti: prof. Vardanega, prof. Cardin
+    \item Obiettivo: realizzare un applicativo per il monitoraggio di una \textit{smart city} in grado di immagazzinare un'imponente mole di dati provenienti da sensori distribuiti su tutto il territorio urbano, per poi consentire la visualizzazione delle informazioni su una serie di \textit{dashboard}.
 \end{itemize}
 
 \subsection{Dominio applicativo}
+La proponente richiede di produrre un software composto da quattro componenti fondamentali, opportunamente integrate tra loro. La prima si occupa della simulazione di diverse tipologie di sensori (temperatura, umidità, polveri sottili eccetera), generando dati verosimili per ciascuna di esse. La grande quantità di dati generati viene successivamente memorizzata in un \textit{database}, in modo da poter essere poi visualizzata mediante un'interfaccia grafica. La visualizzazione delle informazioni in tempo reale consente alle autorità competenti di vigilare costantemente sullo stato di salute della città e prendere decisioni tempestive per migliorare la qualità dei servizi urbani; inoltre, coinvolge maggiormente i cittadini incentivandone la partecipazione attiva nella gestione della città.
 
 \subsection{Dominio tecnologico}
+La proponente incoraggia l'utilizzo delle seguenti tecnologie:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Un \textit{framework} per la simulazione di dati possibilmente realistici. È consigliabile l'utilizzo di script in linguaggio Python e librerie di generazione dati (\textit{faker});
+    \item Un \textit{broker} come Apache Kafka per la gestione del flusso di dati provenienti dai diversi simulatori di sensori;
+    \item Un \textit{database} OLAP colonnare come ClickHouse per la persistenza di dati con elevata numerosità;
+    \item Una piattaforma per la visualizzazione delle informazioni, preferibilmente Grafana. 
+\end{itemize}
 
 \subsection{Aspetti positivi}
 \begin{itemize}
     \setlength\itemsep{0em}
-    \item 
+    \item La presentazione del capitolato è risultata molto convincente, suscitando molto interesse in tutti i componenti del gruppo;
+    \item La proponente si è resa estremamente disponibile ad assistere il gruppo in ogni fase dello svolgimento del progetto didattico, offrendo incontri formativi sulle tecnologie e assistenza continua;
+    \item La proponente ha illustrato in maniera limpida ed esaustiva tutti gli aspetti organizzativi legati allo svolgimento del progetto e le modalità di visualizzazione dell'avanzamento dei lavori;
+    \item Il capitolato offre l'opportunità di apprendere tecnologie che risultano essere nuove a tutti i componenti del gruppo;
+    \item È stata lasciata la libertà di scelta di eventuali tecnologie alternative a quelle proposte per la generazione e la visualizzazione dei dati (nonostante sia fortemente consigliato l'utilizzo di Grafana nel secondo caso);
+    \item L'azienda consente al fornitore di possedere interamente il software prodotto e di scegliere la licenza più adatta.
 \end{itemize}
 
 \subsection{Fattori critici}
 \begin{itemize}
     \setlength\itemsep{0em}
-    \item 
+    \item Le tecnologie indicate per la gestione del flusso e la persistenza dei dati sono obbligatorie e non viene data la possibilità di optare per altri strumenti;
+    \item Il documento di presentazione del capitolato contiene alcuni dettagli imprecisi per quanto riguarda i criteri di completamento del progetto, pertanto è stato necessario un incontro con la proponente per chiarire gli argomenti dubbi;
+    \item L'utilizzo di tecnologie pressoché sconosciute a tutti i componenti del gruppo rende necessaria un'estensiva formazione preliminare allo sviluppo dell'applicativo. Ciò potrebbe rappresentare una difficoltà aggiuntiva considerando la quantità limitata di tempo disponibile per lo svolgimento del progetto.
 \end{itemize}
 
 \subsection{Conclusioni}
+Il progetto si presenta come una sfida estremamente stimolante per via dell'opportunità di apprendere tecnologie nuove, ampliando il proprio bagaglio di conoscenze in ambito \textit{IoT}, e produrre un software differente da ciò che ciascun membro del gruppo ha avuto l'occasione di realizzare durante il proprio percorso universitario o lavorativo. \\ Nel complesso, l'azienda ha dimostrato preparazione e precisione nella pianificazione delle attività, manifestando al contempo flessibilità e comprensione. \\ Questi fattori hanno contribuito ad esprimere una netta preferenza nei confronti di questo capitolato, portando quindi ad una decisione unanime.
 
+\newpage
 
-\section{Capitolato CY - ...}
+\section{Capitolato C3 - EasyMeal}
 \subsection{Descrizione}
 \begin{itemize}
     \setlength\itemsep{0em}
-    \item Proponente: 
-    \item Committenti: prof. Vardanega e prof. Cardin
-    \item Obiettivo:
+    \item Proponente: Imola Informatica
+    \item Committenti: prof. Vardanega, prof. Cardin
+    \item Obiettivo: sviluppare un'applicazione \textit{web responsive} che semplifichi la gestione di prenotazioni ed ordinazioni nell'ambito della ristorazione.
 \end{itemize}
 
 \subsection{Dominio applicativo}
+Il proposito dell'applicativo è il miglioramento dell'esperienza culinaria dei clienti di un ristorante e l'agevolazione della gestione dell'attività da parte del ristoratore. Infatti, la soluzione concepita dalla proponente offre agli utenti la possibilità di riservare un tavolo, effettuare un'ordinazione personalizzata, compiere il pagamento secondo diverse modalità, interagire con lo staff del ristorante e lasciare una recensione, il tutto in un'unica piattaforma. Gli amministratori del locale potranno poi relazionarsi a loro volta con i clienti e monitorare le prenotazioni, consultando la lista delle pietanze preordinate, così da pianificare una spesa adeguata e ridurre gli sprechi alimentari.
 
 \subsection{Dominio tecnologico}
+L'azienda non ha imposto particolari vincoli sulle tecnologie da utilizzare, purché venga soddisfatto il requisito fondamentale di realizzare un'applicazione \textit{web responsive} fruibile in ambiente desktop e mobile. Ha però fortemente scoraggiato un approccio "nativo" per via dell'inadeguatezza alla complessità del progetto, caldeggiando piuttosto l'utilizzo di \textit{framework}. In particolare, durante il colloquio conoscitivo espressamente richiesto dal fornitore sono stati menzionati React, NodeJS, Angular, Flutter, Flask e Spring. Viene inoltre lasciata la libertà di esplorare e valutare i servizi \textit{cloud} più adatti allo sviluppo dell'applicativo. 
 
 \subsection{Aspetti positivi}
 \begin{itemize}
     \setlength\itemsep{0em}
-    \item 
+    \item Alcuni membri del gruppo hanno conoscenze pregresse nell'ambito dei \textit{framework} consigliati, derivate principalmente da esperienze lavorative o interessi personali;
+    \item La proponente si è dimostrata entusiasta di iniziare il lavoro ed aperta ad eventuali proposte del gruppo fornitore, incoraggiando l'esplorazione autonoma di strumenti ed idee alternativi;
 \end{itemize}
 
 \subsection{Fattori critici}
 \begin{itemize}
     \setlength\itemsep{0em}
-    \item 
+    \item Alcuni membri del gruppo hanno avuto diverse ulteriori occasioni di sviluppare prodotti inerenti all'ambito della ristorazione, pertanto la proposta è apparsa poco stimolante;    
+    \item Il progetto è apparso leggermente più prolisso rispetto agli altri capitolati, il che potrebbe ostacolare lo sviluppo di tutte le \textit{feature} richieste entro i tempi stabiliti;
+    \item L'oggetto del capitolato è risultato poco originale e ha suscitato un minor interesse nei componenti del gruppo.
 \end{itemize}
 
 \subsection{Conclusioni}
+L'abbondanza di funzionalità e l'opportunità di utilizzare \textit{framework} differenti rendono questo progetto una sfida attraente per il fornitore. Tuttavia, le criticità di cui sopra hanno avuto un impatto significativo nella valutazione del capitolato, portando i membri del gruppo ad esprimere una preferenza meno netta nei confronti della proposta, confermandola come seconda scelta.
 
+\newpage
 
-\section{Capitolato C9 - ChatSQL: creare frasi SQL da linguaggio naturale}
+\section{Capitolato C9 - ChatSQL: creare frasi SQL da linguaggio naturale} \label{sec:C9}
 \subsection{Descrizione}
 \begin{itemize}
     \setlength\itemsep{0em}
     \item Proponente: Zucchetti;
-    \item Committenti: prof. Vardanega e prof. Cardin;
+    \item Committenti: prof. Vardanega, prof. Cardin;
     \item Obiettivo: sviluppare un sistema di \textit{prompt} in grado di tradurre nel linguaggio SQL una frase scritta in linguaggio naturale.
 \end{itemize}
 
@@ -67,14 +92,14 @@
 Il progetto consiste nello sviluppo di un'applicazione in grado di generare un \textit{prompt}, basandosi sulla struttura di una base di dati e l'interrogazione della stessa formulata in linguaggio naturale. Il risultato ottenuto potrà poi essere fornito ad un modello di LLM (\textit{Large Language Model}) per ricavare il codice SQL corrispondente all'interrogazione specificata. \\ Il proposito di questo applicativo è la guida dell'intelligenza artificiale nella produzione dell'output desiderato: per fare ciò è necessario formulare le richieste in maniera ottimale. 
 
 \subsection{Dominio tecnologico}
-La proponente non ha espresso preferenze vincolanti per quanto riguarda le modalità di archiviazione della struttura della base di dati, che può essere gestita mediante un'architettura su \textit{database} o documenti di testo strutturati (XML, JSON). \\ Viene lasciata ampia libertà di scelta delle tecnologie anche per lo sviluppo della maschera di richiesta dell'interrogazione in linguaggio naturale. \\ Infine, per la verifica del \textit{prompt} generato dall'applicazione è stato suggerito l'uso di ChatGPT o altri modelli reperibili nella raccolta \href{https://huggingface.co}{Hugging Face}.
+La proponente non ha espresso preferenze vincolanti per quanto riguarda le modalità di archiviazione della struttura della base di dati, che può essere gestita mediante un'architettura su \textit{database} o documenti di testo strutturati (XML, JSON). \\ Viene lasciata ampia libertà di scelta delle tecnologie anche per lo sviluppo della maschera di richiesta dell'interrogazione in linguaggio naturale. \\ Infine, per la verifica del \textit{prompt} generato dall'applicazione è suggerito l'uso di ChatGPT o altri modelli reperibili nella raccolta \href{https://huggingface.co}{Hugging Face}.
 
 \subsection{Aspetti positivi}
 \begin{itemize}
     \setlength\itemsep{0em}
     \item L'applicativo facilita la scrittura di codice in linguaggio SQL e la gestione di basi di dati anche per utenti non esperti;
     \item L'obiettivo del progetto consente di ampliare le capacità di LLM ad operazioni avanzate come l'esecuzione di calcoli e confronti tra dati strutturati;
-    \item La possibilità di lavorare con tecnologie innovative ed attuali come le intelligenze artificiali è apparsa molto stimolante.
+    \item La possibilità di lavorare con tecnologie innovative ed attuali, come le intelligenze artificiali, è apparsa molto stimolante.
 \end{itemize}
 
 \subsection{Fattori critici}
@@ -87,4 +112,4 @@ La proponente non ha espresso preferenze vincolanti per quanto riguarda le modal
 \end{itemize}
 
 \subsection{Conclusioni}
-Il capitolato offre l'opportunità di lavorare con tecnologie estremamente innovative ampliando il proprio bagaglio di conoscenze nell'ambito delle intelligenze artificiali. Tuttavia, nessun componente del gruppo ha dimostrato un particolare entusiasmo per la proposta e le criticità riscontrate sono risultate complessivamente prevalenti sulle note positive. La scelta è quindi ricaduta su capitolati considerati maggiormente stimolanti da parte del gruppo.
+Il capitolato offre l'opportunità di lavorare con tecnologie estremamente innovative ampliando il proprio bagaglio di conoscenze nell'ambito delle intelligenze artificiali. Tuttavia, nessun componente del gruppo ha dimostrato un particolare entusiasmo per la proposta e le criticità riscontrate sono risultate complessivamente prevalenti sulle note positive. L'attenzione si è quindi concentrata su capitolati considerati maggiormente stimolanti da parte del gruppo.
