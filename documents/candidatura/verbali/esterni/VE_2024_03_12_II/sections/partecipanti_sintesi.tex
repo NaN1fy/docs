@@ -1,0 +1,89 @@
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata tramite Google Meet;
+	\item\textbf{Ora di inizio:} 17:00;
+	\item\textbf{Ora di fine:}  18:00.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 1.0 h \\
+			Linda Barbiero &  1.0 h \\
+			Pietro Busato & 1.0 h \\
+			Oscar Konieczny & 1.0 h \\
+			Davide Donanzan & 1.0 h \\
+			Veronica Tecchiati & 1.0 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Daniele Zorzi & 1.0 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti \texttt{SyncLab}}
+		\label{table:Partecipanti XXXX}
+	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Primo incontro con l'azienda proponente \texttt{SyncLab}
+	\item Chiarifica e delucidazioni in merito ai vari aspetti del progetto	
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+ Primo incontro formativo con l'azienda proponente \texttt{SyncLab}, in cui ci si é presentati a vicenda. Sono seguite da parte nostra domande di ambito tecnico/organizzativo a scopo delucidativo(riportate piú in dettaglio in seguito), quali chiarimenti sulle tecnologie da implementare nel progetto, organizzazione di eventuali incontri futuri (sia a scopo didattico che di revisione del progetto), fino alla firma dei verbali esterni.  
+ %-- togliere, testo per riempiere il template
+\subsection{Domande}
+\textbf{Domanda}: \textit{dati mock generati tramite Python: mole, frequenza e tipologia}.$\\$
+La scelta, purché sia coerente e ragionevole con il tipo di sensore, é lasciata a voi; per esempio, per un sensore di temperatura si puó generare un dato ogni minuto, o magari 10, con valori realistici. Per un sensore di parcheggio invece, basta amche un semplice bit (0 occupato, 1 libero) che si aggiorna ogni 5-10 minuti. É libera anche la scelta del linguaggio da utilizzare per generare dati, ma noi consigliamo Python, in quanto presenta molte librerie utili a tale scopo.$\\$
+\textbf{Domanda}: \textit{e per quanto riguarda la quantitá e il tipo di sensori?}$\\$
+Mentre per il PoC basta averne un paio, per il progetto completo vorrremmo vedere implementati tutti quelli listati al punto 1.3 [della presentazione capitolato. n.d.r.].$\\$
+\textbf{Domanda}: \textit{strumenti forniti dall'azienda messi a nostra disposizione: strumenti utilizzabili anche da remoto, server con relativa modalità di accesso}.$\\$
+A noi interessa piú la connessione e l'integrazione tra le parti che la codifica, per cui non servono server, database, accessi da remoto o altri strumenti del genere, si puó fare tutto in locale.$\\$
+\textbf{Domanda}: \textit{in riferimento a 1.7.3 [sempre della presentazione capitolato. n.d.r], é sufficiente la presentazione dei dati (con grafana) o serve anche rielaborazione, ad esempio statistiche o pulizia di dati errati?}.$\\$
+Va da sé che bisogna generare dati con sensatezza e consapevolezza, quindi sarebbe preferibile non aggiungere dati sporchi, nel caso se ne puó discutere piú avanti per i test; per il resto le eventuali statistiche/analisi dei dati si possono discutere dopo la consegna minima (PoC).$\\$
+\textbf{Domanda}: \textit{vi sono altre tecnologie che potete consigliare come eventuale alternativa a quelle giá proposte?}$\\$
+Per quanto riguarda la generazione dati, come giá detto, siete liberi di usare anche altri linguaggi, e lo stesso vale per la rappresentazione tramite grafana, potete scegliere quello che preferite, se trovate valide alternative e le giustificate. Per quanto riguarda invece Kafka e ClickHouse, dato che rappresentano l'aspetto che ci interessa di piú di questo progetto, siete tenuti ad utilizzarli.$\\$
+\textbf{Domanda}: \textit{incontri informativi, organizzazione, modalitá di erogazione, temi trattati}.$\\$
+Per quanto riguarda gli incontri a scopo formativo (o deep dive), una volta iniziato il progetto ci accorderemo per fissarli, a richiesta o meno, con almeno una settimana di anticipo; dureranno un'ora, al massimo un'ora e mezza e saranno strutturati, a parte i meeting introduttivi e pochi altri, sostanzialmente come delle flipped classroom, in cui, dopo esservi documentati autonomamente sulle tecnologie richieste, risponderemo alle vostre domande e approfondiremo i temi trattati.$\\$
+\textbf{Domanda}: \textit{e per quanto riguarda eventuai altri incontri, come saranno organizzati?}$\\$
+Verranno fissati dei SAL, ogni una,due settimane, su Google Meet, in cui discuteremo dello stato di avanzamento del progetto e fisseremo le successive milestone da raggiungere per il SAL seguente. I SAL saranno principalmente su:
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item generare dati dai sensori
+    \item Kafka
+    \item collegare Kafka a ClickHouse tramite connettore
+    \item spostare e mostrare i dati da ClickHouse a Grafana
+\end{itemize}
+Se dovesse poi succedere che finite in anticipo alcune milestone non c'é problema, potete giá cominciare la successiva; lo stesso vale se invece siete in ritardo rispetto alla consegna, non dovete preoccuparvi, puó succedere. l'importante in entrambi i casi é che ci avvisiate per tempo, per esempio con una settimana di anticipo.$\\$
+\textbf{Domanda}: textit{avete preferenze su altre modalitá di controllo dello stato di avanzamento del progetto? (github, incontri, revisione asicnrona, ...).}$\\$
+A noi interessa principalmente controllare che il lavoro svolto soddisfi i requisiti prefissati, quindi basta che condividiate la repository su github o una macchina con il lavoro svolto e ci mostriate fin dove siete arrivati.$\\$
+\textbf{Domanda}: \textit{in riferimento a 1.6 [della presentazione capitolato. n.d.r.], cosa intendete con consegna minima (PoC) e consegna completa? Coincidono rispettivamente con PoC e MVP indicati dal Prof. Vardanega? La consegna completa corrisponde alla nostra CA (opzionale)?}$\\$
+Il PoC viene inteso come visualizzazione minima di almeno 1/2 sensori, poi diventerá la base per procedere con la parte successiva, in cui  inserirete tutti gli altri sensori.$\\$
+\emph{Nota: durante l'incontro si é visto da entrambe le parti che c'erano state alcune incomprensioni riguardo alla suddivisione del progetto pensata dall'azienda e quella strutturata invece dal Prof. Vardanega; si é quindi deciso, insieme al relatore di SyncLab, di discuterne meglio in eventuali riunioni future}.$\\$
+\textbf{Domanda}: \textit{come verrá organizzata invece il processo per la firma digitale?}$\\$
+Ad ogni SAL o comunque ad ogni incontro su cui verrá poi steso un verbale, basterá che ci inviate tale verbale, con data e luogo della firma, e noi ve lo riconsegneremo firmato.
+
+\subsection{Decisioni prese}
+Dato che questo é stato il primo incontro, a puro scopo informativo, con l'azienda proponente \texttt{SyncLab}, non sono stati fissati veri e propri obiettivi futuri; si é deciso di organizzare successivamente un nuovo incontro per fissare le prime milestone, nel caso in cui il nostro gruppo si sará candidato per tale progetto e avrá effettivamente ottenuto l'appalto.
+	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
+	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+
+% togli il commento per la firma
+\signatureline{Padova, YYYY-MM-DD}
+%\signatureline{Padova, YYYY-MM-DD}
+
+
