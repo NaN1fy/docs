@@ -21,7 +21,7 @@
 			Veronica Tecchiati & 1.0 h \\
 			\bottomrule
 		\end{tabular}
-		\caption{Partecipanti NaN1fy}
+		\caption{Partecipanti NaN1fy.}
 		\label{table:Partecipanti NaN1fy}
 	\end{minipage} 
 	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
@@ -33,49 +33,49 @@
 			Daniele Zorzi & 1.0 h \\
 			\bottomrule
 		\end{tabular}
-		\caption{Partecipanti \texttt{SyncLab}}
+		\caption{Partecipanti SyncLab.}
 		\label{table:Partecipanti XXXX}
 	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
 \end{table}
 
 \subsection{Sintesi dell'incontro}
- Primo incontro formativo con l'azienda proponente \texttt{SyncLab}, in cui ci si é presentati a vicenda. Sono seguite da parte nostra domande di ambito tecnico/organizzativo a scopo delucidativo(riportate piú in dettaglio in seguito), quali chiarimenti sulle tecnologie da implementare nel progetto, organizzazione di eventuali incontri futuri (sia a scopo didattico che di revisione del progetto), fino alla firma dei verbali esterni.  
+ Primo incontro formativo con l'azienda proponente \texttt{SyncLab}, in cui ci si è presentati a vicenda. Sono seguite da parte nostra domande di ambito tecnico/organizzativo a scopo delucidativo (riportate di seguito più in dettaglio), quali chiarimenti sulle tecnologie da implementare nel progetto, organizzazione di eventuali incontri futuri (didattici e di revisione) e firma dei verbali esterni.  
  %-- togliere, testo per riempiere il template
 
 \section{Ordine del giorno}
 Di seguito sono elencate le domande poste al relatore di \texttt{SyncLab}.
 \subsection{Dati \textit{mock} generati tramite \textit{Python}: mole, frequenza e tipologia.}
-La scelta, purché sia coerente e ragionevole con il tipo di sensore, é lasciata a voi; per esempio, per un sensore di temperatura si puó generare un dato ogni minuto, o magari 10, con valori realistici. Per un sensore di parcheggio invece, basta amche un semplice bit (0 occupato, 1 libero) che si aggiorna ogni 5-10 minuti. É libera anche la scelta del linguaggio da utilizzare per generare dati, ma noi consigliamo Python, in quanto presenta molte librerie utili a tale scopo.
+La scelta del tipo di sensore e la frequenza di generazione dei dati è lasciata a voi, purché sia coerente e ragionevole. Ad esempio, per un sensore di temperatura si può generare un dato ogni minuto o ogni 10 minuti, con valori realistici. Per un sensore di parcheggio, invece, basta un semplice bit (0 occupato, 1 libero) che si aggiorna ogni 5-10 minuti. È libera anche la scelta del linguaggio da utilizzare per generare i dati, ma noi consigliamo Python, in quanto presenta molte librerie utili a tale scopo.
 \subsection{E per quanto riguarda la quantitá e il tipo di sensori?}
 Mentre per il \textit{PoC} basta averne un paio, per il progetto completo vorrremmo vedere implementati tutti quelli listati al punto 1.3 [della presentazione capitolato. n.d.r.].
-\subsection{Strumenti forniti dall'azienda messi a nostra disposizione: strumenti utilizzabili anche da remoto, server con relativa modalità di accesso}.
-A noi interessa piú la connessione e l'integrazione tra le parti che la codifica, per cui non servono server, database, accessi da remoto o altri strumenti del genere, si puó fare tutto in locale.
-\subsection{In riferimento a 1.7.3 [sempre della presentazione capitolato. n.d.r], é sufficiente la presentazione dei dati (con \textit{Grafana}) o serve anche rielaborazione, ad esempio statistiche o pulizia di dati errati?}
-Va da sé che bisogna generare dati con sensatezza e consapevolezza, quindi sarebbe preferibile non aggiungere dati sporchi, nel caso se ne puó discutere piú avanti per i test; per il resto le eventuali statistiche/analisi dei dati si possono discutere dopo la consegna minima (\textit{PoC}).
-\subsection{Vi sono altre tecnologie che potete consigliare come eventuale alternativa a quelle giá proposte?}
-Per quanto riguarda la generazione dati, come giá detto, siete liberi di usare anche altri linguaggi, e lo stesso vale per la rappresentazione tramite \textit{Grafana}, potete scegliere quello che preferite, se trovate valide alternative e le giustificate. Per quanto riguarda invece \textit{Kafka} e \textit{ClickHouse}, dato che rappresentano l'aspetto che ci interessa di piú di questo progetto, siete tenuti ad utilizzarli.
-\subsection{Incontri informativi, organizzazione, modalitá di erogazione, temi trattati.}
-Per quanto riguarda gli incontri a scopo formativo (o \textit{deep dive}), una volta iniziato il progetto ci accorderemo per fissarli, a richiesta o meno, con almeno una settimana di anticipo; dureranno un'ora, al massimo un'ora e mezza e saranno strutturati, a parte i meeting introduttivi e pochi altri, sostanzialmente come delle \textit{flipped classroom}, in cui, dopo esservi documentati autonomamente sulle tecnologie richieste, risponderemo alle vostre domande e approfondiremo i temi trattati.
+\subsection{Strumenti forniti dall'azienda messi a nostra disposizione: strumenti utilizzabili anche da remoto, server con relativa modalità di accesso}
+A noi interessa più la connessione e l'integrazione tra le parti che la codifica, per cui non servono server, database, accessi da remoto o altri strumenti del genere, si può fare tutto in locale.
+\subsection{In riferimento a 1.7.3 [della presentazione capitolato. n.d.r], è sufficiente presentare i dati (con \textit{Grafana}) o serve anche rielaborarli, ad esempio con statistiche e/o pulizia degli stessi?}
+Va da sè che bisogna generare dati con sensatezza e consapevolezza, quindi sarebbe preferibile non aggiungere dati sporchi, nel caso se ne può discutere più avanti per i test; eventuali statistiche/analisi dei dati sono consigliati dopo la consegna minima (\textit{PoC}).
+\subsection{Vi sono altre tecnologie che potete consigliare come eventuale alternativa a quelle già proposte?}
+Per quanto riguarda la generazione dati, come già detto, siete liberi di usare anche altri linguaggi, e lo stesso vale per la rappresentazione tramite \textit{Grafana}, potete scegliere quello che preferite, se trovate valide alternative e le giustificate. Per quanto riguarda invece \textit{Kafka} e \textit{ClickHouse}, dato che rappresentano l'aspetto più importante di questo progetto, siete tenuti ad utilizzarli.
+\subsection{Incontri informativi, organizzazione, modalità di erogazione, temi trattati.}
+Per quanto riguarda gli incontri formativi (o \textit{deep dive}), una volta avviato il progetto, ci coordineremo per pianificarli, su richiesta o meno, con almeno una settimana di preavviso. Avranno una durata di circa un'ora e seguiranno una struttura simile a quella delle \textit{flipped classroom}. Dopo che vi sarete documentati autonomamente sulle tecnologie necessarie, risponderemo alle vostre domande e approfondiremo i temi trattati, eccetto per i meeting introduttivi e pochi altri che saranno gestiti in modo diverso.
 \subsection{E per quanto riguarda eventuai altri incontri, come saranno organizzati?}
-Verranno fissati dei \textit{SAL}, ogni una, due settimane, su \textit{Google Meet}, in cui discuteremo dello stato di avanzamento del progetto e fisseremo le successive \textit{milestone} da raggiungere per il \textit{SAL} seguente. I textit{SAL} saranno principalmente su:
+Verranno fissati dei \textit{SAL}, ogni una, due settimane, su \textit{Google Meet}, in cui discuteremo dello stato di avanzamento del progetto e fisseremo le successive \textit{milestone} da raggiungere per il \textit{SAL} seguente. I \textit{SAL} saranno principalmente su:
 \begin{itemize}
     \setlength\itemsep{0em}
-    \item generare dati dai sensori
-    \item \textit{Kafka}
-    \item collegare \textit{Kafka} a \textit{ClickHouse} tramite connettore
-    \item spostare e mostrare i dati da \textit{ClickHouse} a \textit{Grafana}
+    \item generare dati da sensori;
+    \item \textit{Kafka};
+    \item collegare \textit{Kafka} a \textit{ClickHouse} tramite connettori;
+    \item spostare e mostrare i dati da \textit{ClickHouse} a \textit{Grafana}.
 \end{itemize}
-Se dovesse poi succedere che finite in anticipo alcune \textit{milestone} non c'é problema, potete giá cominciare la successiva; lo stesso vale se invece siete in ritardo rispetto alla consegna, non dovete preoccuparvi, puó succedere. L'importante in entrambi i casi é che ci avvisiate per tempo, per esempio con una settimana di anticipo.
-\subsection{Avete preferenze su altre modalitá di controllo dello stato di avanzamento del progetto? (\textit{Github}, incontri, revisione asicnrona, ...).}
-A noi interessa principalmente controllare che il lavoro svolto soddisfi i requisiti prefissati, quindi basta che condividiate la repository su \textit{Github} o una macchina con il lavoro svolto e ci mostriate fin dove siete arrivati.
-\subsection{In riferimento a 1.6 [della presentazione capitolato. n.d.r.], cosa intendete con consegna minima (\textit{PoC}) e consegna completa? Coincidono rispettivamente con \textit{PoC} e \textit{MVP} indicati dal Prof. Vardanega? La consegna completa corrisponde alla nostra \textit{CA} (opzionale)?}$\\$
-Il \textit{PoC} viene inteso come visualizzazione minima di almeno 1/2 sensori, poi diventerá la base per procedere con la parte successiva, in cui  inserirete tutti gli altri sensori.$\\$
-\emph{Nota: durante l'incontro si é visto da entrambe le parti che c'erano state alcune incomprensioni riguardo alla suddivisione del progetto pensata dall'azienda e quella strutturata invece dal Prof. Vardanega; si é quindi deciso, insieme al relatore di SyncLab, di discuterne meglio in eventuali riunioni future}.$\\$
+Se per caso completate alcune \textit{milestone} in anticipo, non c'è problema, potete iniziare immediatamente con quella successiva. Allo stesso modo, se siete in ritardo rispetto alla consegna, non dovete preoccuparvi, può capitare. È fondamentale in entrambi i casi che ci avvisiate per tempo, preferibilmente con almeno una settimana di anticipo.
+\subsection{Avete preferenze su altre modalità di controllo dello stato di avanzamento del progetto? (\textit{Github}, incontri, revisione asincrona, ...).}
+A noi interessa principalmente controllare che il lavoro svolto soddisfi i requisiti prefissati, quindi basta che condividiate la repository su \textit{Github} o ci mostriate una macchina con il lavoro svolto.
+\subsection{In riferimento a 1.6 [della presentazione capitolato. n.d.r.], cosa intendete con consegna minima (\textit{PoC}) e consegna completa? Coincidono rispettivamente con \textit{PoC} e \textit{MVP} indicati dal Prof. Vardanega? La consegna completa corrisponde alla nostra \textit{CA} (opzionale)?}
+Il \textit{PoC} viene inteso come visualizzazione minima di almeno 1/2 sensori, poi diventerà la base per procedere con la parte successiva, in cui  inserirete tutti gli altri sensori.\\\\
+\emph{Nota: durante l'incontro si é visto da entrambe le parti che c'erano state alcune incomprensioni riguardo alla suddivisione del progetto pensata dall'azienda e quella strutturata invece dal Prof. Vardanega; si é quindi deciso, insieme al relatore di SyncLab, di discuterne meglio in eventuali riunioni future}.
 \subsection{Come verrá organizzata invece il processo per la firma digitale?}
-Ad ogni \textit{SAL} o comunque ad ogni incontro su cui verrá poi steso un verbale, basterá che ci inviate tale verbale, con data e luogo della firma, e noi ve lo riconsegneremo firmato.
+Ad ogni \textit{SAL} o comunque ad ogni incontro su cui verrà poi steso un verbale, basterà che ci inviate quest'ultimo, con data e luogo della firma, e noi ve lo riconsegneremo firmato.
 
 \section{Decisioni prese}
-Dato che questo é stato il primo incontro, a puro scopo informativo, con l'azienda proponente \texttt{SyncLab}, non sono stati fissati veri e propri obiettivi futuri; si é deciso di organizzare successivamente un nuovo incontro per fissare le prime milestone, nel caso in cui il nostro gruppo si sará candidato per tale progetto e avrá effettivamente ottenuto l'appalto.\\\\
+Essendo questo il primo incontro puramente informativo con l'azienda proponente \texttt{SyncLab}, non sono stati ancora definiti obiettivi futuri precisi. Si è concordato di organizzare un nuovo incontro in seguito per stabilire le prime \textit{milestone}, nel caso in cui il nostro gruppo si candidi per il progetto e ottenga effettivamente l'appalto.\\\\
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 
