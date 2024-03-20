@@ -39,48 +39,58 @@
 \end{table}
 
 \subsection{Sintesi dell'incontro}
- Primo incontro formativo con l'azienda proponente \texttt{SyncLab}, in cui ci si è presentati a vicenda. Sono seguite da parte nostra domande di ambito tecnico/organizzativo a scopo delucidativo (riportate di seguito più in dettaglio), quali chiarimenti sulle tecnologie da implementare nel progetto, organizzazione di eventuali incontri futuri (didattici e di revisione) e firma dei verbali esterni.  
+Primo incontro conoscitivo con l'azienda proponente \texttt{SyncLab}. Sono seguite da parte del gruppo domande tecniche ed organizzative a scopo delucidativo (riportate di seguito più nel dettaglio), quali chiarimenti sulle tecnologie da implementare nel progetto, sull'organizzazione di eventuali incontri futuri (formativi e di revisione) e sulle modalità di firma dei verbali esterni.  
  %-- togliere, testo per riempiere il template
 
 \section{Ordine del giorno}
-Di seguito sono elencate le domande poste al relatore di \texttt{SyncLab}.
-\subsection{Dati \textit{mock} generati tramite \textit{Python}: mole, frequenza e tipologia.}
-La scelta del tipo di sensore e la frequenza di generazione dei dati è lasciata a voi, purché sia coerente e ragionevole. Ad esempio, per un sensore di temperatura si può generare un dato ogni minuto o ogni 10 minuti, con valori realistici. Per un sensore di parcheggio, invece, basta un semplice bit (0 occupato, 1 libero) che si aggiorna ogni 5-10 minuti. È libera anche la scelta del linguaggio da utilizzare per generare i dati, ma noi consigliamo Python, in quanto presenta molte librerie utili a tale scopo.
-\subsection{E per quanto riguarda la quantitá e il tipo di sensori?}
-Mentre per il \textit{PoC} basta averne un paio, per il progetto completo sarebbe auspicabile vedere implementati tutti quelli listati al punto 1.3 [della presentazione capitolato. n.d.r.].
-\subsection{Strumenti forniti dall'azienda messi a nostra disposizione: strumenti utilizzabili anche da remoto, server con relativa modalità di accesso}
-A noi interessa più la connessione e l'integrazione tra le parti che la codifica, per cui non servono server, database, accessi da remoto o altri strumenti del genere, si può fare tutto in locale.
-\subsection{In riferimento a 1.7.3 [della presentazione capitolato. n.d.r], è sufficiente presentare i dati (con \textit{Grafana}) o serve anche rielaborarli, ad esempio con statistiche e/o pulizia degli stessi?}
-Va da sè che bisogna generare dati con sensatezza e consapevolezza, quindi sarebbe preferibile non aggiungere dati sporchi, nel caso se ne può discutere più avanti per i test; eventuali statistiche/analisi dei dati sono consigliati dopo la consegna minima (\textit{PoC}).
-\subsection{Vi sono altre tecnologie che potete consigliare come eventuale alternativa a quelle già proposte?}
-Per quanto riguarda la generazione dati, come già detto, siete liberi di usare anche altri linguaggi, e lo stesso vale per la rappresentazione tramite \textit{Grafana}, potete scegliere quello che preferite, se trovate valide alternative e le giustificate. Per quanto riguarda invece \textit{Kafka} e \textit{ClickHouse}, dato che rappresentano l'aspetto più importante di questo progetto, siete tenuti ad utilizzarli.
-\subsection{Incontri informativi, organizzazione, modalità di erogazione, temi trattati.}
-Per quanto riguarda gli incontri formativi (o \textit{deep dive}), una volta avviato il progetto, ci coordineremo per pianificarli, su richiesta o meno, con almeno una settimana di preavviso. Avranno una durata di circa un'ora e seguiranno una struttura simile a quella delle \textit{flipped classroom}. Dopo che vi sarete documentati autonomamente sulle tecnologie necessarie, risponderemo alle vostre domande e approfondiremo i temi trattati, eccetto per i meeting introduttivi e pochi altri che saranno gestiti in modo diverso.
-\subsection{E per quanto riguarda eventuai altri incontri, come saranno organizzati?}
-Verranno fissati dei \textit{SAL}, ogni una, due settimane, su \textit{Google Meet}, in cui discuteremo dello stato di avanzamento del progetto e fisseremo le successive \textit{milestone} da raggiungere per il \textit{SAL} seguente. I \textit{SAL} saranno principalmente su:
+Di seguito sono elencate le domande poste al referente di \texttt{SyncLab}.
+
+\subsection{Dati \textit{mock} generati tramite \textit{Python}: mole, frequenza e tipologia}
+La scelta del tipo di sensore e la frequenza di generazione dei dati è lasciata al fornitore, purché sia coerente e ragionevole. Ad esempio, per un sensore di temperatura si può generare un dato ogni minuto o ogni 10 minuti, con valori realistici. Per un sensore di parcheggio, invece, basta un semplice bit (0 occupato, 1 libero) che si aggiorna ogni 5-10 minuti. È libera anche la scelta del linguaggio utilizzato per generare i dati, bensì sia consigliato Python, in quanto presenta molte librerie utili a tale scopo.
+
+\subsection{Quantità e tipologia di sensori}
+Mentre per il \textit{PoC} è sufficiente simulare un paio di sensori, per il progetto completo è auspicabile l'implementazione di tutti quelli elencati al punto 1.3 della presentazione del capitolato.
+
+\subsection{Strumenti forniti dall'azienda messi a nostra disposizione}
+Alla proponente interessa maggiormente la connessione e l'integrazione tra le parti piuttosto che la codifica, per cui non sono necessari server, database, accessi da remoto o altri strumenti simili. L'applicativo sarà sviluppato ed eseguito in locale.
+
+\subsection{Qualità dei dati ed eventuali rielaborazioni}
+È preferibile non aggiungere dati sporchi, eventualmente si potrà riconsiderare questa decisione per la fase di test; eventuali statistiche e analisi dei dati sono consigliati dopo la consegna minima (\textit{PoC}).
+
+\subsection{Altre tecnologie suggerite come possibile alternativa a quelle già proposte}
+Per quanto riguarda la generazione dei dati, come già detto, è possibile usare anche altri linguaggi, e lo stesso vale per la rappresentazione tramite \textit{Grafana}. Le eventuali alternative trovate devono essere adeguatamente giustificate. \textit{Kafka} e \textit{ClickHouse} sono invece imprescindibili, dato che rappresentano l'aspetto più importante di questo progetto.
+
+\subsection{Incontri formativi: organizzazione, modalità di erogazione, temi trattati}
+Gli incontri formativi (o \textit{deep dive}), potranno essere pianificati una volta avviato il progetto, su richiesta del fornitore o meno, con almeno una settimana di preavviso. Avranno una durata di circa un'ora e seguiranno una struttura simile a quella delle \textit{flipped classroom}. Dopo che il gruppo si sarà autonomamente documentato sulle tecnologie necessarie, la proponente risponderà ad eventuali domande e si approfondiranno i temi trattati. I meeting introduttivi e pochi altri che saranno invece gestiti diversamente.
+
+\subsection{Organizzazione degli incontri non formativi}
+Verranno fissati dei \textit{SAL} ogni una o due settimane, su \textit{Google Meet}, in cui si discuterà lo stato di avanzamento del progetto e saranno fissate le successive \textit{milestone} da raggiungere per il \textit{SAL} seguente. I \textit{SAL} verteranno su:
 \begin{itemize}
     \setlength\itemsep{0em}
-    \item generare dati da sensori;
+    \item Generare dati da sensori;
     \item \textit{Kafka};
-    \item collegare \textit{Kafka} a \textit{ClickHouse} tramite connettori;
-    \item spostare e mostrare i dati da \textit{ClickHouse} a \textit{Grafana}.
+    \item Collegare \textit{Kafka} a \textit{ClickHouse} tramite connettori;
+    \item Spostare e mostrare i dati da \textit{ClickHouse} a \textit{Grafana}.
 \end{itemize}
-Se per caso completate alcune \textit{milestone} in anticipo, non c'è problema, potete iniziare immediatamente con quella successiva. Allo stesso modo, se siete in ritardo rispetto alla consegna, non dovete preoccuparvi, può capitare. È fondamentale in entrambi i casi che ci avvisiate per tempo, preferibilmente con almeno una settimana di anticipo.
-\subsection{Avete preferenze su altre modalità di controllo dello stato di avanzamento del progetto? (\textit{Github}, incontri, revisione asincrona, ...).}
-A noi interessa principalmente controllare che il lavoro svolto soddisfi i requisiti prefissati, quindi basta che condividiate la repository su \textit{Github} o ci mostriate una macchina con il lavoro svolto.
-\subsection{In riferimento a 1.6 [della presentazione capitolato. n.d.r.], cosa intendete con consegna minima (\textit{PoC}) e consegna completa? Coincidono rispettivamente con \textit{PoC} e \textit{MVP} indicati dal Prof. Vardanega? La consegna completa corrisponde alla nostra \textit{CA} (opzionale)?}
-Il \textit{PoC} viene inteso come visualizzazione minima di almeno 1/2 sensori, poi diventerà la base per procedere con la parte successiva, in cui  inserirete tutti gli altri sensori.\\\\
-\emph{Nota: durante l'incontro si è visto da entrambe le parti che c'erano state alcune incomprensioni riguardo alla suddivisione del progetto pensata dall'azienda e quella strutturata invece dal Prof. Vardanega; si é quindi deciso, insieme al relatore di SyncLab, di discuterne meglio in eventuali riunioni future}.
-\subsection{Come verrà organizzata invece il processo per la firma digitale?}
-Ad ogni \textit{SAL} o comunque ad ogni incontro su cui verrà poi steso un verbale, basterà che ci inviate quest'ultimo, con data e luogo della firma, e noi ve lo riconsegneremo firmato.
+Se alcune \textit{milestone} dovessero essere completate in anticipo si può proseguire immediatamente con le successive. Se dovessero verificarsi invece dei ritardi rispetto alla consegna prevista, la proponente si è mostrata estremamente disponibile ad aiutare il gruppo a risolvere le eventuali problematiche. È fondamentale, in entrambi i casi, avvisare preventivamente l'azienda, preferibilmente con almeno una settimana di anticipo.
+
+\subsection{Preferenze sulle modalità di condivisione del lavoro svolto}
+All'azienda interessa principalmente verificare che il lavoro soddisfi i requisiti prefissati, quindi basta condividere la repository su \textit{Github} o mostrare l'esecuzione locale del programma.
+
+\subsection{Criteri di completamento del progetto: rapporto tra "consegna completa" menzionata nella presentazione del capitolato, \textit{MVP} e \textit{CA} indicati dal prof. Vardanega}
+Il \textit{PoC} viene inteso come visualizzazione minima di almeno 1/2 sensori, poi diventerà la base per procedere con la parte successiva, in cui implementare tutti gli altri sensori.\\\\
+\emph{Nota: durante l'incontro si è visto da entrambe le parti che c'erano state alcune incomprensioni riguardo alla suddivisione del progetto pensata dall'azienda e quella strutturata invece dal prof. Vardanega; si è quindi deciso, insieme al relatore di SyncLab, di discuterne meglio in eventuali riunioni future}.
+
+\subsection{Firma dei verbali esterni}
+Ad ogni \textit{SAL}, o comunque ad ogni incontro su cui verrà poi steso un verbale, basterà inviare quest'ultimo con data e luogo della firma. L'azienda procederà quindi a riconsegnarlo firmato.
 
 \section{Decisioni prese}
-Essendo questo il primo incontro puramente informativo con l'azienda proponente \texttt{SyncLab}, non sono stati ancora definiti obiettivi futuri precisi. Si è concordato di organizzare un nuovo incontro in seguito per stabilire le prime \textit{milestone}, nel caso in cui il nostro gruppo si candidi per il progetto e ottenga effettivamente l'appalto.\\\\
+Essendo questo il primo incontro puramente informativo con l'azienda proponente \texttt{SyncLab}, non sono stati ancora definiti obiettivi futuri precisi. Si è concordato di organizzare un nuovo incontro in seguito per stabilire le prime \textit{milestone}, nel caso in cui il gruppo si candidi per il progetto e ottenga effettivamente l'appalto.\\\\
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
-	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+	% per nomi di aziende e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 
 % togli il commento per la firma
-\signatureline{Padova, 2024-03-12}
+\signatureline{Padova, 2024-03-20}
 %\signatureline{Padova, YYYY-MM-DD}
 
 
