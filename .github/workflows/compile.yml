@@ -56,11 +56,14 @@ jobs:
           shopt -s extglob
           for f in documents/**/!(*template*)/*_main*.tex; do
             [[ ! -f "$f" ]] && continue
-            rm -f "${RUNNER_TEMP}/main/${f%.tex}"*
-            sudo touch -amd "$( date -R -r "$f" )" "${f%.tex}.pdf"
-            version=$(grep "^\s*% changelog:" "$f" | cut -d '"' -f2 | cut -d ',' -f1 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
-            [[ ! -z "$version" ]] && mv "${f%.tex}.pdf" "${f%.tex}_v${version}.pdf" && f="${f%.tex}_v${version}.tex"
-            rsync -aR "${f%.tex}.pdf" "${RUNNER_TEMP}/main"
+            filename=$(basename -- "$f")
+            if [[ "$filename" != "VE_2024_03_12_main.tex" && "$filename" != "VE_2024-03-12_II_main.tex" ]]; then
+              rm -f "${RUNNER_TEMP}/main/${f%.tex}"*
+              sudo touch -amd "$( date -R -r "$f" )" "${f%.tex}.pdf"
+              version=$(grep "^\s*% changelog:" "$f" | cut -d '"' -f2 | cut -d ',' -f1 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
+              [[ ! -z "$version" ]] && mv "${f%.tex}.pdf" "${f%.tex}_v${version}.pdf" && f="${f%.tex}_v${version}.tex"
+              rsync -aR "${f%.tex}.pdf" "${RUNNER_TEMP}/main"
+            fi
           done
       - name: push to builds repo
         run: |
