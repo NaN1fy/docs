@@ -1,4 +1,3 @@
-# TODO: compilare solo file modificati
 name: Build LaTeX document
 on:
   workflow_dispatch:
@@ -39,8 +38,13 @@ jobs:
           separator: ","
           files: |
             documents/**/*.tex
-      - name: Find root files to compile
+      - name: delete ignored and unchanged latex documents
         run: |
+          shopt -s globstar
+          ls documents/**/*.tex > .all
+          echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
+          comm -23 .all .changed >> .latexignore
+          while IFS= read -r f; do rm -rf "${f}"; done < .latexignore
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
