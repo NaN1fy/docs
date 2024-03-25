@@ -1,3 +1,4 @@
+# TODO: compilare solo file modificati
 name: Build LaTeX document
 on:
   workflow_dispatch:
@@ -43,7 +44,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: "**/!(*template*)/*_main*.tex"
+          root_file: "**/!(*template*)/*.tex"
           working_directory: documents/
           work_in_root_file_dir: true
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
@@ -54,10 +55,11 @@ jobs:
         run: |
           shopt -s globstar
           shopt -s extglob
-          for f in documents/**/!(*template*)/*_main*.tex; do
+          for f in documents/**/!(*template*)/*.tex; do
             [[ ! -f "$f" ]] && continue
             filename=$(basename -- "$f")
-            if [[ "$filename" != "VE_2024_03_12_main.tex" && "$filename" != "VE_2024-03-12_II_main.tex" ]]; then
+            # escludo i verbali firmati dalla compilazione
+            if [[ "$filename" != "VE_2024_03_12.tex" && "$filename" != "VE_2024-03-12_II.tex" ]]; then
               rm -f "${RUNNER_TEMP}/main/${f%.tex}"*
               sudo touch -amd "$( date -R -r "$f" )" "${f%.tex}.pdf"
               version=$(grep "^\s*% changelog:" "$f" | cut -d '"' -f2 | cut -d ',' -f1 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')

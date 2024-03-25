@@ -1,3 +1,128 @@
+% changelog: "1.0.0, 2024-03-21, Approvazione per candidatura"
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- TITOLO -- %
+\newcommand{\customtitle}{VERBALE ESTERNO DEL 2024-03-12} % o ESTERNO
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+    \fancyhead[L]{\leftmark} 
+   	\renewcommand{\headrulewidth}{1pt} 
+  	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 5.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Pietro Busato}\\}} % massimo due 
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Guglielmo Barison}\\}} % massimo due 
+			{\large{\textsc{Veronica Tecchiati}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Esterno Del\\2024-03-12\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{7.5 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+		1.0.0 & 2024-03-21 & \textbf{Approvazione per candidatura} & & \\\\
+		0.1.1 & 2024-03-21 & Verifica completa, ulteriori correzioni & Veronica Tecchiati & Verificatore \\\\
+		0.1.0 & 2024-03-20 & Verifica completa, importanti correzioni formali e modifica data firma & Veronica Tecchiati & Verificatore \\\\
+		0.0.1 & 2024-03-19 & Verifica completa, correzioni minori & Guglielmo Barison & Verificatore \\\\
+		0.0.0 & 2024-03-12 & Prima stesura del verbale & Pietro Busato & Redattore \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
 \section{Contenuti del Verbale}
 \subsection{Informazioni generali}
 \begin{itemize}
@@ -40,7 +165,7 @@
 
 \subsection{Sintesi dell'incontro}
 Primo incontro conoscitivo con l'azienda proponente \texttt{SyncLab}. Sono seguite da parte del gruppo domande tecniche ed organizzative a scopo delucidativo (riportate di seguito più nel dettaglio), quali chiarimenti sulle tecnologie da implementare nel progetto, sull'organizzazione di eventuali incontri futuri (formativi e di revisione) e sulle modalità di firma dei verbali esterni.  
- %-- togliere, testo per riempiere il template
+%-- togliere, testo per riempiere il template
 
 \section{Quesiti esposti}
 Di seguito sono elencate le domande poste al referente di \texttt{SyncLab}.
@@ -66,11 +191,11 @@ Gli incontri formativi (o \textit{deep dive}), potranno essere pianificati una v
 \subsection{Organizzazione degli incontri non formativi}
 Verranno fissati dei \textit{SAL} ogni una o due settimane, su \textit{Google Meet}, in cui si discuterà lo stato di avanzamento del progetto e saranno fissate le successive \textit{milestone} da raggiungere per il \textit{SAL} seguente. I \textit{SAL} verteranno su:
 \begin{itemize}
-    \setlength\itemsep{0em}
-    \item Generare dati da sensori;
-    \item \textit{Kafka};
-    \item Collegare \textit{Kafka} a \textit{ClickHouse} tramite connettori;
-    \item Spostare e mostrare i dati da \textit{ClickHouse} a \textit{Grafana}.
+	\setlength\itemsep{0em}
+	\item Generare dati da sensori;
+	\item \textit{Kafka};
+	\item Collegare \textit{Kafka} a \textit{ClickHouse} tramite connettori;
+	\item Spostare e mostrare i dati da \textit{ClickHouse} a \textit{Grafana}.
 \end{itemize}
 Se alcune \textit{milestone} dovessero essere completate in anticipo si può proseguire immediatamente con le successive. Se dovessero verificarsi invece dei ritardi rispetto alla consegna prevista, la proponente si è mostrata estremamente disponibile ad aiutare il gruppo a risolvere le eventuali problematiche. È fondamentale, in entrambi i casi, avvisare preventivamente l'azienda, preferibilmente con almeno una settimana di anticipo.
 
@@ -85,11 +210,11 @@ Ad ogni \textit{SAL}, o comunque ad ogni incontro su cui verrà poi steso un ver
 
 \section{Conclusioni}
 Essendo questo il primo incontro puramente informativo con l'azienda proponente \texttt{SyncLab}, non sono stati ancora definiti obiettivi futuri precisi. Si è concordato di organizzare un nuovo incontro in seguito per stabilire le prime \textit{milestone}, nel caso in cui il gruppo si candidi per il progetto e ottenga effettivamente l'appalto.\\\\
-	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
-	% per nomi di aziende e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
+% per nomi di aziende e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 
 % togli il commento per la firma
 \signatureline{Padova, 2024-03-22}
 %\signatureline{Padova, YYYY-MM-DD}
 
-
+\end{document}
