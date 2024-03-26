@@ -1,0 +1,38 @@
+name: create directory-listing
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+jobs:
+  pages:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
+      - name: generate directory listings
+        uses: jayanta525/github-pages-directory-listing@main
+        with:
+          FOLDER: documents
+        env:
+          TZ: Europe/Rome
+      - name: upload pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with: 
+          path: documents/
+      - name: deploy to github pages
+        id: deployment
+        uses: actions/deploy-pages@v2
