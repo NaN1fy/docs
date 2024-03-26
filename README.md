@@ -5,6 +5,8 @@ Questo branch contiene i sorgenti in formato `.tex` della documentazione di prog
 - La compilazione dei sorgenti avviene tramite [GitHub Action](https://docs.github.com/en/actions).
 ## Guida all'azione di compilazione LaTeX
 ### Cos'è questa azione?
+[![Build LaTeX document](https://github.com/NaN1fy/docs/actions/workflows/compile.yml/badge.svg?branch=sources&event=push)](https://github.com/NaN1fy/docs/actions/workflows/compile.yml)
+
 Questa GitHub Action, chiamata "compile LaTeX documents", permette di compilare automaticamente i sorgenti LaTeX presenti nella branch `sources`.
 ### Come funziona?
 L'azione può essere attivata automaticamente tramite push: Quando si effettua un push di modifiche alla cartella `documents` nella branch `sources`, l'azione viene eseguita automaticamente.
@@ -13,6 +15,7 @@ Affinché l'azione funzioni correttamente, i file LaTeX  devono essere posiziona
 
 > [!IMPORTANT]  
 > I documenti deveno essere contenuti per intero in un singolo file `.tex`.
+
 
 ```
 /documents
