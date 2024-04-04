@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'documents/**'
   workflow_dispatch:
 
 permissions:
