@@ -26,6 +26,6 @@ jobs:
           zip -r "${GITHUB_REF_NAME}.zip" .
           popd
           mv "documents/${GITHUB_REF_NAME}/${GITHUB_REF_NAME}.zip" .
-          gh release create "$GITHUB_REF_NAME" -t "$GITHUB_REF_NAME" "${GITHUB_REF_NAME}.zip"
+          gh release create "$GITHUB_REF_NAME" -t "$GITHUB_REF_NAME" "${GITHUB_REF_NAME}.zip" -n "Documentazione relativa alla milestone **${GITHUB_REF_NAME}**." 
         env:
           GITHUB_TOKEN: ${{ github.token }}
