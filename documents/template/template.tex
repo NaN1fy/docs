@@ -37,8 +37,19 @@
 \usepackage{booktabs}
 \usepackage{varwidth}
 
-% -- TITOLO -- %
+% -- TITOLO INTESTAZIONE -- %
 \newcommand{\customtitle}{VERBALE INTERNO DEL YYYY-MM-DD} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
 
 % -- PER LA FIRMA -- %
 \newcommand{\signatureline}[1]{%
@@ -46,16 +57,8 @@
 	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
 }
 
-% -- INTESTAZIONE -- %
-\fancypagestyle{mystyle}{
-	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/NaN1fy_logo.png}} 
-    \fancyhead[L]{\leftmark} 
-   	\renewcommand{\headrulewidth}{1pt} 
-  	\fancyhead[L]{\customtitle} 
-	\renewcommand{\headsep}{1.3cm} 
-	\fancyfoot[C]{\thepage} 
-}
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
 
 \begin{document}
 \definecolor{myblue}{RGB}{23,103,162}
@@ -115,7 +118,7 @@
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
-	\caption{Registro delle modifiche}
+	\caption{Registro delle modifiche.}
 	\label{table:Registro delle modifiche}
 \end{table}
 \newpage
@@ -183,6 +186,7 @@
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 \end{itemize}
+\newpage
 \section{Attività da svolgere}
 \begin{table}[ht!]
 	\centering
@@ -190,9 +194,9 @@
 		\toprule
 		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Verificatori} \\
 		\midrule
-		Stesura lettera di presentazione & 8 & Pietro Busato, Linda Barbiero\\\\
-		Stesura della dichiarazione impegni  &  6 & Davide Donanzan, Pietro Busato \\\\
-		Stesura della valutazione dei capitolati & 7 & Davide Donanzan, Oscar Konieczny \\
+		Lorem ipsum dolor sit amet & - & Mario Rossi \\\\
+		Lorem ipsum dolor sit amet &  - & Mario Rossi \\\\
+		Lorem ipsum dolor sit amet & - & Mario Rossi \\
 		\bottomrule
 	\end{tabular}
 	\caption{Attività da svolgere}
