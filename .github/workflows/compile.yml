@@ -39,12 +39,6 @@ jobs:
           files: |
             documents/**/*.tex
             documents/*/interni/glossario.csv
-      - name: check if glossario.csv is modified
-        run: |
-          if echo "${{ steps.changed-files.outputs.all_changed_files }}" | grep -q "documents/*/interni/glossario.csv"; then
-            echo "Glossario.csv is modified"
-            echo "documents/*/interni/glossario.tex" >> .changed
-          fi
       - name: delete ignored and unchanged latex documents
         run: |
           shopt -s globstar
@@ -52,6 +46,12 @@ jobs:
           echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
           comm -23 .all .changed >> .latexignore
           while IFS= read -r f; do rm -rf "${f}"; done < .latexignore
+      - name: check if glossario.csv is modified
+        run: |
+          if echo "${{ steps.changed-files.outputs.all_changed_files }}" | grep -q "documents/*/interni/glossario.csv"; then
+            echo "Glossario.csv is modified"
+            echo "documents/*/interni/glossario.tex" >> .changed
+          fi
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
