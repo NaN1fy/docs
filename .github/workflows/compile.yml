@@ -50,7 +50,7 @@ jobs:
         run: |
           if echo "${{ steps.changed-files.outputs.all_changed_files }}" | grep -q "documents/*/interni/glossario.csv"; then
             echo "Glossario.csv is modified"
-            echo "documents/*/interni/glossario.tex" >> .changed
+            echo "documents/RTB/interni/glossario.tex" >> .changed
           fi
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
