@@ -44,14 +44,10 @@ jobs:
           shopt -s globstar
           ls documents/**/*.tex > .all
           echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
+          sed -i 's/documents\/\*\/interni\/glossario.csv/documents\/\*\/interni\/glossario.tex/' .changed
+          cat .changed
           comm -23 .all .changed >> .latexignore
           while IFS= read -r f; do rm -rf "${f}"; done < .latexignore
-      - name: check if glossario.csv is modified
-        run: |
-          if echo "${{ steps.changed-files.outputs.all_changed_files }}" | grep -q "documents/*/interni/glossario.csv"; then
-            echo "Glossario.csv is modified"
-            echo "documents/RTB/interni/glossario.tex" >> .changed
-          fi
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
