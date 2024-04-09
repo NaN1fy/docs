@@ -44,7 +44,7 @@ jobs:
           shopt -s globstar
           ls documents/**/*.tex > .all
           echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
-          sed -i 's/documents\/\*\/interni\/glossario.csv/documents\/\*\/interni\/glossario.tex/' .changed
+          sed -i 's/glossario.csv/glossario.tex/g' .changed
           cat .changed
           comm -23 .all .changed >> .latexignore
           while IFS= read -r f; do rm -rf "${f}"; done < .latexignore
