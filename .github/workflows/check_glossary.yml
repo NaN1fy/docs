@@ -26,6 +26,9 @@ jobs:
       - name: run script (see output, expand below)
         if: ${{ github.event_name == 'push' }}
         run: |
+          git rm --cached glossario.csv
+          git fetch --depth=1 origin +refs/heads/sources:refs/remotes/origin/sources
+          git checkout origin/sources -- glossario.csv
           echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
           python3 .github/workflows/scripts/check_glossary.py $(sed -n 's/^\(.*\/\)\([^/]*\.tex\)$/\1\2/p' .changed)
           
