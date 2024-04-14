@@ -29,6 +29,7 @@ jobs:
           git rm --cached documents/RTB/interni/glossario.csv
           git fetch --depth=1 origin +refs/heads/sources:refs/remotes/origin/sources
           git checkout origin/sources -- documents/RTB/interni/glossario.csv
+          cat documents/RTB/interni/glossario.csv
           echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
           python3 .github/workflows/scripts/check_glossary.py $(sed -n 's/^\(.*\/\)\([^/]*\.tex\)$/\1\2/p' .changed)
           
