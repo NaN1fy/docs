@@ -46,7 +46,7 @@ def find_glossary_errors(glossary_terms, document_paths):
 if __name__ == "__main__":
 
     print(disclaimer)
-    base_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../documents"))
+    base_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), "documents"))
 
     glossary_path = find_glossary_path(base_directory)
     if not glossary_path:
