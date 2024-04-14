@@ -1,0 +1,181 @@
+% changelog: "0.0.0, 2024-04-09, Guglielmo Barison, Struttura di base ed introduzione."
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{PIANO DI QUALIFICA}% o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Guglielmo Barison}\\}} % massimo due 
+			{\large{\textsc{Davide Donanzan}}}
+			
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\large{\textsc{XXXX XXXX}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Piano Di Qualifica}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{10 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+		0.0.0 & 2024-04-09 & Struttura di base ed introduzione.  & Guglielmo Barison & Redattore \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+\justifying
+\section{Introduzione}
+\subsection{Scopo del documento}
+Questo documento offre una panoramica dettagliata delle strategie di verifica e validazione adottate per assicurare la \glossterm{qualità} del prodotto e dei processi nel contesto del progetto in questione. Sarà costantemente aggiornato per riflettere l'evoluzione del progetto e concentrerà l'attenzione sui risultati delle verifiche per risolvere tempestivamente eventuali criticità.
+\\\\
+Il Piano di Qualifica, dinamico e incrementale, illustra le pratiche per il controllo di qualità degli artefatti e dei processi, con particolare enfasi sulle metriche di valutazione del prodotto. È progettato per guidare l'adozione di processi mirati al miglioramento continuo, fornendo misure quantitative per valutare il progresso del progetto. Questo impegno costante per la qualità si riflette nel regolare aggiornamento del documento per adattarsi alle esigenze mutevoli del progetto, garantendo così la crescita e l'evoluzione sia del processo che del prodotto nel tempo.
+\subsection{Scopo del capitolato}
+Lo scopo del \glossterm{capitolato} C6 è proporre una soluzione per la creazione di una piattaforma di monitoraggio per una smart city. Tale piattaforma deve raccogliere e analizzare in tempo reale una vasta gamma di dati provenienti da sensori distribuiti nella città, riguardanti aspetti quali traffico, qualità dell'aria, consumi energetici e altro ancora. L'obiettivo è fornire alle autorità locali informazioni dettagliate per prendere decisioni informate sulla gestione delle risorse e l'implementazione dei servizi, coinvolgendo anche i cittadini attraverso la condivisione di dati e la partecipazione attiva. La soluzione proposta prevede l'utilizzo di tecnologie per il data streaming processing e la simulazione dei dati dei sensori, con l'obiettivo di fornire dashboard intuitive per la visualizzazione dei dati raccolti e l'analisi delle condizioni della città.\\
+L’applicativo sviluppato richiede una copertura dei \glossterm{test} di almeno l’80\%.
+
+\subsection{Glossario}
+Per garantire chiarezza nel linguaggio utilizzato nei documenti, è stato redatto un Glossario contenente le definizioni dei termini con significato specifico da disambiguare. Tali termini sono contrassegnati con una G ad apice. L'inserimento di un termine nel Glossario è considerato completo solo dopo averne fornito la definizione.
+\subsection{Riferimenti}
+\subsubsection{Normativi}
+\begin{itemize}
+	\item Norme di progetto v.X.X;
+	\item Presentazione e documentazione del \glossterm{capitolato} d’appalto C6 - SyncCity:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{\color{myblue}https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf}
+	\end{itemize}
+	\item Regolamento di progetto:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/PD2.pdf}
+	\end{itemize}
+\end{itemize}
+\clearpage
+\subsubsection{Informativi}
+\begin{itemize}
+	\item Dispense T7 - Qualità del software:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T7.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T7.pdf}
+	\end{itemize}
+	\item Dispense T8 - Qualità di processo:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T8.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T8.pdf}
+	\end{itemize}
+	\item Dispense T9 - Verifica e validazione:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T9.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T9.pdf}
+	\end{itemize}
+	\item \glossterm{ISO}/ \glossterm{IECG} 9126:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2009/Approfondimenti/ISO\_12207-1995.pdf}
+	\end{itemize}
+	\item \glossterm{ISO}/ \glossterm{IECG} 12207:
+	\begin{itemize}
+		\item \href{https://it.wikipedia.org/wiki/ISO/IEC_9126}{\color{myblue}https://it.wikipedia.org/wiki/ISO/IEC\_9126}
+	\end{itemize}
+\end{itemize}
+\clearpage
+\section{Obiettivi metrici di qualità}
+\end{document}
