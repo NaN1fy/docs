@@ -11,7 +11,8 @@ disclaimer = " \
 # --------------------- "
 
 def find_tex_files(directory, filenames):
-    return [os.path.join(root, file) for root, _, files in os.walk(directory) for file in files if file.endswith('.tex') and not file.lower() == 'glossario.tex' and not os.path.abspath(os.path.join(root, file)).startswith(os.path.abspath(os.path.join(directory, 'template'))) and any(filename in os.path.join(root, file) for filename in filenames)]
+    paths = [os.path.join(root, file) for root, _, files in os.walk(directory) for file in files if file.endswith('.tex') and not file.lower() == 'glossario.tex' and not os.path.abspath(os.path.join(root, file)).startswith(os.path.abspath(os.path.join(directory, 'template'))) and any(filename in os.path.join(root, file) for filename in filenames)]
+    return paths
 
 def find_glossary_path(base_directory):
     return next((os.path.join(root, file) for root, _, files in os.walk(base_directory) for file in files if file.lower() == "glossario.csv"), None)
