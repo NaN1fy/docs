@@ -1,0 +1,34 @@
+name: check glossary terms in latex source files
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - sources
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v40
+        with:
+          separator: ","
+          files: |
+            documents/**/*.tex
+            
+      - name: run script (see output, expand below)
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          git rm --cached documents/RTB/interni/glossario.csv
+          git fetch --depth=1 origin +refs/heads/sources:refs/remotes/origin/sources
+          git checkout origin/sources -- documents/RTB/interni/glossario.csv
+          echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
+          python3 .github/workflows/scripts/check_glossary.py $(sed -n 's/^\(.*\/\)\([^/]*\.tex\)$/\1\2/p' .changed)
+          
