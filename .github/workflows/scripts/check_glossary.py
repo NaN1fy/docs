@@ -62,8 +62,4 @@ if __name__ == "__main__":
         for document_path, terms in errors.items():
             print(f"- {document_path}: {', '.join(terms)}")
     else:
-        print("No glossary terms found with incorrect formatting in the documents.")lossary terms not formatted correctly in the following documents:")
-        for document_path, terms in errors.items():
-            print(f"- {document_path}: {', '.join(terms)}")
-    else:
         print("No glossary terms found with incorrect formatting in the documents.")
