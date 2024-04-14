@@ -31,8 +31,6 @@ def find_glossary_errors(glossary_terms, document_paths):
     return errors
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        sys.exit("Usage: python check_glossary.py <file1.tex> <file2.tex> ...")
 
     print(disclaimer)
     base_directory = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../documents"))
