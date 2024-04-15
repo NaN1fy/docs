@@ -44,6 +44,7 @@ Il nome del file `.pdf` sarà modificato aggiungendo `_vX.X.X` alla fine del nom
 ## Guida all'azione di controllo dei termini del glossario nei file sorgenti LaTeX
 ### Cos'è questa azione?
 [![check glossary terms in latex source files](https://github.com/NaN1fy/docs/actions/workflows/check_glossary.yml/badge.svg)](https://github.com/NaN1fy/docs/actions/workflows/check_glossary.yml)
+
 Questa GitHub Action, denominata "check glossary terms in latex source files", controlla automaticamente la presenza di termini del glossario all'interno dei file sorgenti LaTeX presenti nella cartella `documents` nei branch diversi da `main` e `sources`. Se trova dei termini mancanti o non aggiornati rispetto al glossario, notifica l'utente.
 ### Come funziona?
 Prima di procedere, è importante tenere presente: non è pensato per ottenere un tasso di successo del 100%, poiché
