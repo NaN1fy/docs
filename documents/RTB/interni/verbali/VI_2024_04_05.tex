@@ -1,4 +1,4 @@
-% changelog: "0.0.1, 2024-04-16, Oscar Konieczny, Correzioni varie"
+% changelog: "0.0.2, 2024-04-16, Guglielmo Barison, Ampliamento attività da svolgere, correzioni punteggiatura"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -89,7 +89,7 @@
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\\\large{\textsc{Guglielmo Barison}\\}} % massimo due 
 			{\large{\textsc{XXXX XXXX}}}
 			
 		}
@@ -113,6 +113,7 @@
 		\toprule
 		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+		0.0.2 & 2024-04-16 & Ampliamento attività da svolgere, correzioni punteggiatura & Guglielmo Barison & Verificatore \\\\ 
 		0.0.1 & 2024-04-16 & Correzioni varie & Oscar Konieczny & Redattore \\\\ % spazio tra le righe
 		0.0.0 & 2024-04-05 & Prima stesura del verbale & Oscar Konieczny & Redattore \\
 		\bottomrule
@@ -156,16 +157,18 @@
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Discussione a riguardo degli incontri avvenuti il giorno precedente
-	\item Organizzazione del lavoro in vista del RTB
+	\item Discussione a riguardo degli incontri avvenuti il giorno precedente;
+	\item Organizzazione del lavoro in vista del RTB.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-La riunione è iniziata con la discussione degli incontri avvenuti il giorno precedente. In particolare si è discusso su come procedere in vista del prossimo SAL fissato con \texttt{Sync Lab}. Successivamente sono stati assegnati i ruoli per le seguenti due settimane, corrispondenti al primo sprint. Infine si sono stabiliti i vari redattori per i vari documenti che necessitano la stesura.
+La riunione è iniziata con la discussione degli incontri avvenuti il giorno precedente. In particolare si è discusso su come procedere in vista del prossimo SAL fissato con \texttt{SyncLab}. Successivamente sono stati assegnati i ruoli per le seguenti due settimane, corrispondenti al primo sprint. Infine si sono stabiliti i vari redattori per i vari documenti che necessitano la stesura.
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Suddivisione ruoli per lo sprint con fine il 2024-04-19
-	\item Assegnamento delle nuove attività da svolgere
+	\item Suddivisione ruoli per lo sprint con fine il 2024-04-19;
+    \item La possibilità di eseguire modifiche direttamente sul ramo principale delle varie repository è stata bloccata. Da adesso in poi, ogni aggiornamento dovrà essere richiesto tramite ``pull-request" e approvato da un terzo, il verificatore;
+    \item \textit{Viene adottato} il procedimento di iniziare ad associare le decisioni prese in seguito alle riunioni che scatenano delle azioni con le loro corrispondenti issue tramite collegamento ipertestuale. A differenza del colore utilizzato negli altri testi, nella tabella Attività da svolgere (\ref{table:Attivita da svolgere}) i collegamenti ipertestuali verranno indicati con sottolineatura;
+	\item Assegnamento delle nuove attività da svolgere.
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 \end{itemize}
@@ -177,18 +180,19 @@ La riunione è iniziata con la discussione degli incontri avvenuti il giorno pre
 		\toprule
 		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
 		\midrule
-		Stesura "Glossario" & 14 & Guglielmo Barison, Oscar Konieczny\\\\
-		Stesura "Analisi dei requisiti" & 15 & Davide Donanzan, Veronica Tecchiati\\\\
-		Stesura "Piano di progetto"  & 16 & Linda Barbiero, Veronica Tecchiati\\\\
-		Stesura "Piano di qualifica" & 17 & Davide Donanzan, Guglielmo Barison\\\\
-		Stesura "Norme di progetto" & 20 & Linda Barbiero, Pietro Busato\\\\
-		Stesura codice generatore dati Python & 1*\tnote{*} & Pietro Busato, Guglielmo Barison\\
+		\href{https://github.com/NaN1fy/docs/issues/14}{\underline{Stesura ``Glossario"}} & 14 & Guglielmo Barison, Oscar Konieczny\\\\
+		\href{https://github.com/NaN1fy/docs/issues/15}{\underline{Stesura ``Analisi dei requisiti"}} & 15 & Davide Donanzan, Veronica Tecchiati\\\\
+		\href{https://github.com/NaN1fy/docs/issues/16}{\underline{Stesura ``Piano di progetto"}}  & 16 & Linda Barbiero, Veronica Tecchiati\\\\
+		\href{https://github.com/NaN1fy/docs/issues/17}{\underline{Stesura ``Piano di qualifica"}} & 17 & Davide Donanzan, Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/docs/issues/20}{\underline{Stesura ``Norme di progetto"}} & 20 & Linda Barbiero, Pietro Busato\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/1}{\underline{Stesura codice generatore dati Python}} & 1*\tnote{*} & Pietro Busato, Guglielmo Barison\\
 		\bottomrule
 	\end{tabular}
 	\begin{tablenotes}
+		\vspace{1em}
 		\item * indica che la issue fa parte della repository \texttt{SyncCity}
 	\end{tablenotes}
-	\caption{Attività da svolgere}
+	\caption{Attività da svolgere.}
 	\label{table:Attivita da svolgere}
 \end{table}
 \end{document}
