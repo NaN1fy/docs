@@ -1,4 +1,4 @@
-% changelog: "0.1.0 & 2024-04-12 & Stesura sezione "Modello di Sviluppo" e inizio sezione "Organigramma".
+% changelog: "0.2.0, 2024-04-16, Stesura sezione 1, Veronica Tecchiati.
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -22,7 +22,7 @@
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true,linkcolor=nan1fyblue,urlcolor=nan1fyblue]{hyperref}
 \usepackage{graphicx}
 \usepackage{hyperref}
 \setcounter{tocdepth}{4}
@@ -36,6 +36,8 @@
 \usepackage{capt-of}% 
 \usepackage{booktabs}
 \usepackage{varwidth}
+
+\definecolor{nan1fyblue}{HTML}{1767a2}
 
 % -- TITOLO INTESTAZIONE -- %
 \newcommand{\customtitle}{Piano di Progetto} % o ESTERNO
@@ -79,8 +81,8 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Linda Barbiero}\\}} % massimo due 
-			% {\large{\textsc{XXXX XXXX}}}
+			{\\\large{\textsc{Linda Barbiero}\\}} 
+			{\large{\textsc{Veronica Tecchiati}}}
 			
 			
 		}
@@ -88,7 +90,7 @@
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\\\large{\textsc{XXXX XXXX}\\}}
 			{\large{\textsc{XXXX XXXX}}}
 			
 		}
@@ -107,11 +109,13 @@
 \pagestyle{mystyle}
 \section*{Registro delle Modifiche}
 \begin{table}[ht!]	
+\hypersetup{hidelinks}
 	\centering
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+            0.2.0 & 2024-04-16 & Stesura sezione \ref{sec:intro} & Veronica Tecchiati & Redattore \\\\
 		0.1.0 & 2024-04-12 & Stesura sezione "Modello di Sviluppo" e inizio sezione "Organigramma". & Linda Barbiero & Redattore \\\\
 		0.0.0 & 2024-04-12 & Stesura del file e sezione "Pianificazione". & Linda Barbiero &
 		Redattore \\\\ % spazio tra le righe
@@ -123,12 +127,13 @@
 	\label{table:Registro delle modifiche}
 \end{table}
 \newpage
-\tableofcontents
+{\hypersetup{hidelinks} \tableofcontents}
 \clearpage
 \newpage
 \justifying
-\section{Introduzione}
-\section{Analisi dei Rischi}
+\section{Introduzione} \label{sec:intro}
+\input{sezioni/introduzione}
+\section{Analisi dei Rischi} \label{sec:rischi}
 \input{sezioni/analisi_rischi}
 \section{Modello di Sviluppo}
 \input{sezioni/modello_sviluppo}
