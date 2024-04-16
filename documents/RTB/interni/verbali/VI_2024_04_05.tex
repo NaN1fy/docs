@@ -1,4 +1,4 @@
-% changelog: "0.0.0, 2024-04-05, Oscar Konieczny, Prima stesura del verbale"
+% changelog: "0.0.1, 2024-04-16, Oscar Konieczny, Correzioni varie"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -19,6 +19,7 @@
 \usepackage{siunitx}
 \usepackage{amssymb} 
 \usepackage{tabularx}
+\usepackage{threeparttable}
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
@@ -37,19 +38,28 @@
 \usepackage{booktabs}
 \usepackage{varwidth}
 
-% -- TITOLO -- %
+% -- TITOLO INTESTAZIONE -- %
 \newcommand{\customtitle}{VERBALE INTERNO DEL 2024-04-05} % o ESTERNO
 
-% -- INTESTAZIONE -- %
+% -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
 	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
-    \fancyhead[L]{\leftmark} 
-   	\renewcommand{\headrulewidth}{1pt} 
-  	\fancyhead[L]{\customtitle} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
 	\renewcommand{\headsep}{1.3cm} 
 	\fancyfoot[C]{\thepage} 
 }
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
 
 \begin{document}
 \definecolor{myblue}{RGB}{23,103,162}
@@ -71,6 +81,7 @@
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
+			{\large{\textsc{}}}
 			
 			
 		}
@@ -100,15 +111,14 @@
 	\centering
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
-		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		% X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX &
-		% --- \\\\ % spazio tra le righe
+		0.0.1 & 2024-04-16 & Correzioni varie & Oscar Konieczny & Redattore \\\\ % spazio tra le righe
 		0.0.0 & 2024-04-05 & Prima stesura del verbale & Oscar Konieczny & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
-	\caption{Registro delle modifiche}
+	\caption{Registro delle modifiche.}
 	\label{table:Registro delle modifiche}
 \end{table}
 \newpage
@@ -150,15 +160,16 @@
 	\item Organizzazione del lavoro in vista del RTB
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-L'incontro è iniziato con la discussione degli incontri avvenuti il giorno precedente. In particolare si è discusso su come procedere in vista del prossimo SAL fissato con \texttt{Sync Lab}. Successivamente sono stati divisi i compiti per le seguenti due settimane, corrispondenti al primo sprint.
+La riunione è iniziata con la discussione degli incontri avvenuti il giorno precedente. In particolare si è discusso su come procedere in vista del prossimo SAL fissato con \texttt{Sync Lab}. Successivamente sono stati assegnati i ruoli per le seguenti due settimane, corrispondenti al primo sprint. Infine si sono stabiliti i vari redattori per i vari documenti che necessitano la stesura.
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
 	\item Suddivisione ruoli per lo sprint con fine il 2024-04-19
-	\item /
+	\item Assegnamento delle nuove attività da svolgere
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 \end{itemize}
+\newpage
 \section{Attività da svolgere}
 \begin{table}[ht!]
 	\centering
@@ -171,9 +182,12 @@ L'incontro è iniziato con la discussione degli incontri avvenuti il giorno prec
 		Stesura "Piano di progetto"  & 16 & Linda Barbiero, Veronica Tecchiati\\\\
 		Stesura "Piano di qualifica" & 17 & Davide Donanzan, Guglielmo Barison\\\\
 		Stesura "Norme di progetto" & 20 & Linda Barbiero, Pietro Busato\\\\
-		Stesura codice generatore dati Python & 1 [SyncCity] & Pietro Busato, Guglielmo Barison\\
+		Stesura codice generatore dati Python & 1*\tnote{*} & Pietro Busato, Guglielmo Barison\\
 		\bottomrule
 	\end{tabular}
+	\begin{tablenotes}
+		\item * indica che la issue fa parte della repository \texttt{SyncCity}
+	\end{tablenotes}
 	\caption{Attività da svolgere}
 	\label{table:Attivita da svolgere}
 \end{table}
