@@ -1,0 +1,210 @@
+% changelog: "1.0.0 & 2024-04-09 & \textbf{Approvazione per RTB} & &"
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+\usepackage{verbatim} % for multi-line comments
+
+% -- TITOLO -- %
+\newcommand{\customtitle}{VERBALE ESTERNO DEL 2024-04-04}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+    \fancyhead[L]{\leftmark} 
+   	\renewcommand{\headrulewidth}{1pt} 
+  	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Veronica Tecchiati}\\}} % massimo due 			
+
+   
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Guglielmo Barison}\\}} % massimo due 
+			{\large{\textsc{Linda Barbiero}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Esterno Del\\2024-04-04\\}}
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8.5 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+		%\\\\ % spazio tra le righe
+		1.0.0 & 2024-04-15 & \textbf{Approvazione per RTB} & & \\\\
+		0.0.1 & 2024-04-15 & Verifica completa & Linda Barbiero & Verificatore \\\\
+		0.0.1 & 2024-04-14 & Verifica completa, correzione punteggiatura e attività da svolgere & Guglielmo Barison & Verificatore \\\\
+		0.0.0 & 2024-04-12 & Stesura documento & Veronica Tecchiati & Redattore \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni generali}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata tramite Google Meet;
+	\item\textbf{Ora di inizio:} 15:00;
+	\item\textbf{Ora di fine:}  15:30.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 0.5 h \\
+			Linda Barbiero &  0.5 h \\
+			Pietro Busato & 0.0 h \\
+			Oscar Konieczny & 0.5 h \\
+			Davide Donanzan & 0.5 h \\
+			Veronica Tecchiati & 0.5 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Andrea Dorigo & 0.5 h \\
+			Fabio Pallaro &  0.5 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti SyncLab}
+		\label{table:Partecipanti SyncLab}
+	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Avvio del progetto: presentazione delle attività da svolgere, definizione di modalità, scadenze e requisiti.
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+Dopo una breve presentazione dell'azienda e del team che seguirà il gruppo durante lo svolgimento del progetto, sono state stabilite le modalità di comunicazione tra fornitore e cliente. Ci si è poi soffermati sulla metodologia di lavoro da adottare, definendo tempistiche e modalità di verifica del lavoro prodotto. Infine, sono state descritte nel dettaglio le attività da svolgere fino alla successiva revisione di avanzamento.
+
+\subsection{Conclusioni}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Viene scelta la piattaforma Discord come principale canale di comunicazione con l'azienda. Qualora il gruppo esprimesse la volontà di svolgere alcuni incontri in presenza, viene data la possibilità di recarsi in sede a Padova;
+	\item Viene adottata la modalità Agile SCRUM per lo svolgimento del progetto;
+        \item Viene concordata la suddivisione temporale in Sprint di durata bisettimanale, al termine dei quali sono previsti incontri SAL. Il primo SAL si terrà quindi il 2024-04-19;
+        \item Per il primo Sprint è richiesto lo sviluppo di un simulatore di sensore in grado di produrre dati realistici e interessanti per un'eventuale analisi di business. Il simulatore deve inoltre essere facilmente configurabile senza dover ricorrere alla modifica del codice sorgente;
+        \item È gradita la predisposizione all'avvio del secondo Sprint allestendo un container Docker con un'installazione di Apache Kafka.
+	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
+	% per nomi di aziende e capitolati usare \texttt{}, e.g \texttt{SyncCity} \texttt{C6} 
+\end{itemize}
+\section{Attività da svolgere}
+Fondamentale è stabilire subito la divisione dei compiti assegnati dalla proponente e iniziare la produzione della documentazione per raggiungere la milestone RTB. Per questo motivo, è stato cruciale concordare una riunione interna per definire i dettagli organizzativi del primo Sprint il 2024-04-05.
+
+\begin{comment}
+    \begin{table}[ht!]
+	\centering
+	\begin{tabular}{lcl}
+		\toprule
+		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Verificatori} \\
+		\midrule
+		Stesura lettera di presentazione & 8 & Pietro Busato, Linda Barbiero\\\\
+		Stesura della dichiarazione impegni  &  6 & Davide Donanzan, Pietro Busato \\\\
+		Stesura della valutazione dei capitolati & 7 & Davide Donanzan, Oscar Konieczny \\
+		\bottomrule
+	\end{tabular}
+	\caption{Attività da svolgere}
+	\label{table:Attivita da svolgere}
+\end{table}
+\end{comment}
+
+% togli il commento per la firma
+\signatureline{Padova, 2024-04-16}
+%\signatureline{Padova, YYYY-MM-DD}
+\end{document}
