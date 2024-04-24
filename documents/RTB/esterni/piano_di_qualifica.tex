@@ -38,8 +38,6 @@
 \usepackage{booktabs}
 \usepackage{varwidth}
 \usepackage{datetime2}
-
-% -- TITOLO INTESTAZIONE -- %
 \newcommand{\customtitle}{PIANO DI QUALIFICA}% o ESTERNO
 
 % -- STILE INTESTAZIONE -- %
@@ -294,4 +292,77 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 \subsection{Qualità di prodotto}
 Si riferisce alle caratteristiche di un'entità risultante dallo sviluppo software, che influenzano la sua capacità di soddisfare sia le esigenze esplicite che implicite. In altre parole, è quanto il prodotto si adatta alle aspettative del cliente o agli standard predefiniti. Questo implica una valutazione completa del software realizzato, concentrandosi su attributi come usabilità, \glossterm{funzionalità}, affidabilità e manutenibilità, oltre alle prestazioni generali. L'obiettivo è garantire che il software non solo soddisfi le richieste del cliente e funzioni correttamente, ma che lo faccia conformemente ai rigidi standard di \glossterm{qualità} stabiliti. Per raggiungere questo obiettivo, il team si impegna a seguire le metriche di prodotto, indicate con la sigla MPD, come specificato nel documento \textit{Norme di Progetto vX.X.X}.
 % ricordarsi di verficare effettivamente il nome della sezione in NdP, nome in corsivo per riferimenti nel testo a documentazione del gruppo?
+\subsubsection{Funzionalità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-ROS& Requisiti Obbligatori Soddisfatti (ROS) & 100\% & 100\%\\\\
+		MPD-RDS & Requisiti Desiderabili Soddisfatti (RDS) & $\geq$ 0\% & $\geq$ 75\% \\\\
+		MPD-ROPS & Requisiti Opzionali Soddisfatti (ROPS) & $\geq$ 0\% & $\geq$ 75\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante la funzionalità del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante la funzionalità del prodotto.}
+\end{table}
+\subsubsection{Affidabilità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-BC & Branch Coverage (BC) & $\geq$ 80\% & 100\%\\\\
+		MPD-SC & Statement Coverage (SC) & $\geq$ 80\% & 100\% \\\\
+		MPD-FD & Failure Density (FD) & $\geq$ 80\% & 100\% \\\\
+		MPD-PTCP & Passed Test Cases Percentage (PTCP) & 100\%  & 100\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’affidabilità del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’affidabilità del prodotto.}
+\end{table}
+\subsubsection{Usabilità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-FU & Facilità di Utilizzo (FU) & $\geq$ 9 click & $\geq$ 5 click \\\\
+		MPD-TA & Tempo di Apprendimento (TA) & $\leq$ 15 minuti & $\leq$ 5 minuti \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’usabilità del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’usabilità del prodotto.}
+\end{table}
+\subsubsection{Efficienza}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-UR & Utilizzo risorse (UR) & $\geq$ 75\% & 100\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’efficienza del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’efficienza del prodotto.}
+\end{table}
+\subsubsection{Manutenibilità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-CC & Complessità Ciclomatica (CC) & 11-20 & 1-10 \\\\
+		MPD-CS & Code Smell (CS) & 0 & 0 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante la manutenibilità del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante la manutenibilità del prodotto.}
+\end{table}
+\clearpage
 \end{document}
