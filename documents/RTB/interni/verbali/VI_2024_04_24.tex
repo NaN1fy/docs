@@ -51,6 +51,9 @@
 	\fancyfoot[C]{\thepage} 
 }
 
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
 \begin{document}
 \definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
@@ -146,16 +149,16 @@
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Discussione post SAL avvenuto in data 2024-04-19 con l'azienda \texttt{SyncLab}.
-	\item Pianificazione del secondo sprint, suddivisione dei ruoli e calcolo preventivo ore.
+	\item Discussione post \texttt{\glossterm{SAL}} avvenuto in data 2024-04-19 con l'azienda \texttt{SyncLab}.
+	\item Pianificazione del secondo \texttt{\glossterm{Sprint}}, suddivisione dei ruoli e calcolo preventivo ore.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-L'incontro è iniziato con la discussione riguardo l'ultimo incontro avventuo con l'azienda proponente in data 2024-04-19. In particolare si è pianificato il nuovo sprint, partendo dall'elezione del nuovo responsabile. \\~\\Basandosi sull'esperienza dello sprint precedente, si è pensato di adottare anche il \texttt{Planning Meeting}, come previsto da metodologia \texttt{Agile Scrum}. Tuttavia, rimane irrisolto il collettivo dubbio se l'aggiunta di un ulteriore incontro rispetto a quello settimanale possa essere indice di cattiva organizzazione. Il gruppo ha scelto unanimamente di porre questo quesito al prossimo "Diario di Bordo". \\~\\Valutando il lavoro rimanente tra i documenti e i prossimi step di integrazione delle tecnologie \texttt{Kafka}, \texttt{ClickHouse} e \texttt{Grafana}, si è calcolato il preventivo delle ore per questo sprint, suddividendo per ciascuno i ruoli e i compiti, in vista del prossimo \texttt{SAL} in data 2024-05-03.
+L'incontro è iniziato con la discussione riguardo l'ultimo incontro avventuo con l'azienda proponente in data 2024-04-19. In particolare si è pianificato il nuovo \texttt{\glossterm{Sprint}}, partendo dall'elezione del nuovo responsabile. \\~\\Basandosi sull'esperienza dello \texttt{\glossterm{Sprint}} precedente, si è pensato di adottare anche il \texttt{\glossterm{Planning Meeting}}, come previsto da metodologia \texttt{\glossterm{Agile SCRUM}}. Tuttavia, rimane irrisolto il collettivo dubbio se l'aggiunta di un ulteriore incontro rispetto a quello settimanale possa essere indice di cattiva organizzazione. Il gruppo ha scelto unanimamente di porre questo quesito al prossimo "Diario di Bordo". \\~\\Valutando il lavoro rimanente tra i documenti e i prossimi step di integrazione delle tecnologie \texttt{\glossterm{Kafka}}, \texttt{\glossterm{ClickHouse}} e \texttt{\glossterm{Kafka}}, si è calcolato il preventivo delle ore per questo \texttt{\glossterm{Sprint}}, suddividendo per ciascuno i ruoli e i compiti, in vista del prossimo \texttt{\texttt{\glossterm{SAL}}} in data 2024-05-03.
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
 	\item Elezione del nuovo responsabile: Veronica Tecchiati.
-	\item Suddivisione dei restanti ruoli e calcolo preventivo ore per lo sprint con fine il 2024-05-03.
+	\item Suddivisione dei restanti ruoli e calcolo preventivo ore per lo \texttt{\glossterm{Sprint}} con fine il 2024-05-03.
 	\item Suddivisione dei compiti tra documenti e integrazione tecnologie tra i membri.
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
@@ -173,10 +176,10 @@ L'incontro è iniziato con la discussione riguardo l'ultimo incontro avventuo co
 		Continuazione "Piano di progetto"  & 16 & Linda Barbiero, Veronica Tecchiati\\\\
 		Continuazione "Piano di qualifica" & 17 & Davide Donanzan, Guglielmo Barison\\\\
 		Continuazione "Norme di progetto" & 20 & Linda Barbiero, Pietro Busato\\\\
-		Visualizzazione dati su dashboard \texttt{Grafana} & 3 [SyncCity] & Davide Donanzan, Linda Barbiero\\\\
-		Integrazione \texttt{Kafka} e \texttt{Grafana} & 4 [SyncCity] & Guglielmo Barison, Oscar Konieczny, Pietro Busato\\\\
-		Integrazione generatore dati con \texttt{Kafka} & 5 [SyncCity] & Davide Donanzan, Guglielmo Barison\\\\
-		Stesura diagramma funzionamento generatore dati \texttt{Python} & 6 [SyncCity] & Davide Donanzan, Guglielmo Barison\\\\
+		Visualizzazione dati su dashboard \texttt{\glossterm{Kafka}} & 3 [SyncCity] & Davide Donanzan, Linda Barbiero\\\\
+		Integrazione \texttt{\glossterm{Kafka}} e \texttt{\glossterm{Kafka}} & 4 [SyncCity] & Guglielmo Barison, Oscar Konieczny, Pietro Busato\\\\
+		Integrazione generatore dati con \texttt{\texttt{\glossterm{Kafka}}} & 5 [SyncCity] & Davide Donanzan, Guglielmo Barison\\\\
+		Stesura diagramma funzionamento generatore dati \texttt{\glossterm{Python}} & 6 [SyncCity] & Davide Donanzan, Guglielmo Barison\\\\
 		\bottomrule
 	\end{tabular}
 	\caption{Attività da svolgere}
