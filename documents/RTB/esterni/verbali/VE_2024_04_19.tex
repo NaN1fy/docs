@@ -158,7 +158,7 @@
 			Daniele Zorzi & 1.0 h \\
 			\bottomrule
 		\end{tabular}
-		\caption{Partecipanti Sync Lab.}
+		\caption{Partecipanti SyncLab.}
 		\label{table:Partecipanti XXXX}
 	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
 \end{table}
@@ -169,18 +169,19 @@
 	\item Discussione sull'organizzazione degli sprint e delle milestone in base ai SAL.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-La Propontente ha da subito rivolto la sua attenzione verso i progressi compiuti nel corso dello sprint appena concluso.
+La Propontente ha da subito rivolto la sua attenzione verso i progressi compiuti nel corso dello Sprint appena concluso.
 \subsubsection{Avanzamenti nel codice}
-Per quanto riguarda il codice, gli obiettivi concordati erano l'implementazione di uno \textbf{script di simulazione in Python} e la creazione di un ambiente containerizzato \textbf{creazione di un ambiente containerizzato}. Il team ha presentato in modo chiaro i progressi ottenuti: è stato realizzato un file Docker Compose che coordina un ambiente di esecuzione composto da uno script di simulazione scritto in Python e un'istanza di Kafka. La Proponente ha dichiarato che il prodotto mostrato rispondeva alle loro aspettative per questo sprint.
+Per quanto riguarda il codice, gli obiettivi concordati erano l'implementazione di uno \textbf{script di simulazione in Python} e la \textbf{creazione di un ambiente containerizzato}. Il team ha presentato in modo chiaro i progressi ottenuti: è stato realizzato un file Docker Compose che coordina un ambiente di esecuzione composto da uno script di simulazione scritto in Python e un'istanza di Kafka. La Proponente ha dichiarato che il prodotto mostrato rispondeva alle loro aspettative per questo Sprint.
 \subsubsection{Obiettivi dello sprint}
-L'intenzione originale del Proponente per questo sprint era di introdurre nel sistema la componente di persistenza dei dati simulati. Tuttavia, si è deciso di includere anche la componente di visualizzazione nello Sprint Backlog, originariamente pianificata per lo sprint successivo. Il team completerà una prima versione completa del Proof of Concept entro la fine dello sprint attuale, prevista per il 3 maggio. 
+L'intenzione originale del Proponente per questo Sprint era di introdurre nel sistema la componente di persistenza dei dati simulati. Tuttavia, si è deciso di includere anche la componente di visualizzazione nello Sprint Backlog, originariamente pianificata per lo sprint successivo. Il team completerà una prima versione completa del Proof of Concept entro la fine dello sprint attuale, prevista per il 3 maggio. 
 \subsubsection{Chiarimenti tecnici}
 \textbf{ZooKeeper e KRaft:} La Proponente ha evidenziato che quest'anno, Kafka ha preso il posto di ZooKeeper tramite KRaft. In precedenza, i metadati erano gestiti tramite ZooKeeper, mentre ora sono gestiti direttamente dal Broker grazie a KRaft. Utilizzare ZooKeeper o KRaft non influisce significativamente sul risultato finale, e la decisione è a discrezione del team. Conservare ZooKeeper potrebbe offrire al team un'opportunità aggiuntiva di apprendimento e comprensione più approfondita del sistema.
 
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Viene fissato per il 2024-05-03 alle ore 15.00 il prossimo SAL.
+	\item Viene fissato per il 2024-05-03 alle ore 15.00 il prossimo SAL;
+	\item Si decide di sincronizzare la chiusura del SAL con la fine dello Sprint precedente e l'inizio del successivo, al fine di definire l'elenco delle Story da implementare.
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 \end{itemize}
