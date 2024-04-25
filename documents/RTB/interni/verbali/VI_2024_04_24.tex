@@ -1,4 +1,4 @@
-% changelog: "0.0.0, 2024-04-19, Oscar Konieczny, Prima stesura del verbale"
+% changelog: "0.0.1, 2024-04-25, Veronica Tecchiati, Verifica completa, correzioni minori"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -38,7 +38,7 @@
 \usepackage{varwidth}
 
 % -- TITOLO -- %
-\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-04-19} % o ESTERNO
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-04-24} % o ESTERNO
 
 % -- INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
@@ -81,7 +81,7 @@
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\\\large{\textsc{Veronica Tecchiati}\\}} % massimo due 
 			{\large{\textsc{XXXX XXXX}}}
 			
 		}
@@ -90,7 +90,7 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-04-19\\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-04-24\\}} % o ESTERNO
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
@@ -105,8 +105,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		% X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX &
-		% --- \\\\ % spazio tra le righe
+		  0.0.1 & 2024-04-25 & Verifica completa, correzioni minori & Veronica Tecchiati    & Verificatore \\\\ % spazio tra le righe
 		0.0.0 & 2024-04-25 & Prima stesura del verbale & Linda Barbiero & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
@@ -153,7 +152,7 @@
 	\item Pianificazione del secondo \texttt{\glossterm{Sprint}}, suddivisione dei ruoli e calcolo preventivo ore.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-L'incontro è iniziato con la discussione riguardo l'ultimo incontro avventuo con l'azienda proponente in data 2024-04-19. In particolare si è pianificato il nuovo \texttt{\glossterm{Sprint}}, partendo dall'elezione del nuovo responsabile. \\~\\Basandosi sull'esperienza dello \texttt{\glossterm{Sprint}} precedente, si è pensato di adottare anche il \texttt{\glossterm{Planning Meeting}}, come previsto da metodologia \texttt{\glossterm{Agile SCRUM}}. Tuttavia, rimane irrisolto il collettivo dubbio se l'aggiunta di un ulteriore incontro rispetto a quello settimanale possa essere indice di cattiva organizzazione. Il gruppo ha scelto unanimamente di porre questo quesito al prossimo "Diario di Bordo". \\~\\Valutando il lavoro rimanente tra i documenti e i prossimi step di integrazione delle tecnologie \texttt{\glossterm{Kafka}}, \texttt{\glossterm{ClickHouse}} e \texttt{\glossterm{Kafka}}, si è calcolato il preventivo delle ore per questo \texttt{\glossterm{Sprint}}, suddividendo per ciascuno i ruoli e i compiti, in vista del prossimo \texttt{\texttt{\glossterm{SAL}}} in data 2024-05-03.
+L'incontro è iniziato con la discussione riguardo l'ultimo incontro avvenuto con l'azienda proponente in data 2024-04-19. In particolare si è pianificato il nuovo \texttt{\glossterm{Sprint}}, partendo dall'elezione del nuovo responsabile. \\~\\Basandosi sull'esperienza dello \texttt{\glossterm{Sprint}} precedente, si è pensato di adottare anche il \texttt{\glossterm{Planning Meeting}}, come previsto da metodologia \texttt{\glossterm{Agile SCRUM}}. Tuttavia, rimane irrisolto il collettivo dubbio se l'aggiunta di un ulteriore incontro rispetto a quello settimanale possa essere indice di cattiva organizzazione. Il gruppo ha scelto unanimamente di porre questo quesito al prossimo "Diario di Bordo". \\~\\Valutando il lavoro rimanente tra i documenti e i prossimi step di integrazione delle tecnologie \texttt{\glossterm{Kafka}}, \texttt{\glossterm{ClickHouse}} e \texttt{\glossterm{Grafana}}, si è calcolato il preventivo delle ore per questo \texttt{\glossterm{Sprint}}, suddividendo per ciascuno i ruoli e i compiti, in vista del prossimo \texttt{\texttt{\glossterm{SAL}}} fissato in data 2024-05-03.
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
@@ -176,8 +175,8 @@ L'incontro è iniziato con la discussione riguardo l'ultimo incontro avventuo co
 		Continuazione "Piano di progetto"  & 16 & Linda Barbiero, Veronica Tecchiati\\\\
 		Continuazione "Piano di qualifica" & 17 & Davide Donanzan, Guglielmo Barison\\\\
 		Continuazione "Norme di progetto" & 20 & Linda Barbiero, Pietro Busato\\\\
-		Visualizzazione dati su dashboard \texttt{\glossterm{Kafka}} & 3 [SyncCity] & Davide Donanzan, Linda Barbiero\\\\
-		Integrazione \texttt{\glossterm{Kafka}} e \texttt{\glossterm{Kafka}} & 4 [SyncCity] & Guglielmo Barison, Oscar Konieczny, Pietro Busato\\\\
+		Visualizzazione dati su dashboard \texttt{\glossterm{Grafana}} & 3 [SyncCity] & Davide Donanzan, Linda Barbiero\\\\
+		Integrazione \texttt{\glossterm{Kafka}} e \texttt{\glossterm{ClickHouse}} & 4 [SyncCity] & Guglielmo Barison, Oscar Konieczny, Pietro Busato\\\\
 		Integrazione generatore dati con \texttt{\texttt{\glossterm{Kafka}}} & 5 [SyncCity] & Davide Donanzan, Guglielmo Barison\\\\
 		Stesura diagramma funzionamento generatore dati \texttt{\glossterm{Python}} & 6 [SyncCity] & Davide Donanzan, Guglielmo Barison\\\\
 		\bottomrule
