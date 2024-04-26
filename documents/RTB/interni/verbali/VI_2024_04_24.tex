@@ -1,4 +1,5 @@
-% changelog: "0.0.1, 2024-04-25, Veronica Tecchiati, Verifica completa, correzioni minori"
+% changelog: "0.0.2, 2024-04-26, Oscar Konieczny, Verifica completa con aggiunte minori"
+
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -19,6 +20,7 @@
 \usepackage{siunitx}
 \usepackage{amssymb} 
 \usepackage{tabularx}
+\usepackage{threeparttable}
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
@@ -44,9 +46,9 @@
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
 	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
-    \fancyhead[L]{\leftmark} 
-   	\renewcommand{\headrulewidth}{1pt} 
-  	\fancyhead[L]{\customtitle} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
 	\renewcommand{\headsep}{1.3cm} 
 	\fancyfoot[C]{\thepage} 
 }
@@ -74,15 +76,14 @@
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Linda Barbiero}\\}} % massimo due 
-			
-			
+			{\large{\textsc{}}}	
 		}
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Veronica Tecchiati}\\}} % massimo due 
-			{\large{\textsc{XXXX XXXX}}}
+			{\large{\textsc{Oscar Konieczny}}}
 			
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -105,8 +106,9 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		  0.0.1 & 2024-04-25 & Verifica completa, correzioni minori & Veronica Tecchiati    & Verificatore \\\\ % spazio tra le righe
-		0.0.0 & 2024-04-25 & Prima stesura del verbale & Linda Barbiero & Redattore \\
+			0.0.2 & 2024-04-26 & Verifica completa con aggiunte minori & Oscar Konieczny & Verificatore \\\\
+			0.0.1 & 2024-04-25 & Verifica completa, correzioni minori & Veronica Tecchiati & Verificatore \\\\
+			0.0.0 & 2024-04-25 & Prima stesura del verbale & Linda Barbiero & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -122,7 +124,7 @@
 \subsection{Informazioni sulla riunione}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item\textbf{Luogo:} Chiamata Discord;
+	\item\textbf{Luogo:} Chiamata \texttt{\glossterm{Discord}};
 	\item\textbf{Ora di inizio:} 15:00;
 	\item\textbf{Ora di fine:}  16:30.
 \end{itemize}
@@ -170,17 +172,21 @@ L'incontro è iniziato con la discussione riguardo l'ultimo incontro avvenuto co
 		\toprule
 		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
 		\midrule
-		Continuazione "Glossario" & 14 & Guglielmo Barison, Oscar Konieczny\\\\
-		Continuazione "Analisi dei requisiti" & 15 & Davide Donanzan, Veronica Tecchiati\\\\
-		Continuazione "Piano di progetto"  & 16 & Linda Barbiero, Veronica Tecchiati\\\\
-		Continuazione "Piano di qualifica" & 17 & Davide Donanzan, Guglielmo Barison\\\\
-		Continuazione "Norme di progetto" & 20 & Linda Barbiero, Pietro Busato\\\\
-		Visualizzazione dati su dashboard \texttt{\glossterm{Grafana}} & 3 [SyncCity] & Davide Donanzan, Linda Barbiero\\\\
-		Integrazione \texttt{\glossterm{Kafka}} e \texttt{\glossterm{ClickHouse}} & 4 [SyncCity] & Guglielmo Barison, Oscar Konieczny, Pietro Busato\\\\
-		Integrazione generatore dati con \texttt{\texttt{\glossterm{Kafka}}} & 5 [SyncCity] & Davide Donanzan, Guglielmo Barison\\\\
-		Stesura diagramma funzionamento generatore dati \texttt{\glossterm{Python}} & 6 [SyncCity] & Davide Donanzan, Guglielmo Barison\\\\
+		Continuazione ``Glossario" & \href{https://github.com/NaN1fy/docs/issues/14}{\underline{14}} & Guglielmo Barison, Oscar Konieczny\\\\
+		Continuazione ``Analisi dei requisiti" & \href{https://github.com/NaN1fy/docs/issues/15}{\underline{15}} & Davide Donanzan, Veronica Tecchiati\\\\
+		Continuazione ``Piano di progetto"  & \href{https://github.com/NaN1fy/docs/issues/16}{\underline{16}} & Linda Barbiero, Veronica Tecchiati\\\\
+		Continuazione ``Piano di qualifica" & \href{https://github.com/NaN1fy/docs/issues/17}{\underline{17}} & Davide Donanzan, Guglielmo Barison\\\\
+		Continuazione ``Norme di progetto" & \href{https://github.com/NaN1fy/docs/issues/20}{\underline{20}} & Linda Barbiero, Pietro Busato\\\\
+		Visualizzazione dati su dashboard \texttt{\glossterm{Grafana}} & \href{https://github.com/NaN1fy/SyncCity/issues/3}{\underline{3*\tnote{*}}} & Davide Donanzan, Linda Barbiero\\\\
+		Integrazione \texttt{\glossterm{Kafka}} e \texttt{\glossterm{ClickHouse}} & \href{https://github.com/NaN1fy/SyncCity/issues/4}{\underline{4*\tnote{*}}} & Guglielmo Barison, Oscar Konieczny, Pietro Busato\\\\
+		Integrazione generatore dati con \texttt{\texttt{\glossterm{Kafka}}} & \href{https://github.com/NaN1fy/SyncCity/issues/5}{\underline{5*\tnote{*}}} & Davide Donanzan, Guglielmo Barison\\\\
+		Stesura diagramma funzionamento generatore dati \texttt{\glossterm{Python}} & \href{https://github.com/NaN1fy/SyncCity/issues/6}{\underline{6*\tnote{*}}} & Davide Donanzan, Guglielmo Barison\\\\
 		\bottomrule
 	\end{tabular}
+	\begin{tablenotes}
+		\vspace{1em}
+		\item * indica che la issue fa parte della repository \texttt{SyncCity}
+	\end{tablenotes}
 	\caption{Attività da svolgere}
 	\label{table:Attivita da svolgere}
 \end{table}
