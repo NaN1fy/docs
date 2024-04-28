@@ -119,6 +119,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+		0.2.0 & 2024-04-28 & Inizio stesura ``Strategie di testing". & Guglielmo Barison & Redattore \\\\
 		0.1.0 & 2024-04-18 & Stesura ``Obiettivi di qualità". & Guglielmo Barison & Redattore \\\\
 		0.0.0 & 2024-04-09 & Struttura di base ed introduzione.  & Guglielmo Barison & Redattore \\
 		\bottomrule
@@ -365,4 +366,36 @@ Si riferisce alle caratteristiche di un'entità risultante dallo sviluppo softwa
 	\label{table:Valori accettabili e ottimi per ogni metrica riguardante la manutenibilità del prodotto.}
 \end{table}
 \clearpage
+\section{Strategie di testing}
+In questa sezione viene esposto il piano di testing che verrà utilizzato per garantire la correttezza finale del prodotto. Come enunciato nel documento \textit{Norme di Progetto v.X.X.X}, il piano segue il modello a \glossterm{V}, il quale associa ad ogni fase di sviluppo una corrispondente tipologia di testing. Tali tipologie sono le seguenti:
+\begin{itemize}
+	\item \textbf{Test di unità:} si verifica il corretto funzionamento delle unità componenti il \glossterm{sistema}. Un’unità rappresenta un elemento indivisibile e indipendente del \glossterm{sistema}; 
+	\item \textbf{Test di integrazione:} si verifica il corretto funzionamento di più unità che cooperano per svolgere uno specifico compito (tali unità devono certamente aver superato i loro test di unità precedentemente);
+	\item \textbf{\glossterm{Test di sistema}:} si verifica il corretto funzionamento del \glossterm{sistema} nella sua interezza. I requisiti funzionali obbligatori, di vincolo, di \glossterm{qualità} e di prestazione, precedentemente concordati con la Proponente mediante stipulazione del contratto, devono essere soddisfatti per intero;
+	\item \textbf{Test di accettazione:} si verifica il soddisfacimento della Proponente rispetto al prodotto software. Il loro superamento permette di procedere con il rilascio del prodotto.
+\end{itemize}
+Per le procedure necessarie all’esecuzione di test di unità e di integrazione si rimanda al documento \textit{Norme di Progetto vX.X.X} nella sezione relativa al processo di verifica.
+% verificare effettivamente poi norme di progetto
+\subsection{Codice dei test}
+Ogni test è associato ad un codice univoco definito nel seguente formato:
+\begin{center}
+	\textbf{T[Tipologia]-[Numero]}
+\end{center}
+Dove \textbf{Tipologia} indica la tipologia del test: 
+\begin{itemize}
+	\item \textbf{U:} di unità;
+	\item \textbf{I:} di integrazione;
+	\item \textbf{S:} di sistema;
+	\item \textbf{A:} di accettazione.
+\end{itemize}
+Ogni test ha uno \textbf{Stato}, che puo essere:
+\begin{itemize}
+	\item \textbf{V:} verificato. Il test ha esito positivo;
+	\item \textbf{E:} non verificato. Il test ha esito negativo; 
+	\item \textbf{NI:} non implementato.
+\end{itemize}
+\subsection{Test di unità}
+\subsection{Test di integrazione}
+\subsection{Test di sistema}
+\subsection{Test di accettazione}
 \end{document}
