@@ -1,9 +1,79 @@
 \subsection{Gestione di Processo}
-\subsection{Infrastruttura}
-Fanno parte dell'infrastruttura organizzativa tutti gli strumenti che permettono al gruppo di attuare in modo efficace ed efficiente i processi organizzativi. In particolare tali strumenti permettono la \textbf{comunicazione}, il \textbf{coordinamento} e la \textbf{pianificazione}.
+\subsubsection{Coordinamento}
+\textbf{Comunicazioni interne}\\\\
+Le comunicazioni interne avvengono principalmente tra membri del gruppo di pari livello. Si rimanda alla sezione \hyperref[sec:infrastruttura]{\ref{sec:infrastruttura} Infrastruttura} per approfondire gli strumenti utilizzati.
+\begin{itemize}
+  \item{\textbf{Discord}}
+  \begin{itemize}
+    \item \textbf{Informazioni}: comunicazioni semi-formali per la condivisione di risorse.
+    \item \textbf{Canali Testuali}: comunicazioni semi-formali per la condivisione di appunti sugli incontri.
+    \item \textbf{Canali Vocali}: comunicazioni semi-formali per le riunioni interne; informali per argomenti non inerenti al progetto.
+  \end{itemize}
+  \item{\textbf{Telegram}}
+  \begin{itemize}
+    \item{\textbf{Chat di gruppo:} comunicazioni semi-formali, brevi, inerenti al progetto}
+    \item{\textbf{Chat individuali:} comunicazioni informali, inerenti al progetto}
+  \end{itemize}
+  \item{\textbf{Google Calendar}}
+  \begin{itemize}
+    \item{Comunicazioni informali, brevi, inerenti all'evento di calendario relativo.}
+  \end{itemize}
+\end{itemize}
+\textbf{Comunicazioni interne}
+\\\\
+Le comunicazioni esterne con il committente e proponente vengono considerate ovviamente di importanza maggiore, dunque trattate col rispetto dovuto.\\
+Il registro utilizzato è esclusivamente formale, cercando di adottare vocaboli consoni e concisi.
+\begin{itemize}
+  \item{\textbf{Discord}}
+  \item{\textbf{Google Meet}}
+  \item{\textbf{Google Mail}, indirizzo e-mail condiviso \texttt{nan1fyteam.unipd@gmail.com}}
+\end{itemize}
+\subsubsection{Pianificazione}
+\textbf{Ruoli del Progetto}
+\\\\
+I ruoli sono stati distribuiti equamente tra tutti i componenti del gruppo e saranno:
+\begin{itemize}
+	\item \textbf{Responsabile del progetto:} Guida il team nel rispetto delle scadenze, nell'allocazione delle risorse e nella pianificazione generale, assicurando che il progetto proceda in modo efficiente e soddisfi gli obiettivi.
+	\begin{itemize}
+    \item{Pianifica lo sprint definendo le task relative, definendo il preventivo ore e costì}
+    \item{Calcola il consuntivo delle ore e costi alla fine dello sprint}
+    \item{Tiene traccia dello stato generale di progresso dell'intero progetto}
+    \item{Fa da intermediario tra il gruppo e l'azienda proponente}
+  \end{itemize}
+	\item \textbf{Amministratore:} Gestisce l'infrastruttura e le risorse necessarie per il progetto, inclusi gli strumenti e le tecnologie che definiscono il modo di lavorare del team.
+	\begin{itemize}
+    \item{Gestisce l'infrastruttura del progetto e i suoi strumenti}
+    \item{Automatizza i processi e ne individua punti di miglioramento}
+    \item{Si occupa dell'effettiva redazione dei documenti che definiscono il \glossterm{way of working} del gruppo}
+	\end{itemize}
+  \item \textbf{Programmatore:} Responsabile della scrittura del codice seguendo le specifiche del progetto e traducendo i requisiti in un'applicazione funzionante
+	\begin{itemize}
+    \item{Si occupa della stesura del codice in conformità ai requisiti e alla sua manutenibilità}
+    \item{Scrive i test per il codice prodotto}
+    \item{Si occupa della documentazione relativa alla comprensione del codice, sia da parte dell'utente che da parte del programmatore}
+  \end{itemize}
+  \item \textbf{Progettista:} Definisce l'architettura del software, pianifica la sua struttura e l'organizzazione nel dettaglio.
+	\begin{itemize}
+    \item{Sviluppa l'architettura in conformità ai requisiti e alla sua manutenibilità, al minimo livello di dipendenze possibili}
+    \item{Approfondisce le conoscenze e strumenti tecnici utili allo sviluppo}
+  \end{itemize}
+  \item \textbf{Verificatore:} Garantisce la qualità del software eseguendo test e controlli per assicurare il corretto funzionamento e il rispetto degli standard di qualità.
+	\begin{itemize}
+    \item{Verifica il livello atteso e il rispetto della qualità in ambito tecnico}
+    \item{Verifica il livello atteso e il rispetto della qualità in ambito funzionale}
+    \item{Verifica il livello atteso e il rispetto della qualità in ambito organizzativo}
+  \end{itemize}
+  \item \textbf{Analista:} Si concentra sull'analisi dei requisiti, aiuta a definire le funzionalità del software e si assicura di comprendere i bisogni del cliente.
+  \begin{itemize}
+    \item{Valuta il dominio applicativo delle richieste del proponente}
+    \item{Scompone le richieste ed esigenze del proponente in sotto attività così da poter essere risolte individualmente e/o parallelamente}
+  \end{itemize}
+\end{itemize}
 
-\subsection{Strumenti}
-\subsubsection{GitHub}
+\subsection{Infrastruttura}\label{sec:infrastruttura}
+Fanno parte dell'infrastruttura organizzativa tutti gli strumenti che permettono al gruppo di attuare in modo efficace ed efficiente i processi organizzativi. In particolare tali strumenti permettono la \textbf{comunicazione}, il \textbf{coordinamento} e la \textbf{pianificazione}.
+\subsubsection{Strumenti}
+\textbf{GitHub}\\\\
 È il principale servizio di hosting della repository di gruppo e di controllo della versione distribuita. 
 \\\\
 Generalmente il workflow adottato dal gruppo è il GitHub Flow, che sinteticamente segue il seguente schema:
@@ -37,8 +107,8 @@ Per quanto riguarda le \textbf{task}, ognuna è costituita da:
   \item \textbf{milestone}: a quale milestone fanno riferimento.
 \end{itemize}
 Si vuole far notare che, nonostante tutto, le task non vengono mai cancellate ma soltanto archiviate. \\Per navigare più facilmente nella bacheca è possibile impostare dei filtri, ad esempio per membro o milestone.
-
-\subsubsection{Discord}
+\\\\
+\textbf{Discord}\\\\
 Principale strumento di \textbf{comunicazione interna sincrona} e \textbf{asincrona}. Vengono utilizzati 3 categorie di canali:
 \begin{itemize}
   \item \textbf{Informazioni}: prevalentemente utilizzato per la condivisione di risorse.
@@ -47,32 +117,32 @@ Principale strumento di \textbf{comunicazione interna sincrona} e \textbf{asincr
 \end{itemize}
 \medskip
 Viene utilizzato questo strumento anche per la \textbf{comunicazione asincrona} con l'azienda proponente nel loro canale personale.
-
-\subsubsection{Telegram}
+\\\\
+\textbf{Telegram}\\\\
 Principale strumento di \textbf{comunicazione interna testuale asincrona}. Viene utilizzato in due modalità:
 \begin{itemize}
   \item \textbf{Gruppo}: chat condivisa utilizzata, con parsimonia, per comunicazioni rivolte a tutti i membri;
   \item \textbf{Individuale}: ogni membro del gruppo può essere contattato singolarmente.
 \end{itemize}
-
-\subsubsection{Google Calendar}
+\medskip
+\textbf{Google Calendar}\\\\
 Calendario condiviso del gruppo utilizzato per tenere traccia di:
 \begin{itemize}
   \item \textbf{Meeting Esterni}: con proponente o committente;
   \item qualsiasi altra attività o evento che può essere collocato in un tempo specifico.
 \end{itemize}
-
-\subsubsection{Google Drive}
+\medskip
+\textbf{Google Drive}\\\\
 Strumento utilizzato come:
 \begin{itemize}
   \item \textbf{directory condivisa} dai membri del gruppo per documenti temporanei o non ufficiali;
   \item accesso alla \textbf{suite Google}: Docs, Sheets, Slides.
 \end{itemize}
-
-\subsubsection{Google Meet}
+\medskip
+\textbf{Google Meet}\\\\
 Strumento di videochiamata utilizzato principalmente per la comunicazione esterna con committente e proponente.
-
-\subsubsection{Google Mail}
+\\\\
+\textbf{Google Mail}\\\\
 Utilizzo dell'indirizzo e-mail condiviso \texttt{nan1fyteam.unipd@gmail.com} per le \textbf{comunicazione esterna} come gruppo con i proponenti e il committente.
 
 \subsection{Miglioramento}
