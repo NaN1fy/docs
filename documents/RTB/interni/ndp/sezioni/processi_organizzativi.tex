@@ -88,7 +88,48 @@ I ruoli sono stati distribuiti equamente tra tutti i componenti del gruppo e sar
     \item{Scompone le richieste ed esigenze del proponente in sotto attività così da poter essere risolte individualmente e/o parallelamente}
   \end{itemize}
 \end{itemize}
-
+\textbf{Gestione delle task}
+\\\\
+Durante la fase di Sprint Planning vengono definite tutte le attività, le quali saranno poi associate alle relative task.\\
+Ognuna di esse viene assegnata ad almeno un membro, il quale si occuperà del suo ciclo di vita. Vengono assegnate in modo da poter essere svolte il più parallelamente e asincronamente possibile.\\
+Per le task di processi primari (sviluppo) e di supporto (documentazione) viene utilizzato GitHub.
+Il ciclo di vita di una task è come segue:
+\begin{itemize}
+  \item{Creazione: la task definita viene aperta come issue su GitHub.}
+  \item{Assegnazione: la task viene assegnata ad uno o più membri del gruppo.}
+  \item{Completamento: la task viene completata, prevalentemente su un branch distinto dal principale.}
+  \item{Pull request: viene fatta una pull request del branch di sviluppo dell'attività completata, collegando la richiesta alla relativa issue.}
+  \item{Verifica: almeno due verificatori effettuano il controllo qualità.}
+  \item{Accettazione: quando la fase di verifica è conclusa senza intoppi, viene approvata la pull request, si chiude la issue relativa e viene cancellato il branch relativo all'attività.}
+\end{itemize}
+Per ulteriori dettagli si rimanda alla sezione \hyperref[sec:infrastruttura]{\ref{sec:infrastruttura}}.\\
+La dimensione e importanza dell'attività dipendono dal processo (primario, di supporto o organizzativo) di cui fa parte. All'apertura della sua task relativa viene valutato il tempo ragionevole di svolgimento e 
+La tracciabilità dei cambiamenti, eventuali commenti e il generale stato dell'attività sono presenti nella piattaforma, nelle pagine della issue collegata.
+\\\\
+\textbf{Metodo di Lavoro}
+\\\\
+Per lo svolgimento dell'attività il gruppo ha scelto di adottare la modalità Agile SCRUM.\\
+Ciò permette la suddivisione del tempo di lavoro in intervalli di tempo (Sprint), in modo da definire attività da svolgere, quel che è stato fatto e si è fatto, e avere scadenze tangibili durante lo svolgimento del progetto.
+Ogni sprint, della durata media di almeno due settimane, prevede le seguente fasi:
+\begin{itemize}
+  \item{\textbf{Sprint Planning:} Pianificazione dello sprint, in concomitanza con il suo inizio. Gli incontri di SAL vegnono utilizzati come punto di riferimento di conclusione dello Sprint e inizio del successivo.}
+  \begin{itemize}
+    \item{Discussione sui nuovi obiettivi post incontro di SAL da completare.}
+    \item{Discussione di quel che rimane da fare dal precedente Sprint e con quale priorità.}
+    \item{Definizione di obiettivi concreti e di issue relative, definendole su GitHub.}
+    \item{Preventivo ore da parte di ogni membro, in base alle attività da svolgere e i ruoli da assegnare; preventivo dei costi in base alle ore dichiarate.}
+  \end{itemize}
+  \item{\textbf{Sprint Review:} Revisione dello Sprint nel suo ultimo giorno.}
+  \begin{itemize}
+    \item{Consuntivo ore secondo la produttività individuale, sia in difetto che in eccesso; consuntivo costi in base alle ore dichiarate.}
+    \item{Discussione sugli obiettivi raggiunti e non di ogni membro. Gli obiettivi non raggiunti verranno presentati allo Sprint successivo.}
+  \end{itemize}
+  \item{\textbf{Sprint Retrospective:} Retrospettiva effettivamente conclusiva dello Sprint, valutandone l'andamento generale. Viene valutato ciò che è andato positivamente e cosa negativamente, così da poter avere delle linee guida sul come proseguire al meglio.}
+  \begin{itemize}
+    \item{Good: ciò che effettivamente è andato bene durante lo svolgimento dello Sprint.}
+    \item{To Imrove: ciò che invece va migliorato per i Sprint successivi.}
+  \end{itemize}
+\end{itemize} 
 \subsection{Infrastruttura}\label{sec:infrastruttura}
 Fanno parte dell'infrastruttura organizzativa tutti gli strumenti che permettono al gruppo di attuare in modo efficace ed efficiente i processi organizzativi. In particolare tali strumenti permettono la \textbf{comunicazione}, il \textbf{coordinamento} e la \textbf{pianificazione}.
 \subsubsection{Strumenti}
