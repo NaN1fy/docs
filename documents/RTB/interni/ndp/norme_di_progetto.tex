@@ -59,8 +59,10 @@
 
 % -- PER IL GLOSSARIO -- %
 \newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
 \setcounter{secnumdepth}{4}
-\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
 
 \begin{document}
 \definecolor{myblue}{RGB}{23,103,162}
