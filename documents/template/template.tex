@@ -19,6 +19,7 @@
 \usepackage{siunitx}
 \usepackage{amssymb} 
 \usepackage{tabularx}
+\usepackage{threeparttable}
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
@@ -190,6 +191,8 @@
 \section{Attività da svolgere}
 \begin{table}[ht!]
 	\centering
+	% Utilizzare \href{link_alla_issue}{\underline{titolo_della_issue}} per indicare il Titolo della issue
+	% Aggiungere *\tnote{*} per indicare che la issue fa parte della repository SyncCity
 	\begin{tabular}{lcl}
 		\toprule
 		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Verificatori} \\
@@ -199,6 +202,10 @@
 		Lorem ipsum dolor sit amet & - & Mario Rossi \\
 		\bottomrule
 	\end{tabular}
+	\begin{tablenotes}
+		\vspace{1em}
+		\item * indica che la issue fa parte della repository \texttt{SyncCity}
+	\end{tablenotes}
 	\caption{Attività da svolgere}
 	\label{table:Attivita da svolgere}
 \end{table}
