@@ -60,7 +60,7 @@
 \definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
 	\begin{tikzpicture}[remember picture, overlay]
-		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+      \node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}};
 		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
 	\end{tikzpicture}
 	
@@ -105,8 +105,10 @@
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
-		\midrule
-		0.0.0 & 2024-05-07 & Stesura documento.  & Pietro Busato & Redattore \\
+		\midrule	 
+    1.0.0 & 2024-05-08 & \textbf{Approvazione per RTB}  &  & \\\\
+    0.0.1 & 2024-05-08 & Verifica completa, correzioni minori.  & Guglielmo Barison, Veronica Tecchiati & Verificatore \\\\
+    0.0.0 & 2024-05-07 & Stesura documento.  & Pietro Busato & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -163,15 +165,31 @@
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Revisione dello stato di avanzamento degli obbiettivi del secondo sprint;
+	\item Revisione dello stato di avanzamento degli obbiettivi del secondo Sprint;
 	\item Discussione sui problemi riscontrati nella configurazione di Grafana.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-L'incontro con i membri della Proponente ha avuto come oggetto principale la disamina dei risultati ottenuti nel corso del secondo sprint, con particolare attenzione sull'implementazione e l'integrazione di Grafana con il prodotto finora ottenuto. Si é inoltre discusso di alcuni miglioramenti possibili nel contesto di stesura del codice ed esposizione dello stesso. Si é infine ampiamente discusso di un problema riscontrato dal team nella procedura di configurazione di Grafana, che non ha comunque impedito il raggiungimento degli obiettivi prefissati per la fine dello sprint.
+L'incontro con i membri della Proponente ha avuto come oggetto principale la disamina dei risultati
+ottenuti nel corso del secondo Sprint, con particolare attenzione sull'implementazione e
+l'integrazione di Grafana con il prodotto finora ottenuto. Si è inoltre discusso di alcuni
+miglioramenti possibili nel contesto di stesura del codice ed esposizione dello stesso. Si è infine
+ampiamente discusso di un problema riscontrato dal team nella procedura di configurazione di
+Grafana, che non ha comunque impedito il raggiungimento degli obiettivi prefissati per la fine dello
+Sprint.
 \subsubsection{Avanzamenti nel codice}
-Per quanto riguarda il codice, gli obiettivi concordati erano l'implementazione di \textbf{Clickhouse nel docker}, di uno \textbf{stream dati da Kafka a Clickhouse} e una prima \textbf{implementazione di Grafana con visualizzazione dei dati di Clickhouse}. Il team ha realizzato nel Docker precedentemente costruito il corretto inserimento di Clickhouse e ha verificato l'effettiva trasmissione dati da Kafka a Clickhouse; sono state riscontrate dalla Proponente alcune minori inconvenienze, velocemente risolvibili, quali l'erroneo fuso orario nei dati generati e un'implementazione superflua, o comunque non del tutto corretta, di una dipendenza di Clickhouse dallo stato di Kafka. Il team é infine riuscito nell'implementazione di un prototipo di Grafana, pur riscontrando alcuni problemi durante la configurazione di quest'ultimo. La Proponente ha consigliato, per evitare confusione durante le esposizioni, di eseguire delle pull request per poter mostrare i risultati ottenuti senza cambiare costantemente da un branch all'altro della repository. La Proponente ha infine dichiarato che il prodotto mostrato rispondeva alle loro aspettative per questo Sprint.
-\subsubsection{Obiettivi dello sprint}
-La Proponente ha richieso, per questo sprint, di provvedere alla realizzazione di una dashboard di Grafana piú avanzata, con visualizzazioni di dati complessi o elaborati, e di query che coinvolgano piú tabelle; di definirne monitoraggio e analisi, e di provvedere alla creazione di nuovi dati, possibilmente di tipo diverso, da visualizzare sempre su Grafana. La fine del terzo sprint, e di conseguenza la data del prossimo SAL, é stata fissata per venerdí 17 maggio. 
+Per quanto riguarda il codice, gli obiettivi concordati erano l'implementazione di
+\textbf{Clickhouse nel docker}, di uno \textbf{stream dati da Kafka a Clickhouse} e una prima
+\textbf{implementazione di Grafana con visualizzazione dei dati di Clickhouse}. Il team ha
+realizzato nel Docker precedentemente costruito il corretto inserimento di Clickhouse e ha
+verificato l'effettiva trasmissione dati da Kafka a Clickhouse; sono state riscontrate dalla
+Proponente alcune minori inconvenienze, velocemente risolvibili, quali l'erroneo fuso orario nei
+dati generati e un'implementazione superflua, o comunque non del tutto corretta, di una dipendenza
+di Clickhouse dallo stato di Kafka. Il team è infine riuscito nell'implementazione di un prototipo di Grafana, pur riscontrando alcuni problemi durante la configurazione di quest'ultimo. La Proponente ha consigliato, per evitare confusione durante le esposizioni, di eseguire delle pull request per poter mostrare i risultati ottenuti senza cambiare costantemente da un branch all'altro della repository. La Proponente ha infine dichiarato che il prodotto mostrato rispondeva alle loro aspettative per questo Sprint.
+\subsubsection{Obiettivi dello Sprint}
+La Proponente ha richieso, per questo Sprint, di provvedere alla realizzazione di una dashboard di
+Grafana più avanzata, con visualizzazioni di dati complessi o elaborati, e di query che coinvolgano
+più tabelle; di definirne monitoraggio e analisi, e di provvedere alla creazione di nuovi dati,
+possibilmente di tipo diverso, da visualizzare sempre su Grafana. La fine del terzo Sprint, e di conseguenza la data del prossimo SAL, é stata fissata per venerdí 17 maggio. 
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
@@ -180,7 +198,9 @@ La Proponente ha richieso, per questo sprint, di provvedere alla realizzazione d
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 \end{itemize}
 \section{Attività da svolgere}
-É di primaria importanza stabilire subito la divisione dei compiti assegnati per il prossimo sprint, oltre che delle stesure dei vari documenti per l'RTB. Per questo motivo, è indetta una riunione interna per definire i dettagli organizzativi del terzo sprint. L'incontro è fissato per il giorno stesso, a cavallo tra la fine del SAL e l'inizio dell'attivitá del Diario di Bordo del \textit{Prof.} Vardanega.
+\`E di primaria importanza stabilire subito la divisione dei compiti assegnati per il prossimo
+Sprint, oltre che delle stesure dei vari documenti per l'RTB. Per questo motivo, è indetta una
+riunione interna per definire i dettagli organizzativi del terzo Sprint. L'incontro è fissato per il giorno stesso, a cavallo tra la fine del SAL e l'inizio dell'attivitá del Diario di Bordo del Prof. Vardanega.
 % commentare per togliere la firma
 \signatureline{Padova, 2024-04-29}
 \end{document}
