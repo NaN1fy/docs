@@ -1,4 +1,4 @@
-% changelog: "0.0.1, 2024-05-08, Oscar Konieczny, Piccole modifiche"
+% changelog: "0.0.1, 2024-05-08"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -61,9 +61,12 @@
 \begin{document}
 \definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
-	\begin{tikzpicture}[remember picture, overlay]
-		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
-		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+
+  \begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
 	\end{tikzpicture}
 	
 	\begin{minipage}[t]{0.47\textwidth}
@@ -108,12 +111,12 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		0.0.1 & 2024-05-08 & Piccole modifiche & Oscar Konieczny & Verificatore \\
-		0.0.0 & 2024-05-07 & Stesura del verbale & Veronica Tecchiati & Redattore \\
+		0.0.1 & 2024-05-08 & Piccole modifiche. & Oscar Konieczny & Verificatore \\\\
+		0.0.0 & 2024-05-07 & Stesura del verbale. & Veronica Tecchiati & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
-	\caption{Registro delle modifiche}
+	\caption{Registro delle modifiche.}
 	\label{table:Registro delle modifiche}
 \end{table}
 \newpage
@@ -127,7 +130,7 @@
 	\setlength\itemsep{0em}
 	\item\textbf{Luogo:} Chiamata Discord;
 	\item\textbf{Ora di inizio:} 16:00;
-	\item\textbf{Ora di fine:}  17:00.
+	\item\textbf{Ora di fine:} 17:00.
 \end{itemize}
 \begin{table}[ht!]
 	\begin{minipage}[t]{0.5\linewidth}
@@ -144,25 +147,25 @@
 			Veronica Tecchiati & 1 h \\
 			\bottomrule
 		\end{tabular}
-		\caption{Partecipanti NaN1fy}
+		\caption{Partecipanti NaN1fy.}
 		\label{table:Partecipanti NaN1fy}
 	\end{minipage}
 \end{table}
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Discussione post \texttt{\glossterm{SAL}} avvenuto in data 2024-05-03 con l'azienda \texttt{SyncLab}.
-	\item Pianificazione del terzo \texttt{\glossterm{Sprint}}, suddivisione dei ruoli e calcolo preventivo ore.
+	\item Discussione post SAL avvenuto in data 2024-05-03 con l'azienda \texttt{SyncLab}.
+	\item Pianificazione del terzo Sprint, suddivisione dei ruoli e calcolo preventivo ore.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-Alla luce delle riflessioni esposte durante l'ultimo "Diario di Bordo", la riunione si è svolta successivamente al SAL tenutosi poco prima nel pomeriggio. Si è scelto infatti di dedicare uno dei due incontri previsti durante uno Sprint alla pianificazione delle attività, anziché alla revisione dell'operato. Come evidenziato dal committente durante l'ultimo "Diario di Bordo", il SAL ed il "Diario di Bordo" stesso costituiscono due eventi di retrospettiva, pertanto non è necessario svolgere una terza riunione con la medesima finalità. Al contrario, è indispensabile organizzare tempestivamente le attività dello Sprint in modo da utilizzare tutto il tempo a disposizione per proseguire il lavoro. \\
+Alla luce delle riflessioni esposte durante l'ultimo ``Diario di Bordo", la riunione si è svolta successivamente al SAL tenutosi poco prima nel pomeriggio. Si è scelto infatti di dedicare uno dei due incontri previsti durante uno Sprint alla pianificazione delle attività, anziché alla revisione dell'operato. Come evidenziato dal committente durante l'ultimo ``Diario di Bordo", il SAL ed il ``Diario di Bordo" stesso costituiscono due eventi di retrospettiva, pertanto non è necessario svolgere una terza riunione con la medesima finalità. Al contrario, è indispensabile organizzare tempestivamente le attività dello Sprint in modo da utilizzare tutto il tempo a disposizione per proseguire il lavoro. \\
 L'incontro è quindi iniziato con un'attenta analisi delle richieste della proponente, in modo da delineare i compiti da assegnare a ciascun membro. È stato scelto il nuovo Responsabile ed è stato calcolato il preventivo di periodo, destinando i restanti ruoli e suddividendo le attività in vista del prossimo SAL fissato in data 2024-05-17.
 
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
 	\item Elezione del nuovo responsabile: Guglielmo Barison;
-        \item Adozione del \texttt{\glossterm{Planning Meeting}} il venerdì, subito dopo aver concluso il SAL con la proponente. Durante le settimane in cui invece non sono previsti SAL gli incontri rimangono fissati per il giorno giovedì;
+        \item Adozione del Planning Meeting il venerdì, subito dopo aver concluso il SAL con la proponente. Durante le settimane in cui invece non sono previsti SAL gli incontri rimangono fissati per il giorno giovedì;
 	\item Suddivisione dei restanti ruoli e calcolo preventivo ore per lo Sprint con fine il 2024-05-17;
 	\item Suddivisione dei compiti tra documenti e integrazione tecnologie tra i membri.
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
@@ -183,14 +186,14 @@ L'incontro è quindi iniziato con un'attenta analisi delle richieste della propo
 		\href{https://github.com/NaN1fy/docs/issues/20}{\underline{Continuazione ``Norme di progetto"}} & 20 & Linda Barbiero, Pietro Busato, Oscar Konieczny\\\\
         \href{https://github.com/NaN1fy/SyncCity/issues/8}{\underline{Correzioni suggerite dalla proponente}} & 8*\tnote{*} & Linda Barbiero, Guglielmo Barison, Davide Donanzan, Oscar Konieczny, \\\\
         \href{https://github.com/NaN1fy/SyncCity/issues/9}{\underline{Aggiunta nuove tipologie di sensori}} & 9*\tnote{*} & Davide Donanzan, Veronica Tecchiati, Guglielmo Barison\\\\
-		\href{https://github.com/NaN1fy/SyncCity/issues/10}{\underline{Migliorie dashboard \texttt{\glossterm{Grafana}}}} & 10*\tnote{*} & Davide Donanzan, Linda Barbiero\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/10}{\underline{Migliorie dashboard}} & 10*\tnote{*} & Davide Donanzan, Linda Barbiero\\\\
 		\bottomrule
 	\end{tabular}
 	\begin{tablenotes}
 		\vspace{1em}
 		\item * indica che la issue fa parte della repository \texttt{SyncCity}
 	\end{tablenotes}
-	\caption{Attività da svolgere}
+	\caption{Attività da svolgere.}
 	\label{table:Attivita da svolgere}
 \end{table}
 \end{document}
