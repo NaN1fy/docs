@@ -1,4 +1,5 @@
-% changelog: "0.0.0, 2024-05-07, Veronica Tecchiati, Stesura del verbale"
+% changelog: "0.0.1, 2024-05-08, Oscar Konieczny, Piccole modifiche"
+
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -19,6 +20,7 @@
 \usepackage{siunitx}
 \usepackage{amssymb} 
 \usepackage{tabularx}
+\usepackage{threeparttable}
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
@@ -33,11 +35,11 @@
 \captionsetup{font=footnotesize}
 \usepackage{fancyhdr} 
 \usepackage{graphicx}
-\usepackage{capt-of}% 
+\usepackage{capt-of}
 \usepackage{booktabs}
 \usepackage{varwidth}
 
-\usepackage{verbatim} % RICORDATI DI RIMUOVERLO PRIMA DI PUSHARE
+% \usepackage{verbatim} % RICORDATI DI RIMUOVERLO PRIMA DI PUSHARE
 
 % -- TITOLO -- %
 \newcommand{\customtitle}{VERBALE INTERNO DEL 2024-05-03} % o ESTERNO
@@ -76,14 +78,13 @@
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Veronica Tecchiati}\\}} % massimo due 
-			
-			
+			{\large{\textsc{}}}	
 		}
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
 			{\large{\textsc{XXXX XXXX}}}
 			
 		}
@@ -107,6 +108,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+		0.0.1 & 2024-05-08 & Piccole modifiche & Oscar Konieczny & Verificatore \\
 		0.0.0 & 2024-05-07 & Stesura del verbale & Veronica Tecchiati & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
@@ -153,7 +155,7 @@
 	\item Pianificazione del terzo \texttt{\glossterm{Sprint}}, suddivisione dei ruoli e calcolo preventivo ore.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-Alla luce delle riflessioni esposte durante l'ultimo "Diario di Bordo", la riunione si è svolta successivamente al \texttt{\glossterm{SAL}} tenutosi poco prima nel pomeriggio. Si è scelto infatti di dedicare uno dei due incontri previsti durante uno \texttt{\glossterm{Sprint}} alla pianificazione delle attività, anziché alla revisione dell'operato. Come evidenziato dal committente durante l'ultimo "Diario di Bordo", il SAL ed il "Diario di Bordo" stesso costituiscono due eventi di retrospettiva, pertanto non è necessario svolgere una terza riunione con la medesima finalità. Al contrario, è indispensabile organizzare tempestivamente le attività dello Sprint in modo da utilizzare tutto il tempo a disposizione per proseguire il lavoro. \\
+Alla luce delle riflessioni esposte durante l'ultimo "Diario di Bordo", la riunione si è svolta successivamente al SAL tenutosi poco prima nel pomeriggio. Si è scelto infatti di dedicare uno dei due incontri previsti durante uno Sprint alla pianificazione delle attività, anziché alla revisione dell'operato. Come evidenziato dal committente durante l'ultimo "Diario di Bordo", il SAL ed il "Diario di Bordo" stesso costituiscono due eventi di retrospettiva, pertanto non è necessario svolgere una terza riunione con la medesima finalità. Al contrario, è indispensabile organizzare tempestivamente le attività dello Sprint in modo da utilizzare tutto il tempo a disposizione per proseguire il lavoro. \\
 L'incontro è quindi iniziato con un'attenta analisi delle richieste della proponente, in modo da delineare i compiti da assegnare a ciascun membro. È stato scelto il nuovo Responsabile ed è stato calcolato il preventivo di periodo, destinando i restanti ruoli e suddividendo le attività in vista del prossimo SAL fissato in data 2024-05-17.
 
 \subsection{Decisioni prese}
@@ -174,16 +176,20 @@ L'incontro è quindi iniziato con un'attenta analisi delle richieste della propo
 		\toprule
 		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
 		\midrule
-		Continuazione "Glossario" & 14 & Guglielmo Barison, Oscar Konieczny\\\\
-		Continuazione "Analisi dei requisiti" & 15 & Davide Donanzan, Veronica Tecchiati\\\\
-		Continuazione "Piano di progetto"  & 16 & Guglielmo Barison\\\\
-		Continuazione "Piano di qualifica" & 17 & Davide Donanzan, Guglielmo Barison\\\\
-		Continuazione "Norme di progetto" & 20 & Linda Barbiero, Pietro Busato, Oscar Konieczny\\\\
-            Correzioni suggerite dalla proponente & 8 [SyncCity] & Linda Barbiero, Guglielmo Barison, Davide Donanzan, Oscar Konieczny, \\\\
-            Aggiunta nuove tipologie di sensori & 9 [SyncCity] & Davide Donanzan, Veronica Tecchiati, Guglielmo Barison\\\\
-		Migliorie dashboard \texttt{\glossterm{Grafana}} & 10 [SyncCity] & Davide Donanzan, Linda Barbiero\\\\
+		\href{https://github.com/NaN1fy/docs/issues/14}{\underline{Continuazione ``Glossario"}} & 14 & Guglielmo Barison, Oscar Konieczny\\\\
+		\href{https://github.com/NaN1fy/docs/issues/15}{\underline{Continuazione ``Analisi dei requisiti"}} & 15 & Davide Donanzan, Veronica Tecchiati\\\\
+		\href{https://github.com/NaN1fy/docs/issues/16}{\underline{Continuazione ``Piano di progetto"}}  & 16 & Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/docs/issues/17}{\underline{Continuazione ``Piano di qualifica"}} & 17 & Davide Donanzan, Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/docs/issues/20}{\underline{Continuazione ``Norme di progetto"}} & 20 & Linda Barbiero, Pietro Busato, Oscar Konieczny\\\\
+        \href{https://github.com/NaN1fy/SyncCity/issues/8}{\underline{Correzioni suggerite dalla proponente}} & 8*\tnote{*} & Linda Barbiero, Guglielmo Barison, Davide Donanzan, Oscar Konieczny, \\\\
+        \href{https://github.com/NaN1fy/SyncCity/issues/9}{\underline{Aggiunta nuove tipologie di sensori}} & 9*\tnote{*} & Davide Donanzan, Veronica Tecchiati, Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/10}{\underline{Migliorie dashboard \texttt{\glossterm{Grafana}}}} & 10*\tnote{*} & Davide Donanzan, Linda Barbiero\\\\
 		\bottomrule
 	\end{tabular}
+	\begin{tablenotes}
+		\vspace{1em}
+		\item * indica che la issue fa parte della repository \texttt{SyncCity}
+	\end{tablenotes}
 	\caption{Attività da svolgere}
 	\label{table:Attivita da svolgere}
 \end{table}
