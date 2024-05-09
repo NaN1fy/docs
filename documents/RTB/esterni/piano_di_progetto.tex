@@ -1,4 +1,5 @@
-% changelog: "0.7.0, 2024-05-03, Stesura consuntivo secondo periodo e correzioni minori, Veronica Tecchiati
+% changelog: "0.8.0, 2024-05-03, Refactor struttura documento e stesura sezione 5, Guglielmo Barison"
+
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -36,11 +37,12 @@
 \usepackage{capt-of}% 
 \usepackage{booktabs}
 \usepackage{varwidth}
+\usepackage{xcolor}
 
-\definecolor{nan1fyblue}{HTML}{1767a2}
+\definecolor{nan1fyblue}{RGB}{23,103,162}
 
 % -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{Piano di Progetto} % o ESTERNO
+\newcommand{\customtitle}{PIANO DI PROGETTO} % o ESTERNO
 
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
@@ -62,11 +64,14 @@
 % -- PER IL GLOSSARIO -- %
 \newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
 
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
 \begin{document}
-\definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
-	\begin{tikzpicture}[remember picture, overlay]
-		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
+\begin{tikzpicture}[remember picture, overlay]
+      \node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}};
 		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../template/images/logos/NaN1fy_logo.png}};
 	\end{tikzpicture}
 	
@@ -82,8 +87,8 @@
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Linda Barbiero}\\}} 
-			{\large{\textsc{Veronica Tecchiati}}}
-			
+			{\large{\textsc{Veronica Tecchiati\\}}}
+			{\large{\textsc{Guglielmo Barison}}}
 			
 		}
 		\vspace{8mm}
@@ -103,8 +108,8 @@
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{8 cm}
-	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+	\vspace{9.5cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{\color{black}nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
 \section*{Registro delle Modifiche}
@@ -115,17 +120,19 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-        0.7.0 & 2024-05-03 & Stesura consuntivo secondo periodo e correzioni minori & Veronica Tecchiati & Redattore \\\\
-        0.6.0 & 2024-04-30 & Stesura preventivo secondo periodo & Veronica Tecchiati & Redattore \\\\
+        0.8.0 & 2024-05-08 & Refactor struttura documento e stesura sezione \ref{sec:3_rtb}. & Guglielmo
+        Barison & Redattore \\\\
+        0.7.0 & 2024-05-03 & Stesura consuntivo secondo periodo e correzioni minori. & Veronica Tecchiati & Redattore \\\\
+        0.6.0 & 2024-04-30 & Stesura sezione \ref{sec:2_rtb}. & Veronica Tecchiati & Redattore \\\\
         0.5.0 & 2024-04-28 & Conclusione stesura sezione \ref{sec:rischi} & Veronica Tecchiati & Redattore \\\\
-		0.4.2 & 2024-04-24 & Fix immagine diagramma Gantt primo sprint & Linda Barbiero & Redattore \\\\
-		0.4.1 & 2024-04-18 & Fix preventivo e consuntivo del primo periodo & Linda Barbiero & Redattore \\\\
-		0.4.0 & 2024-04-18 & Stesura preventivo e consuntivo del primo periodo & Linda Barbiero & Redattore \\\\
-		0.3.0 & 2024-04-17 & Inizio stesura sezione \ref{sec:rischi} & Veronica Tecchiati & Redattore \\\\
-		0.2.0 & 2024-04-16 & Stesura sezione \ref{sec:intro} & Veronica Tecchiati & Redattore \\\\
-		0.1.0 & 2024-04-12 & Stesura sezione "Modello di Sviluppo" e inizio sezione "Organigramma". & Linda Barbiero & Redattore \\\\
-		0.0.0 & 2024-04-12 & Stesura del file e sezione "Pianificazione". & Linda Barbiero &
-		Redattore \\\\ % spazio tra le righe
+		0.4.2 & 2024-04-24 & Fix immagine diagramma Gantt primo sprint. & Linda Barbiero & Redattore \\\\
+		0.4.1 & 2024-04-18 & Fix preventivo e consuntivo del primo periodo. & Linda Barbiero & Redattore \\\\
+		0.4.0 & 2024-04-18 & Stesura sezione \ref{sec:1_rtb}. & Linda Barbiero & Redattore \\\\
+		0.3.0 & 2024-04-17 & Inizio stesura sezione \ref{sec:rischi}. & Veronica Tecchiati & Redattore \\\\
+		0.2.0 & 2024-04-16 & Stesura sezione \ref{sec:intro}. & Veronica Tecchiati & Redattore \\\\
+		0.1.0 & 2024-04-12 & Stesura sezione ``Modello di Sviluppo" e inizio sezione ``Organigramma". & Linda Barbiero & Redattore \\\\
+		0.0.0 & 2024-04-12 & Stesura del file e sezione ``Pianificazione". & Linda Barbiero &
+		Redattore \\
 		% X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
@@ -137,6 +144,11 @@
 {\hypersetup{hidelinks} \tableofcontents}
 \clearpage
 \newpage
+\newpage
+{\hypersetup{hidelinks} \listoffigures}
+\newpage
+{\hypersetup{hidelinks} \listoftables}
+\newpage
 \justifying
 \section{Introduzione} \label{sec:intro}
 \input{sezioni/introduzione}
@@ -144,14 +156,25 @@
 \input{sezioni/analisi_rischi}
 \section{Modello di Sviluppo}
 \input{sezioni/modello_sviluppo}
-\section{Pianificazione}
-\input{sezioni/pianificazione}
-\section{Preventivo}
-\input{sezioni/preventivo}
-\section{Consuntivo}
-\input{sezioni/consuntivo}
+\newpage
+\section{Scadenze}
+I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di avanzamento del progetto:
+\begin{itemize}
+\setlength\itemsep{0em}
+\item \textbf{RTB (Requirements and Technology Baseline):} 2024-06-07;
+\item \textbf{PB (Product Baseline):} 2024-07-26;
+\item \textbf {CA (Customer Acceptance):} 2024-08-09.
+\end{itemize}
+\section{RTB}
+\input{sezioni/rtb}
+\newpage
+\section{PB}
+\newpage
+\section{CA}
+\newpage
 \section{Organigramma}
 \input{sezioni/organigramma}
+\newpage
 \section{Mitigazione dei Rischi}
 \input{sezioni/mitigazione_rischi}
 

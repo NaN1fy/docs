@@ -1,35 +1,58 @@
 \subsection{Scopo del documento}
-Questo documento ha lo scopo di delineare la pianificazione e la gestione delle attività volte alla realizzazione del progetto. In particolare, saranno approfonditi temi fondamentali quali l'analisi dei rischi e la loro mitigazione, il modello di sviluppo adottato, il preventivo dei costi ed il consuntivo.
-
+Questo documento ha lo scopo di delineare la pianificazione e la gestione delle attività volte alla realizzazione del progetto. In particolare, saranno approfonditi temi fondamentali quali l'analisi dei rischi e la loro mitigazione, il modello di sviluppo adottato, il preventivo dei costi ed il consuntivo. Questo documento ha lo scopo di stabilire con chiarezza le modalità con la quale verranno eseguite
+le attività dai membri del gruppo NaN1fy. In particolare verranno trattati i seguenti temi:
+\begin{itemize}
+    \item Analisi dei rischi;
+    \item Organizzazione temporale delle attivit\`{a};
+    \item Ripartizione dei compiti tra i componenti del gruppo;
+    \item Stima dei costi e delle risorse delle varie iterazioni.
+\end{itemize}
 \subsection{Scopo del prodotto}
-L'obiettivo del prodotto è consentire il monitoraggio di una \textit{smart city}, grazie ad una piattaforma per la visualizzazione in tempo reale di informazioni provenienti da sensori distribuiti sul territorio urbano. \\
-A tal fine la proponente richiede di realizzare un applicativo composto da quattro componenti integrate tra loro, ciascuna con una precisa funzione: generazione dei dati simulando l'attività di campionamento dei sensori, gestione del flusso di dati, immagazzinamento e visualizzazione delle informazioni tramite \textit{dashboard}.
-
+Il fine è creare una data pipeline che, partendo dalla generazione di dati da alcuni sensori simulati, possa gestire, archiviare, analizzare e visualizzare il flusso dati in tempo reale. I sensori simuleranno il campionamento di diverse caratteristiche della città in esame, come temperatura, vento, traffico e altri elementi analoghi.
 \subsection{Glossario}
 Per garantire chiarezza nel linguaggio utilizzato nei documenti, è stato redatto un Glossario contenente le definizioni dei termini con significato specifico da disambiguare. Tali termini sono contrassegnati con una G ad apice. L'inserimento di un termine nel Glossario è considerato completo solo dopo averne fornito la definizione.
 
+
+\subsection{Preventivo iniziale}
+Come riportato nel preventivo presentato in fase di candidatura, viene stimato il costo totale del
+progetto per un ammontare di 11 .430,00\;\texteuro. Il gruppo prevede di consegnare il
+prodotto finito entro la data \textbf{2024-09-06}.
+
 \subsection{Riferimenti}
-\subsubsection{Riferimenti normativi}
+\subsubsection{Normativi}
 \begin{itemize}
-\setlength\itemsep{0em}
-    \item Norme di progetto v1.0.0;
-    \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{Regolamento del progetto didattico};
-    \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{Documento} e \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{presentazione} capitolato d'appalto C6 - SyncCity.
+	\item \textit{Norme di progetto v.X.X.X};
+	\item Presentazione e documentazione del capitolato d’appalto C6 - SyncCity:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf} (Ultimo accesso: \today)
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf} (Ultimo accesso: \today)
+	\end{itemize}
 \end{itemize}
 
 \subsubsection{Riferimenti informativi}
 \begin{itemize}
 \setlength\itemsep{0em}
-    \item Glossario v1.0.0;
-    \item Dispense dell'insegnamento di Ingegneria del Software: 
-    \begin{itemize}
-    \setlength\itemsep{0em}
-        \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T2.pdf}{Processi di ciclo di vita};
-        \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T3.pdf}{Il ciclo di vita del software};
-        \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T4.pdf}{Gestione di progetto};
-        \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}{Analisi dei requisiti}.
-    \end{itemize}
+    \item \textit{Glossario vX.X.X};
+	\item Dispense T2 - Processi di ciclo di vita:
+	\begin{itemize}
+		\item
+        \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T2.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T2.pdf} (Ultimo accesso: \today)
+	\end{itemize}
+	\item Dispense T3 - Il ciclo di vita del software:
+	\begin{itemize}
+		\item
+        \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T3.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T3.pdf} (Ultimo accesso: \today)
+	\end{itemize}
+	\item Dispense T4 - Gestione di progetto:
+	\begin{itemize}
+		\item
+        \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T4.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T4.pdf} (Ultimo accesso: \today)
+	\end{itemize}
+\item Dispense T5 - Analisi dei requisiti:
+	\begin{itemize}
+		\item
+        \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T5.pdf} (Ultimo accesso: \today)
+	\end{itemize}
+
     \end{itemize}
 
-\subsection{Preventivo iniziale}
-Come riportato nel preventivo presentato in fase di candidatura, viene stimato il costo totale del progetto per un ammontare di 11.430€. Il gruppo prevede di consegnare il prodotto finito entro la data 2024-09-06.

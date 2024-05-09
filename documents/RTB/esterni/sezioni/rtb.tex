@@ -1,0 +1,406 @@
+\textbf{Inizio:} 2024-04-01\\
+\textbf{Fine prevista:} 2024-04-07
+\subsection{Primo periodo} \label{sec:1_rtb}
+\textbf{Inizio:} 2024-04-01\\
+\textbf{Fine prevista:} 2024-04-19\\
+\textbf{Giorni di ritardo:} (0)
+\subsubsection{Pianificazione}
+Nella fase iniziale, assume prioritaria importanza la discussione di tutte le regole precedentemente adottate e implementate nel corso del progetto, ma che non sono ancora state formalizzate mediante documentazione. Questo processo mira a produrre un documento scritto accessibile a tutti i membri del team, al fine di dissipare eventuali ambiguità riguardo l'esecuzione delle attività e l'utilizzo delle risorse.
+\\
+Inoltre, durante questa fase, è cruciale identificare tutti i potenziali rischi che potrebbero ostacolare il progresso del progetto, al fine di prevenirli e non essere colti impreparati. Un'altra priorità consiste nell'avviare la pianificazione delle prime attività e delle relative milestone, al fine di organizzare le risorse disponibili e fornire una stima preventiva dei tempi e dei costi.
+\subsubsection{Rischi attesi}
+I rischi che ci aspettiamo di correre in questo periodo sono i seguenti: 
+\begin{itemize}
+\item \textbf{RT-1:} Inesperienza;
+\item \textbf{RP-1:} Stima errata delle tempistiche di progetto;
+\item \textbf{RP-2:} Stima errata dei costi di progetto;
+\item \textbf{RC-1:} Scarsa comunicazione interna;
+\item \textbf{RC-3:} Conflitti interni.
+\end{itemize}
+Questo perchè, essendo all’inizio del progetto, siamo ancora incerti su molti aspetti di
+quest’ultimo, ci stiamo attualmente organizzando e dobbiamo apprendere ancora molto, dunque la
+probabilità di incorrere in qualche problema tra quelli riportati è abbastanza elevata.
+\newpage
+\subsubsection{Preventivo}
+\subsubsubsection{Preventivo orario}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & -     & 3     & -     & 2     & -     & 1     & 6 \\
+        Guglielmo Barison       & 3     & -     & 1     & 1     & 2,5   & 1     & 8,5\\
+        Pietro Busato           & 3     & -     & 1     & 1     & 2,5   & 1     & 8,5 \\
+        Davide Donanzan         & 3     & -     & -     & 3     & -     & 1,5   & 7,5 \\
+        Oscar Konieczny         & 3     & -     & -     & 1     & -     & 1     & 5 \\
+        Veronica Tecchiati      & 3     & -     & -     & 4     & -     & 1     & 8 \\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 15     & 3     & 2     & 12   & 5     & 6,5   & 43,5 \\
+	\end{tabular}
+	\caption{Distribuzione delle ore del primo Sprint secondo ruolo e membro.}
+	\label{table:Distribuzione delle ore del primo Sprint secondo ruolo e membro}
+\end{table}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=15cm]{./asset/istogramma_periodo_1.png}
+    \caption{Visualizzazione dell’impegno temporale di ciascun membro nei rispettivi ruoli assegnati
+    nel primo Sprint.}
+    \label{figure:Visualizzazione dell’impegno temporale di ciascun membro nei rispettivi ruoli
+    assegnati nel primo Sprint}
+\end{figure}
+\subsubsubsection{Preventivo economico}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 15 & 450 \\
+        Responsabile & 3 & 60 \\
+        Progettista & 2 & 50 \\
+        Analista & 12 & 300 \\
+        Programmatore & 5 & 75 \\
+        Verificatore & 6,5 & 97,5 \\
+        \bottomrule
+        \textbf{Totale} & 43,5 & 1032,5
+    \end{tabular}
+    \caption{Preventivo dei costi del primo Sprint secondo ruolo.}
+	\label{table:Preventivo dei costi del primo Sprint secondo ruolo}
+\end{table}
+\subsubsection{Consuntivo}
+\subsubsubsection{Consuntivo orario}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{3cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{5}{c}{\textbf{Ruoli}} & \multicolumn{2}{r}{\textbf{Totale
+        (pers.)}}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & -     & 3     & -     & 2     & 0     & 0.5 \textcolor{teal}{(-0,5)}   & 5,5 \\
+        Guglielmo Barison       & 3     & -     & 1     & 1     & 2,5   & 1     & 8,5\\
+        Pietro Busato           & 3     & -     & 1     & 1     & 2,5   & 1     & 8,5 \\
+        Davide Donanzan         & 3     & -     & -     & 3     & -     & 2 \textcolor{teal}{(-0,5)}     & 8 \\
+        Oscar Konieczny         & 3,5 \textcolor{teal}{(-0,5)}  & -     & -     & 1     & -     & 1     & 5,5 \\
+        Veronica Tecchiati      & 3,5 \textcolor{teal}{(-0,5)}  & -     & -     & 5 \textcolor{teal}{(-1)}    & -     & 1     & 9,5 \\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 16    & 3     & 2     & 13   & 5     & 6,5   & 45,5 \\
+	\end{tabular}
+	\caption{Distribuzione delle ore del primo Sprint secondo ruolo e membro.}
+	\label{table:Distribuzione delle ore consuntive del primo Sprint secondo ruolo e membro}
+\end{table}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & 7     & 5     & 20     & 11   & 24     & 22,5   & 89,5 \\
+        Guglielmo Barison       & 4     & 9     & 19     & 11   & 21,5   & 22     & 86,5\\
+        Pietro Busato           & 6     & 8     & 19     & 11   & 20,5   & 22     & 86,5 \\
+        Davide Donanzan         & 6     & 8     & 20     & 9    & 23     & 21     & 87 \\
+        Oscar Konieczny         & 4,5   & 7     & 20     & 11   & 24     & 23     & 89,5 \\
+        Veronica Tecchiati      & 4,5   & 8     & 20     & 6    & 25     & 22     & 85,5 \\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 32    & 45    & 118    & 59   & 138     & 132,5 & 524,5 \\
+	\end{tabular}
+	\caption{Ore rimaste dopo il primo Sprint secondo ruolo e membro.}
+	\label{table:Ore rimaste dopo il primo Sprint secondo ruolo e membro}
+\end{table}
+\subsubsubsection{Consuntivo economico}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{2cm} p{2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 16 \textcolor{red}{(+1)} & 480 \textcolor{red}{(+30)} \\
+        Responsabile & 3 & 60 \\
+        Progettista & 2 & 50 \\
+        Analista & 13 \textcolor{teal}{(-1)} & 325 \textcolor{teal}{(-25)} \\
+        Programmatore & 5 & 75 \\
+        Verificatore & 6,5 & 97,5 \\
+        \bottomrule
+        \textbf{Totale} & 45,5 & 1087,5
+    \end{tabular}
+    \caption{Preventivo a finire dei costi del primo Sprint secondo ruolo.}
+	\label{table:Preventivo a finire dei costi del primo Sprint secondo ruolo}
+\end{table}
+\subsubsubsection{Rischi occorsi, impatto e loro mitigazione}
+\subsubsection{Retrospettiva}
+Dal consuntivo è risultata una leggera discrepanza con il preventivo del periodo. Sono servite più ore da Amministratore e da Analista del preventivato.
+Ciò ha comportato una spesa maggiore di 55\;\texteuro, per un complessivo di 1.\,087,5\;\texteuro\
+rispetto ai 1\,.032,5\;\texteuro\ previsti.
+In conclusione, il budget rimanente è di 10\,.342,5\;\texteuro. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=15cm]{./asset/gantt1.jpeg}
+    \caption{Diagramma di Gantt rappresentativo del primo periodo.}
+    \label{figure:Diagramma di Gantt rappresentativo del primo periodo}
+\end{figure}
+\clearpage
+\newpage
+\subsection{Secondo periodo} \label{sec:2_rtb}
+\textbf{Inizio:} 2024-04-22\\
+\textbf{Fine prevista:} 2024-04-03\\
+\textbf{Giorni di ritardo:} (0)
+\subsubsection{Pianificazione}
+In questa fase del processo, assume un'importanza fondamentale condurre un'analisi dettagliata del capitolato al fine di identificare accuratamente i casi d'uso necessari. Inoltre, al fine di evitare ambiguità e decisioni errate, si raccomanda di organizzare uno o più incontri con il proponente per condividere le idee e risolvere i dubbi emersi durante l'analisi, che sarà notevolmente più approfondita rispetto a quella svolta durante la selezione del capitolato. Da questo processo di analisi, si darà inizio alla stesura dell'\textit{Analisi dei Requisiti}, un documento di vitale importanza per il progetto poiché conterrà tutti i casi d'uso individuati, nonché i requisiti obbligatori, desiderabili e opzionali.
+È altresì consigliabile redigere il \textit{Piano di Qualifica} in questa fase, il quale sarà fondamentale per definire i metodi volti a garantire la qualità dei processi e dei prodotti nel corso dello sviluppo.
+\subsubsection{Rischi attesi}
+I rischi che ci aspettiamo di correre in questo periodo sono i seguenti: 
+\begin{itemize}
+\item \textbf{RT-1:} Inesperienza;
+\item \textbf{RT-2:} Produzione di codice incomprensibile;
+\item \textbf{RP-1:} Stima errata delle tempistiche di progetto;
+\item \textbf{RP-2:} Stima errata dei costi di progetto;
+\item \textbf{RC-1:} Scarsa comunicazione interna;
+\item \textbf{RC-3:} Conflitti interni.
+\end{itemize}
+I rischi identificati per il periodo attuale non differiscono significativamente da quelli presentati nella pianificazione del periodo precedente. Ciò è attribuibile al fatto che l’esperienza del gruppo è ancora limitata, come evidenziato nei verbali, e persistono lievi difficoltà nelle attività, come la suddivisione dei compiti. La novità consiste nell’aggiunta di \textbf{RT-2: Produzione di codice incomprensibile}, ritenuto necessario poichè durante questo periodo inizieremo con lo sviluppo del codice per il Proof of Concept (PoC).
+\clearpage
+\subsubsection{Preventivo}
+\subsubsubsection{Preventivo orario}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
+        \toprule
+        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & 3     & -     & 2     & -     & 4     & 3     & 12 \\
+        Guglielmo Barison       & 1     & -     & 2,5     & -     & 2   & 1     & 6,5\\
+        Pietro Busato           & 1     & -     & 2,5     & -     & 2   & 1     & 6,5 \\
+        Davide Donanzan         & 1     & -     & 2     & 2     & 3     & 1   & 9 \\
+        Oscar Konieczny         & -     & -     & 2     & -     & 6     & 1     & 9 \\
+        Veronica Tecchiati      & 2     & 3     & -     & 2     & 0     & 1     & 8 \\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 8     & 3     & 11     & 4   & 17     & 8   & 51 \\
+	\end{tabular}
+	\caption{Distribuzione delle ore del secondo Sprint secondo ruolo e membro.}
+	\label{table:Distribuzione delle ore del secondo Sprint secondo ruolo e membro}
+\end{table}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=15cm]{./asset/istogramma_periodo_2.png}
+    \caption{Visualizzazione dell’impegno temporale di ciascun membro nei rispettivi ruoli assegnati
+    nel secondo Sprint.}
+    \label{figure:Visualizzazione dell’impegno temporale di ciascun membro nei rispettivi ruoli
+    assegnati nel secondo Sprint}
+\end{figure}
+\subsubsubsection{Preventivo economico}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 8 & 240 \\
+        Responsabile & 3 & 60 \\
+        Progettista & 11 & 275 \\
+        Analista & 4 & 100 \\
+        Programmatore & 17 & 255 \\
+        Verificatore & 8 & 120 \\
+        \bottomrule
+        \textbf{Totale} & 51 & 1050
+    \end{tabular}
+    \caption{Preventivo dei costi del secondo Sprint secondo ruolo.}
+	\label{table:Preventivo dei costi del secondo Sprint secondo ruolo}
+\end{table}
+\subsubsection{Consuntivo}
+\subsubsubsection{Consuntivo orario}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{3cm} p{1.4cm} p{1.6cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{5}{c}{\textbf{Ruoli}} & \multicolumn{2}{r}{\textbf{Totale (pers.)}}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & 4 \textcolor{red}{(+1)} & - & 1 \textcolor{teal}{(-1)}  & - & 2
+        \textcolor{teal}{(-2)} & 3 & 10 \\
+        Guglielmo Barison       & 1 & - & 2,5 & -     & 3 \textcolor{red}{(+1)}  & 1     & 7,5\\
+        Pietro Busato           & 1     & -     & 2,5     & -     & 3 \textcolor{red}{(+1)}  & 1     & 7,5 \\
+        Davide Donanzan         & - \textcolor{teal}{(-1)}    & -     & 2     & 2     & 2
+        \textcolor{teal}{(-1)}     & 1     & 7 \\
+        Oscar Konieczny         & -   & -     & 2     & -     & 6     & 1     & 9 \\
+        Veronica Tecchiati      & 2   & 3,5 \textcolor{red}{(+0,5)}     & -     & 2     & -     & 1     & 8,5 \\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 7    & 3,5     & 10     & 4   & 16     & 8   & 48,5 \\
+	\end{tabular}
+	\caption{Distribuzione delle ore del secondo Sprint secondo ruolo e membro.}
+	\label{table:Distribuzione delle ore consuntive del secondo Sprint secondo ruolo e membro}
+\end{table}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & 3     & 5     & 19     & 11   & 22     & 19,5   & 79,5 \\
+        Guglielmo Barison       & 4     & 9     & 16,5     & 11   & 18,5   & 21     & 80\\
+        Pietro Busato           & 5     & 8     & 16,5     & 11   & 17,5   & 21     & 79\\
+        Davide Donanzan         & 6     & 8     & 18     & 7    & 21     & 20     & 80\\
+        Oscar Konieczny         & 4,5   & 7     & 18     & 11   & 18     & 22     & 80,5\\
+        Veronica Tecchiati      & 2,5   & 4,5     & 20     & 4    & 25     & 21     & 77\\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 25    & 41,5    & 108    & 55   & 122     & 124,5 & 476 \\
+	\end{tabular}
+	\caption{Ore rimaste dopo il secondo Sprint secondo ruolo e membro.}
+	\label{table:Ore rimaste dopo il secondo Sprint secondo ruolo e membro}
+\end{table}
+\subsubsubsection{Consuntivo economico}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{2cm} p{2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 7 \textcolor{red}{(+1)} & 210 \textcolor{red}{(+30)}\\
+        Responsabile & 3,5 \textcolor{teal}{(-0,5)} & 70 \textcolor{teal}{(-10)} \\
+        Progettista & 10 \textcolor{red}{(+1)} & 250 \textcolor{red}{(+25)} \\
+        Analista & 4 & 100 \\
+        Programmatore & 16 \textcolor{red}{(+1)} & 240 \textcolor{red}{(+15)} \\
+        Verificatore & 8 & 120 \\
+        \bottomrule
+        \textbf{Totale} & 48,5 & 990
+    \end{tabular}
+    \caption{Preventivo a finire dei costi del secondo Sprint secondo ruolo.}
+	\label{table:Preventivo a finire dei costi del secondo Sprint secondo ruolo}
+\end{table}
+\subsubsubsection{Rischi occorsi, impatto e loro mitigazione}
+\subsubsection{Retrospettiva}
+Al termine del secondo periodo è emerso un lieve divario tra i costi previsti e quelli effettivi.
+Infatti, il consuntivo riporta una spesa totale di 990\;\texteuro\ anzichè i 1\,.050\;\texteuro\ calcolati
+nel preventivo. La differenza di 60\;\texteuro\ è dovuta allo svolgimento di un minor quantitativo di
+ore da Amministratore, Progettista e Programmatore rispetto alle stime, nonostante il leggero
+surplus per il ruolo da Responsabile. Il budget rimanente ammonta dunque a 9\,.352,5\;\texteuro. 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=13cm]{./asset/gantt2.png}
+    \caption{Diagramma di Gantt rappresentativo del secondo periodo.}
+    \label{figure:Diagramma di Gantt rappresentativo del secondo periodo}
+\end{figure}
+\newpage
+\clearpage
+\subsection{Terzo periodo} \label{sec:3_rtb}
+\textbf{Inizio:} 2024-05-29\\
+\textbf{Fine prevista:} 2024-05-17\\
+\textbf{Giorni di ritardo:} (0)
+\subsubsection{Pianificazione}
+Con il consolidamento dell'\textit{Analisi dei Requisiti}, diventa fondamentale approfondire gli
+strumenti necessari per l'implementazione finale del prodotto. Il \textit{Proof of Concept} (PoC) ha
+raggiunto un buon grado di avanzamento, anche grazie all'inclusione della componente di
+visualizzazione nello \textit{Sprint Backlog}, originariamente pianificata per questo periodo.
+Prevediamo di completarlo entro il periodo attuale, consentendo così ai programmatori di terminare
+il lavoro e successivamente a tutti i membri di dedicarsi al completamento della documentazione, in
+vista della prima revisione del progetto. Questo permetterà di realizzare una versione semplificata
+del prodotto finale, volta a fornire indicazioni sulla validità della direzione intrapresa e a
+dimostrare al committente la correttezza dell'approccio di sviluppo.\\
+Considerando il progresso fatto nelle \textit{Norme di Progetto} durante il primo e il secondo
+periodo, ora l'attenzione sarà principalmente rivolta a quest'ultime, la cui struttura di base è
+stata precedentemente definita. L'obiettivo sarà quello di consolidare ulteriormente il documento,
+riflettendo sui dettagli emersi e aggiungendo nuove informazioni.\\
+Le attivit\`{a} previste durante questo periodo sono quindi le seguenti:
+\begin{itemize}
+    \item Arricchimento del documento \textit{Norme di progetto} precedentemente avviato;
+    \item Integrazione della terminologia mancante nel documento \textit{Glossario};
+    \item Consolidamento del documento \textit{Analisi dei Requisiti};
+    \item Ampliamento del \textit{Piano di Qualifica};
+    \item Consolidamento del PoC (Proof of Concept).
+\end{itemize}
+\subsubsection{Rischi attesi}
+I rischi che ci aspettiamo di correre in questo periodo sono i seguenti: 
+\begin{itemize}
+\item \textbf{RT-1:} Inesperienza;
+\item \textbf{RP-1:} Stima errata delle tempistiche di progetto;
+\item \textbf{RP-2:} Stima errata dei costi di progetto;
+\item \textbf{RP-5: }Impegni personali ed accademici;
+\item \textbf{RC-1:} Scarsa comunicazione interna;
+\item \textbf{RC-3:} Conflitti interni.
+\end{itemize}
+Il consistente carico di lavoro di questo periodo richiederà inevitabilmente più tempo ad ogni membro del gruppo. I rischi identificati sono organizzativi e comuncativi: questi potrebbero causare rallentamenti generali e ritardi.
+\clearpage
+\subsubsection{Preventivo}
+\subsubsubsection{Preventivo orario}
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
+        \toprule
+        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero       & -   & -   & 2   & -   & 5   & 4   & 11 \\
+        Guglielmo Barison    & 2   & 4   & -   & -   & -   & 2,5 & 8,5 \\
+        Pietro Busato        & 4   & -   & -   & 4   & -   & 2   & 10 \\
+        Davide Donanzan      & -   & -   & 2   & -   & 5   & 4   & 11 \\
+        Oscar Konieczny      & 4   & -   & -   & 4   & -   & 3   & 11 \\
+        Veronica Tecchiati   & -   & -   & 2   & -   & 5   & 5   & 12 \\
+        \bottomrule
+        \textbf{Totali (ruolo)} & 10 & 4 & 6 & 8 & 15 & 20,5 & 63,5 \\
+    \end{tabular}
+    \caption{Distribuzione delle ore del terzo Sprint secondo ruolo e membro.}
+    \label{table:Distribuzione delle ore del terzo Sprint secondo ruolo e membro}
+\end{table}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=15cm]{./asset/istogramma_periodo_3.png}
+    \caption{Visualizzazione dell’impegno temporale di ciascun membro nei rispettivi ruoli assegnati
+    nel terzo Sprint.}
+    \label{figure:Visualizzazione dell’impegno temporale di ciascun membro nei rispettivi ruoli
+    assegnati nel terzo Sprint}
+\end{figure}
+\subsubsubsection{Preventivo economico}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 10 & 300 \\
+        Responsabile & 4 & 80 \\
+        Progettista & 6 & 150 \\
+        Analista & 8 & 200 \\
+        Programmatore & 15 & 225 \\
+        Verificatore & 20 & 307,5 \\
+        \bottomrule
+        \textbf{Totale} & 63,5 & 1262,5
+    \end{tabular}
+    \caption{Preventivo dei costi del terzo Sprint secondo ruolo.}
+	\label{table:Preventivo dei costi del terzo Sprint secondo ruolo}
+\end{table}
+\subsubsection{Consuntivo}
+\subsubsubsection{Consuntivo orario}
+\subsubsubsection{Consuntivo economico}
+\subsubsubsection{Rischi occorsi, impatto e loro mitigazione}
+\\Nel corso di questo periodo il gruppo ha scelto di svolgere numerose attivit\`{a} in un tempo limitato.
+In seguito ad un controllo generale della documentazione, sono emerse diverse imprecisioni in
+particolari sezioni, sottolineando come alcune attivit\`{a} non fossero state svolte in maniera
+ottimale. Gli analisti si sono occupati di sistemare queste parti. I rischi preventivati hanno avuto un impatto medio sul gruppo, causando principalmente stress, tuttavia, alla fine, sono stati mitigati nel miglior modo possibile.
+\subsubsection{Retrospettiva}
+Il terzo periodo si è rivelato, come da aspettative, il pi\`{u} intenso dei tre. Tutto sommato, il
+carico di lavoro poteva essere distribuito diversamente, magari su pi\`{u} periodi di lavoro.
+All'interno del team, è stata notevolmente valutata l'impegno di alcuni membri nel dedicare
+ulteriori ore per prevenire un rallentamento eccessivo nell'avanzamento globale del progetto.
+Tuttavia, sarebbe auspicabile evitare tali circostanze in futuro, sebbene abbiano messo in luce la
+determinazione della maggioranza del gruppo a procedere con decisione.
+\newpage
+\clearpage
+\subsection{Quarto periodo} \label{sec:4_rtb}
+\textbf{Inizio:} 2024-05-20\\
+\textbf{Fine prevista:} 2024-06-07\\
+\textbf{Giorni di ritardo:} (0)
+\subsubsection{Pianificazione}
+%In questa fase conclusiva del processo, assume primaria importanza sia la progettazione che l'effettiva implementazione del \textit{PoC}. Parallelamente, diventa imprescindibile il perfezionamento e la verifica finale dei documenti in vista della revisione pianificata per l'inizio del mese di giugno.
+\subsubsection{Rischi attesi}
+\subsubsection{Preventivo}
+\subsubsubsection{Preventivo orario}
+\subsubsubsection{Preventivo economico}
+\subsubsection{Consuntivo}
+\subsubsubsection{Consuntivo orario}
+\subsubsubsection{Consuntivo economico}
+\subsubsubsection{Rischi occorsi, impatto e loro mitigazione}
+\subsubsection{Retrospettiva}
