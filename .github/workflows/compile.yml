@@ -66,7 +66,7 @@ jobs:
             [[ ! -f "$f" ]] && continue
             filename=$(basename -- "$f")
             # escludo i verbali firmati dalla compilazione
-            if [[ "$filename" != "VE_2024_03_12.tex" && "$filename" != "VE_2024_03_12_II.tex" && "$filename" != "VE_2024_04_04.tex" && "$filename" != "VE_2024_04_19.tex" ]]; then
+            if [[ "$filename" != "VE_2024_03_12.tex" && "$filename" != "VE_2024_03_12_II.tex" && "$filename" != "VE_2024_04_04.tex" && "$filename" != "VE_2024_04_19.tex" && "$filename" != "VE_2024_05_03.tex" ]]; then
               rm -f "${RUNNER_TEMP}/main/${f%.tex}"*
               sudo touch -amd "$( date -R -r "$f" )" "${f%.tex}.pdf"
               version=$(grep "^\s*% changelog:" "$f" | cut -d '"' -f2 | cut -d ',' -f1 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
