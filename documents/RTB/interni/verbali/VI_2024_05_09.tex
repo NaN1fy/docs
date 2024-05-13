@@ -1,4 +1,4 @@
-% changelog: "0.0.1, 2024-05-09, Guglielmo Barison, Prima stestura documento"
+% changelog: "0.0.1, 2024-05-13, Linda Barbiero, Verifica completa e aggiunta informazione sulla discussione stato refactor del repository"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -122,6 +122,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+		0.0.1 & 2024-05-13 & Verifica completa e aggiunta informazione sulla discussione stato refactor del repository & Linda Barbiero & Verificatore \\
 		0.0.0 & 2024-05-09 & Prima stesura documento. & Guglielmo Barison & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
@@ -192,6 +193,9 @@ di scadenza del progetto, prestando particolare attenzione alla stesura del docu
 Progetto}, che era stato trascurato nei periodi precedenti. La stesura dei casi d'uso nell'\textit{Analisi
 dei Requisiti} viene rimandata poiché la maggior parte di essi riguarda la componente di
 visualizzazione, che ad oggi non è ancora sufficientemente matura.
+\\
+Riguardante il tema dell refactor del repository di \textit{GitHub} per poter assegnare delle \textit{Epiche} alle attività,
+il gruppo ha concluso come le priorità attualmente siano altre, scegliendo di procrastinare questo genere di miglioria al prossimo \textit{Sprint}.
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
@@ -201,5 +205,26 @@ visualizzazione, che ad oggi non è ancora sufficientemente matura.
 \end{itemize}
 \newpage
 \section{Attività da svolgere}
-Non sono state stabilite ulteriori attività da svolgere.
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{7cm}cp{7cm}}
+		\toprule
+		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
+		\midrule
+		\href{https://github.com/NaN1fy/docs/issues/14}{\underline{Continuazione ``Glossario"}} & 14 & Guglielmo Barison, Oscar Konieczny\\\\
+		\href{https://github.com/NaN1fy/docs/issues/15}{\underline{Continuazione ``Analisi dei requisiti"}} & 15 & Davide Donanzan, Veronica Tecchiati\\\\
+		\href{https://github.com/NaN1fy/docs/issues/16}{\underline{Continuazione ``Piano di progetto"}}  & 16 & Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/docs/issues/17}{\underline{Continuazione ``Piano di qualifica"}} & 17 & Davide Donanzan, Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/docs/issues/20}{\underline{Continuazione ``Norme di progetto"}} & 20 & Linda Barbiero, Pietro Busato, Oscar Konieczny\\\\
+        \href{https://github.com/NaN1fy/SyncCity/issues/9}{\underline{Aggiunta nuove tipologie di sensori}} & 9*\tnote{*} & Davide Donanzan, Veronica Tecchiati, Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/10}{\underline{Migliorie dashboard}} & 10*\tnote{*} & Davide Donanzan, Linda Barbiero\\\\
+		\bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+		\vspace{1em}
+		\item * indica che la issue fa parte della repository \texttt{SyncCity}
+	\end{tablenotes}
+	\caption{Attività da svolgere.}
+	\label{table:Attivita da svolgere}
+\end{table}
 \end{document}
