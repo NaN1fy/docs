@@ -1,4 +1,4 @@
-% changelog: "0.1.0, 2024-04-09, Guglielmo Barison, Stesura Obiettivi di qualità"
+% changelog: "0.3.0, 2024-05-14, Davide Donanzan, Stesura Test di Unità e Integrazione"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -38,7 +38,11 @@
 \usepackage{booktabs}
 \usepackage{varwidth}
 \usepackage{datetime2}
+\usepackage{array}
 \newcommand{\customtitle}{PIANO DI QUALIFICA}% o ESTERNO
+
+% -- STILE COLONNA CENTRATA PER TABELLE -- %
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
@@ -119,6 +123,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+		0.3.0 & 2024-05-14 & Inizio stesura ``Test di Unità" e ``Test di Integrazione". & Davide Donanzan & Redattore \\\\
 		0.2.0 & 2024-04-28 & Inizio stesura ``Strategie di testing". & Guglielmo Barison & Redattore \\\\
 		0.1.0 & 2024-04-18 & Stesura ``Obiettivi di qualità". & Guglielmo Barison & Redattore \\\\
 		0.0.0 & 2024-04-09 & Struttura di base ed introduzione.  & Guglielmo Barison & Redattore \\
@@ -391,11 +396,80 @@ Dove \textbf{Tipologia} indica la tipologia del test:
 Ogni test ha uno \textbf{Stato}, che puo essere:
 \begin{itemize}
 	\item \textbf{V:} verificato. Il test ha esito positivo;
-	\item \textbf{E:} non verificato. Il test ha esito negativo; 
+	\item \textbf{NV:} non verificato. Il test ha esito negativo; 
 	\item \textbf{NI:} non implementato.
 \end{itemize}
+\clearpage
 \subsection{Test di unità}
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{2.5}
+    \begin{tabular}{|p{2cm}|>{\raggedright}M{10cm}|p{2cm}|}
+        \hline
+        \textbf{Codice Test} & \textbf{Descrizione} & \textbf{Stato Test} \\
+        \hline
+        
+        TU01 & Verificare che la classe \textit{SimlatorControllerFactory} crei correttamente un'istanza della classe \textit{SimulatorController} per ogni \textit{StreamWriter}.  & V \\
+        \hline
+    
+        TU02 & Verificare che la classe \textit{SimulatorController} funzioni correttamente. Nello specifico, si esaminano i metodi \textit{start\_all} e \textit{stop\_all}.  & V \\
+        \hline
+    
+        TU03 & Verificare che la classe \textit{SimulatorThread} adoperi correttamente. & V \\
+        \hline
+    
+        TU04 & Verificare che la classe \textit{TemperatureSensor} restituisca la stringa in formato \textit{JSON} attesa. & V \\
+        \hline
+    
+        TU05 & Verificare che la classe \textit{HumiditySensor} restituisca la stringa in formato \textit{JSON} attesa. & V \\
+        \hline
+
+		TU06 & Verificare che la classe \textit{ParkingSensor} restituisca la stringa in formato \textit{JSON} attesa. & NI \\
+        \hline		
+    
+        TU07 & Verificare che le istanze della classe \textit{KafkaProducer} adoperino nelle modalità attese nella produzione di dati, sia nel caso di \textit{success} che nel caso di \textit{failure}. & V \\
+        \hline
+    
+        TU08 & Verificare che la funzione \textit{write} della classe \textit{KafkaStreamWriter} funzioni correttamente. & V \\
+        \hline
+    
+        TU09 & Verificare che la funzione \textit{write} della classe \textit{StdoutStreamWriter} funzioni correttamente. & V \\
+        \hline
+
+		TU10 & Verificare che la funzione \textit{acked} funzioni correttamente sia nel caso di \textit{success} che nel caso di \textit{failure}. & V \\
+        \hline
+
+		TU11 & Verificare che la classe \textit{Coordinates} funzioni correttamente. & V \\
+        \hline
+
+		TU12 & Verificare che la funzione \textit{jsonfy} funzioni correttamente. & V \\
+        \hline
+    \end{tabular}
+    \caption{Tabella dei test di unità.}
+    \label{table:Tabella dei test di unità}
+\end{table}
+\clearpage
 \subsection{Test di integrazione}
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{2.5}
+    \begin{tabular}{|p{2cm}|>{\raggedright}M{10cm}|p{2cm}|}
+        \hline
+        \textbf{Codice Test} & \textbf{Descrizione} & \textbf{Stato Test} \\
+        \hline
+        
+        TI01 & Verificare la persistenza dei dati della classe \textit{TemperatureSensor} nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
+        \hline
+    
+        TI02 & Verificare la persistenza dei dati della classe \textit{HumiditySensor} nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
+        \hline
+
+		TI03 & Verificare la persistenza dei dati della classe \textit{ParkingeSensor} nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+		\hline
+    \end{tabular}
+    \caption{Tabella dei test di integrazione.}
+    \label{table:Tabella dei test di integrazione}
+\end{table}
 \subsection{Test di sistema}
 \subsection{Test di accettazione}
 \end{document}
