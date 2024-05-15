@@ -388,13 +388,13 @@ In questa sezione viene esposto il piano di testing che verrà utilizzato per ga
 Per le procedure necessarie all’esecuzione di test di unità e di integrazione si rimanda al documento \textit{Norme di Progetto vX.X.X} nella sezione relativa al processo di verifica.
 % verificare effettivamente poi norme di progetto
 \subsection{Codice dei test}
-Ogni test è associato ad un codice univoco definito nel seguente formato:
+Ogni test è associato ad un codice univoco definito nel seguente formato:
 \begin{center}
 	\textbf{T[Tipologia]-[Numero]}
 \end{center}
 Dove \textbf{Tipologia} indica la tipologia del test: 
 \begin{itemize}
-	\item \textbf{U:} di unità;
+    \item \textbf{U:} di unit\`{a};
 	\item \textbf{I:} di integrazione;
 	\item \textbf{S:} di sistema;
 	\item \textbf{A:} di accettazione.
@@ -420,40 +420,40 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     \label{table:Tabella dei test di unità}
     \endlastfoot 
     
-    TU01 & Verificare che la classe \textit{SimlatorControllerFactory} crei correttamente un'istanza della classe \textit{SimulatorController} per ogni \textit{StreamWriter}.  & V \\
+    TU-01 & Verificare che la classe \textit{SimlatorControllerFactory} crei correttamente un'istanza della classe \textit{SimulatorController} per ogni \textit{StreamWriter}.  & V \\
     \hline
 
-    TU02 & Verificare che la classe \textit{SimulatorController} funzioni correttamente. Nello specifico, si esaminano i metodi \textit{start\_all} e \textit{stop\_all}.  & V \\
+    TU-02 & Verificare che la classe \textit{SimulatorController} funzioni correttamente. Nello specifico, si esaminano i metodi \textit{start\_all} e \textit{stop\_all}.  & V \\
     \hline
 
-    TU03 & Verificare che la classe \textit{SimulatorThread} adoperi correttamente. & V \\
+    TU-03 & Verificare che la classe \textit{SimulatorThread} adoperi correttamente. & V \\
     \hline
 
-    TU04 & Verificare che la classe \textit{TemperatureSensor} restituisca la stringa in formato \textit{JSON} attesa. & V \\
+    TU-04 & Verificare che la classe \textit{TemperatureSensor} restituisca la stringa in formato \textit{JSON} attesa. & V \\
     \hline
 
-    TU05 & Verificare che la classe \textit{HumiditySensor} restituisca la stringa in formato \textit{JSON} attesa. & V \\
+    TU-05 & Verificare che la classe \textit{HumiditySensor} restituisca la stringa in formato \textit{JSON} attesa. & V \\
     \hline
 
-    TU06 & Verificare che la classe \textit{ParkingSensor} restituisca la stringa in formato \textit{JSON} attesa. & NI \\
+    TU-06 & Verificare che la classe \textit{ParkingSensor} restituisca la stringa in formato \textit{JSON} attesa. & NI \\
     \hline
 
-    TU07 & Verificare che le istanze della classe \textit{KafkaProducer} adoperino nelle modalità attese nella produzione di dati, sia nel caso di \textit{success} che nel caso di \textit{failure}. & V \\
+    TU-07 & Verificare che le istanze della classe \textit{KafkaProducer} adoperino nelle modalità attese nella produzione di dati, sia nel caso di \textit{success} che nel caso di \textit{failure}. & V \\
     \hline
 
-    TU08 & Verificare che la funzione \textit{write} della classe \textit{KafkaStreamWriter} funzioni correttamente. & V \\
+    TU-08 & Verificare che la funzione \textit{write} della classe \textit{KafkaStreamWriter} funzioni correttamente. & V \\
     \hline
 
-    TU09 & Verificare che la funzione \textit{write} della classe \textit{StdoutStreamWriter} funzioni correttamente. & V \\
+    TU-09 & Verificare che la funzione \textit{write} della classe \textit{StdoutStreamWriter} funzioni correttamente. & V \\
     \hline
 
-    TU10 & Verificare che la funzione \textit{acked} funzioni correttamente sia nel caso di \textit{success} che nel caso di \textit{failure}. & V \\
+    TU-10 & Verificare che la funzione \textit{acked} funzioni correttamente sia nel caso di \textit{success} che nel caso di \textit{failure}. & V \\
     \hline
 
-    TU11 & Verificare che la classe \textit{Coordinates} funzioni correttamente. & V \\
+    TU-11 & Verificare che la classe \textit{Coordinates} funzioni correttamente. & V \\
     \hline
 
-    TU12 & Verificare che la funzione \textit{jsonfy} funzioni correttamente. & V \\
+    TU-12 & Verificare che la funzione \textit{jsonfy} funzioni correttamente. & V \\
     \hline
 
 \end{longtable}
@@ -472,13 +472,13 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     \label{table:Tabella dei test di integrazione}
     \endlastfoot 
         
-        TI01 & Verificare la persistenza dei dati della classe \textit{TemperatureSensor} nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
+        TI-01 & Verificare la persistenza dei dati della classe \textit{TemperatureSensor} nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
         \hline
     
-        TI02 & Verificare la persistenza dei dati della classe \textit{HumiditySensor} nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
+        TI-02 & Verificare la persistenza dei dati della classe \textit{HumiditySensor} nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
         \hline
 
-		TI03 & Verificare la persistenza dei dati della classe \textit{ParkingeSensor} nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+		TI-03 & Verificare la persistenza dei dati della classe \textit{ParkingeSensor} nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
 		\hline
 
 \end{longtable}
