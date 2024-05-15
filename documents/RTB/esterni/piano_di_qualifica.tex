@@ -43,6 +43,7 @@
 \usepackage{array}
 \usepackage{ragged2e}
 \usepackage{colortbl}
+\usepackage{verbatim}
 
 \newcommand{\customtitle}{PIANO DI QUALIFICA}% o ESTERNO
 
@@ -72,9 +73,6 @@
 % -- per abilitare 4x sottosezioni es 2.1.1.1
 \setcounter{secnumdepth}{4}
 \newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\\\}
-
-
-
 
 \begin{document}
 \definecolor{myblue}{RGB}{23,103,162}
@@ -151,7 +149,7 @@
 \subsection{Scopo del documento}
 Questo documento offre una panoramica dettagliata delle strategie di verifica e validazione adottate per assicurare la \glossterm{qualità} del prodotto e dei processi nel contesto del progetto in questione. Sarà costantemente aggiornato per riflettere l'evoluzione del progetto e concentrerà l'attenzione sui risultati delle verifiche per risolvere tempestivamente eventuali criticità.
 \\\\
-Il Piano di Qualifica, dinamico e incrementale, illustra le pratiche per il controllo di qualità degli artefatti e dei processi, con particolare enfasi sulle metriche di valutazione del prodotto. È progettato per guidare l'adozione di processi mirati al miglioramento continuo, fornendo misure quantitative per valutare il progresso del progetto. Questo impegno costante per la qualità si riflette nel regolare aggiornamento del documento per adattarsi alle esigenze mutevoli del progetto, garantendo così la crescita e l'evoluzione sia del processo che del prodotto nel tempo.
+Il \textit{Piano di Qualifica}, dinamico e incrementale, illustra le pratiche per il controllo di qualità degli artefatti e dei processi, con particolare enfasi sulle metriche di valutazione del prodotto. È progettato per guidare l'adozione di processi mirati al miglioramento continuo, fornendo misure quantitative per valutare il progresso del progetto. Questo impegno costante per la qualità si riflette nel regolare aggiornamento del documento per adattarsi alle esigenze mutevoli del progetto, garantendo così la crescita e l'evoluzione sia del processo che del prodotto nel tempo.
 \subsection{Scopo del capitolato}
 Lo scopo del \glossterm{capitolato} C6 è proporre una soluzione per la creazione di una piattaforma di monitoraggio per una smart city. Tale piattaforma deve raccogliere e analizzare in tempo reale una vasta gamma di dati provenienti da sensori distribuiti nella città, riguardanti aspetti quali traffico, qualità dell'aria, consumi energetici e altro ancora. L'obiettivo è fornire alle autorità locali informazioni dettagliate per prendere decisioni informate sulla gestione delle risorse e l'implementazione dei servizi, coinvolgendo anche i cittadini attraverso la condivisione di dati e la partecipazione attiva. La soluzione proposta prevede l'utilizzo di tecnologie per il data streaming processing e la simulazione dei dati dei sensori, con l'obiettivo di fornire dashboard intuitive per la visualizzazione dei dati raccolti e l'analisi delle condizioni della città.\\
 L’applicativo sviluppato richiede una copertura dei \glossterm{test} di almeno l’80\%.
@@ -420,40 +418,43 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     \label{table:Tabella dei test di unità}
     \endlastfoot 
     
-    TU-01 & Verificare che la classe \textit{SimlatorControllerFactory} crei correttamente un'istanza della classe \textit{SimulatorController} per ogni \textit{StreamWriter}.  & V \\
+    TU-01 & Verificare che la classe \verb|SimlatorControllerFactory| crei correttamente un'istanza
+    della classe \verb|SimulatorController|.  & V \\
     \hline
 
-    TU-02 & Verificare che la classe \textit{SimulatorController} funzioni correttamente. Nello specifico, si esaminano i metodi \textit{start\_all} e \textit{stop\_all}.  & V \\
+    TU-02 & Verificare che la classe \textit{SimulatorController} funzioni correttamente. Nello
+    specifico, si esaminano i metodi \verb|start_all| e \verb|stop_all|.  & V \\
     \hline
 
-    TU-03 & Verificare che la classe \textit{SimulatorThread} adoperi correttamente. & V \\
+    TU-03 & Verificare che la classe \verb|SimulatorThread| adoperi correttamente. & V \\
     \hline
 
-    TU-04 & Verificare che la classe \textit{TemperatureSensor} restituisca la stringa in formato \textit{JSON} attesa. & V \\
+    TU-04 & Verificare che la classe \verb|TemperatureSensor| restituisca la stringa in formato JSON attesa. & V \\
     \hline
 
-    TU-05 & Verificare che la classe \textit{HumiditySensor} restituisca la stringa in formato \textit{JSON} attesa. & V \\
+    TU-05 & Verificare che la classe \verb|HumiditySensor| restituisca la stringa in formato JSON attesa. & V \\
     \hline
 
-    TU-06 & Verificare che la classe \textit{ParkingSensor} restituisca la stringa in formato \textit{JSON} attesa. & NI \\
+    TU-06 & Verificare che la classe \verb|ParkingSensor| restituisca la stringa in formato JSON attesa. & NI \\
     \hline
 
-    TU-07 & Verificare che le istanze della classe \textit{KafkaProducer} adoperino nelle modalità attese nella produzione di dati, sia nel caso di \textit{success} che nel caso di \textit{failure}. & V \\
+    TU-07 & Verificare che le istanze della classe \verb|KafkaProducer| adoperino nelle modalità attese nella produzione di dati, sia nel caso di success che nel caso di failure. & V \\
     \hline
 
-    TU-08 & Verificare che la funzione \textit{write} della classe \textit{KafkaStreamWriter} funzioni correttamente. & V \\
+    TU-08 & Verificare che la funzione \verb|write| della classe \verb|KafkaStreamWriter| funzioni correttamente. & V \\
     \hline
 
-    TU-09 & Verificare che la funzione \textit{write} della classe \textit{StdoutStreamWriter} funzioni correttamente. & V \\
+    TU-09 & Verificare che la funzione \verb|write| della classe
+    \verb|StdoutStreamWriter| funzioni correttamente. & V \\
     \hline
 
-    TU-10 & Verificare che la funzione \textit{acked} funzioni correttamente sia nel caso di \textit{success} che nel caso di \textit{failure}. & V \\
+    TU-10 & Verificare che la funzione \verb|acked| funzioni correttamente sia nel caso di success che nel caso di failure. & V \\
     \hline
 
-    TU-11 & Verificare che la classe \textit{Coordinates} funzioni correttamente. & V \\
+    TU-11 & Verificare che la classe \verb|Coordinates| funzioni correttamente. & V \\
     \hline
 
-    TU-12 & Verificare che la funzione \textit{jsonfy} funzioni correttamente. & V \\
+    TU-12 & Verificare che la funzione \verb|jsonfy| funzioni correttamente. & V \\
     \hline
 
 \end{longtable}
@@ -472,13 +473,13 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     \label{table:Tabella dei test di integrazione}
     \endlastfoot 
         
-        TI-01 & Verificare la persistenza dei dati della classe \textit{TemperatureSensor} nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
+        TI-01 & Verificare la persistenza dei dati della classe \verb|TemperatureSensor| nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
         \hline
     
-        TI-02 & Verificare la persistenza dei dati della classe \textit{HumiditySensor} nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
+        TI-02 & Verificare la persistenza dei dati della classe \verb|HumiditySensor| nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
         \hline
 
-		TI-03 & Verificare la persistenza dei dati della classe \textit{ParkingeSensor} nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+		TI-03 & Verificare la persistenza dei dati della classe \verb|ParkingeSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
 		\hline
 
 \end{longtable}
