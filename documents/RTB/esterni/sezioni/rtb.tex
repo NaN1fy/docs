@@ -292,9 +292,9 @@ surplus per il ruolo da Responsabile. Il budget rimanente ammonta dunque a 9\,.3
 \textbf{Giorni di ritardo:} (0)
 \subsubsection{Pianificazione}
 Con il consolidamento dell'\textit{Analisi dei Requisiti}, diventa fondamentale approfondire gli
-strumenti necessari per l'implementazione finale del prodotto. Il \textit{Proof of Concept} (PoC) ha
+strumenti necessari per l'implementazione finale del prodotto. Il Proof of Concept (PoC) ha
 raggiunto un buon grado di avanzamento, anche grazie all'inclusione della componente di
-visualizzazione nello \textit{Sprint Backlog}, originariamente pianificata per questo periodo.
+visualizzazione nello Sprint Backlog, originariamente pianificata per questo periodo.
 Prevediamo di completarlo entro il periodo attuale, consentendo così ai programmatori di terminare
 il lavoro e successivamente a tutti i membri di dedicarsi al completamento della documentazione, in
 vista della prima revisione del progetto. Questo permetterà di realizzare una versione semplificata
@@ -374,7 +374,68 @@ Il consistente carico di lavoro di questo periodo richiederà inevitabilmente pi
 \end{table}
 \subsubsection{Consuntivo}
 \subsubsubsection{Consuntivo orario}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{3cm} p{1.4cm} p{1.6cm} p{1.7cm} p{1.4cm} p{1.4cm} p{1.5cm} p{2cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{5}{c}{\textbf{Ruolo}} & \multicolumn{2}{r}{\textbf{Totale (persona)}}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero     & - & - & 2 & -   & 5 & 4 & 11 \\
+        Gugliemo Barison   & 2 & 4 & - & -   & 1 \textcolor{teal}{(-1)} & 2,5 & 9,5 \\
+        Pietro Busato      & 1 \textcolor{red}{(-3)} & - & 2,5 \textcolor{red}{(+2,5)} & 3
+        \textcolor{red}{(-1)} & - & 1 \textcolor{teal}{(-1)} & 7,5 \\
+        Davide Donanzan    & - & - & 2 & -   & 5 & 4 & 11 \\
+        Oscar Konieczny    & 4 & - & - & 4   & - & 3 & 11 \\
+        Veronica Tecchiati & 1 \textcolor{red}{(+1)} & -  & 2 & -   & 3 \textcolor{teal}{(-2)} & 4
+        \textcolor{teal}{(-1)}  & 10 \\
+        \midrule
+        \textbf{Totale (ruolo)} & 10 & 4 & 6 & 7,5 & 14 & 18,5 & 60 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Distribuzione delle ore del terzo Sprint secondo ruolo e membro.}
+	\label{table:Distribuzione delle ore del terzo Sprint secondo ruolo e membr}
+\end{table}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{3cm} p{1.4cm} p{1.6cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{2cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{5}{c}{\textbf{Ruolo}} & \multicolumn{2}{r}{\textbf{Totale (persona)}}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero     & 3 & 5 & 17 & 11   & 17 & 15,5 & 68,5 \\
+        Gugliemo Barison   & 2 & 5 & 16,5 & 11   & 17,5 & 18,5 & 70,5 \\
+        Pietro Busato      & 2 & 8 & 16,5 & 7,5 & 17,5 & 20 & 71,5 \\
+        Davide Donanzan    & 6 & 8 & 16 & 7   & 16 & 16 & 69 \\
+        Oscar Konieczny    & 0,5 & 7 & 18 & 7   & 18 & 19 & 69,5 \\
+        Veronica Tecchiati & 1,5 & 4,5 & 18 & 4   & 22 & 17 & 67 \\
+        \midrule
+        \textbf{Totale (ruolo)} & 15 & 37,5 & 102 & 47,5 & 108 & 106 & 416 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Ore rimaste dopo il terzo Sprint secondo ruolo e membro.}
+	\label{table:Ore rimaste dopo il terzo Sprint secondo ruolo e membro.}
+\end{table}
 \subsubsubsection{Consuntivo economico}
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{p{4cm} p{1.8cm} p{2.2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 10 & 300 \\
+        Responsabile & 4  & 80 \\
+        Progettista & 6  & 150 \\
+        Analista & 7,5 \textcolor{teal}(-0,5) & 187,5 \textcolor{teal}{(-12,5)}\\
+        Programmatore & 14 \textcolor{red}{(-1)} & 210 \textcolor{teal}{(-15)}\\
+        Verificatore & 18,5 \textcolor{red}{(+1,5)} & 277,5 \textcolor{red}{(+30)} \\
+        \bottomrule
+        \textbf{Totale} & 60 & 1205
+    \end{tabular}
+    \caption{Preventivo a finire dei costi del terzo Sprint secondo ruolo.}
+    \label{table:Preventivo a finire dei costi del terzo Sprint secondo ruolo}
+\end{table}
+
 \subsubsubsection{Rischi occorsi, impatto e loro mitigazione}
 \\Nel corso di questo periodo il gruppo ha scelto di svolgere numerose attivit\`{a} in un tempo limitato.
 In seguito ad un controllo generale della documentazione, sono emerse diverse imprecisioni in
@@ -386,8 +447,15 @@ carico di lavoro poteva essere distribuito diversamente, magari su pi\`{u} perio
 All'interno del team, è stata notevolmente valutata l'impegno di alcuni membri nel dedicare
 ulteriori ore per prevenire un rallentamento eccessivo nell'avanzamento globale del progetto.
 Tuttavia, sarebbe auspicabile evitare tali circostanze in futuro, sebbene abbiano messo in luce la
-determinazione della maggioranza del gruppo a procedere con decisione.
-\newpage
+determinazione della maggioranza del gruppo a procedere con decisione.\\
+Al termine del secondo periodo è emerso un lieve divario tra i costi previsti e quelli effettivi.
+Infatti, il consuntivo riporta una spesa totale di 1\,.205\;\texteuro\ anzichè i 1\,.265,5\;\texteuro\ calcolati
+nel preventivo. La differenza di 60,5\;\texteuro\ è dovuta all'indisposizione fisica di uno dei membri del gruppo, impossibilitato quindi a portare a termine tutte le ore assegnategli. Il budget rimanente ammonta dunque a 8\,.147,5\;\texteuro.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm]{./asset/gantt3.png}
+    \caption{Diagramma di Gantt rappresentativo del terzo periodo.}
+\end{figure}
 \clearpage
 \subsection{Quarto periodo} \label{sec:4_rtb}
 \textbf{Inizio:} 2024-05-20\\
