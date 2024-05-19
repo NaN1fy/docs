@@ -2,8 +2,7 @@
 \textbf{Fine prevista:} 2024-04-07
 \subsection{Primo periodo} \label{sec:1_rtb}
 \textbf{Inizio:} 2024-04-01\\
-\textbf{Fine prevista:} 2024-04-19\\
-\textbf{Giorni di ritardo:} (0)
+\textbf{Fine prevista:} 2024-04-19
 \subsubsection{Pianificazione}
 Nella fase iniziale, assume prioritaria importanza la discussione di tutte le regole precedentemente adottate e implementate nel corso del progetto, ma che non sono ancora state formalizzate mediante documentazione. Questo processo mira a produrre un documento scritto accessibile a tutti i membri del team, al fine di dissipare eventuali ambiguità riguardo l'esecuzione delle attività e l'utilizzo delle risorse.
 \\
@@ -145,22 +144,22 @@ In conclusione, il budget rimanente è di 10\,.342,5\;\texteuro.
 \newpage
 \subsection{Secondo periodo} \label{sec:2_rtb}
 \textbf{Inizio:} 2024-04-22\\
-\textbf{Fine prevista:} 2024-04-03\\
-\textbf{Giorni di ritardo:} (0)
+\textbf{Fine prevista:} 2024-04-03
+
 \subsubsection{Pianificazione}
 In questa fase del processo, assume un'importanza fondamentale condurre un'analisi dettagliata del capitolato al fine di identificare accuratamente i casi d'uso necessari. Inoltre, al fine di evitare ambiguità e decisioni errate, si raccomanda di organizzare uno o più incontri con il proponente per condividere le idee e risolvere i dubbi emersi durante l'analisi, che sarà notevolmente più approfondita rispetto a quella svolta durante la selezione del capitolato. Da questo processo di analisi, si darà inizio alla stesura dell'\textit{Analisi dei Requisiti}, un documento di vitale importanza per il progetto poiché conterrà tutti i casi d'uso individuati, nonché i requisiti obbligatori, desiderabili e opzionali.
 È altresì consigliabile redigere il \textit{Piano di Qualifica} in questa fase, il quale sarà fondamentale per definire i metodi volti a garantire la qualità dei processi e dei prodotti nel corso dello sviluppo.
 \subsubsection{Rischi attesi}
-I rischi che ci aspettiamo di correre in questo periodo sono i seguenti: 
+In questo secondo periodo prevediamo che si possano manifestare le seguenti problematiche: 
 \begin{itemize}
 \item \textbf{RT-1:} Inesperienza;
 \item \textbf{RT-2:} Produzione di codice incomprensibile;
+\item \textbf{RC-4:} Confusione nella rotazione dei ruoli;
 \item \textbf{RP-1:} Stima errata delle tempistiche di progetto;
 \item \textbf{RP-2:} Stima errata dei costi di progetto;
-\item \textbf{RC-1:} Scarsa comunicazione interna;
-\item \textbf{RC-3:} Conflitti interni.
+\item \textbf{RP-3:} Stima errata del tempo di completamento di un’attività.
 \end{itemize}
-I rischi identificati per il periodo attuale non differiscono significativamente da quelli presentati nella pianificazione del periodo precedente. Ciò è attribuibile al fatto che l’esperienza del gruppo è ancora limitata, come evidenziato nei verbali, e persistono lievi difficoltà nelle attività, come la suddivisione dei compiti. La novità consiste nell’aggiunta di \textbf{RT-2: Produzione di codice incomprensibile}, ritenuto necessario poichè durante questo periodo inizieremo con lo sviluppo del codice per il Proof of Concept (PoC).
+Alcuni dei rischi identificati sono attribuibili alla limitata esperienza del gruppo, come evidenziato nei verbali, e alla persistenza di lievi difficoltà nello svolgimento delle attività, tra cui la suddivisione dei compiti assegnati. Inoltre, in concomitanza dell'inizio di questo Sprint avverrà la prima rotazione dei ruoli ricoperti da ciascun membro, da cui deriva l'aggiunta di \textbf{RC-4} ai rischi previsti. Durante lo Sprint precedente il gruppo ha dimostrato una notevole coesione ed una buona capacità di gestire efficacemente eventuali divergenze di opinioni, pertanto non si è ritenuto necessario mantenere \textbf{RC-3: Conflitti interni} nella lista dei rischi attesi. Infine, è stato aggiunto \textbf{RT-2} per via dell'inizio dello sviluppo del codice per il Proof of Concept (PoC).
 \clearpage
 \subsubsection{Preventivo}
 \subsubsubsection{Preventivo orario}
@@ -259,22 +258,24 @@ I rischi identificati per il periodo attuale non differiscono significativamente
         \toprule
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
         \midrule
-        Amministratore & 7 \textcolor{red}{(+1)} & 210 \textcolor{red}{(+30)}\\
-        Responsabile & 3,5 \textcolor{teal}{(-0,5)} & 70 \textcolor{teal}{(-10)} \\
-        Progettista & 10 \textcolor{red}{(+1)} & 250 \textcolor{red}{(+25)} \\
+        Amministratore & 7 \textcolor{teal}{(-1)} & 210 \textcolor{teal}{(-30)}\\
+        Responsabile & 3,5 \textcolor{red}{(+0,5)} & 70 \textcolor{red}{(+10)} \\
+        Progettista & 10 \textcolor{teal}{(-1)} & 250 \textcolor{teal}{(-25)} \\
         Analista & 4 & 100 \\
-        Programmatore & 16 \textcolor{red}{(+1)} & 240 \textcolor{red}{(+15)} \\
+        Programmatore & 16 \textcolor{teal}{(-1)} & 240 \textcolor{teal}{(-15)} \\
         Verificatore & 8 & 120 \\
         \bottomrule
-        \textbf{Totale} & 48,5 & 990
+        \textbf{Totale} & 48,5 \textcolor{teal}{(-2,5)} & 990 \textcolor{teal}{(-60)}
     \end{tabular}
     \caption{Preventivo a finire dei costi del secondo Sprint secondo ruolo.}
 	\label{table:Preventivo a finire dei costi del secondo Sprint secondo ruolo}
 \end{table}
 \subsubsubsection{Rischi occorsi, impatto e loro mitigazione}
+Durante questo periodo sono emerse alcune delle complicazioni previste, in particolar modo quelle riguardanti la pianificazione. Alcune attività hanno subito dei lievi ritardi, il che comporta la necessità di proseguirne lo svolgimento durante lo Sprint successivo. Inoltre, al termine dello Sprint è stata rilevata una discrepanza tra i costi preventivati e quelli effettivi, seppure la differenza sia minima. Nonostante ciò, l'impatto complessivo delle suddette problematiche sullo svolgimento del progetto non è da considerarsi allarmante.
 \subsubsection{Retrospettiva}
+Come anticipato nella sezione precedente, il gruppo ha riscontrato alcune difficoltà legate alla pianificazione. In particolare, l'identificazione e la suddivisione dei nuovi incarichi è avvenuta qualche giorno dopo la data di inizio dello Sprint, pertanto nei primi giorni il team si è dedicato solamente alla prosecuzione delle attività già avviate nel precedente periodo. In seguito ad un confronto con il Committente, il gruppo ha deciso di introdurre un incontro di Sprint Planning subito dopo lo svolgimento del SAL con la Proponente, così da delineare immediatamente l'organizzazione del periodo. Nonostante questo iniziale scoglio il gruppo è riuscito comunque a soddisfare le aspettative della Proponente in merito alla scrittura del codice e ad avanzare con la stesura della documentazione. \\
 Al termine del secondo periodo è emerso un lieve divario tra i costi previsti e quelli effettivi.
-Infatti, il consuntivo riporta una spesa totale di 990\;\texteuro\ anzichè i 1\,.050\;\texteuro\ calcolati
+Infatti, il consuntivo riporta una spesa totale di 990\;\texteuro\ anziché i 1\,.050\;\texteuro\ calcolati
 nel preventivo. La differenza di 60\;\texteuro\ è dovuta allo svolgimento di un minor quantitativo di
 ore da Amministratore, Progettista e Programmatore rispetto alle stime, nonostante il leggero
 surplus per il ruolo da Responsabile. Il budget rimanente ammonta dunque a 9\,.352,5\;\texteuro. 
@@ -288,8 +289,7 @@ surplus per il ruolo da Responsabile. Il budget rimanente ammonta dunque a 9\,.3
 \clearpage
 \subsection{Terzo periodo} \label{sec:3_rtb}
 \textbf{Inizio:} 2024-05-29\\
-\textbf{Fine prevista:} 2024-05-17\\
-\textbf{Giorni di ritardo:} (0)
+\textbf{Fine prevista:} 2024-05-17
 \subsubsection{Pianificazione}
 Con il consolidamento dell'\textit{Analisi dei Requisiti}, diventa fondamentale approfondire gli
 strumenti necessari per l'implementazione finale del prodotto. Il Proof of Concept (PoC) ha
@@ -459,8 +459,7 @@ nel preventivo. La differenza di 60,5\;\texteuro\ è dovuta all'indisposizione f
 \clearpage
 \subsection{Quarto periodo} \label{sec:4_rtb}
 \textbf{Inizio:} 2024-05-20\\
-\textbf{Fine prevista:} 2024-06-07\\
-\textbf{Giorni di ritardo:} (0)
+\textbf{Fine prevista:} 2024-06-07
 \subsubsection{Pianificazione}
 %In questa fase conclusiva del processo, assume primaria importanza sia la progettazione che l'effettiva implementazione del \textit{PoC}. Parallelamente, diventa imprescindibile il perfezionamento e la verifica finale dei documenti in vista della revisione pianificata per l'inizio del mese di giugno.
 \subsubsection{Rischi attesi}
