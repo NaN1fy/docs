@@ -1,4 +1,4 @@
-% changelog: "0.0.0, 2024-04-09, Davide Donanzan, Stesura del file"
+% changelog: "0.1.0, 2024-05-20, Veronica Tecchiati, Stesura sezione 2.3 e inizio sezione 3"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -22,9 +22,8 @@
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks=true,linkcolor=nan1fyblue,urlcolor=nan1fyblue]{hyperref}
 \usepackage{graphicx}
-\usepackage{hyperref}
 \setcounter{tocdepth}{4}
 \usepackage{caption}
 \usepackage{multicol}
@@ -36,6 +35,8 @@
 \usepackage{capt-of}% 
 \usepackage{booktabs}
 \usepackage{varwidth}
+
+\definecolor{nan1fyblue}{RGB}{23,103,162}
 
 % -- TITOLO INTESTAZIONE -- %
 \newcommand{\customtitle}{Analisi dei Requisiti} % o ESTERNO
@@ -79,8 +80,8 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Davide Donanzan}\\}} % massimo due 
-			% {\large{\textsc{XXXX XXXX}}}
+			{\\\large{\textsc{Davide Donanzan}\\}}
+			{\large{\textsc{Veronica Tecchiati}}}
 			
 			
 		}
@@ -88,7 +89,7 @@
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\\\large{\textsc{XXXX XXXX}\\}} 
 			{\large{\textsc{XXXX XXXX}}}
 			
 		}
@@ -106,29 +107,33 @@
 \end{titlepage}
 \pagestyle{mystyle}
 \section*{Registro delle Modifiche}
-\begin{table}[ht!]	
+\begin{table}[ht!]
+\hypersetup{hidelinks}
 	\centering
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		0.0.0 & 2024-04-09 & Stesura del file. & Davide Donanzan &
-		Redattore \\\\ % spazio tra le righe
-		% X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
+            0.1.0 & 2024-05-20 & Stesura sezione \ref{sec:users} e inizio sezione \ref{sec:use-case} & Veronica Tecchiati & Redattore \\\\
+		0.0.0 & 2024-04-09 & Stesura del file. & Davide Donanzan & Redattore \\\\
 		\bottomrule
-		% Ruolo Redattore o Verificatore
 	\end{tabular}
 	\caption{Registro delle modifiche.}
 	\label{table:Registro delle modifiche}
 \end{table}
 \newpage
-\tableofcontents
+{\hypersetup{hidelinks} \tableofcontents}
 \clearpage
+\newpage
+{\hypersetup{hidelinks} \listoffigures}
+\newpage
+{\hypersetup{hidelinks} \listoftables}
 \newpage
 \justifying
 \section{Introduzione}
 \subsection{Scopo del documento}
-Il seguente documento ha come scopo quello di elencare in modo esaustivo i casi d'uso e i requisiti del progetto \texttt{InnovaCity} a seguito di un'attenta analisi del capitolato \texttt{C6} presentato dall'azienda proponente \texttt{SyncLab} e di una successiva discussione con essa attraverso gli incontri svolti.
+Il seguente documento ha come scopo quello di elencare in modo esaustivo i casi d'uso e i requisiti del progetto \texttt{SyncCity} a seguito di un'attenta analisi del capitolato \texttt{C6} presentato dall'azienda proponente \texttt{SyncLab} e di una successiva discussione con essa attraverso gli incontri svolti.
+
 \subsection{Glossario}
 Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini utilizzati nel seguente documento, viene fornito un \textit{Glossario v0.0.0} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati con l'uso del corsivo e dalla presenza di una G a pedice.
 \subsection{Riferimenti}
@@ -136,21 +141,25 @@ Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini util
 \begin{itemize}
 	\setlength\itemsep{0em}
 	\item \textit{Norme di Progetto v0.0.0}
-	\item Capitolato \texttt{C6 - InnovaCity: Smart city monitoring platform:} \\ \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf} \\ \url{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}
+	\item Presentazione e documentazione del capitolato d’appalto C6 - SyncCity:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf} (Ultimo accesso: \today)
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf} (Ultimo accesso: \today)
 	\item \textit{Verbale Esterno 2024/03/12}
 	\item \textit{Verbale Esterno 2024/04/03}
-	\item Regolamento progetto didattico: \\ \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}
+	\item Regolamento progetto didattico: \\ \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/PD2.pdf} (Ultimo accesso: \today)
 \end{itemize}
 \subsubsection{Riferimenti Informativi}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Analisi dei requisiti - corso di Ingegneria del Software a.a. 2023/2024: \\ \url{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}
-    \item Analisi e descrizione delle funzionalità: Use Case e relativi diagammi (UML) - corso di Ingegneria del Software a.a. 2023/2024: \\ \url{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20di%20Attivit%C3%A0.pdf}
+	\item Analisi dei requisiti - corso di Ingegneria del Software a.a. 2023/2024: \\ \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T5.pdf} (Ultimo accesso: \today)
+    \item Analisi e descrizione delle funzionalità: Use Case e relativi diagammi (UML) - corso di Ingegneria del Software a.a. 2023/2024: \\ \href{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20di%20Attivit%C3%A0.pdf}{https://www.math.unipd.it/\textasciitilde{}rcardin/swea/2022/Diagrammi\%20di\%20Attivit\%C3\%A0.pdf} \\ (Ultimo accesso: \today)
 \end{itemize}
 \newpage
+
 \section{Descrizione}
 \subsection{Obiettivi del prodotto}
-L'obiettivo del progetto \texttt{InnovaCity} è quello di creare una \textit{piattaforma} atta al monitoraggio di \textit{sensori} sparsi grograficamente nel territorio di una città. I sensori in questione permettono la misurazione e segnalazione di dati \textit{real-time} riguardanti le più disparate caratteristiche e necessità del territorio quali temperatura ed umidità esterna, occupazione di stalli di parcheggio, funzionamento o guasto elettrico di colonnine HPC, traffico stradale e via dicendo. Il \textit{proponente} richiede la simulazione di alcuni dei sensori nominati nonché la gestione dei dati, della loro persistenza e della loro rappresentazione grafica attraverso \textit{widgets} e \textit{grafici}. \\\\\texttt{InnovaCity} permetterà un miglioramento della qualità dei servizi offerti dalla città attraverso il continuo monitoraggio della stessa, ottenendo, gestendo e successivamente condividendo i dati con gli utenti. 
+L'obiettivo del progetto \texttt{SyncCity} è quello di creare una \textit{piattaforma} atta al monitoraggio di \textit{sensori} sparsi geograficamente nel territorio di una città. I sensori in questione permettono la misurazione e segnalazione di dati \textit{real-time} riguardanti le più disparate caratteristiche e necessità del territorio quali temperatura ed umidità esterna, occupazione di stalli di parcheggio, funzionamento o guasto elettrico di colonnine HPC, traffico stradale e via dicendo. Il \textit{proponente} richiede la simulazione di alcuni dei sensori nominati nonché la gestione dei dati, della loro persistenza e della loro rappresentazione grafica attraverso \textit{widgets} e \textit{grafici}. \\\\\texttt{SyncCity} permetterà un miglioramento della qualità dei servizi offerti dalla città attraverso il continuo monitoraggio della stessa, ottenendo, gestendo e successivamente condividendo i dati con gli utenti. 
 \subsection{Funzionalità del prodotto}
 Il prodotto si struttura nelle seguenti funzionalità principali:
 \begin{itemize}
@@ -159,9 +168,12 @@ Il prodotto si struttura nelle seguenti funzionalità principali:
 	\item Persistenza e strutturazione dati;
 	\item Rappresentazione grafica dati.
 \end{itemize}
-\subsection{Caratteristiche utente}
+
+\subsection{Caratteristiche degli utenti} \label{sec:users}
+L'applicativo è destinato principalmente alle autorità locali. La visualizzazione in tempo reale dei dati, sintetizzati in una \glossterm{dashboard}, consente all'amministrazione di vigilare costantemente sullo stato di salute della città e prendere decisioni tempestive volte al miglioramento della qualità dei servizi urbani. \\ Si assume che i fruitori della piattaforma siano in grado di comprendere ed interpretare le informazioni visualizzate. Gli utenti potranno accedere alla piattaforma utilizzando un qualsiasi dispositivo desktop o mobile connesso alla rete.
+
 \subsection{Tecnologie utilizzate}
-Il dominio tecnologico utillizzato per il funzionamento del prodotto raccoglie principalmente:
+Il dominio tecnologico utilizzato per il funzionamento del prodotto raccoglie principalmente:
 \begin{itemize}
 	\setlength\itemsep{0em}
 	\item Python: attraverso \textit{faker} si simula l'informazione fornita dai sensori
@@ -169,7 +181,115 @@ Il dominio tecnologico utillizzato per il funzionamento del prodotto raccoglie p
 	\item ClickHouse: \textit{database OLAP} per la persistenza dei dati ottenuti
 	\item Grafana: \textit{piattaforma} per monitorare e analizzare i dati in tempo reale attraverso la loro rappresentazione grafica
 \end{itemize}
-% togli il commento per la firma
-% \signatureline{Padova, YYYY-MM-DD}
-%\signatureline{Padova, YYYY-MM-DD}
+\newpage
+
+\section{Casi d'uso} \label{sec:use-case}
+\subsection{Introduzione}
+Di seguito sono elencati i casi d'uso individuati in seguito all'analisi del capitolato e al confronto con la Proponente. Ciascuno di essi è corredato di un codice identificativo, la cui struttura è descritta alla sezione vattelappesca del documento \textit{Norme di Progetto v1.0.0}. %INSERIRE RIMANDO SEZIONE CORRETTA
+\subsection{Attori}
+Gli attori che interagiscono con il sistema sono si seguenti:
+\begin{itemize}
+    \item \textbf{Autorità locale}: utente in grado di accedere al sistema ed usufruire di tutte le sue funzionalità. In particolare, può visualizzare la \glossterm{dashboard} contenente i dati provenienti dai sensori. L'applicativo non richiede autenticazione; %NOT SO SURE ABOUT DIS
+    \item \textbf{Sensore}: dispositivo in grado di rilevare dati dall'ambiente esterno e inviare le misurazioni effettuate al sistema, in modo da consentirne l'archiviazione e la successiva visualizzazione.
+\end{itemize}
+
+\subsection{Elenco dei casi d'uso}
+\subsubsection{UC-1: Visualizzazione dashboard}
+\begin{itemize}
+    \item \textbf{Attore principale}: autorità locale
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Visualizzazione widget sensori temperatura}
+\begin{itemize}
+    \item \textbf{Attore principale}: autorità locale
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Visualizzazione widget sensori umidità}
+\begin{itemize}
+    \item \textbf{Attore principale}: autorità locale
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Visualizzazione widget sensori parcheggio}
+\begin{itemize}
+    \item \textbf{Attore principale}: autorità locale
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Visualizzazione widget sensori colonnine di ricarica}
+\begin{itemize}
+    \item \textbf{Attore principale}: autorità locale
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Visualizzazione widget sensori isole ecologiche}
+\begin{itemize}
+    \item \textbf{Attore principale}: autorità locale
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Invio dati temperatura}
+\begin{itemize}
+    \item \textbf{Attore principale}: sensore
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Invio dati umidità}
+\begin{itemize}
+    \item \textbf{Attore principale}: sensore
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Invio dati parcheggio}
+\begin{itemize}
+    \item \textbf{Attore principale}: sensore
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Invio dati colonnine di ricarica}
+\begin{itemize}
+    \item \textbf{Attore principale}: sensore
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
+
+\subsubsection{UC-X: Invio dati isole ecologiche}
+\begin{itemize}
+    \item \textbf{Attore principale}: sensore
+    \item \textbf{Precondizioni}:
+    \item \textbf{Postcondizioni}:
+    \item \textbf{Scenario principale}:
+    \item \textbf{User Story associata}:
+\end{itemize}
 \end{document}
