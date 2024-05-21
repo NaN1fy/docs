@@ -1,0 +1,206 @@
+L'obiettivo è assicurarsi che i processi e il prodotto rispettino le esigenze del cliente e lo facciano con il massimo livello di qualità possibile, monitorando anche futuri progressi attraverso verifiche retrospettive.
+\subsubsection{Piano di Qualifica}
+Il documento \glossterm{Piano di Qualifica} è fondamentale per il completamento degli obiettivi di questo processo. 
+\\Il documento comprende:
+\begin{itemize}
+    \item{Fissare gli obiettivi di qualità}
+    \item{Definire le metriche di visione quantitativa}
+    \item{Definire test di qualità e funzionamento e relativa documentazione}
+    \item{Avere una visione dello stato attuale del prodotto e del progetto}
+    \item{Fornire margine di retrospettiva ai fini di miglioramento}
+\end{itemize}
+\subsubsection{Testing}
+Il documento \glossterm{Piano di Qualifica} fornisce obiettivi di qualità sia del processo che del prodotto. Le metriche relative garantiscono la verifica sugli aspetti di accessibilità; i test invece garantiscono la qualità generale del software. 
+\\Le categorie interessate sono le seguenti:
+\begin{itemize}
+	\item \textbf{Test di unità:} si verifica il corretto funzionamento delle unità componenti il \glossterm{sistema}. Un’unità rappresenta un elemento indivisibile e indipendente del \glossterm{sistema}; 
+	\item \textbf{Test di integrazione:} si verifica il corretto funzionamento di più unità che cooperano per svolgere uno specifico compito (tali unità devono certamente aver superato i loro test di unità precedentemente);
+	\item \textbf{\glossterm{Test di sistema}:} si verifica il corretto funzionamento del \glossterm{sistema} nella sua interezza. I requisiti funzionali obbligatori, di vincolo, di \glossterm{qualità} e di prestazione, precedentemente concordati con la Proponente mediante stipulazione del contratto, devono essere soddisfatti per intero;
+	\item \textbf{Test di accettazione:} si verifica il soddisfacimento della Proponente rispetto al prodotto software. Il loro superamento permette di procedere con il rilascio del prodotto.
+\end{itemize}
+Per ogni test vengono indicati i risultati del test di qualità del processo e della qualità del prodotto software.
+\subsubsection{Metriche}
+Il documento \glossterm{Piano di Qualifica} fornisce le metriche da applicare all'esecuzione dei test di qualità.
+\\Ogni metrica è codificata come segue:
+\begin{center}
+    \textbf{M[Tipologia metrica]-[Identificativo Metrica]}
+\end{center}
+\subsubsubsection{Fornitura}
+\begin{table}[h]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MCP-EV & Earned value (EV) & $\geq$ 0 & $\leq$ EAC \\\\
+		MPC-PV & Planned Value (PV) & $\geq$ 0 & $\leq$ BAC\\\\
+		MPC-AC & Actual costo (AC) & $\geq$ 0 & $\leq$ EAC\\\\
+		MPC-CPI & Cost Performance Index (CPI) & tra 0.95 e 1.05 & $\leq$ 1\\\\
+		MPC-EAC & Estimate At Completion (EAC) & deviazione del $\pm$ 5\% dal BAC & BAC\\\\
+		MPC-ETC & Estimate To Completion (ETC) & $\geq $ 0 & $\leq$ EAC\\\\
+		MPC-VAC & Variance At Completion (VAC) & deviazione del $\pm$ 10\% dal BAC & 0\%\\\\
+		MPC-SV & Schedule Variance (SV) & deviazione del $\pm$ 10\% dal BAC & 0\%\\\\
+		MPC-BV & Budget Variance (BV) & deviazione del $\pm$ 10\% dal BAC  & 0\%\\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Metriche per il processo di fornitura.}
+	\label{table:Tabella metriche per il processo di fornitura.}
+\end{table}
+\clearpage
+\subsubsubsection{Sviluppo}
+\begin{table}[h]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MCP-RSI & Requirements stability index (RSI) & $\geq $ 75\%  & $\leq$ 100\% \\\\
+		MPC-SFIN & Structural Fan-In (SFIN) & - & Va massimizzato\\\\
+		MPC-SFOUT & Structural Fan-Out (SFOUT) & - & Va minimizzato\\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di sviluppo.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di sviluppo.}
+\end{table}
+\subsubsubsection{Documentazione}
+\begin{table}[h]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPC-IG & Indice Gulpease (IGI) & $\geq$ 60\% & 100 \\\\
+		MPC-CO & Correttezza Ortografica (CO) & 0 & 0 \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Metriche per il processo di documentazione.}
+	\label{table:Tabella delle metriche per il processo di documentazione}
+\end{table}
+\subsubsubsection{Verifica}
+\begin{table}[h]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPC-CC & Code Coverage (CC) & $\geq$ 80\% & 100\% \\\\
+		MPC-PT & Passed Test cases percentage (PT) & 100\% & 100\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{Metriche per il processo di documentazione.}
+	\label{table:Tabella delle metriche per il processo di documentazione}
+\end{table}
+\subsubsubsection{Gestione della qualità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPC-QMS & Quality Metrics Satisfied (QMS) & $\geq$ 85\%& 100\%\\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
+\end{table}
+\clearpage
+\subsubsubsection{Gestione dei processi}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPC-NR & Non-calculated Risk (NR) & $\leq$ 3 & 0\\\\
+		MPC-ET & Efficienza temporale (ET) & $\leq$ 3 & $\leq$ 1 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione dei processi.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione dei processi.}
+\end{table}
+\subsubsubsection{Funzionalità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-ROS& Requisiti Obbligatori Soddisfatti (ROS) & 100\% & 100\%\\\\
+		MPD-RDS & Requisiti Desiderabili Soddisfatti (RDS) & $\geq$ 0\% & $\geq$ 75\% \\\\
+		MPD-ROPS & Requisiti Opzionali Soddisfatti (ROPS) & $\geq$ 0\% & $\geq$ 75\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante la funzionalità del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante la funzionalità del prodotto.}
+\end{table}
+\subsubsubsection{Affidabilità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-BC & Branch Coverage (BC) & $\geq$ 80\% & 100\%\\\\
+		MPD-SC & Statement Coverage (SC) & $\geq$ 80\% & 100\% \\\\
+		MPD-FD & Failure Density (FD) & $\geq$ 80\% & 100\% \\\\
+		MPD-PTCP & Passed Test Cases Percentage (PTCP) & 100\%  & 100\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’affidabilità del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’affidabilità del prodotto.}
+\end{table}
+\subsubsubsection{Usabilità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-FU & Facilità di Utilizzo (FU) & $\geq$ 9 click & $\geq$ 5 click \\\\
+		MPD-TA & Tempo di Apprendimento (TA) & $\leq$ 15 minuti & $\leq$ 5 minuti \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’usabilità del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’usabilità del prodotto.}
+\end{table}
+\subsubsubsection{Efficienza}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-UR & Utilizzo risorse (UR) & $\geq$ 75\% & 100\% \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’efficienza del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’efficienza del prodotto.}
+\end{table}
+\subsubsubsection{Manutenibilità}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
+		\midrule
+		MPD-CC & Complessità Ciclomatica (CC) & 11-20 & 1-10 \\\\
+		MPD-CS & Code Smell (CS) & 0 & 0 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante la manutenibilità del prodotto.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante la manutenibilità del prodotto.}
+\end{table}
+
+\subsubsection{Aspettative}
+A seguito di questo processo, le aspettative attese sono le seguenti:
+\begin{itemize}
+    \item{Ottima qualità del prodotto realizzato}
+    \item{Ottima qualità dei processi di sviluppo e di comunicazione}
+    \item{Buona visione quantitativa dello stato di avanzamento dei lavori}
+    \item{Test con alta frequenza e predicibili}
+    \item{Miglioramento generale costante}
+    \item{Soddisfazione delle aspettative del \glossterm{proponente}}
+\end{itemize}
