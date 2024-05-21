@@ -12,3 +12,5 @@
 *.pdfsync
 *.gz
 *.pdf
+*.lot
+*.lof
