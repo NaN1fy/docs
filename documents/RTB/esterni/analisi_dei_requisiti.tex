@@ -39,12 +39,12 @@
 \definecolor{nan1fyblue}{RGB}{23,103,162}
 
 % -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{Analisi dei Requisiti} % o ESTERNO
+\newcommand{\customtitle}{ANALISI DEI REQUISITI} % o ESTERNO
 
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../template/images/logos/NaN1fy_logo.png}} 
 	\fancyhead[L]{\leftmark} 
 	\renewcommand{\headrulewidth}{1pt} 
 	\fancyhead[L]{\customtitle} 
@@ -65,8 +65,10 @@
 \definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
 	\begin{tikzpicture}[remember picture, overlay]
-		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../template/images/logos/Universita_Padova_transparent.png}}; 
-		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../template/images/logos/NaN1fy_logo.png}};
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../template/images/logos/NaN1fy_logo.png}};
 	\end{tikzpicture}
 	
 	\begin{minipage}[t]{0.47\textwidth}
@@ -81,8 +83,8 @@
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Davide Donanzan}\\}}
-			{\large{\textsc{Veronica Tecchiati}}}
-			
+			{\large{\textsc{Veronica Tecchiati\\}}}	
+			{\large{\textsc{Guglielmo Barison}}}
 			
 		}
 		\vspace{8mm}
@@ -102,8 +104,8 @@
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{8 cm}
-	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+	\vspace{9.5cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{\color{black}nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
 \section*{Registro delle Modifiche}
@@ -115,7 +117,7 @@
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
             0.1.0 & 2024-05-20 & Stesura sezione \ref{sec:users} e inizio sezione \ref{sec:use-case} & Veronica Tecchiati & Redattore \\\\
-		0.0.0 & 2024-04-09 & Stesura del file. & Davide Donanzan & Redattore \\\\
+		0.0.0 & 2024-04-09 & Stesura del file. & Davide Donanzan & Redattore \\
 		\bottomrule
 	\end{tabular}
 	\caption{Registro delle modifiche.}
@@ -132,164 +134,526 @@
 \justifying
 \section{Introduzione}
 \subsection{Scopo del documento}
-Il seguente documento ha come scopo quello di elencare in modo esaustivo i casi d'uso e i requisiti del progetto \texttt{SyncCity} a seguito di un'attenta analisi del capitolato \texttt{C6} presentato dall'azienda proponente \texttt{SyncLab} e di una successiva discussione con essa attraverso gli incontri svolti.
+Il seguente documento ha come scopo quello di elencare in modo esaustivo i casi d'uso e i requisiti
+del progetto SyncCity a seguito di un'attenta analisi del capitolato C6 presentato dall'azienda proponente SyncLab e di una successiva discussione con essa attraverso gli incontri svolti.
 
 \subsection{Glossario}
-Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini utilizzati nel seguente documento, viene fornito un \textit{Glossario v0.0.0} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati con l'uso del corsivo e dalla presenza di una G a pedice.
+Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini utilizzati nel seguente
+documento, viene fornito un \textit{Glossario vX.X.X} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati con l'uso del corsivo e dalla presenza di una G a pedice.
 \subsection{Riferimenti}
 \subsubsection{Riferimenti Normativi}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item \textit{Norme di Progetto v0.0.0}
-	\item Presentazione e documentazione del capitolato d’appalto C6 - SyncCity:
+	\item \textit{Norme di Progetto vX.X.X};	
+	\item \textit{Verbale Esterno 2024-03-12};
+	\item \textit{Verbale Esterno 2024-04-03;}
+  \item Presentazione e documentazione del capitolato d’appalto C6 - SyncCity:
 	\begin{itemize}
 		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf} (Ultimo accesso: \today)
 		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf} (Ultimo accesso: \today)
-	\item \textit{Verbale Esterno 2024/03/12}
-	\item \textit{Verbale Esterno 2024/04/03}
-	\item Regolamento progetto didattico: \\ \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/PD2.pdf} (Ultimo accesso: \today)
+\end{itemize}
+	\item Regolamento progetto didattico: 
+      \begin{itemize}
+          \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/PD2.pdf} (Ultimo accesso: \today)
+    \end{itemize}
 \end{itemize}
 \subsubsection{Riferimenti Informativi}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Analisi dei requisiti - corso di Ingegneria del Software a.a. 2023/2024: \\ \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T5.pdf} (Ultimo accesso: \today)
-    \item Analisi e descrizione delle funzionalità: Use Case e relativi diagammi (UML) - corso di Ingegneria del Software a.a. 2023/2024: \\ \href{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi%20di%20Attivit%C3%A0.pdf}{https://www.math.unipd.it/\textasciitilde{}rcardin/swea/2022/Diagrammi\%20di\%20Attivit\%C3\%A0.pdf} \\ (Ultimo accesso: \today)
+	\item Dispense T5 - Analisi dei requisiti:
+    \begin{itemize}
+        \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T5.pdf} (Ultimo accesso: \today)
+    \end{itemize}
+    \item Dispense P3 - Analisi e descrizione delle funzionalità: Diagrammi delle attività (UML):
+        \begin{itemize}
+            \item
+                \href{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi\%20di\%20Attivita.pdf}{https://www.math.unipd.it/\textasciitilde{}rcardin/swea/2022/Diagrammi\%20di\%20Attivit\`{a}.pdf}
+                \\ (Ultimo accesso: \today)
+        \end{itemize}
 \end{itemize}
 \newpage
 
 \section{Descrizione}
 \subsection{Obiettivi del prodotto}
-L'obiettivo del progetto \texttt{SyncCity} è quello di creare una \textit{piattaforma} atta al monitoraggio di \textit{sensori} sparsi geograficamente nel territorio di una città. I sensori in questione permettono la misurazione e segnalazione di dati \textit{real-time} riguardanti le più disparate caratteristiche e necessità del territorio quali temperatura ed umidità esterna, occupazione di stalli di parcheggio, funzionamento o guasto elettrico di colonnine HPC, traffico stradale e via dicendo. Il \textit{proponente} richiede la simulazione di alcuni dei sensori nominati nonché la gestione dei dati, della loro persistenza e della loro rappresentazione grafica attraverso \textit{widgets} e \textit{grafici}. \\\\\texttt{SyncCity} permetterà un miglioramento della qualità dei servizi offerti dalla città attraverso il continuo monitoraggio della stessa, ottenendo, gestendo e successivamente condividendo i dati con gli utenti. 
+L'obiettivo del progetto SyncCity è quello di creare una piattaforma atta al monitoraggio di sensori
+sparsi geograficamente nel territorio di una città. I sensori in questione permettono la misurazione
+e segnalazione di dati real-time riguardanti le più disparate caratteristiche e necessità del
+territorio quali temperatura ed umidità esterna, occupazione di stalli di parcheggio, funzionamento
+o guasto elettrico di colonnine HPC, traffico stradale e via dicendo. Il proponente richiede la
+simulazione di alcuni dei sensori nominati nonché la gestione dei dati, della loro persistenza e
+della loro rappresentazione grafica attraverso widgets e grafici. \\\\SyncCity permetterà un miglioramento della qualità dei servizi offerti dalla città attraverso il continuo monitoraggio della stessa, ottenendo, gestendo e successivamente condividendo i dati con gli utenti. 
 \subsection{Funzionalità del prodotto}
-Il prodotto si struttura nelle seguenti funzionalità principali:
+Il prodotto si struttura nelle seguenti funzionalità:
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Raccolta dati;
-	\item Persistenza e strutturazione dati;
-	\item Rappresentazione grafica dati.
+  \item Data pipeline in grado di:
+  \begin{itemize}  
+  \item Raccogliere dati; 
+	\item Consentirne la persistenza e processare dati provenineti da più sorgenti in real-time.
+  \end{itemize}  
+	\item Una dashboard che permette di visualizzare i dati raccolti.
 \end{itemize}
-
+La piattaforma è progettata principalemente per un solo tipo di utente: l'amministratore pubblico. Quest'ultimo potrà avere accesso a diverse metriche e indicatori sullo stato della città attraverso l'utilizzo delle dashbaord.
 \subsection{Caratteristiche degli utenti} \label{sec:users}
-L'applicativo è destinato principalmente alle autorità locali. La visualizzazione in tempo reale dei dati, sintetizzati in una \glossterm{dashboard}, consente all'amministrazione di vigilare costantemente sullo stato di salute della città e prendere decisioni tempestive volte al miglioramento della qualità dei servizi urbani. \\ Si assume che i fruitori della piattaforma siano in grado di comprendere ed interpretare le informazioni visualizzate. Gli utenti potranno accedere alla piattaforma utilizzando un qualsiasi dispositivo desktop o mobile connesso alla rete.
+L'applicativo è destinato principalmente agli amministratori pubblici. La visualizzazione in tempo reale dei dati, sintetizzati in una \glossterm{dashboard}, consente all'amministrazione di vigilare costantemente sullo stato di salute della città e prendere decisioni tempestive volte al miglioramento della qualità dei servizi urbani. \\ Si assume che i fruitori della piattaforma siano in grado di comprendere ed interpretare le informazioni visualizzate. Gli utenti potranno accedere alla piattaforma utilizzando un qualsiasi dispositivo desktop o mobile connesso alla rete.
 
 \subsection{Tecnologie utilizzate}
-Il dominio tecnologico utilizzato per il funzionamento del prodotto raccoglie principalmente:
+Il dominio tecnologico dell'applicativo comprende:
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Python: attraverso \textit{faker} si simula l'informazione fornita dai sensori
-	\item Apache Kafka: \textit{broker} per distinguere i dati rilevati
-	\item ClickHouse: \textit{database OLAP} per la persistenza dei dati ottenuti
-	\item Grafana: \textit{piattaforma} per monitorare e analizzare i dati in tempo reale attraverso la loro rappresentazione grafica
+  \item \textbf{Python: }attraverso il quale si simula l'informazione fornita dai sensori;
+  \item \textbf{Apache Kafka:} per gestire il gathering dei dati da più fonti;
+  \item \textbf{ClickHouse:} database OLAP per la persistenza dei dati ottenuti;
+  \item \textbf{Grafana}: piattaforma per monitorare e analizzare i dati in tempo reale attraverso la loro rappresentazione grafica
 \end{itemize}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{figure}
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,427); %set diagram left start at 0, and has height of 427
+
+%Image [id:dp8158510236522856] 
+    \draw (225.23,191.41) node  {\includegraphics[width=78.34pt,height=36.62pt]{image_adr/kafka-icon-2048x935-cvu4503l.png}};
+%Image [id:dp09901368341649897] 
+\draw (564.23,189.48) node  {\includegraphics[width=99.34pt,height=51.78pt]{image_adr/grafana_logo_icon_171049.png}};
+%Image [id:dp04743607370190417] 
+    \draw (389.28,194.72) node  {\includegraphics[width=36.43pt,height=36.43pt]{image_adr/clickhouse.png}};
+%Shape: Square [id:dp14758393708670448] 
+\draw  [line width=1.5]  (24.67,159.98) -- (84,159.98) -- (84,219.32) -- (24.67,219.32) -- cycle ;
+%Straight Lines [id:da729481581554552] 
+\draw [line width=1.5]    (94.91,191) -- (162.33,191) ;
+\draw [shift={(165.33,191)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+%Straight Lines [id:da639851528451087] 
+\draw [line width=1.5]    (285.91,191) -- (353.33,191) ;
+\draw [shift={(356.33,191)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+%Straight Lines [id:da2205341167852083] 
+\draw [line width=1.5]    (425.91,190) -- (493.33,190) ;
+\draw [shift={(496.33,190)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
+
+% Text Node
+\draw (345,116) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{52.74pt}\setlength\topsep{0pt}
+\begin{center}
+{\scriptsize Persistenza }\\{\scriptsize e Aggregazione}
+\end{center}
+
+\end{minipage}};
+% Text Node
+\draw (559,115) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{30.49pt}\setlength\topsep{0pt}
+\begin{center}
+{\scriptsize Analitica}\\{\scriptsize real-time}
+\end{center}
+
+\end{minipage}};
+% Text Node
+\draw (207,115) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{36.06pt}\setlength\topsep{0pt}
+\begin{center}
+{\scriptsize Gathering }\\{\scriptsize dei dati}
+\end{center}
+
+\end{minipage}};
+% Text Node
+\draw (116,166) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\tiny dati}};
+% Text Node
+\draw (306,166) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\tiny dati}};
+% Text Node
+\draw (448,166) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\tiny dati}};
+% Text Node
+\draw (36,185) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Sensori}};
+\end{tikzpicture}
+\caption{Stack tecnologico}
+\end{figure}
 \newpage
 
 \section{Casi d'uso} \label{sec:use-case}
 \subsection{Introduzione}
-Di seguito sono elencati i casi d'uso individuati in seguito all'analisi del capitolato e al confronto con la Proponente. Ciascuno di essi è corredato di un codice identificativo, la cui struttura è descritta alla sezione vattelappesca del documento \textit{Norme di Progetto v1.0.0}. %INSERIRE RIMANDO SEZIONE CORRETTA
+Di seguito sono elencati i casi d'uso individuati in seguito all'analisi del capitolato e al
+confronto con la Proponente. Ciascuno di essi è corredato di un codice identificativo, la cui
+struttura è descritta alla sezione vattelappesca del documento \textit{Norme di Progetto vX.X.X}. %INSERIRE RIMANDO SEZIONE CORRETTA
 \subsection{Attori}
-Gli attori che interagiscono con il sistema sono si seguenti:
+Gli attori che interagiscono con il sistema sono i seguenti:
 \begin{itemize}
-    \item \textbf{Autorità locale}: utente in grado di accedere al sistema ed usufruire di tutte le sue funzionalità. In particolare, può visualizzare la \glossterm{dashboard} contenente i dati provenienti dai sensori. L'applicativo non richiede autenticazione; %NOT SO SURE ABOUT DIS
+    \item \textbf{Amministratore pubblico}: utente in grado di accedere al sistema ed usufruire di tutte le sue funzionalità. In particolare, può visualizzare la \glossterm{dashboard} contenente i dati provenienti dai sensori. L'applicativo non richiede autenticazione; %NOT SO SURE ABOUT DIS
     \item \textbf{Sensore}: dispositivo in grado di rilevare dati dall'ambiente esterno e inviare le misurazioni effettuate al sistema, in modo da consentirne l'archiviazione e la successiva visualizzazione.
 \end{itemize}
+\clearpage
+\subsection{Codice dei casi d'uso}
+Ogni caso d'uso è associato ad un codice univoco definito nel seguente formato:
+\begin{center}
+    \textbf{UC-[Numero].[Specializzazione]}
+\end{center}
+Dove \textbf{Numero} è un identificativo e \textbf{Specializzazione} si riferisce ad un caso specifico
+dello stesso caso d'uso.
 
 \subsection{Elenco dei casi d'uso}
-\subsubsection{UC-1: Visualizzazione dashboard}
+\subsubsection*{UC-0: Visualizzazione menu dashboard}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-0: Visualizzazione menu dashboard}
 \begin{itemize}
-    \item \textbf{Attore principale}: autorità locale
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} il sistema è operativo e accessibile;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un menu di selezione da cui
+        può scegliere che dashboard visualizzare: Sensori, Ambientale e Urbanistica.
+    \item \textbf{Scenario principale:} 
+        \begin{enumerate}
+        \item l'amministratore pubblico accede alla piattaforma di visualizzazione.
+        \end{enumerate}
+        % immagine
+    \item \textbf{User Story associata: }in qualità di amministratore pubblico, desidero accedere alla dashboard per monitorare in tempo reale i dati raccolti dai vari sensori dislocati nella città. Questo mi permetterà di valutare rapidamente lo stato complessivo della città e di prendere decisioni informate e tempestive riguardo alla gestione delle risorse e all’implementazione dei servizi.
 \end{itemize}
 
-\subsubsection{UC-X: Visualizzazione widget sensori temperatura}
+\subsubsection*{UC-1: Visualizzazione dashboard sensori}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-1: Visualizzazione dashboard sensori}
 \begin{itemize}
-    \item \textbf{Attore principale}: autorità locale
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} nessuna;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza una lista di pannelli
+        contenenti dati relativi allo stato dei sensori;
+    \item \textbf{Scenario principale:}
+    \begin{enumerate}
+    \item l’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item l’amministratore pubblico seleziona la visualizzazione della dashboard relativa ai sensori.
+    \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere
+        alla dashboard per monitorare lo stato dei sensori dislocati nella città;
+    \item \textbf{Specializzazioni:} [UC-1.1];
+    \item \textbf{Estensioni:} [UC-4];
 \end{itemize}
 
-\subsubsection{UC-X: Visualizzazione widget sensori umidità}
+\subsubsection*{UC-1.1: Visualizzazione posizione sensori su mappa}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-1.1: Visualizzazione posizione sensori su mappa}
 \begin{itemize}
-    \item \textbf{Attore principale}: autorità locale
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio dei sensori;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un panello contenente un
+        mappa che mostra la posizione dei sensori;
+    \item \textbf{Scenario principale:}
+    \begin{enumerate}
+      \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+      \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa ai sensori.
+      \item L’amministratore pubblico seleziona la visualizzazione del pannello geomap per la
+          posizione dei sensori.
+    \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere
+        alla dashboard per conoscere la posizione dei sensori dislocati nella città. La mappa deve indicare chiaramente la posizione di ciascun sensore e deve essere etichettata in modo da consentire un riconoscimento immediato della tipologia di ogni sensore.
 \end{itemize}
 
-\subsubsection{UC-X: Visualizzazione widget sensori parcheggio}
+\subsubsection*{UC-2: Visualizzazione dashboard ambientale}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2: Visualizzazione dashboard ambientale}
 \begin{itemize}
-    \item \textbf{Attore principale}: autorità locale
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni: }nessuna;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza una lista di pannelli
+        contenenti dati relativi al dominio ambientale;
+    \item \textbf{Scenario principale:} 
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+        ambientale.
+    \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere alla dashboard per monitorare il dominio ambientale;
+    \item \textbf {Specializzazioni:} [UC-2.1], [UC-2.2], [UC-2.3], [UC-2.4];  
+    \item \textbf{Estensioni:} [UC-4];
 \end{itemize}
 
-\subsubsection{UC-X: Visualizzazione widget sensori colonnine di ricarica}
+\subsubsection*{UC-2.1: Visualizzazione pannello time series per temperatura}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.1: Visualizzazione pannello time series per temperatura}
 \begin{itemize}
-    \item \textbf{Attore principale}: autorità locale
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio ambientale;
+    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra la temperatura, espressa in gradi Celsius (°C), in formato time series.
     \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+        ambientale;
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello time series per la
+        temperatura.
+    \end{enumerate}
+\item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
+        pannello per monitorare l'andamento della temperatura. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
+\end{itemize}
+\subsubsection*{UC-2.2: Visualizzazione pannello time series per umidità}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.2: Visualizzazione pannello time
+series per umidità}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio ambientale;
+    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico
+        che mostra l'umidità relativa, espressa in percentuale, in formato time series.
+    \item \textbf{Scenario principale}:
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+        ambientale; 
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello time series per
+        l'umidità.
+    \end{enumerate}
+\item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
+        pannello per monitorare l'andamento dell'umidità relativa. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
+\end{itemize}
+\subsubsection*{UC-2.3: Visualizzazione pannello time series per temperatura percepita}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.3: Visualizzazione pannello time series per temperatura percepita}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio ambientale;
+    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico
+        che mostra la temperatura, in gradi Celsius (°C), in formato time series in relazione
+        all'umidità.
+    \item \textbf{Scenario principale}:
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+        ambientale; 
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello time series per la temperatura percepita.
+    \end{enumerate}
+\item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
+        pannello per monitorare l'andamento della temperatura percepita. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
+\end{itemize}
+\subsubsection*{UC-2.4: Visualizzazione pannello Gauge per temperatura media}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.4: Visualizzazione pannello Gauge per temperatura media}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio ambientale;
+    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico
+        che mostra la media della temperatura, in gradi Celsius (°C), in formato di diagramma di
+        Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Scenario principale}:
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+        ambientale; 
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello per la temperatura
+        media.
+    \end{enumerate}
+\item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
+        pannello per monitorare la temperatura media. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
+\end{itemize}
+\subsubsection*{UC-3: Visualizzazione dashboard urbanistica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3: Visualizzazione dashboard urbanistica}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni: }nessuna;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza una lista di pannelli
+        contenenti dati relativi al dominio urbanistico;
+    \item \textbf{Scenario principale:} 
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+        urbanistico.
+    \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere
+        alla dashboard per monitorare il dominio urbanistico;
+    \item \textbf {Specializzazioni:} [UC-3.1], [UC-3.2], [UC-3.3].
+    \item \textbf{Estensioni:} [UC-4];
 \end{itemize}
 
-\subsubsection{UC-X: Visualizzazione widget sensori isole ecologiche}
+\subsubsection*{UC-3.1: Visualizzazione pannello alert list per notifiche di pagamento}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.1: Visualizzazione pannello alert list per notifiche di pagamento}
 \begin{itemize}
-    \item \textbf{Attore principale}: autorità locale
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio urbanistico.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza una lista di pannelli
+        contenenti dati relativi al dominio urbanistico;
+    \item \textbf{Scenario principale:} 
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+        urbanistico;
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello notifiche di
+        pagamento.
+    \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere
+        alla dashboard per monitorare lo stato dei pagamenti. Questo consente di semplificare la
+        comprensione e la comparazione delle misurazioni.
 \end{itemize}
-
-\subsubsection{UC-X: Invio dati temperatura}
+\subsubsection*{UC-3.2: Visualizzazione pannello status history per parcheggi}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello status history per parcheggi}
 \begin{itemize}
-    \item \textbf{Attore principale}: sensore
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio urbanistico.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza una lista di pannelli
+        contenenti dati relativi al dominio urbanistico;
+    \item \textbf{Scenario principale:} 
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+        urbanistico;
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello notifiche di
+        pagamento.
+    \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere
+        alla dashboard per monitorare lo stato dei singoli parcheggi. Questo consente di semplificare la
+        comprensione e la comparazione delle misurazioni.
 \end{itemize}
-
-\subsubsection{UC-X: Invio dati umidità}
+\subsubsection*{UC-3.3: Visualizzazione pannello ...}
+\subsubsection*{UC-4: Visualizzazione errore nessun dato}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4: Visualizzazione errore nessun dato}
 \begin{itemize}
-    \item \textbf{Attore principale}: sensore
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} il sistema di visualizzazione non ottiene alcun dato da mostrare all’interno di un pannello;
+    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza un messaggio di errore segnalante l’assenza di dati da mostrare;
+    \item \textbf{Scenario principale:}
+        \begin{enumerate}
+        \item L’amministratore pubblico vuole visualizzare qualche pannello;
+        \item Il sistema non ha dati con cui popolare tale pannello.
+        \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero che qualora
+        i dati non siano disponibili o ci sia un errore nel funzionamento del software questo mi
+        venga notificato.
 \end{itemize}
-
-\subsubsection{UC-X: Invio dati parcheggio}
+\subsubsection*{UC-5: Applicazione filtri}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-5: Applicazione filtri}
 \begin{itemize}
-    \item \textbf{Attore principale}: sensore
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} l’amministratore pubblico sta visualizzando uno o più pannelli con i dati;
+    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza solamente i dati relativi al filtro
+applicato;
+    \item \textbf{Scenario principale:}
+        \begin{enumerate}
+        \item L’amministratore pubblico seleziona l’icona o il pulsante relativo al filtro dei dati;
+        \item L’amministratore pubblico seleziona secondo quali valori filtrare il pannello.
+        \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero poter
+        visualizzare i dati secondo criteri specifici, in modo tale da semplificare la comprensione
+        delle informazioni.
+    \item \textbf{Specializzazioni:} [UC-5.1], [UC-5.2].
 \end{itemize}
-
-\subsubsection{UC-X: Invio dati colonnine di ricarica}
+\subsubsection*{UC-5.1: Filtro sotto-insieme di sensori su grafici time series}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-5.1: Filtro sotto-insieme di sensori su grafici time series}
 \begin{itemize}
-    \item \textbf{Attore principale}: sensore
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:}
+    \begin{itemize}
+        \item L’amministratore pubblico sta visualizzando uno o più pannelli time series con i dati;
+        \item Il pannello offre la funzionalità di filtro dei dati tramite selezione di uno o più sensori.
+    \end{itemize}
+    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza solamente i dati relativi ai sensori
+selezionati, all’interno di tale.
+    \item \textbf{Scenario principale: }l’amministratore pubblico seleziona il sensore da
+        visualizzare tramite la legenda.
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero poter
+        visualizzare i dati secondo criteri specifici, in modo tale da semplificare la comprensione
+        delle informazioni. In particolare la possibilità di poter evidenziare/escludere i dati
+        provenienti da determinati sensori.
 \end{itemize}
-
-\subsubsection{UC-X: Invio dati isole ecologiche}
+\subsubsection*{UC-5.2: Filtro per intervallo temporale}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-5.2: Filtro per intervallo temporale}
 \begin{itemize}
-    \item \textbf{Attore principale}: sensore
-    \item \textbf{Precondizioni}:
-    \item \textbf{Postcondizioni}:
-    \item \textbf{Scenario principale}:
-    \item \textbf{User Story associata}:
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:}
+    \begin{itemize}
+        \item L’amministratore pubblico sta visualizzando uno o più pannelli time series con i dati;
+        \item Il pannello offre la funzionalità di filtro dei dati tramite selezione di uno o più sensori.
+    \end{itemize}
+    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza solamente i dati relativi all’intervallo
+temporale selezionato, in tutti i pannelli della dashboard dove è stato applicato il filtro.
+    \item \textbf{Scenario principale: }l’amministratore pubblico seleziona l’intervallo temporale desiderato.
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero poter
+        visualizzare i dati secondo criteri specifici, in modo tale da semplificare la comprensione
+        delle informazioni. In particolare la possibilità di poter evidenziare/escludere determinate
+        scaglie temporali.
+\end{itemize}
+\subsubsection*{UC-6: Modifica layout pannelli}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-6: Modifica layout pannelli}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} l'amministratore pubblico sta visualizzando almeno un pannello;
+    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza il nuovo layout;
+    \item \textbf{Scenario principale: }l’amministratore pubblico sposta o ridimensiona i pannelli a
+        suo piacimento;
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero poter
+        visualizzare i pannelli nella forma e dimensione a me più congeniali.
+\end{itemize}
+\subsubsection*{UC-7: Inserimento dati sensore}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-7: Inserimento dati sensore}
+\begin{itemize}
+    \item \textbf{Attore principale:} sensore;
+    \item \textbf{Precondizioni:} il sensore è colleagato al sistema;
+    \item \textbf{Postcondizioni:} il sistema ha archiviato correttamente i dati inviati dal sensore;
+    \item \textbf{Scenario principale:}
+        \begin{enumerate}
+        \item Il sensore effettua una rilevazione;
+        \item Il sensore formatta il messaggio da inviare al sistema;
+        \item Il sensore invia il messaggio al sistema.
+        \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di sensore desidero poter inviare al sistema i
+        dati rilevati.
+    \item \textbf{Specializzazioni:} [UC-7.1], [UC-7.2], [UC-7.3], [UC-7.4]
+\end{itemize}
+\subsubsection*{UC-7.1: Inserimento dati temperatura}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-7.1: Inserimento dati temperatura}
+\begin{itemize}
+    \item \textbf{Attore principale:} sensore;
+    \item \textbf{Precondizioni:} il sensore è collegato al sistema;
+    \item \textbf{Postcondizioni:} il sistema ha archiviato correttamente i dati inviati dal sensore;
+    \item \textbf{Scenario principale:}
+        \begin{enumerate}
+        \item Il sensore di temperatura effettua una rilevazione;
+        \item Il sensore formatta il messaggio da inviare al sistema, in modo da mandare la
+temperatura, espressa in gradi Celsius (°C), il timestamp di rilevazione e le proprie
+coordinate geografiche;
+        \item Il sensore invia il messaggio al sistema.
+        \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di sensore desidero poter inviare al sistema i
+        dati rilevati.
+\end{itemize}
+\subsubsection*{UC-7.2: Inserimento dati umidità}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-7.2: Inserimento dati umidità}
+\begin{itemize}
+    \item \textbf{Attore principale:} sensore;
+    \item \textbf{Precondizioni:} il sensore è collegato al sistema;
+    \item \textbf{Postcondizioni:} il sistema ha archiviato correttamente i dati inviati dal sensore;
+    \item \textbf{Scenario principale:}
+        \begin{enumerate}
+        \item Il sensore di umidità effettua una rilevazione;
+        \item Il sensore formatta il messaggio da inviare al sistema, in modo da mandare l'umidità
+            relativa, espressa in percentuale, il timestamp di rilevazione e le proprie
+coordinate geografiche;
+        \item Il sensore invia il messaggio al sistema.
+        \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di sensore desidero poter inviare al sistema i
+        dati rilevati.
+\end{itemize}
+\subsubsection*{UC-7.3: Inserimento dati parcheggio}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-7.3: Inserimento dati parcheggio}
+\begin{itemize}
+    \item \textbf{Attore principale:} sensore;
+    \item \textbf{Precondizioni:} il sensore è collegato al sistema;
+    \item \textbf{Postcondizioni:} il sistema ha archiviato correttamente i dati inviati dal sensore;
+    \item \textbf{Scenario principale:}
+        \begin{enumerate}
+        \item Il sensore di parcheggio effettua una rilevazione;
+        \item Il sensore formatta il messaggio da inviare al sistema, in modo da mandare lo stato
+            di occupazione del parcheggio, il timestamp di rilevazione e le proprie
+coordinate geografiche;
+        \item Il sensore invia il messaggio al sistema.
+        \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di sensore desidero poter inviare al sistema i
+        dati rilevati.
+\end{itemize}
+\subsubsection*{UC-7.4: Inserimento dati pagamenti di parcheggio}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-7.4: Inserimento dati pagamenti di parcheggio}
+\begin{itemize}
+    \item \textbf{Attore principale:} sensore;
+    \item \textbf{Precondizioni:} il sensore è collegato al sistema;
+    \item \textbf{Postcondizioni:} il sistema ha archiviato correttamente i dati inviati dal sensore;
+    \item \textbf{Scenario principale:}
+        \begin{enumerate}
+        \item Il sensore di pagamenti effettua una rilevazione;
+        \item Il sensore formatta il messaggio da inviare al sistema, in modo da mandare lo stato
+            del pagamento relativo a un parcheggio, il timestamp di rilevazione e le proprie
+coordinate geografiche;
+        \item Il sensore invia il messaggio al sistema.
+        \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di sensore desidero poter inviare al sistema i
+        dati rilevati.
 \end{itemize}
 \end{document}
