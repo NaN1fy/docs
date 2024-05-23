@@ -1,4 +1,4 @@
-% changelog: "0.3.1, 2024-05-15, Davide Donanzan, Modifiche alla struttura di Test di Unità"
+% changelog: "0.4.0, 2024-05-15, Guglielmo Barison, Test di accettazione"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -125,8 +125,9 @@
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
-		\midrule
-		0.3.1 & 2024-05-15 & Modifiche minori alla struttura di ``Test di Unità" & Davide Donanzan & Redattore \\\\
+		\midrule	
+    0.4.0 & 2024-05-21 & Stesura sezione ``Test di accettazione" & Guglielmo Barison & Redattore \\\\
+    0.3.1 & 2024-05-15 & Modifiche minori alla struttura di ``Test di Unità" & Davide Donanzan & Redattore \\\\
 		0.3.0 & 2024-05-14 & Inizio stesura ``Test di Unità" e ``Test di Integrazione". & Davide Donanzan & Redattore \\\\
 		0.2.0 & 2024-04-28 & Inizio stesura ``Strategie di testing". & Guglielmo Barison & Redattore \\\\
 		0.1.0 & 2024-04-18 & Stesura ``Obiettivi di qualità". & Guglielmo Barison & Redattore \\\\
@@ -426,7 +427,7 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     specifico, si esaminano i metodi \verb|start_all| e \verb|stop_all|.  & V \\
     \hline
 
-    TU-03 & Verificare che la classe \verb|SimulatorThread| adoperi correttamente. & V \\
+    TU-03 & Verificare che la classe \verb|SimulatorThread| adoperi correttamente. & NI \\
     \hline
 
     TU-04 & Verificare che la classe \verb|TemperatureSensor| restituisca la stringa in formato JSON attesa. & V \\
@@ -438,23 +439,25 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     TU-06 & Verificare che la classe \verb|ParkingSensor| restituisca la stringa in formato JSON attesa. & NI \\
     \hline
 
-    TU-07 & Verificare che le istanze della classe \verb|KafkaProducer| adoperino nelle modalità attese nella produzione di dati, sia nel caso di success che nel caso di failure. & V \\
+    TU-07 & Verificare che la classe \verb|PaymentParkingSensor| restituisca la stringa in formato JSON attesa. & NI \\
+    \hline
+    TU-08 & Verificare che le istanze della classe \verb|KafkaProducer| adoperino nelle modalità attese nella produzione di dati, sia nel caso di success che nel caso di failure. & V \\
     \hline
 
-    TU-08 & Verificare che la funzione \verb|write| della classe \verb|KafkaStreamWriter| funzioni correttamente. & V \\
+    TU-09 & Verificare che la funzione \verb|write| della classe \verb|KafkaStreamWriter| funzioni correttamente. & V \\
     \hline
 
-    TU-09 & Verificare che la funzione \verb|write| della classe
+    TU-10 & Verificare che la funzione \verb|write| della classe
     \verb|StdoutStreamWriter| funzioni correttamente. & V \\
     \hline
 
-    TU-10 & Verificare che la funzione \verb|acked| funzioni correttamente sia nel caso di success che nel caso di failure. & V \\
+    TU-11 & Verificare che la funzione \verb|acked| funzioni correttamente sia nel caso di success che nel caso di failure. & V \\
     \hline
 
-    TU-11 & Verificare che la classe \verb|Coordinates| funzioni correttamente. & V \\
+    TU-12 & Verificare che la classe \verb|Coordinates| funzioni correttamente. & V \\
     \hline
 
-    TU-12 & Verificare che la funzione \verb|jsonfy| funzioni correttamente. & V \\
+    TU-13 & Verificare che la funzione \verb|jsonfy| funzioni correttamente. & V \\
     \hline
 
 \end{longtable}
@@ -479,10 +482,200 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
         TI-02 & Verificare la persistenza dei dati della classe \verb|HumiditySensor| nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
         \hline
 
-		TI-03 & Verificare la persistenza dei dati della classe \verb|ParkingeSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
-		\hline
-
+		TI-03 & Verificare la persistenza dei dati della classe \verb|ParkingSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+		\hline 
+		TI-04 & Verificare la persistenza dei dati della classe \verb|PaymentParkingSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    \hline
 \end{longtable}
 \subsection{Test di sistema}
 \subsection{Test di accettazione}
+Questa sezione presenta i test di accettazione del software, condotti da NaN1fy e dalla
+\glossterm{Proponente} sotto la supervisione del gruppo. Questi test mirano a validare il prodotto prima del suo rilascio, garantendone la \glossterm{qualità} e l'aderenza ai requisiti.
+
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{2cm}|>{\RaggedRight}m{12cm}|>{\centering\arraybackslash}p{2cm}|}
+    \hline
+    \rowcolor{white}
+    \textbf{Codice Test} & \textbf{Descrizione} & \textbf{Stato Test} \\
+    \hline
+    \endfirsthead 
+    \rowcolor{white}
+    \caption{Tabella dei test di accettazione.} 
+    \label{table:Tabella dei test di accettazione}
+    \endlastfoot  
+    TA-01 & Verificare che l’\glossterm{amministratore pubblico} senza autenticazione possa:
+    \begin{enumerate}
+        \setlength\itemsep{0em}
+        \item Usufruire dell’applicativo senza doversi iautenticare.
+    \end{enumerate} & NV \\
+    \hline
+    TA-02 & Verificare che l’\glossterm{amministratore pubblico}, una volta entrato nell'applicativo, possa:
+    \begin{enumerate}
+        \setlength\itemsep{0em}
+        \item Aprire il menu di selezione delle \glossterm{dashboard};
+        \item Selezionare la \glossterm{dashboard} dei sensori;
+        \item Visualizzare la \glossterm{dashboard};
+        \item Visualizzare un pannello con una mappa che indichi, mediante icone collocate presso le coordinate di ciascun sensore, la posizione dei sensori;
+        \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il sistema non riesca a reperire i dati.
+    \end{enumerate}
+    & NV \\
+    \hline
+    TA-03 & Verificare che l’\glossterm{amministratore pubblico}, una volta entrato nell'applicativo, possa:
+    \begin{enumerate}
+        \setlength\itemsep{0em}
+        \item Aprire il menu di selezione delle \glossterm{dashboard};
+        \item Selezionare la \glossterm{dashboard} dei dati ambientali;
+        \item Visualizzare la \glossterm{dashboard};
+        \item Visualizzare un pannello contenente un grafico in formato time series che mostri i
+            risultati delle rilevazioni delle temperatura, espressa in gradi Celsius (°C),
+            effettuate dai singoli sensori;
+        \item Visualizzare un pannello contenente un grafico in formato time series che mostri i
+            risultati delle rilevazioni dell’umidità, espressa in percentuale, effettuate dai
+            singoli sensori;
+        \item Visualizzare un pannello contenente un grafico in formato time series che mostri i
+            risultati del calcolo della temperatura percepita, espressa in gradi Celsius (°C),
+            effettuate dalla coppia di sensori temperatura e umidità;
+        \item Visualizzare un pannello contenente un grafico di tipo Gauge che mostri il risultato
+            del calcolo della temperatura media, espressa in gradi Celsius (°C), ottenuta tramite la
+            media aritmetica delle rilevazioni effettuate dai singoli sensori;
+        \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il sistema non riesca a reperire i dati.
+    \end{enumerate}
+    & NV \\
+    \hline
+    TA-04 & Verificare che l’\glossterm{amministratore pubblico}, una volta entrato nell'applicativo, possa:
+    \begin{enumerate}
+        \setlength\itemsep{0em}
+        \item Aprire il menu di selezione delle \glossterm{dashboard};
+        \item Selezionare la \glossterm{dashboard} dei dati urbanistici;
+        \item Visualizzare la \glossterm{dashboard};
+        \item Visualizzare un pannello in formato alert list che mostri un elenco dettagliato di
+            avvisi di pagamento, includendo informazioni come la data di pagamento e il costo
+            associato a ciascuna rilevazione effettuata dai sensori;
+        \item Visualizzare un pannello in formato status history che mostri l'elenco degli stati dei
+            parcheggi, espressi tramite valori booleani, nel tempo, rilevati dai singoli sensori;
+            parcheggi, espressi tramite booleani, nel tempo effettuate dai singoli sensori;
+        \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il sistema non riesca a reperire i dati.
+    \end{enumerate}
+    & NV \\
+    \hline
+    TA-05 & Verificare che l’\glossterm{amministratore pubblico}, una volta entrato nell’applicativo, possa:
+    \begin{enumerate}
+        \item Scegliere una \glossterm{dashboard} da visualizzare;
+        \item Applicare dei filtri, per visualizzare solo i dati provenienti dal sottoinsieme di
+            sensori selezionato, nel caso di pannelli di tipo time series; 
+        \item Applicare dei filtri, per visualizzare solo i dati provenienti dal sottoinsieme di
+            sensori selezionato, nel caso di pannelli di tipo alert list;
+        \item Applicare dei filtri, per visualizzare solo i dati provenienti dal sottoinsieme di
+            sensori selezionato, nel caso di pannelli di tipo status history;  
+        \item Applicare dei filtri, per selezionare solo i dati relativi ad un definito intervallo
+            di tempo, all’interno di un’intera \glossterm{dashboard}.
+    \end{enumerate}
+    & NV \\
+    \hline
+    TA-06 & Verificare che l’\glossterm{amministratore pubblico}, una volta entrato
+    nell’applicativo, possa:
+    \begin{enumerate}
+        \item Scegliere una \glossterm{dashboard} di cui modificare il layout;
+        \item Modificare il layout dei pannelli in termini di posizione di tali pannelli e della loro dimensione.
+    \end{enumerate}
+    & NV \\
+    \hline
+    TA-07 &
+    Verificare che un sensore, una volta connesso al sistema, possa:
+    \begin{enumerate}
+        \item Inserire il risultato della rilevazione della temperatura, espressa in gradi Celsius
+            (°C), con annesso il timestamp di rilevazione e le proprie coordinate geografiche.        
+    \end{enumerate}
+    & NV \\
+    \hline
+    TA-08 &
+    Verificare che un sensore, una volta connesso al sistema, possa:
+    \begin{enumerate}
+    \item Inserire il risultato della rilevazione dell’umidità, espressa
+in percentuale, con annesso il timestamp di rilevazione e le proprie coordinate geografiche.
+    \end{enumerate}
+    & NV \\
+    \hline
+    TA-09 &
+    Verificare che un sensore, una volta connesso al sistema, possa:
+    \begin{enumerate}
+    \item  Inserire il risultato della rilevazione della presenza di auto all’interno del
+        parcheggio, con annesso il timestamp di rilevazione, la targa dell'auto e le proprie coordinate geografiche. 
+    \end{enumerate}
+    & NV \\
+    \hline
+    TA-10 &
+    Verificare che un sensore, una volta connesso al sistema, possa:
+    \begin{enumerate}
+    \item Inserire il risultato della rilevazione di avvenuto pagamento all’interno del
+        parcheggio, con annesso il timestamp di rilevazione, il valore del pagamento e le proprie coordinate geografiche. 
+    \end{enumerate}
+    & NV \\
+    \hline
+\end{longtable}
+\subsubsubsection{Tracciamento dei test di accettazione}
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{4cm}|>{\centering\arraybackslash}p{4cm}|}
+\hline
+\rowcolor{white}
+\textbf{Codice Test} & \textbf{Codice caso d'uso} \\
+\hline
+\endfirsthead
+\rowcolor{white}
+\caption{Tracciamento dei test di accettazione.}
+\label{table:Tracciamento dei test di accettazione}
+\endlastfoot
+    TA-01 & UC-1 \newline
+    UC-2 \newline
+    UC-3 \newline
+    UC-5 \newline
+    UC-6 \newline
+    \\
+    \hline
+    TA-02 & UC-0 \newline
+            UC-1 \newline
+            UC-1.1 \newline
+            UC-4
+    \\
+    \hline 
+    TA-03 & UC-0 \newline
+            UC-2 \newline
+            UC-2.1 \newline
+            UC-2.2 \newline
+            UC-2.3 \newline
+            UC-2.4 \newline
+            UC-4
+    \\
+    \hline
+    TA-04 & UC-0 \newline
+            UC-3.1 \newline
+            UC-3.2
+    \\
+    \hline
+    TA-05 & UC-5 \newline
+            UC-5.1\newline
+            UC-5.2
+    \\
+    \hline
+    TA-06 & UC-6 \\
+    \hline
+    TA-07 & UC-7 \newline
+            UC-7.1
+    \\
+    \hline
+    TA-08 & UC-7 \newline
+    UC-7.2
+    \\
+    \hline
+    TA-09 & UC-7 \newline
+    UC-7.3
+    \\
+    \hline
+    TA-10 & UC-7 \newline
+    UC-7.4
+    \\
+    \hline
+\end{longtable}
 \end{document}
