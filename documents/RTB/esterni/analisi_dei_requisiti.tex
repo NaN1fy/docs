@@ -14,11 +14,12 @@
 \usepackage{mathabx}
 \usepackage[euler]{textgreek}
 \usepackage{makecell}
-\usepackage{tikz}
+\usepackage{tikz, ifthen, xstring, calc, pgfkeys, pgfopts, tikz-uml}
 \usepackage{wrapfig}
 \usepackage{siunitx}
 \usepackage{amssymb} 
 \usepackage{tabularx}
+\usepackage{longtable}
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
@@ -37,6 +38,7 @@
 \usepackage{varwidth}
 
 \definecolor{nan1fyblue}{RGB}{23,103,162}
+\tikzumlset{fill usecase=white}
 
 % -- TITOLO INTESTAZIONE -- %
 \newcommand{\customtitle}{ANALISI DEI REQUISITI} % o ESTERNO
@@ -82,9 +84,9 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Davide Donanzan}\\}}
-			{\large{\textsc{Veronica Tecchiati\\}}}	
-			{\large{\textsc{Guglielmo Barison}}}
+			{\\\large{\textsc{Guglielmo Barison}\\}}
+			{\large{\textsc{Davide Donanzan\\}}}	
+			{\large{\textsc{Veronica Tecchiati}}}
 			
 		}
 		\vspace{8mm}
@@ -116,7 +118,9 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-            0.1.0 & 2024-05-20 & Stesura sezione \ref{sec:users} e inizio sezione \ref{sec:use-case} & Veronica Tecchiati & Redattore \\\\
+            0.3.0 & 2024-05-25 & Aggiunta diagrammi casi d'uso, stesura sezione \ref{sec:requisiti}. & Veronica Tecchiati & Redattore \\\\
+            0.2.0 & 2024-05-21 & Correzioni, continuazione sezione \ref{sec:use-case}. & Gugliemo Barison & Redattore \\\\
+            0.1.0 & 2024-05-20 & Stesura sezione \ref{sec:users} e inizio sezione \ref{sec:use-case}. & Veronica Tecchiati & Redattore \\\\
 		0.0.0 & 2024-04-09 & Stesura del file. & Davide Donanzan & Redattore \\
 		\bottomrule
 	\end{tabular}
@@ -279,7 +283,7 @@ Gli attori che interagiscono con il sistema sono i seguenti:
 \end{itemize}
 \clearpage
 \subsection{Codice dei casi d'uso}
-Ogni caso d'uso è associato ad un codice univoco definito nel seguente formato:
+Ad ogni caso d'uso è associato un codice univoco definito nel seguente formato:
 \begin{center}
     \textbf{UC-[Numero].[Specializzazione]}
 \end{center}
@@ -302,6 +306,19 @@ dello stesso caso d'uso.
     \item \textbf{User Story associata: }in qualità di amministratore pubblico, desidero accedere alla dashboard per monitorare in tempo reale i dati raccolti dai vari sensori dislocati nella città. Questo mi permetterà di valutare rapidamente lo stato complessivo della città e di prendere decisioni informate e tempestive riguardo alla gestione delle risorse e all’implementazione dei servizi.
 \end{itemize}
 
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-0]{UC-0 \\ Visualizzazione menu dashboard}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-0}
+        \end{tikzpicture}
+    \caption{UC-0: Visualizzazione menu dashboard}
+    \label{fig:UC-0: Visualizzazione menu dashboard}
+\end{figure}
+
 \subsubsection*{UC-1: Visualizzazione dashboard sensori}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-1: Visualizzazione dashboard sensori}
 \begin{itemize}
@@ -319,6 +336,22 @@ dello stesso caso d'uso.
     \item \textbf{Specializzazioni:} [UC-1.1];
     \item \textbf{Estensioni:} [UC-4];
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-1]{UC-1 \\ Visualizzazione dashboard sensori}
+
+                \umlusecase[x=0, y=-3, width=80, name=UC-4]{UC-4 \\ Visualizzazione errore nessun dato}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-1}
+                \umlextend{UC-1}{UC-4}
+        \end{tikzpicture}
+    \caption{UC-1: Visualizzazione dashboard sensori}
+    \label{fig:UC-1: Visualizzazione dashboard sensori}
+\end{figure}
 
 \subsubsection*{UC-1.1: Visualizzazione posizione sensori su mappa}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-1.1: Visualizzazione posizione sensori su mappa}
@@ -339,6 +372,19 @@ dello stesso caso d'uso.
         alla dashboard per conoscere la posizione dei sensori dislocati nella città. La mappa deve indicare chiaramente la posizione di ciascun sensore e deve essere etichettata in modo da consentire un riconoscimento immediato della tipologia di ogni sensore.
 \end{itemize}
 
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{UC-1 Visualizzazione dashboard sensori}
+                \umlusecase[x=0, y=0, width=80, name=UC-position]{UC-1.1 \\ Visualizzazione posizione sensori su mappa}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-position}
+        \end{tikzpicture}
+    \caption{UC-1.1: Visualizzazione posizione sensori su mappa}
+    \label{fig:UC-1.1: Visualizzazione posizione sensori su mappa}
+\end{figure}
+
 \subsubsection*{UC-2: Visualizzazione dashboard ambientale}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2: Visualizzazione dashboard ambientale}
 \begin{itemize}
@@ -356,6 +402,22 @@ dello stesso caso d'uso.
     \item \textbf {Specializzazioni:} [UC-2.1], [UC-2.2], [UC-2.3], [UC-2.4];  
     \item \textbf{Estensioni:} [UC-4];
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-2]{UC-2 \\ Visualizzazione dashboard ambientale}
+
+                \umlusecase[x=0, y=-3, width=80, name=UC-4]{UC-4 \\ Visualizzazione errore nessun dato}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-2}
+                \umlextend{UC-2}{UC-4}
+        \end{tikzpicture}
+    \caption{UC-2: Visualizzazione dashboard ambientale}
+    \label{fig:UC-2: Visualizzazione dashboard ambientale}
+\end{figure}
 
 \subsubsection*{UC-2.1: Visualizzazione pannello time series per temperatura}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.1: Visualizzazione pannello time series per temperatura}
@@ -434,6 +496,29 @@ series per umidità}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare la temperatura media. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=-5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
+            \begin{umlsystem}[x=7, y=0]{UC-2 Visualizzazione dashboard ambientale}
+                \umlusecase[x=0, y=0, width=80, name=UC-temp]{UC-2.1 \\ Visualizzazione pannello time series per temperatura}
+
+                \umlusecase[x=0, y=-3, width=80, name=UC-humid]{UC-2.2 \\ Visualizzazione pannello time series per umidità}
+
+                \umlusecase[x=0, y=-6, width=80, name=UC-temp-perc]{UC-2.3 \\ Visualizzazione pannello time series per temperatura percepita}
+
+                \umlusecase[x=0, y=-9.2, width=80, name=UC-temp-avg]{UC-2.4 \\ Visualizzazione pannello Gauge per temperatura media}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-temp}
+                \umlassoc{Amministratore pubblico}{UC-humid}
+                \umlassoc{Amministratore pubblico}{UC-temp-perc}
+                \umlassoc{Amministratore pubblico}{UC-temp-avg}
+        \end{tikzpicture}
+    \caption{Sottocasi UC-2: Visualizzazione dashboard ambientale}
+    \label{fig:Sottocasi UC-2: Visualizzazione dashboard ambientale}
+\end{figure}
+
 \subsubsection*{UC-3: Visualizzazione dashboard urbanistica}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3: Visualizzazione dashboard urbanistica}
 \begin{itemize}
@@ -452,6 +537,22 @@ series per umidità}
     \item \textbf {Specializzazioni:} [UC-3.1], [UC-3.2], [UC-3.3].
     \item \textbf{Estensioni:} [UC-4];
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-3]{UC-3 \\ Visualizzazione dashboard urbanistica}
+
+                \umlusecase[x=0, y=-3, width=80, name=UC-4]{UC-4 \\ Visualizzazione errore nessun dato}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-3}
+                \umlextend{UC-3}{UC-4}
+        \end{tikzpicture}
+    \caption{UC-3: Visualizzazione dashboard urbanistica}
+    \label{fig:UC-3: Visualizzazione dashboard urbanistica}
+\end{figure}
 
 \subsubsection*{UC-3.1: Visualizzazione pannello alert list per notifiche di pagamento}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.1: Visualizzazione pannello alert list per notifiche di pagamento}
@@ -494,6 +595,29 @@ series per umidità}
         comprensione e la comparazione delle misurazioni.
 \end{itemize}
 \subsubsection*{UC-3.3: Visualizzazione pannello ...}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=-5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
+            \begin{umlsystem}[x=7, y=0]{UC-3 Visualizzazione dashboard urbanistica}
+                \umlusecase[x=0, y=0, width=80, name=UC-pay]{UC-3.1 \\ Visualizzazione pannello alert list per notifiche di pagamento}
+
+                \umlusecase[x=0, y=-3, width=80, name=UC-park]{UC-3.2 \\ Visualizzazione pannello status history per parcheggi}
+
+                \umlusecase[x=0, y=-6, width=80, name=UC-boh]{UC-3.3 \\ ...}
+
+                \umlusecase[x=0, y=-9.2, width=80, name=UC-boh2]{UC-3.4 \\ ...}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-pay}
+                \umlassoc{Amministratore pubblico}{UC-park}
+                \umlassoc{Amministratore pubblico}{UC-boh}
+                \umlassoc{Amministratore pubblico}{UC-boh2}
+        \end{tikzpicture}
+    \caption{Sottocasi UC-3: Visualizzazione dashboard urbanistica}
+    \label{fig:Sottocasi UC-3: Visualizzazione dashboard urbanistica}
+\end{figure}
+
 \subsubsection*{UC-4: Visualizzazione errore nessun dato}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4: Visualizzazione errore nessun dato}
 \begin{itemize}
@@ -526,6 +650,20 @@ applicato;
         delle informazioni.
     \item \textbf{Specializzazioni:} [UC-5.1], [UC-5.2].
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-5]{UC-5 \\ Applicazione filtri}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-5}
+        \end{tikzpicture}
+    \caption{UC-5: Applicazione filtri}
+    \label{fig:UC-5: Applicazione filtri}
+\end{figure}
+
 \subsubsection*{UC-5.1: Filtro sotto-insieme di sensori su grafici time series}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-5.1: Filtro sotto-insieme di sensori su grafici time series}
 \begin{itemize}
@@ -561,6 +699,24 @@ temporale selezionato, in tutti i pannelli della dashboard dove è stato applica
         delle informazioni. In particolare la possibilità di poter evidenziare/escludere determinate
         scaglie temporali.
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=-1.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
+            \begin{umlsystem}[x=7, y=0]{UC-5 Applicazione filtri}
+                \umlusecase[x=0, y=0, width=80, name=UC-series]{UC-5.1 \\ Filtro sotto-insieme di sensori su grafici time series}
+
+                \umlusecase[x=0, y=-3, width=80, name=UC-time]{UC-5.2 \\ Filtro per intervallo temporale}
+
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-series}
+                \umlassoc{Amministratore pubblico}{UC-time}
+        \end{tikzpicture}
+    \caption{Sottocasi UC-5: Applicazione filtri}
+    \label{fig:Sottocasi UC-5: Applicazione filtri}
+\end{figure}
+
 \subsubsection*{UC-6: Modifica layout pannelli}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-6: Modifica layout pannelli}
 \begin{itemize}
@@ -572,6 +728,20 @@ temporale selezionato, in tutti i pannelli della dashboard dove è stato applica
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero poter
         visualizzare i pannelli nella forma e dimensione a me più congeniali.
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-6]{UC-6 \\ Modifica layout pannelli}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-6}
+        \end{tikzpicture}
+    \caption{UC-6: Modifica layout pannelli}
+    \label{fig:UC-6: Modifica layout pannelli}
+\end{figure}
+
 \subsubsection*{UC-7: Inserimento dati sensore}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-7: Inserimento dati sensore}
 \begin{itemize}
@@ -588,6 +758,20 @@ temporale selezionato, in tutti i pannelli della dashboard dove è stato applica
         dati rilevati.
     \item \textbf{Specializzazioni:} [UC-7.1], [UC-7.2], [UC-7.3], [UC-7.4]
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Sensore}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-7]{UC-7 \\ Inserimento dati sensore}
+            \end{umlsystem}
+                \umlassoc{Sensore}{UC-7}
+        \end{tikzpicture}
+    \caption{UC-7: Inserimento dati sensore}
+    \label{fig:UC-7: Inserimento dati sensore}
+\end{figure}
+
 \subsubsection*{UC-7.1: Inserimento dati temperatura}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-7.1: Inserimento dati temperatura}
 \begin{itemize}
@@ -656,4 +840,182 @@ coordinate geografiche;
     \item \textbf{User Story associata:} in qualità di sensore desidero poter inviare al sistema i
         dati rilevati.
 \end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=-5, inner xsep=1em]{Sensore}
+            \begin{umlsystem}[x=7, y=0]{UC-7 Inserimento dati}
+                \umlusecase[x=0, y=0, width=80, name=UC-temp]{UC-7.1 \\ Inserimento dati temperatura}
+
+                \umlusecase[x=0, y=-3, width=80, name=UC-humid]{UC-7.2 \\ Inserimento dati umidità}
+
+                \umlusecase[x=0, y=-6, width=80, name=UC-park]{UC-7.3 \\ Inserimento dati parcheggio}
+
+                \umlusecase[x=0, y=-9.2, width=80, name=UC-pay]{UC-7.4 \\ Inserimento dati pagamenti parcheggio}
+            \end{umlsystem}
+                \umlassoc{Sensore}{UC-temp}
+                \umlassoc{Sensore}{UC-humid}
+                \umlassoc{Sensore}{UC-park}
+                \umlassoc{Sensore}{UC-pay}
+        \end{tikzpicture}
+    \caption{Sottocasi UC-7: Inserimento dati}
+    \label{fig:Sottocasi UC-7: Inserimento dati}
+\end{figure}
+
+\newpage 
+\section{Requisiti} \label{sec:requisiti}
+A ciascun requisito è abbinato un codice univoco definito nel seguente modo:
+\begin{center}
+    \textbf{R[Tipologia]-[Numero]}
+\end{center}
+Dove \textbf{Tipologia} rappresenta il tipo di requisito e \textbf{[Numero]} è un identificativo progressivo.
+
+\subsection{Requisiti funzionali}
+Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i servizi che esso deve essere in grado di fornire al fine di soddisfare le esigenze dell'utente. Un requisito funzionale descrive quindi il comportamento del sistema. \\ Di seguito sono elencati i requisiti funzionali individuati:
+\renewcommand{\arraystretch}{1.25}
+\begin{longtable}{p{1.2cm} p{2cm} p{8cm} p{3cm}}
+    \toprule
+	\textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonti}\\
+		\midrule
+            RF-1 & Obbligatorio & L'utente deve poter usufruire del sistema senza dover effettuare l'autenticazione & \glossterm{Capitolato} \\
+            %RF-2 & Obbligatorio & L'utente deve poter visualizzare la posizione geografica dei sensori su una mappa & \glossterm{Capitolato} \\
+            RF-3 & Obbligatorio & Il sistema deve permettere la visualizzazione in tempo reale dei dati provenienti dai sensori & \glossterm{Capitolato} \\
+            RF-4 & Obbligatorio & Il sistema deve integrare molteplici simulatori di sensori in grado di generare dati casuali ma comunque verosimili & \glossterm{Capitolato} \\
+            RF-5 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi la temperatura espressa in gradi Celsius & \glossterm{Capitolato} \\
+            RF-6 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi l'umidità nell'aria espressa in percentuale & \glossterm{Capitolato} \\
+            RF-7 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi la quantità di polveri sottili presenti nell'aria, espressa in microgrammi per metro cubo & \glossterm{Capitolato} \\
+            RF-8 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi lo stato di occupazione di un parcheggio, espresso mediante un valore binario & \glossterm{Capitolato} \\
+            RF-9 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi lo stato di utilizzo delle colonnine di ricarica, espresso mediante un valore binario & \glossterm{Capitolato} \\
+            RF-10 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi lo stato di riempimento delle isole ecologiche, espresso mediante un valore binario & \glossterm{Capitolato} \\
+            RF-11 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi il livello dell'acqua nella zona d'installazione & \glossterm{Capitolato} \\
+            RF-12 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi la presenza di guasti elettrici, espressa mediante un valore binario & \glossterm{Capitolato} \\
+            RF-13 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi le precipitazioni, indicando la quantità di pioggia espressa in millimetri in un'ora & \glossterm{Capitolato} \\
+            RF-14 & Obbligatorio & L'utente deve poter visualizzare un menu attraverso il quale selezionare la \glossterm{dashboard} desiderata tra Sensori, Ambientale ed Urbanistica & UC-0 \\
+            RF-15 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa allo stato dei sensori & UC-1 \\
+            RF-16 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} contente una mappa su cui è indicata la posizione geografica dei sensori & \glossterm{Capitolato}, UC-1.1 \\
+            RF-17 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio ambientale & UC-2 \\
+            RF-18 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura in formato time series & UC-2.1 \\
+            RF-19 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni dell'umidità in formato time series & UC-2.2 \\
+            RF-20 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura percepita in formato time series & UC-2.3 \\
+            RF-21 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura media in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.4 \\
+            RF-22 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio urbanistico & UC-3 \\
+            RF-23 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una lista di notifiche dei pagamenti dei parcheggi. & UC-3.1 \\
+            RF-24 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra lo stato di occupazione dei parcheggi & UC-3.2 \\
+            %RF-25 & Obbligatorio & & UC-3.3 \\
+            RF-24 & Obbligatorio & L'utente deve poter visualizzare un messaggio di errore qualora non sia possibile reperire i dati o vi sia un malfunzionamento nel sistema. & UC-4 \\
+            RF-25 & Obbligatorio & L'utente deve poter applicare dei filtri per escludere alcuni dati dalla visualizzazione, secondo determinati criteri. & UC-5 \\
+            RF-24 & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati provenienti da alcune specifiche tipologie di sensori. & UC-5.1 \\
+            RF-25 & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati misurati in un determinato intervallo temporale. & UC-5.2 \\
+            RF-24 & Obbligatorio & L'utente deve poter modificare il layout dei \glossterm{widget}, spostandoli o ridimensionandoli. & UC-6 \\
+            RF-25 & Obbligatorio & Il sensore deve poter inviare i dati misurati, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-7 \\
+            RF-24 & Obbligatorio & Il sensore deve poter inviare i dati relativi alla temperatura, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-7.1 \\
+            RF-25 & Obbligatorio & Il sensore deve poter inviare i dati relativi all'umidità, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-7.2 \\
+            RF-24 & Obbligatorio & Il sensore deve poter inviare i dati relativi allo stato di occupazione dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-7.3 \\
+            RF-25 & Obbligatorio & Il sensore deve poter inviare i dati relativi ai pagamenti dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-7.4 \\
+		\bottomrule
+	\caption{Requisiti funzionali.}
+	\label{table:Requisiti funzionali} \\
+\end{longtable}
+
+\subsection{Requisiti qualitativi}
+Questa tipologia di requisiti definisce lo standard di qualità che il prodotto deve rispettare. \\
+Di seguito sono elencati i requisiti qualitativi individuati:
+\begin{longtable}{p{1.2cm} p{2cm} p{8cm} p{3cm}}
+    \toprule
+    \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} \\
+    \midrule
+            RQ-1 & Obbligatorio & Devono essere rispettati i vincoli e le metriche descritti nel documento \textit{Piano di Qualifica v1.0.0} & Norme di Progetto \\
+            RQ-2 & Obbligatorio & Devono essere rispettate le norme specificate nel documento \textit{Norme di Progetto v1.0.0} & Norme di Progetto \\
+            RQ-3 & Obbligatorio & Il prodotto deve superare i test che provano il corretto funzionamento dei servizi impiegati e delle funzionalità implementate. La copertura di test deve essere almeno dell'80\% e deve essere adeguatamente documentata & \glossterm{Capitolato} \\
+            RQ-4 & Obbligatorio & La \glossterm{Proponente} deve essere in grado di accedere alla \glossterm{repository} GitHub del prodotto ``SyncCity" & Proponente \\
+            RQ-5 & Obbligatorio & Deve essere fornita la documentazione relativa al corretto funzionamento dei simulatori di sensori & \glossterm{Capitolato} \\
+            RQ-6 & Obbligatorio & Le scelte implementative e progettuali devono essere motivate ed adeguatamente documentate & \glossterm{Capitolato} \\
+            RQ-7 & Obbligatorio & I problemi aperti e le eventuali soluzioni da esplorare devono essere adeguatamente documentati & \glossterm{Capitolato} \\
+		\bottomrule
+	\caption{Requisiti qualitativi.}
+	\label{table:Requisiti qualitativi}
+\end{longtable}
+
+\subsection{Requisiti di vincolo}
+Questa tipologia di requisiti indica i limiti imposti dal capitolato che il prodotto deve rispettare. \\
+Di seguito sono elencati i requisiti di vincolo individuati:
+\begin{longtable}{p{1.2cm} p{2cm} p{8cm} p{3cm}}
+    \toprule
+    \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} \\
+		\midrule
+            RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un database OLAP colonnare come ClickHouse & \glossterm{Capitolato} \\
+            RV-2 & Obbligatorio & Lo stream di dati deve essere gestito mediante un broker come Apache Kafka & \glossterm{Capitolato} \\
+            RV-3 & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come Grafana & \glossterm{Capitolato} \\
+            RV-4 & Obbligatorio & Il sistema deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker} & \glossterm{Proponente} \\
+            RV-5 & Obbligatorio & I dati generati dal simulatore devono essere in formato JSON & Interna \\
+		\bottomrule
+	\caption{Requisiti di vincolo.}
+	\label{table:Requisiti di vincolo}
+\end{longtable}
+
+\subsection{Requisiti prestazionali}
+Questa tipologia di requisiti specifica le prestazioni che il sistema deve avere. \\
+Di seguito sono elencati i requisiti prestazionali individuati:
+\begin{longtable}{p{1.2cm} p{2cm} p{8cm} p{3cm}}
+    \toprule
+    \textbf{Codice} & \textbf{Importanza} & \textbf{Descrizione} & \textbf{Fonte} \\
+		\midrule
+            RP-1 &  &  &  \\
+            RP-2 &  &  &  \\
+            RP-3 &  &  &  \\
+            RP-4 &  &  &  \\
+		\bottomrule
+	\caption{Requisiti prestazionali.}
+	\label{table:Requisiti prestazionali}
+\end{longtable}
+
+\subsection{Tracciamento}
+\subsubsection{Requisito - Fonte}
+\begin{longtable}{cc}
+		\toprule
+		\textbf{Requisito} & \textbf{Fonte} \\
+		\midrule
+             &  \\
+             &  \\
+             &  \\
+             &  \\
+		\bottomrule
+	\caption{Tracciamento requisito - fonte.}
+	\label{table:Tracciamento requisito - fonte}
+\end{longtable}
+
+\subsubsection{Fonte - Requisito}
+\begin{longtable}{cc}
+		\toprule
+		\textbf{Fonte} & \textbf{Requisito} \\
+		\midrule
+             &  \\
+             &  \\
+             &  \\
+             &  \\
+		\bottomrule
+	\caption{Tracciamento fonte - requisito.}
+	\label{table:Tracciamento requisito - fonte}
+\end{longtable}
+
+\subsection{Riepilogo}
+\begin{table}[ht!]
+\hypersetup{hidelinks}
+    \centering
+    \renewcommand{\arraystretch}{1.25}
+	\begin{tabular}{ccccc}
+		\toprule
+		\textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Desiderabili} & \textbf{Opzionali} & \textbf{Totale}\\
+		\midrule
+            Funzionali &  &  &  & \\
+            Qualitativi &  &  &  & \\
+            Di vincolo &  &  &  & \\
+            Prestazionali &  &  &  & \\
+		\bottomrule
+	\end{tabular}
+	\caption{Riepilogo dei requisiti.}
+	\label{table:Riepilogo dei requisiti}
+\end{table}
+
 \end{document}
