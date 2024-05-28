@@ -1,4 +1,4 @@
-% changelog: "0.5.0, 2024-05-24, Davide Donanzan, aggiunta metriche"
+% changelog: "0.6.0, 2024-05-28, Guglielmo Barison, Stesura liste di controllo"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -126,6 +126,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule	
+        0.6.0 & 2024-05-28 & Stesura sezione ``Liste di controllo". & Guglielmo Barison & Redattore
+        \\\\
         0.5.0 & 2024-05-24 & Stesura sezione ``Cruscotto della qualità". & Davide Donanzan & Redattore \\\\
         0.4.0 & 2024-05-21 & Stesura sezione ``Test di accettazione". & Guglielmo Barison & Redattore \\\\
         0.3.1 & 2024-05-15 & Modifiche minori alla struttura di ``Test di Unità". & Davide Donanzan & Redattore \\\\
@@ -785,6 +787,88 @@ Le liste di controllo rappresentano un prezioso strumento a disposizione del
 Verificatore per l'identificazione di errori ricorrenti nella documentazione o nel codice. Integrando la descrizione del problema, facilitano la comprensione delle modifiche richieste durante la fase di revisione.
 \\
 Inoltre, il Verificatore ha la possibilità di aggiornare le liste di controllo nel corso del progetto, man mano che emergono nuovi errori ricorrenti.
+\subsubsection{Struttura dei documenti}
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{5cm}|>{\centering\arraybackslash}p{10cm}|}
+\hline
+\rowcolor{white}
+    \textbf{Aspetto} & \textbf{Spiegazione} \\
+\hline
+\endfirsthead
+\rowcolor{white}
+\caption{Lista di controllo per la struttura dei documenti.}
+\label{table:Lista di controllo per la struttura dei documenti}
+\endlastfoot
+    Vuoti documentativi & Non devono essere presenti sezioni senza contenuto. \\
+\hline
+    Didascalia assente & Tutte le tabelle e le immagini devono avere una didascalia descrittiva. \\
+\hline    
+Titolo principale & Tutti i titoli principali devono iniziare la pagina nella quale vengono
+    inseriti \\
+\hline
+    Aggiornamento fantasma & Ad ogni insieme di modifichedeve corrispondere una riga nella tabella
+    del changelog. \\
+\hline
+\end{longtable}
+\subsubsection{Errori ortografici, di lingua italiana e di forma}
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{5cm}|>{\centering\arraybackslash}p{10cm}|}
+\hline
+\rowcolor{white}
+    \textbf{Aspetto} & \textbf{Spiegazione} \\
+\hline
+\endfirsthead
+\rowcolor{white}
+\caption{Lista di controllo per gli errori ortografici, di lingua italiana e di forma.}
+\label{table:Lista di controllo per gli errori ortografici, di lingua italiana e di forma}
+\endlastfoot
+    Errori di sintassi & Gli errori di sintassi (battitura o distrazione) devono essere rimossi.\\
+\hline
+    Errori di coniugazione & Gli errori di coniugazione devono essere rimossi. \\
+\hline
+    Forma non concisa & Le espressioni troppo verbose, dove possibile, devono essere ridotte.\\
+\hline
+    Non formalità & Le espressioni non formali devono essere sostituite con le corrispondenti
+    espressioni formali. \\
+\hline
+    Richiamo errato al documento & I richiami ai documenti, devono seguire la seguente forma:
+    \textit{NomeDocumento vX.X.X} (e.g. \textit{Piano di Progetto v1.0.0}).\\
+\hline
+    Acronimi non in maiuscolo & Gli acronimi devono essere completamente in maiuscolo. \\
+\hline
+\end{longtable}
+\subsubsection{Non conformità con le \textit{Norme di Progetto}}
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{5cm}|>{\centering\arraybackslash}p{10cm}|}
+\hline
+\rowcolor{white}
+    \textbf{Aspetto} & \textbf{Spiegazione} \\
+\hline
+\endfirsthead
+\rowcolor{white}
+    \caption{Lista di controllo per le non conformità con le \textit {Norme di Progetto}.}
+    \label{table: Lista di controllo per le non conformità con le Norme di Progetto}
+\endlastfoot
+    Formato date errato & Il formato delle date deve essere aaaa-mm-dd all’interno dei documenti. \\
+    \hline
+    Punteggiatura scorretta negli elenchi &  Ogni elemento di un elenco, numerato o non, deve ter-
+    minare con un ``;”, ad eccezione dell’ultima riga, la quale deve terminare con ``.”. \\ 
+    \hline
+    ``:” non in grassetto negli elenchi & Gli elenchi nella forma ``termine: testo”, devono
+    includere ``:” nel grassetto. \\
+    \hline
+    Maiuscole nei titoli & La prima lettera di ogni titolo deve essere maiuscola. Il resto del
+    titolo dovrebbe essere in minuscolo (tolte particolari eccezioni). \\
+    \hline
+    Ruoli in minuscolo & Tutti i ruoli del progetto devono avere la prima lettera in maiuscolo. \\
+    \hline
+    Termine non presente nel glossario & Ogni termine segnato con la formattazione da glossario deve essere presente nel glossario. \\
+\hline
+\end{longtable}
+\newpage
 \section{Cruscotto della qualità}
 \subsection{Qualità di processo - Fornitura}
 \subsubsection{MPC-EAC Estimate at Completion}
