@@ -346,7 +346,7 @@ dello stesso caso d'uso.
                 \umlusecase[x=0, y=-3, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-1}
-                \umlextend{UC-1}{UC-5}
+                \umlextend{UC-5}{UC-1}
         \end{tikzpicture}
     \caption{UC-1: Visualizzazione dashboard sensori.}
     \label{fig:UC-1: Visualizzazione dashboard sensori}
@@ -407,7 +407,7 @@ dello stesso caso d'uso.
                 \umlusecase[x=0, y=-3, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-2}
-                \umlextend{UC-2}{UC-5}
+                \umlextend{UC-5}{UC-2}
         \end{tikzpicture}
     \caption{UC-2: Visualizzazione dashboard ambientale.}
     \label{fig:UC-2: Visualizzazione dashboard ambientale}
@@ -591,7 +591,7 @@ dello stesso caso d'uso.
                 \umlusecase[x=0, y=-3, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-3}
-                \umlextend{UC-3}{UC-5}
+                \umlextend{UC-5}{UC-3}
         \end{tikzpicture}
     \caption{UC-3: Visualizzazione dashboard urbanistica.}
     \label{fig:UC-3: Visualizzazione dashboard urbanistica}
@@ -751,7 +751,6 @@ tabellare per disponibilità colonnine di ricarica}
 
                 \umlusecase[x=0, y=-15.75, width=100, name=UC-paycharge]{UC-3.7 \\ Visualizzazione
                 pannello in formato di registro per notifiche pagamento colonnine di ricarica}
-                \umlusecase[x=0, y=-18, width=100, name=UC-paypark2]{UC-3.8 \\ Visualizzazione pannello bar gauge per dati pagamento parcheggio }
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-park}
                 \umlassoc{Amministratore pubblico}{UC-paypark}
@@ -760,10 +759,22 @@ tabellare per disponibilità colonnine di ricarica}
                 \umlassoc{Amministratore pubblico}{UC-charge}
                 \umlassoc{Amministratore pubblico}{UC-cons}
                 \umlassoc{Amministratore pubblico}{UC-paycharge}
+                     \end{tikzpicture}
+    \caption{Prima parte Sottocasi UC-3: Visualizzazione dashboard urbanistica.}
+    \label{fig:Prima parte Sottocasi UC-3: Visualizzazione dashboard urbanistica}
+\end{figure}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=-7.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
+            \begin{umlsystem}[x=9, y=0]{UC-3 Visualizzazione dashboard urbanistica}
+                \umlusecase[x=0, y=0, width=100, name=UC-paypark2]{UC-3.8 \\ Visualizzazione pannello bar gauge per dati pagamento parcheggio }
+            \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-paypark2}
         \end{tikzpicture}
-    \caption{Sottocasi UC-3: Visualizzazione dashboard urbanistica.}
-    \label{fig:Sottocasi UC-3: Visualizzazione dashboard urbanistica}
+    \caption{Seconda parte Sottocasi UC-3: Visualizzazione dashboard urbanistica.}
+    \label{fig:Seconda parte Sottocasi UC-3: Visualizzazione dashboard urbanistica}
 \end{figure}
 \clearpage
 \newpage
@@ -792,7 +803,7 @@ tabellare per disponibilità colonnine di ricarica}
                 \umlusecase[x=0, y=-3, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-4}
-                \umlextend{UC-4}{UC-5}
+                \umlextend{UC-5}{UC-4}
         \end{tikzpicture}
     \caption{UC-4: Visualizzazione dashboard superamento soglie.}
     \label{fig:UC-4: Visualizzazione dashboard superamento soglie}
