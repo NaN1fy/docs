@@ -1,4 +1,4 @@
-% changelog: "0.4.0, 2024-05-28, Veronica Tecchiati, Stesura ulteriori casi d'uso e requisiti. Scrittura sezioni 4.5 e 4.6"
+% changelog: "0.5.0, 2024-05-28, Veronica Tecchiati, Stesura ulteriori casi d'uso e requisiti. Scrittura sezioni 4.5 e 4.6"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -122,6 +122,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+         	 0.5.0 & 2024-05-29 & Riscrittura di diversi requisiti e alcuni casi d'uso. & Guglielmo Barison & Redattore \\\\
             0.4.0 & 2024-05-28 & Stesura ulteriori casi d'uso e requisiti. Scrittura sezioni \ref{sec:track} e \ref{sec:recap}. & Veronica Tecchiati & Redattore \\\\
             0.3.0 & 2024-05-25 & Aggiunta diagrammi casi d'uso, stesura sezione \ref{sec:requisiti}. & Veronica Tecchiati & Redattore \\\\
             0.2.0 & 2024-05-21 & Correzioni, continuazione sezione \ref{sec:use-case}. & Gugliemo Barison & Redattore \\\\
@@ -276,7 +277,7 @@ Il dominio tecnologico dell'applicativo comprende:
 \subsection{Introduzione}
 Di seguito sono elencati i casi d'uso individuati in seguito all'analisi del capitolato e al
 confronto con la \glossterm{Proponente}. Ciascuno di essi è corredato di un codice identificativo, la cui
-struttura è descritta alla sezione vattelappesca del documento \textit{Norme di Progetto vX.X.X}. %INSERIRE RIMANDO SEZIONE CORRETTA
+struttura è descritta alla sezione vattelappesca del documento \textit{Norme di Progetto v1.0.0}. %INSERIRE RIMANDO SEZIONE CORRETTA
 \subsection{Attori}
 Gli attori che interagiscono con il sistema sono i seguenti:
 \begin{itemize}
@@ -298,7 +299,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} il sistema è operativo e accessibile;
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un menu di selezione da cui
-        può scegliere che dashboard visualizzare: Sensori, Ambientale e Urbanistica.
+        può scegliere che dashboard visualizzare: Sensori, Ambientale, Urbanistica e Soglie.
     \item \textbf{Scenario principale:} 
         \begin{enumerate}
         \item l'amministratore pubblico accede alla piattaforma di visualizzazione.
@@ -613,8 +614,8 @@ tabellare per disponibilità parcheggi}
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato dei singoli parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.2: Visualizzazione pannello log per notifiche pagamento parcheggi}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello log per notifiche pagamento parcheggi}
+\subsubsection*{UC-3.2: Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -625,7 +626,7 @@ tabellare per disponibilità parcheggi}
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello log per le notifiche di pagamento dei parcheggi.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello in formato di registro per le notifiche di pagamento dei parcheggi.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i pagamenti delle soste nei parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -637,7 +638,7 @@ tabellare per guasti elettrici}
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra i
-        gusti sulla rete elettrica in formato tabellare;
+        guasti sulla rete elettrica in formato tabellare;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -693,8 +694,8 @@ tabellare per disponibilità colonnine di ricarica}
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i consumi delle colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.7: Visualizzazione pannello log per notifiche pagamento colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello log per notifiche pagamento colonnine di ricarica}
+\subsubsection*{UC-3.7: Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -704,7 +705,7 @@ tabellare per disponibilità colonnine di ricarica}
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello log per le notifiche di pagamento delle colonnine di ricarica.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello in formato di registro per le notifiche di pagamento delle colonnine di ricarica.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato dei pagamenti delle ricariche di veicoli elettrici effettuate grazie alle apposite colonnine. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -736,7 +737,7 @@ tabellare per disponibilità colonnine di ricarica}
                 tabellare per disponibilità parcheggi}
 
                 \umlusecase[x=0, y=-2.5, width=100, name=UC-paypark]{UC-3.2 \\ Visualizzazione
-                pannello log per notifiche pagamento parcheggi}
+                pannello in formato di registro per notifiche pagamento parcheggi}
 
                 \umlusecase[x=0, y=-5, width=100, name=UC-elec]{UC-3.3 \\ Visualizzazione pannello
                 tabellare per guasti elettrici}
@@ -749,7 +750,7 @@ tabellare per disponibilità colonnine di ricarica}
                 \umlusecase[x=0, y=-13, width=100, name=UC-cons]{UC-3.6 \\ Visualizzazione pannello time series per consumi colonnine di ricarica}
 
                 \umlusecase[x=0, y=-15.75, width=100, name=UC-paycharge]{UC-3.7 \\ Visualizzazione
-                pannello log per notifiche pagamento colonnine di ricarica}
+                pannello in formato di registro per notifiche pagamento colonnine di ricarica}
                 \umlusecase[x=0, y=-18, width=100, name=UC-paypark2]{UC-3.8 \\ Visualizzazione pannello bar gauge per dati pagamento parcheggio }
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-park}
@@ -1391,11 +1392,11 @@ Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i s
             RF-23 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria in formato time series. & UC-2.6 \\ \hline
             RF-24 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua in formato time series. & UC-2.7 \\ \hline
             RF-25 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio urbanistico. & UC-3 \\ \hline
-            RF-26 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa interattiva che descrive lo stato di occupazione dei parcheggi. & UC-3.1 \\ \hline
+            RF-26 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive lo stato di occupazione dei parcheggi. & UC-3.1 \\ \hline
             RF-27 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una lista di notifiche dei pagamenti dei parcheggi. & UC-3.2 \\ \hline
-            RF-28 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa interattiva che descrive i guasti alla fornitura elettrica. & UC-3.3 \\ \hline
+            RF-28 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive i guasti alla fornitura elettrica. & UC-3.3 \\ \hline
             RF-29 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra lo stato di riempimento delle isole ecologiche in formato time series. & UC-3.4 \\ \hline
-            RF-30 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa interattiva che descrive la disponibilità colonnine di ricarica. & UC-3.5 \\ \hline
+            RF-30 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive la disponibilità colonnine di ricarica. & UC-3.5 \\ \hline
             RF-31 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra i consumi di elettricità delle colonnine di ricarica in formato time series. & UC-3.6 \\ \hline
             RF-32 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le notifiche di pagamento relative all'utilizzo delle colonnine di ricarica. & UC-3.7 \\ \hline
             RF-33 & Desiderabile & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al superamento delle soglie. & UC-4 \\ \hline
@@ -1442,10 +1443,10 @@ Di seguito sono elencati i requisiti qualitativi individuati:
     \caption{Requisiti qualitativi.}
 	\label{table:Requisiti qualitativi}
     \endlastfoot
-            RQ-1 & Obbligatorio & Devono essere rispettati i vincoli e le metriche descritti nel documento \textit{Piano di Qualifica v1.0.0}. & Norme di Progetto \\ \hline
+            RQ-1 & Obbligatorio & Devono essere rispettati i vincoli e le metriche descritti nel documento \textit{Piano di Qualifica v1.0.0}. & \textit{Norme di Progetto} \\ \hline
             RQ-2 & Obbligatorio & Devono essere rispettate le norme specificate nel documento \textit{Norme di Progetto v1.0.0}. & Norme di Progetto \\ \hline
             RQ-3 & Obbligatorio & Il prodotto deve superare i test che provano il corretto funzionamento dei servizi impiegati e delle funzionalità implementate. La copertura di test deve essere almeno dell'80\% e deve essere adeguatamente documentata. & \glossterm{Capitolato} \\ \hline
-            RQ-4 & Obbligatorio & La \glossterm{\glossterm{Proponente}} deve essere in grado di accedere alla \glossterm{repository} GitHub del prodotto ``SyncCity". & \glossterm{Proponente} \\ \hline
+            RQ-4 & Obbligatorio & La \glossterm{Proponente} deve essere in grado di accedere alla \glossterm{repository} GitHub del prodotto ``SyncCity". & \glossterm{Proponente} \\ \hline
             RQ-5 & Obbligatorio & Deve essere fornita la documentazione relativa al corretto funzionamento dei simulatori di sensori. & \glossterm{Capitolato} \\ \hline
             RQ-6 & Obbligatorio & Le scelte implementative e progettuali devono essere motivate ed adeguatamente documentate. & \glossterm{Capitolato} \\ \hline
             RQ-7 & Obbligatorio & I problemi aperti e le eventuali soluzioni da esplorare devono essere adeguatamente documentati. & \glossterm{Capitolato} \\ \hline
@@ -1465,11 +1466,11 @@ Di seguito sono elencati i requisiti di vincolo individuati:
     \caption{Requisiti di vincolo.}
 	\label{table:Requisiti di vincolo}
     \endlastfoot
-            RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un database OLAP colonnare come ClickHouse. & \glossterm{Capitolato} \\ \hline
-            RV-2 & Obbligatorio & Lo stream di dati deve essere gestito mediante un broker come Apache Kafka. & \glossterm{Capitolato} \\ \hline
+            RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un database OLAP colonnare come \glossterm{ClickHouse}. & \glossterm{Capitolato} \\ \hline
+            RV-2 & Obbligatorio & Lo stream di dati deve essere gestito mediante un broker come Apache \glossterm{Kafka}. & \glossterm{Capitolato} \\ \hline
             RV-3 & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come Grafana. & \glossterm{Capitolato} \\ \hline
             RV-4 & Obbligatorio & Il sistema deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & \glossterm{Proponente} \\ \hline
-            RV-5 & Obbligatorio & I dati generati dal simulatore devono essere in formato JSON. & Norme di Progetto \\ \hline
+            RV-5 & Obbligatorio & I dati generati dal simulatore devono essere in formato JSON. & \textit{Norme di Progetto} \\ \hline
 \end{longtable}
 \subsection{Requisiti prestazionali}
 Questa tipologia di requisiti specifica le prestazioni che il sistema deve avere. \\
@@ -1562,8 +1563,8 @@ Di seguito sono elencati i requisiti prestazionali individuati:
             RF-58 & UC-9.11 \\ \hline
             RF-59 & UC-9.12 \\ \hline
             RF-60 & \glossterm{Proponente} \\ \hline
-            RQ-1 & Norme di Progetto \\ \hline
-            RQ-2 & Norme di Progetto \\ \hline
+            RQ-1 & \textit{Norme di Progetto} \\ \hline
+            RQ-2 & \textit{Norme di Progetto} \\ \hline
             RQ-3 & \glossterm{Capitolato} \\ \hline
             RQ-4 & \glossterm{Proponente} \\ \hline
             RQ-5 & \glossterm{Capitolato} \\ \hline
@@ -1573,7 +1574,7 @@ Di seguito sono elencati i requisiti prestazionali individuati:
             RV-2 & \glossterm{Capitolato} \\ \hline
             RV-3 & \glossterm{Capitolato} \\ \hline
             RV-4 & \glossterm{Proponente} \\ \hline
-            RV-5 & Norme di Progetto \\ \hline
+            RV-5 & \textit{Norme di Progetto} \\ \hline
             RP-1 & \glossterm{Proponente} \\ \hline
             RP-2 & \glossterm{Proponente} \\ \hline
             RP-3 & \glossterm{Proponente} \\ \hline
