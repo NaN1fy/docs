@@ -1,2 +1,124 @@
 \subsection{Sviluppo}
 
+\subsubsection{Analisi dei Requisiti} \label{sec:analisi-rischi}
+
+\subsubsubsection{Diagrammi UML dei casi d'uso}
+%Attore
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+        \umlactor{Attore}
+    \end{tikzpicture}
+    \caption{Rappresentazione UML di un attore}
+    \label{fig:Rappresentazione UML di un attore}
+\end{figure}
+
+%Caso d'uso
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+        \umlusecase[width=80]{UC-X Titolo caso d'uso}
+    \end{tikzpicture}
+    \caption{Rappresentazione UML di un caso d'uso}
+    \label{fig:Rappresentazione UML di un caso d'uso}
+\end{figure}
+
+%Sistema
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+        \begin{umlsystem}{Sistema}\end{umlsystem}
+    \end{tikzpicture}
+    \caption{Rappresentazione UML di un sistema}
+    \label{fig:Rappresentazione UML di un sistema}
+\end{figure}
+
+%Sottocasi
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=-1]{Attore}
+            \begin{umlsystem}[x=6, y=0]{UC-X Titolo caso d'uso}
+                \umlusecase[x=0, y=0, width=80, name=UC-X1]{UC-X.1 \\ Titolo sottocaso d'uso}
+                \umlusecase[x=0, y=-2, width=80, name=UC-X2]{UC-X.2\\ Titolo sottocaso d'uso}
+            \end{umlsystem}
+                \umlassoc{Attore}{UC-X1}
+                \umlassoc{Attore}{UC-X2}
+        \end{tikzpicture}
+    \caption{Rappresentazione UML sottocasi d'uso}
+    \label{fig:Rappresentazione UML sottocasi d'uso}
+\end{figure}
+
+%Relazioni tra attori e casi d'uso
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+        \umlactor{Attore}
+        \umlusecase[x=5, y=0, width=80, name=UC-X]{UC-X Titolo caso d'uso}
+        \umlassoc{Attore}{UC-X}
+    \end{tikzpicture}  
+    \caption{Rappresentazione UML relazione di associazione}
+    \label{fig:Rappresentazione UML relazione di associazione}
+\end{figure}
+
+%Relazioni tra attori
+\begin{figure}[ht!]
+    \centering
+    \begin{tikzpicture}
+        \umlactor[x=0, y=0]{Attore padre}
+        \umlactor[x=0, y=-4]{Attore figlio}
+        \umlinherit{Attore figlio}{Attore padre}
+    \end{tikzpicture}  
+    \caption{Rappresentazione UML generalizzazione tra attori}
+    \label{fig:Rappresentazione UML generalizzazione tra attori}
+\end{figure}
+
+%Relazioni tra casi d'uso
+
+%Inclusione
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Attore}
+            \begin{umlsystem}[x=6, y=0]{Sistema}
+                \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+            \end{umlsystem}
+                \umlassoc{Attore}{UC-X}
+                \umlinclude{UC-X}{UC-Y}
+        \end{tikzpicture}
+    \caption{Rappresentazione UML relazione di inclusione}
+    \label{fig:Rappresentazione UML relazione di inclusione}
+\end{figure}
+
+%Estensione
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Attore}
+            \begin{umlsystem}[x=6, y=0]{Sistema}
+                \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+            \end{umlsystem}
+                \umlassoc{Attore}{UC-X}
+                \umlextend{UC-Y}{UC-X}
+        \end{tikzpicture}
+    \caption{Rappresentazione UML relazione di estensione}
+    \label{fig:Rappresentazione UML relazione di estensione}
+\end{figure}
+
+%Generalizzazione
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Attore}
+            \begin{umlsystem}[x=6, y=0]{Sistema}
+                \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+            \end{umlsystem}
+                \umlassoc{Attore}{UC-X}
+                \umlinherit{UC-Y}{UC-X}
+        \end{tikzpicture}
+    \caption{Rappresentazione UML relazione di generalizzazione}
+    \label{fig:Rappresentazione UML relazione di generalizzazione}
+\end{figure}
