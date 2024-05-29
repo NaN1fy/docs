@@ -1,3 +1,164 @@
-\subsubsection{Gestione della configurazione}
+\subsection{Gestione della configurazione}
 
-\subsubsection{Verifica}
+\subsubsection{Introduzione}
+
+Il processo di gestione della configurazione viene attuato per normare il tracciamento e il controllo delle modifiche a documenti e codice prodotto dal gruppo.
+Attraverso questo processo 
+% Expand the introduction a bit
+
+\subsubsection{Tecnologie Utilizzate}
+
+\begin{itemize}
+    \item \textbf{Git:} software utilizzato per il controllo di versione dei Configuration Item;
+    \item \textbf{GitHub:} piattaforma web per il controllo di versione utilizzata per l'hosting e coordinamento delle operazioni. Offre anche un Issue Tracking System.
+\end{itemize}
+
+\subsubsection{Versionamento}
+
+Il versionamento è necessario per il tracciamento delle modifiche che avvengono ai documenti. Grazie al versionamento è possibile visualizzare le modifiche che un file ha subito e, nel caso fosse necessario, far regredire il documento ad una versione precedente. \\
+Il gruppo utilizza il formato \textit{X.Y.Z} come convenzione della versione dei documenti, dove:
+\begin{itemize}
+    \item \textbf{X:} cifra che viene incrementata quando avviene un rilascio, che nel caso del progetto corrisponde ai raggiungimenti di RTB, PB e CA;
+    \item \textbf{Y:} rappresenta un'aggiunta o modifica sostanziale, come ad esempio l'aggiunta di una sezione;
+    \item \textbf{Z:} indica una piccola modifica, come per esempio la correzione di errori o aggiunte di piccole dimensioni.
+\end{itemize}
+Un documento parte sempre dalla versione \textit{0.0.0}. \\
+Ogni modifica di un numero di versione, comporta l'azzeramento di tutti i numeri alla sua destra.
+
+\subsubsection{Repository}
+
+Il gruppo \textit{NaN1fy} utilizza le seguenti repository facenti parte della organizzazione \textit{NaN1fy-unipd} in \glossterm{Github}.
+
+\subsubsubsection{Lista Repository}
+
+\begin{itemize}
+    \item \textbf{docs:} repository dedicata alla documentazione del progetto;
+    \item \textbf{SyncCity:} repository dedicata alla scrittura e implementazione del progetto software;
+    \item \textbf{NaN1fy.github.io:} repository del sito vetrina.
+\end{itemize}
+
+\subsubsubsection{Struttura Repository \texttt{docs}} \\
+Questo repository è suddiviso in due branch principali:
+\begin{itemize}
+    \item \textit{main:} branch contenente tutti la documentazione prodotta in formato \textit{.pdf};
+    \item \textit{sources:} branch contenente i file \textit{.tex} dei rispettivi documenti della repository precedente. Quando vengono aggiunti o modificati dei file in questa branch, vengono automaticamente compilati, caricando il risultato nella branch \textit{main}, cosicché possano essere visualizzati da chiunque.
+\end{itemize}
+Di seguito viene riportata la struttura della repository, i termini in \textbf{grassetto} indicano il nome di una directory:
+ \begin{itemize}
+    \item \textbf{RTB}:
+    \begin{itemize}
+        \item \textbf{Esterni}:
+        \begin{itemize}
+            \item \textbf{Verbali};
+            \item Analisi dei requisiti;
+            \item Piano di progetto;
+            \item Piano di qualifica;
+        \end{itemize}
+        \item \textbf{Interni}:
+        \begin{itemize}
+            \item \textbf{Verbali};
+            \item Glossario;
+            \item Norme di progetto;
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Candidatura}:
+    \begin{itemize}
+        \item \textbf{Verbali}:
+        \begin{itemize}
+            \item \textbf{Esterni};
+            \item \textbf{Interni};
+        \end{itemize}
+        \item Preventivo costi e assunzione impegni;
+        \item Lettera di presentazione;
+        \item Valutazione capitolati.
+    \end{itemize}
+ \end{itemize}
+
+\subsubsubsection{Struttura Repository \textit{SyncCity}} \\
+Di seguito viene riportata la struttura della repository, i termini in \textbf{grassetto} indicano il nome di una directory:
+\begin{itemize}
+    \item \textbf{\glossterm{ClickHouse}}: directory contenente i config e codice necessario per l'utilizzo di ClickHouse;
+    \item \textbf{\glossterm{Grafana}}: directory contenente i config di Grafana;
+    \item \textbf{PyMockSensors}: directory contenente il codice sorgente di \textit{PyMockSensors}, ovvero il generatore simulato di dati provenienti da sensori;
+    \item docker-compose.yaml: file di configurazione per l'utilizzo di \glossterm{Docker Compose}.
+\end{itemize}
+
+\subsubsubsection{Sito Vetrina} \\
+La repository \textit{NaN1fy.github.io} contiene il codice del sito del progetto, il cui scopo è quello di fornire una veloce e intuitiva interfaccia, nella quale poter visualizzare ergonomicamente e in maniera organizzata i documenti relativi al progetto stesso. \\
+Il sito vetrina propone anche la visualizzazione diretta del glossario del progetto, contenente una definizione chiara e univoca di tutti i termini rilevanti, onde evitare interpretazioni arbitrarie e fraintendimenti riguardo tali specifici concetti. \\
+Il codice del sito comprende una funzionalità di auto aggiornamento dei documenti contenuti nella vetrina e nel glossario.
+
+\subsubsection{Sincronizzazione}
+
+Attraverso la piattaforma \glossterm{GitHub}, ogni attività prevista viene affiancata da una issue a cui corrisponde una branch, separata e parallela alle altre; tale suddivisione permette lo svolgimento in maniera autonoma e sicura di ogni singola attività, garantendo un'avanzamento simultaneo dei lavori.
+
+\subsubsubsection{Branching} \\
+La suddivisione in branch, già precedentemente esposta, presuppone l'utilizzo della metodologia single-purpose, che prevede l'utilizzo di una branch solo ed esclusivamente per lo svolgimento di una singola attività. In tale modo, il lavoro viene parcelizzato, garantendo un flusso stabile di lavoro. \\
+Una volta che una data attività viene portata a termine, la corrispondente branch viene unita alla branch principale e successivamente cancellata.
+
+\subsubsubsection{Pull Request} \\
+Al termine di un'attività (o al completamento di una sua parte), il membro a cui è stata assegnata questa attività (o uno di essi), si assume la responsabilità di aprire una Pull Request indicando i verificatori. Questi ultimi, dopo aver confermato la correttezza delle modifiche, hanno il compito di fare il merge della pull request, chiudendo poi la issue.
+
+\subsection{Verifica}
+
+\subsubsection{Introduzione}
+
+La verifica è un processo svolto, caso per caso, da una parte dei membri del team, con lo scopo di garantire l'efficienza e la correttezza di ogni attività sottoposta a scrutinio. \\
+È un processo presente per l'intera durata del ciclo di vita del software e abbraccia, nella sua esecuzione, sia la documentazione che il prodotto in sè: la sua attuazione, difatti, non è organizzata ricorrentemente, ma viene effetuata in occasione del completamento di un'attività, documento o parte significativa del prodotto. \\
+Questo processo trae le sue basi dai vincoli di qualità e dalle linee guida individuate all'interno del documento \textit{Piano\textunderscore di\textunderscore Qualifica\textunderscore v1.0.0}, basi che il verificatore è tenuto a rispettare per garantire uniformità, coerenza e ripetibilità al processo di verifica.
+
+\subsubsection{Analisi Statica}
+
+L'analisi statica è una modalità di analisi che prevede una verifica del prodotto e/o dei documenti senza la necessità di esecuzione o di mediazione di terze parti. \\
+Le due metodologie principali per condurre l'analisi statica, sono: l'\textit{inspection} e il \textit{walkthrough}.
+
+\subsubsubsection{Inspection} \\
+Tale metodologia utilizza un'approccio metodologico e ben strutturato per rilevare possibili difetti nel prodotto e nella documentazione; questi difetti vengono definiti e specificati a priori in delle liste, cosidette di controllo, le quali verranno poi utilizzate in maniera programmatica nella valutazione del documento e codice del prodotto.
+
+\subsubsubsection{Walkthrough} \\
+Contrariamente al metodo \textit{inspection}, il \textit{walkthrough} si preoccupa della verifica del documento o del codice tramite un maggiore dialogo tra il verificatore e l'autore, eseguendo una verifica più sostanziale e profonda, non alla ricerca di problemi specifici, bensì di una correttezza più generica e adattiva. In tale maniera, pur risultando in un maggiore impiego di risorse, garantisce una correttezza maggiore. \\
+Per questo progetto il team \textit{NaN1fy} si propone di utilizzare per la documentazione un'approccio di questo tipo, principalmente considerando che l'approccio di tipo \textit{inspection} è fin troppo rigido per poter garantire una corretta valutazione di un'insieme così eterogeneo e variegato di dati, quale è la documentazione del progetto.
+
+\subsubsection{Analisi Dinamica}
+
+La metodologia \textit{analisi dinamica} pone l'attenzione sul comportamento del codice e suoi eventuali difetti durante l'esecuzione dello stesso. \\
+Tale metodologia è specifica per ogni progetto in sè, in quanto l'insieme di attività di verifica, composte da test, dipendono esclusivamente dal contenuto del codice e dai requisiti del progetto. \\
+Tali test garantiscono, grazie alla loro ripetibilità, una valutazione oggettiva del codice e delle funzionalità del prodotto, in quanto in grado, dato un'insieme di caratteristiche, di generare lo stesso risultato più volte, indipendentemente da fattori esterni o casuali.
+
+\subsubsubsection{Test di unità} \\
+Test che hanno come obiettivo la verifica delle singole unità del sistema, che possono essere funzioni o metodi esulando dal resto del sistema. \\
+I test di unità si dividono in due categorie:
+\begin{itemize}
+    \item \textbf{Test Funzionali:} verificano che l'output corrisposta al valore atteso;
+    \item \textbf{Test Strutturali:} verificano la struttura interna dell'unità e il flusso dei dati.
+\end{itemize}
+
+\subsubsubsection{Test di integrazione} \\
+Test che hanno come obiettivo la valutazione del comportamento delle unità quando vengono combinate tra di loro identificando eventuali problemi dell'interazione tra le componenti integrate e verificando l'efficacia e il soddisfacimento dei requisiti posti dal progetto.
+
+\subsubsubsection{Test di sistema} \\
+Test che hanno come obiettivo di valutare il sistema come singola e unica entità verificando la corretta esecuzione e completezza del prodotto, in linea con i requisiti fissati nell'analisi dei requisiti.
+
+\subsubsubsection{Test di accettazione} \\
+Test il cui obiettivo è di mostrare la conformità del software rispetto le richieste e aspettative della Proponente, garantendo il soddisfacimento di quest'ultima riguardo il prodotto finale.
+
+\subsubsubsection{Identificazione dei test} \\
+Ogni singolo test possiede un codice univoco identificativo con il seguente formato:
+\begin{center}
+	\textbf{T[Tipologia]-[Numero]}
+\end{center}
+Dove \textbf{Tipologia} indica la tipologia del test: 
+\begin{itemize}
+    \item \textbf{U:} di unità;
+	\item \textbf{I:} di integrazione;
+	\item \textbf{S:} di sistema;
+	\item \textbf{A:} di accettazione.
+\end{itemize}
+
+\subsubsubsection{Stato dei test} \\
+I test possiedono anche uno stato:
+\begin{itemize}
+	\item \textbf{V:} Verificato. Il test ha esito positivo;
+	\item \textbf{NV:} Non Verificato. Il test ha esito negativo; 
+	\item \textbf{NI:} Non Implementato.
+\end{itemize}
