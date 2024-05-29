@@ -1,124 +1,181 @@
 \subsection{Sviluppo}
 
+\subsubsection{Introduzione}
+Il processo di sviluppo comprende tutte le attivitá da svolgere, da parte dei membri del team di sviluppo, il cui fine é quello di ottenere un prodotto in linea con le esigenze e i requisiti fissati dalla Proponente; in particolare si compone di:
+\begin{itemize}
+    \item Analisi dei Requisiti;
+    \item Progettazione;
+    \item Codifica.
+\end{itemize} 
+
 \subsubsection{Analisi dei Requisiti} \label{sec:analisi-rischi}
 
-\subsubsubsection{Diagrammi UML dei casi d'uso}
-%Attore
-\begin{figure}[ht!]
-    \centering
-    \begin{tikzpicture}
-        \umlactor{Attore}
-    \end{tikzpicture}
-    \caption{Rappresentazione UML di un attore}
-    \label{fig:Rappresentazione UML di un attore}
-\end{figure}
+\subsubsubsection{Descrizione}\\
+Lo scopo dell'analisi dei requisiti é quello di definire esaustivamente i casi d'uso, i requisiti e i vincoli concordati insieme alla Proponente, per garantire una corretta codifica e implementazione del prodotto software da parte del team.\\
+L'Analisi dei Requisiti, redatta dagli Analisti, contiene:
+\begin{itemize}
+    \item Una descrizione esplicita delle funzionalità attese dal prodotto;
+    \item L'insieme degli attori, ovvero gli utilizzatori del prodotto finale;
+    \item L'insieme dei casi d'uso, ovvero le interazioni tra gli attori e il sistema;
+    \item L'insieme dei requisiti e delle caratteristiche da soddisfare.
+\end{itemize}
+\subsubsubsection{Obiettivo}\\
+Tale processo si propone di comprendere in maniera ultima le esigenze degli utenti, le caratteristiche del prodotto e le condizioni in cui esso dovrà operare.\\
+Questa attività di analisi comporta:
+\begin{itemize}
+    \item L'identificazione, in armonia con le esigenze e le proposte dell'azienda, degli obiettivi e delle finalità del prodotto che si intende sviluppare;
+    \item La fornitura di una base chiara e comprensibile ai progettisti per definire piú facilmente l'architettura e il design del sistema;
+    \item La facilitazione della comunicazione tra fornitori e stakeholder.
+\end{itemize}
+\subsubsubsection{Diagrammi UML dei casi d'uso}\\
 
-%Caso d'uso
-\begin{figure}[ht!]
-    \centering
-    \begin{tikzpicture}
-        \umlusecase[width=80]{UC-X Titolo caso d'uso}
-    \end{tikzpicture}
-    \caption{Rappresentazione UML di un caso d'uso}
-    \label{fig:Rappresentazione UML di un caso d'uso}
-\end{figure}
-
-%Sistema
-\begin{figure}[ht!]
-    \centering
-    \begin{tikzpicture}
-        \begin{umlsystem}{Sistema}\end{umlsystem}
-    \end{tikzpicture}
-    \caption{Rappresentazione UML di un sistema}
-    \label{fig:Rappresentazione UML di un sistema}
-\end{figure}
-
-%Sottocasi
-\begin{figure}[ht!]
-    \centering
+Un diagramma di caso d'uso é uno strumento di modellazione utilizzato nella documentazione e descrizione delle funzionalità di un sistema. La sua utilità si manifesta nella possibilitá di rappresentare visivamente, e quindi in maniera veloce e comprensibile, l'interazione tra utente e sistema in uno specifico scenario. Gli scenari d'uso descrivono le azioni atte a consentire all'utente di eseguire con successo una specifica attività; essi sono interconnessi mediante linee. La rappresentazione fornita dai diagrammi dei casi d'uso non si occupa di spiegare eventuali dettagli implementativi, poiché esula dallo scopo principale del documento.\\
+I diagrammi dei casi d'uso sono composti da:\\
+\begin{itemize}
+    \item \textbf{Attore}: agente estraneo che interagisce con il sistema per soddisfare una sua necessitá;
+    %Attore
+        \begin{figure}[ht!]
+            \centering
+            \begin{tikzpicture}
+                \umlactor{Attore}
+            \end{tikzpicture}
+            \caption{Rappresentazione UML di un attore}
+            \label{fig:Rappresentazione UML di un attore}
+        \end{figure}
+    \item \textbf{Caso d'uso}: funzionalità messa a disposizione da parte del sistema, con la quale l'attore puó interagire;
+    %Caso d'uso
+        \begin{figure}[ht!]
+        \centering
         \begin{tikzpicture}
-            \umlactor[x=0, y=-1]{Attore}
-            \begin{umlsystem}[x=6, y=0]{UC-X Titolo caso d'uso}
-                \umlusecase[x=0, y=0, width=80, name=UC-X1]{UC-X.1 \\ Titolo sottocaso d'uso}
-                \umlusecase[x=0, y=-2, width=80, name=UC-X2]{UC-X.2\\ Titolo sottocaso d'uso}
-            \end{umlsystem}
-                \umlassoc{Attore}{UC-X1}
-                \umlassoc{Attore}{UC-X2}
+            \umlusecase[width=80]{UC-X Titolo caso d'uso}
         \end{tikzpicture}
-    \caption{Rappresentazione UML sottocasi d'uso}
-    \label{fig:Rappresentazione UML sottocasi d'uso}
-\end{figure}
-
-%Relazioni tra attori e casi d'uso
-\begin{figure}[ht!]
-    \centering
-    \begin{tikzpicture}
-        \umlactor{Attore}
-        \umlusecase[x=5, y=0, width=80, name=UC-X]{UC-X Titolo caso d'uso}
-        \umlassoc{Attore}{UC-X}
-    \end{tikzpicture}  
-    \caption{Rappresentazione UML relazione di associazione}
-    \label{fig:Rappresentazione UML relazione di associazione}
-\end{figure}
-
-%Relazioni tra attori
-\begin{figure}[ht!]
-    \centering
-    \begin{tikzpicture}
-        \umlactor[x=0, y=0]{Attore padre}
-        \umlactor[x=0, y=-4]{Attore figlio}
-        \umlinherit{Attore figlio}{Attore padre}
-    \end{tikzpicture}  
-    \caption{Rappresentazione UML generalizzazione tra attori}
-    \label{fig:Rappresentazione UML generalizzazione tra attori}
-\end{figure}
-
-%Relazioni tra casi d'uso
-
-%Inclusione
-\begin{figure}[ht!]
-    \centering
-        \begin{tikzpicture}
-            \umlactor[x=0, y=0]{Attore}
-            \begin{umlsystem}[x=6, y=0]{Sistema}
-                \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
-                \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
-            \end{umlsystem}
+        \caption{Rappresentazione UML di un caso d'uso}
+        \label{fig:Rappresentazione UML di un caso d'uso}
+        \end{figure}
+    \item \textbf{Sottocasi}: i sottocasi espongono in maniera piú dettagliata e specifica alcune istanze di casi d'uso piú generali; 
+    %Sottocasi
+        \begin{figure}[ht!]
+            \centering
+                \begin{tikzpicture}
+                    \umlactor[x=0, y=-1]{Attore}
+                    \begin{umlsystem}[x=6, y=0]{UC-X Titolo caso d'uso}
+                        \umlusecase[x=0, y=0, width=80, name=UC-X1]{UC-X.1 \\ Titolo sottocaso d'uso}
+                        \umlusecase[x=0, y=-2, width=80, name=UC-X2]{UC-X.2\\ Titolo sottocaso d'uso}
+                    \end{umlsystem}
+                        \umlassoc{Attore}{UC-X1}
+                        \umlassoc{Attore}{UC-X2}
+                \end{tikzpicture}
+            \caption{Rappresentazione UML sottocasi d'uso}
+            \label{fig:Rappresentazione UML sottocasi d'uso}
+        \end{figure}
+    \item \textbf{Sistema}: identifica il prodotto software in produzione, e contiene al suo interno i casi d'uso; al di fuori di esso saranno invece posizionati gli attori (esterni);
+        %Sistema
+        \begin{figure}[ht!]
+            \centering
+            \begin{tikzpicture}
+                \begin{umlsystem}{Sistema}\end{umlsystem}
+            \end{tikzpicture}
+            \caption{Rappresentazione UML di un sistema}
+            \label{fig:Rappresentazione UML di un sistema}
+        \end{figure}
+    \item \textbf{Relazione tra attori e casi d'uso}: tale relazione esplica l'interazione tra un attore, ovvero l'utilizzo di una funzionalità del sistema, e un caso d'uso specifico, ovvero la funzionalitá stessa;
+    %Relazioni tra attori e casi d'uso
+        \begin{figure}[ht!]
+            \centering
+            \begin{tikzpicture}
+                \umlactor{Attore}
+                \umlusecase[x=5, y=0, width=80, name=UC-X]{UC-X Titolo caso d'uso}
                 \umlassoc{Attore}{UC-X}
-                \umlinclude{UC-X}{UC-Y}
-        \end{tikzpicture}
-    \caption{Rappresentazione UML relazione di inclusione}
-    \label{fig:Rappresentazione UML relazione di inclusione}
-\end{figure}
+            \end{tikzpicture}  
+            \caption{Rappresentazione UML relazione di associazione}
+            \label{fig:Rappresentazione UML relazione di associazione}
+        \end{figure}
+    \item \textbf{Generalizzazione tra attori}: tale relazione identifica un rapporto di tipo ereditario tra due o piú attori, uno dei quali (attore specializzato) ottiene caratteristiche e comportamenti da parte dell'attore ``padre" (attore base), stabilendo una gerarchia tra gli attori facenti parte dell'interazione con il sistema;
+    %Relazioni tra attori
+        \begin{figure}[ht!]
+            \centering
+            \begin{tikzpicture}
+                \umlactor[x=0, y=0]{Attore padre}
+                \umlactor[x=0, y=-4]{Attore figlio}
+                \umlinherit{Attore figlio}{Attore padre}
+            \end{tikzpicture}  
+            \caption{Rappresentazione UML generalizzazione tra attori}
+            \label{fig:Rappresentazione UML generalizzazione tra attori}
+        \end{figure}
+    \item \textbf{Relazioni tra casi d'uso}: 
+        \begin{itemize}
+        \item \textbf{Inclusione}: un caso d'uso viene definito ``includente'' quando, nell'interazione tra un attore e tale caso d'uso, viene eseguito come parte integrante del processo un altro caso d'uso, detto ``incluso''. Attraverso questa relazione si evita il problema della duplicazione di casi d'uso superflui; 
+        %Inclusione
+            \begin{figure}[ht!]
+                \centering
+                    \begin{tikzpicture}
+                        \umlactor[x=0, y=0]{Attore}
+                        \begin{umlsystem}[x=6, y=0]{Sistema}
+                            \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                            \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+                        \end{umlsystem}
+                            \umlassoc{Attore}{UC-X}
+                            \umlinclude{UC-X}{UC-Y}
+                    \end{tikzpicture}
+                \caption{Rappresentazione UML relazione di inclusione}
+                \label{fig:Rappresentazione UML relazione di inclusione}
+            \end{figure}
+        \item \textbf{Estenzione}: un caso d'uso viene definito ``estendente'' quando, nell'interazione tra un attore e tale caso d'uso, al verificarsi di determinate condizioni puó essere eseguito un altro caso d'uso, detto ``esteso'', a complemento o arricchimento del processo in atto. Attraverso tale relazione si é in grado di gestire situazioni particolari senza satollare lo scenario principale di eccezzioni e condizioni particolari;
+        %Estensione
+            \begin{figure}[ht!]
+                \centering
+                    \begin{tikzpicture}
+                        \umlactor[x=0, y=0]{Attore}
+                        \begin{umlsystem}[x=6, y=0]{Sistema}
+                            \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                            \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+                        \end{umlsystem}
+                            \umlassoc{Attore}{UC-X}
+                            \umlextend{UC-Y}{UC-X}
+                    \end{tikzpicture}
+                \caption{Rappresentazione UML relazione di estensione}
+                \label{fig:Rappresentazione UML relazione di estensione}
+            \end{figure}
+        \item \textbf{Generalizzazione}: nel contesto di una generalizzazione un caso d'uso specifico eredita il proprio comportamento da parte di un altro caso d'uso piú generico. 
+        %Generalizzazione
+            \begin{figure}[ht!]
+                \centering
+                    \begin{tikzpicture}
+                        \umlactor[x=0, y=0]{Attore}
+                        \begin{umlsystem}[x=6, y=0]{Sistema}
+                            \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                            \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+                        \end{umlsystem}
+                            \umlassoc{Attore}{UC-X}
+                            \umlinherit{UC-Y}{UC-X}
+                    \end{tikzpicture}
+                \caption{Rappresentazione UML relazione di generalizzazione}
+                \label{fig:Rappresentazione UML relazione di generalizzazione}
+            \end{figure}
+        \end{itemize}
+\end{itemize}
 
-%Estensione
-\begin{figure}[ht!]
-    \centering
-        \begin{tikzpicture}
-            \umlactor[x=0, y=0]{Attore}
-            \begin{umlsystem}[x=6, y=0]{Sistema}
-                \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
-                \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
-            \end{umlsystem}
-                \umlassoc{Attore}{UC-X}
-                \umlextend{UC-Y}{UC-X}
-        \end{tikzpicture}
-    \caption{Rappresentazione UML relazione di estensione}
-    \label{fig:Rappresentazione UML relazione di estensione}
-\end{figure}
+\subsubsubsection{Codice dei casi d'uso}\\
+Ad ogni caso d'uso è associato un codice univoco definito nel seguente formato:
+\begin{center}
+    \textbf{UC-[Numero].[Specializzazione]}
+\end{center}
+Dove \textbf{Numero} è un identificativo e \textbf{Specializzazione} si riferisce ad un caso specifico
+dello stesso caso d'uso.
 
-%Generalizzazione
-\begin{figure}[ht!]
-    \centering
-        \begin{tikzpicture}
-            \umlactor[x=0, y=0]{Attore}
-            \begin{umlsystem}[x=6, y=0]{Sistema}
-                \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
-                \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
-            \end{umlsystem}
-                \umlassoc{Attore}{UC-X}
-                \umlinherit{UC-Y}{UC-X}
-        \end{tikzpicture}
-    \caption{Rappresentazione UML relazione di generalizzazione}
-    \label{fig:Rappresentazione UML relazione di generalizzazione}
-\end{figure}
+\subsubsubsection{Requisiti}\\
+I requisiti di un prodotto software, concordati a inizio progetto insieme alla Proponente, identificano in maniera dettagliata le funzionalitá, le prestazioni, i vincoli e tutte le specifiche che tale prodotto deve soddisfare. Fungono quindi da guida per lo sviluppo, il testing e la valutazione finale del prodotto, garantendo la sua conformitá alle esigenze e agli obiettivi prefissati.\\
+Di seguito vengono elencati i vari tipi di requisito:\\
+\begin{itemize} 
+    \item \textbf{Funzionali}: questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i servizi che esso deve essere in grado di fornire al fine di soddisfare le esigenze dell'utente. Un requisito funzionale descrive quindi il comportamento del sistema;
+    \item \textbf{Qualitá}: questa tipologia di requisiti definisce lo standard di qualità che il prodotto deve rispettare;
+    \item \textbf{Vincolo}: questa tipologia di requisiti indica i limiti imposti dal capitolato che il prodotto deve rispettare;
+    \item \textbf{Prestazionali}: questa tipologia di requisiti specifica le prestazioni che il sistema deve avere. 
+\end{itemize}\\
+
+\subsubsubsection{Codice dei requisiti}\\
+A ciascun requisito è abbinato un codice univoco definito nel seguente modo:
+\begin{center}
+    \textbf{R[Tipologia]-[Numero]}
+\end{center}
+Dove \textbf{Tipologia} rappresenta il tipo di requisito e \textbf{[Numero]} è un identificativo progressivo.
