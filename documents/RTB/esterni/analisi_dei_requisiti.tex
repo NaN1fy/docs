@@ -147,12 +147,12 @@ Il seguente documento ha come scopo quello di elencare in modo esaustivo i casi 
 del progetto SyncCity a seguito di un'attenta analisi del capitolato C6 presentato dall'azienda \glossterm{Proponente} SyncLab e di una successiva discussione con essa attraverso gli incontri svolti.
 \subsection{Glossario}
 Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini utilizzati nel seguente
-documento, viene fornito un \textit{Glossario vX.X.X} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati con l'uso del corsivo e dalla presenza di una G a pedice.
+documento, viene fornito un \textit{Glossario v1.0.0} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati con l'uso del corsivo e dalla presenza di una G a pedice.
 \subsection{Riferimenti}
 \subsubsection{Riferimenti Normativi}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item \textit{Norme di Progetto vX.X.X};	
+	\item \textit{Norme di Progetto v1.0.0};	
 	\item \textit{Verbale Esterno 2024-03-12};
 	\item \textit{Verbale Esterno 2024-04-03;}
   \item Presentazione e documentazione del capitolato d’appalto C6 - SyncCity:
@@ -175,7 +175,7 @@ documento, viene fornito un \textit{Glossario vX.X.X} contenente le definizioni 
     \item Dispense P3 - Analisi e descrizione delle funzionalità: Diagrammi delle attività (UML):
         \begin{itemize}
             \item
-                \href{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi\%20di\%20Attivita.pdf}{https://www.math.unipd.it/\textasciitilde{}rcardin/swea/2022/Diagrammi\%20di\%20Attivit\`{a}.pdf}
+                \href{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi\%20di\%20Attivit\%C3\%A0.pdf}{https://www.math.unipd.it/\textasciitilde{}rcardin/swea/2022/Diagrammi\%20di\%20Attivit\`{a}.pdf}
                 \\ (Ultimo accesso: \today)
         \end{itemize}
 \end{itemize}
@@ -186,7 +186,7 @@ L'obiettivo del progetto SyncCity è quello di creare una piattaforma atta al mo
 sparsi geograficamente nel territorio di una città. I sensori in questione permettono la misurazione
 e segnalazione di dati real-time riguardanti le più disparate caratteristiche e necessità del
 territorio quali temperatura ed umidità esterna, occupazione di stalli di parcheggio, funzionamento
-o guasto elettrico di colonnine HPC, traffico stradale e via dicendo. Il \glossterm{Proponente} richiede la
+o guasto elettrico di colonnine HPC, traffico stradale e via dicendo. La \glossterm{Proponente} richiede la
 simulazione di alcuni dei sensori nominati nonché la gestione dei dati, della loro persistenza e
 della loro rappresentazione grafica attraverso widgets e grafici. \\\\SyncCity permetterà un miglioramento della qualità dei servizi offerti dalla città attraverso il continuo monitoraggio della stessa, ottenendo, gestendo e successivamente condividendo i dati con gli utenti. 
 \subsection{Funzionalità del prodotto}
@@ -268,7 +268,7 @@ Il dominio tecnologico dell'applicativo comprende:
 % Text Node
 \draw (36,185) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Sensori}};
 \end{tikzpicture}
-\caption{Stack tecnologico}
+\caption{Stack tecnologico.}
 \end{figure}
 \newpage
 
@@ -315,7 +315,7 @@ dello stesso caso d'uso.
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-0}
         \end{tikzpicture}
-    \caption{UC-0: Visualizzazione menu dashboard}
+    \caption{UC-0: Visualizzazione menu dashboard.}
     \label{fig:UC-0: Visualizzazione menu dashboard}
 \end{figure}
 \subsubsection*{UC-1: Visualizzazione dashboard sensori}
@@ -347,7 +347,7 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-1}
                 \umlextend{UC-1}{UC-5}
         \end{tikzpicture}
-    \caption{UC-1: Visualizzazione dashboard sensori}
+    \caption{UC-1: Visualizzazione dashboard sensori.}
     \label{fig:UC-1: Visualizzazione dashboard sensori}
 \end{figure}
 \subsubsection*{UC-1.1: Visualizzazione posizione sensori su mappa}
@@ -376,7 +376,7 @@ dello stesso caso d'uso.
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-position}
         \end{tikzpicture}
-    \caption{UC-1.1: Visualizzazione posizione sensori su mappa}
+    \caption{UC-1.1: Visualizzazione posizione sensori su mappa.}
     \label{fig:UC-1.1: Visualizzazione posizione sensori su mappa}
 \end{figure}
 \subsubsection*{UC-2: Visualizzazione dashboard ambientale}
@@ -408,7 +408,7 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-2}
                 \umlextend{UC-2}{UC-5}
         \end{tikzpicture}
-    \caption{UC-2: Visualizzazione dashboard ambientale}
+    \caption{UC-2: Visualizzazione dashboard ambientale.}
     \label{fig:UC-2: Visualizzazione dashboard ambientale}
 \end{figure}
 \subsubsection*{UC-2.1: Visualizzazione pannello time series per temperatura}
@@ -557,7 +557,7 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-pollut}
                 \umlassoc{Amministratore pubblico}{UC-water}
         \end{tikzpicture}
-    \caption{Sottocasi UC-2: Visualizzazione dashboard ambientale}
+    \caption{Sottocasi UC-2: Visualizzazione dashboard ambientale.}
     \label{fig:Sottocasi UC-2: Visualizzazione dashboard ambientale}
 \end{figure}
 \newpage
@@ -576,7 +576,8 @@ dello stesso caso d'uso.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere
         alla dashboard per monitorare il dominio urbanistico;
-    \item \textbf {Specializzazioni:} [UC-3.1], [UC-3.2], [UC-3.3], [UC-3.4], [UC-3.5], [UC-3.6], [UC-3.7];
+    \item \textbf {Specializzazioni:} [UC-3.1], [UC-3.2], [UC-3.3], [UC-3.4], [UC-3.5], [UC-3.6],
+        [UC-3.7], [UC-3.8];
     \item \textbf{Estensioni:} [UC-5].
 \end{itemize}
 \begin{figure}[ht!]
@@ -591,27 +592,29 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-3}
                 \umlextend{UC-3}{UC-5}
         \end{tikzpicture}
-    \caption{UC-3: Visualizzazione dashboard urbanistica}
+    \caption{UC-3: Visualizzazione dashboard urbanistica.}
     \label{fig:UC-3: Visualizzazione dashboard urbanistica}
 \end{figure}
-\subsubsection*{UC-3.1: Visualizzazione pannello mappa interattiva per disponibilità parcheggi}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.1: Visualizzazione pannello mappa interattiva per disponibilità parcheggi}
+\subsubsection*{UC-3.1: Visualizzazione pannello tabellare per disponibilità parcheggi}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.1: Visualizzazione pannello
+tabellare per disponibilità parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra lo stato di occupazione dei parcheggi, espresso con valori binari, in formato mappa interattiva;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra lo
+        stato di occupazione dei parcheggi, in formato tabellare;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello mappa interattiva per lo stato di occupazione dei parcheggi.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello tabellare per lo stato di occupazione dei parcheggi.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato dei singoli parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.2: Visualizzazione pannello alert list per notifiche pagamento parcheggi}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello alert list per notifiche pagamento parcheggi}
+\subsubsection*{UC-3.2: Visualizzazione pannello log per notifiche pagamento parcheggi}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello log per notifiche pagamento parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -622,22 +625,24 @@ dello stesso caso d'uso.
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello alert list per le notifiche di pagamento dei parcheggi.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello log per le notifiche di pagamento dei parcheggi.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i pagamenti delle soste nei parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.3: Visualizzazione pannello mappa interattiva per guasti elettrici}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.3: Visualizzazione pannello mappa interattiva per guasti elettrici}
+\subsubsection*{UC-3.3: Visualizzazione pannello tabellare per guasti elettrici}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.3: Visualizzazione pannello
+tabellare per guasti elettrici}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra i gusti sulla rete elettrica, espressi mediante valori binari, in formato mappa interattiva;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra i
+        gusti sulla rete elettrica in formato tabellare;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello mappa interattiva per i guasti.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello tabellare per i guasti.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato della fornitura elettrica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -656,13 +661,15 @@ dello stesso caso d'uso.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare il livello di riempimento dei conferitori presenti nelle isole ecologiche. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.5: Visualizzazione pannello mappa interattiva per disponibilità colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.5: Visualizzazione pannello mappa interattiva per disponibilità colonnine di ricarica}
+\subsubsection*{UC-3.5: Visualizzazione pannello tabellare per disponibilità colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.5: Visualizzazione pannello
+tabellare per disponibilità colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra lo stato di occupazione delle colonnine di ricarica, espresso mediante valori binari, in formato mappa interattiva;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra lo
+        stato di occupazione delle colonnine di ricarica, in formato tabellare;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -686,8 +693,8 @@ dello stesso caso d'uso.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i consumi delle colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.7: Visualizzazione pannello alert list per notifiche pagamento colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello alert list per notifiche pagamento colonnine di ricarica}
+\subsubsection*{UC-3.7: Visualizzazione pannello log per notifiche pagamento colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello log per notifiche pagamento colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -697,28 +704,53 @@ dello stesso caso d'uso.
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello alert list per le notifiche di pagamento delle colonnine di ricarica.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello log per le notifiche di pagamento delle colonnine di ricarica.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato dei pagamenti delle ricariche di veicoli elettrici effettuate grazie alle apposite colonnine. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
+\subsubsection*{UC-3.8: Visualizzazione pannello bar gauge per dati pagamento parcheggio}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.8: Visualizzazione pannello bar gauge per dati pagamento parcheggio}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio urbanistico.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra il
+        costo medio, massimo e minimo dei parcheggi;
+    \item \textbf{Scenario principale:} 
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello bar gauge per le
+        notifiche di pagamento dei parcheggi.
+    \end{enumerate}
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
+        pannello per monitorare lo stato dei pagamenti dei parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
+\end{itemize}
+
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=-7.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
             \begin{umlsystem}[x=9, y=0]{UC-3 Visualizzazione dashboard urbanistica}
-                \umlusecase[x=0, y=0, width=100, name=UC-park]{UC-3.1 \\ Visualizzazione pannello mappa interattiva per disponibilità parcheggi}
+                \umlusecase[x=0, y=0, width=100, name=UC-park]{UC-3.1 \\ Visualizzazione pannello
+                tabellare per disponibilità parcheggi}
 
-                \umlusecase[x=0, y=-2.5, width=100, name=UC-paypark]{UC-3.2 \\ Visualizzazione pannello alert list per notifiche pagamento parcheggi}
+                \umlusecase[x=0, y=-2.5, width=100, name=UC-paypark]{UC-3.2 \\ Visualizzazione
+                pannello log per notifiche pagamento parcheggi}
 
-                \umlusecase[x=0, y=-5, width=100, name=UC-elec]{UC-3.3 \\ Visualizzazione pannello mappa interattiva per guasti elettrici}
+                \umlusecase[x=0, y=-5, width=100, name=UC-elec]{UC-3.3 \\ Visualizzazione pannello
+                tabellare per guasti elettrici}
 
                 \umlusecase[x=0, y=-7.5, width=100, name=UC-eco]{UC-3.4 \\ Visualizzazione pannello time series per riempimento isole ecologiche}
 
-                \umlusecase[x=0, y=-10.25, width=100, name=UC-charge]{UC-3.5 \\ Visualizzazione pannello mappa interattiva per disponibilità colonnine di ricarica}
+                \umlusecase[x=0, y=-10.25, width=100, name=UC-charge]{UC-3.5 \\ Visualizzazione
+                pannello tabellare per disponibilità colonnine di ricarica}
 
                 \umlusecase[x=0, y=-13, width=100, name=UC-cons]{UC-3.6 \\ Visualizzazione pannello time series per consumi colonnine di ricarica}
 
-                \umlusecase[x=0, y=-15.75, width=100, name=UC-paycharge]{UC-3.7 \\ Visualizzazione pannello alert list per notifiche pagamento colonnine di ricarica}
+                \umlusecase[x=0, y=-15.75, width=100, name=UC-paycharge]{UC-3.7 \\ Visualizzazione
+                pannello log per notifiche pagamento colonnine di ricarica}
+                \umlusecase[x=0, y=-18, width=100, name=UC-paypark2]{UC-3.8 \\ Visualizzazione pannello bar gauge per dati pagamento parcheggio }
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-park}
                 \umlassoc{Amministratore pubblico}{UC-paypark}
@@ -727,10 +759,12 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-charge}
                 \umlassoc{Amministratore pubblico}{UC-cons}
                 \umlassoc{Amministratore pubblico}{UC-paycharge}
+                \umlassoc{Amministratore pubblico}{UC-paypark2}
         \end{tikzpicture}
-    \caption{Sottocasi UC-3: Visualizzazione dashboard urbanistica}
+    \caption{Sottocasi UC-3: Visualizzazione dashboard urbanistica.}
     \label{fig:Sottocasi UC-3: Visualizzazione dashboard urbanistica}
 \end{figure}
+\clearpage
 \newpage
 \subsubsection*{UC-4: Visualizzazione dashboard superamento soglie}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4: Visualizzazione dashboard superamento soglie}
@@ -759,7 +793,7 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-4}
                 \umlextend{UC-4}{UC-5}
         \end{tikzpicture}
-    \caption{UC-4: Visualizzazione dashboard superamento soglie}
+    \caption{UC-4: Visualizzazione dashboard superamento soglie.}
     \label{fig:UC-4: Visualizzazione dashboard superamento soglie}
 \end{figure}
 \subsubsection*{UC-4.1: Visualizzazione pannello alert list superamento soglie temperatura}
@@ -854,7 +888,7 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-water}
                 \umlassoc{Amministratore pubblico}{UC-eco}
         \end{tikzpicture}
-    \caption{Sottocasi UC-4: Visualizzazione dashboard superamento soglie}
+    \caption{Sottocasi UC-4: Visualizzazione dashboard superamento soglie.}
     \label{fig:Sottocasi UC-4: Visualizzazione dashboard superamento soglie}
 \end{figure}
 \newpage
@@ -880,7 +914,7 @@ dello stesso caso d'uso.
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-5}
         \end{tikzpicture}
-    \caption{UC-5: Visualizzazione errore nessun dato}
+    \caption{UC-5: Visualizzazione errore nessun dato.}
     \label{fig:UC-5: Visualizzazione errore nessun dato}
 \end{figure}
 \subsubsection*{UC-6: Applicazione filtri}
@@ -910,7 +944,7 @@ applicato;
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-6}
         \end{tikzpicture}
-    \caption{UC-6: Applicazione filtri}
+    \caption{UC-6: Applicazione filtri.}
     \label{fig:UC-6: Applicazione filtri}
 \end{figure}
 \subsubsection*{UC-6.1: Filtro sotto-insieme di sensori su grafici time series}
@@ -961,7 +995,7 @@ temporale selezionato, in tutti i pannelli della dashboard dove è stato applica
                 \umlassoc{Amministratore pubblico}{UC-series}
                 \umlassoc{Amministratore pubblico}{UC-time}
         \end{tikzpicture}
-    \caption{Sottocasi UC-6: Applicazione filtri}
+    \caption{Sottocasi UC-6: Applicazione filtri.}
     \label{fig:Sottocasi UC-6: Applicazione filtri}
 \end{figure}
 \subsubsection*{UC-7: Rimozione filtri}
@@ -987,7 +1021,7 @@ applicato;
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-7}
         \end{tikzpicture}
-    \caption{UC-7: Rimozione filtri}
+    \caption{UC-7: Rimozione filtri.}
     \label{fig:UC-7: Rimozione filtri}
 \end{figure}
 \subsubsection*{UC-8: Modifica layout pannelli}
@@ -1011,7 +1045,7 @@ applicato;
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-8}
         \end{tikzpicture}
-    \caption{UC-8: Modifica layout pannelli}
+    \caption{UC-8: Modifica layout pannelli.}
     \label{fig:UC-8: Modifica layout pannelli}
 \end{figure}
 \subsubsection*{UC-8.1: Ridimensionamento pannelli}
@@ -1049,7 +1083,7 @@ applicato;
                 \umlassoc{Amministratore pubblico}{UC-dim}
                 \umlassoc{Amministratore pubblico}{UC-move}
         \end{tikzpicture}
-    \caption{Sottocasi UC-8: Modifica layout pannelli}
+    \caption{Sottocasi UC-8: Modifica layout pannelli.}
     \label{fig:Sottocasi UC-8: Modifica layout pannelli}
 \end{figure}
 \subsubsection*{UC-9: Inserimento dati sensore}
@@ -1077,7 +1111,7 @@ applicato;
             \end{umlsystem}
                 \umlassoc{Sensore}{UC-9}
         \end{tikzpicture}
-    \caption{UC-9: Inserimento dati sensore}
+    \caption{UC-9: Inserimento dati sensore.}
     \label{fig:UC-9: Inserimento dati sensore}
 \end{figure}
 \subsubsection*{UC-9.1: Inserimento dati temperatura}
@@ -1282,7 +1316,7 @@ coordinate geografiche;
                 \umlassoc{Sensore}{UC-water}
                 \umlassoc{Sensore}{UC-park}
         \end{tikzpicture}
-    \caption{Prima parte sottocasi UC-9: Inserimento dati}
+    \caption{Prima parte sottocasi UC-9: Inserimento dati.}
     \label{fig:Prima parte sottocasi UC-9: Inserimento dati}
 \end{figure}
 \begin{figure}[p]
@@ -1309,7 +1343,7 @@ coordinate geografiche;
                 \umlassoc{Sensore}{UC-cons}
                 \umlassoc{Sensore}{UC-paycharge}
         \end{tikzpicture}
-    \caption{Seconda parte sottocasi UC-9: Inserimento dati}
+    \caption{Seconda parte sottocasi UC-9: Inserimento dati.}
     \label{fig:Seconda parte sottocasi UC-9: Inserimento dati}
 \end{figure}
 \newpage 
