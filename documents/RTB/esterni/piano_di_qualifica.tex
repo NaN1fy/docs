@@ -1,4 +1,4 @@
-% changelog: "0.7.0, 2024-05-29, Davide Donanzan, Aggiunta test"
+% changelog: "0.8.0, 2024-05-30, Davide Donanzan, Aggiunta test"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -126,6 +126,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+        0.8.0 & 2024-05-30 & Aggiunta di ulteriori test di sistema e accettazione. & Davide Donanzan & Redattore \\\\
         0.7.0 & 2024-05-29 & Aggiunta di ulteriori test di unità, integrazione, sistema e accettazione. & Davide Donanzan & Redattore \\\\
         0.6.0 & 2024-05-28 & Stesura sezione ``Liste di controllo". & Guglielmo Barison & Redattore \\\\
         0.5.0 & 2024-05-24 & Stesura sezione ``Cruscotto della qualità". & Davide Donanzan & Redattore \\\\
@@ -595,126 +596,144 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     & NV \\
     \hline
     TS-10 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
+    un grafico bar chart rappresentante il valore medio, minimo, massimo e la moda della temperatura,
+    espressa in gradi Celsius (°C), per ciascun sensore, nella \glossterm{dashboard} relativa ai dati ambientali.
+    & NV \\
+    \hline
+    TS-11 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
+    un grafico bar chart rappresentante la media, minima e massima temperatura percepita,
+    espressa in gradi Celsius (°C), per ciascun sensore, nella \glossterm{dashboard} relativa ai dati ambientali.
+    & NV \\
+    \hline
+    TS-12 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
     un grafico in formato di tipo time series rappresentante l'intensità delle precipitazioni
     espressa in millimetri orari (mm/h), per ciascun sensore, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NI \\
     \hline
-    TS-11 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
+    TS-13 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
     un grafico in formato di tipo time series rappresentante la quantità di polveri sottili presenti nell'aria,
     espressa in microgrammi per metro cubo ($\mu g / m^3$), per ciascun sensore, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NI \\
     \hline
-    TS-12 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
+    TS-14 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
     un grafico in formato di tipo time series rappresentante le misurazioni relative al livello dell'acqua,
     espressa in percentuale, per ciascun sensore, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NI \\
     \hline
-    TS-13 & Verificare che l’\glossterm{amministratore pubblico} possa monitorare i dati provenienti
+    TS-15 & Verificare che l’\glossterm{amministratore pubblico} possa monitorare i dati provenienti
     dai sensori relativi ai dati urbanistici in una \glossterm{dashboard} apposita.
     & NV \\
     \hline
-    TS-14 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello in formato tabellare che evidenzi lo stato aggiornato dei posti nei vari parcheggi, nella
+    TS-16 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello in formato tabellare che evidenzi lo stato aggiornato dei posti nei vari parcheggi, nella
     \glossterm{dashboard} relativa ai dati urbanistici. & NV \\
     \hline
-    TS-15 & 
+    TS-17 & 
     Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento nei vari parcheggi, nella \glossterm{dashboard} relativa ai dati urbanistici.& NV \\
     \hline
-    TS-16 & 
+    TS-18 & 
     Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello in formato tabellare che evidenzi i guasti nella rete eletrica, nella \glossterm{dashboard} relativa ai dati urbanistici.& NI \\
     \hline
-    TS-17 & 
+    TS-19 & 
     Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello in formato time series rappresentante il riempimento di un'isola ecologica, espresso in percentuale, nella \glossterm{dashboard} relativa ai dati urbanistici.& NI \\
     \hline
-    TS-18 & 
+    TS-20 & 
     Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello in formato tabellare che evidenzi lo stato di disponibilità delle colonnine di ricarica, nella \glossterm{dashboard} relativa ai dati urbanistici.& NI \\
     \hline
-    TS-19 & 
+    TS-21 & 
     Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello nel formato time series rappresentante l'andamento dei consumi delle colonnine di ricarica, espresso in kilowattora (kWh), nella \glossterm{dashboard} relativa ai dati urbanistici.& NI \\
     \hline
-    TS-20 & 
+    TS-22 & 
     Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento dovuto all'utilizzo delle colonnine di ricarica, nella \glossterm{dashboard} relativa ai dati urbanistici.& NI \\
     \hline
-    TS-21 & Verificare che l’\glossterm{amministratore pubblico}, possa controllare il superamento di determinate soglie in una relativa \glossterm{dashboard}. &
+    TS-23 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
+    un grafico in formato bar chart rappresentante il valore medio, minimo e massimo di pagamenti effettuati in un parcheggio, nella \glossterm{dashboard} relativa ai dati ambientali.
+    & NI \\
+    \hline
+    TS-24 & Verificare che l’\glossterm{amministratore pubblico} possa visualizzare un pannello contenente
+    un grafico in formato bar chart rappresentante il valore medio, minimo e massimo di pagamenti dovuti all'utilizzo di una colonnina di ricarica, nella \glossterm{dashboard} relativa ai dati ambientali.
+    & NI \\
+    \hline
+    TS-25 & Verificare che l’\glossterm{amministratore pubblico}, possa controllare il superamento di determinate soglie in una relativa \glossterm{dashboard}. &
     NI \\
     \hline
-    TS-22 & Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento delle soglie di temperatura accettabili, nella \glossterm{dashboard} relativa al superamento delle soglie. &
+    TS-26 & Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento delle soglie di temperatura accettabili, nella \glossterm{dashboard} relativa al superamento delle soglie. &
     NI \\
     \hline
-    TS-23 &Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento della soglia di precipitazioni con intensità accettabili, nella \glossterm{dashboard} relativa al superamento delle soglie. &
+    TS-27 &Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento della soglia di precipitazioni con intensità accettabili, nella \glossterm{dashboard} relativa al superamento delle soglie. &
     NI \\
     \hline
-    TS-24 & Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento della soglia d'inquinamento dell'aria ritenuto accettabile, nella \glossterm{dashboard} relativa al superamento delle soglie.. &
+    TS-28 & Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento della soglia d'inquinamento dell'aria ritenuto accettabile, nella \glossterm{dashboard} relativa al superamento delle soglie.. &
     NI \\
     \hline
-    TS-25 & Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento della soglia del livello dell'acqua ritenuto accettabile, nella \glossterm{dashboard} relativa al superamento delle soglie. &
+    TS-29 & Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento della soglia del livello dell'acqua ritenuto accettabile, nella \glossterm{dashboard} relativa al superamento delle soglie. &
     NI \\
     \hline
-    TS-26 & Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento della soglia di riempimento delle isole ecologiche ritenuto accettabile, nella \glossterm{dashboard} relativa al superamento delle soglie. &
+    TS-30 & Verificare che l’\glossterm{amministratore pubblico}, possa visualizzare un pannello che notifica il superamento della soglia di riempimento delle isole ecologiche ritenuto accettabile, nella \glossterm{dashboard} relativa al superamento delle soglie. &
     NI \\
     \hline
-    TS-27 & Verificare che l’\glossterm{amministratore pubblico}, riceva un messaggio di errore qualora, il
+    TS-31 & Verificare che l’\glossterm{amministratore pubblico}, riceva un messaggio di errore qualora, il
     sistema di visualizzazione non riesca a reperire i dati necessari per un determinato pannello. &
     NV \\
     \hline
-    TS-28 & Verificare che l’\glossterm{amministratore pubblico} possa filtrare i dati, visualizzati
-    all’interno di un grafico di tipo time series, in base ad un sottoinsieme di sensori da lui
+    TS-32 & Verificare che l’\glossterm{amministratore pubblico} possa filtrare i dati, visualizzati
+    all’interno di un grafico, in base ad un sottoinsieme di sensori da lui
     selezionato. & NV \\
     \hline
-    TS-29 & Verificare che l’\glossterm{amministratore pubblico} possa filtrare i dati in base ad un intervallo temporale. La \glossterm{dashboard} di interesse deve mostrare solamente i dati aventi un timestamp in tale intervallo.
+    TS-33 & Verificare che l’\glossterm{amministratore pubblico} possa filtrare i dati in base ad un intervallo temporale. La \glossterm{dashboard} di interesse deve mostrare solamente i dati aventi un timestamp in tale intervallo.
     & NV\\
     \hline
-    TS-30 & Verificare che l’\glossterm{amministratore pubblico} possa rimuovere un filtro precedentemente applicato ai dati.
+    TS-34 & Verificare che l’\glossterm{amministratore pubblico} possa rimuovere un filtro precedentemente applicato ai dati.
     & NV\\
     \hline
-    TS-31 & Verificare che l’\glossterm{amministratore pubblico} possa modificare il layout dei pannelli modificandone le dimensioni a proprio piacimento.
+    TS-35 & Verificare che l’\glossterm{amministratore pubblico} possa modificare il layout dei pannelli modificandone le dimensioni a proprio piacimento.
     & NV\\
     \hline
-    TS-32 & Verificare che l’\glossterm{amministratore pubblico} possa modificare il layout dei pannelli modificandone la posizione, a proprio piacimento, all'interno della \glossterm{dashboard}.
+    TS-36 & Verificare che l’\glossterm{amministratore pubblico} possa modificare il layout dei pannelli modificandone la posizione, a proprio piacimento, all'interno della \glossterm{dashboard}.
     & NV\\
     \hline
-    TS-33 & Verificare che un sensore possa inserire le rilevazioni della temperatura, espresse in
+    TS-37 & Verificare che un sensore possa inserire le rilevazioni della temperatura, espresse in
     gradi Celsius (°C), con annesso coordinate e timestamp della rilevazione. & NV \\
     \hline
-    TS-34 & Verificare che un sensore possa inserire le rilevazioni dell'umidità, espresse in
+    TS-38 & Verificare che un sensore possa inserire le rilevazioni dell'umidità, espresse in
     percentuale, con annesso coordinate e timestamp della rilevazione. & NV \\
     \hline
-    TS-35 & Verificare che un sensore possa inserire le rilevazioni dell'intensità delle precipitazioni, espresse in
+    TS-39 & Verificare che un sensore possa inserire le rilevazioni dell'intensità delle precipitazioni, espresse in
     millimetri orari (mm/h), con annesso coordinate e timestamp della rilevazione. & NI \\
     \hline
-    TS-36 & Verificare che un sensore possa inserire le rilevazioni dell'inquinamento dell'aria, espresse in
+    TS-40 & Verificare che un sensore possa inserire le rilevazioni dell'inquinamento dell'aria, espresse in
     microgrammi per metro cubo ($\mu g/m^3$), con annesso coordinate e timestamp della rilevazione. & NI \\
     \hline
-    TS-37 & Verificare che un sensore possa inserire le rilevazioni del livello dell'acqua, espresse in
+    TS-41 & Verificare che un sensore possa inserire le rilevazioni del livello dell'acqua, espresse in
     percentuale, con annesso coordinate e timestamp della rilevazione. & NI \\
     \hline
-    TS-38 & Verificare che un sensore possa inserire le rilevazioni dello stato dei parcheggi,
+    TS-42 & Verificare che un sensore possa inserire le rilevazioni dello stato dei parcheggi,
     espresse tramite valore booleano, con annesso coordinate e timestamp della rilevazione. & NV \\
     \hline 
-    TS-39 & Verificare che un sensore possa inserire le rilevazioni dello stato dei pagamenti
+    TS-43 & Verificare che un sensore possa inserire le rilevazioni dello stato dei pagamenti
     dei parcheggi, con annesso coordinate e timestamp della rilevazione. & NV \\
     \hline
-    TS-40 & Verificare che un sensore possa inserire le rilevazioni di guasti alla rete elettrica espresse tramite valore booleano, con annesso coordinate e timestamp della rilevazione. & NI \\
+    TS-44 & Verificare che un sensore possa inserire le rilevazioni di guasti alla rete elettrica espresse tramite valore booleano, con annesso coordinate e timestamp della rilevazione. & NI \\
     \hline
-    TS-41 & Verificare che un sensore possa inserire le rilevazioni dello stato di riempimento delle isole ecologiche,
+    TS-45 & Verificare che un sensore possa inserire le rilevazioni dello stato di riempimento delle isole ecologiche,
     espresse in percentuale, con annesso coordinate e timestamp della rilevazione. & NI \\
     \hline
-    TS-42 & Verificare che un sensore possa inserire le rilevazioni dello stato di disponibilità delle colonnine di ricarica,
+    TS-46 & Verificare che un sensore possa inserire le rilevazioni dello stato di disponibilità delle colonnine di ricarica,
     espresse tramite valore booleano, con annesso coordinate e timestamp della rilevazione. & NI \\
     \hline
-    TS-43 & Verificare che un sensore possa inserire le rilevazioni dei consumi delle colonnine di ricarica,
+    TS-47 & Verificare che un sensore possa inserire le rilevazioni dei consumi delle colonnine di ricarica,
     espresse in kilowattora (kWh), con annesso coordinate e timestamp della rilevazione. & NI \\
     \hline
-    TS-44 & Verificare che un sensore possa inserire le rilevazioni dello stato dei pagamenti dovuti all'utilizzo delle colonnine di ricarica, con annesso coordinate e timestamp della rilevazione. & NI \\
+    TS-48 & Verificare che un sensore possa inserire le rilevazioni dello stato dei pagamenti dovuti all'utilizzo delle colonnine di ricarica, con annesso coordinate e timestamp della rilevazione. & NI \\
     \hline
-    TS-45 & Verificare che sia stato implementato almeno un simulatore per ogni tipologia di sensore
+    TS-49 & Verificare che sia stato implementato almeno un simulatore per ogni tipologia di sensore
     & NV \\
     \hline
-    TS-46 & Verificare che i dati prodotti dalle simulazioni siano realistici. & NV \\
+    TS-50 & Verificare che i dati prodotti dalle simulazioni siano realistici. & NV \\
     \hline
-    TS-47 & Verificare che il sistema possa rilevare eventuali relazioni tra sorgenti di dati
+    TS-51 & Verificare che il sistema possa rilevare eventuali relazioni tra sorgenti di dati
     diversi. & NI \\
     \hline
-    TS-48 & Verificare che il sistema possa effettuare previsioni di eventi futuri, sulla base di dati storici e attuali. & NI \\
+    TS-52 & Verificare che il sistema possa effettuare previsioni di eventi futuri, sulla base di dati storici e attuali. & NI \\
     \hline
 \end{longtable}
 \subsubsection{Tracciamento dei test di sistema}
@@ -769,6 +788,10 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
         \item Visualizzare un pannello contenente un grafico di tipo Gauge che mostri il risultato
             del calcolo della temperatura media, espresso in gradi Celsius (°C), ottenuto tramite la
             media aritmetica delle rilevazioni effettuate dai singoli sensori;
+        \item Visualizzare un pannello contenente un grafico a barre che mostri il risultato
+            del calcolo del valore medio, minimo, massimo e della moda della temperatura, espresso in gradi Celsius (°C), ottenuti dalle rilevazioni effettuate dai singoli sensori;
+        \item Visualizzare un pannello contenente un grafico a barre che mostri il risultato
+            del calcolo della temperatura percepita media, minima e massima, espresso in gradi Celsius (°C), ottenuto dalle rilevazioni effettuate dai singoli sensori;
         \item Visualizzare un pannello contenente un grafico in formato time series che mostri i
             risultati delle rilevazioni dell’intensità delle precipitazioni, espresse in millimetri orari (mm/h), effettuate dai
             singoli sensori;
@@ -802,6 +825,8 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
             risultati delle rilevazioni del consumo delle colonnine di ricarica, espresse in kilowattora (kWh), rilevate dai singoli sensori;
         \item Visualizzare un pannello nel formato di un registro che mostri un elenco dettagliato di
             avvisi di pagamento dovuti all'utilizzo di una colonnina di ricarica, includendo informazioni come la data di pagamento e il costo associato a ciascuna rilevazione effettuata dai sensori;
+        \item Visualizzare un pannello contenente un grafico a barre che mostri il costo medio, minimo e massimo di pagamento effettuato in un parcheggio;
+        \item Visualizzare un pannello contenente un grafico a barre che mostri il costo medio, minimo e massimo di pagamento dovuto all'utilizzo di una colonnina di ricarica;
         \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il sistema non riesca a reperire i dati.
     \end{enumerate}
     & NV \\
@@ -829,7 +854,9 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
         \item Applicare dei filtri, per visualizzare solo i dati provenienti dal sottoinsieme di
             sensori selezionato, nel caso di pannelli di tipo registro;
         \item Applicare dei filtri, per visualizzare solo i dati provenienti dal sottoinsieme di
-            sensori selezionato, nel caso di pannelli di tipo table;  
+            sensori selezionato, nel caso di pannelli di tipo table;
+        \item Applicare dei filtri, per visualizzare solo i dati provenienti dal sottoinsieme di
+            sensori selezionato, nel caso di pannelli di tipo bar chart;  
         \item Applicare dei filtri, per selezionare solo i dati relativi ad un definito intervallo
             di tempo, all’interno di un’intera \glossterm{dashboard}.
         \item Rimuovere filtri precedentemente applicati all'interno di un pannello o di una \glossterm{dashboard}.
@@ -967,6 +994,8 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
             UC-2.5 \newline
             UC-2.6 \newline
             UC-2.7 \newline
+            UC-2.8 \newline
+            UC-2.9 \newline
             UC-5
     \\
     \hline
@@ -979,6 +1008,8 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
             UC-3.5 \newline
             UC-3.6 \newline
             UC-3.7 \newline
+            UC-3.8 \newline
+            UC-3.9 \newline
             UC-5
     \\
     \hline
