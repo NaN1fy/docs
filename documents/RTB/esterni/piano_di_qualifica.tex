@@ -1,4 +1,4 @@
-% changelog: "0.8.0, 2024-05-30, Davide Donanzan, Aggiunta test"
+% changelog: "0.8.0, 2024-05-30, Davide Donanzan, Metriche"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -126,7 +126,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-        0.8.0 & 2024-05-30 & Aggiunta di ulteriori test di sistema e accettazione. & Davide Donanzan & Redattore \\\\
+        0.8.0 & 2024-05-30 & Completamento della sezione ``Cruscotto delle qualità". & Davide Donanzan & Redattore \\\\
         0.7.0 & 2024-05-29 & Aggiunta di ulteriori test di unità, integrazione, sistema e accettazione. & Davide Donanzan & Redattore \\\\
         0.6.0 & 2024-05-28 & Stesura sezione ``Liste di controllo". & Guglielmo Barison & Redattore \\\\
         0.5.0 & 2024-05-24 & Stesura sezione ``Cruscotto della qualità". & Davide Donanzan & Redattore \\\\
@@ -213,7 +213,7 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		\toprule
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
-		MCP-EV & Earned value (EV) & $\geq$ 0 & $\leq$ EAC \\\\
+		MPC-EV & Earned value (EV) & $\geq$ 0 & $\leq$ EAC \\\\
 		MPC-PV & Planned Value (PV) & $\geq$ 0 & $\leq$ BAC\\\\
 		MPC-AC & Actual costo (AC) & $\geq$ 0 & $\leq$ EAC\\\\
 		MPC-CPI & Cost Performance Index (CPI) & tra 0.95 e 1.05 & $\leq$ 1\\\\
@@ -236,7 +236,7 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		\toprule
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
-		MCP-RSI & Requirements stability index (RSI) & $\geq $ 75\%  & $\leq$ 100\% \\\\
+		MPC-RSI & Requirements stability index (RSI) & $\geq $ 75\%  & $\leq$ 100\% \\\\
 		MPC-SFIN & Structural Fan-In (SFIN) & - & Va massimizzato\\\\
 		MPC-SFOUT & Structural Fan-Out (SFOUT) & - & Va minimizzato\\
 		\bottomrule
@@ -282,7 +282,7 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		\toprule
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
-		MPC-QMS & Quality Metrics Satisfied (QMS) & $\geq$ 85\%& 100\%\\
+		MPC-QMS & Quality Metrics Satisfied (QMS) & $\geq$ 75\%& 100\%\\
 		\bottomrule
 	\end{tabular}
 	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
@@ -297,8 +297,7 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		\toprule
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
-		MPC-NR & Non-calculated Risk (NR) & $\leq$ 3 & 0\\\\
-		MPC-ET & Efficienza temporale (ET) & $\leq$ 3 & $\leq$ 1 \\
+		MPC-NR & Non-calculated Risk (NR) & $\leq$ 3 & 0\\
 		\bottomrule
 	\end{tabular}
 	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione dei processi.}
@@ -1174,24 +1173,104 @@ Titolo principale & Tutti i titoli principali devono iniziare la pagina nella qu
 \section{Cruscotto della qualità}
 \subsection{Qualità di processo - Fornitura}
 \subsubsection{MPC-EAC Estimate at Completion}
-\textbf{\glossterm{RTB}:} EAC indica, per ogni periodo, la stima del budget finale prefiguratasi rispetto al valore prefissato definito dal BAC ovvero il Budget at Completion. Questo valore viene calcolato come il rapporto tra BAC e CPI dove CPI è Cost Performance Index.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/EAC.png}
+    \caption{Proiezione grafica di EAC.}
+    \label{fig:Proiezione grafica di EAC}
+\end{figure}
+\textbf{\glossterm{RTB}:} EAC indica, per ogni periodo, la stima del budget finale prefiguratasi rispetto al valore pianificato definito dal BAC ovvero il Budget at Completion. Questo valore viene calcolato come il rapporto tra BAC e CPI dove CPI è Cost Performance Index.\\
+Risulta evidente come la metrica in questione non rientrasse all'interno dei valori di accettazione già dal primo \glossterm{Sprint}. Ciò è dovuto alla scarsa esperienza del team nell'affrontare la pianificazione degli \glossterm{Sprint} e all'altrettanto poca conoscenza rigaurdante le attività prioritarie al fine di una buona gestione del progetto. Negli sprint successivi il team ha preso provvedimenti, adottando con maggiore accortezza una pianificazione efficace e adoperando un metodo lavorativo atto a far rientrare l'EAC all'interno dei valori di accettazione, mantenendo alta, al contempo, la produttività.\\
+Il gruppo può trarre esperienza dalla proiezione rappresentata nel grafico in previsione della seconda revisione, mantenendo l'andamento già individuato dal quarto \glossterm{Sprint}.
+\clearpage
 \subsubsection{MPC-EV Earned Value e MPC-PV Planned Value}
-\textbf{\glossterm{RTB}:} EV rappresenta il valore generato dal prodotto sviluppato fino a un dato momento mentre PV costituisce il valore del lavoro pianificato fino a un dato momento. Il loro confronto permette di comprendere lo scostamento che avviene tra i preventivi e i consuntivi di lavoro effettuati e quindi ottenere una chiara visione dell'andamento del lavoro svolto dal team. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/EV_PV.png}
+    \caption{Proiezione grafica di EV e PV.}
+    \label{fig:Proiezione grafica di EV e PV}
+\end{figure}
+\textbf{\glossterm{RTB}:} EV rappresenta il valore generato dal prodotto sviluppato fino a un dato momento mentre PV costituisce il valore del lavoro pianificato fino a un dato momento. Il loro confronto permette di comprendere lo scostamento che avviene tra i preventivi e i consuntivi di lavoro effettuati e quindi ottenere una chiara visione dell'andamento del lavoro svolto dal team.\\
+L'andamento delle due metriche è pressoché coincidente, come dimostrato anche nel grafico successivo dalla metrica SV. Dal secondo periodo in poi il valore EV è generalmente inferiore al SV segnalando che il team ha effettuato preventivi ottimistici rispetto all'effettivo risultato prodotto. Ciononostante questa differenza è minimale.
+\clearpage
 \subsubsection{MPC-BV Budget Variance e MPC-SV Schedule Variance}
-\textbf{\glossterm{RTB}:} BV consiste nella differenza tra il valore guadagnato (EV) e i costi effettivamente sostenuti (AC). Un valore negativo di BV indica che si sta spendendo più di quanto si stia guadagnando. SV, invece, rappresenta la differenza tra il valore guadagnato (EV) e il valore pianificato (PV). Un valore negativo indica un ritardo rispetto alla produzione e consegna del lavoro preventivato.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/BV_SV.png}
+    \caption{Proiezione grafica di BV e SV.}
+    \label{fig:Proiezione grafica di BV e SV}
+\end{figure}
+\textbf{\glossterm{RTB}:} BV consiste nella differenza tra il valore guadagnato (EV) e i costi effettivamente sostenuti (AC). Un valore negativo di BV indica che si sta spendendo più di quanto si stia guadagnando. SV, invece, rappresenta la differenza tra il valore guadagnato (EV) e il valore pianificato (PV). Un valore negativo indica un ritardo rispetto alla produzione e consegna del lavoro preventivato.\\
+Il valore del BV, nonostante sia certamente all'interno dei valori di accettazione, si è mantenuto costantemente negativo dimostrando come i costi effettivamente sostenuti eccedano il lavoro prodotto. Come anticipato nella proiezione dell'EAC, ciò è dovuto alla scarsa esperienza nella pianificazione di preventivi plausibili.\\
+La SV ha mantenuto valori oscillanti intorno allo 0, indice di una pianificazione abbastanza realistica rispetto al valore effettivamente prodotto.\\
+In generale queste due metriche mantengono valori altamente accettabili sospingendo il team a non deviare dal percorso individuato.
+\clearpage
 \subsubsection{MPC-AC Actual Cost e MPC-ETC Estimate To Complete}
-\textbf{\glossterm{RTB}:} AC rappresenta il costo sostenuto fino a un dato momento mentre ETC consiste nella conseguente stima dei costi da sostenere per il completamento del progetto.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/ETC_AC.png}
+    \caption{Proiezione grafica di AC e ETC.}
+    \label{fig:Proiezione grafica di AC e ETC}
+\end{figure}
+\textbf{\glossterm{RTB}:} AC rappresenta il costo sostenuto fino a un dato momento mentre ETC consiste nella conseguente stima dei costi da sostenere per il completamento del progetto.\\
+Totalmente in linea con quanto rilevato dalla proiezione delle metriche di EAC, BV e SV, l'AC e l'ETC dimostrano l'avanzamento stimato del progetto. I quattro \glossterm{Sprint} rappresentati corrispondono all'arco di tempo definito da 9 settimane, corrispondenti a circa metà del progetto. Ci si aspetta quindi che le due metriche siano prossime ad incontrarsi, considerando un lieve ritardo rispetto alla pianificazione determinato dal valore leggermente negativo di SV.
+\clearpage
 \subsubsection{MPC-CPI Cost Performance Index}
-\textbf{\glossterm{RTB}:} CPI indica il rapporto tra il valore guadagnato (EV) e i costi sostenuti (AC). Un valore di CPI uguale a 1 indica che i costi sostenuti sono in linea con il bugdet pianificato (BAC) mentre un valore negativo comporta il discostamento della stima del bidget al completamento (EAC) dal budget effettivo. 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/CPI.png}
+    \caption{Proiezione grafica di CPI.}
+    \label{fig:Proiezione grafica di CPI}
+\end{figure}
+\textbf{\glossterm{RTB}:} CPI indica il rapporto tra il valore guadagnato (EV) e i costi sostenuti (AC). Un valore di CPI uguale a 1 indica che i costi sostenuti sono in linea con il bugdet pianificato (BAC) mentre un valore negativo comporta il discostamento della stima del bidget al completamento (EAC) dal budget effettivo.\\
+Coerentemente con quanto indicato dall'EAC, il valore di CPI è rimasto al di fuori dei valori di accettazione fino al quarto \glossterm{Sprint}. Specialmente nei primi periodi il team ha sostenuto costi eccessivi non solo rispetto al valore pianificato ma soprattutto rispetto al valore prodotto. Le accortezze adottate negli \glossterm{Sprint} successivi hanno avuto gli effetti desiderati portando il valore di CPI vicino ad 1 e di conseguenza portando ad una diminuzione dell'EAC. Il team si impegna nei prossimi periodi a mantenere l'indice all'interno delle soglie di accettazione.  
+\clearpage
+\subsubsection{MPC-VAC Variance At Completion}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/VAC.png}
+    \caption{Proiezione grafica di VAC.}
+    \label{fig:Proiezione grafica di VAC}
+\end{figure}
+\textbf{\glossterm{RTB}:} VAC indica la variazione relativa del budget pianificato, ovvero il BAC, rispetto al budget stimato dall'EAC. L'itervallo di accettazione di questa metrica è posto ad una differenza in percentuale del 10\% rispetto al BAC.\\
+Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggiore del -10\% indicando un EAC eccessivamente superiore rispetto al BAC pianificato. Le accortezze adottate negli \glossterm{Sprint} successivi hanno avuto gli effetti desiderati portando il valore di VAC all'interno dell'intervallo di accettazione dal terzo \glossterm{Sprint}.
+\clearpage
 \subsection{Qualità di processo - Documentazione}
 \subsubsection{Indice Gulpease}
-\textbf{\glossterm{RTB}:}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/IG.png}
+    \caption{Proiezione grafica dell'indice gulpease.}
+    \label{fig:Proiezione grafica dell'indice gulpease}
+\end{figure}
+\textbf{\glossterm{RTB}:} L'indice Gulpease è un'indice di leggibilità per testi in lingua italiana ed è indicato da una percetuale di leggibilità, con soglia di accettazione al 60\%. Tutti i documenti prodotti dal team hanno prodotto un indice di leggibilità alto e nella maggior parte anche ottimale. L'unica eccezione si individua nel \textit{Piano di Qualifica} ma sopratutto nel \textit{Glossario} che fino all'ultimo ha avuto valori inferiori alla soglia di accettazione. Nonostante ciò, sarà di fondamentale importanza per il team migliorare l'indice di leggibilità di questo documento.
+\clearpage
 \subsubsection{Correttezza Ortografica}
-\textbf{\glossterm{RTB}:}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/CO.png}
+    \caption{Proiezione grafica della correttezza ortografica.}
+    \label{fig:Proiezione grafica della correttezza ortografica}
+\end{figure}
+\textbf{\glossterm{RTB}:} Il team ha costantemente effettuato un controllo approfondito della correttezza ortografica dei documenti prodotti. I redattori hanno il compito di assicurarsene prima ancora della verifica del documento da parte di terzi membri. Successivamente in vista delle revisione questi vengono ricontrollati e approvati. In questo modo ogni documento viene sempre visionato e controllato da ogni membro del gruppo ottenendo come risultato un esiguo numero di errori e, di conseguenza, l'ottima proiezione rappresentata.
+\clearpage
 \subsection{Qualità di processo - Gestione della qualità}
 \subsubsection{MPC-QMS Quality Metrics Satisfied}
-\textbf{\glossterm{RTB}:}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/QMS.png}
+    \caption{Proiezione grafica di QMS.}
+    \label{fig:Proiezione grafica di QMS}
+\end{figure}
+\textbf{\glossterm{RTB}:} In linea con quanto già specificato, le metriche di EAC, CPI, VAC e IG non sono state soddisfatte fin da subito. Il VAC e l'indice Gulpease, in particolare per il \textit{Glossario}, sono rientrati nei valori accettabili solamente dal terzo \glossterm{Sprint}, mentre l'EAC e il CPI dal quarto. Con ottica di retrospettiva il team nota come è stata necessaria l'acquisizione di esperienza e accortezza nella pianificazione e organizzazione delle attività del gruppo, cause primarie della mancata tollerabilità delle metriche citate. Questo non deve distogliere il team dal mantenere l'andamento individuato affiché tutte le metriche vengano rispettate, il prodotto venga sviluppato senza intoppi e il progetto possa essere portato a termine senza imprevisti. 
+\clearpage
 \subsection{Qualità di processo - Gestione dei processi}
 \subsubsection{MPC-NR Non-calculated Risk}
-\textbf{\glossterm{RTB}:}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images/NR.png}
+    \caption{Proiezione grafica dei rischi non calcolati.}
+    \label{fig:Proiezione grafica dei rischi non calcolati}
+\end{figure}
+\textbf{\glossterm{RTB}:} Come mostrato dalla proiezione, il quarto \glossterm{Sprint} è stato soggetto ad un rischio non previsto particolarmente limitante. Su suggerimento della proponente, il team ha affrontato un profondo lavoro di \verb|refactoring| del codice fino a quel momento prodotto, che non solo ha comportato un certo dispendio di risorse destinate ad altre attività ma ha limitato e modificato l'organizzazione che il team aveva precedentemente pianificato per il suddetto periodo. Ciononostante, grazie al lavoro svolto negli \glossterm{Sprint} antecedenti e soprattutto alle accortezze adottate nelle fasi di pianificazione, il refacotring non ha comportato problematiche rispetto al preventivo e alle metriche di fornitura.
 \end{document}
