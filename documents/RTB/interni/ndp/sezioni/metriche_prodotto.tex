@@ -1,0 +1,68 @@
+\subsection{Introduzione}
+Al fine di garantire una valutazione oggettiva e misurabile del prodotto e dei processi che lo compongono rispetto agli standard fissati, oltre che per fornire una guida atta al miglioramento del prodotto in sè e dei suoi processi, verrano utilizzate le seguenti metriche di product management. 
+
+\subsection{Metriche di processo}
+\begin{itemize}
+    \item \textbf{Fornitura}
+        \begin{itemize}
+            \item \textbf{MPC-EV}: Earned Value - Rappresenta il valore del lavoro prodotto fino ad un dato momento;\\
+                EV = BAC x \%lavoro_prodotto\\  
+            \item \textbf{MPC-PV}: Planned Value - Rappresenta il valore del lavoro pianificato fino ad un dato momento;\\
+                PV = BAC x \%lavoro_pianificato\\
+            \item \textbf{MPC-AC}: Actual Cost - Rappresenta il costo effettivamente sostenuto fino ad un dato momento. Il suo valore è reperibile nel Piano di Progetto;\\
+
+            \item \textbf{MPC-CPI}: Cost Performance Index - Rappresenta l'indice di produzione rispetto al costo sostenuto;\\
+                CPI = \frac{EV}{AC}\\
+            \item \textbf{MPC-EAC}: Estimate At Completion - Rappresenta il valore stimato per il completamento del progetto in un dato momento;\\
+                EAC = \frac{BAC}{CPI}\\ 
+            \item \textbf{MPC-ETC}: Estimate To Completion - Rappresenta il valore stimato per completare il progetto;\\
+                ETC = EAC - AC\\
+            \item \textbf{MPC-VAC}: Variance At Completion - Rappresenta la variazione relativa del budget stimato rispetto al budget pianificato;\\
+                VAC = \frac{BAC - EAC}{BAC}\\
+            \item \textbf{MPC-SV}: Schedule Variance - Rappresenta la variazione relativa del valore prodotto rispetto a quello pianificato;\\
+                SV = \frac{EV - PV}{BAC}\\
+            \item \textbf{MPC-BV}: Budget Variance - Rappresenta la variazione relativa tra il valore pianificato e i costi sostenuti.\\
+                BV = \frac{PV - AC}{BAC}\\
+        \end{itemize}
+    \item \textbf{Documentazione}
+        \begin{itemize}
+            \item \textbf{MPC-IG}: Indice Gulpease - Indice di leggibilità di un testo tarato sulla lingua italiana, considera la lunghezza delle parole e della frase rispetto al numero di lettere nella frase stessa.\\
+                GULPEASE = 89 + \frac{300 x numero_frasi - 10 x numero_lettere}{numero_parole}\\
+                Il risultato è un numero compreso tra 0 e 100, dove ``100'' indica la leggibilità più alta e ``0'' quella più bassa. Vi sono alcune soglie che sono ufficialmente considerate rilevanti, in particolare:
+                \begin{itemize}
+                    \item testi con risultato inferiore all'80 sono considerati di difficile lettura per chi possiede la licenza elementare;
+                    \item testi con risultato inferiore all'60 sono considerati di difficile lettura per chi possiede la licenza media;
+                    \item testi con risultato inferiore all'40 sono considerati di difficile lettura per chi possiede la licenza superiore.
+                \end{itemize}\\
+            \item \textbf{MPC-CO}: Correttezza Ortografica - Numero di errori ortografici e grammaticali presenti nel documento.\\
+        \end{itemize}
+    \item \textbf{Gestione della qualità}
+        \begin{itemize}
+            \item \textbf{MPC-QMS}: Quality Metrics Satisfied - Rappresenta il numero di metriche che sono state soddisfatte in un determinato momento.\\
+        \end{itemize}
+    \item \textbf{Gestione dei processi}
+        \begin{itemize}
+            \item \textbf{MPC-NR}: Non-calculated Risks - Rappresenta il numero di rischi non calcolati incontrati fino ad un dato momento.\\
+        \end{itemize}
+\end{itemize}
+
+% \subsection{Metriche di prodotto}
+% \begin{itemize}
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+%     \item
+% \end{itemize}
