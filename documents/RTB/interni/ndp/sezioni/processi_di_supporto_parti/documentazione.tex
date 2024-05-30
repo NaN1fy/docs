@@ -1,4 +1,144 @@
 \subsection{Documentazione}
 \subsubsection{Introduzione}
-Viene denominato ``documentazione" l'insieme di tutti i documenti a corredo del progetto software, che forniscono tutte le informazioni e i dettagli utili a sviluppatori, utenti e distributori riguardanti il prodotto.
-Utilizzato prevalentemente dal team di sviluppo per 
+Viene denominato ``documentazione" l'insieme di tutti i documenti a corredo del progetto software, che forniscono tutte le informazioni e i dettagli utili a sviluppatori, utenti e distributori riguardanti il prodotto. Utilizzata prevalentemente dal team di sviluppo per facilitare organizzazione e svolgimento delle attivitá durante il ciclo di vita del software, essa viene mantenuta coerente grazie al tracciamento di tutti i processi e attivitá che la coinvolgono, in maniera tale da migliorarne costantemente lo stato e semplificare la manutenzione.
+\subsubsection{Lista dei documenti}
+Di seguito viene elencato l'insieme dei documenti redatti:
+\begin{itemize}
+    \item Analisi dei Requisiti;
+    \item Dichiarazione Impegni;
+    \item Glossario;
+    \item Lettera di Presentatione;
+    \item Norme di Progetto;
+    \item Piano di Progetto;
+    \item Piano di Qualifica;
+    \item Valutazione Capitolati;
+    \item Verbali Esterni;
+    \item Verbali Interni;
+\end{itemize}
+
+\subsubsection{Documentation as Code}
+Riguardo la documentazione viene adottato il way of working del ``Documentation as Code'', che prevede la stesura, la gestione e la distribuzione dei documenti utilizzando pratiche e strumenti solitamente utilizzati nello sviluppo di codice o, pi\`(u) in generale, di software. I punti principali di tale Way of working sono:
+\begin{itemize}
+    \item Automazione;
+    \item Collaborazione;
+    \item Distribuzione;
+    \item integrazione incrementale;
+    \item Versionamento;
+
+\subsubsection{Ciclo di vita dei documenti}
+Ogni documento viene redatto e manutenuto secondo questo processo:
+\begin{enumerate}
+    \item Viene creato un branch per la stesura del documento nella repository docs: se il file \`(e) un verbale, allora viene clonato il template relativo nel branch;
+    \item Vengono assegnati i membri del gruppo che dovranno redigere il documento; 
+    \item Ogni volta che una sezione o comunque parte del documento viene completata, viene aggiunto nel registro delle modifiche del file una riga in coda, nel formato <versione x.y.z>,<data>,<oggetto>,<membro del team>,<ruolo>;  
+    \item Viene poi caricata nella repository tramite commit sul branch adeguato;
+    \item Pu\`(o) venire richiesta una pull request per fondere le modifiche fatte fino a quel momento nel branch "main", in maniera tale da costituire una milestone per i singoli documenti, senza ovviamente chiudere il branch;
+    \item Una volta completato il documento, viene richiesta la verifica del contenuto e della forma da parte di almeno due membri del gruppo, prima di procedere con il merge finale e la chiusura della branch; 
+    \item A richiesta dei verificatori, possono essere ripetute parti del processo, in vista di una ottimizzazione del documento;
+    \item Una volta dichiarato finito il documento, la sua branch viene chiusa e la rispettiva issue viene marcata come chiusa.
+    \item A discrezione del team di sviluppo, la branch di un documento che si ritiene debba essere aggiornato ulteriormente, manutenuto o modificato, previa valida motivazione, pu\`(o) essere riaperto, e il processo ripreso. 
+\end{enumerate}
+Il ciclo di vita dei documenti e delle loro issue consiste nei seguenti quattro stati:
+\begin{itemize} 
+    \item Stato ``to-do": il documento deve essere iniziato;
+    \item Stato ``in progress": il documento sta venendo scritto, completato o aggiornato;
+    \item Stato ``verify'': il documento \`(e) in attesa di essere posto sotto scrutinio;
+    \item Stato ``done'': il documento \`(e) completo e verificato;
+\end{itemize}
+Un documento che deve passare il vaglio per una milestone principale, quale RTB o PB (o eventi straordinari che assumono la stessa ``gravitas"), viene controllato e verificato un'ultima volta, in separata sede, da tutti i membri del team.
+In corrispondenza di questo ultimo controllo, il documento subisce uno scatto di versione (da 0.x.y a 1.x.y, o 2.x.y, e cosí via) che determina la versione definitiva di quel periodo.
+
+\subsubsection{Template Verbali}
+Per semplificare, velocizzare e standardizzare la stesura del documento piú comune prodotto dal team, ovvero i verbali, indipenddentemente dal loro essere esterni o interni, `(e) stato sviluppato un template in \LaTeX, con il quale essi vengono omologati e verificati molto facilmente.
+
+\subsubsection{Nomenclatura}
+Per riferirsi a un documento prodotto dal team, la formulazione del nome \`(e) la seguente: <nome_del_file> + <versione> aggiunta in automatico. Per i verbali viene utilizzato invece una nomenclatura del tipo: <VE> (se esterno)/<VI> (se interno)_<data_verbale> con data verbale nel formato ``yyyy_mm_dd", dove yyyy indica l'anno, mm il mese e dd il giorno. 
+
+\subsubsection{Versionamento}
+Il versionamento, necessario per il tracciamento delle modifiche dei documenti, \`(e) strutturato nel formato \textit{X.Y.Z}, come convenzione della versione dei documenti, dove:
+\begin{itemize}
+    \item \textbf{X:} cifra che viene incrementata quando avviene un rilascio, che nel caso del progetto corrisponde ai raggiungimenti di RTB, PB e CA;
+    \item \textbf{Y:} rappresenta un'aggiunta o modifica sostanziale, come ad esempio l'aggiunta di una sezione;
+    \item \textbf{Z:} indica una piccola modifica, come per esempio la correzione di errori o aggiunte di piccole dimensioni.
+\end{itemize}
+Un documento parte sempre dalla versione \textit{0.0.0}. \\
+Ogni modifica di un numero di versione, comporta l'azzeramento di tutti i numeri alla sua destra.
+
+\subsubsection{Struttura}
+Ogni file segue una rigorosa struttura delle pagine, organizzata come segue.
+\subsubsubsection{Prima Pagina}\\
+Nella prima pagina di ogni documento sono presenti, partendo dall'alto e proseguendo verso destra:
+\begin{itemize}
+    \item Destinatari del documento;
+    \item Redattori;
+    \item Verificatori;
+    \item Nome del file; 
+    \item Logo del team;
+    \item Logo dell'universit\`(a) di Padova;
+    \item Mail ufficiale del team.
+\end{itemize}
+Ad ogni pagina, esclusa la prima, precede un'intestazione con nome del file a sinistra e logo del team a destra, e segue un pi\`(e) di pagina contenente semplicemente il numero della pagina. 
+\subsubsubsection{Registro delle modifiche}\\
+Alla prima pagina segue la pagina contenente il changelog del documento; esso \`(e) strutturato sottoforma di tabella, ogni riga della quale contiene i seguenti dati:
+\begin{itemize}
+    \item Versione del documento;
+    \item Data dell'evento;
+    \item Breve descrizione dell'evento;
+    \item Membri che hanno partecipato all'evento;
+    \item Ruolo dei membri (redattore o verificatore).
+\end{itemize}
+Nel caso di una revisione per milestone prinicipale (RTB, PB et similia), essendo che tutti i membri del gruppo vi partecipano, non viene specificato né autore né ruolo. 
+\subsubsubsection{Indice}\\
+Nella pagina successiva al Registro Modifiche, viene reso disponibile, grazie alla scrittura in \LaTeX, un indice interattivo che segna ogni sezione e sottosezione del contenuto del documento, comprendente la possibilit\`(a) di navigare nel file tramite click su la sezione interessata.
+\subsubsubsection{Contenuto del documento}\\
+Le restanti pagine del documento sono riservate al contenuto del documento stesso, che non segue una precisa organizzazione trasversale tra i documenti, data la loro eterogeneit\`(a) di contenuti e forma.
+Unica eccezione sono i verbali, interni ed esterni, che presentano una struttura omologata e omogenea:
+\begin{itemize}
+    \item Informazioni generali, riguardanti l'incontro e i partecipanti all'incontro;
+    \item Ordine del giorno, in cui si descrive brevemente lo scopo dell'incontro;
+    \item Sintesi dell'incontro, in cui si descrive ci\`(o) che \`(e) stato detto durante l'incontro;
+    \item Conclusioni, in cui si espone le scelte decise durante l'incontro;
+    \item Attività da svolgere, in cui si dichiara gli impegni e le attività da svolgere decise sulla base delle conclusioni tratte dall'incontro.
+\end{itemize}
+Nell'ultima pagina dei verbali viene poi apposta, nel corrispettivo spazio dedicatogli, la firma da parte di un rappresenante della Proponente, dopo la visione e conferma di tale documento della controparte.
+
+\subsubsection{Convenzioni stilistiche}
+\subsubsubsection{Elenchi puntati}\\
+Le voci di ogni elenco, salvo eccezioni, iniziano con lettera maiuscola e terminano con punto e virgola `;', eccetto l'ultima voce che termina con punto normale `.'.
+\subsubsubsection{Descrizione immagini}\\
+Ogni immagine o tabella presenta una descrizione associata, utile a fornire una breve descrizione o spiegazione del contenuto visivo.
+\subsubsubsection{Formato delle date}\\
+Viene adottato il formato “yyyy-mm-dd”, dove yyyy indica l'anno (4 cifre), mm il mese (2 cifre), e dd il giorno (2 cifre).
+\subsubsubsection{Abbreviazioni}\\
+Numerosi sono i casi in cui vengono utilizzate sigle relative a entità e artefatti relativi al progetto. Tra questi ci sono:
+\begin{itemize}
+    \item \textbf{Concetti chiave del progetto}:
+        \begin{itemize}
+            \item CA: Customer Acceptance;
+            \item PoC: Proof of Concept;
+            \item MVP: Minimum Viable Product;
+            \item PB: Product Baseline;
+            \item RTB: Requirements and Technology Baseline.
+        \end{itemize}
+    \item \textbf{Ruoli del progetto}:
+        \begin{itemize}
+            \item Am: Amministratore;
+            \item An: Analista;
+            \item Pr: Programmatore;
+            \item Pt: Progettista;
+            \item Re: Responsabile;
+            \item Ve: Verificatore.
+        \end{itemize}
+\end{itemize}
+
+\subsubsection{Strumenti}
+Di seguito vengono elencati tutti gli strumenti unitariamente utilizzati dal team per la stesura, scrittura, manutenzione e verifica dei documenti:
+\begin{itemize}
+    \item \textbf{GitHub}: piattaforma di hosting di codice sorgente, utilizzato per la condivisione dei file, della loro verifica e del loro versionamento, nonché per la automatizzazione di taluni processi, in conformità al concetto di ``Documentation as Code";  
+    \item \textbf{\LaTeX}: linguaggio di markup, molto famoso in ambito accademico/scientifico, utilizzato per la stesura dei documenti in maniera pulita ed efficiente.
+\end{itemize}
+
+
+
+
+
