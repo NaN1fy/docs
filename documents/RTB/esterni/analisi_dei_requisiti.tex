@@ -519,13 +519,13 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra il valore medio, minimo, massimo e la moda di temperatura, in gradi Celsius (°C), in formato di diagramma a barre considerando per ciascun sensore attivo nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra i valori statstici di temperatura, in gradi Celsius (°C), in formato di diagramma a barre considerando per ciascun sensore attivo nell'intervallo di tempo all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per il valore medio, moda, valore minimo e valore massimo di temperatura.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello per i valori statistici di temperatura.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i valori statistici di temperatura in ogni zona della città. Questo pannello consente di comprendere lo stato attuale climatico della zona d'interesse con maggiore facilità.
 \end{itemize}
@@ -535,13 +535,13 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra la media, minima e massima temperatura percepita, in gradi Celsius (°C), in formato di diagramma a barre per ciascun sensore attivo nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra i valori statistici di temperatura percepita, in gradi Celsius (°C), in formato di diagramma a barre per ciascun sensore attivo nell'intervallo di tempo all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per temperatura percepita media, minima e massima.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello per valori statistici di temperatura percepita.
         media.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i valori statistici di temperatura percepita in ogni zona d'interesse della città.
@@ -598,21 +598,21 @@ dello stesso caso d'uso.
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare il livello dell'acqua. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.12: Visualizzazione pannello Gauge per intensità di precipitazioni attuale}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.12: Visualizzazione pannello Gauge per intensità di precipitazioni attuale}
+\subsubsection*{UC-2.12: Visualizzazione pannello Gauge per intensità delle precipitazioni attuale}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.12: Visualizzazione pannello Gauge per intensità delle precipitazioni attuale}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra l'intensità di precipitazioni attuale, in gradi millimetri orari (mm/h), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra l'intensità delle precipitazioni attuale, in gradi millimetri orari (mm/h), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
     \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per l'intensità di precipitazioni attuale.
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello per l'intensità delle precipitazioni attuale.
     \end{enumerate}
-\item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'intensità di precipitazioni attuale. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
+\item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'intensità delle precipitazioni attuale. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
 \subsubsection*{UC-2.13: Visualizzazione pannello Gauge per inquinamento dell'aria attuale}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.13: Visualizzazione pannello Gauge per inquinamento dell'aria attuale}
@@ -690,7 +690,7 @@ dello stesso caso d'uso.
 
                 \umlusecase[x=0, y=-7.5, width=100, name=UC-water]{UC-2.11 \\ Visualizzazione pannello time series per livello di acqua}
 
-                \umlusecase[x=0, y=-10, width=100, name=UC-rain-act]{UC-2.12 \\ Visualizzazione pannello Gauge per intensità di precipitazioni attuale}
+                \umlusecase[x=0, y=-10, width=100, name=UC-rain-act]{UC-2.12 \\ Visualizzazione pannello Gauge per intensità delle precipitazioni attuale}
 
                 \umlusecase[x=0, y=-12.5, width=100, name=UC-pollut-act]{UC-2.13 \\ Visualizzazione pannello Gauge per inquinamento dell'aria attuale}
 
@@ -895,8 +895,7 @@ tabellare per disponibilità colonnine di ricarica}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra il
-        costo medio, massimo e minimo dei parcheggi;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra i valori statistici dei pagamenti dei parcheggi;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -913,8 +912,7 @@ tabellare per disponibilità colonnine di ricarica}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra il
-        costo medio, massimo e minimo dei pagamenti per le colonnine di ricarica;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra valori statistici dei pagamenti per le colonnine di ricarica;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -1604,13 +1602,13 @@ Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i s
             RF-22 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura percepita in formato time series. & UC-2.3 \\ \hline
             RF-23 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura media in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.4 \\ \hline
             RF-24 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'umidità media in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.5 \\ \hline
-            RF-25 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura percepita media in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.6 \\ \hline
+            RF-25 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura percepita media in formato diagramma di Gauge considerando le coppie di sensori di temperatura e umidità attivi nell'intervallo di tempo. & UC-2.6 \\ \hline
             RF-26 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura in formato diagramma a barre considerando ciascun sensore attivo. & UC-2.7 \\ \hline
-            RF-27 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura percepita in formato diagramma a barre considerando ciascun sensore attivo. & UC-2.8 \\ \hline
+            RF-27 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura percepita in formato diagramma a barre considerando ciascuna coppia di sensori di temperatura e umidità attivi. & UC-2.8 \\ \hline
             RF-28 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità delle precipitazioni in formato time series. & UC-2.9 \\ \hline
             RF-29 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria in formato time series. & UC-2.10 \\ \hline
             RF-30 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua in formato time series. & UC-2.11 \\ \hline
-            RF-31 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità di precipitazioni attuale in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.12 \\ \hline
+            RF-31 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità delle precipitazioni attuale in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.12 \\ \hline
             RF-32 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria attuale in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.13 \\ \hline
             RF-33 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua attuale in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.14 \\ \hline
             RF-34 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio urbanistico. & UC-3 \\ \hline
@@ -1653,7 +1651,8 @@ Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i s
             RF-71 & Obbligatorio & Il sensore deve poter inviare i dati relativi ai consumi di elettricità delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.11 \\ \hline
             RF-72 & Obbligatorio & Il sensore deve poter inviare i dati relativi ai pagamenti delle ricariche effettuate mediante colonnine elettriche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.12 \\ \hline
             RF-73 & Obbligatorio & Il sistema consentire la correlazione di dati provenienti da sensori diversi. & \glossterm{Proponente} \\
-		\hline
+            RF-74 & Opzionale & Il sistema consentire la previsione di eventi futuri attraverso l'analisi dei dati provenienti dai sensori. & \glossterm{Proponente} \\
+        \hline
 \end{longtable}
 \clearpage
 \subsection{Requisiti qualitativi}
@@ -1803,6 +1802,7 @@ Di seguito sono elencati i requisiti prestazionali individuati:
             RF-71 & UC-9.11 \\ \hline
             RF-72 & UC-9.12 \\ \hline
             RF-73 & \glossterm{Proponente} \\ \hline
+            RF-74 & \glossterm{Proponente} \\ \hline
             RQ-1 & \textit{Norme di Progetto} \\ \hline
             RQ-2 & \textit{Norme di Progetto} \\ \hline
             RQ-3 & \glossterm{Capitolato} \\ \hline
@@ -1902,7 +1902,7 @@ Di seguito sono elencati i requisiti prestazionali individuati:
 		\hline
 		\textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Desiderabili} & \textbf{Opzionali} & \textbf{Totale}\\
 		\hline
-            Funzionali & 54 & 19 & - & 73 \\ \hline
+            Funzionali & 54 & 19 & 1 & 74 \\ \hline
             Qualitativi & 7 & - & - & 7 \\ \hline
             Di vincolo & 5 & - & - & 5 \\ \hline
             Prestazionali & 3 & - & - & 3 \\ \hline
