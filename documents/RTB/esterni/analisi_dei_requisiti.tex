@@ -1,4 +1,4 @@
-% changelog: "0.7.0, 2024-05-31, Davide Donanzan, Stesura ulteriori casi d'uso"
+% changelog: "0.7.1, 2024-06-02, Oscar Konieczny, Verifica completa con piccole modifiche"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -97,7 +97,7 @@
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} 
+			{\\\large{\textsc{Oscar Konieczny}\\}} 
 			{\large{\textsc{XXXX XXXX}}}
 			
 		}
@@ -122,6 +122,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+            0.7.1 & 2024-06-02 & Verifica completa con piccole modifiche. & Oscar Konieczny & Verificatore \\\\
          	0.7.0 & 2024-05-31 & Stesura di ulteriori casi d'uso. & Davide Donanzan & Redattore \\\\
          	0.6.0 & 2024-05-30 & Stesura di ulteriori casi d'uso. & Davide Donanzan & Redattore \\\\
          	0.5.0 & 2024-05-29 & Riscrittura di diversi requisiti e alcuni casi d'uso. & Guglielmo Barison & Redattore \\\\
@@ -203,17 +204,17 @@ Il prodotto si struttura nelle seguenti funzionalità:
   \end{itemize}  
 	\item Una dashboard che permette di visualizzare i dati raccolti.
 \end{itemize}
-La piattaforma è progettata principalemente per un solo tipo di utente: l'amministratore pubblico. Quest'ultimo potrà avere accesso a diverse metriche e indicatori sullo stato della città attraverso l'utilizzo delle dashbaord.
+La piattaforma è progettata principalemente per un solo tipo di utente: l'amministratore pubblico. Quest'ultimo potrà avere accesso a diverse metriche e indicatori sullo stato della città attraverso l'utilizzo delle dashboard.
 \subsection{Caratteristiche degli utenti} \label{sec:users}
-L'applicativo è destinato principalmente agli amministratori pubblici. La visualizzazione in tempo reale dei dati, sintetizzati in una \glossterm{dashboard}, consente all'amministrazione di vigilare costantemente sullo stato di salute della città e prendere decisioni tempestive volte al miglioramento della qualità dei servizi urbani. \\ Si assume che i fruitori della piattaforma siano in grado di comprendere ed interpretare le informazioni visualizzate. Gli utenti potranno accedere alla piattaforma utilizzando un qualsiasi dispositivo desktop o mobile connesso alla rete.
+L'applicativo è destinato principalmente agli amministratori pubblici. La visualizzazione in tempo reale dei dati, sintetizzati in una dashboard, consente all'amministrazione di vigilare costantemente sullo stato di salute della città e prendere decisioni tempestive volte al miglioramento della qualità dei servizi urbani. \\ Si assume che i fruitori della piattaforma siano in grado di comprendere ed interpretare le informazioni visualizzate. Gli utenti potranno accedere alla piattaforma utilizzando un qualsiasi dispositivo desktop o mobile connesso alla rete.
 \subsection{Tecnologie utilizzate}
 Il dominio tecnologico dell'applicativo comprende:
 \begin{itemize}
 	\setlength\itemsep{0em}
-  \item \textbf{Python: }attraverso il quale si simula l'informazione fornita dai sensori;
-  \item \textbf{Apache Kafka:} per gestire il gathering dei dati da più fonti;
-  \item \textbf{ClickHouse:} database OLAP per la persistenza dei dati ottenuti;
-  \item \textbf{Grafana}: piattaforma per monitorare e analizzare i dati in tempo reale attraverso la loro rappresentazione grafica
+  \item \textbf{\glossterm{Python}: }attraverso il quale si simula l'informazione fornita dai sensori;
+  \item \textbf{\glossterm{Apache Kafka}:} per gestire il gathering dei dati da più fonti;
+  \item \textbf{\glossterm{ClickHouse}:} database OLAP per la persistenza dei dati ottenuti;
+  \item \textbf{\glossterm{Grafana}:} piattaforma per monitorare e analizzare i dati in tempo reale attraverso la loro rappresentazione grafica.
 \end{itemize}
 
 
@@ -279,11 +280,11 @@ Il dominio tecnologico dell'applicativo comprende:
 \subsection{Introduzione}
 Di seguito sono elencati i casi d'uso individuati in seguito all'analisi del capitolato e al
 confronto con la \glossterm{Proponente}. Ciascuno di essi è corredato di un codice identificativo, la cui
-struttura è descritta alla sezione vattelappesca del documento \textit{Norme di Progetto v1.0.0}. %INSERIRE RIMANDO SEZIONE CORRETTA
+struttura è descritta alla sezione \textit{2.3.2.4} del documento \textit{Norme di Progetto v1.0.0}. %INSERIRE RIMANDO SEZIONE CORRETTA
 \subsection{Attori}
 Gli attori che interagiscono con il sistema sono i seguenti:
 \begin{itemize}
-    \item \textbf{Amministratore pubblico}: utente in grado di accedere al sistema ed usufruire di tutte le sue funzionalità. In particolare, può visualizzare la \glossterm{dashboard} contenente i dati provenienti dai sensori. L'applicativo non richiede autenticazione; %NOT SO SURE ABOUT DIS
+    \item \textbf{Amministratore pubblico}: utente in grado di accedere al sistema ed usufruire di tutte le sue funzionalità. In particolare, può visualizzare la dashboard contenente i dati provenienti dai sensori. L'applicativo non richiede autenticazione; %NOT SO SURE ABOUT DIS
     \item \textbf{Sensore}: dispositivo in grado di rilevare dati dall'ambiente esterno e inviare le misurazioni effettuate al sistema, in modo da consentirne l'archiviazione e la successiva visualizzazione.
 \end{itemize}
 \clearpage
@@ -307,7 +308,7 @@ dello stesso caso d'uso.
         \item l'amministratore pubblico accede alla piattaforma di visualizzazione.
         \end{enumerate}
         % immagine
-    \item \textbf{User Story associata: }in qualità di amministratore pubblico, desidero accedere alla dashboard per monitorare in tempo reale i dati raccolti dai vari sensori dislocati nella città. Questo mi permetterà di valutare rapidamente lo stato complessivo della città e di prendere decisioni informate e tempestive riguardo alla gestione delle risorse e all’implementazione dei servizi.
+    \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere alla dashboard per monitorare in tempo reale i dati raccolti dai vari sensori dislocati nella città. Questo mi permetterà di valutare rapidamente lo stato complessivo della città e di prendere decisioni informate e tempestive riguardo alla gestione delle risorse e all’implementazione dei servizi.
 \end{itemize}
 \begin{figure}[ht!]
     \centering
@@ -359,7 +360,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio dei sensori;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un panello contenente una mappa che mostra la posizione dei sensori;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello contenente una mappa che mostra la posizione dei sensori;
     \item \textbf{Scenario principale:}
     \begin{enumerate}
       \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -420,7 +421,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra la temperatura, espressa in gradi Celsius (°C), in formato time series.
+    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza un pannello con un grafico che mostra la temperatura, espressa in gradi Celsius (°C), in formato time series.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -435,7 +436,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico
+    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza un pannello con un grafico
         che mostra l'umidità relativa, espressa in percentuale, in formato time series.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
@@ -451,9 +452,9 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.3: Visualizzazione pannello time series per temperatura percepita}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra la temperatura, in gradi Celsius (°C), in formato time series in relazione all'umidità.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la temperatura, in gradi Celsius (°C), in formato time series in relazione all'umidità.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -467,9 +468,9 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.4: Visualizzazione pannello Gauge per temperatura media}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra la media della temperatura, in gradi Celsius (°C), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media della temperatura, in gradi Celsius (°C), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -484,9 +485,9 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.5: Visualizzazione pannello Gauge per umidità media}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra la media dell'umidità, in gradi Celsius (°C), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media dell'umidità, in gradi Celsius (°C), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -500,9 +501,9 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.6: Visualizzazione pannello Gauge per temperatura percepita media}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra la media della temperatura percepita, in gradi Celsius (°C), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media della temperatura percepita, in gradi Celsius (°C), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -517,15 +518,15 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.7: Visualizzazione pannello bar chart per valori statistici di temperatura}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra i valori statstici di temperatura, in gradi Celsius (°C), in formato di diagramma a barre considerando per ciascun sensore attivo nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra i valori statistici di temperatura, in gradi Celsius (°C), in formato di diagramma a barre considerando per ciascun sensore attivo nell'intervallo di tempo all'interno della dashboard.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per i valori statistici di temperatura.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello per i valori statistici di temperatura.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i valori statistici di temperatura in ogni zona della città. Questo pannello consente di comprendere lo stato attuale climatico della zona d'interesse con maggiore facilità.
 \end{itemize}
@@ -533,15 +534,15 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.8: Visualizzazione pannello con grafico a barre per valori statistici di temperatura percepita}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra i valori statistici di temperatura percepita, in gradi Celsius (°C), in formato di diagramma a barre per ciascun sensore attivo nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra i valori statistici di temperatura percepita, in gradi Celsius (°C), in formato di diagramma a barre per ciascun sensore attivo nell'intervallo di tempo all'interno della dashboard.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per valori statistici di temperatura percepita.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello per valori statistici di temperatura percepita.
         media.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i valori statistici di temperatura percepita in ogni zona d'interesse della città.
@@ -550,16 +551,16 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.9: Visualizzazione pannello time series per precipitazioni}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico
         che mostra l'intensità delle precipitazioni, espressa in millimetri orari (mm/h), in formato time series.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello time series per le precipitazioni.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello time series per le precipitazioni.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'intensità delle precipitazioni. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -567,16 +568,16 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.10: Visualizzazione pannello time series per inquinamento dell'aria}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico
         che mostra la quantità di polveri sottili presenti nell'aria, espressa in microgrammi per metro cubo ($\mu g / m^3$), in formato time series.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello time series per l'inquinamento dell'aria.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello time series per l'inquinamento dell'aria.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare il livello di polveri sottili presenti nell'aria. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
@@ -585,15 +586,15 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.11: Visualizzazione pannello time series per livello di acqua}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra le misurazioni relative al livello dell'acqua, espresse in percentuale, in formato time series.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra le misurazioni relative al livello dell'acqua, espresse in percentuale, in formato time series.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per il livello dell'acqua.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello per il livello dell'acqua.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare il livello dell'acqua. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
@@ -602,15 +603,15 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.12: Visualizzazione pannello Gauge per intensità delle precipitazioni attuale}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra l'intensità delle precipitazioni attuale, in gradi millimetri orari (mm/h), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra l'intensità delle precipitazioni attuale, in gradi millimetri orari (mm/h), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per l'intensità delle precipitazioni attuale.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello per l'intensità delle precipitazioni attuale.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'intensità delle precipitazioni attuale. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -618,15 +619,15 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.13: Visualizzazione pannello Gauge per inquinamento dell'aria attuale}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra l'inquinamento dell'aria attuale, in microgrammi per metro cubo ($\mu g / m^3$), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra l'inquinamento dell'aria attuale, in microgrammi per metro cubo ($\mu g / m^3$), in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per l'inquinamento dell'aria attuale.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello per l'inquinamento dell'aria attuale.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'inquinamento dell'aria attuale. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -634,15 +635,15 @@ dello stesso caso d'uso.
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.14: Visualizzazione pannello Gauge per livello dell'acqua attuale}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} L’amministratore pubblico visualizza un pannello con un grafico che mostra il livello dell'acqua attuale, in percentuale, in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra il livello dell'acqua attuale, in percentuale, in formato di diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo all'interno della dashboard.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         ambientale; 
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello per il livello dell'acqua attuale.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello per il livello dell'acqua attuale.
     \end{enumerate}
 \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare il livello dell'acqua attuale. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -748,16 +749,16 @@ dello stesso caso d'uso.
 geomap per disponibilità parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra lo
         stato di occupazione dei parcheggi, in formato geomap;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello geomap per lo stato di occupazione dei parcheggi.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello geomap per lo stato di occupazione dei parcheggi.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato di disponibilità dei singoli parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -766,15 +767,15 @@ geomap per disponibilità parcheggi}
 tabellare per informazioni sui parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le informazioni riguardanti i parcheggi, in formato tabellare;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio
         urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello tabellare per le informazioni riguardanti i parcheggi.
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello tabellare per le informazioni riguardanti i parcheggi.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato dei singoli parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -782,15 +783,15 @@ tabellare per informazioni sui parcheggi}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.3: Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le notifiche di pagamento relative al parcheggio.
         contenenti dati relativi al dominio urbanistico;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello in formato di registro per le notifiche di pagamento dei parcheggi.
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello in formato di registro per le notifiche di pagamento dei parcheggi.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i pagamenti delle soste nei parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -799,15 +800,15 @@ tabellare per informazioni sui parcheggi}
 geomap per guasti elettrici}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra i
         guasti sulla rete elettrica in formato geomap;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello geomap per i guasti.
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello geomap per i guasti.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato della fornitura elettrica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -815,14 +816,14 @@ geomap per guasti elettrici}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.5: Visualizzazione pannello time series per stato riempimento isole ecologiche}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra la percentuale di riempimento dei conferitori, in formato time series;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello time series per lo stato di riempimento dei conferitori delle isole ecologiche.
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello time series per lo stato di riempimento dei conferitori delle isole ecologiche.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare il livello di riempimento dei conferitori presenti nelle isole ecologiche. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -831,15 +832,15 @@ geomap per guasti elettrici}
 geomap per disponibilità colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra lo
         stato di occupazione delle colonnine di ricarica, in formato geomap;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello geomap per la disponibilità delle colonnine di ricarica.
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello geomap per la disponibilità delle colonnine di ricarica.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare la disponibilità delle colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -848,14 +849,14 @@ geomap per disponibilità colonnine di ricarica}
 tabellare per disponibilità colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra informazioni riguardanti le colonnine di ricarica, in formato tabellare;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
-    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item L’amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
-    \item L’amministratore pubblico seleziona la visualizzazione del pannello in formato tabellare per informazioni riguardanti le colonnine di ricarica.
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della dashboard relativa al dominio urbanistico;
+    \item L'amministratore pubblico seleziona la visualizzazione del pannello in formato tabellare per informazioni riguardanti le colonnine di ricarica.
     \end{enumerate}
     \item \textbf{User Story associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare le colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
@@ -1215,8 +1216,7 @@ temporale selezionato, in tutti i pannelli della dashboard dove è stato applica
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico sta visualizzando uno o più pannelli con i dati ed è attivo almeno un criterio di selezione dei pannelli;
-    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza i dati senza filtri applicati.
-applicato;
+    \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza i dati senza filtri applicati;
     \item \textbf{Scenario principale:}
         \begin{enumerate}
         \item L’amministratore pubblico seleziona l’icona o il pulsante relativo alla rimozione dei filtri precedentemente applicati;
@@ -1302,7 +1302,7 @@ applicato;
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9: Inserimento dati sensore}
 \begin{itemize}
     \item \textbf{Attore principale:} sensore;
-    \item \textbf{Precondizioni:} il sensore è colleagato al sistema;
+    \item \textbf{Precondizioni:} il sensore è collegato al sistema;
     \item \textbf{Postcondizioni:} il sistema ha archiviato correttamente i dati inviati dal sensore;
     \item \textbf{Scenario principale:}
         \begin{enumerate}
@@ -1594,9 +1594,9 @@ Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i s
             RF-14 & Obbligatorio & Il sistema deve integrare almeno un sensore che rilevi il consumo di energia delle colonnine di ricarica. & \glossterm{Capitolato} \\ \hline
             RF-15 & Obbligatorio & Il sistema deve integrare almeno un sensore che invii dati di pagamento per colonnine di ricarica. & \glossterm{Capitolato} \\ \hline
             RF-16 & Obbligatorio & L'utente deve poter visualizzare un menu attraverso il quale selezionare la \glossterm{dashboard} desiderata tra Sensori, Ambientale ed Urbanistica. & UC-0 \\ \hline
-            RF-17 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa allo stato dei sensori. & UC-1 \\ \hline
+            RF-17 & Obbligatorio & L'utente deve poter visualizzare la dashboard relativa allo stato dei sensori. & UC-1 \\ \hline
             RF-18 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} contente una mappa su cui è indicata la posizione geografica dei sensori. & \glossterm{Capitolato}, UC-1.1 \\ \hline
-            RF-19 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio ambientale. & UC-2 \\ \hline
+            RF-19 & Obbligatorio & L'utente deve poter visualizzare la dashboard relativa al dominio ambientale. & UC-2 \\ \hline
             RF-20 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura in formato time series. & UC-2.1 \\ \hline
             RF-21 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni dell'umidità in formato time series. & UC-2.2 \\ \hline
             RF-22 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura percepita in formato time series. & UC-2.3 \\ \hline
@@ -1611,7 +1611,7 @@ Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i s
             RF-31 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità delle precipitazioni attuale in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.12 \\ \hline
             RF-32 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria attuale in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.13 \\ \hline
             RF-33 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua attuale in formato diagramma di Gauge considerando tutti i sensori attivi nell'intervallo di tempo. & UC-2.14 \\ \hline
-            RF-34 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio urbanistico. & UC-3 \\ \hline
+            RF-34 & Obbligatorio & L'utente deve poter visualizzare la dashboard relativa al dominio urbanistico. & UC-3 \\ \hline
             RF-35 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa che descrive lo stato di occupazione dei parcheggi. & \glossterm{Proponente}, UC-3.1 \\ \hline
             RF-36 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive i parcheggi. & UC-3.2 \\ \hline
             RF-37 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una lista di notifiche dei pagamenti dei parcheggi. & UC-3.3 \\ \hline
@@ -1623,7 +1623,7 @@ Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i s
             RF-43 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le notifiche di pagamento relative all'utilizzo delle colonnine di ricarica. & UC-3.9 \\ \hline
             RF-44 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche relative ai pagamenti dovuti a parcheggi. & UC-3.10 \\ \hline
             RF-45 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche relative ai pagamenti dovuti a colonnine di ricarica. & UC-3.11 \\ \hline
-            RF-46 & Desiderabile & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al superamento delle soglie. & UC-4 \\ \hline
+            RF-46 & Desiderabile & L'utente deve poter visualizzare la dashboard relativa al superamento delle soglie. & UC-4 \\ \hline
             RF-47 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento delle soglie di temperatura. & UC-4.1 \\ \hline
             RF-48 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di precipitazioni. & UC-4.2 \\ \hline
             RF-49 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di inquinamento dell'aria. & UC-4.3 \\ \hline
@@ -1650,9 +1650,8 @@ Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i s
             RF-70 & Obbligatorio & Il sensore deve poter inviare i dati relativi allo stato di occupazione delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.10 \\ \hline
             RF-71 & Obbligatorio & Il sensore deve poter inviare i dati relativi ai consumi di elettricità delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.11 \\ \hline
             RF-72 & Obbligatorio & Il sensore deve poter inviare i dati relativi ai pagamenti delle ricariche effettuate mediante colonnine elettriche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.12 \\ \hline
-            RF-73 & Obbligatorio & Il sistema consentire la correlazione di dati provenienti da sensori diversi. & \glossterm{Proponente} \\
-            RF-74 & Opzionale & Il sistema consentire la previsione di eventi futuri attraverso l'analisi dei dati provenienti dai sensori. & \glossterm{Proponente} \\
-        \hline
+            RF-73 & Obbligatorio & Il sistema consentire la correlazione di dati provenienti da sensori diversi. & \glossterm{Proponente} \\ \hline
+            RF-74 & Opzionale & Il sistema consentire la previsione di eventi futuri attraverso l'analisi dei dati provenienti dai sensori. & \glossterm{Proponente} \\ \hline
 \end{longtable}
 \clearpage
 \subsection{Requisiti qualitativi}
@@ -1694,9 +1693,9 @@ Di seguito sono elencati i requisiti di vincolo individuati:
     \endlastfoot
             RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un database OLAP colonnare come \glossterm{ClickHouse}. & \glossterm{Capitolato} \\ \hline
             RV-2 & Obbligatorio & Lo stream di dati deve essere gestito mediante un broker come Apache \glossterm{Kafka}. & \glossterm{Capitolato} \\ \hline
-            RV-3 & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come Grafana. & \glossterm{Capitolato} \\ \hline
+            RV-3 & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come \glossterm{Grafana}. & \glossterm{Capitolato} \\ \hline
             RV-4 & Obbligatorio & Il sistema deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & \glossterm{Proponente} \\ \hline
-            RV-5 & Obbligatorio & I dati generati dal simulatore devono essere in formato JSON. & \textit{Norme di Progetto} \\ \hline
+            RV-5 & Obbligatorio & I dati generati dal simulatore devono essere in formato \glossterm{JSON}. & \textit{Norme di Progetto} \\ \hline
 \end{longtable}
 \subsection{Requisiti prestazionali}
 Questa tipologia di requisiti specifica le prestazioni che il sistema deve avere. \\
