@@ -45,3 +45,4 @@ Topic;In Apache Kafka, un ``topic" è una categoria o una suddivisione logica de
 Widget;Un widget in Grafana è un componente grafico utilizzato per visualizzare i dati su una dashboard.
 Real-time;Aggettivo utillizzato per definire che un attività in risposta ad un evento avviene immediatamente, o con ritardi trascurabili.
 Sensore;Dispositivo in grado di effettuare misurazioni relative al proprio dominio di interesse. Questi dati possono essere letti ed utilizzati dal sistema.
+Committente;Soggetto per conto del quale viene realizzata un'opera o svolto un servizio.
