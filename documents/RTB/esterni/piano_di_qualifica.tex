@@ -1,4 +1,4 @@
-% changelog: "0.9.1, 2024-06-01, Oscar Konieczny, Verifica completa con piccole modifiche"
+% changelog: "0.9.2, 2024-06-03, Linda Barbiero, Verifica completa con piccole modifiche"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -104,7 +104,7 @@
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Oscar Konieczny}\\}} 
-			{\large{\textsc{XXXX XXXX}}}
+			{\large{\textsc{Linda Barbiero}}}
 			
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -127,6 +127,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+        0.9.2 & 2024-06-03 & Verifica completa con piccole modifiche. & Linda Barbiero & Verificatore \\\\
         0.9.1 & 2024-06-01 & Verifica completa con piccole modifiche. & Oscar Konieczny & Verificatore \\\\
         0.9.0 & 2024-05-31 & Stesura sezione ``Tracciamento test di sistema". & Davide Donanzan & Redattore \\\\
         0.8.0 & 2024-05-30 & Completamento della sezione ``Cruscotto delle qualità". & Davide Donanzan & Redattore \\\\
@@ -595,17 +596,17 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     \hline
     TS-09 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato di tipo Gauge rappresentante la media aritmetica della temperatura,
-    espressa in gradi Celsius (°C), per tutti i sensori, che aggreghi i dati, nella \glossterm{dashboard} relativa ai dati ambientali.
+    espressa in gradi Celsius (°C), delle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NV \\
     \hline
     TS-10 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato di tipo Gauge rappresentante la media aritmetica dell'umidità,
-    espressa in percentuale, per tutti i sensori, che aggreghi i dati, nella \glossterm{dashboard} relativa ai dati ambientali.
+    espressa in percentuale, delle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NV \\
     \hline
     TS-11 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato di tipo Gauge rappresentante la media aritmetica della temperatura percepita,
-    espressa in gradi Celsius (°C), per tutte le coppie di sensori di temperatura e umidità, che aggreghi i dati, nella \glossterm{dashboard} relativa ai dati ambientali.
+    espressa in gradi Celsius (°C), delle ultime rilevazioni effettuate dalle coppie di sensori temperatura-umidità, che aggreghi i dati, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NV \\
     \hline
     TS-12 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
@@ -615,7 +616,7 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     \hline
     TS-13 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico bar chart rappresentante valori statistici della temperatura percepita,
-    espressa in gradi Celsius (°C), per ciascuna coppia di sensori di temperatura e umidità, nella \glossterm{dashboard} relativa ai dati ambientali.
+    espressa in gradi Celsius (°C), per ciascuna coppia di sensori temperatura-umidità, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NV \\
     \hline
     TS-14 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
@@ -634,18 +635,18 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     & NI \\
     \hline
     TS-17 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
-    un grafico in formato di tipo Gauge rappresentante l'attuale intensità delle precipitazioni,
-    espressa in millimetri orari (mm/h), per tutti i sensori, che aggreghi i dati, nella \glossterm{dashboard} relativa ai dati ambientali.
+    un grafico in formato di tipo Gauge rappresentante la media aritmetica dell'attuale intensità delle precipitazioni,
+    espressa in millimetri orari (mm/h), delle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NI \\
     \hline
     TS-18 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
-    un grafico in formato di tipo Gauge rappresentante l'attuale inquinamento dell'aria,
-    espressa in microgrammi per metro cubo ($\mu g / m^3$), per ciascun sensore, nella \glossterm{dashboard} relativa ai dati ambientali.
+    un grafico in formato di tipo Gauge rappresentante la media aritmetica dell'attuale inquinamento dell'aria,
+    espressa in microgrammi per metro cubo ($\mu g / m^3$), delle ultime rilevazioni effettuate dai singoli sensori, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NI \\
     \hline
     TS-19 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
-    un grafico in formato di tipo Gauge rappresentante l'attuale livello dell'acqua,
-    espressa in percentuale, per ciascun sensore, nella \glossterm{dashboard} relativa ai dati ambientali.
+    un grafico in formato di tipo Gauge rappresentante la media aritmetica dell'attuale livello dell'acqua,
+    espressa in percentuale, delle ultime rilevazioni effettuate dai singoli sensori, nella \glossterm{dashboard} relativa ai dati ambientali.
     & NI \\
     \hline
     TS-20 & Verificare che l'amministratore pubblico possa monitorare i dati provenienti
@@ -975,11 +976,11 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
             media aritmetica delle ultime rilevazioni effettuate dai singoli sensori;
         \item Visualizzare un pannello contenente un grafico di tipo Gauge che mostri il risultato
             del calcolo della temperatura percepita media, espresso in gradi Celsius (°C), ottenuto tramite la
-            media aritmetica delle ultime rilevazioni effettuate dalle coppie di sensori di temperatura e umidità;
+            media aritmetica delle ultime rilevazioni effettuate dalle coppie di sensori temperatura-umidità;
         \item Visualizzare un pannello contenente un grafico a barre che mostri il risultato
             del calcolo dei valori statistici di temperatura, espresso in gradi Celsius (°C), ottenuti dalle rilevazioni effettuate dai singoli sensori;
         \item Visualizzare un pannello contenente un grafico a barre che mostri il risultato
-            del calcolo dei valori statistici di temperatura percepita, espresso in gradi Celsius (°C), ottenuto dalle rilevazioni di coppie di sensori di temperatura e umidità;
+            del calcolo dei valori statistici di temperatura percepita, espresso in gradi Celsius (°C), ottenuto dalle rilevazioni di coppie di sensori temperatura-umidità;
         \item Visualizzare un pannello contenente un grafico in formato time series che mostri i
             risultati delle rilevazioni dell’intensità delle precipitazioni, espresse in millimetri orari (mm/h), effettuate dai
             singoli sensori;
