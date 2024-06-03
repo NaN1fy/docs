@@ -46,3 +46,20 @@ Widget;Un widget in Grafana è un componente grafico utilizzato per visualizzare
 Real-time;Aggettivo utillizzato per definire che un attività in risposta ad un evento avviene immediatamente, o con ritardi trascurabili.
 Sensore;Dispositivo in grado di effettuare misurazioni relative al proprio dominio di interesse. Questi dati possono essere letti ed utilizzati dal sistema.
 Committente;Soggetto per conto del quale viene realizzata un'opera o svolto un servizio.
+Dashboard;Interfaccia grafica per utente che mette a disposizione vari elementi grafici atti alla visualizzazione di dati o gestione di sistemi.
+Standard;Insieme di norme o modello utilizzati per l'uniformazione e omologazione di una data attività.
+Gauge;Grafico, detto a quadrante o a tachimetro, in cui il dato interessato viene visualizzato in relazione alla quantità dei dati di quel grafico.
+Gantt;Grafico a barre di completamento utilizzato per tracciare lo stato di avanzamento (anche temporalmente) di un insieme o più di task correlati a una determinata milestone.
+Refactor;Rifacimento di una o più funzionalità di un prodotto rispetto alla progettazione e implementazione precedente, causato da una permuta di intenzioni e/o requisiti riguardanti il progetto.
+Sistema;Insieme di parti che interagiscono tra loro seguendo un determinato set di regole e concorrono al funzionamento dell'insieme stesso come singola entità.
+Pull Request;Richiesta di fondere le modifiche eseguite su un branch con un'altro branch, intorno alla quale i collaboratori possono revisionare e discutere tali modifiche prima di integrarle nel branch. 
+Modello a V;Modello di sviluppo software che mette in luce i legami esistenti tra fase di sviluppo e fase di verifica. Predispone inoltre la creazione e l'utilizzo dei test di pari passo alle altre fasi dello sviluppo.
+Planning;Pianificazione.
+OLAP;Acronimo di "On-Line Analytical Processing", designa un insieme di tecniche software utili all'analisi interattiva e veloce di grandi moli di dati.
+Broker;Colui il quale, agendo indipendentemente, organizza ed esegue transazioni finanziarie per conto di terzi, interessati economicamente o tecnologicamente al prodotto.
+Time Series;Grafico nel quale l'asse delle ascisse è costituito da unità temporali.
+Stakeholder;Qualsiasi individuo, gruppo o organizzazione che ha un interesse diretto o indiretto in un'impresa, progetto o decisione.
+User Story;Breve descrizione, in linguaggio naturale, di una funzionalità desiderata dal punto di vista dell'utente finale o del cliente.
+PB;Acronimo di "Product Baseline", identifica l'ultima revisione che un prodotto software, nel suo ciclo di vita, deve sostenere prima di essere considerato una versione stabile e funzionante di se stesso. Tale revisione si concentra sull'implementazione del codice e dei test e l'integrazione dei vari componenti.
+Geomap;Mappa, concernente una determinata zona, nella quale vengono rappresentati insieme ai dati geografici anche eventuali dati che interessano il prodotto.
+Task;Attività correlata ad una issue e assegnata a un membro del team.
