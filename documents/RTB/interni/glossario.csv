@@ -43,3 +43,4 @@ Kafka;Piattaforma di streaming distribuita, progettata per la gestione di flussi
 Smart City;Area urbana che implementa tecnologie avanzate per gestire in modo intelligente le risorse e creare un ambiente di vita più sostenibile, efficiente e abitabile.
 Topic;In Apache Kafka, un ``topic" è una categoria o una suddivisione logica dei dati che consente di organizzare e suddividere i flussi di messaggi. I topic sono fondamentali nel modello di pubblicazione/sottoscrizione di Kafka, dove i produttori inviano messaggi a specifici topic e i consumatori si sottoscrivono a tali topic per ricevere i messaggi di loro interesse.
 Widget;Un widget in Grafana è un componente grafico utilizzato per visualizzare i dati su una dashboard.
+Real time;Aggettivo utillizzato per definire che un attività in risposta ad un evento avviene immediatamente, o con ritardi trascurabili
