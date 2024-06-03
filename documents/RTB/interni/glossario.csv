@@ -1,6 +1,7 @@
 termine;descrizione
 Best practice;Il modo migliore per condurre la produzione. Si basa su procedure ripetibili che nel tempo hanno dimostrato di essere le migliori sia per l'efficienza (meno sforzo richiesto) sia per l'efficacia (migliori risultati). Seguire le buone pratiche assicura il raggiungimento degli obiettivi massimizzando economia e qualità.
 Board;Su GitHub, un project board, o più semplicemente board, rappresenta uno strumento fondamentale per organizzare e monitorare le attività di un progetto. È composto da colonne che riflettono lo stato delle attività. Gli issue e le pull request possono essere assegnati a tali colonne per indicarne lo stato attuale.
+Boolean; Tipo di dato che esprime un valore di verità secondo un'algebra di Bool. Viene espresso con i due valori ``true" e ``false" rappresentati dai numeri 1 e 0.
 Branch;Nel campo dello sviluppo software, un branch costituisce una copia indipendente del codice sorgente che consente agli sviluppatori di lavorare su modifiche separate senza impattare direttamente il flusso principale. I branch agevolano lo sviluppo simultaneo e la gestione delle versioni.
 Capitolato;Un capitolato è un documento che definisce le specifiche, i requisiti e le principali condizioni di un progetto o di un appalto. Serve a delineare in modo dettagliato ciò che deve essere realizzato, le prestazioni attese e le regole da seguire. Fornisce una base solida per la pianificazione e l'esecuzione del progetto, garantendo una chiara comprensione delle aspettative da parte di tutte le parti coinvolte e identificando un problema o un bisogno da risolvere.
 Database;Un sistema organizzato per la raccolta, la memorizzazione e la gestione di dati strutturati in modo che possano essere facilmente recuperati, aggiornati ed elaborati.
@@ -50,7 +51,7 @@ Dashboard;Interfaccia grafica per utente che mette a disposizione vari elementi 
 Standard;Insieme di norme o modello utilizzati per l'uniformazione e omologazione di una data attività.
 Gauge;Grafico, detto a quadrante o a tachimetro, in cui il dato interessato viene visualizzato in relazione alla quantità dei dati di quel grafico.
 Gantt;Grafico a barre di completamento utilizzato per tracciare lo stato di avanzamento (anche temporalmente) di un insieme o più di task correlati a una determinata milestone.
-Refactor;Rifacimento di una o più funzionalità di un prodotto rispetto alla progettazione e implementazione precedente, causato da una permuta di intenzioni e/o requisiti riguardanti il progetto.
+Refactoring;Rifacimento di una o più funzionalità di un prodotto rispetto alla progettazione e implementazione precedente, causato da una permuta di intenzioni e/o requisiti riguardanti il progetto.
 Sistema;Insieme di parti che interagiscono tra loro seguendo un determinato set di regole e concorrono al funzionamento dell'insieme stesso come singola entità.
 Pull Request;Richiesta di fondere le modifiche eseguite su un branch con un'altro branch, intorno alla quale i collaboratori possono revisionare e discutere tali modifiche prima di integrarle nel branch. 
 Modello a V;Modello di sviluppo software che mette in luce i legami esistenti tra fase di sviluppo e fase di verifica. Predispone inoltre la creazione e l'utilizzo dei test di pari passo alle altre fasi dello sviluppo.
@@ -65,4 +66,6 @@ Geomap;Mappa, concernente una determinata zona, nella quale vengono rappresentat
 Task;Attività correlata ad una issue e assegnata a un membro del team.
 Framework;Il framework è un'architettura logica di supporto (spesso un'implementazione logica di un particolare design pattern) sulla quale un software può essere progettato e realizzato, spesso facilitandone lo sviluppo da parte del programmatore.
 Librerie;Insieme di funzioni o strutture dati predefinite e predisposte per essere riutilizzate da altri programmi software attraverso un'opportuna procedura di collegamento.
-Commit; Salvataggio e versionamento di uno snapshot di tutti i file modificati nella repository.
+Commit;Salvataggio e versionamento di uno snapshot di tutti i file modificati nella repository.
+MVP;Minimum Viable Porduct è la versione di un prodotto con caratteristiche appena sufficienti per essere utilizzabile dai primi clienti, i quali possono quindi fornire feedback per lo sviluppo futuro del prodotto stesso.
+CA;Acronimo di ``Customer Acceptance", identifica la fase nella quale il prodotto viene approvato pubblicamente dalla Proponente.
