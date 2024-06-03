@@ -1,4 +1,4 @@
-% changelog: "0.7.2, 2024-06-03, Linda Barbiero, Verifica completa con piccole modifiche alle descrizioni dei casi d'uso"
+% changelog: "0.7.3, 2024-06-03, Pietro Busato, Verifica completa con piccole modifiche"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -98,10 +98,11 @@
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Oscar Konieczny}\\}} 
+			{\large{\textsc{Pietro Busato}\\}}
 			{\large{\textsc{Linda Barbiero}}}
 			
 		}
-		\vspace{4mm}\vspace{4mm}
+		\vspace{2mm}\vspace{2mm}
 	\end{minipage}
 	\vspace{4cm}
 	\begin{center}
@@ -122,6 +123,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+            0.7.3 & 2024-06-03 & Verifica completa con piccole modifiche & Pietro Busato & Verificatore \\\\
             0.7.2 & 2024-06-03 & Verifica completa con piccole modifiche alle descrizioni dei casi d'uso. & Linda Barbiero & Verificatore \\\\
             0.7.1 & 2024-06-02 & Verifica completa con piccole modifiche. & Oscar Konieczny & Verificatore \\\\
          	0.7.0 & 2024-05-31 & Stesura di ulteriori casi d'uso. & Davide Donanzan & Redattore \\\\
@@ -149,7 +151,7 @@
 \section{Introduzione}
 \subsection{Scopo del documento}
 Il seguente documento ha come scopo quello di elencare in modo esaustivo i casi d'uso e i requisiti
-del progetto SyncCity a seguito di un'attenta analisi del \glossterm{capitolato} C6 presentato dall'azienda \glossterm{Proponente} SyncLab e di una successiva discussione con essa attraverso gli incontri svolti.
+del progetto "SyncCity" a seguito di un'attenta analisi del \glossterm{capitolato} C6 presentato dall'azienda \glossterm{Proponente} SyncLab e di una successiva discussione con essa attraverso gli incontri svolti.
 \subsection{Glossario}
 Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini utilizzati nel seguente
 documento, viene fornito un \textit{Glossario v1.0.0} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati con l'uso del corsivo e dalla presenza di una G a pedice.
@@ -160,7 +162,7 @@ documento, viene fornito un \textit{Glossario v1.0.0} contenente le definizioni 
 	\item \textit{Norme di Progetto v1.0.0};	
 	\item \textit{Verbale Esterno 2024-03-12};
 	\item \textit{Verbale Esterno 2024-04-03;}
-  \item Presentazione e documentazione del capitolato d’appalto C6 - SyncCity:
+  \item Presentazione e documentazione del capitolato C6 - SyncCity:
 	\begin{itemize}
 		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf} (Ultimo accesso: \today)
 		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf} (Ultimo accesso: \today)
@@ -187,7 +189,7 @@ documento, viene fornito un \textit{Glossario v1.0.0} contenente le definizioni 
 \newpage
 \section{Descrizione}
 \subsection{Obiettivi del prodotto}
-L'obiettivo del progetto SyncCity è quello di creare una piattaforma atta al monitoraggio di sensori
+L'obiettivo del progetto "SyncCity" è quello di creare una piattaforma atta al monitoraggio di sensori
 sparsi geograficamente nel territorio di una città. I sensori in questione permettono la misurazione
 e segnalazione di dati real-time riguardanti le più disparate caratteristiche e necessità del
 territorio quali temperatura ed umidità esterna, occupazione di stalli di parcheggio, funzionamento
@@ -572,7 +574,7 @@ dello stesso caso d'uso.
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico
-        che mostra la quantità di polveri sottili presenti nell'aria, espressa in microgrammi per metro cubo ($\mu g / m^3$), in formato time series.
+        che mostra la quantità di polveri sottili presenti nell'aria, espressa in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), in formato time series.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -622,7 +624,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra l'inquinamento dell'aria attuale, in microgrammi per metro cubo ($\mu g / m^3$), in formato di diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra l'inquinamento dell'aria attuale, in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), in formato di diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -1669,8 +1671,8 @@ Di seguito sono elencati i requisiti qualitativi individuati:
     \caption{Requisiti qualitativi.}
 	\label{table:Requisiti qualitativi}
     \endlastfoot
-            RQ-1 & Obbligatorio & Devono essere rispettati i vincoli e le metriche descritti nel documento \textit{Piano di Qualifica v1.0.0}. & \textit{Norme di Progetto} \\ \hline
-            RQ-2 & Obbligatorio & Devono essere rispettate le norme specificate nel documento \textit{Norme di Progetto v1.0.0}. & Norme di Progetto \\ \hline
+            RQ-1 & Obbligatorio & Devono essere rispettati i vincoli e le metriche descritti nel documento \textit{Piano di Qualifica v1.0.0}. & \textit{Norme di Progetto v1.0.0} \\ \hline
+            RQ-2 & Obbligatorio & Devono essere rispettate le norme specificate nel documento \textit{Norme di Progetto v1.0.0}. & \textit{Norme di Progetto v1.0.0} \\ \hline
             RQ-3 & Obbligatorio & Il prodotto deve superare i test che provano il corretto funzionamento dei servizi impiegati e delle \glossterm{funzionalità} implementate. La copertura di test deve essere almeno dell'80\% e deve essere adeguatamente documentata. & \glossterm{Capitolato} \\ \hline
             RQ-4 & Obbligatorio & La \glossterm{Proponente} deve essere in grado di accedere alla \glossterm{repository} \glossterm{GitHub} del prodotto ``SyncCity". & \glossterm{Proponente} \\ \hline
             RQ-5 & Obbligatorio & Deve essere fornita la documentazione relativa al corretto funzionamento dei simulatori di sensori. & \glossterm{Capitolato} \\ \hline
@@ -1696,7 +1698,7 @@ Di seguito sono elencati i requisiti di vincolo individuati:
             RV-2 & Obbligatorio & Lo stream di dati deve essere gestito mediante un broker come Apache \glossterm{Kafka}. & \glossterm{Capitolato} \\ \hline
             RV-3 & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come \glossterm{Grafana}. & \glossterm{Capitolato} \\ \hline
             RV-4 & Obbligatorio & Il sistema deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & \glossterm{Proponente} \\ \hline
-            RV-5 & Obbligatorio & I dati generati dal simulatore devono essere in formato \glossterm{JSON}. & \textit{Norme di Progetto} \\ \hline
+            RV-5 & Obbligatorio & I dati generati dal simulatore devono essere in formato \glossterm{JSON}. & \textit{Norme di Progetto v1.0.0} \\ \hline
 \end{longtable}
 \subsection{Requisiti prestazionali}
 Questa tipologia di requisiti specifica le prestazioni che il sistema deve avere. \\
@@ -1803,8 +1805,8 @@ Di seguito sono elencati i requisiti prestazionali individuati:
             RF-72 & UC-9.12 \\ \hline
             RF-73 & \glossterm{Proponente} \\ \hline
             RF-74 & \glossterm{Proponente} \\ \hline
-            RQ-1 & \textit{Norme di Progetto} \\ \hline
-            RQ-2 & \textit{Norme di Progetto} \\ \hline
+            RQ-1 & \textit{Norme di Progetto v1.0.0} \\ \hline
+            RQ-2 & \textit{Norme di Progetto v1.0.0} \\ \hline
             RQ-3 & \glossterm{Capitolato} \\ \hline
             RQ-4 & \glossterm{Proponente} \\ \hline
             RQ-5 & \glossterm{Capitolato} \\ \hline
@@ -1814,7 +1816,7 @@ Di seguito sono elencati i requisiti prestazionali individuati:
             RV-2 & \glossterm{Capitolato} \\ \hline
             RV-3 & \glossterm{Capitolato} \\ \hline
             RV-4 & \glossterm{Proponente} \\ \hline
-            RV-5 & \textit{Norme di Progetto} \\ \hline
+            RV-5 & \textit{Norme di Progetto v1.0.0} \\ \hline
             RP-1 & \glossterm{Proponente} \\ \hline
             RP-2 & \glossterm{Proponente} \\ \hline
             RP-3 & \glossterm{Proponente} \\ \hline
@@ -1832,7 +1834,7 @@ Di seguito sono elencati i requisiti prestazionali individuati:
 	\label{table:Tracciamento requisito - fonte}
  \endlastfoot
             \glossterm{Capitolato} & RF-1, RF-2, RF-3, RF-4, RF-5, RF-6, RF-7, RF-8, RF-9, RF-11, RF-12, RF-13, RF-14, RF-15, RF-18, RQ-3, RQ-5, RQ-6, RQ-7, RV-1, RV-2, RV-3 \\ \hline
-        Norme di Progetto & RQ-1, RQ-2, RV-5 \\ \hline
+        \textit{Norme di Progetto v1.0.0} & RQ-1, RQ-2, RV-5 \\ \hline
             \glossterm{Proponente} & RF-10, RF-35, RF-73, RQ-4, RV-4, RP-1, RP-2, RP-3 \\ \hline
             UC-0 & RF-16 \\ \hline
             UC-1 & RF-17 \\ \hline
