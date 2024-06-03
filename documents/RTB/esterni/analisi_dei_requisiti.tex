@@ -471,7 +471,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media della temperatura, in gradi Celsius (°C), in formato di diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media della temperatura, in gradi Celsius (°C), in formato di diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -488,7 +488,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media dell'umidità, in gradi Celsius (°C), in formato di diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media dell'umidità, in gradi Celsius (°C), in formato di diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -504,7 +504,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media della temperatura percepita, in gradi Celsius (°C), in formato di diagramma di Gauge considerando l'ultima coppia di valori di temperatura e umidità registrati per ogni rispettivo sensore attivo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media della temperatura percepita, in gradi Celsius (°C), in formato di diagramma di Gauge considerando le ultime rilevazioni effettuate dalle coppie di sensori temperatura-umidità attivi all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -606,7 +606,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra l'intensità delle precipitazioni attuale, in gradi millimetri orari (mm/h), in formato di diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra l'intensità delle precipitazioni attuale, in gradi millimetri orari (mm/h), in formato di diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -622,7 +622,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra l'inquinamento dell'aria attuale, in microgrammi per metro cubo ($\mu g / m^3$), in formato di diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo all'interno della dashbaord.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra l'inquinamento dell'aria attuale, in microgrammi per metro cubo ($\mu g / m^3$), in formato di diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della dashbaord.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -638,7 +638,7 @@ dello stesso caso d'uso.
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra il livello dell'acqua attuale, in percentuale, in formato di diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo all'interno della dashboard.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra il livello dell'acqua attuale, in percentuale, in formato di diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della dashboard.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -1601,17 +1601,17 @@ Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i s
             RF-20 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura in formato time series. & UC-2.1 \\ \hline
             RF-21 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni dell'umidità in formato time series. & UC-2.2 \\ \hline
             RF-22 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura percepita in formato time series. & UC-2.3 \\ \hline
-            RF-23 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura media in formato diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo. & UC-2.4 \\ \hline
-            RF-24 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'umidità media in formato diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo. & UC-2.5 \\ \hline
-            RF-25 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura percepita media in formato diagramma di Gauge considerando l'ultima coppia di valori di temperatura e umidità registrati per ogni rispettivo sensore attivo. & UC-2.6 \\ \hline
+            RF-23 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura media in formato diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.4 \\ \hline
+            RF-24 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'umidità media in formato diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.5 \\ \hline
+            RF-25 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura percepita media in formato diagramma di Gauge considerando le ultime rilevazioni effettuate dalle coppie di sensori temperatura-umidità attivi. & UC-2.6 \\ \hline
             RF-26 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura in formato diagramma a barre considerando ciascun sensore attivo nell'intervallo di tempo. & UC-2.7 \\ \hline
             RF-27 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura percepita in formato diagramma a barre considerando ciascuna coppia di valori di temperatura e umidità per ogni rispettivo sensore attivo nell'intervallo di tempo. & UC-2.8 \\ \hline
             RF-28 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità delle precipitazioni in formato time series. & UC-2.9 \\ \hline
             RF-29 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria in formato time series. & UC-2.10 \\ \hline
             RF-30 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua in formato time series. & UC-2.11 \\ \hline
-            RF-31 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità delle precipitazioni attuale in formato diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo. & UC-2.12 \\ \hline
-            RF-32 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria attuale in formato diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo. & UC-2.13 \\ \hline
-            RF-33 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua attuale in formato diagramma di Gauge considerando l'ultimo valore registrato per ogni sensore attivo. & UC-2.14 \\ \hline
+            RF-31 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità delle precipitazioni attuale in formato diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.12 \\ \hline
+            RF-32 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria attuale in formato diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.13 \\ \hline
+            RF-33 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua attuale in formato diagramma di Gauge considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.14 \\ \hline
             RF-34 & Obbligatorio & L'utente deve poter visualizzare la dashboard relativa al dominio urbanistico. & UC-3 \\ \hline
             RF-35 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa che descrive lo stato di occupazione dei parcheggi. & \glossterm{Proponente}, UC-3.1 \\ \hline
             RF-36 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive i parcheggi. & UC-3.2 \\ \hline
