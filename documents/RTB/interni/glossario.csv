@@ -63,3 +63,5 @@ User Story;Breve descrizione, in linguaggio naturale, di una funzionalità desid
 PB;Acronimo di "Product Baseline", identifica l'ultima revisione che un prodotto software, nel suo ciclo di vita, deve sostenere prima di essere considerato una versione stabile e funzionante di se stesso. Tale revisione si concentra sull'implementazione del codice e dei test e l'integrazione dei vari componenti.
 Geomap;Mappa, concernente una determinata zona, nella quale vengono rappresentati insieme ai dati geografici anche eventuali dati che interessano il prodotto.
 Task;Attività correlata ad una issue e assegnata a un membro del team.
+Framework;Il framework è un'architettura logica di supporto (spesso un'implementazione logica di un particolare design pattern) sulla quale un software può essere progettato e realizzato, spesso facilitandone lo sviluppo da parte del programmatore.
+Librerie;Insieme di funzioni o strutture dati predefinite e predisposte per essere riutilizzate da altri programmi software attraverso un'opportuna procedura di collegamento.
