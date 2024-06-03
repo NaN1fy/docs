@@ -1,16 +1,16 @@
 L'obiettivo è assicurarsi che i processi e il prodotto rispettino le esigenze del cliente e lo facciano con il massimo livello di qualità possibile, monitorando anche futuri progressi attraverso verifiche retrospettive.
 \subsubsection{Piano di Qualifica}
-Il documento \glossterm{Piano di Qualifica} è fondamentale per il completamento degli obiettivi di questo processo. 
+Il documento \textit{Piano di Qualifica} è fondamentale per il completamento degli obiettivi di questo processo. 
 \\Il documento comprende:
 \begin{itemize}
-    \item{Fissare gli obiettivi di qualità}
-    \item{Definire le metriche di visione quantitativa}
-    \item{Definire test di qualità e funzionamento e relativa documentazione}
-    \item{Avere una visione dello stato attuale del prodotto e del progetto}
-    \item{Fornire margine di retrospettiva ai fini di miglioramento}
+    \item Fissare gli obiettivi di qualità;
+    \item Definire le metriche di visione quantitativa;
+    \item Definire test di qualità e funzionamento e relativa documentazione;
+    \item Avere una visione dello stato attuale del prodotto e del progetto;
+    \item Fornire margine di retrospettiva ai fini di miglioramento.
 \end{itemize}
 \subsubsection{Testing}
-Il documento \glossterm{Piano di Qualifica} fornisce obiettivi di qualità sia del processo che del prodotto. Le metriche relative garantiscono la verifica sugli aspetti di accessibilità; i test invece garantiscono la qualità generale del software. 
+Il documento \textit{Piano di Qualifica} fornisce obiettivi di qualità sia del processo che del prodotto. Le metriche relative garantiscono la verifica sugli aspetti di accessibilità; i test invece garantiscono la qualità generale del software. 
 \\Le categorie interessate sono le seguenti:
 \begin{itemize}
 	\item \textbf{Test di unità:} si verifica il corretto funzionamento delle unità componenti il \glossterm{sistema}. Un’unità rappresenta un elemento indivisibile e indipendente del \glossterm{sistema}; 
@@ -20,7 +20,7 @@ Il documento \glossterm{Piano di Qualifica} fornisce obiettivi di qualità sia d
 \end{itemize}
 Per ogni test vengono indicati i risultati del test di qualità del processo e della qualità del prodotto software.
 \subsubsection{Metriche}
-Il documento \glossterm{Piano di Qualifica} fornisce le metriche da applicare all'esecuzione dei test di qualità.
+Il documento \textit{Piano di Qualifica} fornisce le metriche da applicare all'esecuzione dei test di qualità.
 \\Ogni metrica è codificata come segue:
 \begin{center}
     \textbf{M[Tipologia metrica]-[Sigla identificativa Metrica]}
@@ -29,94 +29,13 @@ in particolar modo:
 \begin{itemize}
 	\item{\textbf{Tipologia metrica}: l'effettiva categoria di appartenenza della \glossterm{metrica}}
 	\begin{itemize}
-		\item{\textbf{PC}: Processo}
-		\item{\textbf{PD}: Prodotto}
+    \item \textbf{PC}: Processo;
+		\item \textbf{PD}: Prodotto.
 	\end{itemize}
 	\item{\textbf{Sigla identificativa metrica}: sigla di indentificazione della specifica metrica}
 \end{itemize}
-\subsubsubsection{Fornitura}
-\begin{table}[h]	
-	\centering
-	\begin{tabular}{p{2cm} p{4cm} p{7cm} p{2cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MCP-EV & Earned value (EV) & Valore generato dal progetto fino al momento del calcolo, grazie alle attività svolte. & EAC * LC \\\\
-		MPC-PV & Planned Value (PV) & Denaro che si dovrebbe guadagnare al momento del calcolo. & BAC * LP \\\\
-		MPC-AC & Actual Cost (AC) &  Denaro speso per il progetto fino al momento del calcolo.& - \\\\
-		MPC-CPI & Cost Performance Index (CPI) & Indice di efficienza dei costi del progetto fino al momento del calcolo. & EV / AC \\\\
-		MPC-EAC & Estimate At Completion (EAC) & Costo stimato al completamento. & AC + ETC \\\\
-		MPC-ETC & Estimate To Completion (ETC) & Valore stimato delle attività necessarie al completamento del progetto & - \\\\
-		MPC-VAC & Variance At Completion (VAC) & Scostamento previsto rispetto al budget originale. & BAC - EAC \\\\
-		MPC-SV & Schedule Variance (SV) & Differenza tra il denaro guadagnato e quello pianificato. & EV - PV \\\\
-		MPC-BV & Budget Variance (BV) & Variazione del denaro generato rispetto a quello speso. & EV - AC \\
-		\bottomrule
-		% Ruolo Redattore o Verificatore
-	\end{tabular}
-	\caption{Descrizioni e formule per ogni metrica riguardante il processo di fornitura.}
-	\label{table:Tabella metriche con formule per il processo di fornitura.}
-\end{table}
 \clearpage
-\subsubsubsection{Sviluppo}
-\begin{table}[h]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{5cm} p{5cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MCP-NOC & Number of Changed (NOC) & Numero di requisiti cambiati. & -\\\\
-		MCP-NOD & Number of Deleted (NOD) & Numero di requisiti eliminati. & -\\\\
-		MCP-NOA & Number of Added (NOA) & Numero di requisiti aggiunti. & -\\\\
-		MCP-TNIR & Total Number of Initial Requirement (TNIR) & Numero di requisiti iniziale.\\\\
-		MCP-RSI & Requirements stability index (RSI) & Variazione dei requisiti nel tempo. & $ (1 - \dfrac{NOC * NOD * NOA}{TNIR}) * 100 $ \\\\
-		MPC-SFIN & Structural Fan-In (SFIN) & Numero di dipendenze padre (moduli / componenti in ingresso). & - \\\\
-		MPC-SFOUT & Structural Fan-Out (SFOUT) & Numero di dipendenze figlie (moduli / componenti in uscita). & - \\
-		\bottomrule
-		% Ruolo Redattore o Verificatore
-	\end{tabular}
-	\caption{Descrizioni e formule per ogni metrica riguardante il processo di sviluppo.}
-	\label{table:Tabella metriche con formule per il processo di sviluppo.}
-\end{table}
-\clearpage
-\subsubsubsection{Documentazione}
-\begin{table}[h]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MPC-EO & Errori Ortografici (EO) & Numero di errori ortografici presenti in un documento & - \\\\
-		MPC-NP & Numero Parole (NP) & Numero di parole presenti un un documento. & - \\\\
-		MPC-NF & Numero di Frasi(NF) & Numero di frasi presenti un un documento. & - \\\\
-		MPC-NL & Numero di Lettere(NT) & Numero di lettere presenti un un documento. & - \\\\
-		MPC-IG & Indice Gulpease (IGI) & Indice di leggibilità di un testo secondo il grado di istruzione. & $ 89 + \dfrac{300 * NF - 10 * NL}{NP} $ \\\\
-		MPC-CO & Correttezza Ortografica (CO) & Percentuale di errori ortografici e grammaticali presenti nel documento. & $ \dfrac{EO}{NP} * 100 $ \\
-		\bottomrule
-		% Ruolo Redattore o Verificatore
-	\end{tabular}
-	\caption{Metriche per il processo di documentazione.}
-	\label{table:Tabella delle metriche per il processo di documentazione}
-\end{table}
-\\\\
-\subsubsubsection{Verifica}
-\begin{table}[h]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MPC-LCE & Line of Code Executed(LCE) & Linee di codice eseguite dai test & - \\\\
-		MPC-LC & Line of Code(LC) & Linee di codice totali. & - \\\\
-		MPC-CC & Code Coverage (CC) & Percentuale di codice coperto dalla suite di test dinamici. & $ \dfrac{LCE}{LC} * 100 $ \\\\
-		MPC-PT & Passed Tests(FT) & Numero di test passati. & - \\\\
-		MPC-TT & Total Tests(TT) & Numero totale di test. & - \\
-		\bottomrule
-	\end{tabular}
-	\caption{Metriche per il processo di documentazione.}
-	\label{table:Tabella delle metriche per il processo di documentazione}
-\end{table}
-\clearpage
-\subsubsubsection{Gestione della qualità}
+\subsubsubsection{Gestione della qualità} \label{sec:gestione_qualita}
 \begin{table}[H]	
 	\centering
 	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
@@ -128,101 +47,6 @@ in particolar modo:
 	\end{tabular}
 	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
 	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
-\end{table}
-
-\subsubsubsection{Gestione dei processi}
-\begin{table}[H]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MPC-NR & Non-calculated Risk (NR) & Numero di rischi non quantificati o formalmente analizzati. & - \\\\
-		MPC-TP & Tempo Pianificato(TP) & Tempo stimato al completamento. & - \\\\
-		MPC-TE & Tempo Effettivo(TE) & Tempo effettivo impiegato per il completamento. & - \\\\
-		MPC-ET & Efficienza temporale (ET) & Tempo impiegato efficacemente in relazione al tempo pianificato & $ \dfrac{TP}{TE} * 100 $ \\
-		\bottomrule
-	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione dei processi.}
-	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione dei processi.}
-\end{table}
-
-\subsubsubsection{Funzionalità}
-\begin{table}[H]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MPD-ROS & Requisiti Obbligatori Soddisfatti (ROS) & Numero di requisiti obbligatori soddisfatti. & - \\\\
-		MPD-RDS & Requisiti Desiderabili Soddisfatti (RDS) & Numero di requisiti desiderabili soddisfatti. & - \\\\
-		MPD-ROPS & Requisiti Opzionali Soddisfatti (ROPS) & Numero di requisiti opzionali soddisfatti. & - \\
-		\bottomrule
-	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante la funzionalità del prodotto.}
-	\label{table:Valori accettabili e ottimi per ogni metrica riguardante la funzionalità del prodotto.}
-\end{table}
-\clearpage
-\subsubsubsection{Affidabilità}
-\begin{table}[H]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MPD-BC & Branch Coverage (BC) & Percentuale di copertura delle ramificazioni del codice con test dinamici.& -\\\\
-		MPD-SC & Statement Coverage (SC) & Percentuale di istruzioni eseguite almeno una volta dai test dinamici. & - \\\\
-		MPC-FN & Failures Number(FN) & Numero di difetti (failures) rilevati in fase di test. & - \\\\
-		MPD-FD & Failure Density (FD) & Densità di difetti (failures) rilevata in base al codice scritto. & $ \dfrac{FN}{LC} $ \\\\
-		MPC-PTCP & Passed Test Cases Percentage (PTCP) & Percentuale di test passati & $ \dfrac{PT}{TI} * 100 $ \\
-		\bottomrule
-	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’affidabilità del prodotto.}
-	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’affidabilità del prodotto.}
-\end{table}
-
-\subsubsubsection{Usabilità}
-\begin{table}[H]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MPD-FU & Facilità di Utilizzo (FU) & Numero medio di click impiegato dall'utente per raggiungere il suo scopo. & - \\\\
-		MPD-TA & Tempo di Apprendimento (TA) & Tempo medio impiegato dall'utente per imparare l'utilizzo del software. & - \\
-		\bottomrule
-	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’usabilità del prodotto.}
-	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’usabilità del prodotto.}
-\end{table}
-
-\subsubsubsection{Efficienza}
-\begin{table}[H]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MPD-UR & Utilizzo risorse (UR) & Percentuale di efficienza della risorsa utilizzata in base al massimo disponibile. & - \\
-		\bottomrule
-	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante l’efficienza del prodotto.}
-	\label{table:Valori accettabili e ottimi per ogni metrica riguardante l’efficienza del prodotto.}
-\end{table}
-\clearpage
-\subsubsubsection{Manutenibilità}
-\begin{table}[H]	
-	\centering
-	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
-		\toprule
-		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
-		\midrule
-		MPD-CC & Complessità Ciclomatica (CC) & Complessità generale basata sulla struttura a grafo di controllo del flusso del progetto.& - \\\\
-		MPD-CS & Code Smell (CS) & Numero di elementi indicatori di possibili problemi o difetti futuri nel codice sorgente. & - \\
-		\bottomrule
-	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante la manutenibilità del prodotto.}
-	\label{table:Valori accettabili e ottimi per ogni metrica riguardante la manutenibilità del prodotto.}
 \end{table}
 
 \subsubsection{Aspettative}
