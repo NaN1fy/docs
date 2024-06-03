@@ -149,7 +149,7 @@
 \section{Introduzione}
 \subsection{Scopo del documento}
 Il seguente documento ha come scopo quello di elencare in modo esaustivo i casi d'uso e i requisiti
-del progetto SyncCity a seguito di un'attenta analisi del capitolato C6 presentato dall'azienda \glossterm{Proponente} SyncLab e di una successiva discussione con essa attraverso gli incontri svolti.
+del progetto SyncCity a seguito di un'attenta analisi del \glossterm{capitolato} C6 presentato dall'azienda \glossterm{Proponente} SyncLab e di una successiva discussione con essa attraverso gli incontri svolti.
 \subsection{Glossario}
 Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini utilizzati nel seguente
 documento, viene fornito un \textit{Glossario v1.0.0} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati con l'uso del corsivo e dalla presenza di una G a pedice.
@@ -177,7 +177,7 @@ documento, viene fornito un \textit{Glossario v1.0.0} contenente le definizioni 
     \begin{itemize}
         \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/T5.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/T5.pdf} (Ultimo accesso: \today)
     \end{itemize}
-    \item Dispense P3 - Analisi e descrizione delle funzionalità: Diagrammi delle attività (UML):
+    \item Dispense P3 - Analisi e descrizione delle \glossterm{funzionalità}: Diagrammi delle attività (\glossterm{UML}):
         \begin{itemize}
             \item
                 \href{https://www.math.unipd.it/~rcardin/swea/2022/Diagrammi\%20di\%20Attivit\%C3\%A0.pdf}{https://www.math.unipd.it/\textasciitilde{}rcardin/swea/2022/Diagrammi\%20di\%20Attivit\`{a}.pdf}
@@ -194,7 +194,7 @@ territorio quali temperatura ed umidità esterna, occupazione di stalli di parch
 o guasto elettrico di colonnine HPC, traffico stradale e via dicendo. La \glossterm{Proponente} richiede la
 simulazione di alcuni dei sensori nominati nonché la gestione dei dati, della loro persistenza e
 della loro rappresentazione grafica attraverso widgets e grafici. \\\\SyncCity permetterà un miglioramento della qualità dei servizi offerti dalla città attraverso il continuo monitoraggio della stessa, ottenendo, gestendo e successivamente condividendo i dati con gli utenti. 
-\subsection{Funzionalità del prodotto}
+\subsection{\glossterm{Funzionalità} del prodotto}
 Il prodotto si struttura nelle seguenti funzionalità:
 \begin{itemize}
 	\setlength\itemsep{0em}
@@ -214,7 +214,7 @@ Il dominio tecnologico dell'applicativo comprende:
 	\setlength\itemsep{0em}
   \item \textbf{\glossterm{Python}: }attraverso il quale si simula l'informazione fornita dai sensori;
   \item \textbf{\glossterm{Apache Kafka}:} per gestire il gathering dei dati da più fonti;
-  \item \textbf{\glossterm{ClickHouse}:} database OLAP per la persistenza dei dati ottenuti;
+  \item \textbf{\glossterm{ClickHouse}:} \glossterm{database} OLAP per la persistenza dei dati ottenuti;
   \item \textbf{\glossterm{Grafana}:} piattaforma per monitorare e analizzare i dati in tempo reale attraverso la loro rappresentazione grafica.
 \end{itemize}
 
@@ -279,13 +279,13 @@ Il dominio tecnologico dell'applicativo comprende:
 
 \section{Casi d'uso} \label{sec:use-case}
 \subsection{Introduzione}
-Di seguito sono elencati i casi d'uso individuati in seguito all'analisi del capitolato e al
+Di seguito sono elencati i casi d'uso individuati in seguito all'analisi del \glossterm{capitolato} e al
 confronto con la \glossterm{Proponente}. Ciascuno di essi è corredato di un codice identificativo, la cui
 struttura è descritta alla sezione \textit{2.3.2.4} del documento \textit{Norme di Progetto v1.0.0}. %INSERIRE RIMANDO SEZIONE CORRETTA
 \subsection{Attori}
 Gli attori che interagiscono con il sistema sono i seguenti:
 \begin{itemize}
-    \item \textbf{Amministratore pubblico}: utente in grado di accedere al sistema ed usufruire di tutte le sue funzionalità. In particolare, può visualizzare la dashboard contenente i dati provenienti dai sensori. L'applicativo non richiede autenticazione; %NOT SO SURE ABOUT DIS
+    \item \textbf{Amministratore pubblico}: utente in grado di accedere al sistema ed usufruire di tutte le sue \glossterm{funzionalità}. In particolare, può visualizzare la dashboard contenente i dati provenienti dai sensori. L'applicativo non richiede autenticazione; %NOT SO SURE ABOUT DIS
     \item \textbf{Sensore}: dispositivo in grado di rilevare dati dall'ambiente esterno e inviare le misurazioni effettuate al sistema, in modo da consentirne l'archiviazione e la successiva visualizzazione.
 \end{itemize}
 \clearpage
@@ -1168,7 +1168,7 @@ applicato;
     \item \textbf{Precondizioni:}
     \begin{itemize}
         \item L’amministratore pubblico sta visualizzando uno o più pannelli time series con i dati;
-        \item Il pannello offre la funzionalità di filtro dei dati tramite selezione di uno o più sensori.
+        \item Il pannello offre la \glossterm{funzionalità} di filtro dei dati tramite selezione di uno o più sensori.
     \end{itemize}
     \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza solamente i dati relativi ai sensori
 selezionati, all’interno di tale.
@@ -1186,7 +1186,7 @@ selezionati, all’interno di tale.
     \item \textbf{Precondizioni:}
     \begin{itemize}
         \item L’amministratore pubblico sta visualizzando uno o più pannelli time series con i dati;
-        \item Il pannello offre la funzionalità di filtro dei dati tramite selezione di uno o più sensori.
+        \item Il pannello offre la \glossterm{funzionalità} di filtro dei dati tramite selezione di uno o più sensori.
     \end{itemize}
     \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza solamente i dati relativi all’intervallo
 temporale selezionato, in tutti i pannelli della dashboard dove è stato applicato il filtro.
@@ -1567,7 +1567,7 @@ A ciascun requisito è abbinato un codice univoco definito nel seguente modo:
 \end{center}
 Dove \textbf{Tipologia} rappresenta il tipo di requisito e \textbf{[Numero]} è un identificativo progressivo.
 \subsection{Requisiti funzionali}
-Questa tipologia di requisiti definisce le funzionalità del sistema, ovvero i servizi che esso deve essere in grado di fornire al fine di soddisfare le esigenze dell'utente. Un requisito funzionale descrive quindi il comportamento del sistema. \\ Di seguito sono elencati i requisiti funzionali individuati:
+Questa tipologia di requisiti definisce le \glossterm{funzionalità} del sistema, ovvero i servizi che esso deve essere in grado di fornire al fine di soddisfare le esigenze dell'utente. Un requisito funzionale descrive quindi il comportamento del sistema. \\ Di seguito sono elencati i requisiti funzionali individuati:
 \renewcommand{\arraystretch}{2.5}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
@@ -1671,15 +1671,15 @@ Di seguito sono elencati i requisiti qualitativi individuati:
     \endlastfoot
             RQ-1 & Obbligatorio & Devono essere rispettati i vincoli e le metriche descritti nel documento \textit{Piano di Qualifica v1.0.0}. & \textit{Norme di Progetto} \\ \hline
             RQ-2 & Obbligatorio & Devono essere rispettate le norme specificate nel documento \textit{Norme di Progetto v1.0.0}. & Norme di Progetto \\ \hline
-            RQ-3 & Obbligatorio & Il prodotto deve superare i test che provano il corretto funzionamento dei servizi impiegati e delle funzionalità implementate. La copertura di test deve essere almeno dell'80\% e deve essere adeguatamente documentata. & \glossterm{Capitolato} \\ \hline
-            RQ-4 & Obbligatorio & La \glossterm{Proponente} deve essere in grado di accedere alla \glossterm{repository} GitHub del prodotto ``SyncCity". & \glossterm{Proponente} \\ \hline
+            RQ-3 & Obbligatorio & Il prodotto deve superare i test che provano il corretto funzionamento dei servizi impiegati e delle \glossterm{funzionalità} implementate. La copertura di test deve essere almeno dell'80\% e deve essere adeguatamente documentata. & \glossterm{Capitolato} \\ \hline
+            RQ-4 & Obbligatorio & La \glossterm{Proponente} deve essere in grado di accedere alla \glossterm{repository} \glossterm{GitHub} del prodotto ``SyncCity". & \glossterm{Proponente} \\ \hline
             RQ-5 & Obbligatorio & Deve essere fornita la documentazione relativa al corretto funzionamento dei simulatori di sensori. & \glossterm{Capitolato} \\ \hline
             RQ-6 & Obbligatorio & Le scelte implementative e progettuali devono essere motivate ed adeguatamente documentate. & \glossterm{Capitolato} \\ \hline
             RQ-7 & Obbligatorio & I problemi aperti e le eventuali soluzioni da esplorare devono essere adeguatamente documentati. & \glossterm{Capitolato} \\ \hline
 \end{longtable}
 \newpage
 \subsection{Requisiti di vincolo}
-Questa tipologia di requisiti indica i limiti imposti dal capitolato che il prodotto deve rispettare. \\
+Questa tipologia di requisiti indica i limiti imposti dal \glossterm{capitolato} che il prodotto deve rispettare. \\
 Di seguito sono elencati i requisiti di vincolo individuati:
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
@@ -1692,7 +1692,7 @@ Di seguito sono elencati i requisiti di vincolo individuati:
     \caption{Requisiti di vincolo.}
 	\label{table:Requisiti di vincolo}
     \endlastfoot
-            RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un database OLAP colonnare come \glossterm{ClickHouse}. & \glossterm{Capitolato} \\ \hline
+            RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un \glossterm{database OLAP} colonnare come \glossterm{ClickHouse}. & \glossterm{Capitolato} \\ \hline
             RV-2 & Obbligatorio & Lo stream di dati deve essere gestito mediante un broker come Apache \glossterm{Kafka}. & \glossterm{Capitolato} \\ \hline
             RV-3 & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come \glossterm{Grafana}. & \glossterm{Capitolato} \\ \hline
             RV-4 & Obbligatorio & Il sistema deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & \glossterm{Proponente} \\ \hline
@@ -1831,7 +1831,7 @@ Di seguito sono elencati i requisiti prestazionali individuati:
   \caption{Tracciamento fonte - requisito.}
 	\label{table:Tracciamento requisito - fonte}
  \endlastfoot
-            Capitolato & RF-1, RF-2, RF-3, RF-4, RF-5, RF-6, RF-7, RF-8, RF-9, RF-11, RF-12, RF-13, RF-14, RF-15, RF-18, RQ-3, RQ-5, RQ-6, RQ-7, RV-1, RV-2, RV-3 \\ \hline
+            \glossterm{Capitolato} & RF-1, RF-2, RF-3, RF-4, RF-5, RF-6, RF-7, RF-8, RF-9, RF-11, RF-12, RF-13, RF-14, RF-15, RF-18, RQ-3, RQ-5, RQ-6, RQ-7, RV-1, RV-2, RV-3 \\ \hline
         Norme di Progetto & RQ-1, RQ-2, RV-5 \\ \hline
             \glossterm{Proponente} & RF-10, RF-35, RF-73, RQ-4, RV-4, RP-1, RP-2, RP-3 \\ \hline
             UC-0 & RF-16 \\ \hline
