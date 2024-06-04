@@ -1,4 +1,4 @@
-% changelog: "0.0.1, 2024-06-04, correzioni minori., Pietro Busato"
+% changelog: "0.0.2, 2024-06-04, Correzioni di layout e modifica orario del prossimo SAL, Oscar Konieczny"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -43,7 +43,7 @@
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/NaN1fy_logo.png}} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
 	\fancyhead[L]{\leftmark} 
 	\renewcommand{\headrulewidth}{1pt} 
 	\fancyhead[L]{\customtitle} 
@@ -64,8 +64,8 @@
 \definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
 	\begin{tikzpicture}[remember picture, overlay]
-		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{images/logos/Universita_Padova_transparent.png}}; 
-		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{images/logos/NaN1fy_logo.png}};
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
 	\end{tikzpicture}
 	
 	\begin{minipage}[t]{0.47\textwidth}
@@ -79,13 +79,14 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Pietro Busato}\\}} 	
+			{\\\large{\textsc{Pietro Busato}\\}}
+			{\large{\textsc{}}}
 		}
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
 			{\large{\textsc{XXXX XXXX}}}
 			
 		}
@@ -110,7 +111,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		0.0.1 & 2024-06-04 & correzioni minori. & Pietro Busato & Redattore \\\\ 
+		0.0.2 & 2024-06-04 & Correzioni di layout e modifica orario del prossimo SAL. & Oscar Konieczny & Verificatore \\\\
+		0.0.1 & 2024-06-04 & Correzioni minori. & Pietro Busato & Redattore \\\\ 
 		0.0.0 & 2024-05-31 & Stesura verbale.  & Pietro Busato & Redattore \\\\ % spazio tra le righe
 		%X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
 		\bottomrule
@@ -189,7 +191,7 @@ private che di università.
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Si è fissato il prossimo SAL il giorno 2024-06-07 alle ore 15:00;
+	\item Si è fissato il prossimo SAL il giorno 2024-06-07 alle ore 14:00;
 	\item Si è deciso di considerare questo Sprint come ``di passaggio'', senza dunque fissare obiettivi particolari.
 \end{itemize}
 \newpage
