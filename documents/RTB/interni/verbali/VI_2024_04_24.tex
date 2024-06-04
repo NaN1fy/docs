@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-04-16, Approvazione per RTB"
+% changelog: "1.0.0, Approvazione per RTB"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -39,10 +39,10 @@
 \usepackage{booktabs}
 \usepackage{varwidth}
 
-% -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-04-05} % o ESTERNO
+% -- TITOLO -- %
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-04-24} % o ESTERNO
 
-% -- STILE INTESTAZIONE -- %
+% -- INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
 	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
@@ -51,12 +51,6 @@
 	\fancyhead[L]{\customtitle} 
 	\renewcommand{\headsep}{1.3cm} 
 	\fancyfoot[C]{\thepage} 
-}
-
-% -- PER LA FIRMA -- %
-\newcommand{\signatureline}[1]{%
-	 \par\vspace{0.5cm}
-	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
 }
 
 % -- PER IL GLOSSARIO -- %
@@ -81,17 +75,15 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
-			{\large{\textsc{}}}
-			
-			
+			{\\\large{\textsc{Linda Barbiero}\\}} 
+			{\large{\textsc{}}}	
 		}
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Guglielmo Barison}\\}} % massimo due 
-			{\large{\textsc{Pietro Busato}}}
+			{\\\large{\textsc{Veronica Tecchiati}\\}} 
+			{\large{\textsc{Oscar Konieczny}}}
 			
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -99,7 +91,7 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-04-05\\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-04-24\\}} % o ESTERNO
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
@@ -112,13 +104,12 @@
 	\centering
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
-		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-  		1.0.0 & 2024-04-22 & \textbf{Approvazione per RTB} \\\\
-    	0.0.3 & 2024-04-22 & Verifica completa. & Pietro Busato & Verificatore \\\\
-		0.0.2 & 2024-04-16 & Ampliamento attività da svolgere, correzioni punteggiatura. & Guglielmo Barison & Verificatore \\\\ 
-		0.0.1 & 2024-04-16 & Correzioni varie. & Oscar Konieczny & Redattore \\\\ % spazio tra le righe
-		0.0.0 & 2024-04-05 & Prima stesura del verbale. & Oscar Konieczny & Redattore \\
+  			1.0.0 & 2024-04-28 & \textbf{Approvazione per RTB} & & \\\\
+			0.0.2 & 2024-04-26 & Verifica completa con aggiunte minori. & Oscar Konieczny & Verificatore \\\\
+			0.0.1 & 2024-04-25 & Verifica completa, correzioni minori. & Veronica Tecchiati & Verificatore \\\\
+			0.0.0 & 2024-04-25 & Prima stesura del verbale. & Linda Barbiero & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -146,9 +137,9 @@
 			\textbf{Partecipante} & \textbf{Durata presenza} \\
 			\midrule
 			Guglielmo Barison & 1.5 h \\
-			Linda Barbiero &  0.0 h \\
+			Linda Barbiero &  1.5 h \\
 			Pietro Busato & 1.5 h \\
-			Oscar Konieczny & 1.5 h \\
+			Oscar Konieczny & 1 h \\
 			Davide Donanzan & 1.5 h \\
 			Veronica Tecchiati & 1.5 h \\
 			\bottomrule
@@ -160,18 +151,17 @@
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Discussione a riguardo degli incontri avvenuti il giorno precedente;
-	\item Organizzazione del lavoro in vista del RTB.
+	\item Discussione post SAL avvenuto in data 2024-04-19 con l'azienda SyncLab.
+	\item Pianificazione del secondo Sprint, suddivisione dei ruoli e calcolo preventivo ore.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-La riunione è iniziata con la discussione degli incontri avvenuti il giorno precedente. In particolare si è discusso su come procedere in vista del prossimo SAL fissato con SyncLab. Successivamente sono stati assegnati i ruoli per le seguenti due settimane, corrispondenti al primo sprint. Si sono infine stabiliti i vari redattori per i vari documenti che necessitano la stesura.
+L'incontro è iniziato con la discussione riguardo l'ultimo incontro avvenuto con l'azienda proponente in data 2024-04-19. In particolare si è pianificato il nuovo Sprint, partendo dall'elezione del nuovo responsabile. \\~\\Basandosi sull'esperienza dello Sprint precedente, si è pensato di adottare anche il Planning Meeting, come previsto da metodologia Agile SCRUM. Tuttavia, rimane irrisolto il collettivo dubbio se l'aggiunta di un ulteriore incontro rispetto a quello settimanale possa essere indice di cattiva organizzazione. Il gruppo ha scelto unanimamente di porre questo quesito al prossimo ``Diario di Bordo". \\~\\Valutando il lavoro rimanente tra i documenti e i prossimi step di integrazione delle tecnologie Kafka, ClickHouse e Grafana, si è calcolato il preventivo delle ore per questo Sprint, suddividendo per ciascuno i ruoli e i compiti, in vista del prossimo SAL fissato in data 2024-05-03.
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Suddivisione ruoli per lo sprint, la cui fine cade il 2024-04-19;
-    \item La possibilità di eseguire modifiche direttamente sul ramo principale delle varie repository è stata bloccata. Da adesso in poi, ogni aggiornamento dovrà essere richiesto tramite ``pull-request" e approvato da un terzo, il verificatore;
-    \item \textit{Viene adottato} il procedimento di iniziare ad associare le decisioni prese in seguito alle riunioni che scatenano delle azioni con le loro corrispondenti issue tramite collegamento ipertestuale. A differenza del colore utilizzato negli altri testi, nella tabella Attività da svolgere (\ref{table:Attivita da svolgere}) i collegamenti ipertestuali verranno indicati con sottolineatura;
-	\item Assegnamento delle nuove attività da svolgere.
+	\item Elezione del nuovo responsabile: Veronica Tecchiati.
+	\item Suddivisione dei restanti ruoli e calcolo preventivo ore per lo Sprint con fine il 2024-05-03.
+	\item Suddivisione dei compiti tra documenti e integrazione tecnologie tra i membri.
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 \end{itemize}
@@ -179,16 +169,19 @@ La riunione è iniziata con la discussione degli incontri avvenuti il giorno pre
 \section{Attività da svolgere}
 \begin{table}[ht!]
 	\centering
-	\begin{tabular}{lcl}
+	\begin{tabular}{p{7cm}cp{7cm}}
 		\toprule
 		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
 		\midrule
-		\href{https://github.com/NaN1fy/docs/issues/14}{\underline{Stesura ``Glossario"}} & 14 & Guglielmo Barison, Oscar Konieczny\\\\
-		\href{https://github.com/NaN1fy/docs/issues/15}{\underline{Stesura ``Analisi dei requisiti"}} & 15 & Davide Donanzan, Veronica Tecchiati\\\\
-		\href{https://github.com/NaN1fy/docs/issues/16}{\underline{Stesura ``Piano di progetto"}}  & 16 & Linda Barbiero, Veronica Tecchiati\\\\
-		\href{https://github.com/NaN1fy/docs/issues/17}{\underline{Stesura ``Piano di qualifica"}} & 17 & Davide Donanzan, Guglielmo Barison\\\\
-		\href{https://github.com/NaN1fy/docs/issues/20}{\underline{Stesura ``Norme di progetto"}} & 20 & Linda Barbiero, Pietro Busato\\\\
-		\href{https://github.com/NaN1fy/SyncCity/issues/1}{\underline{Stesura codice generatore dati Python}} & 1*\tnote{*} & Pietro Busato, Guglielmo Barison\\
+		\href{https://github.com/NaN1fy/docs/issues/14}{\underline{Continuazione ``Glossario"}} & 14 & Guglielmo Barison, Oscar Konieczny\\\\
+		\href{https://github.com/NaN1fy/docs/issues/15}{\underline{Continuazione ``Analisi dei requisiti"}} & 15 & Davide Donanzan, Veronica Tecchiati\\\\
+		\href{https://github.com/NaN1fy/docs/issues/16}{\underline{Continuazione ``Piano di progetto"}} & 16 & Linda Barbiero, Veronica Tecchiati\\\\
+		\href{https://github.com/NaN1fy/docs/issues/17}{\underline{Continuazione ``Piano di qualifica"}} & 17 & Davide Donanzan, Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/docs/issues/20}{\underline{Continuazione ``Norme di progetto"}} & 20 & Linda Barbiero, Pietro Busato\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/3}{\underline{Visualizzazione dati su dashboard Grafana}} & 3*\tnote{*} & Davide Donanzan, Linda Barbiero\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/4}{\underline{Integrazione Kafka e ClickHouse}} & 4*\tnote{*} & Guglielmo Barison, Oscar Konieczny, Pietro Busato\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/5}{\underline{Integrazione generatore dati con Kafka}} & 5*\tnote{*} & Davide Donanzan, Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/6}{\underline{Diagramma funzionamento generatore}} & 6*\tnote{*} & Davide Donanzan, Guglielmo Barison\\\\
 		\bottomrule
 	\end{tabular}
 	\begin{tablenotes}
