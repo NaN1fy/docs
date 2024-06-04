@@ -57,7 +57,7 @@ jobs:
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
           pre_compile: |
             tlmgr update --self && tlmgr update --all
-            tlmgr install subfiles cbfonts-fd lipsum footmisc csquotes plex fontaxes mathabx textgreek makecell wrapfig siunitx adjustbox floatflt capt-of varwidth datatool xstring csvsimple 
+            tlmgr install subfiles cbfonts-fd lipsum footmisc csquotes plex fontaxes mathabx textgreek makecell wrapfig siunitx adjustbox floatflt capt-of varwidth datatool xstring csvsimple ragged2e adjustbox threeparttable pgf pgfopts
       - name: set timestamp and version for builds of changed files and replace the old ones in the local copy of `main`
         run: |
           shopt -s globstar
@@ -66,7 +66,7 @@ jobs:
             [[ ! -f "$f" ]] && continue
             filename=$(basename -- "$f")
             # escludo i verbali firmati dalla compilazione
-            if [[ "$filename" != "VE_2024_03_12.tex" && "$filename" != "VE_2024_03_12_II.tex" ]]; then
+            if [[ "$filename" != "VE_2024_03_12.tex" && "$filename" != "VE_2024_03_12_II.tex" && "$filename" != "VE_2024_04_04.tex" && "$filename" != "VE_2024_04_19.tex" && "$filename" != "VE_2024_05_03.tex" && "$filename" != "VE_2024_05_17" ]]; then
               rm -f "${RUNNER_TEMP}/main/${f%.tex}"*
               sudo touch -amd "$( date -R -r "$f" )" "${f%.tex}.pdf"
               version=$(grep "^\s*% changelog:" "$f" | cut -d '"' -f2 | cut -d ',' -f1 | sed 's/^[[:space:]]*//; s/[[:space:]]*$//')
