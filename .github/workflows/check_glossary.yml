@@ -6,7 +6,6 @@ on:
       - main
       - sources
       - 14-glossario
-
 jobs:
   run_script:
     runs-on: ubuntu-latest
