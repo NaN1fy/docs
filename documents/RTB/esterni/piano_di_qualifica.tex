@@ -210,8 +210,8 @@ Per garantire chiarezza nel linguaggio utilizzato nei documenti, è stato redatt
 \section{Obiettivi di qualità}\label{sec:obiettivi qualita}
 Ogni \glossterm{processo} viene valutato tramite l'utilizzo di metriche specifiche, le cui definizioni sono dettagliate nelle sezioni Metriche di qualità del processo e Metriche di qualità del prodotto del documento \textit{Norme di Progetto v1.0.0}. Queste sezioni delineano i criteri che le metriche devono rispettare per essere valutate come accettabili o eccellenti. La sigla MPC sta ad indicare le metriche di processo.
 % ricordarsi di verficare effettivamente il nome della sezione in NdP, nome in corsivo per riferimenti nel testo a documentazione del gruppo?
-\subsection{Qualità di processo}
-La base della \glossterm{qualità} del processo risiede nell'idea che, per ottenere un prodotto conforme a determinati standard di qualità, sia fondamentale sottoporre i processi che lo supportano a controlli regolari, al fine di ottimizzarli. Il concetto di qualità del processo viene quindi applicato a tutte le attività, pratiche e metodologie utilizzate durante l'intero ciclo di vita del software. In breve, la qualità del processo mira a integrare la qualità nel prodotto stesso, garantendo che sia intrinseca al processo e non solo un obiettivo secondario.
+\subsection{\glossterm{Qualità} di \glossterm{processo}}
+La base della qualità del processo risiede nell'idea che, per ottenere un prodotto conforme a determinati standard di qualità, sia fondamentale sottoporre i processi che lo supportano a controlli regolari, al fine di ottimizzarli. Il concetto di qualità del processo viene quindi applicato a tutte le attività, pratiche e metodologie utilizzate durante l'intero ciclo di vita del software. In breve, la qualità del processo mira a integrare la qualità nel prodotto stesso, garantendo che sia intrinseca al processo e non solo un obiettivo secondario.
 \subsubsection{Processi primari}
 \subsubsubsection{Fornitura} 
 \begin{table}[h]	
@@ -221,18 +221,18 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
 		MPC-EV & Earned value (EV) & $\geq$ 0 & $\leq$ EAC \\\\
-		MPC-PV & Planned Value (PV) & $\geq$ 0 & $\leq$ BAC\\\\
+		MPC-PV & Planned Value (PV) & $\geq$ 0 & $\leq$ \glossterm{BAC}\\\\
 		MPC-AC & Actual costo (AC) & $\geq$ 0 & $\leq$ EAC\\\\
 		MPC-CPI & Cost Performance Index (CPI) & tra 0.95 e 1.05 & $\leq$ 1\\\\
-		MPC-EAC & Estimate At Completion (EAC) & deviazione del $\pm$ 5\% dal BAC & BAC\\\\
+		MPC-EAC & Estimate At Completion (EAC) & deviazione del $\pm$ 5\% dal \glossterm{BAC} & \glossterm{BAC}\\\\
 		MPC-ETC & Estimate To Completion (ETC) & $\geq $ 0 & $\leq$ EAC\\\\
-		MPC-VAC & Variance At Completion (VAC) & deviazione del $\pm$ 10\% dal BAC & 0\%\\\\
-		MPC-SV & Schedule Variance (SV) & deviazione del $\pm$ 10\% dal BAC & 0\%\\\\
-		MPC-BV & Budget Variance (BV) & deviazione del $\pm$ 10\% dal BAC  & 0\%\\
+		MPC-VAC & Variance At Completion (VAC) & deviazione del $\pm$ 10\% dal \glossterm{BAC} & 0\%\\\\
+		MPC-SV & Schedule Variance (SV) & deviazione del $\pm$ 10\% dal \glossterm{BAC} & 0\%\\\\
+		MPC-BV & Budget Variance (BV) & deviazione del $\pm$ 10\% dal \glossterm{BAC}  & 0\%\\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
-	\caption{Metriche per il processo di fornitura.}
+	\caption{Metriche per il \glossterm{processo} di fornitura.}
 	\label{table:Tabella metriche per il processo di fornitura.}
 \end{table}
 \clearpage
@@ -249,7 +249,7 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di sviluppo.}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante il \glossterm{processo} di sviluppo.}
 	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di sviluppo.}
 \end{table}
 \subsubsection{Processi di supporto}
@@ -260,12 +260,12 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		\toprule
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
-		MPC-IG & Indice Gulpease (IGI) & $\geq$ 60\% & 100 \\\\
+		MPC-IG & Indice Gulpease (IG) & $\geq$ 60\% & 100 \\\\
 		MPC-CO & Correttezza Ortografica (CO) & 0 & 0 \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
-	\caption{Metriche per il processo di documentazione.}
+	\caption{Metriche per il \glossterm{processo} di documentazione.}
 	\label{table:Tabella delle metriche per il processo di documentazione}
 \end{table}
 \subsubsubsection{Verifica}
@@ -279,7 +279,7 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		MPC-PT & Passed Test cases percentage (PT) & 100\% & 100\% \\
 		\bottomrule
 	\end{tabular}
-	\caption{Metriche per il processo di verifica.}
+	\caption{Metriche per il \glossterm{processo} di verifica.}
 	\label{table:Tabella delle metriche per il processo di verifica}
 \end{table}
 \subsubsubsection{Gestione della qualità}
@@ -292,7 +292,7 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		MPC-QMS & Quality Metrics Satisfied (QMS) & $\geq$ 75\%& 100\%\\
 		\bottomrule
 	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante il \glossterm{processo} di gestione della qualità.}
 	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
 \end{table}
 \clearpage
@@ -307,7 +307,7 @@ La base della \glossterm{qualità} del processo risiede nell'idea che, per otten
 		MPC-NR & Non-calculated Risk (NR) & $\leq$ 3 & 0\\
 		\bottomrule
 	\end{tabular}
-	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione dei processi.}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante il \glossterm{processo} di gestione dei processi.}
 	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione dei processi.}
 \end{table}
 \subsection{\glossterm{Qualità} di prodotto}
@@ -396,7 +396,7 @@ In questa sezione viene esposto il piano di testing che verrà utilizzato per ga
 \end{itemize}
 Per le procedure necessarie all’esecuzione di \glossterm{test} di unità e di integrazione si rimanda al documento \textit{Norme di Progetto v1.0.0} nella sezione relativa al processo di verifica.
 % verificare effettivamente poi norme di progetto
-\subsection{Codice dei test}
+\subsection{Codice dei \glossterm{test}}
 Ogni \glossterm{test} è associato ad un codice univoco definito nel seguente formato:
 \begin{center}
 	\textbf{T[Tipologia]-[Numero]}
@@ -408,14 +408,14 @@ Dove \textbf{Tipologia} indica la tipologia del test:
 	\item \textbf{S:} di sistema;
 	\item \textbf{A:} di accettazione.
 \end{itemize}
-Ogni \glossterm{test} ha uno \textbf{Stato}, che puo essere:
+Ogni test ha uno \textbf{Stato}, che puo essere:
 \begin{itemize}
 	\item \textbf{V:} verificato. Il test ha esito positivo;
 	\item \textbf{NV:} non verificato. Il test ha esito negativo; 
 	\item \textbf{NI:} non implementato.
 \end{itemize}
 \clearpage
-\subsection{Test di unità}\label{sec:test unita}
+\subsection{\glossterm{Test} di unità}\label{sec:test unita}
 \renewcommand{\arraystretch}{2.5}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering}p{2cm}|>{\RaggedRight}m{12cm}|>{\centering\arraybackslash}p{2cm}|}
@@ -497,7 +497,7 @@ Ogni \glossterm{test} ha uno \textbf{Stato}, che puo essere:
 
 \end{longtable}
 \clearpage
-\subsection{Test di integrazione}\label{sec:test integrazione}
+\subsection{\glossterm{Test} di integrazione}\label{sec:test integrazione}
 \renewcommand{\arraystretch}{2.5}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering}p{2cm}|>{\RaggedRight}m{12cm}|>{\centering\arraybackslash}p{2cm}|}
@@ -549,7 +549,7 @@ Ogni \glossterm{test} ha uno \textbf{Stato}, che puo essere:
         
 \end{longtable}
 \clearpage
-\subsection{Test di \glossterm{sistema}}
+\subsection{\glossterm{Test} di \glossterm{sistema}}
 \renewcommand{\arraystretch}{2.5}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering}p{2cm}|>{\RaggedRight}m{12cm}|>{\centering\arraybackslash}p{2cm}|}
@@ -919,8 +919,8 @@ Ogni \glossterm{test} ha uno \textbf{Stato}, che puo essere:
     \hline
 \end{longtable}
 \clearpage
-\subsection{Test di accettazione}\label{sec:test accettazione}
-Questa sezione presenta i \glossterm{test} di accettazione del software, condotti da NaN1fy e dalla
+\subsection{\glossterm{Test} di accettazione}\label{sec:test accettazione}
+Questa sezione presenta i test di accettazione del software, condotti da NaN1fy e dalla
 \glossterm{Proponente} sotto la supervisione del gruppo. Questi test mirano a validare il prodotto prima del suo rilascio, garantendone la \glossterm{qualità} e l'aderenza ai requisiti.
 
 \renewcommand{\arraystretch}{2.5}
@@ -1378,7 +1378,7 @@ Titolo principale & Tutti i titoli principali devono iniziare la pagina nella qu
 \end{longtable}
 \newpage
 \section{Cruscotto della \glossterm{qualità}}\label{sec:cruscotto della qualita}
-\subsection{Qualità di processo - Fornitura}
+\subsection{\glossterm{Qualità} di \glossterm{processo} - Fornitura}
 \subsubsection{MPC-EAC Estimate at Completion}
 \begin{figure}[h!]
     \centering
@@ -1442,7 +1442,7 @@ Coerentemente con quanto indicato dall'EAC, il valore di CPI è rimasto al di fu
 \textbf{\glossterm{RTB}:} VAC indica la variazione relativa del budget pianificato, ovvero il BAC, rispetto al budget stimato dall'EAC. L'intervallo di accettazione di questa metrica è posto ad una differenza in percentuale del 10\% rispetto al BAC.\\
 Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggiore del -10\%, indicando un EAC eccessivamente superiore rispetto al BAC pianificato. Le accortezze adottate negli \glossterm{Sprint} successivi hanno avuto gli effetti desiderati, portando il valore di VAC all'interno dell'intervallo di accettazione dal terzo Sprint.
 \clearpage
-\subsection{Qualità di processo - Documentazione}
+\subsection{\glossterm{Qualità} di \glossterm{processo} - Documentazione}
 \subsubsection{Indice Gulpease}
 \begin{figure}[h!]
     \centering
@@ -1461,7 +1461,7 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
 \end{figure}
 \textbf{\glossterm{RTB}:} Il team ha costantemente effettuato un controllo approfondito della correttezza ortografica dei documenti prodotti. I redattori hanno il compito di assicurarsene prima ancora della verifica del documento da parte di membri terzi. Successivamente, in vista delle revisioni, questi vengono ricontrollati e approvati. In questo modo ogni documento viene sempre visionato e controllato da ogni membro del gruppo, ottenendo come risultato un esiguo numero di errori e, di conseguenza, l'ottima proiezione rappresentata.
 \clearpage
-\subsection{Qualità di processo - Gestione della qualità}
+\subsection{\glossterm{Qualità} di \glossterm{processo} - Gestione della qualità}
 \subsubsection{MPC-QMS Quality Metrics Satisfied}
 \begin{figure}[h!]
     \centering
@@ -1471,7 +1471,7 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
 \end{figure}
 \textbf{\glossterm{RTB}:} In linea con quanto già specificato, le metriche di EAC, CPI, VAC e IG non sono state soddisfatte fin da subito. Il VAC e l'indice Gulpease, in particolare per il \textit{Glossario}, sono rientrati nei valori accettabili solamente dal terzo \glossterm{Sprint}, mentre l'EAC e il CPI dal quarto. Con ottica di retrospettiva, il team nota come è stata necessaria l'acquisizione di esperienza e accortezza nella pianificazione e organizzazione delle attività del gruppo, cause primarie della mancata tollerabilità delle metriche citate. Questo non deve distogliere il team dal mantenere l'andamento individuato, affiché tutte le metriche vengano rispettate, il prodotto venga sviluppato senza intoppi e il progetto possa essere portato a termine senza imprevisti. 
 \clearpage
-\subsection{Qualità di processo - Gestione dei processi}
+\subsection{\glossterm{Qualità} di \glossterm{processo} - Gestione dei processi}
 \subsubsection{MPC-NR Non-calculated Risk}
 \begin{figure}[h!]
     \centering
