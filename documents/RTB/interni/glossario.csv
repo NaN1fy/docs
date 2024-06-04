@@ -69,3 +69,4 @@ Librerie;Insieme di funzioni o strutture dati predefinite e predisposte per esse
 Commit;Salvataggio e versionamento di uno snapshot di tutti i file modificati nella repository.
 MVP;Minimum Viable Porduct è la versione di un prodotto con caratteristiche appena sufficienti per essere utilizzabile dai primi clienti, i quali possono quindi fornire feedback per lo sviluppo futuro del prodotto stesso.
 CA;Acronimo di ``Customer Acceptance", identifica la fase nella quale il prodotto viene approvato pubblicamente dalla Proponente.
+Bar chart; Particolare tipo di diagramma, si tratta di una variante dell'istogramma, in cui la frequenza assoluta è posizionata nell'asse delle ascisse, mentre le diverse variabili sono associate all'asse delle ordinate e rappresentate quindi come rettangoli a sviluppo orizzontale.
