@@ -1,6 +1,7 @@
 termine;descrizione
 Best practice;Il modo migliore per condurre la produzione. Si basa su procedure ripetibili che nel tempo hanno dimostrato di essere le migliori sia per l'efficienza (meno sforzo richiesto) sia per l'efficacia (migliori risultati). Seguire le buone pratiche assicura il raggiungimento degli obiettivi massimizzando economia e qualità.
 Board;Su GitHub, un project board, o più semplicemente board, rappresenta uno strumento fondamentale per organizzare e monitorare le attività di un progetto. È composto da colonne che riflettono lo stato delle attività. Gli issue e le pull request possono essere assegnati a tali colonne per indicarne lo stato attuale.
+Boolean; Tipo di dato che esprime un valore di verità secondo un'algebra di Bool. Viene espresso con i due valori ``true" e ``false" rappresentati dai numeri 1 e 0.
 Branch;Nel campo dello sviluppo software, un branch costituisce una copia indipendente del codice sorgente che consente agli sviluppatori di lavorare su modifiche separate senza impattare direttamente il flusso principale. I branch agevolano lo sviluppo simultaneo e la gestione delle versioni.
 Capitolato;Un capitolato è un documento che definisce le specifiche, i requisiti e le principali condizioni di un progetto o di un appalto. Serve a delineare in modo dettagliato ciò che deve essere realizzato, le prestazioni attese e le regole da seguire. Fornisce una base solida per la pianificazione e l'esecuzione del progetto, garantendo una chiara comprensione delle aspettative da parte di tutte le parti coinvolte e identificando un problema o un bisogno da risolvere.
 Database;Un sistema organizzato per la raccolta, la memorizzazione e la gestione di dati strutturati in modo che possano essere facilmente recuperati, aggiornati ed elaborati.
@@ -34,3 +35,39 @@ Container;Un container è una tecnologia che permette di eseguire e distribuire 
 Scrum;Scrum è una framework agile per la gestione dei progetti e lo sviluppo dei prodotti. Si basa su un approccio iterativo e incrementale, organizzando il lavoro in cicli chiamati ``sprint". Ogni sprint ha una durata fissa (di solito da 2 a 4 settimane) e produce un incremento di prodotto funzionante. Le attività sono divise in compiti gestiti da un team auto-organizzato, con incontri regolari per la pianificazione, la revisione e il miglioramento continuo del processo.
 Qualità;Riscontro oggettivo di misurazione di conformità alle specifiche attese. Viene misurata quantitativamente tramite scrutinio automatico/terzo e monitorabile.
 Processo;Un insieme di attività collegate tra loro che trasformano gli input (bisogni) in output (prodotti), sfruttando risorse e conformandosi a regole prestabilite. Deve essere eseguito in modo sistematico, disciplinato e quantificabile.
+SAL;Lo Stato Avanzamento dei Lavori (SAL) è un'attività che viene svolta periodicamente con l'azienda proponente del progetto con lo scopo di controllare come sta procedendo l'operato.
+Budget At Completion;Costo complessivo del progetto pianificato per eseguire tutte le attività e consegnare il prodotto finale.
+Consuntivo;Bilancio dei risultati ottenuti a rendiconto di un certo periodo temporale di attività, in termini di tempo e risorse.
+Data pipeline;Una data pipeline nell'ambito del data engineering è un flusso organizzato di processi che estraggono, trasformano e caricano i dati da diverse fonti verso un luogo di destinazione, spesso un sistema di archiviazione o un data warehouse. In modo conciso, potrebbe essere considerata come un ``condotto" che gestisce il flusso dei dati attraverso diverse fasi.
+JSON;JSON (JavaScript Object Notation è un formato di file standard aperto e un formato di interscambio dati che utilizza testo leggibile dall’uomo per memorizzare e trasmettere oggetti dati composti da coppie attributo-valore e array (o altri valori serializzabili).
+Kafka;Piattaforma di streaming distribuita, progettata per la gestione di flussi di dati in tempo reale. Offre una soluzione scalabile e affidabile per la pubblicazione, la sottoscrizione e l'elaborazione di eventi in tempo reale all'interno di un sistema distribuito.
+Smart City;Area urbana che implementa tecnologie avanzate per gestire in modo intelligente le risorse e creare un ambiente di vita più sostenibile, efficiente e abitabile.
+Topic;In Apache Kafka, un ``topic" è una categoria o una suddivisione logica dei dati che consente di organizzare e suddividere i flussi di messaggi. I topic sono fondamentali nel modello di pubblicazione/sottoscrizione di Kafka, dove i produttori inviano messaggi a specifici topic e i consumatori si sottoscrivono a tali topic per ricevere i messaggi di loro interesse.
+Widget;Un widget in Grafana è un componente grafico utilizzato per visualizzare i dati su una dashboard.
+Real-time;Aggettivo utillizzato per definire che un attività in risposta ad un evento avviene immediatamente, o con ritardi trascurabili.
+Sensore;Dispositivo in grado di effettuare misurazioni relative al proprio dominio di interesse. Questi dati possono essere letti ed utilizzati dal sistema.
+Committente;Soggetto per conto del quale viene realizzata un'opera o svolto un servizio.
+Dashboard;Interfaccia grafica per utente che mette a disposizione vari elementi grafici atti alla visualizzazione di dati o gestione di sistemi.
+Standard;Insieme di norme o modello utilizzati per l'uniformazione e omologazione di una data attività.
+Gauge;Grafico, detto a quadrante o a tachimetro, in cui il dato interessato viene visualizzato in relazione alla quantità dei dati di quel grafico.
+Gantt;Grafico a barre di completamento utilizzato per tracciare lo stato di avanzamento (anche temporalmente) di un insieme o più di task correlati a una determinata milestone.
+Refactoring;Rifacimento di una o più funzionalità di un prodotto rispetto alla progettazione e implementazione precedente, causato da una permuta di intenzioni e/o requisiti riguardanti il progetto.
+Sistema;Insieme di parti che interagiscono tra loro seguendo un determinato set di regole e concorrono al funzionamento dell'insieme stesso come singola entità.
+Pull Request;Richiesta di fondere le modifiche eseguite su un branch con un'altro branch, intorno alla quale i collaboratori possono revisionare e discutere tali modifiche prima di integrarle nel branch. 
+Modello a V;Modello di sviluppo software che mette in luce i legami esistenti tra fase di sviluppo e fase di verifica. Predispone inoltre la creazione e l'utilizzo dei test di pari passo alle altre fasi dello sviluppo.
+Planning;Pianificazione.
+OLAP;Acronimo di ``On-Line Analytical Processing", designa un insieme di tecniche software utili all'analisi interattiva e veloce di grandi moli di dati.
+Broker;Colui il quale, agendo indipendentemente, organizza ed esegue transazioni finanziarie per conto di terzi, interessati economicamente o tecnologicamente al prodotto.
+Time Series;Grafico nel quale l'asse delle ascisse è costituito da unità temporali.
+Stakeholder;Qualsiasi individuo, gruppo o organizzazione che ha un interesse diretto o indiretto in un'impresa, progetto o decisione.
+User Story;Breve descrizione, in linguaggio naturale, di una funzionalità desiderata dal punto di vista dell'utente finale o del cliente.
+PB;Acronimo di ``Product Baseline", identifica l'ultima revisione che un prodotto software, nel suo ciclo di vita, deve sostenere prima di essere considerato una versione stabile e funzionante di se stesso. Tale revisione si concentra sull'implementazione del codice e dei test e l'integrazione dei vari componenti.
+Geomap;Mappa, concernente una determinata zona, nella quale vengono rappresentati insieme ai dati geografici anche eventuali dati che interessano il prodotto.
+Task;Attività correlata ad una issue e assegnata a un membro del team.
+Framework;Il framework è un'architettura logica di supporto (spesso un'implementazione logica di un particolare design pattern) sulla quale un software può essere progettato e realizzato, spesso facilitandone lo sviluppo da parte del programmatore.
+Librerie;Insieme di funzioni o strutture dati predefinite e predisposte per essere riutilizzate da altri programmi software attraverso un'opportuna procedura di collegamento.
+Commit;Salvataggio e versionamento di uno snapshot di tutti i file modificati nella repository.
+MVP;Minimum Viable Porduct è la versione di un prodotto con caratteristiche appena sufficienti per essere utilizzabile dai primi clienti, i quali possono quindi fornire feedback per lo sviluppo futuro del prodotto stesso.
+CA;Acronimo di ``Customer Acceptance", identifica la fase nella quale il prodotto viene approvato pubblicamente dalla Proponente.
+Bar chart; Particolare tipo di diagramma, si tratta di una variante dell'istogramma, in cui la frequenza assoluta è posizionata nell'asse delle ascisse, mentre le diverse variabili sono associate all'asse delle ordinate e rappresentate quindi come rettangoli a sviluppo orizzontale.
+Preventivo; Calcolo dei costi per un determinato lavoro o servizio, proposto da un professionista ad un'azienda o ad un privato.

@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-04-17, Approvazione per RTB"
+% changelog: "1.0.0, 2024-04-29, Verifica completa & Linda Barbiero & Verificatore"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -38,7 +38,7 @@
 \usepackage{varwidth}
 
 % -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-04-15} % o ESTERNO
+\newcommand{\customtitle}{VERBALE ESTERNO DEL 2024-04-19} % o ESTERNO
 
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
@@ -79,17 +79,14 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
-			{\large{\textsc{}}}
-			
-			
+			{\\\large{\textsc{Guglielmo Barison}\\}} % massimo due 
 		}
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Davide Donanzan}\\}} % massimo due 
-			{\large{\textsc{Guglielmo Barison}}}
+			{\large{\textsc{Linda Barbiero}}}
 			
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -97,11 +94,11 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-04-15\\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Esterno Del\\2024-04-19\\}} % o ESTERNO
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{8 cm}
+	\vspace{8.5 cm}
 	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
@@ -110,12 +107,12 @@
 	\centering
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
-		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		1.0.0 & 2024-04-17 & \textbf{Approvazione per RTB} & &  \\\\
-		0.0.2 & 2024-04-17 & Verifica completa e sistemazione punteggiatura. & Guglielmo Barison & Verificatore \\\\
-		0.0.1 & 2024-04-17 & Verifica completa e lieve modifica nella sezione ``Sintesi dell'incontro". & Davide Donanzan & Verificatore \\\\
-		0.0.0 & 2024-04-16 & Stesura del verbale. & Oscar Konieczny & Redattore \\
+  		1.0.0 & 2024-04-29 & \textbf{Approvazione per RTB} \\\\
+		0.0.1 & 2024-04-29 & Verifica completa. & Linda Barbiero & Verificatore \\\\
+		0.0.1 & 2024-04-29 & Verifica completa e lievi modifiche nelle sezioni ``Sintesi dell'incontro" e ``Attività da svolgere".  & Davide Donanzan & Verificatore \\\\
+		0.0.0 & 2024-04-24 & Stesura documento.  & Guglielmo Barison & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -131,7 +128,7 @@
 \subsection{Informazioni sulla riunione}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item\textbf{Luogo:} Chiamata Discord;
+	\item\textbf{Luogo:} Chiamata Google Meet;
 	\item\textbf{Ora di inizio:} 15:00;
 	\item\textbf{Ora di fine:}  16:00.
 \end{itemize}
@@ -152,24 +149,47 @@
 		\end{tabular}
 		\caption{Partecipanti NaN1fy.}
 		\label{table:Partecipanti NaN1fy}
-	\end{minipage}
+	\end{minipage} 
+	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Andrea Dorigo & 1.0 h \\
+			Fabio Pallaro &  1.0 h \\
+			Daniele Zorzi & 1.0 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti SyncLab.}
+		\label{table:Partecipanti XXXX}
+	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
 \end{table}
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Discussione sul procedimento delle attività in vista del primo SAL.
+	\item Revisione dello stato di avanzamento degli obbiettivi del primo sprint;
+	\item Discussione sull'organizzazione degli sprint e delle milestone in base ai SAL.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-La riunione ha preso avvio con la presentazione della nuova GitHub Action, progettata per verificare i termini del glossario all'interno dei file sorgente \LaTeX prima della loro compilazione. Questo strumento mira a ridurre il rischio di errori derivanti da controlli manuali, assicurando la coerenza e l'accuratezza dei documenti finali. Successivamente, ciascun membro ha illustrato il proprio lavoro svolto e le attività future, evidenziando eventuali problematiche riscontrate. Un'analisi dettagliata è stata condotta sulle attività pianificate per i prossimi sprint fino al termine del periodo di rilascio (RTB). \\
-Al termine della riunione, è stata presa la decisione di spostare l'appuntamento settimanale dal lunedì al giovedì, al fine di ottimizzare il coordinamento del team.
+La Propontente ha da subito rivolto la sua attenzione verso i progressi compiuti nel corso dello Sprint appena concluso. Successivamente sono stati discussi, su nostra richiesta, dei dubbi di tipo organizzativo.
+\subsubsection{Avanzamenti nel codice}
+Per quanto riguarda il codice, gli obiettivi concordati erano l'implementazione di uno \textbf{script di simulazione in Python} e la \textbf{creazione di un ambiente containerizzato}. Il team ha presentato in modo chiaro i progressi ottenuti: è stato realizzato un file Docker Compose che coordina un ambiente di esecuzione composto da uno script di simulazione scritto in Python e un'istanza di Kafka. La Proponente ha dichiarato che il prodotto mostrato rispondeva alle loro aspettative per questo Sprint.
+\subsubsection{Obiettivi dello sprint}
+L'intenzione originale del Proponente per questo Sprint era di introdurre nel sistema la componente di persistenza dei dati simulati. Tuttavia, si è deciso di includere anche la componente di visualizzazione nello Sprint Backlog, originariamente pianificata per lo sprint successivo. Il team completerà una prima versione completa del Proof of Concept entro la fine dello sprint attuale, prevista per il 3 maggio. 
+\subsubsection{Chiarimenti tecnici}
+\textbf{ZooKeeper e KRaft:} La Proponente ha evidenziato che quest'anno, Kafka ha preso il posto di ZooKeeper tramite KRaft. In precedenza, i metadati erano gestiti tramite ZooKeeper, mentre ora sono gestiti direttamente dal Broker grazie a KRaft. Utilizzare ZooKeeper o KRaft non influisce significativamente sul risultato finale, e la decisione è a discrezione del team. Conservare ZooKeeper potrebbe offrire al team un'opportunità aggiuntiva di apprendimento e comprensione più approfondita del sistema.
+
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item La riunione settimanale è stata riprogrammata dal lunedì al giovedì, mantenendo invariato l'orario.
+	\item Viene fissato per il 2024-05-03 alle ore 15.00 il prossimo SAL;
+	\item Si decide di sincronizzare la chiusura del SAL con la fine dello Sprint precedente e l'inizio del successivo, al fine di definire l'elenco delle Story da implementare.
 	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
 	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
 \end{itemize}
-\newpage
 \section{Attività da svolgere}
-Non sono state stabilite ulteriori attività da realizzare.
+Fondamentale è stabilire subito la divisione dei compiti assegnati dalla proponente e iniziare la produzione della documentazione per raggiungere la milestone RTB. Per questo motivo, è cruciale concordare una riunione interna per definire i dettagli organizzativi del secondo Sprint. L'icontro è fissato al giorno 2024-04-25.
+% commentare per togliere la firma
+\signatureline{Padova, 2024-04-29}
 \end{document}

@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-04-17, Approvazione per RTB"
+% changelog: "1.0.0, 2024-06-03, Approvazione per RTB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -37,24 +37,20 @@
 \usepackage{booktabs}
 \usepackage{varwidth}
 
-% -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-04-15} % o ESTERNO
+\usepackage{verbatim} % RICORDATI DI RIMUOVERLO PRIMA DI PUSHARE
 
-% -- STILE INTESTAZIONE -- %
+% -- TITOLO -- %
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-05-23} % o ESTERNO
+
+% -- INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
 	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
-	\fancyhead[L]{\leftmark} 
-	\renewcommand{\headrulewidth}{1pt} 
-	\fancyhead[L]{\customtitle} 
+    \fancyhead[L]{\leftmark} 
+   	\renewcommand{\headrulewidth}{1pt} 
+  	\fancyhead[L]{\customtitle} 
 	\renewcommand{\headsep}{1.3cm} 
 	\fancyfoot[C]{\thepage} 
-}
-
-% -- PER LA FIRMA -- %
-\newcommand{\signatureline}[1]{%
-	 \par\vspace{0.5cm}
-	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
 }
 
 % -- PER IL GLOSSARIO -- %
@@ -79,16 +75,15 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
+			{\\\large{\textsc{Veronica Tecchiati}\\}} % massimo due 
 			{\large{\textsc{}}}
-			
 			
 		}
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Davide Donanzan}\\}} % massimo due 
+			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
 			{\large{\textsc{Guglielmo Barison}}}
 			
 		}
@@ -97,7 +92,7 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-04-15\\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-05-23\\}} % o ESTERNO
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
@@ -110,12 +105,11 @@
 	\centering
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
-		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		1.0.0 & 2024-04-17 & \textbf{Approvazione per RTB} & &  \\\\
-		0.0.2 & 2024-04-17 & Verifica completa e sistemazione punteggiatura. & Guglielmo Barison & Verificatore \\\\
-		0.0.1 & 2024-04-17 & Verifica completa e lieve modifica nella sezione ``Sintesi dell'incontro". & Davide Donanzan & Verificatore \\\\
-		0.0.0 & 2024-04-16 & Stesura del verbale. & Oscar Konieczny & Redattore \\
+      1.0.0 & 2024-06-01 & \textbf{Approvazione per RTB} & & \\\\
+		0.0.1 & 2024-06-01 & Verifica completa, correzioni minori. & Oscar Konieczny, Guglielmo Barison & Verificatore \\\\
+		0.0.0 & 2024-05-31 & Stesura del verbale. & Veronica Tecchiati & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -133,7 +127,7 @@
 	\setlength\itemsep{0em}
 	\item\textbf{Luogo:} Chiamata Discord;
 	\item\textbf{Ora di inizio:} 15:00;
-	\item\textbf{Ora di fine:}  16:00.
+	\item\textbf{Ora di fine:} 16:00.
 \end{itemize}
 \begin{table}[ht!]
 	\begin{minipage}[t]{0.5\linewidth}
@@ -143,10 +137,10 @@
 			\textbf{Partecipante} & \textbf{Durata presenza} \\
 			\midrule
 			Guglielmo Barison & 1.0 h \\
-			Linda Barbiero &  1.0 h \\
+			Linda Barbiero &  0.0 h \\
 			Pietro Busato & 1.0 h \\
 			Oscar Konieczny & 1.0 h \\
-			Davide Donanzan & 1.0 h \\
+			Davide Donanzan & 0.0 h \\
 			Veronica Tecchiati & 1.0 h \\
 			\bottomrule
 		\end{tabular}
@@ -157,19 +151,27 @@
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Discussione sul procedimento delle attività in vista del primo SAL.
+    \item Definizione scaletta incontri di metà Sprint;
+	\item Discussione sul procedimento delle attività in vista del prossimo SAL.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-La riunione ha preso avvio con la presentazione della nuova GitHub Action, progettata per verificare i termini del glossario all'interno dei file sorgente \LaTeX prima della loro compilazione. Questo strumento mira a ridurre il rischio di errori derivanti da controlli manuali, assicurando la coerenza e l'accuratezza dei documenti finali. Successivamente, ciascun membro ha illustrato il proprio lavoro svolto e le attività future, evidenziando eventuali problematiche riscontrate. Un'analisi dettagliata è stata condotta sulle attività pianificate per i prossimi sprint fino al termine del periodo di rilascio (RTB). \\
-Al termine della riunione, è stata presa la decisione di spostare l'appuntamento settimanale dal lunedì al giovedì, al fine di ottimizzare il coordinamento del team.
+All'inizio della riunione il Responsabile ha predisposto una traccia ordinata degli argomenti da affrontare durante gli appuntamenti ogni due settimane del giovedì. Nonostante i contenuti di questi incontri fossero già ben chiari, è sorta infatti l'esigenza di stabilirne la priorità di disamina, così da ottimizzare i tempi e garantire la maggiore partecipazione durante la discussione delle questioni più importanti. \\ La riunione è quindi proseguita sulla base del prospetto appena delineato, con la presentazione da parte di ciascun membro di quanto realizzato nella prima settimana dello Sprint. In particolare, il team di Programmatori ha attestato la conclusione del refactoring %DA AGGIUNGERE AL GLOSSARIO? si
+del generatore dati e la necessità di proseguire con le migliorie alle dashboard Grafana durante la settimana successiva.
+In merito alla riscrittura di una consistente porzione del codice Python precedentemente prodotto,
+si rimanda al file VI\_2024\_05\_23\_II\_v1.0.0.pdf per un esame più accurato delle problematiche da essa derivate. \\
+Il meeting è quindi proseguito con la descrizione da parte di ciascun partecipante dell'avanzamento della stesura dei documenti a cui ha contribuito e l'esposizione dei quesiti da sottoporre il giorno seguente al Committente, in occasione del ``Diario di Bordo", e alla Proponente, durante il SAL.
+
 \subsection{Decisioni prese}
-\begin{itemize}
-	\setlength\itemsep{0em}
-	\item La riunione settimanale è stata riprogrammata dal lunedì al giovedì, mantenendo invariato l'orario.
-	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
-	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
-\end{itemize}
+
+
+	La scaletta definita per gli incontri del giovedì è la seguente:
+        \begin{enumerate}
+            \item Assegnazione della stesura del verbale interno dell'incontro;
+            \item Discussione delle attività sinora svolte e del to-do della settimana a venire;
+            \item Difficoltà riscontrate e dubbi.
+        \end{enumerate}
+
 \newpage
 \section{Attività da svolgere}
-Non sono state stabilite ulteriori attività da realizzare.
+Non sono state stabilite ulteriori attività da eseguire.
 \end{document}
