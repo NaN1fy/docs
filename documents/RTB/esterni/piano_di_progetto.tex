@@ -1,4 +1,4 @@
-% changelog: "0.11.0, 2024-05-31, Stesura consuntivo quarto periodo e correzioni minori in sezione \ref{sec:3_rtb}., Pietro Busato"
+% changelog: "1.0.0, 2024-06-04, Approvazione per RTB"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -96,8 +96,8 @@
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}}
-			{\large{\textsc{XXXX XXXX}}}
+			{\\\large{\textsc{Davide Donanzan}\\}}
+			{\large{\textsc{Guglielmo Barison}}}
 			
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -121,6 +121,9 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule 
+		1.0.0 & 2024-06-04 & \textbf{Approvazione per RTB} & & \\\\
+		0.11.2 & 2024-06-04 & Verifica completa e modifiche minori. & Guglielmo Barison & Verificatore \\\\
+		0.11.1 & 2024-06-04 & Verifica completa e modifiche minori. & Davide Donanzan & Verificatore \\\\
 		0.11.0 & 2024-05-31 & Stesura consuntivo quarto periodo, correzioni minori in sezione \ref{sec:3_rtb}. & Pietro Busato & Redattore \\\\
         0.10.4 & 2024-05-21 & Correzioni minori sezione \ref{sec:3_rtb}. & Linda Barbiero & Redattore \\\\
 		0.10.3 & 2024-05-21 & Aggiunte attività previste sezioni \ref{sec:1_rtb} e \ref{sec:2_rtb}, correzioni sezione \ref{sec:3_rtb}. & Veronica Tecchiati & Redattore \\\\
@@ -137,9 +140,8 @@
 		0.4.0 & 2024-04-18 & Stesura sezione \ref{sec:1_rtb}. & Linda Barbiero & Redattore \\\\
 		0.3.0 & 2024-04-17 & Inizio stesura sezione \ref{sec:rischi}. & Veronica Tecchiati & Redattore \\\\
 		0.2.0 & 2024-04-16 & Stesura sezione \ref{sec:intro}. & Veronica Tecchiati & Redattore \\\\
-		0.1.0 & 2024-04-12 & Stesura sezione ``Modello di Sviluppo" e inizio sezione ``Organigramma". & Linda Barbiero & Redattore \\\\
-		0.0.0 & 2024-04-12 & Stesura del file e sezione ``Pianificazione". & Linda Barbiero &
-		Redattore \\
+		0.1.0 & 2024-04-12 & Stesura sezione \ref{sec:modello} e inizio sezione \ref{sec:organigramma}. & Linda Barbiero & Redattore \\\\
+		0.0.0 & 2024-04-12 & Stesura del file e sezione \ref{sec:1_rtb}. & Linda Barbiero & Redattore \\
 		% X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
@@ -162,24 +164,24 @@
 \clearpage
 \section{Analisi dei Rischi} \label{sec:rischi}
 \input{sezioni/analisi_rischi}
-\section{Modello di Sviluppo}
+\section{Modello di Sviluppo} \label{sec:modello}
 \input{sezioni/modello_sviluppo}
 \newpage
 \section{Scadenze}
 I periodi vengono suddivisi in 3 grandi insiemi corrispondenti alle revisioni di avanzamento del progetto:
 \begin{itemize}
 \setlength\itemsep{0em}
-\item \textbf{RTB (Requirements and Technology Baseline):} 2024-06-07;
-\item \textbf{PB (Product Baseline):} 2024-07-26;
-\item \textbf {CA (Customer Acceptance):} 2024-08-09.
+\item \textbf{\glossterm{RTB} (Requirements and Technology Baseline):} 2024-06-07;
+\item \textbf{\glossterm{PB} (Product Baseline):} 2024-07-26;
+\item \textbf{\glossterm{CA} (Customer Acceptance):} 2024-08-09.
 \end{itemize}
-\section{RTB}
+\section{\glossterm{RTB}}
 \input{sezioni/rtb}
 \newpage
-\section{PB}
-\newpage
-\section{CA}
-\newpage
-\section{Organigramma}
+% \section\glossterm{{PB}}
+% \newpage
+% \section\glossterm{{CA}}
+% \newpage
+\section{Organigramma} \label{sec:organigramma}
 \input{sezioni/organigramma}
 \end{document}
