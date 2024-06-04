@@ -1,0 +1,203 @@
+% changelog: "0.0.0, 2024-05-31, Pietro Busato, Stesura documento"
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VERBALE ESTERNO DEL 2024-05-31} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Pietro Busato}\\}} 	
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\large{\textsc{XXXX XXXX}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Esterno Del\\2024-05-31\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+		0.0.0 & 204-05-31 & Stesura verbale.  & Pietro Busato & Redattore
+		--- \\\\ % spazio tra le righe
+		%X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata Google Meet;
+	\item\textbf{Ora di inizio:} 16:00;
+	\item\textbf{Ora di fine:}  16:45.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 0.75 h \\
+			Linda Barbiero &  0.75 h \\
+			Pietro Busato & 0.75 h \\
+			Oscar Konieczny & 0.75 h \\
+			Davide Donanzan & 0.75 h \\
+			Veronica Tecchiati & 0.75 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Andrea Dorigo & 0.33 h \\
+			Fabio Pallaro &  0.75 h \\
+			Daniele Zorzi &  0.75 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti SyncLab}
+		\label{table:Partecipanti SyncLab}
+	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlexngth\itemsep{0em}
+	\item Revisione dello stato di avanzamento degli obiettivi del quarto sprint;	
+	\item Discussione riguardante lo Sprint successivo e l'avvento dell'RTB;
+	\item Discussione riguardante l'eventuale avanzamento del progetto a fase CA.
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+Come consuetudine, l'incontro è iniziato con la presentazione, da parte del gruppo, dei progressi fatti durante lo Sprint. I membri della
+Proponente si sono detti pienamente soddisfatti dell'operato riguardante il refactoring dei sensori e del loro funzionamento in relazione
+alla pipeline Kafka-Clickhouse-Grafana; hanno inoltre reagito positivamente anche all'aggiunta e miglioramento dei grafici e delle viste
+sui sensori sulla dashboard di Grafana, pur consigliando alcune semplici migliorie per alcune di esse. In particolare, l'aggiunta di una
+mappa, a corredo delle tabelle di parcheggio, che mostri a vista d'occhio la disponibilità dei vari parcheggi registrati, oltre che un
+grafico che mostri la percentuale di posti occupati per un determinato parcheggio. Con la prematura uscita dalla chiamata del Sig. Dorigo,
+principale referente in materia di tecnologie e codice, la conversazione si è quindi spostata sull'organizzazione del prossimo Sprint, della
+durata di una singola settimana, considerato ``di passaggio'' in quanto nella stessa settimana avverrà la presentazione dell'RTB, con conseguente
+raggiungimento della prima milestone. Data la peculiare natura di tale Sprint, i membri dell'azienda hanno deciso di non porre nuovi obiettivi
+al di là di una semplice ulteriore rifinitura dei documenti e del prodotto. Si è infine discusso della possibilità e della volontà, da parte del 
+team, di procedere, una volta ultimato il PB, con l'avanzamento alla fase CA. Il team si è riservato di decidere in futuro se proporre o meno 
+l'avanzamento a CA, dato l'alta probabilità di incorrere, nel prossimo periodo, in numerosi contrattempi e difficoltà, dovuti sia a questioni 
+private che di università. 
+
+\subsection{Decisioni prese}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Si è fissato il prossimo SAL il giorno 2024-06-07 alle ore 15:00;
+	\item Si è deciso di considerare questo Sprint come ``di passaggio'', senza dunque fissare obiettivi particolari.
+\end{itemize}
+\newpage
+\section{Attività da svolgere}
+Viene indetta una riunione interna per discutere della fase finale dell'RTB e dell'organizzazione del quinto Sprint, il cui focus
+sarà l'ultimazione del perfezionamento dei documenti e del prodotto, in vista della presentazione. 
+% togli il commento per la firma
+\signatureline{Padova, 2024-06-04}
+%\signatureline{Padova, YYYY-MM-DD}
+\end{document}
