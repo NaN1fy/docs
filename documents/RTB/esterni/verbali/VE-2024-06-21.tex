@@ -1,0 +1,191 @@
+% changelog: "0.0.0, 2024-06-23, Stesura del verbale, Veronica Tecchiati"
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+\usepackage{verbatim}
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VERBALE ESTERNO DEL 2024-06-21} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Veronica Tecchiati}\\}}
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
+			{\large{\textsc{XXXX XXXX}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Esterno Del\\2024-06-21\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8.5 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+		0.0.0 & 2024-06-23 & Stesura del verbale. & Veronica Tecchiati & Redattore \\ % spazio tra le righe
+		%X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata Google Meet;
+	\item\textbf{Ora di inizio:} 15:00;
+	\item\textbf{Ora di fine:}  15:45.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 0 h \\
+			Linda Barbiero & 0.75 h \\
+			Pietro Busato & 0.5 h \\
+			Oscar Konieczny & 0.75 h \\
+			Davide Donanzan & 0.75 h \\
+			Veronica Tecchiati & 0.75 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy.}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Andrea Dorigo & 0.75 h \\
+			Fabio Pallaro & 0.75 h \\
+			Daniele Zorzi & 0.75 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti SyncLab.}
+		\label{table:Partecipanti SyncLab}
+	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+\setlength\itemsep{0em}
+	\item Revisione del lavoro svolto;
+        \item Esposizione di dubbi e problematiche riscontrati durante il sesto Sprint;
+	\item Definizione degli obiettivi per il prossimo Sprint.
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+L'incontro è iniziato con la presentazione da parte del gruppo dell'avanzamento ottenuto durante lo Sprint appena concluso. Il team ha infatti esposto l'implementazione di nuove tipologie di simulatori di sensori ed una prima realizzazione di un sistema di notifica. \\
+La riunione è poi proseguita con la discussione degli ostacoli incontrati: in particolare il gruppo non ha potuto dedicare il quantitativo di ore previste allo svolgimento del progetto per via dell'inizio della sessione estiva di esami. Ciò ha comportato l'impossibilità di soddisfare alcune richieste della Proponente, tra cui l'esame delle casistiche in cui si rivela necessario l'utilizzo di piattaforme di stream processing. La soluzione trovata assieme all'azienda consiste quindi nel diminuire il carico di lavoro per lo Sprint successivo, aumentando contestualmente la durata dello stesso. Durante questo periodo, fornitore e cliente concorderanno assieme gli obiettivi da raggiungere, anche in vista della milestone di Product Baseline. 
+
+\subsection{Decisioni prese}
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Il gruppo dovrà valutare quali siano gli obiettivi raggiungibili durante il settimo Sprint. Procederà quindi ad inviare via mail alla Proponente una proposta, che sarà quindi oggetto di negoziazione fornitore-cliente;
+    \item Il settimo Sprint avrà una durata di tre settimane e mezzo, dunque il prossimo SAL è fissato alle ore 15:00 del giorno 2024-07-16.
+\end{itemize}
+
+\section{Attività da svolgere}
+Viene indetta una riunione interna per delineare la pianificazione del settimo Sprint e le attività da svolgere fino al prossimo SAL.
+% togli il commento per la firma
+\signatureline{Padova, 2024-06-24}
+\end{document}
