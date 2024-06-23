@@ -86,19 +86,19 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Linda Barbiero}\\}} 
+			{\\\large{\textsc{Linda Barbiero}\\}}
+			{\large{\textsc{Pietro Busato}\\}}
 			{\large{\textsc{Guglielmo Barison\\}}}
-			{\large{\textsc{Pietro Busato\\}}}
-			{\large{\textsc{Veronica Tecchiati}}}
-			
+      {\large{\textsc{Veronica Tecchiati}}}			
+
 		}
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Davide Donanzan}\\}}
-			{\large{\textsc{Guglielmo Barison}}}
-			
+			{\\\large{\textsc{Guglielmo Barison}\\}}
+			{\large{\textsc{Davide Donanzan}\\}}
+      {\large{\textsc{Veronica Tecchiati}\\}}
 		}
 		\vspace{4mm}\vspace{4mm}
 	\end{minipage}
@@ -109,7 +109,7 @@
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{9cm}
+	\vspace{8.5cm}
 	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{\color{black}nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
@@ -121,9 +121,11 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule 
-		1.2.0 & 2024-06-23 & Stesura \glossterm{consuntivo} sesto periodo. & Davide Donanzan & Redattore \\\\
-		1.1.0 & 2024-06-11 & Stesura \glossterm{preventivo} sesto periodo. & Davide Donanzan & Redattore \\\\
-		1.0.0 & 2024-06-04 & \textbf{Approvazione per RTB} & & \\\\
+		1.0.0 & 2024-06-23 & \textbf{Approvazione per RTB} & & \\\\	
+    0.12.2 & 2024-06-23 & Verifica completa, correzioni minori & Guglielmo Barison, Veronica
+      Tecchiati & Verificatori  \\\\
+    0.12.1 & 2024-06-23 & Stesura \glossterm{consuntivo} sesto periodo. & Davide Donanzan & Redattore \\\\
+		0.12.0 & 2024-06-11 & Stesura \glossterm{preventivo} sesto periodo. & Davide Donanzan & Redattore \\\\
 		0.11.2 & 2024-06-04 & Verifica completa e modifiche minori. & Guglielmo Barison & Verificatore \\\\
 		0.11.1 & 2024-06-04 & Verifica completa e modifiche minori. & Davide Donanzan & Verificatore \\\\
 		0.11.0 & 2024-05-31 & Stesura \glossterm{consuntivo} quarto periodo, correzioni minori in sezione \ref{sec:3_rtb}. & Pietro Busato & Redattore \\\\
@@ -139,8 +141,20 @@
         0.5.0 & 2024-04-28 & Conclusione stesura sezione \ref{sec:rischi} & Veronica Tecchiati & Redattore \\\\
 		0.4.2 & 2024-04-24 & Fix immagine diagramma \glossterm{Gantt} primo \glossterm{sprint}. & Linda Barbiero & Redattore \\\\
 		0.4.1 & 2024-04-18 & Fix \glossterm{preventivo} e \glossterm{consuntivo} del primo periodo. & Linda Barbiero & Redattore \\\\
-		0.4.0 & 2024-04-18 & Stesura sezione \ref{sec:1_rtb}. & Linda Barbiero & Redattore \\\\
-		0.3.0 & 2024-04-17 & Inizio stesura sezione \ref{sec:rischi}. & Veronica Tecchiati & Redattore \\\\
+		0.4.0 & 2024-04-18 & Stesura sezione \ref{sec:1_rtb}. & Linda Barbiero & Redattore \\
+		\bottomrule
+\end{tabular}
+\newpage
+\clearpage
+\end{table}
+\begin{table}[H]
+\hypersetup{hidelinks}
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule 
+    0.3.0 & 2024-04-17 & Inizio stesura sezione \ref{sec:rischi}. & Veronica Tecchiati & Redattore \\\\
 		0.2.0 & 2024-04-16 & Stesura sezione \ref{sec:intro}. & Veronica Tecchiati & Redattore \\\\
 		0.1.0 & 2024-04-12 & Stesura sezione \ref{sec:modello} e inizio sezione \ref{sec:organigramma}. & Linda Barbiero & Redattore \\\\
 		0.0.0 & 2024-04-12 & Stesura del file e sezione \ref{sec:1_rtb}. & Linda Barbiero & Redattore \\
@@ -152,6 +166,7 @@
 	\label{table:Registro delle modifiche}
 \end{table}
 \newpage
+\clearpage
 {\hypersetup{hidelinks} \tableofcontents}
 \clearpage
 \newpage
@@ -176,7 +191,6 @@ le attività dai membri del gruppo NaN1fy. In particolare verranno trattati i se
 Il fine è creare una data pipeline che, partendo dalla generazione di dati da alcuni sensori simulati, possa gestire, archiviare, analizzare e visualizzare il flusso dati in tempo reale. I sensori simuleranno il campionamento di diverse caratteristiche della città in esame, come temperatura, vento, traffico e altri elementi analoghi per poi rappresentarne i dati attraverso \glossterm{dashboard} grafiche.
 \subsection{Glossario}
 Per garantire chiarezza nel linguaggio utilizzato nei documenti, è stato redatto un Glossario contenente le definizioni dei termini con significato specifico da disambiguare. Tali termini sono contrassegnati con una G ad apice. L'inserimento di un termine nel Glossario è considerato completo solo dopo averne fornito la definizione.
-
 
 \subsection{Preventivo iniziale}
 Come riportato nel preventivo presentato in fase di candidatura, viene stimato il costo totale del
@@ -929,12 +943,12 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
 		\midrule
         Linda Barbiero          & 2     & -     & 4     & 7     & 4     & 3     & 22 \\
         Guglielmo Barison       & 1     & -     & 4     & 3     & 4     & 3     & 15\\
-        Pietro Busato           & 4     & 4     & 4     & 0     & 4     & 3     & 19 \\
+        Pietro Busato           & 2     & 4     & 4     & 0     & 4     & 3     & 17 \\
         Davide Donanzan         & 1     & -     & 4     & 3     & 6     & 3     & 17 \\
-        Oscar Konieczny         & 4     & -     & 4     & 0     & 3     & 3     & 14 \\
+        Oscar Konieczny         & 0,5     & -     & 4     & 0     & 3     & 3     & 11,5 \\
         Veronica Tecchiati      & 2     & -     & 4     & 5     & 1,5   & 3     & 15,5 \\
         \bottomrule
-        \textbf{Totale (ruolo)} & 16    & 4     & 24    & 18    & 22,5  & 18   & 100,5 \\
+        \textbf{Totale (ruolo)} & 8,5    & 4     & 24    & 18    & 22,5  & 18   & 98 \\
 	\end{tabular}
 	\caption{Distribuzione delle ore del quarto Sprint secondo ruolo e membro.}
 	\label{table:Distribuzione delle ore del quarto Sprint secondo ruolo e membro}
@@ -954,14 +968,14 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
         \toprule
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
         \midrule
-        Amministratore & 14 & 420 \\
+        Amministratore & 8,5 & 255 \\
         Responsabile & 4 & 80 \\
         Progettista & 24 & 600 \\
         Analista & 18 & 450 \\
         Programmatore & 22,5 & 337,5 \\
         Verificatore & 18 & 270 \\
         \bottomrule
-        \textbf{Totale} & 100,5 & 2157,5
+        \textbf{Totale} & 95 & 2002,5
     \end{tabular}
     \caption{\glossterm{Preventivo} dei costi del quarto Sprint secondo ruolo.}
 	\label{table:Preventivo dei costi del quarto Sprint secondo ruolo}
@@ -978,13 +992,14 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
         Linda Barbiero     & 1 \textcolor{teal}{(-1)} & - & 3 \textcolor{teal}{(-1)} & 5 \textcolor{teal}{(-2)} & 5 \textcolor{red}{(+1)} & 3 & 17 \textcolor{teal}{(-3)} \\
         Gugliemo Barison   & 1 & - & 2 \textcolor{teal}{(-2)} & 4 \textcolor{red}{(+1)} & 6
         \textcolor{red}{(+2)} & 3,5 \textcolor{red}{(+0,5)} & 16,5 \textcolor{red}{(+1,5)} \\
-        Pietro Busato      & 3 \textcolor{teal}{(-1)} & 4 & 2 \textcolor{teal}{(-2)} & 4 \textcolor{red}{(+4)} & 5 \textcolor{red}{(+1)} & 3 & 21 \textcolor{red}{(+2)} \\
+        Pietro Busato      & 2 & 4 & 2 \textcolor{teal}{(-2)} & 4
+        \textcolor{red}{(+4)} & 5 \textcolor{red}{(+1)} & 3 & 20 \textcolor{red}{(+3)} \\
         Davide Donanzan    & 1 & - & 4 & 5 \textcolor{red}{(+2)} & 7 \textcolor{red}{(+1)} & 3 & 20 \textcolor{red}{(+3)} \\
-        Oscar Konieczny    & 3 \textcolor{teal}{(-1)} & - & 3 \textcolor{teal}{(-1)} & 3
-        \textcolor{red}{(+3)} & 3,5 \textcolor{red}{(+0,5)} & 4 \textcolor{red}{(+1)} & 16,5 \textcolor{red}{(+2,5)}\\
+        Oscar Konieczny    & 0.5  & - & 3 \textcolor{teal}{(-1)} & 3
+        \textcolor{red}{(+3)} & 3,5 \textcolor{red}{(+0,5)} & 4 \textcolor{red}{(+1)} & 4 \textcolor{red}{(+2,5)}\\
         Veronica Tecchiati & - \textcolor{teal}{(-2)} & - & 1 \textcolor{teal}{(-3)} & 4 \textcolor{teal}{(-1)} & 4 \textcolor{red}{(+2,5)} & 4 \textcolor{red}{(+1)} & 13 \textcolor{teal}{(-2,5)} \\
         \midrule
-        \textbf{Totale (ruolo)} & 9 & 4 & 15 & 25 & 30,5 & 20,5 & 104 \\
+        \textbf{Totale (ruolo)} & 5,5 & 4 & 15 & 25 & 30,5 & 20,5 & 101,5 \\
 		\bottomrule
 	\end{tabular}
 	\caption{Distribuzione delle ore del quarto Sprint secondo ruolo e membro.}
@@ -999,12 +1014,12 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
 		\midrule
         Linda Barbiero     & 2 & 5 & 14 & 6 & 12 & 12,5 & 51,5 \\
         Gugliemo Barison   & 1 & 5 & 14,5 & 7 & 11,5 & 15 & 54 \\
-        Pietro Busato      & -1& 4 & 14,5 & 3,5 & 12,5 & 17 & 50,5 \\
+        Pietro Busato      & 0 & 4 & 14,5 & 3,5 & 12,5 & 17 & 51,5 \\
         Davide Donanzan    & 5 & 8 & 12 & 2 & 9 & 13 & 49 \\
-        Oscar Konieczny    & -2,5 & 7 & 15 & 4 & 14,5 & 15 & 53 \\
+        Oscar Konieczny    & 0 & 7 & 15 & 4 & 14,5 & 15 & 55,5 \\
         Veronica Tecchiati & 1,5 & 4,5 & 17 & 0 & 18 & 13 & 54 \\
         \midrule
-        \textbf{Totale (ruolo)} & 6 & 33,5 & 87 & 22,5 & 77 & 85,5 & 312 \\
+        \textbf{Totale (ruolo)} & 9,5 & 33,5 & 87 & 22,5 & 77 & 85,5 & 315,5 \\
 		\bottomrule
 	\end{tabular}
 	\caption{Ore rimaste dopo il quarto Sprint secondo ruolo e membro.}
@@ -1017,14 +1032,14 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
         \toprule
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
         \midrule
-        Amministratore & 9 \textcolor{teal}{(-5)} & 270 \textcolor{teal}{(-150)} \\
+        Amministratore & 5,5 \textcolor{teal}{(-3)} & 165 \textcolor{teal}{(-90)} \\
         Responsabile & 4  & 80 \\
         Progettista & 15 \textcolor{teal}{(-9)}  & 375 \textcolor{teal}{(-225)} \\
         Analista & 25 \textcolor{red}{(+7)} & 625 \textcolor{red}{(+175)} \\
         Programmatore & 30,5 \textcolor{red}{(+8)} & 457,5 \textcolor{red}{(+120)} \\
         Verificatore & 20,5 \textcolor{red}{(+2,5)} & 307,5 \textcolor{red}{(+37,5)} \\
         \bottomrule
-        \textbf{Totale} & 104 & 2115
+        \textbf{Totale} & 100,5 & 1930
     \end{tabular}
     \caption{\glossterm{Preventivo} a finire dei costi del quarto Sprint secondo ruolo.}
     \label{table:Preventivo a finire dei costi del quartoo Sprint secondo ruolo}
@@ -1035,8 +1050,8 @@ il tempo a disposizione rispetto al carico di lavoro assegnato. Ciononostante, i
 e determinazione, riuscendo a garantire il completamento degli obiettivi fissati entro il tempo
 limite. Questo tuttavia ha portato il gruppo a dover redistribuire alcuni carichi di lavoro e
 riassegnare parzialmente i ruoli in itinere: ne consegue che il consuntivo differisce discretamente 
-dal preventivo e, sebbene da un punto di vista economico si sia riusciti a risparmiare una piccola somma
-di denaro, -42,5\texteuro, il monte ore finale presenta uno scenario abbastanza diverso da quello previsto.
+dal preventivo e, sebbene da un punto di vista economico si sia riusciti a risparmiare una piccola
+somma.
 Un altro problema verificatosi durante lo Sprint, conseguente al ritmo accelerato di lavoro che ci si è stati trovati ad adottare, 
 risiede nell'aver giocoforza rivolto minore attenzione alla cura dei dettagli di alcune parti di documentazione, che il team 
 si è già riservato di ottemperare nel prossimo Sprint, della durata prevista di una singola settimana, in preparazione all'\glossterm{RTB}.
@@ -1075,6 +1090,8 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
         \item \textbf{RP-3:} Stima errata del tempo di completamento di un'attività;
         \item \textbf{RP-5:} Impegni personali ed accademici.
 \end{itemize}
+\newpage
+\clearpage
 \subsubsection{\glossterm{Preventivo}}
 \subsubsubsection{Preventivo orario}
 \begin{table}[ht!]
@@ -1123,6 +1140,7 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
     \caption{\glossterm{Preventivo} dei costi del quinto Sprint secondo ruolo.}
 	\label{table:Preventivo dei costi del quinto Sprint secondo ruolo}
 \end{table}
+\clearpage
 \subsubsection{\glossterm{Consuntivo}}
 \subsubsubsection{Consuntivo orario}
 \begin{table}[ht!]
@@ -1153,13 +1171,13 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
 		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
 		\midrule
         Linda Barbiero     & 2    & 5   & 14   & 6   & 12   & 8,5 & 47,5 \\
-        Gugliemo Barison   & 1    & 5   & 14,5 & 7   & 9,5  & 13  & 49 \\
-        Pietro Busato      & -1   & 2,5 & 14,5 & 3,5 & 12,5 & 13  & 46 \\
+        Gugliemo Barison   & 1    & 5   & 14,5 & 7   & 9,5  & 12  & 49 \\
+        Pietro Busato      & 0   & 2,5 & 14,5 & 3,5 & 12,5 & 14  & 47 \\
         Davide Donanzan    & 4    & 8   & 12   & 2   & 9    & 10  & 45 \\
-        Oscar Konieczny    & -2,5 & 7   & 15   & 4   & 14,5 & 10  & 48 \\
+        Oscar Konieczny    & 0 & 7   & 15   & 4   & 14,5 & 10  & 50,5 \\
         Veronica Tecchiati & 1,5  & 4,5 & 17   & 0   & 18   & 9   & 50 \\
         \midrule
-        \textbf{Totale (ruolo)} & 5 & 32 & 87 & 22,5 & 75,5 & 63,5 & 285,5 \\
+        \textbf{Totale (ruolo)} & 8,5 & 32 & 87 & 22,5 & 75,5 & 63,5 & 289 \\
 		\bottomrule
 	\end{tabular}
 	\caption{Ore rimaste dopo il quinto Sprint secondo ruolo e membro.}
@@ -1286,12 +1304,14 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
         \textbf{Membro} & \multicolumn{5}{c}{\textbf{Ruolo}} & \multicolumn{2}{r}{\textbf{Totale (persona)}}\\
 		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
 		\midrule
-        Linda Barbiero          & -     & -     & 4 \textcolor{red}{(+1)}  & 6 \textcolor{teal}{(-1)} & 4                        & 1                        & 15 \\
+        Linda Barbiero          & -     & -     & 5 \textcolor{red}{(+1)}  & 5 \textcolor{teal}{(-1)} & 4                        & 1                        & 15 \\
         Guglielmo Barison       & -     & -     & 4                        & 6                        & 1                        & 3                        & 14 \\
-        Pietro Busato           & -     & -     & 4 \textcolor{teal}{(-1)} & 2 \textcolor{teal}{(-1)} & 4 \textcolor{teal}{(-1)} & 3 \textcolor{teal}{(-1)} & 13 \textcolor{teal}{(-4)} \\
+        Pietro Busato           & -     & -     & 3 \textcolor{teal}{(-1)} & 1
+        \textcolor{teal}{(-1)} & 3 \textcolor{teal}{(-1)} & 2 \textcolor{teal}{(-1)} & 9 \textcolor{teal}{(-4)} \\
         Davide Donanzan         & -     & 6     & 4                        & -                        & -                        & 2                        & 12 \\
         Oscar Konieczny         & -     & -     & 4                        & 3                        & 2                        & 2                        & 11 \\
-        Veronica Tecchiati      & -     & -     & 4 \textcolor{teal}{(-2)} & -                        & 5 \textcolor{teal}{(-3)} & 2                        & 11 \textcolor{teal}{(-5)}\\
+        Veronica Tecchiati      & -     & -     & 2 \textcolor{teal}{(-2)} & -
+        & 2 \textcolor{teal}{(-3)} & 2                        & 6 \textcolor{teal}{(-5)}\\
         \bottomrule
         \textbf{Totale (ruolo)} & - & 6 & 22 & 15 & 12 & 12 & 67 \\
 		\bottomrule
@@ -1308,12 +1328,12 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
 		\midrule
         Linda Barbiero     & 2    & 5   & 9    & 1   & 8    & 7,5 & 32,5 \\
         Gugliemo Barison   & 1    & 5   & 10,5 & 1   & 8,5  & 9   & 35 \\
-        Pietro Busato      & -1   & 2,5 & 11,5 & 2,5 & 9,5  & 12  & 37 \\
+        Pietro Busato      & 0   & 2,5 & 11,5 & 2,5 & 9,5  & 12  & 38 \\
         Davide Donanzan    & 4    & 2   & 8    & 2   & 9    & 8   & 33 \\
-        Oscar Konieczny    & -2,5 & 7   & 11   & 1   & 12,5 & 8   & 37 \\
+        Oscar Konieczny    & 0 & 7   & 11   & 1   & 12,5 & 8   & 39,5 \\
         Veronica Tecchiati & 1,5  & 4,5 & 15   & 0   & 16   & 7   & 44 \\
         \midrule
-        \textbf{Totale (ruolo)} & 5 & 26 & 65 & 7,5 & 63,5 & 51,5 & 218,5 \\
+        \textbf{Totale (ruolo)} & 8,5 & 26 & 65 & 7,5 & 63,5 & 51,5 & 222 \\
 		\bottomrule
 	\end{tabular}
 	\caption{Ore rimaste dopo il sesto Sprint secondo ruolo e membro.}
@@ -1328,10 +1348,10 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
         \midrule
         Amministratore & -                         & -   \\
         Responsabile   & 6                         & 120 \\
-        Progettista    & 24 \textcolor{teal}{(-2)} & 600 \textcolor{teal}{(-50)} \\
-        Analista       & 17 \textcolor{teal}{(-2)} & 425 \textcolor{teal}{(-50)} \\
-        Programmatore  & 16 \textcolor{teal}{(-4)} & 240 \textcolor{teal}{(-60)} \\
-        Verificatore   & 13 \textcolor{teal}{(-1)} & 195 \textcolor{teal}{(-15)} \\
+        Progettista    & 22 \textcolor{teal}{(-2)} & 550 \textcolor{teal}{(-50)} \\
+        Analista       & 15 \textcolor{teal}{(-2)} & 375 \textcolor{teal}{(-50)} \\
+        Programmatore  & 12 \textcolor{teal}{(-4)} & 180 \textcolor{teal}{(-60)} \\
+        Verificatore   & 12 \textcolor{teal}{(-1)} & 180 \textcolor{teal}{(-15)} \\
         \bottomrule
         \textbf{Totale} & 67 & 1405
     \end{tabular}
