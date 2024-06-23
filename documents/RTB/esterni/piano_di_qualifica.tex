@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-06-03, Approvazione per RTB"
+% changelog: "1.1.0, 2024-06-23, Davide Donanzan, Aggiornamento metriche"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -128,9 +128,10 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
+        1.1.0 & 2024-06-23 & Aggiornamento metriche. & Davide Donanzan & Redattore \\\\
   		1.0.0 & 2024-06-03 & \textbf{Approvazione per RTB} & & \\\\
-        0.9.3 & 2024-06-01 & Verifica completa con piccole modifiche. & Pietro Busato & Verificatore \\\\
-        0.9.2 & 2024-06-03 & Verifica completa con piccole modifiche. & Linda Barbiero & Verificatore \\\\
+        0.9.3 & 2024-06-03 & Verifica completa con piccole modifiche. & Pietro Busato & Verificatore \\\\
+        0.9.2 & 2024-06-01 & Verifica completa con piccole modifiche. & Linda Barbiero & Verificatore \\\\
         0.9.1 & 2024-06-01 & Verifica completa con piccole modifiche. & Oscar Konieczny & Verificatore \\\\
         0.9.0 & 2024-05-31 & Stesura sezione \ref{sec:tracciamento test sistema}. & Davide Donanzan & Redattore \\\\
         0.8.0 & 2024-05-30 & Completamento della sezione \ref{sec:cruscotto della qualita}. & Davide Donanzan & Redattore \\\\
@@ -1388,6 +1389,7 @@ Titolo principale & Tutti i titoli principali devono iniziare la pagina nella qu
 \end{figure}
 \textbf{\glossterm{RTB}:} EAC indica, per ogni periodo, la stima del budget finale prefiguratasi rispetto al valore pianificato definito dal BAC, o Budget at Completion. Questo valore viene calcolato come il rapporto tra BAC e CPI dove CPI, dove CPI sta per Cost Performance Index.\\
 Risulta evidente come la metrica in questione non rientrasse all'interno dei valori di accettazione già dal primo \glossterm{Sprint}. Ciò è dovuto alla scarsa esperienza del team nell'affrontare la pianificazione degli Sprint e all'altrettanta poca conoscenza riguardante le attività prioritarie al fine di una buona gestione del progetto. Negli Sprint successivi il team ha preso provvedimenti, adottando con maggiore accortezza una pianificazione efficace e adoperando un metodo lavorativo atto a far rientrare l'EAC all'interno dei valori di accettazione, mantenendo alta, al contempo, la produttività.\\
+Le problematiche riscontrate nel sesto periodo hanno avuto un effetto evidente, seppur lieve, sull'andamento della metrica pur rimanendo all'interno dei valori di accettazione.\\
 Il gruppo può trarre esperienza dalla proiezione rappresentata nel grafico in previsione della seconda revisione, mantenendo l'andamento già individuato dal quarto Sprint.
 \clearpage
 \subsubsection{MPC-EV Earned Value e MPC-PV Planned Value}
@@ -1398,7 +1400,7 @@ Il gruppo può trarre esperienza dalla proiezione rappresentata nel grafico in p
     \label{fig:Proiezione grafica di EV e PV}
 \end{figure}
 \textbf{\glossterm{RTB}:} EV rappresenta il valore generato dal prodotto sviluppato fino a un dato momento, mentre PV costituisce il valore del lavoro pianificato fino a un dato momento. Il loro confronto permette di comprendere lo scostamento che avviene tra i preventivi e i consuntivi di lavoro effettuati e quindi ottenere una chiara visione dell'andamento del lavoro svolto dal team.\\
-L'andamento delle due metriche è pressoché coincidente, come dimostrato anche nel grafico successivo dalla metrica SV. Dal secondo periodo in poi il valore EV è generalmente inferiore al SV segnalando che il team ha effettuato preventivi ottimistici rispetto all'effettivo risultato prodotto. Ciononostante, questa differenza rimane minimale.
+L'andamento delle due metriche è pressoché coincidente, come dimostrato anche nel grafico successivo dalla metrica SV. Dal secondo periodo in poi il valore EV è generalmente inferiore al PV segnalando che il team ha effettuato preventivi ottimistici rispetto all'effettivo risultato prodotto. Ciononostante, questa differenza rimane minimale.
 \clearpage
 \subsubsection{MPC-BV Budget Variance e MPC-SV Schedule Variance}
 \begin{figure}[h!]
@@ -1408,9 +1410,9 @@ L'andamento delle due metriche è pressoché coincidente, come dimostrato anche 
     \label{fig:Proiezione grafica di BV e SV}
 \end{figure}
 \textbf{\glossterm{RTB}:} BV consiste nella differenza tra il valore guadagnato (EV) e i costi effettivamente sostenuti (AC). Un valore negativo di BV indica che si sta spendendo più di quanto si stia guadagnando. SV, invece, rappresenta la differenza tra il valore guadagnato (EV) e il valore pianificato (PV). Un valore negativo indica un ritardo rispetto alla produzione e consegna del lavoro preventivato.\\
-Il valore del BV, nonostante sia certamente all'interno dei valori di accettazione, si è mantenuto costantemente negativo dimostrando come i costi effettivamente sostenuti eccedano il lavoro prodotto. Come anticipato nella proiezione dell'EAC, ciò è dovuto alla scarsa esperienza nella pianificazione di preventivi plausibili.\\
-La SV ha mantenuto valori oscillanti intorno allo 0, indice di una pianificazione abbastanza realistica rispetto al valore effettivamente prodotto.\\
-In generale, queste due metriche mantengono valori altamente accettabili, spingendo il team a non deviare dal percorso individuato.
+Il valore del BV, nonostante sia certamente all'interno dei valori di accettazione, si è mantenuto negativo per la maggior parte degli Sprint effettuati, diventando positiva solamente all'ultimo. Ciò dimostra come i costi effettivamente sostenuti abbiano ecceduto il lavoro prodotto. I motivi per cui dal quinto periodo la BV è diventata positiva si possono individuare principalmente in due situazioni ben distinte ovvero l'operazione di profonda verifica del materiale prodotto in previsione della revisione RTB e l'incombenza di impegni personali e di studio che hanno rallentato la produttività del gruppo.\\
+La SV ha mantenuto valori oscillanti intorno allo 0, indice di una pianificazione abbastanza realistica rispetto al valore effettivamente prodotto. Ancora una volta, le problematiche riscontrate hanno determinato un lieve peggioramento del valore guadagnato rispetto al valore pianificato.\\
+In generale, queste due metriche mantengono valori altamente accettabili.
 \clearpage
 \subsubsection{MPC-AC Actual Cost e MPC-ETC Estimate To Complete}
 \begin{figure}[h!]
@@ -1420,7 +1422,7 @@ In generale, queste due metriche mantengono valori altamente accettabili, spinge
     \label{fig:Proiezione grafica di AC e ETC}
 \end{figure}
 \textbf{\glossterm{RTB}:} AC rappresenta il costo sostenuto fino a un dato momento, mentre ETC consiste nella conseguente stima dei costi da sostenere per il completamento del progetto.\\
-Totalmente in linea con quanto rilevato dalla proiezione delle metriche di EAC, BV e SV, l'AC e l'ETC dimostrano l'avanzamento stimato del progetto. I quattro \glossterm{Sprint} rappresentati corrispondono all'arco di tempo definito da 9 settimane, corrispondenti a circa metà del progetto. Ci si aspetta, quindi, che le due metriche siano prossime ad incontrarsi, considerando il lieve ritardo, rispetto alla pianificazione, determinato dal valore leggermente negativo di SV.
+Totalmente in linea con quanto rilevato dalla proiezione delle metriche di EAC, BV e SV, l'AC e l'ETC dimostrano l'avanzamento stimato del progetto. I sei \glossterm{Sprint} rappresentati corrispondono all'arco di tempo definito da 12 settimane, corrispondenti a oltre metà del progetto. Come ci si aspettava, quindi, le due metriche si sono incontrate in corrispondenza del quinto Sprint, definito dal team come il periodo di revisione RTB, nonché decima settimana del progetto.
 \clearpage
 \subsubsection{MPC-CPI Cost Performance Index}
 \begin{figure}[h!]
@@ -1450,7 +1452,7 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
     \caption{Proiezione grafica dell'indice gulpease.}
     \label{fig:Proiezione grafica dell'indice gulpease}
 \end{figure}
-\textbf{\glossterm{RTB}:} L'indice Gulpease è un'indice di leggibilità per testi in lingua italiana ed è indicato da una percetuale di leggibilità, con soglia di accettazione al 60\%. Tutti i documenti prodotti dal team hanno prodotto un indice di leggibilità alto e nella maggior parte anche ottimale. L'unica eccezione si individua nel \textit{Piano di Qualifica}, ma sopratutto nel \textit{Glossario}, che fino all'ultimo ha avuto valori inferiori alla soglia di accettazione. Nonostante ciò, sarà di fondamentale importanza per il team migliorare l'indice di leggibilità di questo documento.
+\textbf{\glossterm{RTB}:} L'indice Gulpease è un'indice di leggibilità per testi in lingua italiana ed è indicato da una percetuale di leggibilità, con soglia di accettazione al 60\%. Tutti i documenti prodotti dal team hanno prodotto un indice di leggibilità alto e nella maggior parte anche ottimale. L'unica eccezione si individua nel \textit{Glossario}, che fino al terzo \glossterm{Sprint} ha avuto valori inferiori alla soglia di accettazione. La necessità del team di concentrarsi sulla revisione di altri documenti ha impedito il miglioramento dell'indice in tale documento. Sarà di fondamentale importanza per il team migliorarlo al più presto.
 \clearpage
 \subsubsection{Correttezza Ortografica}
 \begin{figure}[h!]
@@ -1469,7 +1471,7 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
     \caption{Proiezione grafica di QMS.}
     \label{fig:Proiezione grafica di QMS}
 \end{figure}
-\textbf{\glossterm{RTB}:} In linea con quanto già specificato, le metriche di EAC, CPI, VAC e IG non sono state soddisfatte fin da subito. Il VAC e l'indice Gulpease, in particolare per il \textit{Glossario}, sono rientrati nei valori accettabili solamente dal terzo \glossterm{Sprint}, mentre l'EAC e il CPI dal quarto. Con ottica di retrospettiva, il team nota come è stata necessaria l'acquisizione di esperienza e accortezza nella pianificazione e organizzazione delle attività del gruppo, cause primarie della mancata tollerabilità delle metriche citate. Questo non deve distogliere il team dal mantenere l'andamento individuato, affiché tutte le metriche vengano rispettate, il prodotto venga sviluppato senza intoppi e il progetto possa essere portato a termine senza imprevisti. 
+\textbf{\glossterm{RTB}:} In linea con quanto già specificato, le metriche di EAC, CPI, VAC e IG non sono state soddisfatte fin da subito. Il VAC e l'indice Gulpease, in particolare per il \textit{Glossario}, sono rientrati nei valori accettabili solamente dal terzo \glossterm{Sprint}, mentre l'EAC e il CPI dal quarto. Nonostante le problematiche riscontrate nel quarto e sesto Sprint tutte le metriche rientrano nei valori di accettazione. \\Con ottica di retrospettiva, il team nota come è stata necessaria l'acquisizione di esperienza e accortezza nella pianificazione e organizzazione delle attività del gruppo, cause primarie della mancata tollerabilità delle metriche citate. Questo non deve distogliere il team dal mantenere l'andamento individuato, affiché tutte le metriche vengano rispettate, il prodotto venga sviluppato senza intoppi e il progetto possa essere portato a termine senza imprevisti.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{processo} - Gestione dei processi}
 \subsubsection{MPC-NR Non-calculated Risk}
@@ -1479,5 +1481,6 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
     \caption{Proiezione grafica dei rischi non calcolati.}
     \label{fig:Proiezione grafica dei rischi non calcolati}
 \end{figure}
-\textbf{\glossterm{RTB}:} Come mostrato dalla proiezione, il quarto \glossterm{Sprint} è stato soggetto ad un rischio non previsto particolarmente limitante. Su suggerimento della \glossterm{Proponente}, il team ha affrontato un profondo lavoro di \glossterm{refactoring} del codice prodotto fino a quel momento, che non solo ha comportato un certo dispendio di risorse destinate ad altre attività, ma ha anche limitato e modificato l'organizzazione che il team aveva precedentemente pianificato per il suddetto periodo. Ciononostante, grazie al lavoro svolto negli Sprint antecedenti e soprattutto alle accortezze adottate nelle fasi di pianificazione, il refactoring non ha comportato problematiche rispetto al preventivo e alle metriche di fornitura.
+\textbf{\glossterm{RTB}:} Come mostrato dalla proiezione, il quarto \glossterm{Sprint} è stato soggetto ad un rischio non previsto particolarmente limitante. Su suggerimento della \glossterm{Proponente}, il team ha affrontato un profondo lavoro di \glossterm{refactoring} del codice prodotto fino a quel momento, che non solo ha comportato un certo dispendio di risorse destinate ad altre attività, ma ha anche limitato e modificato l'organizzazione che il team aveva precedentemente pianificato per il suddetto periodo. Ciononostante, grazie al lavoro svolto negli Sprint antecedenti e soprattutto alle accortezze adottate nelle fasi di pianificazione, il refactoring non ha comportato problematiche rispetto al preventivo e alle metriche di fornitura.\\
+Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli impegni personali e universitari si sono intensificati a tal punto da portare il team alla scelta di intraprendere un periodo di assestamento atto a mitigare il rischio occorso. Lo scopo è, quindi, quello di riprendere al più presto con il normale regime di avanzamento e produttività.
 \end{document}
