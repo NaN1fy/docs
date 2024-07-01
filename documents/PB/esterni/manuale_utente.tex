@@ -1,0 +1,217 @@
+% changelog: "0.0.0, 2024-07-01, Davide Donanzan, Stesura struttura e sezione intro"
+
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+\usepackage{datetime2}
+\usepackage{xcolor}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{colortbl}
+\usepackage{verbatim}
+\usepackage{enumitem}
+
+\newcommand{\customtitle}{MANUALE UTENTE}% o ESTERNO
+
+% -- STILE COLONNA CENTRATA PER TABELLE -- %
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\\\}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Davide Donanzan}\\}} % massimo due 
+			{\large{\textsc{XXXX XXXX}}}
+			
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{XXXX XXXX}\\}} 
+			{\large{\textsc{XXXX XXXX}\\}} 
+			{\large{\textsc{XXXX XXXX}\\}}
+			
+		}
+		\vspace{2mm}\vspace{2mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Manuale Utente}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{10 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+		    0.0.0 & 2024-07-01 & Stesura struttura e sezione \ref{sec:intro}. & Davide Donanzan & Redattore \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption*{Tabella: Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+\justifying
+\section{Introduzione}\label{sec:intro}
+\subsection{Scopo del documento}
+Il presente manuale è concepito per fornire un supporto agli utenti nell’utilizzo efficace del software, 
+consentendo loro di sfruttare appieno tutte le sue funzionalità al fine di garantire un’esperienza ottimale.
+In tal modo, si vuole informare l’amministratore pubblico dei requisiti minimi da soddisfare per
+poter usufruire del prodotto, degli step necessari per la sua installazione e di tutte le funzionalità a disposizione.
+% Poiché l’installazione del software è gestita da personale tecnico specializzato, questo
+% manuale non include istruzioni dettagliate per l’installazione, ma si concentra piuttosto sui
+% passaggi necessari per utilizzare il softwareG una volta installato correttamente
+\subsection{Scopo del prodotto}
+L'obiettivo del progetto SyncCity è quello di creare una piattaforma atta al monitoraggio
+di sensori sparsi geograficamente nel territorio di una città. I sensori in questione
+permettono la misurazione e segnalazione di dati \glossterm{real-time} riguardanti le più disparate
+caratteristiche e necessità del territorio quali temperatura ed umidità esterna, occupazione di
+stalli di parcheggio, funzionamento o guasto elettrico di colonnine di ricarica, traffico stradale e via
+dicendo. La \glossterm{Proponente} richiede la simulazione di alcuni dei sensori nominati nonchè la
+gestione dei dati, della loro persistenza e della loro rappresentazione grafica attraverso \glossterm{widget} e
+grafici. 
+\\\\SyncCity permetterà un miglioramento della \glossterm{qualità} dei servizi offerti dalla città attraverso il continuo monitoraggio della stessa, ottenendo, gestendo e successivamente condividendo i dati con gli utenti. 
+% \subsection{Accesso alla piattaforma}
+\subsection{Glossario}
+Per garantire chiarezza nel linguaggio utilizzato nei documenti, è stato redatto un Glossario contenente le definizioni dei termini con significato specifico da disambiguare. Tali termini sono contrassegnati con una G ad apice. L'inserimento di un termine nel Glossario è considerato completo solo dopo averne fornito la definizione.
+\subsection{Riferimenti}
+\subsubsection{Normativi}
+\begin{itemize}
+	\item \textit{Norme di Progetto v2.0.0};
+	\item Presentazione e documentazione del \glossterm{capitolato} d’appalto C6 - SyncCity:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{\color{myblue}https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf} (Ultimo accesso: \today)
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf} (Ultimo accesso: \today)
+	\end{itemize}
+	\item Regolamento di progetto:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/PD2.pdf} (Ultimo accesso: \today)
+	\end{itemize}
+\end{itemize}
+% \clearpage
+\subsubsection{Informativi}
+\begin{itemize}
+    \item \textit{Analisi dei Requisiti v2.0.0};
+    \item \textit{Glossario v2.0.0};
+    \item \textit{Specifica Tecnica v1.0.0};
+\end{itemize}
+\clearpage
+\section{Requisiti}
+\subsection{Requisiti hardware}
+\subsection{Requisiti di sistema operativo}
+\subsection{Requisiti software}
+\subsection{Requisiti browser}
+\section{Istruzioni all'uso}
+\subsection{Avvio}
+\subsection{Login}
+\subsection{Informazioni generali}
+\subsection{Informazioni dashboard e pannelli}
+\subsection{Dashboard ``Sensori"}
+\subsection{Dashboard ``Ambientale"}
+\subsection{Dashboard ``Urbanistica"}
+\subsection{Dashboard ``Superamento Soglie"}
+\subsection{Allerte}
+\subsection{Gestione e funzionalità dashboard}
+\section{Supporto tecnico}
+Per assistenza tecnica relativa all’utilizzo del prodotto software SyncCity, viene fornito il
+seguente indirizzo email:
+\begin{center}
+    \parbox{\linewidth}{\centering
+        \href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}
+    }
+\end{center}
+Si è gentilmente pregati di includere nel corpo dell’email una descrizione quanto più completa del problema riscontrato, 
+insieme ad eventuali istantanee o dettagli aggiuntivi che possano aiutare la comprensione del problema e la risoluzione dello stesso.
+Si invita, inoltre, a descrivere eventuali passaggi già tentati, in modo che il team possa fornire un’assistenza più mirata.
+\end{document}
