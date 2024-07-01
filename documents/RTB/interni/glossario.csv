@@ -69,3 +69,6 @@ Librerie;Insieme di funzioni o strutture dati predefinite e predisposte per esse
 Commit;Salvataggio e versionamento di uno snapshot di tutti i file modificati nella repository.
 MVP;Minimum Viable Porduct è la versione di un prodotto con caratteristiche appena sufficienti per essere utilizzabile dai primi clienti, i quali possono quindi fornire feedback per lo sviluppo futuro del prodotto stesso.
 CA;Acronimo di ``Customer Acceptance", identifica la fase nella quale il prodotto viene approvato pubblicamente dalla Proponente.
+Architettura;Organizzazione fondamentale di un sistema, definita dai suoi componenti, dalle relazioni reciproche tra i componenti e con l'ambiente, e i principi che ne governano la progettazione e l'evoluzione.
+Sistema;Insiemi di programmi che individuano prodotti software complessi. Questi prodotti sono costruiti o studiati in termini di macro-componenti, della loro organizzazione e delle loro interazioni. La struttura di un sistema software è detta architettura software.
+Flink;Stream-processing e batch-processing framework open-source, che offre uno streaming engine con alto throughput, bassa latenza.  Supporta event-time processing e state management.
