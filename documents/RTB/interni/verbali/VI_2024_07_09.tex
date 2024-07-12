@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-06-23, Approvazione per RTB"
+% changelog: "0.0.0, 2024-07-12, Veronica Tecchiati, verifica completa e correzioni. Atteso verificatore no. 2"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -44,7 +44,7 @@
 % non utilizzare \glossterm nei verbali
 
 % -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-06-21} % o ESTERNO
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-07-09} % o ESTERNO
 
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
@@ -101,7 +101,7 @@
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
 			{\\\large{\textsc{}\\}} % massimo due 
-			{\large{\textsc{}}}
+			{\large{\textsc{Veronica Tecchiati}}}
 			
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -109,7 +109,7 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-06-21\\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-07-09\\}} % o ESTERNO
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
@@ -124,7 +124,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-			0.0.0 & 2024-07-11 & Stesura verbale. & Linda Barbiero & 
+			0.0.0 & 2024-07-11 & Stesura verbale. & Linda Barbiero & Veronica Tecchiati
  			\\ % spazio tra le righe
 
 		\bottomrule
@@ -168,12 +168,18 @@
 \begin{itemize}
 	\setlength\itemsep{0em}
     \item Discussione sulla valutazione della revisione RTB;
-    \item Valutazione dell'operato durante il periodo di assestamento.
+    \item Valutazione dell'operato durante il periodo di assestamento;
+    \item Definizione delle attività da svolgere in vista del prossimo SAL.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-Concluso il periodo di assestamento, in accordo con la proponente, data l'occorrenza di impegni di studio, il team si è incontrato, seguendo la scaletta definita, al fine di discutere le attività svolte dai membri. \\
-In particolare, sono state effettuate delle modifiche ai sensori precedentemente implementati e si è continuata la definizione delle regole relative al sistema di alerting; è iniziata anche la stesura introduttiva del documento relativo alle Specifiche Tecniche e il Manuale Utente, anche se il team concorda sul fatto che sia ancora prematuro dedicarsi pienamente alla loro stesura.\\
-Infine, si è dedicato del tempo alla discussione relativa alla valutazione dell'RTB, in particolar modo sugli aspetti da migliorare per quanto riguarda il way of working. Un dubbio emerso riguarda l'approccio da adottare sul versionamento: si è compreso come ogni "scatto" sia dovuto ad un via libera da parte del verificatore, tuttavia non è chiaro se questo criterio debba essere "retroattivo" anche sui precedenti changelog, oppure se mantenere una "legacy" dell'operato fino ad ora, per poi mostrare comunque il nuovo stile adottato. Il team, dunque, ha deciso di porre questo dubbio nel prossimo Diario di Bordo, previsto in data 2024-07-15.
+Concluso il periodo di assestamento, concordato assieme alla Proponente data l'occorrenza di impegni di studio, il gruppo si è incontrato per verificare lo stato delle attività portate a termine fino a quel momento e stabilire nuovi compiti da svolgere. \\
+% La parte che segue l'abbiamo fatta per ultima durante l'incontro, ma mi sono permessa di spostarla qui perché ho immaginato che Tullio avrebbe trovato "ragionevole" considerare le sue valutazioni PRIMA di fare qualsiasi altra cosa, in modo da impostare le attività alla luce delle modifiche da lui richieste, quindi lavorare "proattivamente" ed in ottica di miglioramento. Se si ritiene che questa sia una grande stronzata spostare pure dove si ritiene opportuno. Inoltre, questa parte spiega nel dettaglio il nostro dubbio. Se si ritiene che sia superfluo scendere così nei particolari (perché tanto glielo esponiamo già al DDB), tagliare tutta la spiegazione e lasciare solo che è emerso un dubbio che esporremo al prossimo DDB.
+La riunione è iniziata con l'analisi della valutazione dell'RTB, soffermandosi in particolar modo sugli aspetti da migliorare per quanto riguarda il way of working. Un dubbio emerso riguarda l'approccio da adottare sul versionamento dei documenti: il gruppo ha compreso come ogni "scatto" sia dovuto ad un via libera da parte del Verificatore. Pertanto, per rendere ancor più esplicita l'associazione tra un'azione di modifica e la corrispondente azione di verifica, alcuni membri del team hanno proposto di cambiare leggermente il layout della tabella di registro delle modifiche presente all'inizio di ogni documento. 
+%In particolare, l'idea consiste nell'eliminazione delle colonne ``Autore" e ``Ruolo" e, al suo posto, nell'aggiunta delle colonne ``Redattore" e ``Verificatore". METTERE QUESTA FRASE SOLO SE LA SI RITIENE INDISPENSABILE
+Tuttavia non è chiaro se sia più opportuno applicare questa correzione retroattivamente anche sui precedenti registri delle modifiche, oppure se mantenere una ``legacy" lasciando invariato quanto fatto in precedenza e mostrando l'adozione del nuovo stile soltanto in seguito al raggiungimento della milestone RTB, cioè a partire da ora. Il team ha dunque deciso di esporre questo dubbio nel prossimo ``Diario di Bordo", previsto in data 2024-07-15. \\
+La riunione è poi proseguita con l'esposizione di quanto svolto finora da parte di ciascuno dei membri. In particolare, il team di Programmatori ha apportato delle modifiche ai sensori precedentemente implementati e ha continuato la definizione delle regole relative al sistema di alerting. L'Amministratore ha iniziato anche la stesura introduttiva dei documenti di Specifiche Tecniche e Manuale Utente. Tuttavia, considerando le disponibilità date da ciascuno per questo Sprint, il team concorda sul fatto che sia attualmente prioritario concentrarsi sulla realizzazione dell'applicativo anziché proseguire la stesura della documentazione, cui il gruppo si dedicherà pienamente a partire dal prossimo periodo.\\ 
+Infine, esaminando le risorse temporali ed economiche a propria disposizione, il team ha stabilito gli obiettivi da conseguire entro il prossimo SAL con la Proponente. Essi saranno poi comunicati via mail al cliente che li approverà qualora li ritenga ragionevoli.
+
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
