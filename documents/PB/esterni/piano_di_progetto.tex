@@ -1,4 +1,4 @@
-% changelog: "1.1.0, 2024-07-17, Oscar Konieczny, Stesura settimo periodo"
+% changelog: "1.2.0, 2024-07-26, Veronica Tecchiati, Stesura preventivo ottavo periodo"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -121,7 +121,9 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-			1.1.0 & 2024-07-17 & Stesura settimo periodo. & Oscar Konieczny & -
+            1.2.0 & 2024-07-26 & Stesura \glossterm{preventivo} ottavo periodo. & Veronica Tecchiati & -
+ 		    \\\\
+			1.1.0 & 2024-07-17 & Stesura settimo periodo. & Oscar Konieczny & Veronica Tecchiati
  		    \\ % spazio tra le righe
 		\bottomrule
 	\end{tabular}
@@ -1394,29 +1396,28 @@ Il team si premura di risolvere i rischi riscontrati durante questo Sprint di as
 
 \newpage
 \section{\glossterm{PB}}
-\subsection{Settimo Periodo}
+\subsection{Settimo periodo}
 \textbf{Inizio:} 2024-06-21\\
 \textbf{Fine prevista:} 2024-07-16
 \subsubsection{Pianificazione}
-Il team, in accordo con la \glossterm{Proponente}, ha deciso di svolgere uno \glossterm{Sprint} da tre settimane con un carico di lavoro ridotto, essendo questo un periodo dove i membri del team non riescono a dare pieno impegno alle attività del progetto per via degli impegni accademici dovuti dalla sessione estiva degli esami universitari. \\
-L'obiettivo di questo Sprint è di completare attività che sono state prefissate precedentemente e la continuazione di implementazione dell'espansione del prodotto. \\
-In particolare, l'implementazione del sistema di alerting nella piattaforma \glossterm{Grafana} richiede ulteriore sviluppo per essere implementato a pieno, ma l'obiettivo principale è quello di implementare le dashboard relative ai nuovi sensori che sono stati creati nello Sprint precedente. Continua anche l'auto-formazione sulla tecnologia Apache Flink.\\
+Il team, in accordo con la \glossterm{Proponente}, ha deciso di svolgere uno \glossterm{Sprint} da tre settimane con un carico di lavoro ridotto, essendo questo un periodo dove i membri del gruppo non riescono a dare pieno impegno alle attività del progetto per via della sessione estiva degli esami universitari. \\
+L'obiettivo di questo Sprint è dunque completare attività che sono state prefissate precedentemente e continuare l'implementazione e l'ampliamento del prodotto. \\
+In particolare, il sistema di alerting nella piattaforma \glossterm{Grafana} richiede ulteriore sviluppo per essere implementato a pieno, ma l'obiettivo principale è quello di realizzare le dashboard relative ai nuovi sensori che sono stati creati nello Sprint precedente. Continua anche l'auto-formazione sulla tecnologia Apache Flink. Le attività da svolgere durante questo periodo possono quindi essere sintetizzate come segue:
 \begin{itemize}
     \setlength{\itemsep}{0em}
-    \item Implementazione di nuove dashboard per la visualizzazione dei dati generati dai nuovi sensori;
-    \item Termine dell'implementazione del sistema di notifica in Grafana;
+    \item Conclusione dell'implementazione del sistema di notifica in Grafana;
+    \item Realizzazione di nuove dashboard per la visualizzazione dei dati generati dai nuovi sensori;
     \item Continuazione dell'auto-apprendimento di Apache Flink.
 \end{itemize}
-
 \subsubsection{Rischi attesi}
 I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
 \begin{itemize}
     \item \textbf{RT-1:} Inesperienza;
     \item \textbf{RP-5:} Impegni personali ed accademici.
 \end{itemize}
-
+Infatti, il primo deriva dalla necessità di approfondire una tecnologia nuova quale Apache Flink, mentre il secondo è dovuto alla sessione estiva di esami.
+\newpage
 \subsubsection{\glossterm{Preventivo}}
-
 \subsubsubsection{Preventivo orario}
 \begin{table}[ht!]
 	\centering
@@ -1432,13 +1433,20 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
         Oscar Konieczny         & -     & 4     & -     & -     & 2     & 0,5     & 6,5 \\
         Veronica Tecchiati      & -     & -     & -     & -     & 4     & 0,5     & 4,5 \\
         \bottomrule
-        \textbf{Totale (ruolo)} & 1     & 4     & 3    & 0    & 10    & 3    & 21 \\
+        \textbf{Totale (ruolo)} & 1     & 4     & 3    & -    & 10    & 3    & 21 \\
 	\end{tabular}
 	\caption{Distribuzione delle ore del settimo Sprint secondo ruolo e membro.}
 	\label{table:Distribuzione delle ore del settimo Sprint secondo ruolo e membro}
 \end{table}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=15cm]{./images_pdp/istogramma_periodo_7.png}
+    \caption{Visualizzazione dell'impegno temporale di ciascun membro nei rispettivi ruoli assegnati
+    nel settimo Sprint.}
+    \label{figure:Visualizzazione dell'impegno temporale di ciascun membro nei rispettivi ruoli
+    assegnati nel settimo Sprint}
+\end{figure}
 \clearpage
-
 \subsubsubsection{Preventivo economico}
 \begin{table}[ht!]
 	\centering
@@ -1449,7 +1457,7 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
         Amministratore & 1  & 30   \\
         Responsabile   & 4  & 80 \\
         Progettista    & 3 & 75 \\
-        Analista       & 0 & - \\
+        Analista       & - & - \\
         Programmatore  & 10 & 150 \\
         Verificatore   & 3 & 45 \\
         \bottomrule
@@ -1458,9 +1466,7 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
     \caption{\glossterm{Preventivo} dei costi del settimo Sprint secondo ruolo.}
 	\label{table:Preventivo dei costi del settimo Sprint secondo ruolo}
 \end{table}
-
 \subsubsection{\glossterm{Consuntivo}}
-
 \subsubsubsection{Consuntivo orario}
 \begin{table}[ht!]
 	\centering
@@ -1503,7 +1509,6 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
 	\label{table:Ore rimaste dopo il settimo Sprint secondo ruolo e membro}
 \end{table}
 \clearpage
-
 \subsubsubsection{Consuntivo economico}
 \begin{table}[ht!]
     \centering
@@ -1523,23 +1528,116 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
     \caption{\glossterm{Preventivo} a finire dei costi del settimo Sprint secondo ruolo.}
     \label{table:Preventivo a finire dei costi del settimo Sprint secondo ruolo}
 \end{table}
-
 \subsubsubsection{Rischi occorsi, impatto e loro mitigazione} \\
-Come previsto, i vari membri del team hanno dedicato minor tempo allo svolgimento delle attività del progetto per dedicare più tempo allo studio agli esami universitari. Essendo questo un rischio che è stato considerato nella pianificazione, non pone nessun ritardo o problematica, perciò nessuna mitigazione è necessaria. 
-
+Come previsto, i vari membri del team hanno dedicato minor tempo allo svolgimento delle attività del progetto per occuparsi dello studio in vista degli esami universitari. Al fine di limitare l'impatto di questa problematica, il gruppo allocherà un maggior numero di risorse durante i periodi successivi, in modo da compensare l'avanzamento più lento di questo Sprint. 
 \subsubsection{Retrospettiva}
 Lo Sprint è stato ben pianificato per mitigare l'inevitabile rischio previsto. Nel successivo Sprint è previsto un ritorno alle normali intensità di lavoro dei vari membri del team, ed è qualcosa di necessario per poter terminare i lavori nelle scadenze prefissate.
-
 \begin{figure}[h!]
     \centering
     \includegraphics[width=13cm]{./images_pdp/gantt7.png}
     \caption{Diagramma di Gantt rappresentativo del settimo periodo.}
 \end{figure}
 \clearpage
-
 \newpage
-% \section\glossterm{{CA}}
-% \newpage
+\subsection{Ottavo periodo}
+\textbf{Inizio:} 2024-07-16\\
+\textbf{Fine prevista:} 2024-07-30
+\subsubsection{Pianificazione}
+Questo Sprint segue il periodo di assestamento dovuto agli ingenti impegni accademici che i membri del team hanno dovuto sostenere. Le attività di progetto proseguono dunque speditamente per rispettare le scadenze stabilite. Di seguito sono elencate quelle previste per il periodo attuale:
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Rifinitura dei sensori precedentemente implementati, con sistemazione di eventuali malfunzionamenti e migliorie generali;
+    \item Rifinitura delle dashboard di Grafana;
+    \item Personalizzazione dell'interfaccia grafica di Grafana con la brand identity della Proponente;
+    \item Ulteriore approfondimento della tecnologia Apache Flink e realizzazione dello stream processing;
+    \item Proseguimento nella stesura dei documenti di \textit{Manuale Utente} e \textit{Specifica Tecnica};
+    \item Applicazione di correzioni e miglioramenti ai documenti di \textit{Analisi dei Requisiti}, \textit{Glossario}, \textit{Norme di Progetto}, \textit{Piano di Progetto} e \textit{Piano di Qualifica}.
+\end{itemize}
+\subsubsection{Rischi attesi}
+I rischi che prevediamo possano manifestarsi durante questo periodo sono i seguenti:
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item \textbf{RT-1:} Inesperienza;
+    \item \textbf{RP-1:} Stima errata delle tempistiche di progetto;
+    \item \textbf{RP-3:} Stima errata dei tempi di completamento di un'attività;
+\end{itemize}
+Infatti, durante questo periodo il gruppo dovrà approfondire ulteriormente la nuova tecnologia Apache Flink per implementarla all'interno del sistema; inoltre, la corretta pianificazione delle attività di queste settimane è cruciale per garantire la conclusione del progetto entro le scadenze prefissate.
+\newpage
+\subsubsection{Preventivo}
+\subsubsubsection{Preventivo orario}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & -     & 3     & 4     & -     & 4     & 2     & 13 \\
+        Guglielmo Barison       & -     & -     & 5     & 1     & 5     & 4 & 15 \\
+        Pietro Busato           & -     & -     & 4     & 2     & 6     & 3     & 15 \\
+        Davide Donanzan         & 1     & -     & 5     & 2     & 5     & 2     & 15 \\
+        Oscar Konieczny         & -     & -     & 6     & 1     & 5     & 4     & 16 \\
+        Veronica Tecchiati      & 1.5     & 3     & 3     & -     & 7     & 2     & 16.5 \\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 2.5     & 6     & 27    & 6    & 32    & 17    & 90.5 \\
+	\end{tabular}
+	\caption{Distribuzione delle ore dell'ottavo Sprint secondo ruolo e membro.}
+	\label{table:Distribuzione delle ore dell'ottavo Sprint secondo ruolo e membro}
+\end{table}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=15cm]{./images_pdp/istogramma_periodo_8.png}
+    \caption{Visualizzazione dell'impegno temporale di ciascun membro nei rispettivi ruoli assegnati
+    nell'ottavo Sprint.}
+    \label{figure:Visualizzazione dell'impegno temporale di ciascun membro nei rispettivi ruoli
+    assegnati nell'ottavo Sprint}
+\end{figure}
+\subsubsubsection{Preventivo economico}
+    \begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 2.5  & 75   \\
+        Responsabile   & 6  & 120 \\
+        Progettista    & 27 & 675 \\
+        Analista       & 6 & 150 \\
+        Programmatore  & 32 & 480 \\
+        Verificatore   & 17 & 255 \\
+        \bottomrule
+        \textbf{Totale} & 90.5 & 1755
+    \end{tabular}
+    \caption{\glossterm{Preventivo} dei costi dell'ottavo Sprint secondo ruolo.}
+	\label{table:Preventivo dei costi dell'ottavo Sprint secondo ruolo}
+\end{table}
+\subsubsection{Consuntivo}
+\subsubsubsection{Consuntivo orario}
+\subsubsubsection{Consuntivo economico}
+\subsubsubsection{Rischi occorsi, impatto e loro mitigazione}
+%menzionerei il fatto che mid-sprint ci siamo resi conto che per finire il progetto in tempo avremmo dovuto dare priorità al prodotto rispetto alla documentazione. O qui o nella retrospettiva
+\subsubsection{Retrospettiva}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm]{./images_pdp/gantt8.png}
+    \caption{Diagramma di Gantt rappresentativo dell'ottavo periodo.}
+\end{figure}
+\clearpage
+\newpage
+\subsection{Nono periodo}
+\textbf{Inizio:} 2024-07-30\\
+\textbf{Fine prevista:} 2024-08-09
+\subsubsection{Pianificazione}
+\subsubsection{Rischi attesi}
+\subsubsection{Preventivo}
+\subsubsubsection{Preventivo orario}
+\subsubsection{Consuntivo}
+\subsubsubsection{Consuntivo orario}
+\subsubsubsection{Consuntivo economico}
+\subsubsection{Rischi occorsi, impatto e loro mitigazione}
+\subsubsection{Retrospettiva}
+\newpage
 \section{Organigramma} \label{sec:organigramma}
 \subsection{Componenti}
 \begin{table}[ht!]
@@ -1559,5 +1657,4 @@ Lo Sprint è stato ben pianificato per mitigare l'inevitabile rischio previsto. 
 	\caption{Nominativi e matricole NaN1fy.}
 	\label{table:Nominativi e matricole NaN1fy}
 \end{table}
-
 \end{document}
