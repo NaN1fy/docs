@@ -1,0 +1,195 @@
+% changelog: "0.0.0, 2024-08-06, prima stesura, Pietro Busato, Davide Donanzan"
+
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz, ifthen, xstring, calc, pgfkeys, pgfopts, tikz-uml}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[colorlinks=true,linkcolor=nan1fyblue,urlcolor=nan1fyblue]{hyperref}
+\usepackage{graphicx}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+\usepackage{array}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\definecolor{nan1fyblue}{RGB}{23,103,162}
+\tikzumlset{fill usecase=white}
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VALUTAZIONE DELL'UTILIZZO DI FLINK} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Guglielmo Barison}\\}}
+			{\large{\textsc{Davide Donanzan\\}}}	
+			{\large{\textsc{Pietro Busato}}}
+			
+		}
+		\vspace{8mm}
+		
+		 {\large{\textsc{Verificatori}}
+		 	\vspace{3mm}
+		 	{\\\large{\textsc{Oscar Konyeczny}\\}} 
+		 	{\large{\textsc{Linda Barbiero}\\}}
+		 	{\large{\textsc{Veronica Tecchiati}}}
+			
+		 }
+		\vspace{2mm}\vspace{2mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Valutazione dell'utilizzo di Flink\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{9.5cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{\color{black}nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]
+\hypersetup{hidelinks}
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattori} & \textbf{Verificatori} \\
+		\midrule
+            0.0.0 & 2024-04-09 & Prima stesura del file. & Davide Donanzan, Pietro Busato & - \\
+		\bottomrule
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+{\hypersetup{hidelinks} \tableofcontents}
+\clearpage
+\newpage
+{\hypersetup{hidelinks} \listoffigures}
+\newpage
+{\hypersetup{hidelinks} \listoftables}
+\newpage
+\justifying
+\section{Introduzione}\\
+Questo documento viene scritto con il fine di individuare le circostanze e le motivazioni che si celano dietro e hanno portato alla scelta, da parte del team, di 
+utilizzare come tecnologia di stream processing Apache Flink.\\
+``Valutazione dell'utilizzo di Flink" è, quindi, a puro scopo descrittivo e narrativo, e come tale si riserva di essere letto.\\\\
+\section{Stream Processing} \\
+L'implementazione all'interno del progetto di Apache Flink deriva dalla comprensione e necessità, da parte del team, di dover, in talune istanze,
+elaborare lo stream grezzo di dati ricevuto da Apache \glossterm{Kafka} tramite il mocking dei sensori di raccolta.\\
+I principali sentori di questa necessità e utilità sono emersi in due momenti distinti:
+\begin{itemize}
+    \item Durante la creazione del \glossterm{sensore} di parcheggio e di pagamento dello stesso;
+    \item Durante la realizzazione, sulla piattaforma \glossterm{Grafana}, delle \glossterm{dashboard} di Heat Index(calore percepito).
+\end{itemize}
+Nel primo caso, il team si è ritrovato a dover collegare due stream di dati indipendenti dal punto di vista della raccolta (e quindi non comunicanti),
+ma strettamente legati l'uno con l'altro, sia per la loro mera esistenza (non esiste un pagamento senza un parcheggio occupato), sia che per la coerenza
+dei dati raccolti (uno stallo occupato da una macchina per una certa ora non può essere collegato a diversi pagamenti più corti nello stesso lasso di tempo).\\
+Nel secondo caso, invece, era chiaro come risultasse concettualmente sbagliato e in parte inefficiente ricavare alcuni tipi di dati, 
+come quelli dell'Heat Index, lavorando direttamente quelli ``sporchi", ricavati dagli stream di Temperature (Temperatura) e Humidity (Umidità) tramite query sul 
+\glossterm{database} \glossterm{OLAP} \glossterm{Clickhouse}. Per quanto esso mostri vantaggi non ignorabili nell'analisi di dati in \glossterm{real-time}, per tali circostanze, interessate dal 
+progetto, l'utilizzo dello stream processing è più indicato e più efficiente sul lungo termine.\\
+Dopo doverose riflessioni dunque, il team ha deciso di comune accordo di implementare lo stream processing; sebbene esso non fosse stato un requisito
+richiesto espressamente dalla \glossterm{Proponente} alla presentazione del \glossterm{Capitolato}, l'azienda si è rivelata però interessata a tale opportiunità, suggerendo in particolare 
+l'utilizzo della tecnologia Apache Flink. 
+\section{Panoramica sulle caratteristiche di Apache Flink}\\
+\subsection{Cattarestiche favorevoli}\\
+\begin{itemize}
+	\item Appoggiato dalla Proponente;
+	\item Supporta in particolar modo gli stream di dati event-driven; 
+	\item Gestisce facilmente l'ingresso di grandi quantità di dati;
+	\item Facilmente scalabile e resistente ai failure.
+\end{itemize}
+\subsection{Cattarestiche contrarie}\\
+\begin{itemize}
+	\item Nuova tecnologia da studiare, imparare e implementare;
+	\item Previsto utilizzo di Java, non molto conosciuto dal team;
+	\item Grado di complessità elevato, amplificato dalla scarsa conoscenza precedentemente descritta;
+	\item Documentazione di supporto non completamente esaustiva e a volte insufficiente.
+\end{itemize}
+\section{implementazione di Flink}\\
+È doveroso precisare, prima di iniziare la descrizione dell'implementazione, che essa è stata conseguita utilizzando il linguaggio Java, e non tramite l'alternativa
+per \glossterm{Python} ``PyFlink", sebbene questa scelta abbia comportato un aumento di complessità rispetto allo stadio precedente del progetto.\\
+Apache Flink è stato implementato attraverso l'utilizzo di due Job (ovvero due ``elaborazioni" di stream di dati) differenti, quali:
+\begin{itemize}
+	\item HeatIndexJob;
+	\item ParkingEfficiencyJob.
+\end{itemize}
+Per il primo Job si è sostanzialmente ricreata la query inizialmente generata su Grafana, che combinava i dati dei Kafka \glossterm{topic} Temperature e Humidity attraverso 
+la formula della temperatura percepita: entrambi i topic sono stati utilizzati come Kafka Sources, immettendo i dati all'interno di Flink, elaborandoli e poi scrivendoli 
+nel nuovo topic ``Heat Index". Essi vengono poi ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. \\
+Per il secondo Job, invece, come Sources vengono utilizzati i topic ``Parking" e ``Parking Payment", e il Job si occupa di calcolare l'efficienza monetaria del parcheggio, calcolata tramite 
+la formula Total_Revenue / Total_Arrivals * Average_Price. Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. 
+
+\subsection{Conclusioni}
+Alla luce delle cause, circostanze e discussioni rilevate finora, nonchè valutate le caratteristiche e ponderato il suggerimento proposto da parte della Proponente, il team ha 
+deciso di optare per la tecnologia Apache Flink per l'implementazione dello stream processing all'interno del progetto ``SyncCity: Smart Monitoring System".
