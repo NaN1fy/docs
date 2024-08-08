@@ -1,4 +1,4 @@
-% changelog: "1.1.0, 2024-08-08, Correzioni in seguito alla valutazione RTB"
+% changelog: "1.1.1, 2024-08-08, Stesura caso d'uso 3.12 e aggiunta requisiti, Veronica Tecchiati"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -89,7 +89,8 @@
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Guglielmo Barison}\\}}
-			{\large{\textsc{Davide Donanzan\\}}}	
+			{\large{\textsc{Davide Donanzan\\}}}
+   {\large{\textsc{Oscar Konieczny}\\}}
 			{\large{\textsc{Veronica Tecchiati}}}
 			
 		}
@@ -99,7 +100,8 @@
 			\vspace{3mm}
 			{\\\large{\textsc{Oscar Konieczny}\\}} 
 			{\large{\textsc{Pietro Busato}\\}}
-			{\large{\textsc{Linda Barbiero}}}
+			{\large{\textsc{Linda Barbiero}\\}}
+   {\large{\textsc{Veronica Tecchiati}}}
 			
 		}
 		\vspace{2mm}\vspace{2mm}
@@ -111,7 +113,7 @@
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{9.5cm}
+	\vspace{8.5cm}
 	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{\color{black}nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
@@ -122,7 +124,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-			1.1.0 & 2024-08-08 & Correzioni in seguito alla valutazione RTB. & Oscar Konieczny & -
+                1.1.1 & 2024-08-08 & Stesura caso d'uso 3.12 e aggiunta requisiti. & Veronica Tecchiati & - \\\\
+			1.1.0 & 2024-08-08 & Correzioni in seguito alla valutazione RTB. & Oscar Konieczny & Veronica Tecchiati
  		    \\ % spazio tra le righe
 		\bottomrule
 	\end{tabular}
@@ -231,6 +234,7 @@ Il dominio tecnologico dell'applicativo comprende:
 	\setlength\itemsep{0em}
   \item \textbf{\glossterm{Python}: }attraverso il quale si simula l'informazione fornita dai sensori;
   \item \textbf{\glossterm{Apache Kafka}:} per gestire il gathering dei dati da più fonti;
+  \item \textbf{\glossterm{Apache Flink}:} per realizzare lo stream processing;
   \item \textbf{\glossterm{ClickHouse}:} \glossterm{database} \glossterm{OLAP} per la persistenza dei dati ottenuti;
   \item \textbf{\glossterm{Grafana}:} piattaforma per monitorare e analizzare i dati in tempo reale attraverso la loro rappresentazione grafica.
 \end{itemize}
@@ -962,7 +966,21 @@ tabellare per disponibilità colonnine di ricarica}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare lo stato dei pagamenti delle colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-
+\subsubsection*{UC-3.12: Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.12: Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
+        relativa al dominio urbanistico.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra l'efficienza monetaria del parcheggio, rappresentata mediante un valore percentuale (\%). Essa viene calcolata dividendo il guadagno totale effettivo per il prezzo medio di una sosta moltiplicato per il numero di soste effettuate;
+    \item \textbf{Scenario principale:} 
+    \begin{enumerate}
+    \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L’amministratore pubblico seleziona la visualizzazione della \glossterm{dashboard} relativa al dominio urbanistico;
+    \item L’amministratore pubblico seleziona la visualizzazione del pannello \glossterm{Gauge} per l'efficienza del parcheggio.
+    \end{enumerate}
+    \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per verificare l'efficienza monetaria di un parcheggio. Questo consente di analizzare l'utilizzo da parte dei cittadini del servizio offerto, nell'ottica di migliorarne la qualità e massimizzare il ricavo totale.
+\end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
@@ -990,11 +1008,10 @@ tabellare per disponibilità colonnine di ricarica}
     \caption{Prima parte Sottocasi UC-3: Visualizzazione \glossterm{dashboard} urbanistica.}
     \label{fig:Prima parte Sottocasi UC-3: Visualizzazione dashboard urbanistica}
 \end{figure}
-
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
-            \umlactor[x=0, y=-5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
+            \umlactor[x=0, y=-6.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
             \begin{umlsystem}[x=9, y=0]{UC-3 Visualizzazione dashboard urbanistica}
                 \umlusecase[x=0, y=-0, width=100, name=UC-charge-tab]{UC-3.7 \\ Visualizzazione pannello tabellare per informazioni su colonnine di ricarica}
 
@@ -1002,15 +1019,18 @@ tabellare per disponibilità colonnine di ricarica}
 
                 \umlusecase[x=0, y=-5, width=100, name=UC-paycharge]{UC-3.9 \\ Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
                 
-                \umlusecase[x=0, y=-7.5, width=100, name=UC-paypark2]{UC-3.10 \\ Visualizzazione pannello \glossterm{Gauge} per dati pagamento parcheggio }
+                \umlusecase[x=0, y=-7.68, width=100, name=UC-paypark2]{UC-3.10 \\ Visualizzazione pannello \glossterm{Gauge} per dati pagamento parcheggio }
 
-                \umlusecase[x=0, y=-10, width=100, name=UC-paycharge2]{UC-3.11 \\ Visualizzazione pannello \glossterm{Gauge} per dati pagamento colonnine di ricarica }
+                \umlusecase[x=0, y=-10.35, width=100, name=UC-paycharge2]{UC-3.11 \\ Visualizzazione pannello \glossterm{Gauge} per dati pagamento colonnine di ricarica }
+
+                \umlusecase[x=0, y=-13, width=100, name=UC-parkefficiency]{UC-3.12 \\ Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-charge-tab}
                 \umlassoc{Amministratore pubblico}{UC-cons}
                 \umlassoc{Amministratore pubblico}{UC-paycharge}
                 \umlassoc{Amministratore pubblico}{UC-paypark2}
                 \umlassoc{Amministratore pubblico}{UC-paycharge2}
+                \umlassoc{Amministratore pubblico}{UC-parkefficiency}
         \end{tikzpicture}
     \caption{Seconda parte Sottocasi UC-3: Visualizzazione \glossterm{dashboard} urbanistica.}
     \label{fig:Seconda parte Sottocasi UC-3: Visualizzazione dashboard urbanistica}
@@ -1668,35 +1688,36 @@ Questa tipologia di requisiti definisce le \glossterm{funzionalità} del \glosst
             RF-43 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le notifiche di pagamento relative all'utilizzo delle colonnine di ricarica. & UC-3.9 \\ \hline
             RF-44 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche relative ai pagamenti dovuti a parcheggi. & UC-3.10 \\ \hline
             RF-45 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche relative ai pagamenti dovuti a colonnine di ricarica. & UC-3.11 \\ \hline
-            RF-46 & Desiderabile & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al superamento delle soglie. & UC-4 \\ \hline
-            RF-47 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento delle soglie di temperatura. & UC-4.1 \\ \hline
-            RF-48 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di precipitazioni. & UC-4.2 \\ \hline
-            RF-49 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di inquinamento dell'aria. & UC-4.3 \\ \hline
-            RF-50 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di livello dell'acqua. & UC-4.4 \\ \hline
-            RF-51 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di riempimento dei conferitori nelle isole ecologiche. & UC-4.5 \\ \hline
-            RF-52 & Obbligatorio & L'utente deve poter visualizzare un messaggio di errore qualora non sia possibile reperire i dati o vi sia un malfunzionamento nel \glossterm{sistema}. & UC-5 \\ \hline
-            RF-53 & Obbligatorio & L'utente deve poter applicare dei filtri per escludere alcuni dati dalla visualizzazione, secondo determinati criteri. & UC-6 \\ \hline
-            RF-54 & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati provenienti da alcune specifiche tipologie di sensori. & UC-6.1 \\ \hline
-            RF-55 & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati misurati in un determinato intervallo temporale. & UC-6.2 \\ \hline
-            RF-56 & Obbligatorio & L'utente deve poter rimuovere i filtri applicati in precedenza in modo da non escludere alcun dato dalla visualizzazione. & UC-7 \\ \hline
-            RF-57 & Desiderabile & L'utente deve poter modificare il layout dei \glossterm{widget} a proprio piacimento. & UC-8 \\ \hline
-            RF-58 & Desiderabile & L'utente deve poter ridimensionare i \glossterm{widget} a proprio piacimento. & UC-8.1 \\ \hline
-            RF-59 & Desiderabile & L'utente deve poter spostare i \glossterm{widget} a proprio piacimento. & UC-8.2 \\ \hline
-            RF-60 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati misurati, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9 \\ \hline
-            RF-61 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi alla temperatura, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.1 \\ \hline
-            RF-62 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi all'umidità, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.2 \\ \hline
-            RF-63 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi alle precipitazioni, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.3 \\ \hline
-            RF-64 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi all'inquinamento atmosferico, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.4 \\ \hline
-            RF-65 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi al livello dell'acqua, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.5 \\ \hline
-            RF-66 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi allo stato di occupazione dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.6 \\ \hline
-            RF-67 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai pagamenti dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.7 \\ \hline
-            RF-68 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai guasti elettrici, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.8 \\ \hline
-            RF-69 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi al livello di riempimento dei conferitori nelle isole ecologiche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.9 \\ \hline
-            RF-70 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi allo stato di occupazione delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.10 \\ \hline
-            RF-71 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai consumi di elettricità delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.11 \\ \hline
-            RF-72 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai pagamenti delle ricariche effettuate mediante colonnine elettriche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.12 \\ \hline
-            RF-73 & Obbligatorio & Il \glossterm{sistema} consentire la correlazione di dati provenienti da sensori diversi. & \glossterm{Proponente} \\ \hline
-            RF-74 & Opzionale & Il \glossterm{sistema} consentire la previsione di eventi futuri attraverso l'analisi dei dati provenienti dai sensori. & \glossterm{Proponente} \\ \hline
+            RF-46 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'efficienza monetaria dei parcheggi. & UC-3.12 \\ \hline
+            RF-47 & Desiderabile & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al superamento delle soglie. & UC-4 \\ \hline
+            RF-48 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento delle soglie di temperatura. & UC-4.1 \\ \hline
+            RF-49 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di precipitazioni. & UC-4.2 \\ \hline
+            RF-50 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di inquinamento dell'aria. & UC-4.3 \\ \hline
+            RF-51 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di livello dell'acqua. & UC-4.4 \\ \hline
+            RF-52 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di riempimento dei conferitori nelle isole ecologiche. & UC-4.5 \\ \hline
+            RF-53 & Obbligatorio & L'utente deve poter visualizzare un messaggio di errore qualora non sia possibile reperire i dati o vi sia un malfunzionamento nel \glossterm{sistema}. & UC-5 \\ \hline
+            RF-54 & Obbligatorio & L'utente deve poter applicare dei filtri per escludere alcuni dati dalla visualizzazione, secondo determinati criteri. & UC-6 \\ \hline
+            RF-55 & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati provenienti da alcune specifiche tipologie di sensori. & UC-6.1 \\ \hline
+            RF-56 & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati misurati in un determinato intervallo temporale. & UC-6.2 \\ \hline
+            RF-57 & Obbligatorio & L'utente deve poter rimuovere i filtri applicati in precedenza in modo da non escludere alcun dato dalla visualizzazione. & UC-7 \\ \hline
+            RF-58 & Desiderabile & L'utente deve poter modificare il layout dei \glossterm{widget} a proprio piacimento. & UC-8 \\ \hline
+            RF-59 & Desiderabile & L'utente deve poter ridimensionare i \glossterm{widget} a proprio piacimento. & UC-8.1 \\ \hline
+            RF-60 & Desiderabile & L'utente deve poter spostare i \glossterm{widget} a proprio piacimento. & UC-8.2 \\ \hline
+            RF-61 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati misurati, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9 \\ \hline
+            RF-62 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi alla temperatura, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.1 \\ \hline
+            RF-63 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi all'umidità, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.2 \\ \hline
+            RF-64 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi alle precipitazioni, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.3 \\ \hline
+            RF-65 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi all'inquinamento atmosferico, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.4 \\ \hline
+            RF-66 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi al livello dell'acqua, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.5 \\ \hline
+            RF-67 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi allo stato di occupazione dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.6 \\ \hline
+            RF-68 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai pagamenti dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.7 \\ \hline
+            RF-69 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai guasti elettrici, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.8 \\ \hline
+            RF-70 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi al livello di riempimento dei conferitori nelle isole ecologiche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.9 \\ \hline
+            RF-71 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi allo stato di occupazione delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.10 \\ \hline
+            RF-72 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai consumi di elettricità delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.11 \\ \hline
+            RF-73 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai pagamenti delle ricariche effettuate mediante colonnine elettriche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.12 \\ \hline
+            RF-74 & Obbligatorio & Il \glossterm{sistema} consentire la correlazione di dati provenienti da sensori diversi. & \glossterm{Proponente} \\ \hline
+            RF-75 & Opzionale & Il \glossterm{sistema} consentire la previsione di eventi futuri attraverso l'analisi dei dati provenienti dai sensori. & \glossterm{Proponente} \\ \hline
 \end{longtable}
 \clearpage
 \subsection{Requisiti qualitativi}
@@ -1717,9 +1738,11 @@ Di seguito sono elencati i requisiti qualitativi individuati:
             RQ-2 & Obbligatorio & Devono essere rispettate le norme specificate nel documento \textit{Norme di Progetto v1.0.0}. & \textit{Norme di Progetto v1.0.0} \\ \hline
             RQ-3 & Obbligatorio & La copertura di test deve essere almeno dell'80\% e deve essere adeguatamente documentata. & \glossterm{Capitolato} \\ \hline
             RQ-4 & Obbligatorio & La \glossterm{Proponente} deve essere in grado di accedere alla \glossterm{repository} \glossterm{GitHub} del prodotto ``SyncCity''. & \glossterm{Proponente} \\ \hline
-            RQ-5 & Obbligatorio & Deve essere fornita la documentazione relativa al corretto funzionamento dei simulatori di sensori. & \glossterm{Capitolato} \\ \hline
-            RQ-6 & Obbligatorio & Le scelte implementative e progettuali devono essere motivate ed adeguatamente documentate. & \glossterm{Capitolato} \\ \hline
-            RQ-7 & Obbligatorio & Gli eventuali problemi aperti e le soluzioni da esplorare devono essere adeguatamente riportati in un apposito documento. & \glossterm{Capitolato} \\ \hline
+            RQ-5 & Obbligatorio & Il corretto funzionamento dei simulatori di sensori deve essere adeguatamente documentato. Esso deve essere descritto in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
+            RQ-6 & Obbligatorio & Le scelte implementative e progettuali devono essere motivate ed adeguatamente documentate. Esse dovranno essere descritte in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
+            RQ-7 & Obbligatorio & I problemi aperti e le eventuali soluzioni da esplorare devono essere adeguatamente documentati. Essi dovranno essere descritti in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
+            RQ-8 & Obbligatorio & Deve essere fornito il documento \textit{Manuale Utente} che illustra le funzionalità offerte dal \glossterm{sistema} e le modalità di fruizione delle stesse. & \glossterm{Capitolato} \\ \hline
+            RQ-9 & Obbligatorio & Deve essere fornito il documento \textit{Specifica Tecnica} che illustra le scelte architetturali e progettuali effettuate. & \glossterm{Capitolato} \\ \hline            
 \end{longtable}
 \newpage
 \subsection{Requisiti di vincolo}
@@ -1736,12 +1759,17 @@ Di seguito sono elencati i requisiti di vincolo individuati:
     \caption{Requisiti di vincolo.}
 	\label{table:Requisiti di vincolo}
     \endlastfoot
-            RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un \glossterm{database \glossterm{OLAP}} colonnare come \glossterm{ClickHouse}. & \glossterm{Capitolato} \\ \hline
+            RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un \glossterm{database} \glossterm{OLAP} colonnare come \glossterm{ClickHouse}. & \glossterm{Capitolato} \\ \hline
             RV-2 & Obbligatorio & Lo stream di dati deve essere gestito mediante un \glossterm{broker} come Apache \glossterm{Kafka}. & \glossterm{Capitolato} \\ \hline
             RV-3 & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come \glossterm{Grafana}. & \glossterm{Capitolato} \\ \hline
-            RV-4 & Obbligatorio & Il \glossterm{sistema} deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & \glossterm{Proponente} \\ \hline
-            RV-5 & Obbligatorio & I dati generati dal simulatore devono essere in formato \glossterm{JSON}. & \textit{Norme di Progetto v1.0.0} \\ \hline
+            RV-4 & Obbligatorio & Lo stream processing deve essere realizzato mediante la tecnologia Apache Kafka. & Decisione interna \\ \hline
+            RV-5 & Obbligatorio & Il \glossterm{sistema} deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & \glossterm{Proponente} \\ \hline
+            RV-6 & Obbligatorio & I dati generati dal simulatore devono essere in formato \glossterm{JSON}. & \textit{Norme di Progetto v1.0.0} \\ \hline
+            RV-7 & Obbligatorio & Il \glossterm{sistema} deve eseguire correttamente su dispositivi dotati di processore a 64 bit Quad-Core da 2.4 GHz, 6 GB di RAM, 4 GB di spazio di archiviazione libero su disco e una connessione ad internet stabile. & \glossterm{Proponente} \\ \hline
+            RV-8 & Obbligatorio & Il \glossterm{sistema} deve essere compatibile con le versioni più recenti dei browser web più comuni. Al momento della stesura del presente documento, sono supportate le seguenti versioni: Google Chrome v124, Mozilla Firefox v125, Microsoft Edge v123 e Safari v17.4. & \glossterm{Capitolato} \\ \hline
+            RV-9 & Obbligatorio & Il \glossterm{sistema} deve essere compatibile con le seguenti versioni dei più diffusi sistemi operativi: Windows 10 o 11 compatibile con WSL 2, MacOS 11.0 Big Sur, Ubuntu 22.94, Debian 12, Fedora 38, RHEL 8. & \glossterm{Capitolato} \\ \hline
 \end{longtable}
+\clearpage
 \subsection{Requisiti prestazionali}
 Questa tipologia di requisiti specifica le prestazioni che il \glossterm{sistema} deve avere. \\
 Di seguito sono elencati i requisiti prestazionali individuati:
@@ -1758,7 +1786,6 @@ Di seguito sono elencati i requisiti prestazionali individuati:
   \endlastfoot
             RP-1 & Obbligatorio & Il \glossterm{sistema} deve gestire un carico di dati in entrata non inferiore a 50 dati al secondo. & \glossterm{Proponente} \\ \hline
             RP-2 & Obbligatorio & Il \glossterm{sistema} deve avere un tempo di elaborazione massimo di 10 secondi, dal momento in cui il dato viene inserito a quando viene effettivamente visualizzato. Non viene considerata la latenza di rete. & \glossterm{Proponente} \\ \hline
-            RP-3 & Obbligatorio & Il \glossterm{sistema} deve essere computazionalmente gestibile da comuni dispositivi adibiti ad uso personale. & \glossterm{Proponente} \\ \hline
 \end{longtable}
 \subsection{Tracciamento} \label{sec:track}
 \subsubsection{Requisito - Fonte}
@@ -1818,35 +1845,36 @@ Di seguito sono elencati i requisiti prestazionali individuati:
             RF-43 & UC-3.9 \\ \hline
             RF-44 & UC-3.10 \\ \hline
             RF-45 & UC-3.11 \\ \hline
-            RF-46 & UC-4 \\ \hline
-            RF-47 & UC-4.1 \\ \hline
-            RF-48 & UC-4.2 \\ \hline
-            RF-49 & UC-4.3 \\ \hline
-            RF-50 & UC-4.4 \\ \hline
-            RF-51 & UC-4.5 \\ \hline
-            RF-52 & UC-5 \\ \hline
-            RF-53 & UC-6 \\ \hline
-            RF-54 & UC-6.1 \\ \hline
-            RF-55 & UC-6.2 \\ \hline
-            RF-56 & UC-7 \\ \hline
-            RF-57 & UC-8 \\ \hline
-            RF-58 & UC-8.1 \\ \hline
-            RF-59 & UC-8.2 \\ \hline
-            RF-60 & UC-9 \\ \hline
-            RF-61 & UC-9.1 \\ \hline
-            RF-62 & UC-9.2 \\ \hline
-            RF-63 & UC-9.3 \\ \hline
-            RF-64 & UC-9.4 \\ \hline
-            RF-65 & UC-9.5 \\ \hline
-            RF-66 & UC-9.6 \\ \hline
-            RF-67 & UC-9.7 \\ \hline
-            RF-68 & UC-9.8 \\ \hline
-            RF-69 & UC-9.9 \\ \hline
-            RF-70 & UC-9.10 \\ \hline
-            RF-71 & UC-9.11 \\ \hline
-            RF-72 & UC-9.12 \\ \hline
-            RF-73 & \glossterm{Proponente} \\ \hline
+            RF-46 & UC-3.12 \\ \hline
+            RF-47 & UC-4 \\ \hline
+            RF-48 & UC-4.1 \\ \hline
+            RF-49 & UC-4.2 \\ \hline
+            RF-50 & UC-4.3 \\ \hline
+            RF-51 & UC-4.4 \\ \hline
+            RF-52 & UC-4.5 \\ \hline
+            RF-53 & UC-5 \\ \hline
+            RF-54 & UC-6 \\ \hline
+            RF-55 & UC-6.1 \\ \hline
+            RF-56 & UC-6.2 \\ \hline
+            RF-57 & UC-7 \\ \hline
+            RF-58 & UC-8 \\ \hline
+            RF-59 & UC-8.1 \\ \hline
+            RF-60 & UC-8.2 \\ \hline
+            RF-61 & UC-9 \\ \hline
+            RF-62 & UC-9.1 \\ \hline
+            RF-63 & UC-9.2 \\ \hline
+            RF-64 & UC-9.3 \\ \hline
+            RF-65 & UC-9.4 \\ \hline
+            RF-66 & UC-9.5 \\ \hline
+            RF-67 & UC-9.6 \\ \hline
+            RF-68 & UC-9.7 \\ \hline
+            RF-69 & UC-9.8 \\ \hline
+            RF-70 & UC-9.9 \\ \hline
+            RF-71 & UC-9.10 \\ \hline
+            RF-72 & UC-9.11 \\ \hline
+            RF-73 & UC-9.12 \\ \hline
             RF-74 & \glossterm{Proponente} \\ \hline
+            RF-75 & \glossterm{Proponente} \\ \hline
             RQ-1 & \textit{Norme di Progetto v1.0.0} \\ \hline
             RQ-2 & \textit{Norme di Progetto v1.0.0} \\ \hline
             RQ-3 & \glossterm{Capitolato} \\ \hline
@@ -1854,15 +1882,21 @@ Di seguito sono elencati i requisiti prestazionali individuati:
             RQ-5 & \glossterm{Capitolato} \\ \hline
             RQ-6 & \glossterm{Capitolato} \\ \hline
             RQ-7 & \glossterm{Capitolato} \\ \hline
+            RQ-8 & \glossterm{Capitolato} \\ \hline
+            RQ-9 & \glossterm{Capitolato} \\ \hline
             RV-1 & \glossterm{Capitolato} \\ \hline
             RV-2 & \glossterm{Capitolato} \\ \hline
             RV-3 & \glossterm{Capitolato} \\ \hline
-            RV-4 & \glossterm{Proponente} \\ \hline
-            RV-5 & \textit{Norme di Progetto v1.0.0} \\ \hline
+            RV-4 & \glossterm{Decisione interna} \\ \hline
+            RV-5 & \textit{Proponente} \\ \hline
+            RV-6 & \glossterm{Norme di Progetto v1.0.0} \\ \hline
+            RV-7 & \glossterm{Proponente} \\ \hline
+            RV-8 & \glossterm{Capitolato} \\ \hline
+            RV-9 & \textit{Capitolato} \\ \hline
             RP-1 & \glossterm{Proponente} \\ \hline
             RP-2 & \glossterm{Proponente} \\ \hline
-            RP-3 & \glossterm{Proponente} \\ \hline
 \end{longtable}
+\clearpage
 \subsubsection{Fonte - Requisiti}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{7cm}|}
@@ -1875,9 +1909,9 @@ Di seguito sono elencati i requisiti prestazionali individuati:
   \caption{Tracciamento fonte - requisito.}
 	\label{table:Tracciamento requisito - fonte}
  \endlastfoot
-            \glossterm{Capitolato} & RF-1, RF-2, RF-3, RF-4, RF-5, RF-6, RF-7, RF-8, RF-9, RF-11, RF-12, RF-13, RF-14, RF-15, RF-18, RQ-3, RQ-5, RQ-6, RQ-7, RV-1, RV-2, RV-3 \\ \hline
-        \textit{Norme di Progetto v1.0.0} & RQ-1, RQ-2, RV-5 \\ \hline
-            \glossterm{Proponente} & RF-10, RF-35, RF-73, RQ-4, RV-4, RP-1, RP-2, RP-3 \\ \hline
+            \glossterm{Capitolato} & RF-1, RF-2, RF-3, RF-4, RF-5, RF-6, RF-7, RF-8, RF-9, RF-11, RF-12, RF-13, RF-14, RF-15, RF-18, RQ-3, RQ-5, RQ-6, RQ-7, RV-1, RV-2, RV-3, RV-8, RV-9 \\ \hline
+        \textit{Norme di Progetto v1.0.0} & RQ-1, RQ-2, RV-6 \\ \hline
+            \glossterm{Proponente} & RF-10, RF-35, RF-74, RF-75, RQ-4, RV-5, RV-7, RP-1, RP-2 \\ \hline
             UC-0 & RF-16 \\ \hline
             UC-1 & RF-17 \\ \hline
             UC-1.1 & RF-18 \\ \hline
@@ -1908,33 +1942,34 @@ Di seguito sono elencati i requisiti prestazionali individuati:
             UC-3.9 & RF-43\\ \hline
             UC-3.10 & RF-44\\ \hline
             UC-3.11 & RF-45\\ \hline
-            UC-4 & RF-46\\ \hline
-            UC-4.1 & RF-47\\ \hline
-            UC-4.2 & RF-48\\ \hline
-            UC-4.3 & RF-49\\ \hline
-            UC-4.4 & RF-50\\ \hline
-            UC-4.5 & RF-51\\ \hline
-            UC-5 & RF-52\\ \hline
-            UC-6 & RF-53\\ \hline
-            UC-6.1 & RF-54\\ \hline
-            UC-6.2 & RF-55\\ \hline
-            UC-7 & RF-56\\ \hline
-            UC-8 & RF-57\\ \hline
-            UC-8.1 & RF-58\\ \hline
-            UC-8.2 & RF-59\\ \hline
-            UC-9 & RF-60\\ \hline
-            UC-9.1 & RF-61\\ \hline
-            UC-9.2 & RF-62\\ \hline
-            UC-9.3 & RF-63\\ \hline
-            UC-9.4 & RF-64\\ \hline
-            UC-9.5 & RF-65\\ \hline
-            UC-9.6 & RF-66\\ \hline
-            UC-9.7 & RF-67\\ \hline
-            UC-9.8 & RF-68\\ \hline
-            UC-9.9 & RF-69\\ \hline
-            UC-9.10 & RF-70\\ \hline
-            UC-9.11 & RF-71\\ \hline
-            UC-9.12 & RF-72\\ \hline
+            UC-3.12 & RF-46\\ \hline
+            UC-4 & RF-47\\ \hline
+            UC-4.1 & RF-48\\ \hline
+            UC-4.2 & RF-49\\ \hline
+            UC-4.3 & RF-50\\ \hline
+            UC-4.4 & RF-51\\ \hline
+            UC-4.5 & RF-52\\ \hline
+            UC-5 & RF-53\\ \hline
+            UC-6 & RF-54\\ \hline
+            UC-6.1 & RF-55\\ \hline
+            UC-6.2 & RF-56\\ \hline
+            UC-7 & RF-57\\ \hline
+            UC-8 & RF-58\\ \hline
+            UC-8.1 & RF-59\\ \hline
+            UC-8.2 & RF-60\\ \hline
+            UC-9 & RF-61\\ \hline
+            UC-9.1 & RF-62\\ \hline
+            UC-9.2 & RF-63\\ \hline
+            UC-9.3 & RF-64\\ \hline
+            UC-9.4 & RF-65\\ \hline
+            UC-9.5 & RF-66\\ \hline
+            UC-9.6 & RF-67\\ \hline
+            UC-9.7 & RF-68\\ \hline
+            UC-9.8 & RF-69\\ \hline
+            UC-9.9 & RF-70\\ \hline
+            UC-9.10 & RF-71\\ \hline
+            UC-9.11 & RF-72\\ \hline
+            UC-9.12 & RF-73\\ \hline
 \end{longtable}
 \subsection{Riepilogo} \label{sec:recap}
 \rowcolors{2}{gray!20}{white}
@@ -1946,10 +1981,10 @@ Di seguito sono elencati i requisiti prestazionali individuati:
 		\hline
 		\textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Desiderabili} & \textbf{Opzionali} & \textbf{Totale}\\
 		\hline
-            Funzionali & 54 & 19 & 1 & 74 \\ \hline
-            Qualitativi & 7 & - & - & 7 \\ \hline
-            Di vincolo & 5 & - & - & 5 \\ \hline
-            Prestazionali & 3 & - & - & 3 \\ \hline
+            Funzionali & 55 & 19 & 1 & 75 \\ \hline
+            Qualitativi & 9 & - & - & 9 \\ \hline
+            Di vincolo & 9 & - & - & 9 \\ \hline
+            Prestazionali & 2 & - & - & 2 \\ \hline
 	\end{tabular}
         \caption{Riepilogo dei requisiti.}
 	\label{table:Riepilogo dei requisiti}
