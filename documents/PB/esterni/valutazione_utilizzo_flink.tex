@@ -1,4 +1,4 @@
-% changelog: "0.0.0, 2024-08-06, Prima stesura del file"
+% changelog: "1.0.0, 2024-08-09, Approvazione per PB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -125,7 +125,8 @@
 		\toprule
 		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Redattori} & \textbf{Verificatori} \\
 		\midrule
-            0.0.0 & 2024-04-09 & Prima stesura del file. & Davide Donanzan, Pietro Busato & Oscar Konieczny, Veronica Tecchiati \\
+            1.0.0 & 2024-08-09 & \textbf{Approvazione per PB} & & \\\\
+            0.0.0 & 2024-08-09 & Prima stesura del file. & Davide Donanzan, Pietro Busato & Oscar Konieczny, Veronica Tecchiati \\
 		\bottomrule
 	\end{tabular}
 	\caption{Registro delle modifiche.}\label{table:Registro delle modifiche}
@@ -183,7 +184,11 @@ Per il primo Job si è sostanzialmente ricreata la query inizialmente generata s
 la formula della temperatura percepita: entrambi i topic sono stati utilizzati come Kafka Sources, immettendo i dati all'interno di Flink, elaborandoli e poi scrivendoli 
 nel nuovo topic ``Heat Index". Essi vengono poi ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. \\
 Per il secondo Job, invece, come Sources vengono utilizzati i topic ``Parking" e ``Parking Payment", e il Job si occupa di calcolare l'efficienza monetaria del parcheggio, calcolata tramite 
-la formula Total\textunderscore Revenue / Total\textunderscore Arrivals * Average\textunderscore Price. Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. 
+la formula:
+\begin{center}
+	$\frac{Total\_Revenue}{Total\_Arrivals * Average\_Price}$.
+\end{center}
+Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. 
 
 \subsection{Conclusioni}
 Alla luce delle cause, circostanze e discussioni rilevate finora, nonchè valutate le caratteristiche e ponderato il suggerimento proposto da parte della \glossterm{Proponente}, il team ha 
