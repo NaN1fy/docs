@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-06-23, Davide Donanzan, Aggiornamento metriche"
+% changelog: "1.1.0, 2024-06-23, Davide Donanzan, Aggiornamento metriche"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -126,9 +126,23 @@
 	\centering
 	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
+		\midrule
+        1.1.0 & 2024-08-09 & Aggiornamento metriche e test d'accettazione. & Davide Donanzan & Pietro Busato \\\\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption*{Tabella: Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-  		  1.0.0 & 2024-06-23 & \textbf{Approvazione per RTB} & & \\\\
+  		1.0.0 & 2024-06-23 & \textbf{Approvazione per RTB} & & \\\\
         0.9.4 & 2024-06-23 & Aggiornamento metriche. & Davide Donanzan & Redattore \\\\
         0.9.3 & 2024-06-03 & Verifica completa con piccole modifiche. & Pietro Busato & Verificatore \\\\
         0.9.2 & 2024-06-01 & Verifica completa con piccole modifiche. & Linda Barbiero & Verificatore \\\\
@@ -438,7 +452,7 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     specifico, si esaminano i metodi \verb|start_all| e \verb|stop_all|.  & V \\
     \hline
 
-    TU-03 & Verificare che la classe \verb|SimulatorThread| adoperi correttamente. & NI \\
+    TU-03 & Verificare che la classe \verb|SimulatorThread| adoperi correttamente. & V \\
     \hline
 
     TU-04 & Verificare che la classe \verb|TemperatureSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
@@ -447,13 +461,13 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     TU-05 & Verificare che la classe \verb|HumiditySensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
 
-    TU-06 & Verificare che la classe \verb|PrecipitationIntesitySensor| restituisca la stringa in formato \glossterm{JSON} attesa. & NI \\
+    TU-06 & Verificare che la classe \verb|PrecipitationIntesitySensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
 
-    TU-07 & Verificare che la classe \verb|AirPollutionSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & NI \\
+    TU-07 & Verificare che la classe \verb|AirPollutionSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
 
-    TU-08 & Verificare che la classe \verb|WaterLevelSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & NI \\
+    TU-08 & Verificare che la classe \verb|WaterLevelSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
 
     TU-09 & Verificare che la classe \verb|ParkingSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
@@ -462,19 +476,19 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     TU-10 & Verificare che la classe \verb|PaymentParkingSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
 
-    TU-11 & Verificare che la classe \verb|ElectricalFailureSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & NI \\
+    TU-11 & Verificare che la classe \verb|ElectricalFailureSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
     
-    TU-12 & Verificare che la classe \verb|WasteFillingSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & NI \\
+    TU-12 & Verificare che la classe \verb|WasteFillingSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
 
-    TU-13 & Verificare che la classe \verb|ChargingStationSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & NI \\
+    TU-13 & Verificare che la classe \verb|ChargingStationSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
 
-    TU-14 & Verificare che la classe \verb|ChargeConsumptionSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & NI \\
+    TU-14 & Verificare che la classe \verb|ChargeConsumptionSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
 
-    TU-15 & Verificare che la classe \verb|PaymentStationSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & NI \\
+    TU-15 & Verificare che la classe \verb|PaymentStationSensor| restituisca la stringa in formato \glossterm{JSON} attesa. & V \\
     \hline
     
     TU-16 & Verificare che le istanze della classe \verb|KafkaProducer| adoperino nelle modalità attese nella produzione di dati, sia nel caso di success che nel caso di failure. & V \\
@@ -518,13 +532,13 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     TI-02 & Verificare la persistenza dei dati della classe \verb|HumiditySensor| nel \glossterm{database} \glossterm{ClickHouse}.  & V \\
     \hline
     
-    TI-03 & Verificare la persistenza dei dati della classe \verb|PrecipitationIntensitySensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    TI-03 & Verificare la persistenza dei dati della classe \verb|PrecipitationIntensitySensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
 
-    TI-04 & Verificare la persistenza dei dati della classe \verb|AirPollutionSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    TI-04 & Verificare la persistenza dei dati della classe \verb|AirPollutionSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
 
-    TI-05 & Verificare la persistenza dei dati della classe \verb|WaterLevelSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    TI-05 & Verificare la persistenza dei dati della classe \verb|WaterLevelSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
 
     TI-07 & Verificare la persistenza dei dati della classe \verb|ParkingSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
@@ -533,19 +547,19 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     TI-08 & Verificare la persistenza dei dati della classe \verb|PaymentParkingSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
     
-    TI-09 & Verificare la persistenza dei dati della classe \verb|ElectricalFailureSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    TI-09 & Verificare la persistenza dei dati della classe \verb|ElectricalFailureSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
 
-    TI-10 & Verificare la persistenza dei dati della classe \verb|WasteFillingSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    TI-10 & Verificare la persistenza dei dati della classe \verb|WasteFillingSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
     
-    TI-11 & Verificare la persistenza dei dati della classe \verb|ChargingStationSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    TI-11 & Verificare la persistenza dei dati della classe \verb|ChargingStationSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
 
-    TI-12 & Verificare la persistenza dei dati della classe \verb|ChargeConsumptionSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    TI-12 & Verificare la persistenza dei dati della classe \verb|ChargeConsumptionSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
 
-    TI-13 & Verificare la persistenza dei dati della classe \verb|PaymentStationSensor| nel \glossterm{database} \glossterm{ClickHouse}. & NI \\
+    TI-13 & Verificare la persistenza dei dati della classe \verb|PaymentStationSensor| nel \glossterm{database} \glossterm{ClickHouse}. & V \\
     \hline
         
 \end{longtable}
@@ -563,214 +577,214 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     \caption{Tabella dei \glossterm{test} di \glossterm{sistema}.} 
     \label{table:Tabella dei test di sistema}
     \endlastfoot 
-    TS-01 & Verificare che l'amministratore pubblico possa accedere all'applicativo
-    senza dover effettuare l'autenticazione. & NV\\
+    TS-01 & Verificare che l'amministratore pubblico possa visualizzare un menù di selezione delle
+    \glossterm{dashboard}, che permetta a sua volta di selezionare una dashboard tra: Sensori, Ambientale, Urbanistica e Soglie. & V\\
     \hline
-    TS-02 & Verificare che l'amministratore pubblico possa visualizzare un menù di selezione delle
-    \glossterm{dashboard}, che permetta a sua volta di selezionare una dashboard tra: Sensori, Ambientale, Urbanistica e Soglie. & NV\\
-    \hline
-    TS-03 & Verificare che l'amministratore pubblico possa monitorare i dati
+    TS-02 & Verificare che l'amministratore pubblico possa monitorare i dati
     provenienti dai sensori relativi alla \glossterm{dashboard} Sensori.
-    & NV \\
+    & V \\
     \hline
-    TS-04 & Verificare che l'amministratore pubblico possa visualizzare un pannello
+    TS-03 & Verificare che l'amministratore pubblico possa visualizzare un pannello
     contenente una mappa che mostri le posizioni dei sensori, mediante icone in base al tipo di \glossterm{sensore} nella \glossterm{dashboard} Sensori.
-    & NV \\
+    & V \\
     \hline
-    TS-05 & Verificare che l'amministratore pubblico possa monitorare i dati ambientali, provenienti
+    TS-04 & Verificare che l'amministratore pubblico possa monitorare i dati ambientali, provenienti
     dai sensori nella \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline
-    TS-06 & Verificare che l'amministratore pubblico possa visualizzare un pannello
+    TS-05 & Verificare che l'amministratore pubblico possa visualizzare un pannello
     contenente un grafico, in formato \glossterm{time series}, rappresentante l'andamento della temperatura,
     espressa in gradi Celsius (°C), per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline
-    TS-07 & Verificare che l'amministratore pubblico possa visualizzare un pannello
+    TS-06 & Verificare che l'amministratore pubblico possa visualizzare un pannello
     contenente un grafico, in formato \glossterm{time series}, rappresentante l'andamento dell'umidità, espressa
     in percentuale, per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline 
-    TS-08 & Verificare che l'amministratore pubblico possa visualizzare un pannello
+    TS-07 & Verificare che l'amministratore pubblico possa visualizzare un pannello
     contenente un grafico, in formato \glossterm{time series}, rappresentante l'andamento della temperatura
     percepita,
     espressa in gradi Celsius (°C), per ciascuna coppia di sensori temperatura-umidità, nella
     \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline
-    TS-09 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-08 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante la media aritmetica della temperatura,
     espressa in gradi Celsius (°C), basato sulle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati nella \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline
-    TS-10 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-09 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante la media aritmetica dell'umidità,
     espressa in percentuale, basato sulle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati nella \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline
-    TS-11 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-10 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante la media aritmetica della temperatura percepita,
     espressa in gradi Celsius (°C), basato sulle ultime rilevazioni effettuate dalle coppie di sensori temperatura-umidità, che aggreghi i dati nella \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline
-    TS-12 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-11 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico bar chart rappresentante valori statistici della temperatura,
     espressa in gradi Celsius (°C), per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline
-    TS-13 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-12 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico bar chart rappresentante valori statistici della temperatura percepita,
     espressa in gradi Celsius (°C), per ciascuna coppia di sensori temperatura-umidità, nella \glossterm{dashboard} Ambientale.
-    & NV \\
+    & V \\
     \hline
-    TS-14 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-13 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato \glossterm{time series} rappresentante l'intensità delle precipitazioni,
     espressa in millimetri orari (mm/h), per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
-    & NI \\
+    & V \\
     \hline
-    TS-15 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-14 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato \glossterm{time series} rappresentante la quantità di polveri sottili presenti nell'aria,
     espressa in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
-    & NI \\
+    & V \\
     \hline
-    TS-16 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-15 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato \glossterm{time series} rappresentante le misurazioni relative al livello dell'acqua,
     espressa in percentuale, per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
-    & NI \\
+    & V \\
     \hline
-    TS-17 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-16 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante l'attuale intensità delle precipitazioni,
     espressa in millimetri orari (mm/h), basata sulle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati nella \glossterm{dashboard} Ambientale.
-    & NI \\
+    & V \\
     \hline
-    TS-18 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-17 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante l'attuale inquinamento dell'aria,
     espresso in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), basato sulle ultime rilevazioni effettuate dai singoli sensori nella \glossterm{dashboard} Ambientale.
-    & NI \\
+    & V \\
     \hline
-    TS-19 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-18 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante l'attuale livello dell'acqua,
     espresso in percentuale, basato sulle ultime rilevazioni effettuate dai singoli sensori nella \glossterm{dashboard} Ambientale.
-    & NI \\
+    & V \\
     \hline
-    TS-20 & Verificare che l'amministratore pubblico possa monitorare i dati provenienti
+    TS-19 & Verificare che l'amministratore pubblico possa monitorare i dati provenienti
     dai sensori relativi ai dati urbanistici in una \glossterm{dashboard} apposita.
-    & NV \\
+    & V \\
     \hline
-    TS-21 & Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi lo stato aggiornato della disponibilità dei posti nei vari parcheggi nella
-    \glossterm{dashboard} Urbanistica. & NV \\
+    TS-20 & Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi lo stato aggiornato della disponibilità dei posti nei vari parcheggi nella
+    \glossterm{dashboard} Urbanistica. & V \\
     \hline
-    TS-22 & Verificare che l'amministratore pubblico possa visualizzare un pannello in formato tabellare che evidenzi lo stato aggiornato dei posti nei vari parcheggi nella
-    \glossterm{dashboard} Urbanistica. & NV \\
+    TS-21 & Verificare che l'amministratore pubblico possa visualizzare un pannello in formato tabellare che evidenzi lo stato aggiornato dei posti nei vari parcheggi nella
+    \glossterm{dashboard} Urbanistica. & V \\
+    \hline
+    TS-22 & 
+    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento nei vari parcheggi nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-23 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento nei vari parcheggi nella \glossterm{dashboard} Urbanistica.& NV \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi i guasti nella rete eletrica nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-24 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi i guasti nella rete eletrica nella \glossterm{dashboard} Urbanistica.& NI \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello in formato \glossterm{time series} rappresentante il riempimento di un'isola ecologica, espresso in percentuale nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-25 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello in formato \glossterm{time series} rappresentante il riempimento di un'isola ecologica, espresso in percentuale nella \glossterm{dashboard} Urbanistica.& NI \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi lo stato di disponibilità delle colonnine di ricarica nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-26 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi lo stato di disponibilità delle colonnine di ricarica nella \glossterm{dashboard} Urbanistica.& NI \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello in formato tabellare che evidenzi lo stato delle colonnine di ricarica nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-27 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello in formato tabellare che evidenzi lo stato delle colonnine di ricarica nella \glossterm{dashboard} Urbanistica.& NI \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato \glossterm{time series} rappresentante l'andamento dei consumi delle colonnine di ricarica, espresso in kilowattora (kWh), nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-28 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato \glossterm{time series} rappresentante l'andamento dei consumi delle colonnine di ricarica, espresso in kilowattora (kWh), nella \glossterm{dashboard} Urbanistica.& NI \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento, dovute all'utilizzo delle colonnine di ricarica, nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
-    TS-29 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento, dovute all'utilizzo delle colonnine di ricarica, nella \glossterm{dashboard} Urbanistica.& NI \\
+    TS-29 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    un grafico bar chart rappresentante valori statistici riguardanti i pagamenti effettuati in un parcheggio nella \glossterm{dashboard} Urbanistica.
+    & V \\
     \hline
     TS-30 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
-    un grafico bar chart rappresentante valori statistici riguardanti i pagamenti effettuati in un parcheggio nella \glossterm{dashboard} Urbanistica.
-    & NV \\
-    \hline
-    TS-31 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico bar chart rappresentante valori statistici riguardanti i pagamenti dovuti all'utilizzo di una colonnina di ricarica nella \glossterm{dashboard} Urbanistica.
-    & NI \\
+    & V \\
+    TS-31 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    un grafico \glossterm{Gauge} rappresentante l'efficienza monetaria relativa ad un parcheggio nella \glossterm{dashboard} Urbanistica.
+    & V \\
     \hline
     TS-32 & Verificare che l'amministratore pubblico possa controllare il superamento di determinate soglie in una relativa \glossterm{dashboard}. &
-    NI \\
+    V \\
     \hline
     TS-33 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento delle soglie di temperatura accettabili nella \glossterm{dashboard} Soglie. &
-    NI \\
+    V \\
     \hline
     TS-34 &Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia d'intensità delle precipitazioni accettabili nella \glossterm{dashboard} Soglie. &
-    NI \\
+    V \\
     \hline
     TS-35 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia d'inquinamento dell'aria ritenuto accettabile nella \glossterm{dashboard} Soglie. &
-    NI \\
+    V \\
     \hline
     TS-36 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia del livello dell'acqua ritenuto accettabile nella \glossterm{dashboard} Soglie. &
-    NI \\
+    V \\
     \hline
     TS-37 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia di riempimento delle isole ecologiche ritenuto accettabile nella \glossterm{dashboard} Soglie. &
-    NI \\
+    V \\
     \hline
     TS-38 & Verificare che l'amministratore pubblico riceva un messaggio di errore qualora il
     \glossterm{sistema} di visualizzazione non riesca a reperire i dati necessari per un determinato pannello. &
-    NV \\
+    V \\
     \hline
     TS-39 & Verificare che l'amministratore pubblico possa filtrare i dati, visualizzati
     all’interno di un grafico, in base ad un sottoinsieme di sensori da lui
-    selezionato. & NV \\
+    selezionato. & V \\
     \hline
     TS-40 & Verificare che l'amministratore pubblico possa filtrare i dati in base ad un intervallo temporale. La \glossterm{dashboard} di interesse deve mostrare solamente i dati aventi un timestamp in tale intervallo.
-    & NV\\
+    & V\\
     \hline
     TS-41 & Verificare che l'amministratore pubblico possa rimuovere un filtro precedentemente applicato ai dati.
-    & NV\\
+    & V\\
     \hline
     TS-42 & Verificare che l'amministratore pubblico possa modificare il layout dei pannelli modificandone le dimensioni a proprio piacimento.
-    & NV\\
+    & V\\
     \hline
     TS-43 & Verificare che l'amministratore pubblico possa modificare il layout dei pannelli modificandone la posizione, a proprio piacimento, all'interno della \glossterm{dashboard}.
-    & NV\\
+    & V\\
     \hline
     TS-44 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni della temperatura, espresse in
-    gradi Celsius (°C), con annesse coordinate e timestamp della rilevazione. & NV \\
+    gradi Celsius (°C), con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-45 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'umidità, espresse in
-    percentuale, con annesse coordinate e timestamp della rilevazione. & NV \\
+    percentuale, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-46 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'intensità delle precipitazioni, espresse in
-    millimetri orari (mm/h), con annesse coordinate e timestamp della rilevazione. & NI \\
+    millimetri orari (mm/h), con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-47 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'inquinamento dell'aria, espresse in
-    microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), con annesse coordinate e timestamp della rilevazione. & NI \\
+    microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-48 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni del livello dell'acqua, espresse in
-    percentuale, con annesse coordinate e timestamp della rilevazione. & NI \\
+    percentuale, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-49 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei parcheggi,
-    espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & NV \\
+    espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline 
     TS-50 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei pagamenti
-    dei parcheggi, con annesse coordinate e timestamp della rilevazione. & NV \\
+    dei parcheggi, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-51 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni di guasti alla rete elettrica espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & NI \\
+    TS-51 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni di guasti alla rete elettrica espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-52 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato di riempimento delle isole ecologiche,
-    espresse in percentuale, con annesse coordinate e timestamp della rilevazione. & NI \\
+    espresse in percentuale, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-53 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato di disponibilità delle colonnine di ricarica,
-    espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & NI \\
+    espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-54 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dei consumi delle colonnine di ricarica,
-    espresse in kilowattora (kWh), con annesse coordinate e timestamp della rilevazione. & NI \\
+    espresse in kilowattora (kWh), con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-55 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei pagamenti dovuti all'utilizzo delle colonnine di ricarica, con annesse coordinate e timestamp della rilevazione. & NI \\
+    TS-55 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei pagamenti dovuti all'utilizzo delle colonnine di ricarica, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
     TS-56 & Verificare che sia stato implementato almeno un simulatore per ogni tipologia di \glossterm{sensore}
-    & NV \\
+    & V \\
     \hline
     TS-57 & Verificare che i dati prodotti dalle simulazioni siano realistici. & NV \\
     \hline
     TS-58 & Verificare che il \glossterm{sistema} possa rilevare eventuali relazioni tra sorgenti di dati
-    diversi. & NI \\
+    diversi. & V \\
     \hline
     TS-59 & Verificare che il \glossterm{sistema} possa effettuare previsioni di eventi futuri sulla base di dati storici e attuali. & NI \\
     \hline
@@ -789,91 +803,91 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
 \caption{Tracciamento dei \glossterm{test} di \glossterm{sistema}.}
 \label{table:Tracciamento dei test di sistema}
 \endlastfoot
-    TS-01 & RF-1 \\
-    \hline
-    TS-02 & RF-16 \\
+    TS-01 & RF-16 \\
     \hline 
-    TS-03 & RF-17 \\
+    TS-02 & RF-17 \\
     \hline
-    TS-04 & RF-18 \\
+    TS-03 & RF-18 \\
     \hline
-    TS-05 & RF-19 \\
+    TS-04 & RF-19 \\
     \hline
-    TS-06 & RF-20 \\
+    TS-05 & RF-20 \\
     \hline
-    TS-07 & RF-21 \\
+    TS-06 & RF-21 \\
     \hline
-    TS-08 & RF-22 \\
+    TS-07 & RF-22 \\
     \hline
-    TS-09 & RF-23 \\
+    TS-08 & RF-23 \\
     \hline
-    TS-10 & RF-24 \\
+    TS-09 & RF-24 \\
     \hline
-    TS-11 & RF-25 \\
+    TS-10 & RF-25 \\
     \hline
-    TS-12 & RF-26 \\
+    TS-11 & RF-26 \\
     \hline
-    TS-13 & RF-27 \\
+    TS-12 & RF-27 \\
     \hline
-    TS-14 & RF-28 \\
+    TS-13 & RF-28 \\
     \hline
-    TS-15 & RF-29 \\
+    TS-14 & RF-29 \\
     \hline
-    TS-16 & RF-30 \\
+    TS-15 & RF-30 \\
     \hline
-    TS-17 & RF-31 \\
+    TS-16 & RF-31 \\
     \hline
-    TS-18 & RF-32 \\
+    TS-17 & RF-32 \\
     \hline
-    TS-19 & RF-33 \\
+    TS-18 & RF-33 \\
     \hline
-    TS-20 & RF-34 \\
+    TS-19 & RF-34 \\
     \hline
-    TS-21 & RF-35 \\
+    TS-20 & RF-35 \\
     \hline
-    TS-22 & RF-36 \\
+    TS-21 & RF-36 \\
     \hline
-    TS-23 & RF-37 \\
+    TS-22 & RF-37 \\
     \hline
-    TS-24 & RF-38 \\
+    TS-23 & RF-38 \\
     \hline
-    TS-25 & RF-39 \\
+    TS-24 & RF-39 \\
     \hline
-    TS-26 & RF-40 \\
+    TS-25 & RF-40 \\
     \hline
-    TS-27 & RF-41 \\
+    TS-26 & RF-41 \\
     \hline
-    TS-28 & RF-42 \\
+    TS-27 & RF-42 \\
     \hline
-    TS-29 & RF-43 \\
+    TS-28 & RF-43 \\
     \hline
-    TS-30 & RF-44 \\
+    TS-29 & RF-44 \\
     \hline
-    TS-31 & RF-45 \\
+    TS-30 & RF-45 \\
     \hline
-    TS-32 & RF-46 \\
+    TS-31 & RF-46 \\
     \hline 
-    TS-33 & RF-47 \\
+    TS-32 & RF-47 \\
     \hline
-    TS-34 & RF-48 \\
+    TS-33 & RF-48 \\
     \hline
-    TS-35 & RF-49 \\
+    TS-34 & RF-49 \\
     \hline
-    TS-36 & RF-50 \\
+    TS-35 & RF-50 \\
     \hline
-    TS-37 & RF-51 \\
+    TS-36 & RF-51 \\
     \hline
-    TS-38 & RF-52 \\
+    TS-37 & RF-52 \\
     \hline
-    TS-39 & RF-54 \\
+    TS-38 & RF-53 \\
     \hline
-    TS-40 & RF-55 \\
+    TS-39 & RF-55 \\
     \hline
-    TS-41 & RF-56 \\
+    TS-40 & RF-56 \\
     \hline
-    TS-42 & RF-58 \\
+    TS-41 & RF-57 \\
     \hline
-    TS-43 & RF-59 \\
+    TS-42 & RF-59 \\
+    \hline
+    TS-43 & RF-60 \\
     \hline
     TS-44 & RF-61 \\
     \hline
@@ -1030,6 +1044,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
             avvisi di pagamento dovuti all'utilizzo di una colonnina di ricarica, includendo informazioni come la data di pagamento e il costo associato a ciascuna rilevazione effettuata dai sensori;
         \item Visualizzare un pannello contenente un grafico a barre che mostri valori statistici riguardanti i pagamenti effettuati in un parcheggio;
         \item Visualizzare un pannello contenente un grafico a barre che mostri valori statistici riguardanti i pagamenti dovuti all'utilizzo di una colonnina di ricarica;
+        \item Visualizzare un pannello contenente un grafico di tipo \glossterm{Gauge} che mostri valori l'efficienza monetaria relativa ad un parcheggio;
         \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il \glossterm{sistema} non riesca a reperire i dati.
     \end{enumerate}
     & NV \\
@@ -1216,6 +1231,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
             UC-3.9 \newline
             UC-3.10 \newline
             UC-3.11 \newline
+            UC-3.12 \newline
             UC-5
     \\
     \hline
@@ -1390,7 +1406,8 @@ Titolo principale & Tutti i titoli principali devono iniziare la pagina nella qu
 \textbf{\glossterm{RTB}:} EAC indica, per ogni periodo, la stima del budget finale prefiguratasi rispetto al valore pianificato definito dal BAC, o Budget at Completion. Questo valore viene calcolato come il rapporto tra BAC e CPI dove CPI, dove CPI sta per Cost Performance Index.\\
 Risulta evidente come la metrica in questione non rientrasse all'interno dei valori di accettazione già dal primo \glossterm{Sprint}. Ciò è dovuto alla scarsa esperienza del team nell'affrontare la pianificazione degli Sprint e all'altrettanta poca conoscenza riguardante le attività prioritarie al fine di una buona gestione del progetto. Negli Sprint successivi il team ha preso provvedimenti, adottando con maggiore accortezza una pianificazione efficace e adoperando un metodo lavorativo atto a far rientrare l'EAC all'interno dei valori di accettazione, mantenendo alta, al contempo, la produttività.\\
 Le problematiche riscontrate nel sesto periodo hanno avuto un effetto evidente, seppur lieve, sull'andamento della metrica pur rimanendo all'interno dei valori di accettazione.\\
-Il gruppo può trarre esperienza dalla proiezione rappresentata nel grafico in previsione della seconda revisione, mantenendo l'andamento già individuato dal quarto Sprint.
+Il gruppo può trarre esperienza dalla proiezione rappresentata nel grafico in previsione della seconda revisione, mantenendo l'andamento già individuato dal quarto Sprint.\\
+\textbf{\glossterm{PB}:} Il periodo in previsone della revisione PB è caratterizzato da un mantenimento dell'equilibrio precedentemente individuato dal team. Esso è stato facilitato in parte da Sprint di durata maggiore nella quale i vari obiettivi sono stati distribuiti. La maggiore consapevolezza in fase di pianificazione ha permesso di ipotizzare preventivi realistici rispetto ai periodi precedenti.
 \clearpage
 \subsubsection{MPC-EV Earned Value e MPC-PV Planned Value}
 \begin{figure}[h!]
@@ -1400,7 +1417,8 @@ Il gruppo può trarre esperienza dalla proiezione rappresentata nel grafico in p
     \label{fig:Proiezione grafica di EV e PV}
 \end{figure}
 \textbf{\glossterm{RTB}:} EV rappresenta il valore generato dal prodotto sviluppato fino a un dato momento, mentre PV costituisce il valore del lavoro pianificato fino a un dato momento. Il loro confronto permette di comprendere lo scostamento che avviene tra i preventivi e i consuntivi di lavoro effettuati e quindi ottenere una chiara visione dell'andamento del lavoro svolto dal team.\\
-L'andamento delle due metriche è pressoché coincidente, come dimostrato anche nel grafico successivo dalla metrica SV. Dal secondo periodo in poi il valore EV è generalmente inferiore al PV segnalando che il team ha effettuato preventivi ottimistici rispetto all'effettivo risultato prodotto. Ciononostante, questa differenza rimane minimale.
+L'andamento delle due metriche è pressoché coincidente, come dimostrato anche nel grafico successivo dalla metrica SV. Dal secondo periodo in poi il valore EV è generalmente inferiore al PV segnalando che il team ha effettuato preventivi ottimistici rispetto all'effettivo risultato prodotto. Ciononostante, questa differenza rimane minimale.\\
+\textbf{\glossterm{PB}:} I due valori mantengono l'andamento di pari passo seppur con lieve e costante superamento del valore pianificato rispetto al valore prodotto segno che il gruppo non eccede quanto preventivato in fase di pianificazione.
 \clearpage
 \subsubsection{MPC-BV Budget Variance e MPC-SV Schedule Variance}
 \begin{figure}[h!]
@@ -1412,7 +1430,8 @@ L'andamento delle due metriche è pressoché coincidente, come dimostrato anche 
 \textbf{\glossterm{RTB}:} BV consiste nella differenza tra il valore guadagnato (EV) e i costi effettivamente sostenuti (AC). Un valore negativo di BV indica che si sta spendendo più di quanto si stia guadagnando. SV, invece, rappresenta la differenza tra il valore guadagnato (EV) e il valore pianificato (PV). Un valore negativo indica un ritardo rispetto alla produzione e consegna del lavoro preventivato.\\
 Il valore del BV, nonostante sia certamente all'interno dei valori di accettazione, si è mantenuto negativo per la maggior parte degli Sprint effettuati, diventando positiva solamente all'ultimo. Ciò dimostra come i costi effettivamente sostenuti abbiano ecceduto il lavoro prodotto. I motivi per cui dal quinto periodo la BV è diventata positiva si possono individuare principalmente in due situazioni ben distinte ovvero l'operazione di profonda verifica del materiale prodotto in previsione della revisione RTB e l'incombenza di impegni personali e di studio che hanno rallentato la produttività del gruppo.\\
 La SV ha mantenuto valori oscillanti intorno allo 0, indice di una pianificazione abbastanza realistica rispetto al valore effettivamente prodotto. Ancora una volta, le problematiche riscontrate hanno determinato un lieve peggioramento del valore guadagnato rispetto al valore pianificato.\\
-In generale, queste due metriche mantengono valori altamente accettabili.
+In generale, queste due metriche mantengono valori altamente accettabili.\\
+\textbf{\glossterm{PB}:} Durante il settimo Sprint la percentuale di SV non è migliorata e ciò è dovuto principalmente al periodo di pausa che il team ha affrontato. Questo ha impedito di produrre più valore rispetto a quanto preventivato portando ad un lieve ritardo nella creazione del prodotto, successivamente recuperato nei periodi seguenti. La BV ha mantenuto l'andamento positivo rimarcando che il gruppo sta producendo più di quanto sta spendendo.
 \clearpage
 \subsubsection{MPC-AC Actual Cost e MPC-ETC Estimate To Complete}
 \begin{figure}[h!]
@@ -1422,7 +1441,8 @@ In generale, queste due metriche mantengono valori altamente accettabili.
     \label{fig:Proiezione grafica di AC e ETC}
 \end{figure}
 \textbf{\glossterm{RTB}:} AC rappresenta il costo sostenuto fino a un dato momento, mentre ETC consiste nella conseguente stima dei costi da sostenere per il completamento del progetto.\\
-Totalmente in linea con quanto rilevato dalla proiezione delle metriche di EAC, BV e SV, l'AC e l'ETC dimostrano l'avanzamento stimato del progetto. I sei \glossterm{Sprint} rappresentati corrispondono all'arco di tempo definito da 12 settimane, corrispondenti a oltre metà del progetto. Come ci si aspettava, quindi, le due metriche si sono incontrate in corrispondenza del quinto Sprint, definito dal team come il periodo di revisione RTB, nonché decima settimana del progetto.
+Totalmente in linea con quanto rilevato dalla proiezione delle metriche di EAC, BV e SV, l'AC e l'ETC dimostrano l'avanzamento stimato del progetto. I sei \glossterm{Sprint} rappresentati corrispondono all'arco di tempo definito da 12 settimane, corrispondenti a oltre metà del progetto. Come ci si aspettava, quindi, le due metriche si sono incontrate in corrispondenza del quinto Sprint, definito dal team come il periodo di revisione RTB, nonché decima settimana del progetto.\\
+\textbf{\glossterm{PB}:} Queste metriche hanno mantenuto l'andamento corretto evidenziando l'andamento effettivamente riscontrato nei periodi di riferimento.
 \clearpage
 \subsubsection{MPC-CPI Cost Performance Index}
 \begin{figure}[h!]
@@ -1432,7 +1452,8 @@ Totalmente in linea con quanto rilevato dalla proiezione delle metriche di EAC, 
     \label{fig:Proiezione grafica di CPI}
 \end{figure}
 \textbf{\glossterm{RTB}:} CPI indica il rapporto tra il valore guadagnato (EV) e i costi sostenuti (AC). Un valore di CPI uguale a 1 indica che i costi sostenuti sono in linea con il bugdet pianificato (BAC), mentre un valore negativo comporta il discostamento della stima del budget al completamento (EAC) dal budget effettivo.\\
-Coerentemente con quanto indicato dall'EAC, il valore di CPI è rimasto al di fuori dei valori di accettazione fino al quarto \glossterm{Sprint}. Specialmente nei primi periodi, il team ha sostenuto costi eccessivi non solo rispetto al valore pianificato, ma soprattutto rispetto al valore prodotto. Le accortezze adottate negli Sprint successivi hanno avuto gli effetti desiderati, portando il valore di CPI vicino ad 1 e, di conseguenza, ad una diminuzione dell'EAC. Il team si impegna nei prossimi periodi a mantenere l'indice all'interno delle soglie di accettazione.  
+Coerentemente con quanto indicato dall'EAC, il valore di CPI è rimasto al di fuori dei valori di accettazione fino al quarto \glossterm{Sprint}. Specialmente nei primi periodi, il team ha sostenuto costi eccessivi non solo rispetto al valore pianificato, ma soprattutto rispetto al valore prodotto. Le accortezze adottate negli Sprint successivi hanno avuto gli effetti desiderati, portando il valore di CPI vicino ad 1 e, di conseguenza, ad una diminuzione dell'EAC. Il team si impegna nei prossimi periodi a mantenere l'indice all'interno delle soglie di accettazione. \\
+\textbf{\glossterm{PB}:} Il CPI ha raggiunto valori ottimali come dimostrato anche dalla metrica EAC. Ciò è il risultato dell'attenta pianificazione che il team ha svolto nei periodi successivi al conseguimento della revisione RTB.
 \clearpage
 \subsubsection{MPC-VAC Variance At Completion}
 \begin{figure}[h!]
@@ -1442,7 +1463,8 @@ Coerentemente con quanto indicato dall'EAC, il valore di CPI è rimasto al di fu
     \label{fig:Proiezione grafica di VAC}
 \end{figure}
 \textbf{\glossterm{RTB}:} VAC indica la variazione relativa del budget pianificato, ovvero il BAC, rispetto al budget stimato dall'EAC. L'intervallo di accettazione di questa metrica è posto ad una differenza in percentuale del 10\% rispetto al BAC.\\
-Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggiore del -10\%, indicando un EAC eccessivamente superiore rispetto al BAC pianificato. Le accortezze adottate negli \glossterm{Sprint} successivi hanno avuto gli effetti desiderati, portando il valore di VAC all'interno dell'intervallo di accettazione dal terzo Sprint.
+Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggiore del -10\%, indicando un EAC eccessivamente superiore rispetto al BAC pianificato. Le accortezze adottate negli \glossterm{Sprint} successivi hanno avuto gli effetti desiderati, portando il valore di VAC all'interno dell'intervallo di accettazione dal terzo Sprint.\\
+\textbf{\glossterm{PB}:} Sempre in linea con le metriche EAC e CPI, anche il VAC raggiunge valori ottimali.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{processo} - Documentazione}
 \subsubsection{Indice Gulpease}
@@ -1452,7 +1474,8 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
     \caption{Proiezione grafica dell'indice gulpease.}
     \label{fig:Proiezione grafica dell'indice gulpease}
 \end{figure}
-\textbf{\glossterm{RTB}:} L'indice Gulpease è un'indice di leggibilità per testi in lingua italiana ed è indicato da una percetuale di leggibilità, con soglia di accettazione al 60\%. Tutti i documenti prodotti dal team hanno prodotto un indice di leggibilità alto e nella maggior parte anche ottimale. L'unica eccezione si individua nel \textit{Glossario}, che fino al terzo \glossterm{Sprint} ha avuto valori inferiori alla soglia di accettazione. La necessità del team di concentrarsi sulla revisione di altri documenti ha impedito il miglioramento dell'indice in tale documento. Sarà di fondamentale importanza per il team migliorarlo al più presto.
+\textbf{\glossterm{RTB}:} L'indice Gulpease è un'indice di leggibilità per testi in lingua italiana ed è indicato da una percetuale di leggibilità, con soglia di accettazione al 60\%. Tutti i documenti prodotti dal team hanno prodotto un indice di leggibilità alto e nella maggior parte anche ottimale. L'unica eccezione si individua nel \textit{Glossario}, che fino al terzo \glossterm{Sprint} ha avuto valori inferiori alla soglia di accettazione. La necessità del team di concentrarsi sulla revisione di altri documenti ha impedito il miglioramento dell'indice in tale documento. Sarà di fondamentale importanza per il team migliorarlo al più presto.\\
+\textbf{\glossterm{PB}:} Dal settimo Sprint si riscontra un lieve miglioramento del \textit{Glossario}. Date le poche modifiche effettuate negli Sprint successivi alla RTB, molti non hanno variato particolarmente il valore dell'indice fino all'ottavo periodo. Sono stati introdotti due nuovi documenti con i rispettivi valori che nei primi periodi di PB risultano sufficienti ma non ottimali, data la loro mancata completezza.
 \clearpage
 \subsubsection{Correttezza Ortografica}
 \begin{figure}[h!]
@@ -1461,7 +1484,8 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
     \caption{Proiezione grafica della correttezza ortografica.}
     \label{fig:Proiezione grafica della correttezza ortografica}
 \end{figure}
-\textbf{\glossterm{RTB}:} Il team ha costantemente effettuato un controllo approfondito della correttezza ortografica dei documenti prodotti. I redattori hanno il compito di assicurarsene prima ancora della verifica del documento da parte di membri terzi. Successivamente, in vista delle revisioni, questi vengono ricontrollati e approvati. In questo modo ogni documento viene sempre visionato e controllato da ogni membro del gruppo, ottenendo come risultato un esiguo numero di errori e, di conseguenza, l'ottima proiezione rappresentata.
+\textbf{\glossterm{RTB}:} Il team ha costantemente effettuato un controllo approfondito della correttezza ortografica dei documenti prodotti. I redattori hanno il compito di assicurarsene prima ancora della verifica del documento da parte di membri terzi. Successivamente, in vista delle revisioni, questi vengono ricontrollati e approvati. In questo modo ogni documento viene sempre visionato e controllato da ogni membro del gruppo, ottenendo come risultato un esiguo numero di errori e, di conseguenza, l'ottima proiezione rappresentata.\\
+\textbf{\glossterm{PB}:} Conseguentemente alle poche modifiche apportate ai documenti fino all'ottavo Sprint, non si riscontrano particolari errori nella correttezza ortografica dei documenti. I nuovi documenti sono particolarmente sottoposti ad un controllo accurato.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{processo} - Gestione della qualità}
 \subsubsection{MPC-QMS Quality Metrics Satisfied}
@@ -1471,7 +1495,8 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
     \caption{Proiezione grafica di QMS.}
     \label{fig:Proiezione grafica di QMS}
 \end{figure}
-\textbf{\glossterm{RTB}:} In linea con quanto già specificato, le metriche di EAC, CPI, VAC e IG non sono state soddisfatte fin da subito. Il VAC e l'indice Gulpease, in particolare per il \textit{Glossario}, sono rientrati nei valori accettabili solamente dal terzo \glossterm{Sprint}, mentre l'EAC e il CPI dal quarto. Nonostante le problematiche riscontrate nel quarto e sesto Sprint tutte le metriche rientrano nei valori di accettazione. \\Con ottica di retrospettiva, il team nota come è stata necessaria l'acquisizione di esperienza e accortezza nella pianificazione e organizzazione delle attività del gruppo, cause primarie della mancata tollerabilità delle metriche citate. Questo non deve distogliere il team dal mantenere l'andamento individuato, affiché tutte le metriche vengano rispettate, il prodotto venga sviluppato senza intoppi e il progetto possa essere portato a termine senza imprevisti.
+\textbf{\glossterm{RTB}:} In linea con quanto già specificato, le metriche di EAC, CPI, VAC e IG non sono state soddisfatte fin da subito. Il VAC e l'indice Gulpease, in particolare per il \textit{Glossario}, sono rientrati nei valori accettabili solamente dal terzo \glossterm{Sprint}, mentre l'EAC e il CPI dal quarto. Nonostante le problematiche riscontrate nel quarto e sesto Sprint tutte le metriche rientrano nei valori di accettazione. \\Con ottica di retrospettiva, il team nota come è stata necessaria l'acquisizione di esperienza e accortezza nella pianificazione e organizzazione delle attività del gruppo, cause primarie della mancata tollerabilità delle metriche citate. Questo non deve distogliere il team dal mantenere l'andamento individuato, affiché tutte le metriche vengano rispettate, il prodotto venga sviluppato senza intoppi e il progetto possa essere portato a termine senza imprevisti.\\
+\textbf{\glossterm{PB}:} Le metriche mantengono un andamento ottimale comportando la mancanza di metriche non soddisfatte.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{processo} - Gestione dei processi}
 \subsubsection{MPC-NR Non-calculated Risk}
@@ -1482,5 +1507,6 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
     \label{fig:Proiezione grafica dei rischi non calcolati}
 \end{figure}
 \textbf{\glossterm{RTB}:} Come mostrato dalla proiezione, il quarto \glossterm{Sprint} è stato soggetto ad un rischio non previsto particolarmente limitante. Su suggerimento della \glossterm{Proponente}, il team ha affrontato un profondo lavoro di \glossterm{refactoring} del codice prodotto fino a quel momento, che non solo ha comportato un certo dispendio di risorse destinate ad altre attività, ma ha anche limitato e modificato l'organizzazione che il team aveva precedentemente pianificato per il suddetto periodo. Ciononostante, grazie al lavoro svolto negli Sprint antecedenti e soprattutto alle accortezze adottate nelle fasi di pianificazione, il refactoring non ha comportato problematiche rispetto al preventivo e alle metriche di fornitura.\\
-Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli impegni personali e universitari si sono intensificati a tal punto da portare il team alla scelta di intraprendere un periodo di assestamento atto a mitigare il rischio occorso. Lo scopo è, quindi, quello di riprendere al più presto con il normale regime di avanzamento e produttività.
+Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli impegni personali e universitari si sono intensificati a tal punto da portare il team alla scelta di intraprendere un periodo di assestamento atto a mitigare il rischio occorso. Lo scopo è, quindi, quello di riprendere al più presto con il normale regime di avanzamento e produttività.\\
+\textbf{\glossterm{PB}:} Conseguentemente alla revisione RTB il team ha affrontato un periodo di pausa dovuto alle esigenze di studio. Ciò ha chiaramente comportato un rischio. Tale rischio era stato individuato ma non era stato considerato l'impatto che questo avrebbe avuto nello svolgimento del progetto. Per questo motivo viene definito non previsto. Dall'ottavo periodo in poi il problema è stato mitigato grazie alla collaborazione di tutto il team.
 \end{document}
