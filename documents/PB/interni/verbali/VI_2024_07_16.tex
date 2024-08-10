@@ -1,0 +1,210 @@
+% changelog: "0.0.1, 2024-08-05, Linda Barbiero, Stesura verbale. Verificato da Pietro Busato e Veronica Tecchiati"
+
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- IMPORTANTE -- %
+% utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
+% non utilizzare \glossterm nei verbali
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-07-16} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+  \fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+% quando lo utilizi metti un // esterno al comando subsubsubsection{esempio} altrimenti è attacatto al titoletto, non modificare il comando (se metti //// nel comando è troppo spaziato quando ci sono table e figure
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Linda Barbiero}}}
+			
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Veronica Tecchiati}\\}} % massimo due 
+			{\large{\textsc{Pietro Busato}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-07-16\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8.5 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{5cm} p{3cm} p{3cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
+		\midrule
+			0.0.1 & 2024-08-05 & Stesura verbale. & Linda Barbiero & Pietro Busato, \quad Veronica Tecchiati \\
+ 			\\ % spazio tra le righe
+
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata Discord;
+	\item\textbf{Ora di inizio:} 15:30;
+	\item\textbf{Ora di fine:}  16:30.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 0 h \\
+			Linda Barbiero &  1 h \\
+			Pietro Busato & 1 h \\
+			Oscar Konieczny & 1 h \\
+			Davide Donanzan & 1 h \\
+			Veronica Tecchiati & 1 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy.}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlength\itemsep{0em}
+    \item Discussione post SAL avvenuto in data 2024-07-16;
+    \item Retrospettiva e consuntivo ore del settimo sprint appena concluso;
+    \item Preventivo ore dell'ottavo sprint;
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+La riunione si è tenuta dopo l'incontro con l'azienda SyncLab con il SAL successivo fissato per il 2024-07-30. \\ 
+La riunione è iniziata con il calcolo del consuntivo del periodo precedente, valutando gli avvenimenti accaduti e le considerazioni della Proponente sui prossimi step. \\
+Come d'accordo con l'azienda, il team si occuperà di ultimare l'implementazione del sistema di stream processing tramite Apache Flink, di sistemare le dashboard relative ai casi d'uso non ancora implementati e di concludere la personalizzazione dell'interfaccia grafica di Grafana.\\
+In base agli obiettivi fissati, dunque, si è stipulato il preventivo del successivo sprint della durata di due settimane, eleggendo come rappresentante per la prima Veronica Tecchiati, mentre per la seconda Linda Barbiero.
+\subsection{Decisioni prese}
+\begin{itemize}
+	\setlength\itemsep{0em}
+    \item Elezione del nuovo responsabile: Veronica Tecchiati per la prima settimana, Linda Barbiero per la seconda;
+	\item Implementazione del sistema di stream processing con Apache Flink;
+	\item Conclusione dell'implementazione delle dashboard;
+	\item Personalizzazione dell'interfaccia grafica di Grafana.
+	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
+	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+\end{itemize}
+\newpage
+\section{Attività da svolgere}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{7cm}cp{7cm}}
+		\toprule
+		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
+		\midrule
+        \href{https://github.com/NaN1fy/SyncCity/issues/35}{\underline{Personalizzazione grafica di Grafana}} & 35*\tnote{*} & Linda Barbiero \\\\
+        \href{https://github.com/NaN1fy/SyncCity/issues/36}{\underline{Implementazione Apache Flink}} & 36*\tnote{*} & Guglielmo Barison, Pietro Busato, Davide Donanzan \\\\
+        \href{https://github.com/NaN1fy/SyncCity/issues/37}{\underline{Rifinitura dashboard e sensori}} & 37*\tnote{*} & Oscar Konieczny, Veronica Tecchiati \\\\
+		\bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+		\vspace{1em}
+		\item * indica che la issue fa parte della repository SyncCity
+	\end{tablenotes}
+	\caption{Attività da svolgere.}
+	\label{table:Attivita da svolgere}
+\end{table}
+\end{document}
