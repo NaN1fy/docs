@@ -1,4 +1,4 @@
-% changelog: "0.0.0, 2024-08-01, Pietro Busato, Prima Stesura"
+% changelog: "0.0.1, 2024-08-01, Pietro Busato, Prima stesura. Verificato da Veronica Tecchiati, atteso secondo verificatore."
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -31,14 +31,13 @@
 \usepackage{caption}
 \usepackage{multicol}
 \usepackage{tikz}
-\setlength\parindent{0pt}
 \captionsetup{font=footnotesize}
 \usepackage{fancyhdr} 
 \usepackage{graphicx}
 \usepackage{capt-of}% 
 \usepackage{booktabs}
 \usepackage{varwidth}
-
+\setlength\parindent{0pt}
 % -- IMPORTANTE -- %
 % utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
 % non utilizzare \glossterm nei verbali
@@ -120,11 +119,11 @@
 \section*{Registro delle Modifiche}
 \begin{table}[ht!]	
 	\centering
-	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+	\begin{tabular}{p{1.2cm} p{2cm} p{5cm} p{3cm} p{3cm}}
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-		0.0.0 & 2024-08-01 & Prima Stesura  & Pietro Busato & --- \\
+		0.0.1 & 2024-08-01 & Prima stesura. & Pietro Busato & Veronica Tecchiati \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -182,69 +181,60 @@
 	\setlength\itemsep{0em}
 	\item Revisione lavoro svolto in seguito al periodo di assestamento;	
 	\item Discussione riguardante alcune criticità incontrate;
-    \item Discussione riguardante gli obiettivi e le finestre di consegna del PB.
-
+    \item Discussione riguardante gli obiettivi e le finestre di consegna del prodotto.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-Come di consueto, la riunione ha visto un'iniziale discussione riguardante i progressi 
-fatti durante l'ultimo sprint per il progetto, comprendenti, in questa specifica istanza, la quasi completa realizzazione
-delle dashboard richieste e l'implementazione finale del sistema di alerting per Grafana; successivamente, come
-anche già specificato tramite mail apposita, si è dettagliatamente discussa l'organizzazione delle fasi
-finali del progetto, comprendente individuazione e valutazione di obiettivi a breve, medio e lungo termine, oltre che
-alle varie difficoltà riscontrabili nella realizzazione degli  stessi e, infine, dell'esatta finestra di consegna
-del progetto.
-Le criticità principali individuate sono:
-\begin {itemize}
-    \item Scarsa conoscenza riguardante lo strumento di stream processing da implementare, ovvero Apache Flink;
-    \item Aggiunta della richiesta di accesso sulla piattaforma, funzionalità rivelatasi necessaria, attuabile tramite funzionalità di Grafana.
-\end {itemize}   
-Si riporta di seguito il piano di fine progetto specificato tramite mail all'azienda Proponente:\\\\
-``
-Buongiorno,\\\\
-In merito al consiglio da Voi proposto, riportiamo di seguito una analisi approfondita degli obiettivi da raggiungere in vista del completamento del progetto, in conformità alle risorse rimanenti a nostra disposizione:\\\\
+Come di consueto, la riunione ha visto un'iniziale discussione riguardante i progressi fatti durante l'ultimo Sprint, ovvero la quasi completa realizzazione delle dashboard richieste e l'implementazione finale del sistema di alerting per Grafana; successivamente, come anche già specificato tramite mail apposita, si è dettagliatamente discussa l'organizzazione delle fasi finali del progetto, comprendente individuazione e valutazione di obiettivi a breve, medio e lungo termine, oltre che alle varie difficoltà riscontrabili nella realizzazione degli  stessi e, infine, dell'esatta finestra di consegna del progetto. Le criticità principali individuate sono:
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Scarsa conoscenza della tecnologia di stream processing da implementare, ovvero Apache Flink;
+    \item Aggiunta della richiesta di accesso alla piattaforma, funzionalità rivelatasi necessaria, attuabile tramite funzionalità di Grafana.
+\end{itemize}   
+Si riporta di seguito il piano di fine progetto specificato tramite mail all'azienda Proponente.\\\\
+\setlength\parindent{0pt}
+\textbf{Risorse disponibili:}
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Budget rimanente: 4252,5 \texteuro;
+    \item Monte ore: 217 ore da distribuire nell'arco di 5-6 settimane (o 8 nel caso di consegna il 2024-09-06).
+\end{itemize} 
 
-Risorse Disponibili\\\\
-- Budget rimanente: 4252,5 \$;\\
-
-- Data ipotetica completamento progetto: 16/08/2024 / 23/08/2024 (con data ultima di scadenza 06/09/2024);\\
-
-- Monte ore: 217 ore da distribuire nell'arco di 5-6 settimane (o 8 nel caso di consegna il 06/09/2024).\\\\
-
-Obiettivi Prodotto Finale\\\\
--Conformazione Prodotto Finale: Versione ampliata, rifinita è più complessa del prodotto precedentemente presentato, comprendente più tipologie di simulazioni di sensori e più dashboard visualizzabili, un sistema di notifica, stream processing e infine interfaccia grafica utente personalizzata con la brand identity della Proponente. L'obiettivo finale è la creazione di un'interfaccia accessibile da ente pubblico (amministratore) tramite login, con la quale visualizzare i dati relativi al territorio urbano e ai suoi servizi;\\\\
-
-- Dashboard: Divise semanticamente per ambito di interesse, svolgeranno funzioni di monitoraggio dati o di analisi degli stessi, anche tramite stream processing, offrendo diverse modalità di visualizzazione dati (time series, gauge, barchart etc...). I dati saranno di pertinenza ambientale (temperatura, umidità...) e urbanistica (occupazione parcheggi, malfunzionamenti elettrici...);\\\\
-
-- Stream Processing: Realizzato tramite la tecnologia Apache Flink, verrà utilizzato per la semplificazione dell'analisi dei dati ambientali e delle loro interazioni e dei dati urbanistici per valutare l'efficienza e le modalità d'uso dei servizi cittadini;\\\\
-
-- Stream Dati: Combinazione dati di occupazione parcheggio con colonnina di ricarica e dati relativi all'effettivo utilizzo e consumo di quest'ultima; combinazione dati occupazione parcheggio e pagamento parcheggio; varie correlazioni tra eventi atmosferici, come ad esempio il cambiamento del livello dell'acqua a causa della temperatura, umidità e/o delle precipitazioni;\\\\
-
-- Sistema di Notifica: realizzata tramite notifiche via mail/webhook, invia tali messaggi al superamento di determinate soglie, descritte nel documento Analisi dei Requisiti;\\\\
-
-- Documentazione: Dashboard e pannelli saranno ampiamente e dettagliatamente descritti nel documento Analisi dei Requisiti, così come il sistema notifiche; l'esame delle tecnologie di stream processing sarà spiegato in un documento apposito, che conterrà inoltre le motivazioni a supporto della scelta di Apache Flink; verranno redatti inoltre il Manuale Utente e il documento di Specifica Tecnica; la qualità del prodotto invece verrà mantenuta e consolidata dal Piano di Qualifica.\\\\
-
-Organizzazione e Divisione Obiettivi\\\\
-- Breve termine (previsione - entro sprint attuale)\\
-+ Ultimazione implementazione sensori;\\
-+ Ultimazione e rifinitura Dashboard;\\
-+ Ultimazione Alert System o di buona sua parte.\\\\
-
-- Medio termine (previsione - entro la settimana 29/07-04/08)\\
-+ Studio e implementazione stream processing tramite Apache Flink;\\
-+ Personalizzazione interfaccia grafica;\\
-+ Iniziale stesura della documentazione di supporto.\\\\
-
-- Lungo termine (previsione - entro la settimana 12/08-18/08)\\
-+ Completamento stesura documentazione;\\
-+ Ultimazione MVP e sua rifinitura;\\
-+ Presentazione MVP e conclusione progetto.\\\\
-
-Per quanto concerne le previsioni (in particolare quella a lungo termine) vanno tenute in considerazione le tempistiche dei professori e delle richieste di revisione, che potrebbero rinviare di qualche giorno l'effettiva conclusione del progetto.
-Rimaniamo a disposizione per chiarimenti, discussioni e modifiche riguardo gli obiettivi.\\
-In attesa di un Vostro favorevole riscontro, porgiamo\\
-Cordiali Saluti\\\\
-Team NaN1fy
-''.\\\\
+\textbf{Data prevista di completamento progetto:} 2024-08-16 / 2024-08-23 (con data ultima di scadenza 2024-09-06); \\\\
+\textbf{Obiettivi del prodotto finale:}
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Conformazione del prodotto finale: versione ampliata, rifinita e più complessa del prodotto precedentemente presentato, comprendente più tipologie di simulazioni di sensori e più dashboard visualizzabili, un sistema di notifica, stream processing e infine interfaccia grafica utente personalizzata con la brand identity della Proponente. L'obiettivo finale è la creazione di un'interfaccia accessibile da ente pubblico (amministratore) tramite login, grazie alla quale visualizzare i dati relativi al territorio urbano e ai suoi servizi;
+    \item Dashboard: suddivise semanticamente per ambito di interesse, svolgeranno funzioni di monitoraggio dati o di analisi degli stessi, anche tramite stream processing, offrendo diverse modalità di visualizzazione dati (time series, gauge, barchart ecc.). I dati saranno di pertinenza ambientale (temperatura, umidità ecc.) e urbanistica (occupazione parcheggi, malfunzionamenti elettrici ecc.);
+    \item Stream Processing: realizzato tramite la tecnologia Apache Flink, verrà utilizzato per la semplificazione dell'analisi dei dati ambientali e delle loro interazioni, oltre che dei dati urbanistici per valutare l'efficienza e le modalità d'uso dei servizi cittadini;
+    \item Stream dati: combinazione dati di occupazione parcheggio con colonnina di ricarica e dati relativi all'effettivo utilizzo e consumo di quest'ultima; combinazione dati occupazione parcheggio e pagamento parcheggio; varie correlazioni tra eventi atmosferici, come ad esempio il cambiamento del livello dell'acqua a causa della temperatura, umidità e/o delle precipitazioni;
+    \item Sistema di notifica: realizzato tramite notifiche via mail/webhook, invia messaggi al superamento di determinate soglie, descritte nel documento \textit{Analisi dei Requisiti};
+    \item Documentazione: dashboard e pannelli saranno ampiamente e dettagliatamente descritti nel documento \textit{Analisi dei Requisiti}, così come il sistema di notifica; l'esame delle tecnologie di stream processing sarà spiegato in un documento apposito, che conterrà inoltre le motivazioni a supporto della scelta di Apache Flink; verranno redatti inoltre il \textit{Manuale Utente} e il documento di \textit{Specifica Tecnica}; la qualità del prodotto invece verrà mantenuta e consolidata dal \textit{Piano di Qualifica}.
+\end{itemize}
+\textbf{Organizzazione e divisione obiettivi:}
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Breve termine (previsione: entro lo Sprint attuale):
+    \begin{itemize}
+    \setlength\itemsep{0em}
+        \item Ultimazione implementazione sensori;
+        \item Ultimazione e rifinitura Dashboard;
+        \item Ultimazione sistema di notifica o di buona sua parte.
+    \end{itemize}
+    \item Medio termine (previsione: entro la settimana 2024-07-29 / 2024-08-04):
+    \begin{itemize}
+    \setlength\itemsep{0em}
+        \item Studio e implementazione stream processing tramite Apache Flink;
+        \item Personalizzazione interfaccia grafica;
+        \item Iniziale stesura della documentazione di supporto.
+    \end{itemize}
+    \item Lungo termine (previsione: entro la settimana 2024-08-12 / 2024-08-18):
+    \begin{itemize}
+    \setlength\itemsep{0em}
+        \item Completamento stesura documentazione;
+        \item Ultimazione MVP e sua rifinitura;
+        \item Presentazione MVP e conclusione progetto.
+    \end{itemize}
+\end{itemize}
 % -- togliere, testo per riempiere il template
 \subsection{Decisioni prese}
 \begin{itemize}
@@ -257,7 +247,7 @@ Team NaN1fy
 \end{itemize}
 \newpage
 \section{Attività da svolgere}
-Viene indetta una riunione interna per delineare la pianificazione dell'ottavo Sprint e le attività da svolgere in previsione del PB.
+Viene indetta una riunione interna per delineare la pianificazione dell'ottavo Sprint e le attività da svolgere in vista della revisione relativa alla milestone PB.
 % commentare per togliere la firma
-\signatureline{Padova, 2024-08-01}
+\signatureline{Padova, 2024-08-12}
 \end{document}
