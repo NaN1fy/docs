@@ -1,4 +1,4 @@
-% changelog: "1.2.0, 2024-07-26, Veronica Tecchiati, Stesura preventivo ottavo periodo"
+% changelog: "1.3.0, 2024-08-12, Linda Barbiero, Stesura preventivo nono periodo"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -121,6 +121,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
+            1.3.0 & 2024-07-26 & Stesura \glossterm{preventivo} nono periodo. & Linda Barbiero & -
+ 		    \\\\
             1.2.0 & 2024-07-26 & Stesura \glossterm{preventivo} ottavo periodo. & Veronica Tecchiati & -
  		    \\\\
 			1.1.0 & 2024-07-17 & Stesura settimo periodo. & Oscar Konieczny & Veronica Tecchiati
@@ -475,14 +477,14 @@ probabilità di incorrere in qualche problema tra quelli riportati è abbastanza
         \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
 		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
 		\midrule
-        Linda Barbiero          & -     & 3     & -     & 2     & -     & 1     & 6 \\
-        Guglielmo Barison       & 3     & -     & 1     & 1     & 2,5   & 1     & 8,5\\
-        Pietro Busato           & 3     & -     & 1     & 1     & 2,5   & 1     & 8,5 \\
-        Davide Donanzan         & 3     & -     & -     & 3     & -     & 1,5   & 7,5 \\
-        Oscar Konieczny         & 3     & -     & -     & 1     & -     & 1     & 5 \\
-        Veronica Tecchiati      & 3     & -     & -     & 4     & -     & 1     & 8 \\
+        Linda Barbiero & - & 3 & - & 2 & - & 1 & 6 \\
+        Gugliemo Barison & 3 & - & 1 & 1 & 2,5 & 1 & 8,5 \\
+        Pietro Busato & 3 & - & 1 & 1 & 2,5 & 1 & 8,5 \\
+        Davide Donanzan & 3 & - & - & 3 & - & 1,5 & 7,5 \\
+        Oscar Konieczny & 3 & - & - & 1 & - & 1 & 5 \\
+        Veronica Tecchiati & 3 & - & - & 4 & - & 1 & 8 \\
         \bottomrule
-        \textbf{Totale (ruolo)} & 15     & 3     & 2     & 12   & 5     & 6,5   & 43,5 \\
+        \textbf{Totale (ruolo)} & 15 & 3 & 2 & 12 & 5 & 6,5 & 43,5 \\
 	\end{tabular}
 	\caption{Distribuzione delle ore del primo Sprint secondo ruolo e membro.}
 	\label{table:Distribuzione delle ore del primo Sprint secondo ruolo e membro}
@@ -502,14 +504,14 @@ probabilità di incorrere in qualche problema tra quelli riportati è abbastanza
         \toprule
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
         \midrule
-        Amministratore & 15 & 450 \\
-        Responsabile & 3 & 60 \\
-        Progettista & 2 & 50 \\
-        Analista & 12 & 300 \\
-        Programmatore & 5 & 75 \\
-        Verificatore & 6,5 & 97,5 \\
+        Amministratore & 15 & 450 \\ 
+        Responsabile & 3 & 60 \\ 
+        Progettista & 2 & 50 \\ 
+        Analista & 12 & 300 \\ 
+        Programmatore & 5 & 75 \\ 
+        Verificatore & 6,5 & 97,5 \\ 
         \bottomrule
-        \textbf{Totale} & 43,5 & 1032,5
+        \textbf{Totale} & 43,5 & 1032,5 \\
     \end{tabular}
     \caption{\glossterm{Preventivo} dei costi del primo Sprint secondo ruolo.}
 	\label{table:Preventivo dei costi del primo Sprint secondo ruolo}
@@ -518,20 +520,20 @@ probabilità di incorrere in qualche problema tra quelli riportati è abbastanza
 \subsubsubsection{Consuntivo orario}
 \begin{table}[ht!]
 	\centering
-	\begin{tabular}{p{3cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1cm}}
+    \begin{tabular}{p{4cm}*{6}{l}p{3cm}}
 		\toprule
-        \textbf{Membro} & \multicolumn{5}{c}{\textbf{Ruoli}} & \multicolumn{2}{r}{\textbf{Totale
-        (pers.)}}\\
+        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale
+        (persona)}\\
 		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
 		\midrule
-        Linda Barbiero          & -     & 3     & -     & 2     & 0     & 0.5 \textcolor{teal}{(-0,5)}   & 5,5 \\
-        Guglielmo Barison       & 3     & -     & 1     & 1     & 2,5   & 1     & 8,5\\
-        Pietro Busato           & 3     & -     & 1     & 1     & 2,5   & 1     & 8,5 \\
-        Davide Donanzan         & 3     & -     & -     & 3     & -     & 2 \textcolor{teal}{(-0,5)}     & 8 \\
-        Oscar Konieczny         & 3,5 \textcolor{teal}{(-0,5)}  & -     & -     & 1     & -     & 1     & 5,5 \\
-        Veronica Tecchiati      & 3,5 \textcolor{teal}{(-0,5)}  & -     & -     & 5 \textcolor{teal}{(-1)}    & -     & 1     & 9,5 \\
+        Linda Barbiero & - & 3 & - & 2 & - & 0,5 \textcolor{teal}{(-0,5)} & 5,5 \textcolor{teal}{(-0,5)} \\ 
+        Gugliemo Barison & 3 & - & 1 & 1 & 2,5 & 1 & 8,5 \\ 
+        Pietro Busato & 3 & - & 1 & 1 & 2,5 & 1 & 8,5 \\ 
+        Davide Donanzan & 3 & - & - & 3 & - & 2 \textcolor{red}{(+0,5)} & 8 \textcolor{red}{(+0,5)} \\ 
+        Oscar Konieczny & 3,5 \textcolor{red}{(+0,5)} & - & - & 1 & - & 1 & 5,5 \textcolor{red}{(+0,5)} \\ 
+        Veronica Tecchiati & 3,5 \textcolor{red}{(+0,5)} & - & - & 5 \textcolor{red}{(+1)} & - & 1 & 9,5 \textcolor{red}{(+1,5)} \\ 
         \bottomrule
-        \textbf{Totale (ruolo)} & 16    & 3     & 2     & 13   & 5     & 6,5   & 45,5 \\
+        \textbf{Totale (ruolo)} & 16 \textcolor{red}{(+1)} & 3 & 2 & 13 \textcolor{red}{(+1)} & 5 & 6,5 & 45,5 \textcolor{red}{(+2)} \\
 	\end{tabular}
 	\caption{Distribuzione delle ore del primo Sprint secondo ruolo e membro.}
 	\label{table:Distribuzione delle ore consuntive del primo Sprint secondo ruolo e membro}
@@ -543,14 +545,14 @@ probabilità di incorrere in qualche problema tra quelli riportati è abbastanza
         \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
 		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
 		\midrule
-        Linda Barbiero          & 7     & 5     & 20     & 11   & 24     & 22,5   & 89,5 \\
-        Guglielmo Barison       & 4     & 9     & 19     & 11   & 21,5   & 22     & 86,5\\
-        Pietro Busato           & 6     & 8     & 19     & 11   & 20,5   & 22     & 86,5 \\
-        Davide Donanzan         & 6     & 8     & 20     & 9    & 23     & 21     & 87 \\
-        Oscar Konieczny         & 4,5   & 7     & 20     & 11   & 24     & 23     & 89,5 \\
-        Veronica Tecchiati      & 4,5   & 8     & 20     & 6    & 25     & 22     & 85,5 \\
+        Linda Barbiero & 7 & 5 & 20 & 11 & 24 & 22,5 & 89,5 \\ 
+        Gugliemo Barison & 4 & 9 & 19 & 11 & 21,5 & 22 & 86,5 \\ 
+        Pietro Busato & 6 & 8 & 19 & 11 & 20,5 & 22 & 86,5 \\ 
+        Davide Donanzan & 6 & 8 & 20 & 9 & 23 & 21 & 87 \\ 
+        Oscar Konieczny & 4,5 & 7 & 20 & 11 & 24 & 23 & 89,5 \\ 
+        Veronica Tecchiati & 4,5 & 8 & 20 & 6 & 25 & 22 & 85,5 \\ 
         \bottomrule
-        \textbf{Totale (ruolo)} & 32    & 45    & 118    & 59   & 138     & 132,5 & 524,5 \\
+        \textbf{Totale (ruolo)} & 32 & 45 & 118 & 59 & 138 & 132,5 & 524,5 \\ 
 	\end{tabular}
 	\caption{Ore rimaste dopo il primo Sprint secondo ruolo e membro.}
 	\label{table:Ore rimaste dopo il primo Sprint secondo ruolo e membro}
@@ -558,18 +560,18 @@ probabilità di incorrere in qualche problema tra quelli riportati è abbastanza
 \subsubsubsection{Consuntivo economico}
 \begin{table}[ht!]
 	\centering
-	\begin{tabular}{p{4cm} p{2cm} p{2cm}}
+	\begin{tabular}{p{4cm} p{3cm} p{4cm}}
         \toprule
         \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
         \midrule
-        Amministratore & 16 \textcolor{red}{(+1)} & 480 \textcolor{red}{(+30)} \\
-        Responsabile & 3 & 60 \\
-        Progettista & 2 & 50 \\
-        Analista & 13 \textcolor{teal}{(-1)} & 325 \textcolor{teal}{(-25)} \\
-        Programmatore & 5 & 75 \\
+        Amministratore & 16 \textcolor{red}{(+1)} & 480 \textcolor{red}{(+30)} \\ 
+        Responsabile & 3 & 60 \\ 
+        Progettista & 2 & 50 \\ 
+        Analista & 13 \textcolor{red}{(+1)} & 325 \textcolor{red}{(+25)} \\ 
+        Programmatore & 5 & 75 \\ 
         Verificatore & 6,5 & 97,5 \\
         \bottomrule
-        \textbf{Totale} & 45,5 & 1087,5
+        \textbf{Totale} & 45,5 \textcolor{red}{(+2)} & 1087,5 \textcolor{red}{(+55)} \\ 
     \end{tabular}
     \caption{\glossterm{Preventivo} a finire dei costi del primo Sprint secondo ruolo.}
 	\label{table:Preventivo a finire dei costi del primo Sprint secondo ruolo}
@@ -1031,10 +1033,10 @@ I rischi che ci aspettiamo di correre in questo periodo sono i seguenti:
 		\midrule
         Linda Barbiero     & 2 & 5 & 14 & 6 & 12 & 12,5 & 51,5 \\
         Gugliemo Barison   & 1 & 5 & 14,5 & 7 & 11,5 & 15 & 54 \\
-        Pietro Busato      & 0 & 4 & 14,5 & 3,5 & 12,5 & 17 & 51,5 \\
+        Pietro Busato      & - & 4 & 14,5 & 3,5 & 12,5 & 17 & 51,5 \\
         Davide Donanzan    & 5 & 8 & 12 & 2 & 9 & 13 & 49 \\
-        Oscar Konieczny    & 0 & 7 & 15 & 4 & 14,5 & 15 & 55,5 \\
-        Veronica Tecchiati & 1,5 & 4,5 & 17 & 0 & 18 & 13 & 54 \\
+        Oscar Konieczny    & - & 7 & 15 & 4 & 14,5 & 15 & 55,5 \\
+        Veronica Tecchiati & 1,5 & 4,5 & 17 & - & 18 & 13 & 54 \\
         \midrule
         \textbf{Totale (ruolo)} & 9,5 & 33,5 & 87 & 22,5 & 77,5 & 85,5 & 315,5 \\
 		\bottomrule
@@ -1540,7 +1542,7 @@ Lo Sprint è stato ben pianificato per mitigare l'inevitabile rischio previsto. 
 \clearpage
 \newpage
 \subsection{Ottavo periodo}
-\textbf{Inizio:} 2024-07-16\\
+\textbf{Inizio:} 2024-07-17\\
 \textbf{Fine prevista:} 2024-07-30
 \subsubsection{Pianificazione}
 Questo Sprint segue il periodo di assestamento dovuto agli ingenti impegni accademici che i membri del team hanno dovuto sostenere. Le attività di progetto proseguono dunque speditamente per rispettare le scadenze stabilite. Di seguito sono elencate quelle previste per il periodo attuale:
@@ -1563,7 +1565,7 @@ I rischi che prevediamo possano manifestarsi durante questo periodo sono i segue
 \end{itemize}
 Infatti, durante questo periodo il gruppo dovrà approfondire ulteriormente la nuova tecnologia Apache Flink per implementarla all'interno del sistema; inoltre, la corretta pianificazione delle attività di queste settimane è cruciale per garantire la conclusione del progetto entro le scadenze prefissate.
 \newpage
-\subsubsection{Preventivo}
+\subsubsection{\glossterm{Preventivo}}
 \subsubsubsection{Preventivo orario}
 \begin{table}[ht!]
 	\centering
@@ -1611,10 +1613,79 @@ Infatti, durante questo periodo il gruppo dovrà approfondire ulteriormente la n
     \caption{\glossterm{Preventivo} dei costi dell'ottavo Sprint secondo ruolo.}
 	\label{table:Preventivo dei costi dell'ottavo Sprint secondo ruolo}
 \end{table}
-\subsubsection{Consuntivo}
+\subsubsection{\glossterm{Consuntivo}}
 \subsubsubsection{Consuntivo orario}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{3cm} p{1.4cm} p{1.6cm} p{1.7cm} p{1.4cm} p{1.4cm} p{1.5cm} p{2cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{5}{c}{\textbf{Ruolo}} & \multicolumn{2}{r}{\textbf{Totale (persona)}}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & - & - & - & - & 2 \textcolor{red}{(+1)} & 0,5 & 2,5 \textcolor{red}{(+1)} \\
+        Guglielmo Barison       & - & - & 1 & - & 1 & 0,5 & 2,5 \\
+        Pietro Busato           & - & - & 1 & - & 1 & 0,5 & 2,5 \\
+        Davide Donanzan         & 1 & - & 1 & - & 1 & 0,5 & 3,5 \\
+        Oscar Konieczny         & - & 4 & - & - & 2 & 0,5 & 6,5 \\
+        Veronica Tecchiati      & - & - & - & - & 3 \textcolor{teal}{(-1)} & 0,5 & 3,5 \textcolor{teal}{(-1)} \\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 1 & 4 & 3 & - & 10 & 3 & 21 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Distribuzione delle ore del settimo Sprint secondo ruolo e membro.}
+	\label{table:Distribuzione delle ore del settimo Sprint secondo ruolo e membro}
+\end{table}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{3cm} p{1.4cm} p{1.6cm} p{1.5cm} p{1.5cm} p{1.5cm} p{1.5cm} p{2cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{5}{c}{\textbf{Ruolo}} & \multicolumn{2}{r}{\textbf{Totale (persona)}}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero     & 2   & 5   & 9    & 1   & 6    & 7    & 30 \\
+        Gugliemo Barison   & 1   & 5   & 9,5  & 1   & 7,5  & 8,5  & 32,5 \\
+        Pietro Busato      & -   & 2,5 & 10,5 & 2,5 & 8,5  & 11,5 & 35,5 \\
+        Davide Donanzan    & 3   & 2   & 7    & 2   & 8    & 7,5  & 29,5 \\
+        Oscar Konieczny    & -   & 3   & 11   & 1   & 10,5 & 7,5  & 33 \\
+        Veronica Tecchiati & 1,5 & 4,5 & 15   & -   & 13   & 6,5  & 40,5 \\
+        \midrule
+        \textbf{Totale (ruolo)} & 7,5 & 22 & 62 & 7,5 & 53,5 & 48,5 & 201 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Ore rimaste dopo il settimo Sprint secondo ruolo e membro.}
+	\label{table:Ore rimaste dopo il settimo Sprint secondo ruolo e membro}
+\end{table}
+\clearpage
 \subsubsubsection{Consuntivo economico}
-\subsubsubsection{Rischi occorsi, impatto e loro mitigazione}
+\begin{table}[ht!]
+    \centering
+    \begin{tabular}{p{4cm} p{1.8cm} p{2.2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 1  & 30  \\
+        Responsabile   & 4  & 80  \\
+        Progettista    & 3  & 75  \\
+        Analista       & -  & -   \\
+        Programmatore  & 10 & 150 \\
+        Verificatore   & 3  & 45  \\
+        \bottomrule
+        \textbf{Totale} & 21 & 380
+    \end{tabular}
+    \caption{\glossterm{Preventivo} a finire dei costi del settimo Sprint secondo ruolo.}
+    \label{table:Preventivo a finire dei costi del settimo Sprint secondo ruolo}
+\end{table}
+\subsubsubsection{Rischi occorsi, impatto e loro mitigazione} \\
+Come previsto, i vari membri del team hanno dedicato minor tempo allo svolgimento delle attività del progetto per occuparsi dello studio in vista degli esami universitari. Al fine di limitare l'impatto di questa problematica, il gruppo allocherà un maggior numero di risorse durante i periodi successivi, in modo da compensare l'avanzamento più lento di questo Sprint. 
+\subsubsection{Retrospettiva}
+Lo Sprint è stato ben pianificato per mitigare l'inevitabile rischio previsto. Nel successivo Sprint è previsto un ritorno alle normali intensità di lavoro dei vari membri del team, ed è qualcosa di necessario per poter terminare i lavori nelle scadenze prefissate.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=13cm]{./images_pdp/gantt7.png}
+    \caption{Diagramma di Gantt rappresentativo del settimo periodo.}
+\end{figure}
+\clearpage
+
 %menzionerei il fatto che mid-sprint ci siamo resi conto che per finire il progetto in tempo avremmo dovuto dare priorità al prodotto rispetto alla documentazione. O qui o nella retrospettiva
 \subsubsection{Retrospettiva}
 
@@ -1626,12 +1697,70 @@ Infatti, durante questo periodo il gruppo dovrà approfondire ulteriormente la n
 \clearpage
 \newpage
 \subsection{Nono periodo}
-\textbf{Inizio:} 2024-07-30\\
+\textbf{Inizio:} 2024-07-31\\
 \textbf{Fine prevista:} 2024-08-09
 \subsubsection{Pianificazione}
+Questo Sprint, antecedente al collaudo finale con la Proponente, prevede la rifinitura del prodotto finale e la risoluzione di eventuali malfunzionamenti generali.\\Le attività dunque prevedono:
+\begin{itemize}
+    \item{Rifinitura delle dashboard di Grafana;}
+    \item{Rifinitura dell'implementazione del sistema di \glossterm{stream processing} tramite Apache Flink;}
+    \item Proseguimento nella stesura dei documenti di \textit{Manuale Utente} e \textit{Specifica Tecnica};
+    \item Applicazione di correzioni e miglioramenti ai documenti di \textit{Analisi dei Requisiti}, \textit{Glossario}, \textit{Norme di Progetto}, \textit{Piano di Progetto} e \textit{Piano di Qualifica}.
+\end{itemize} 
 \subsubsection{Rischi attesi}
-\subsubsection{Preventivo}
-\subsubsubsection{Preventivo orario}
+I rischi attesi del periodo descritto sono:
+\begin{itemize}
+    \setlength\itemsep{0em}
+        \item \textbf{RT-1:} Inesperienza;
+        \item \textbf{RP-1:} Stima errata delle tempistiche di progetto;
+        \item \textbf{RP-3:} Stima errata dei tempi di completamento di un'attività;
+    \end{itemize}
+\subsubsection{Preventivo}\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
+		\toprule
+        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
+		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
+		\midrule
+        Linda Barbiero          & -     & 3     & 4     & -     & 4     & 2     & 13 \\
+        Guglielmo Barison       & -     & -     & 5     & 1     & 5     & 4 & 15 \\
+        Pietro Busato           & -     & -     & 4     & 2     & 6     & 3     & 15 \\
+        Davide Donanzan         & 1     & -     & 5     & 2     & 5     & 2     & 15 \\
+        Oscar Konieczny         & -     & -     & 6     & 1     & 5     & 4     & 16 \\
+        Veronica Tecchiati      & 1.5     & 3     & 3     & -     & 7     & 2     & 16.5 \\
+        \bottomrule
+        \textbf{Totale (ruolo)} & 2.5     & 6     & 27    & 6    & 32    & 17    & 90.5 \\
+	\end{tabular}
+	\caption{Distribuzione delle ore dell'ottavo Sprint secondo ruolo e membro.}
+	\label{table:Distribuzione delle ore dell'ottavo Sprint secondo ruolo e membro}
+\end{table}
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=15cm]{./images_pdp/istogramma_periodo_8.png}
+    \caption{Visualizzazione dell'impegno temporale di ciascun membro nei rispettivi ruoli assegnati
+    nell'ottavo Sprint.}
+    \label{figure:Visualizzazione dell'impegno temporale di ciascun membro nei rispettivi ruoli
+    assegnati nell'ottavo Sprint}
+\end{figure}
+\subsubsubsection{Preventivo economico}
+    \begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{4cm} p{1cm} p{2cm}}
+        \toprule
+        \textbf{Ruolo} & \textbf{Ore} & \textbf{Costo (€)} \\
+        \midrule
+        Amministratore & 2.5  & 75   \\
+        Responsabile   & 6  & 120 \\
+        Progettista    & 27 & 675 \\
+        Analista       & 6 & 150 \\
+        Programmatore  & 32 & 480 \\
+        Verificatore   & 17 & 255 \\
+        \bottomrule
+        \textbf{Totale} & 90.5 & 1755
+    \end{tabular}
+    \caption{\glossterm{Preventivo} dei costi dell'ottavo Sprint secondo ruolo.}
+	\label{table:Preventivo dei costi dell'ottavo Sprint secondo ruolo}
+\end{table}
 \subsubsection{Consuntivo}
 \subsubsubsection{Consuntivo orario}
 \subsubsubsection{Consuntivo economico}
