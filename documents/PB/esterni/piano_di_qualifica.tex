@@ -1,4 +1,4 @@
-% changelog: "1.1.0, 2024-06-23, Davide Donanzan, Aggiornamento metriche"
+% changelog: "1.2.0, 2024-08-12, Davide Donanzan, Sistemazione tracciamento requisiti."
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -128,7 +128,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-        1.1.0 & 2024-08-09 & Aggiornamento metriche e test d'accettazione. & Davide Donanzan & Pietro Busato \\\\
+        1.2.0 & 2024-08-12 & Aggiornamento del tracciamento dei requisiti. & Davide Donanzan &  \\\\
+        1.1.0 & 2024-08-09 & Aggiornamento metriche e test d'accettazione. & Davide Donanzan & Pietro Busato \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -577,216 +578,220 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     \caption{Tabella dei \glossterm{test} di \glossterm{sistema}.} 
     \label{table:Tabella dei test di sistema}
     \endlastfoot 
-    TS-01 & Verificare che l'amministratore pubblico possa visualizzare un menù di selezione delle
+    TS-01 & Verificare che l'amministratore pubblico possa utilizzare l'applicativo solamente previa autenticazione. Tale procedura avviene attraverso l'inserimento di username e password. & V\\
+    \hline
+    TS-02 & Verificare che l'amministratore pubblico visualizzi un messaggio di errore qualora le credenziali inserite non siano valide. & V\\
+    \hline
+    TS-03 & Verificare che l'amministratore pubblico possa visualizzare un menù di selezione delle
     \glossterm{dashboard}, che permetta a sua volta di selezionare una dashboard tra: Sensori, Ambientale, Urbanistica e Soglie. & V\\
     \hline
-    TS-02 & Verificare che l'amministratore pubblico possa monitorare i dati
+    TS-04 & Verificare che l'amministratore pubblico possa monitorare i dati
     provenienti dai sensori relativi alla \glossterm{dashboard} Sensori.
     & V \\
     \hline
-    TS-03 & Verificare che l'amministratore pubblico possa visualizzare un pannello
+    TS-05 & Verificare che l'amministratore pubblico possa visualizzare un pannello
     contenente una mappa che mostri le posizioni dei sensori, mediante icone in base al tipo di \glossterm{sensore} nella \glossterm{dashboard} Sensori.
     & V \\
     \hline
-    TS-04 & Verificare che l'amministratore pubblico possa monitorare i dati ambientali, provenienti
+    TS-06 & Verificare che l'amministratore pubblico possa monitorare i dati ambientali, provenienti
     dai sensori nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-05 & Verificare che l'amministratore pubblico possa visualizzare un pannello
+    TS-07 & Verificare che l'amministratore pubblico possa visualizzare un pannello
     contenente un grafico, in formato \glossterm{time series}, rappresentante l'andamento della temperatura,
     espressa in gradi Celsius (°C), per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-06 & Verificare che l'amministratore pubblico possa visualizzare un pannello
+    TS-08 & Verificare che l'amministratore pubblico possa visualizzare un pannello
     contenente un grafico, in formato \glossterm{time series}, rappresentante l'andamento dell'umidità, espressa
     in percentuale, per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline 
-    TS-07 & Verificare che l'amministratore pubblico possa visualizzare un pannello
+    TS-09 & Verificare che l'amministratore pubblico possa visualizzare un pannello
     contenente un grafico, in formato \glossterm{time series}, rappresentante l'andamento della temperatura
     percepita,
     espressa in gradi Celsius (°C), per ciascuna coppia di sensori temperatura-umidità, nella
     \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-08 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-10 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante la media aritmetica della temperatura,
     espressa in gradi Celsius (°C), basato sulle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-09 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-11 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante la media aritmetica dell'umidità,
     espressa in percentuale, basato sulle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-10 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-12 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante la media aritmetica della temperatura percepita,
     espressa in gradi Celsius (°C), basato sulle ultime rilevazioni effettuate dalle coppie di sensori temperatura-umidità, che aggreghi i dati nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-11 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-13 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico bar chart rappresentante valori statistici della temperatura,
     espressa in gradi Celsius (°C), per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-12 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-14 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico bar chart rappresentante valori statistici della temperatura percepita,
     espressa in gradi Celsius (°C), per ciascuna coppia di sensori temperatura-umidità, nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-13 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-15 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato \glossterm{time series} rappresentante l'intensità delle precipitazioni,
     espressa in millimetri orari (mm/h), per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-14 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-16 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato \glossterm{time series} rappresentante la quantità di polveri sottili presenti nell'aria,
     espressa in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-15 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-17 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico in formato \glossterm{time series} rappresentante le misurazioni relative al livello dell'acqua,
     espressa in percentuale, per ciascun \glossterm{sensore} nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-16 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-18 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante l'attuale intensità delle precipitazioni,
     espressa in millimetri orari (mm/h), basata sulle ultime rilevazioni effettuate dai singoli sensori, che aggreghi i dati nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-17 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-19 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante l'attuale inquinamento dell'aria,
     espresso in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), basato sulle ultime rilevazioni effettuate dai singoli sensori nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-18 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-20 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante l'attuale livello dell'acqua,
     espresso in percentuale, basato sulle ultime rilevazioni effettuate dai singoli sensori nella \glossterm{dashboard} Ambientale.
     & V \\
     \hline
-    TS-19 & Verificare che l'amministratore pubblico possa monitorare i dati provenienti
+    TS-21 & Verificare che l'amministratore pubblico possa monitorare i dati provenienti
     dai sensori relativi ai dati urbanistici in una \glossterm{dashboard} apposita.
     & V \\
     \hline
-    TS-20 & Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi lo stato aggiornato della disponibilità dei posti nei vari parcheggi nella
+    TS-22 & Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi lo stato aggiornato della disponibilità dei posti nei vari parcheggi nella
     \glossterm{dashboard} Urbanistica. & V \\
     \hline
-    TS-21 & Verificare che l'amministratore pubblico possa visualizzare un pannello in formato tabellare che evidenzi lo stato aggiornato dei posti nei vari parcheggi nella
+    TS-23 & Verificare che l'amministratore pubblico possa visualizzare un pannello in formato tabellare che evidenzi lo stato aggiornato dei posti nei vari parcheggi nella
     \glossterm{dashboard} Urbanistica. & V \\
-    \hline
-    TS-22 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento nei vari parcheggi nella \glossterm{dashboard} Urbanistica.& V \\
-    \hline
-    TS-23 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi i guasti nella rete eletrica nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-24 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello in formato \glossterm{time series} rappresentante il riempimento di un'isola ecologica, espresso in percentuale nella \glossterm{dashboard} Urbanistica.& V \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento nei vari parcheggi nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-25 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi lo stato di disponibilità delle colonnine di ricarica nella \glossterm{dashboard} Urbanistica.& V \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi i guasti nella rete eletrica nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-26 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello in formato tabellare che evidenzi lo stato delle colonnine di ricarica nella \glossterm{dashboard} Urbanistica.& V \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello in formato \glossterm{time series} rappresentante il riempimento di un'isola ecologica, espresso in percentuale nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-27 & 
-    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato \glossterm{time series} rappresentante l'andamento dei consumi delle colonnine di ricarica, espresso in kilowattora (kWh), nella \glossterm{dashboard} Urbanistica.& V \\
+    Verificare che l'amministratore pubblico possa visualizzare un pannello \glossterm{geomap} che evidenzi lo stato di disponibilità delle colonnine di ricarica nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
     TS-28 & 
+    Verificare che l'amministratore pubblico possa visualizzare un pannello in formato tabellare che evidenzi lo stato delle colonnine di ricarica nella \glossterm{dashboard} Urbanistica.& V \\
+    \hline
+    TS-29 & 
+    Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato \glossterm{time series} rappresentante l'andamento dei consumi delle colonnine di ricarica, espresso in kilowattora (kWh), nella \glossterm{dashboard} Urbanistica.& V \\
+    \hline
+    TS-30 & 
     Verificare che l'amministratore pubblico possa visualizzare un pannello nel formato di un registro che mostri l'elenco delle notifiche di pagamento, dovute all'utilizzo delle colonnine di ricarica, nella \glossterm{dashboard} Urbanistica.& V \\
     \hline
-    TS-29 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-31 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico bar chart rappresentante valori statistici riguardanti i pagamenti effettuati in un parcheggio nella \glossterm{dashboard} Urbanistica.
     & V \\
     \hline
-    TS-30 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-32 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico bar chart rappresentante valori statistici riguardanti i pagamenti dovuti all'utilizzo di una colonnina di ricarica nella \glossterm{dashboard} Urbanistica.
     & V \\
-    TS-31 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
+    TS-33 & Verificare che l'amministratore pubblico possa visualizzare un pannello contenente
     un grafico \glossterm{Gauge} rappresentante l'efficienza monetaria relativa ad un parcheggio nella \glossterm{dashboard} Urbanistica.
     & V \\
     \hline
-    TS-32 & Verificare che l'amministratore pubblico possa controllare il superamento di determinate soglie in una relativa \glossterm{dashboard}. &
+    TS-34 & Verificare che l'amministratore pubblico possa controllare il superamento di determinate soglie in una relativa \glossterm{dashboard}. &
     V \\
     \hline
-    TS-33 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento delle soglie di temperatura accettabili nella \glossterm{dashboard} Soglie. &
+    TS-35 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento delle soglie di temperatura accettabili nella \glossterm{dashboard} Soglie. &
     V \\
     \hline
-    TS-34 &Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia d'intensità delle precipitazioni accettabili nella \glossterm{dashboard} Soglie. &
+    TS-36 &Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia d'intensità delle precipitazioni accettabili nella \glossterm{dashboard} Soglie. &
     V \\
     \hline
-    TS-35 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia d'inquinamento dell'aria ritenuto accettabile nella \glossterm{dashboard} Soglie. &
+    TS-37 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia d'inquinamento dell'aria ritenuto accettabile nella \glossterm{dashboard} Soglie. &
     V \\
     \hline
-    TS-36 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia del livello dell'acqua ritenuto accettabile nella \glossterm{dashboard} Soglie. &
+    TS-38 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia del livello dell'acqua ritenuto accettabile nella \glossterm{dashboard} Soglie. &
     V \\
     \hline
-    TS-37 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia di riempimento delle isole ecologiche ritenuto accettabile nella \glossterm{dashboard} Soglie. &
+    TS-39 & Verificare che l'amministratore pubblico possa visualizzare un pannello che notifica il superamento della soglia di riempimento delle isole ecologiche ritenuto accettabile nella \glossterm{dashboard} Soglie. &
     V \\
     \hline
-    TS-38 & Verificare che l'amministratore pubblico riceva un messaggio di errore qualora il
+    TS-40 & Verificare che l'amministratore pubblico riceva un messaggio di errore qualora il
     \glossterm{sistema} di visualizzazione non riesca a reperire i dati necessari per un determinato pannello. &
     V \\
     \hline
-    TS-39 & Verificare che l'amministratore pubblico possa filtrare i dati, visualizzati
+    TS-41 & Verificare che l'amministratore pubblico possa filtrare i dati, visualizzati
     all’interno di un grafico, in base ad un sottoinsieme di sensori da lui
     selezionato. & V \\
     \hline
-    TS-40 & Verificare che l'amministratore pubblico possa filtrare i dati in base ad un intervallo temporale. La \glossterm{dashboard} di interesse deve mostrare solamente i dati aventi un timestamp in tale intervallo.
+    TS-42 & Verificare che l'amministratore pubblico possa filtrare i dati in base ad un intervallo temporale. La \glossterm{dashboard} di interesse deve mostrare solamente i dati aventi un timestamp in tale intervallo.
     & V\\
     \hline
-    TS-41 & Verificare che l'amministratore pubblico possa rimuovere un filtro precedentemente applicato ai dati.
+    TS-43 & Verificare che l'amministratore pubblico possa rimuovere un filtro precedentemente applicato ai dati.
     & V\\
     \hline
-    TS-42 & Verificare che l'amministratore pubblico possa modificare il layout dei pannelli modificandone le dimensioni a proprio piacimento.
+    TS-44 & Verificare che l'amministratore pubblico possa modificare il layout dei pannelli modificandone le dimensioni a proprio piacimento.
     & V\\
     \hline
-    TS-43 & Verificare che l'amministratore pubblico possa modificare il layout dei pannelli modificandone la posizione, a proprio piacimento, all'interno della \glossterm{dashboard}.
+    TS-45 & Verificare che l'amministratore pubblico possa modificare il layout dei pannelli modificandone la posizione, a proprio piacimento, all'interno della \glossterm{dashboard}.
     & V\\
     \hline
-    TS-44 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni della temperatura, espresse in
+    TS-46 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni della temperatura, espresse in
     gradi Celsius (°C), con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-45 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'umidità, espresse in
+    TS-47 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'umidità, espresse in
     percentuale, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-46 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'intensità delle precipitazioni, espresse in
+    TS-48 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'intensità delle precipitazioni, espresse in
     millimetri orari (mm/h), con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-47 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'inquinamento dell'aria, espresse in
+    TS-49 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dell'inquinamento dell'aria, espresse in
     microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-48 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni del livello dell'acqua, espresse in
+    TS-50 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni del livello dell'acqua, espresse in
     percentuale, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-49 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei parcheggi,
+    TS-51 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei parcheggi,
     espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline 
-    TS-50 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei pagamenti
+    TS-52 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei pagamenti
     dei parcheggi, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-51 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni di guasti alla rete elettrica espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & V \\
+    TS-53 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni di guasti alla rete elettrica espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-52 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato di riempimento delle isole ecologiche,
+    TS-54 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato di riempimento delle isole ecologiche,
     espresse in percentuale, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-53 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato di disponibilità delle colonnine di ricarica,
+    TS-55 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato di disponibilità delle colonnine di ricarica,
     espresse tramite valore \glossterm{boolean}, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-54 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dei consumi delle colonnine di ricarica,
+    TS-56 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dei consumi delle colonnine di ricarica,
     espresse in kilowattora (kWh), con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-55 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei pagamenti dovuti all'utilizzo delle colonnine di ricarica, con annesse coordinate e timestamp della rilevazione. & V \\
+    TS-57 & Verificare che un \glossterm{sensore} possa inserire le rilevazioni dello stato dei pagamenti dovuti all'utilizzo delle colonnine di ricarica, con annesse coordinate e timestamp della rilevazione. & V \\
     \hline
-    TS-56 & Verificare che sia stato implementato almeno un simulatore per ogni tipologia di \glossterm{sensore}
+    TS-58 & Verificare che sia stato implementato almeno un simulatore per ogni tipologia di \glossterm{sensore}
     & V \\
     \hline
-    TS-57 & Verificare che i dati prodotti dalle simulazioni siano realistici. & NV \\
+    TS-59 & Verificare che i dati prodotti dalle simulazioni siano realistici. & V \\
     \hline
-    TS-58 & Verificare che il \glossterm{sistema} possa rilevare eventuali relazioni tra sorgenti di dati
+    TS-60 & Verificare che il \glossterm{sistema} possa rilevare eventuali relazioni tra sorgenti di dati
     diversi. & V \\
     \hline
-    TS-59 & Verificare che il \glossterm{sistema} possa effettuare previsioni di eventi futuri sulla base di dati storici e attuali. & NI \\
+    TS-61 & Verificare che il \glossterm{sistema} possa effettuare previsioni di eventi futuri sulla base di dati storici e attuali. & NI \\
     \hline
 \end{longtable}
 \clearpage
@@ -803,117 +808,140 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
 \caption{Tracciamento dei \glossterm{test} di \glossterm{sistema}.}
 \label{table:Tracciamento dei test di sistema}
 \endlastfoot
-    TS-01 & RF-16 \\
+    TS-01 & RF-1  \newline
+            RF-16 \newline
+            RF-17 \\
     \hline 
-    TS-02 & RF-17 \\
-    \hline
-    TS-03 & RF-18 \\
-    \hline
-    TS-04 & RF-19 \\
-    \hline
-    TS-05 & RF-20 \\
-    \hline
-    TS-06 & RF-21 \\
-    \hline
-    TS-07 & RF-22 \\
-    \hline
-    TS-08 & RF-23 \\
-    \hline
-    TS-09 & RF-24 \\
-    \hline
-    TS-10 & RF-25 \\
-    \hline
-    TS-11 & RF-26 \\
-    \hline
-    TS-12 & RF-27 \\
-    \hline
-    TS-13 & RF-28 \\
-    \hline
-    TS-14 & RF-29 \\
-    \hline
-    TS-15 & RF-30 \\
-    \hline
-    TS-16 & RF-31 \\
-    \hline
-    TS-17 & RF-32 \\
-    \hline
-    TS-18 & RF-33 \\
-    \hline
-    TS-19 & RF-34 \\
-    \hline
-    TS-20 & RF-35 \\
-    \hline
-    TS-21 & RF-36 \\
-    \hline
-    TS-22 & RF-37 \\
-    \hline
-    TS-23 & RF-38 \\
-    \hline
-    TS-24 & RF-39 \\
-    \hline
-    TS-25 & RF-40 \\
-    \hline
-    TS-26 & RF-41 \\
-    \hline
-    TS-27 & RF-42 \\
-    \hline
-    TS-28 & RF-43 \\
-    \hline
-    TS-29 & RF-44 \\
-    \hline
-    TS-30 & RF-45 \\
-    \hline
-    TS-31 & RF-46 \\
+    TS-02 & RF-18 \\
     \hline 
-    TS-32 & RF-47 \\
+    TS-03 & RF-19 \\
+    \hline 
+    TS-04 & RF-20 \\
     \hline
-    TS-33 & RF-48 \\
+    TS-05 & RF-21 \newline
+            RF-22 \\
     \hline
-    TS-34 & RF-49 \\
+    TS-06 & RF-23 \\
     \hline
-    TS-35 & RF-50 \\
+    TS-07 & RF-24 \\
     \hline
-    TS-36 & RF-51 \\
+    TS-08 & RF-25 \\
     \hline
-    TS-37 & RF-52 \\
+    TS-09 & RF-26 \\
     \hline
-    TS-38 & RF-53 \\
+    TS-10 & RF-27 \\
     \hline
-    TS-39 & RF-55 \\
+    TS-11 & RF-28 \\
     \hline
-    TS-40 & RF-56 \\
+    TS-12 & RF-29 \\
     \hline
-    TS-41 & RF-57 \\
+    TS-13 & RF-30 \\
     \hline
-    TS-42 & RF-59 \\
+    TS-14 & RF-31 \\
     \hline
-    TS-43 & RF-60 \\
+    TS-15 & RF-32 \\
     \hline
-    TS-44 & RF-61 \\
+    TS-16 & RF-33 \\
     \hline
-    TS-45 & RF-62 \\
+    TS-17 & RF-34 \\
     \hline
-    TS-46 & RF-63 \\
+    TS-18 & RF-35 \\
     \hline
-    TS-47 & RF-64 \\
+    TS-19 & RF-36 \\
     \hline
-    TS-48 & RF-65 \\
+    TS-20 & RF-37 \\
     \hline
-    TS-49 & RF-66 \\
+    TS-21 & RF-38 \\
     \hline
-    TS-50 & RF-67 \\
+    TS-22 & RF-39 \\
     \hline
-    TS-51 & RF-68 \\
+    TS-23 & RF-40 \\
     \hline
-    TS-52 & RF-69 \\
+    TS-24 & RF-41 \\
     \hline
-    TS-53 & RF-70 \\
+    TS-25 & RF-42 \\
     \hline
-    TS-54 & RF-71 \\
+    TS-26 & RF-43 \\
     \hline
-    TS-55 & RF-72 \\
+    TS-27 & RF-44 \\
     \hline
-    TS-56 & RF-4 \newline
+    TS-28 & RF-45 \\
+    \hline
+    TS-29 & RF-46 \\
+    \hline
+    TS-30 & RF-47 \\
+    \hline
+    TS-31 & RF-48 \\
+    \hline
+    TS-32 & RF-49 \\
+    \hline
+    TS-33 & RF-50 \\
+    \hline 
+    TS-34 & RF-51 \\
+    \hline
+    TS-35 & RF-52 \\
+    \hline
+    TS-36 & RF-53 \\
+    \hline
+    TS-37 & RF-54 \\
+    \hline
+    TS-38 & RF-55 \\
+    \hline
+    TS-39 & RF-56 \\
+    \hline
+    TS-40 & RF-57 \\
+    \hline
+    TS-41 & RF-58 \newline
+            RF-59 \\
+    \hline
+    TS-42 & RF-58 \newline
+            RF-60 \\
+    \hline
+    TS-43 & RF-61 \\
+    \hline
+    TS-44 & RF-62 \newline
+            RF-63 \\
+    \hline
+    TS-45 & RF-62 \newline
+            RF-64 \\
+    \hline
+    TS-46 & RF-65 \newline 
+            RF-66 \\
+    \hline
+    TS-47 & RF-65 \newline
+            RF-67 \\
+    \hline
+    TS-48 & RF-65 \newline
+            RF-68 \\
+    \hline
+    TS-49 & RF-65 \newline
+            RF-69 \\
+    \hline
+    TS-50 & RF-65 \newline
+            RF-70 \\
+    \hline
+    TS-51 & RF-65 \newline
+            RF-71 \\
+    \hline
+    TS-52 & RF-65 \newline
+            RF-72 \\
+    \hline
+    TS-53 & RF-65 \newline
+            RF-73 \\
+    \hline
+    TS-54 & RF-65 \newline
+            RF-74 \\
+    \hline
+    TS-55 & RF-65 \newline
+            RF-75 \\
+    \hline
+    TS-56 & RF-65 \newline
+            RF-76 \\
+    \hline
+    TS-57 & RF-65 \newline
+            RF-77 \\
+    \hline
+    TS-58 & RF-4 \newline
             RF-5 \newline
             RF-6 \newline
             RF-7 \newline
@@ -926,11 +954,11 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
             RF-14 \newline
             RF-15 \\
     \hline
-    TS-57 & RF-3 \\
+    TS-59 & RF-3 \\
     \hline
-    TS-58 & RF-73 \\
+    TS-60 & RF-78 \\
     \hline
-    TS-59 & RF-74 \\
+    TS-61 & RF-79 \\
     \hline
 \end{longtable}
 \clearpage
@@ -950,11 +978,12 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
     \caption{Tabella dei \glossterm{test} di accettazione.} 
     \label{table:Tabella dei test di accettazione}
     \endlastfoot  
-    TA-01 & Verificare che l'amministratore pubblico senza autenticazione possa:
+    TA-01 & Verificare che l'amministratore pubblico possa:
     \begin{enumerate}
         \setlength\itemsep{0em}
-        \item Usufruire dell’applicativo senza doversi autenticare.
-    \end{enumerate} & NV \\
+        \item Usufruire dell’applicativo solo previa autenticazione;
+        \item Visualizzare messaggio di errore qualore le credenziali inserite non siano valide.
+    \end{enumerate} & V \\
     \hline
     TA-02 & Verificare che l'amministratore pubblico, una volta entrato nell'applicativo, possa:
     \begin{enumerate}
@@ -965,7 +994,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
         \item Visualizzare un pannello con una mappa che indichi, mediante icone collocate presso le coordinate di ciascun \glossterm{sensore}, la loro posizione;
         \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il \glossterm{sistema} non riesca a reperire i dati.
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-03 & Verificare che l'amministratore pubblico, una volta entrato nell'applicativo, possa:
     \begin{enumerate}
@@ -986,7 +1015,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
             del calcolo della temperatura media, espresso in gradi Celsius (°C), ottenuto tramite la
             media aritmetica basato sulle ultime rilevazioni effettuate dai singoli sensori;
     \end{enumerate}
-    & NV \\
+    & V \\
         TA-03 &
         \begin{enumerate}[start=8]
         \item Visualizzare un pannello contenente un grafico di tipo \glossterm{Gauge} che mostri il risultato
@@ -1016,7 +1045,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
             del calcolo dell'attuale livello dell'acqua, espresso in percentuale, ottenuto dalle rilevazioni effettuate dai singoli sensori;
         \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il \glossterm{sistema} non riesca a reperire i dati.
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-04 & Verificare che l'amministratore pubblico, una volta entrato nell'applicativo, possa:
     \begin{enumerate}
@@ -1047,7 +1076,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
         \item Visualizzare un pannello contenente un grafico di tipo \glossterm{Gauge} che mostri valori l'efficienza monetaria relativa ad un parcheggio;
         \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il \glossterm{sistema} non riesca a reperire i dati.
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-05 & Verificare che l'amministratore pubblico, una volta entrato nell'applicativo, possa:
     \begin{enumerate}
@@ -1062,7 +1091,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
         \item Visualizzare un pannello che notifica l'eventuale superamento della soglia di riempimento di un'isola ecologica entro la quale il riempimento è ritenuto accettabile;
         \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il \glossterm{sistema} non riesca a reperire i dati.
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-06 & Verificare che l'amministratore pubblico, una volta entrato nell’applicativo, possa:
     \begin{enumerate}
@@ -1074,7 +1103,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
         \item Applicare dei filtri per selezionare solo i dati relativi ad un definito intervallo di tempo, all’interno di un’intera dashboard;
         \item Rimuovere filtri precedentemente applicati all'interno di un pannello o di una dashboard.
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-07 & Verificare che l'amministratore pubblico, una volta entrato
     nell’applicativo, possa:
@@ -1082,7 +1111,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
         \item Scegliere una \glossterm{dashboard} di cui modificare il layout;
         \item Modificare il layout dei pannelli in termini di posizione di tali pannelli e della loro dimensione.
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-08 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
@@ -1090,35 +1119,35 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
         \item Inserire il risultato della rilevazione della temperatura, espressa in gradi Celsius
             (°C), con annesso il timestamp di rilevazione e le proprie coordinate geografiche.        
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-09 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione dell’umidità, espressa in percentuale, con annesso il timestamp di rilevazione e le proprie coordinate geografiche.
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-10 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione dell'intensità delle precipitazioni, espressa in millimetri orari (mm/h), con annesso il timestamp di rilevazione e le proprie coordinate geografiche.
     \end{enumerate}
-    & NI \\
+    & V \\
     \hline
     TA-11 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione dell’inquinamento dell'aria, espressa in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), con annesso il timestamp di rilevazione e le proprie coordinate geografiche.
     \end{enumerate}
-    & NI \\
+    & V \\
     \hline
     TA-12 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione del livello dell'acqua, espressa in percentuale, con annesso il timestamp di rilevazione e le proprie coordinate geografiche.
     \end{enumerate}
-    & NI \\
+    & V \\
     \hline
     TA-13 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
@@ -1126,7 +1155,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
     \item  Inserire il risultato della rilevazione della presenza di auto all’interno del
         parcheggio, con annesso il timestamp di rilevazione, la targa dell'auto e le proprie coordinate geografiche. 
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-14 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
@@ -1134,42 +1163,42 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
     \item Inserire il risultato della rilevazione di avvenuto pagamento all’interno del
         parcheggio, con annesso il timestamp di rilevazione, il valore del pagamento e le proprie coordinate geografiche. 
     \end{enumerate}
-    & NV \\
+    & V \\
     \hline
     TA-15 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione di un guasto alla linea elettrica, con annesso il timestamp di rilevazione e le proprie coordinate geografiche. 
     \end{enumerate}
-    & NI \\
+    & V \\
     \hline
     TA-16 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione dello stato riempimento di un'isola ecologica, espresso in percentuale, con annesso il timestamp di rilevazione e le proprie coordinate geografiche. 
     \end{enumerate}
-    & NI \\
+    & V \\
     \hline
     TA-17 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione della presenza di un'auto nella colonnina di ricarica, con annesso il timestamp di rilevazione, la targa dell'auto e le proprie coordinate geografiche.  
     \end{enumerate}
-    & NI \\
+    & V \\
     \hline
     TA-18 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione del consumo di una colonnina di ricarica, espresso in kilowattora (kWh) con annesso il timestamp di rilevazione e le proprie coordinate geografiche.  
     \end{enumerate}
-    & NI \\
+    & V \\
     \hline
     TA-19 &
     Verificare che un \glossterm{sensore}, una volta connesso al \glossterm{sistema}, possa:
     \begin{enumerate}
     \item Inserire il risultato della rilevazione di avvenuto pagamento dovuto all'utilizzo di una colonnina di ricarica, con annesso il timestamp di rilevazione, il valore del pagamento e le proprie coordinate geografiche. 
     \end{enumerate}
-    & NI \\
+    & V \\
     \hline
 \end{longtable}
 \clearpage
@@ -1187,121 +1216,128 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
 \label{table:Tracciamento dei test di accettazione}
 \endlastfoot
     TA-01 & UC-0 \newline
-            UC-1 \newline
-            UC-2 \newline
-            UC-3 \newline
-            UC-4 
+            UC-0.1 \newline
+            UC-0.2 \newline
+            UC-1  
     \\
     \hline
     TA-02 & UC-0 \newline
-            UC-1 \newline
-            UC-1.1 \newline
-            UC-5
-    \\
-    \hline 
-    TA-03 & UC-0 \newline
+            UC-0.1 \newline
+            UC-0.2 \newline
             UC-2 \newline
             UC-2.1 \newline
-            UC-2.2 \newline
-            UC-2.3 \newline
-            UC-2.4 \newline
-            UC-2.5 \newline
-            UC-2.6 \newline
-            UC-2.7 \newline
-            UC-2.8 \newline
-            UC-2.9 \newline
-            UC-2.10 \newline
-            UC-2.11 \newline
-            UC-2.12 \newline
-            UC-2.13 \newline
-            UC-2.14 \newline
-            UC-5
+            UC-7
     \\
-    \hline
-    TA-04 & UC-0 \newline
-            UC-3 \newline 
-            UC-3.1 \newline
-            UC-3.2 \newline
-            UC-3.3 \newline
-            UC-3.4 \newline
-            UC-3.5 \newline
-            UC-3.6 \newline
-            UC-3.7 \newline
-            UC-3.8 \newline
-            UC-3.9 \newline
-            UC-3.10 \newline
-            UC-3.11 \newline
-            UC-3.12 \newline
-            UC-5
-    \\
-    \hline
-    TA-05 & UC-0 \newline
-            UC-4 \newline 
+    \hline 
+    TA-03 & UC-0 \newlineUC-0 \newline
+            UC-0.1 \newline
+            UC-0.2 \newline
+            UC-4 \newline
             UC-4.1 \newline
             UC-4.2 \newline
             UC-4.3 \newline
             UC-4.4 \newline
             UC-4.5 \newline
-            UC-5
-    \\
-    \hline
-    TA-06 & UC-6 \newline
-            UC-6.1 \newline
-            UC-6.2 \newline
+            UC-4.6 \newline
+            UC-4.7 \newline
+            UC-4.8 \newline
+            UC-4.9 \newline
+            UC-4.10 \newline
+            UC-4.11 \newline
+            UC-4.12 \newline
+            UC-4.13 \newline
+            UC-4.14 \newline
             UC-7
     \\
     \hline
-    TA-07 & UC-8 \newline
+    TA-04 & UC-0 \newline
+            UC-0.1 \newline
+            UC-0.2 \newline
+            UC-5 \newline 
+            UC-5.1 \newline
+            UC-5.2 \newline
+            UC-5.3 \newline
+            UC-5.4 \newline
+            UC-5.5 \newline
+            UC-5.6 \newline
+            UC-5.7 \newline
+            UC-5.8 \newline
+            UC-5.9 \newline
+            UC-5.10 \newline
+            UC-5.11 \newline
+            UC-5.12 \newline
+            UC-7
+    \\
+    \hline
+    TA-05 & UC-0 \newline
+            UC-0.1 \newline
+            UC-0.2 \newline
+            UC-6 \newline 
+            UC-6.1 \newline
+            UC-6.2 \newline
+            UC-6.3 \newline
+            UC-6.4 \newline
+            UC-6.5 \newline
+            UC-7
+    \\
+    \hline
+    TA-06 & UC-8 \newline
             UC-8.1 \newline
-            UC-8.2
+            UC-8.2 \newline
+            UC-9
     \\
     \hline
-    TA-08 & UC-9 \newline
-            UC-9.1
+    TA-07 & UC-10 \newline
+            UC-10.1 \newline
+            UC-10.2
     \\
     \hline
-    TA-09 & UC-9 \newline
-            UC-9.2
+    TA-08 & UC-11 \newline
+            UC-11.1
     \\
     \hline
-    TA-10 & UC-9 \newline
-            UC-9.3
+    TA-09 & UC-11 \newline
+            UC-11.2
     \\
     \hline
-    TA-11 & UC-9 \newline
-            UC-9.4
+    TA-10 & UC-11 \newline
+            UC-11.3
     \\
     \hline
-    TA-12 & UC-9 \newline
-            UC-9.5
+    TA-11 & UC-11 \newline
+            UC-11.4
     \\
     \hline
-    TA-13 & UC-9 \newline
-            UC-9.6
+    TA-12 & UC-11 \newline
+            UC-11.5
     \\
     \hline
-    TA-14 & UC-9 \newline
-            UC-9.7
+    TA-13 & UC-11 \newline
+            UC-11.6
     \\
     \hline
-    TA-15 & UC-9 \newline
-            UC-9.8
+    TA-14 & UC-11 \newline
+            UC-11.7
     \\
     \hline
-    TA-16 & UC-9 \newline
-            UC-9.9
+    TA-15 & UC-11 \newline
+            UC-11.8
     \\
     \hline
-    TA-17 & UC-9 \newline
-            UC-9.10
+    TA-16 & UC-11 \newline
+            UC-11.9
     \\
     \hline
-    TA-18 & UC-9 \newline
-            UC-9.11
+    TA-17 & UC-11 \newline
+            UC-11.10
     \\
     \hline
-    TA-18 & UC-9 \newline
-            UC-9.12
+    TA-18 & UC-11 \newline
+            UC-11.11
+    \\
+    \hline
+    TA-18 & UC-11 \newline
+            UC-11.12
     \\
     \hline
 \end{longtable}
