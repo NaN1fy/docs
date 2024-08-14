@@ -1,4 +1,4 @@
-% changelog: "0.1.0, 2024-07-25, Davide Donanzan, Continuazione stesura"
+% changelog: "0.2.0, 2024-08-14, Davide Donanzan, Continuazione stesura tecnologie"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -128,6 +128,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
+		    0.2.0 & 2024-08-14 & Continuazione sezione \ref{sec:tec} e stesura sezione \ref{sec:trac}. & Davide Donanzan & Pietro Busato \\\\
 		    0.1.0 & 2024-07-25 & Stesura sezione \ref{sec:tec}. & Davide Donanzan & Guglielmo Barison \\\\
     		0.0.0 & 2024-07-01 & Stesura struttura e sezione \ref{sec:intro}. & Davide Donanzan & Guglielmo Barison \\
 		\bottomrule
@@ -258,13 +259,13 @@ In questa sezione verranno illustrati gli strumenti e le tecnologie impiegati pe
 \subsection{Docker}
 In fase di sviluppo, testing e produzione, sono stati utilizzati \glossterm{container} \glossterm{Docker} per creare ambienti di lavoro efficaci e consistenti.
 \subsubsection{Ambienti}
-Sono stati creati tre ambienti di lavoro con focus operativi differenti.
+Sono stati creati quattro ambienti di lavoro con focus operativi differenti.
 \begin{itemize}
     \item \textbf{Ambiente di produzione:}
     \begin{itemize}
         \item Ambiente dove i programmatori possono testare il codice nella produzione dei dati simulati;
         \item Il focus è quello della produzione dei dati simulati nell'ottica della fruizione del servizio fornito dall'applicativo.
-        \item L'intera \glossterm{data pipeline} è in funzione.
+        \item L'intera \glossterm{data pipeline} ad esclusione dello \glossterm{stream-processing}, è in funzione.
     \end{itemize}
     \item \textbf{Ambiente di development:}
     \begin{itemize}
@@ -277,41 +278,65 @@ Sono stati creati tre ambienti di lavoro con focus operativi differenti.
         \item Ambiente che simula l'ambiente di produzione;
         \item Utilizza test automatizzati per verificare la correttezza del codice nelle sue unità e nell'integrazione di queste tra loro.
     \end{itemize}
+     \item \textbf{Ambiente di stream-processing:}
+    \begin{itemize}
+        \item Ambiente dove i programmatori possono controllare il corretto funzionamento dello \glossterm{stream-processing};
+        \item Il focus è quello di osservare il comportamento, implementare e verificare l'elaborazione di stream differenti;
+        \item L'intera \glossterm{data pipeline} ad esclusione della visualizzazione dei dati, è in funzione.
+    \end{itemize}
 \end{itemize}
 \subsubsection{Images}
 Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
 \begin{itemize}
-    \item \textbf{\glossterm{Kafka}}
+    \item \textbf{\glossterm{Python}}
     \begin{itemize}
-        \item \textbf{Image:} bitnami/kafka:3.7.0
-        \item \textbf{Riferimento:}
+        \item \textbf{Image:} python:3.11-bookworm
+        \item \textbf{Riferimento:}  \href{https://hub.docker.com/layers/library/python/3.11-bookworm/images/sha256-94c2dca43c9c127e42dfd021039cc83d8399752097612b49bdc7b00716b6d826}{\color{myblue}https://hub.docker.com/layers/library/python/3.11-bookworm/images/sha256-94c2dca43c9c127e42dfd021039cc83d8399752097612b49bdc7b00716b6d826} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
         \begin{itemize}
             \item Produzione;
-            \item Test.
+            \item Test;
+            \item Stream processing.
         \end{itemize}
     \end{itemize}
-    \item \textbf{\glossterm{Flink}}
+    \item \textbf{Apcahe \glossterm{Kafka}}
     \begin{itemize}
-        \item \textbf{Image:} 
-        \item \textbf{Riferimento:}
+        \item \textbf{Image:} bitnami/kafka:3.7.0
+        \item \textbf{Riferimento:}  \href{https://hub.docker.com/r/bitnami/kafka}{\color{myblue}https://hub.docker.com/r/bitnami/kafka} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
+        \begin{itemize}
+            \item Produzione;
+            \item Test;
+            \item Stream processing.
+        \end{itemize}
     \end{itemize}
-    \item \textbf{\glossterm{ClickHouse}}
+    \item \textbf{Apache \glossterm{Flink}}
     \begin{itemize}
-        \item \textbf{Image:} clickhouse/clickhouse-server:latest
-        \item \textbf{Riferimento:}
+        \item \textbf{Image:} flink:1.18.1-java17 
+        \item \textbf{Riferimento:} \href{https://hub.docker.com/_/flink}{\color{myblue}https://hub.docker.com/\_/flink} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
         \begin{itemize}
             \item Produzione;
             \item Development;
-            \item Test.
+            \item Stream processing.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{\glossterm{ClickHouse}}
+    \begin{itemize}
+        \item \textbf{Image:} clickhouse/clickhouse-server:latest
+        \item \textbf{Riferimento:} \href{https://hub.docker.com/r/clickhouse/clickhouse-server}{\color{myblue}https://hub.docker.com/r/clickhouse/clickhouse-server} (Ultimo accesso: \today)
+        \item \textbf{Ambiente:}
+        \begin{itemize}
+            \item Produzione;
+            \item Development;
+            \item Test;
+            \item Stream processing.
         \end{itemize}
     \end{itemize}
     \item \textbf{\glossterm{Grafana}}
     \begin{itemize}
         \item \textbf{Image:} grafana/grafana-oss:latest
-        \item \textbf{Riferimento:}
+        \item \textbf{Riferimento:} \href{https://hub.docker.com/r/grafana/grafana-oss}{\color{myblue}https://hub.docker.com/r/grafana/grafana-oss} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
         \begin{itemize}
             \item Produzione;
@@ -322,14 +347,35 @@ Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
 \subsection{Linguaggi e formato dati}
 \subsubsection{\glossterm{Python}}
 \begin{itemize}
-    \item \textbf{Versione:} 
-    \item \textbf{Utilizzo:}
+    \item \textbf{Versione:} 3.11
+    \item \textbf{Utilizzo:} 
+    \begin{itemize}
+        \item Simulazione di dati prodotti da sensori di diverso tipo;
+        \item Test di unità per singole classi o funzioni;
+        \item Test d'integrazione tra generatore dati, broker e database utilizzati;
+        \item Calcolo dei valori per metriche di qualità di prodotto.
+    \end{itemize}
     \item \textbf{Librerie e framework:}
     \begin{itemize}
         \item \textbf{pytest}
         \begin{itemize}
             \item \textbf{Versione:}
-            \item \textbf{Utilizzo:}
+            \item \textbf{Utilizzo:} Scrittura di script per test d'integrazione con sisntassi agevolata grazie a funzioni di before\_test e after\_test e la gestione di fixture.
+        \end{itemize}
+        \item \textbf{unittest}
+        \begin{itemize}
+            \item \textbf{Versione:}
+            \item \textbf{Utilizzo:} Scrittura di script di test d'unità agevolati dall'uso di patch.
+        \end{itemize}
+        \item \textbf{numpy}
+        \begin{itemize}
+            \item \textbf{Versione:}
+            \item \textbf{Utilizzo:} Fornitura di strutture dati e operazioni matematiche e statistiche complesse.
+        \end{itemize}
+        \item \textbf{confluent-kafka}
+        \begin{itemize}
+            \item \textbf{Versione:}
+            \item \textbf{Utilizzo:} Fornitura di strumenti per la produzione e consumo di messaggi da parte di Apache Kafka
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -362,5 +408,5 @@ Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
 \subsection{Flink}
 \subsection{Database}
 \subsection{Grafana}
-\section{Tracciamento requisiti funzionali}
+\section{Tracciamento requisiti funzionali}\label{sec:trac}
 \end{document}
