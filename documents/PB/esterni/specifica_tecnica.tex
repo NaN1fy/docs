@@ -1,4 +1,4 @@
-% changelog: "0.0.0, 2024-07-01, Davide Donanzan, Stesura struttura e sezione intro"
+% changelog: "0.1.0, 2024-07-25, Davide Donanzan, Continuazione stesura"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -124,11 +124,12 @@
 \section*{Registro delle Modifiche}
 \begin{table}[ht!]	
 	\centering
-	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+	\begin{tabular}{p{1.2cm} p{2cm} p{5cm} p{3cm} p{3cm}}
 		\toprule
-		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-		    0.0.0 & 2024-07-01 & Stesura struttura e sezione \ref{sec:intro}. & Davide Donanzan & Redattore \\
+		    0.1.0 & 2024-07-25 & Stesura sezione \ref{sec:tec}. & Davide Donanzan & Guglielmo Barison \\\\
+    		0.0.0 & 2024-07-01 & Stesura struttura e sezione \ref{sec:intro}. & Davide Donanzan & Guglielmo Barison \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -250,10 +251,108 @@ Per garantire chiarezza nel linguaggio utilizzato nei documenti, è stato redatt
 		\item \href{https://grafana.com/docs/grafana/latest/alerting-rules/create-notification-policy/}{\color{myblue}https://grafana.com/docs/grafana/latest/alerting-rules/create-notification-policy/} (Ultimo accesso: \today)
 	\end{itemize}
 \end{itemize}
+\newpage
 \clearpage
-\section{Tecnologie}
+\section{Tecnologie}\label{sec:tec}
+In questa sezione verranno illustrati gli strumenti e le tecnologie impiegati per lo sviluppo del software nonché infrastrutture, linguaggi di programmazione, \glossterm{librerie} e \glossterm{framework} utilizzati.
 \subsection{Docker}
+In fase di sviluppo, testing e produzione, sono stati utilizzati \glossterm{container} \glossterm{Docker} per creare ambienti di lavoro efficaci e consistenti.
+\subsubsection{Ambienti}
+Sono stati creati tre ambienti di lavoro con focus operativi differenti.
+\begin{itemize}
+    \item \textbf{Ambiente di produzione:}
+    \begin{itemize}
+        \item Ambiente dove i programmatori possono testare il codice nella produzione dei dati simulati;
+        \item Il focus è quello della produzione dei dati simulati nell'ottica della fruizione del servizio fornito dall'applicativo.
+        \item L'intera \glossterm{data pipeline} è in funzione.
+    \end{itemize}
+    \item \textbf{Ambiente di development:}
+    \begin{itemize}
+        \item Ambiente dove i programmatori possono controllare il corretto collegamento tra le tecnologie implementate;
+        \item Non è attiva la generazione dei dati simulati;
+        \item Il focus è l'interazione fra le tecnologie della \glossterm{data pipeline}.
+    \end{itemize}
+    \item \textbf{Ambiente di test:}
+    \begin{itemize}
+        \item Ambiente che simula l'ambiente di produzione;
+        \item Utilizza test automatizzati per verificare la correttezza del codice nelle sue unità e nell'integrazione di queste tra loro.
+    \end{itemize}
+\end{itemize}
+\subsubsection{Images}
+Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
+\begin{itemize}
+    \item \textbf{\glossterm{Kafka}}
+    \begin{itemize}
+        \item \textbf{Image:} bitnami/kafka:3.7.0
+        \item \textbf{Riferimento:}
+        \item \textbf{Ambiente:}
+        \begin{itemize}
+            \item Produzione;
+            \item Test.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{\glossterm{Flink}}
+    \begin{itemize}
+        \item \textbf{Image:} 
+        \item \textbf{Riferimento:}
+        \item \textbf{Ambiente:}
+    \end{itemize}
+    \item \textbf{\glossterm{ClickHouse}}
+    \begin{itemize}
+        \item \textbf{Image:} clickhouse/clickhouse-server:latest
+        \item \textbf{Riferimento:}
+        \item \textbf{Ambiente:}
+        \begin{itemize}
+            \item Produzione;
+            \item Development;
+            \item Test.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{\glossterm{Grafana}}
+    \begin{itemize}
+        \item \textbf{Image:} grafana/grafana-oss:latest
+        \item \textbf{Riferimento:}
+        \item \textbf{Ambiente:}
+        \begin{itemize}
+            \item Produzione;
+            \item Development.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
 \subsection{Linguaggi e formato dati}
+\subsubsection{\glossterm{Python}}
+\begin{itemize}
+    \item \textbf{Versione:} 
+    \item \textbf{Utilizzo:}
+    \item \textbf{Librerie e framework:}
+    \begin{itemize}
+        \item \textbf{pytest}
+        \begin{itemize}
+            \item \textbf{Versione:}
+            \item \textbf{Utilizzo:}
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\subsubsection{\glossterm{SQL}}
+\begin{itemize}
+    \item \textbf{Versione:} 
+    \item \textbf{Utilizzo:}
+\end{itemize}
+\subsubsection{\glossterm{JSON}}
+\begin{itemize}
+    \item \textbf{Versione:} 
+    \item \textbf{Utilizzo:}
+\end{itemize}
+\subsubsection{\glossterm{Java}}
+\begin{itemize}
+    \item \textbf{Versione:} 
+    \item \textbf{Utilizzo:}
+\end{itemize}
+\subsubsection{\glossterm{YAML}}
+\begin{itemize}
+    \item \textbf{Versione:} 
+    \item \textbf{Utilizzo:}
+\end{itemize}
 \subsection{Servizi della pipeline}
 \section{Architettura di sistema}
 \subsection{Modello architetturale}
