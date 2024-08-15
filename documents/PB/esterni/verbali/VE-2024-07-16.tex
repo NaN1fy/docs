@@ -1,0 +1,254 @@
+% changelog: "1.0.0, 2024-08-12, Linda Barbiero, Approvazione per PB."
+
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+\setlength\parindent{0pt}
+% -- IMPORTANTE -- %
+% utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
+% non utilizzare \glossterm nei verbali
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VERBALE ESTERNO DEL 2024-07-16} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+  	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+% quando lo utilizi metti un // esterno al comando subsubsubsection{esempio} altrimenti è attacatto al titoletto, non modificare il comando (se metti //// nel comando è troppo spaziato quando ci sono table e figure
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Pietro Busato}\\}}
+			
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Linda Barbiero}\\}} % massimo due 
+			{\large{\textsc{Veronica Tecchiati}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Esterno Del\\2024-07-16\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8.5 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{5cm} p{3cm} p{3cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
+		\midrule
+		1.0.0 & 2024-08-12 & \textbf{Approvazione per PB} & & Linda Barbiero \\
+		0.0.1 & 2024-08-01 & Prima stesura. & Pietro Busato & Veronica Tecchiati \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata Google Meet;
+	\item\textbf{Ora di inizio:} 15:00;
+	\item\textbf{Ora di fine:}  16:00.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 0.0 h \\
+			Linda Barbiero &  1.0 h \\
+			Pietro Busato & 1.0 h \\
+			Oscar Konieczny & 1.0 h \\
+			Davide Donanzan & 1.0 h \\
+			Veronica Tecchiati & 1.0 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy.}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Andrea Dorigo & 1.0 h \\
+			Fabio Pallaro & 1.0 h \\
+			Daniele Zorzi & 1.0 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti SyncLab.}
+		\label{table:Partecipanti SyncLab}
+	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Revisione lavoro svolto in seguito al periodo di assestamento;	
+	\item Discussione riguardante alcune criticità incontrate;
+    \item Discussione riguardante gli obiettivi e le finestre di consegna del prodotto.
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+Come di consueto, la riunione ha visto un'iniziale discussione riguardante i progressi fatti durante l'ultimo Sprint, ovvero la quasi completa realizzazione delle dashboard richieste e l'implementazione finale del sistema di alerting per Grafana; successivamente, come anche già specificato tramite mail apposita, si è dettagliatamente discussa l'organizzazione delle fasi finali del progetto, comprendente individuazione e valutazione di obiettivi a breve, medio e lungo termine, oltre che alle varie difficoltà riscontrabili nella realizzazione degli  stessi e, infine, dell'esatta finestra di consegna del progetto. Le criticità principali individuate sono:
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Scarsa conoscenza della tecnologia di stream processing da implementare, ovvero Apache Flink;
+    \item Aggiunta della richiesta di accesso alla piattaforma, funzionalità rivelatasi necessaria, attuabile tramite funzionalità di Grafana.
+\end{itemize}   
+Si riporta di seguito il piano di fine progetto specificato tramite mail all'azienda Proponente.\\\\
+\setlength\parindent{0pt}
+\textbf{Risorse disponibili:}
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Budget rimanente: 4252,5 \texteuro;
+    \item Monte ore: 217 ore da distribuire nell'arco di 5-6 settimane (o 8 nel caso di consegna il 2024-09-06).
+\end{itemize} 
+
+\textbf{Data prevista di completamento progetto:} 2024-08-16 / 2024-08-23 (con data ultima di scadenza 2024-09-06); \\\\
+\textbf{Obiettivi del prodotto finale:}
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Conformazione del prodotto finale: versione ampliata, rifinita e più complessa del prodotto precedentemente presentato, comprendente più tipologie di simulazioni di sensori e più dashboard visualizzabili, un sistema di notifica, stream processing e infine interfaccia grafica utente personalizzata con la brand identity della Proponente. L'obiettivo finale è la creazione di un'interfaccia accessibile da ente pubblico (amministratore) tramite login, grazie alla quale visualizzare i dati relativi al territorio urbano e ai suoi servizi;
+    \item Dashboard: suddivise semanticamente per ambito di interesse, svolgeranno funzioni di monitoraggio dati o di analisi degli stessi, anche tramite stream processing, offrendo diverse modalità di visualizzazione dati (time series, gauge, barchart ecc.). I dati saranno di pertinenza ambientale (temperatura, umidità ecc.) e urbanistica (occupazione parcheggi, malfunzionamenti elettrici ecc.);
+    \item Stream Processing: realizzato tramite la tecnologia Apache Flink, verrà utilizzato per la semplificazione dell'analisi dei dati ambientali e delle loro interazioni, oltre che dei dati urbanistici per valutare l'efficienza e le modalità d'uso dei servizi cittadini;
+    \item Stream dati: combinazione dati di occupazione parcheggio con colonnina di ricarica e dati relativi all'effettivo utilizzo e consumo di quest'ultima; combinazione dati occupazione parcheggio e pagamento parcheggio; varie correlazioni tra eventi atmosferici, come ad esempio il cambiamento del livello dell'acqua a causa della temperatura, umidità e/o delle precipitazioni;
+    \item Sistema di notifica: realizzato tramite notifiche via mail/webhook, invia messaggi al superamento di determinate soglie, descritte nel documento \textit{Analisi dei Requisiti};
+    \item Documentazione: dashboard e pannelli saranno ampiamente e dettagliatamente descritti nel documento \textit{Analisi dei Requisiti}, così come il sistema di notifica; l'esame delle tecnologie di stream processing sarà spiegato in un documento apposito, che conterrà inoltre le motivazioni a supporto della scelta di Apache Flink; verranno redatti inoltre il \textit{Manuale Utente} e il documento di \textit{Specifica Tecnica}; la qualità del prodotto invece verrà mantenuta e consolidata dal \textit{Piano di Qualifica}.
+\end{itemize}
+\textbf{Organizzazione e divisione obiettivi:}
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Breve termine (previsione: entro lo Sprint attuale):
+    \begin{itemize}
+    \setlength\itemsep{0em}
+        \item Ultimazione implementazione sensori;
+        \item Ultimazione e rifinitura Dashboard;
+        \item Ultimazione sistema di notifica o di buona sua parte.
+    \end{itemize}
+    \item Medio termine (previsione: entro la settimana 2024-07-29 / 2024-08-04):
+    \begin{itemize}
+    \setlength\itemsep{0em}
+        \item Studio e implementazione stream processing tramite Apache Flink;
+        \item Personalizzazione interfaccia grafica;
+        \item Iniziale stesura della documentazione di supporto.
+    \end{itemize}
+    \item Lungo termine (previsione: entro la settimana 2024-08-12 / 2024-08-18):
+    \begin{itemize}
+    \setlength\itemsep{0em}
+        \item Completamento stesura documentazione;
+        \item Ultimazione MVP e sua rifinitura;
+        \item Presentazione MVP e conclusione progetto.
+    \end{itemize}
+\end{itemize}
+% -- togliere, testo per riempiere il template
+\subsection{Decisioni prese}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Viene presa la decisione di studiare nel dettaglio Apache Flink al fine di implementare tale tecnologia nel prodotto finale;
+	\item Viene presa la decisione di modificare il design dell'applicativo Grafana tramite framework React, a immagine della Proponente;
+	\item Viene presa la decisione di fare un'iniziale stesura dei documenti finali di supporto, quali Specifica Tecnica, Manuale Utente e a riguardo di Apache Flink.
+	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
+	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+\end{itemize}
+\newpage
+\section{Attività da svolgere}
+Viene indetta una riunione interna per delineare la pianificazione dell'ottavo Sprint e le attività da svolgere in vista della revisione relativa alla milestone PB.
+% commentare per togliere la firma
+\signatureline{Padova, 2024-08-12}
+\end{document}
