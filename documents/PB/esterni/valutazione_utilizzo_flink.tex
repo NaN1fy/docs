@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-08-09, Approvazione per PB"
+% changelog: "1.0.0, 2024-08-15, Approvazione per PB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -125,8 +125,9 @@
 		\toprule
 		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Redattori} & \textbf{Verificatori} \\
 		\midrule
-            1.0.0 & 2024-08-09 & \textbf{Approvazione per PB} & & \\\\
-            0.0.0 & 2024-08-09 & Prima stesura del file. & Davide Donanzan, Pietro Busato & Oscar Konieczny, Veronica Tecchiati \\
+		  1.0.0 & 2024-08-15 & \textbf{Approvazione per PB} & & \\\\
+			0.1.0 & 2024-08-15 & Aggiunta sezione su PyFlink e correzione errori. & Davide Donanzan, Pietro Busato & Oscar Konieczny, Veronica Tecchiati \\\\
+      0.0.0 & 2024-08-09 & Prima stesura del file. & Davide Donanzan, Pietro Busato & Oscar Konieczny, Veronica Tecchiati \\
 		\bottomrule
 	\end{tabular}
 	\caption{Registro delle modifiche.}\label{table:Registro delle modifiche}
@@ -138,59 +139,56 @@
 \justifying
 \section{Introduzione}
 Questo documento viene scritto con il fine di individuare le circostanze e le motivazioni che si celano dietro e hanno portato alla scelta, da parte del team, di utilizzare come tecnologia di stream processing Apache Flink.\\
-``Valutazione dell'utilizzo di Flink" è, quindi, a puro scopo descrittivo e narrativo, e come tale si riserva di essere letto.
-\section{Stream Processing}
-L'implementazione all'interno del progetto di Apache Flink deriva dalla comprensione e necessità, da parte del team, di dover, in talune istanze,
-elaborare lo stream grezzo di dati ricevuto da Apache \glossterm{Kafka} tramite il mocking dei sensori di raccolta.\\
+``Valutazione dell'utilizzo di Flink'' è, quindi, a puro scopo descrittivo e narrativo, e come tale si riserva di essere letto.
+
+\section{Stream processing}
+L'implementazione all'interno del progetto di Apache Flink deriva dalla comprensione e necessità, da parte del team, di dover, in talune istanze, elaborare lo stream grezzo di dati ricevuto da Apache \glossterm{Kafka} tramite il mocking dei sensori di raccolta.\\
 I principali sentori di questa necessità e utilità sono emersi in due momenti distinti:
 \begin{itemize}
+\setlength\itemsep{0em}
     \item Durante la creazione del \glossterm{sensore} di parcheggio e di pagamento dello stesso;
-    \item Durante la realizzazione, sulla piattaforma \glossterm{Grafana}, delle \glossterm{dashboard} di Heat Index (temperatura percepita).
+    \item Durante la realizzazione, sulla piattaforma \glossterm{Grafana}, dei \glossterm{widget} di Heat Index (temperatura percepita).
 \end{itemize}
-Nel primo caso, il team si è ritrovato a dover collegare due stream di dati indipendenti dal punto di vista della raccolta (e quindi non comunicanti),
-ma strettamente legati l'uno con l'altro, sia per la loro mera esistenza (non esiste un pagamento senza un parcheggio occupato), sia che per la coerenza
-dei dati raccolti (uno stallo occupato da una macchina per una certa ora non può essere collegato a diversi pagamenti più corti nello stesso lasso di tempo).\\
-Nel secondo caso, invece, era chiaro come risultasse concettualmente sbagliato e in parte inefficiente ricavare alcuni tipi di dati, 
-come quelli dell'Heat Index, lavorando direttamente quelli ``sporchi", ricavati dagli stream di Temperature (Temperatura) e Humidity (Umidità) tramite query sul 
-\glossterm{database} \glossterm{OLAP} \glossterm{Clickhouse}. Per quanto esso mostri vantaggi non ignorabili nell'analisi di dati in \glossterm{real-time}, per tali circostanze, interessate dal 
-progetto, l'utilizzo dello stream processing è più indicato e più efficiente sul lungo termine.\\
-Dopo doverose riflessioni dunque, il team ha deciso di comune accordo di implementare lo stream processing; sebbene esso non fosse stato un requisito
-richiesto espressamente dalla \glossterm{Proponente} alla presentazione del \glossterm{Capitolato}, l'azienda si è rivelata però interessata a tale opportunità, suggerendo in particolare 
-l'utilizzo della tecnologia Apache Flink. 
+Nel primo caso, il team si è ritrovato a dover collegare due stream di dati indipendenti dal punto di vista della raccolta (e quindi non comunicanti), ma strettamente legati l'uno con l'altro, sia per la loro mera esistenza (non esiste un pagamento senza un parcheggio occupato), sia che per la coerenza dei dati raccolti (uno stallo occupato da una macchina per una certa ora non può essere collegato a diversi pagamenti più corti nello stesso lasso di tempo).\\
+Nel secondo caso, invece, era chiaro come risultasse concettualmente sbagliato e in parte inefficiente ricavare alcuni tipi di dati, come quelli dell'Heat Index, lavorando direttamente quelli ``sporchi'', ricavati dagli stream di Temperature (Temperatura) e Humidity (Umidità) tramite query sul \glossterm{database} \glossterm{OLAP} \glossterm{Clickhouse}. Per quanto esso mostri vantaggi non ignorabili nell'analisi di dati in \glossterm{real-time}, per tali circostanze, interessate dal progetto, l'utilizzo dello stream processing è più indicato e più efficiente sul lungo termine.\\
+Dopo doverose riflessioni dunque, il team ha deciso di comune accordo di implementare lo stream processing; sebbene esso non fosse stato un requisito richiesto espressamente dalla \glossterm{Proponente} alla presentazione del \glossterm{Capitolato}, l'azienda si è rivelata però interessata a tale opportunità, suggerendo in particolare l'utilizzo della tecnologia Apache Flink.
+
 \section{Panoramica sulle caratteristiche di Apache Flink}
 \subsection{Cattarestiche favorevoli}
 \begin{itemize}
+\setlength\itemsep{0em}
 	\item Appoggiato dalla Proponente;
 	\item Supporta in particolar modo gli stream di dati event-driven; 
 	\item Gestisce facilmente l'ingresso di grandi quantità di dati;
 	\item Facilmente scalabile e resistente ai failure.
 \end{itemize}
+
 \subsection{Cattarestiche contrarie}
 \begin{itemize}
+\setlength\itemsep{0em}
 	\item Nuova tecnologia da studiare, imparare e implementare;
 	\item Previsto utilizzo di Java, non molto conosciuto dal team;
 	\item Grado di complessità elevato, amplificato dalla scarsa conoscenza precedentemente descritta;
 	\item Documentazione di supporto non completamente esaustiva e a volte insufficiente.
 \end{itemize}
-\section{Implementazione di Flink}
-È doveroso precisare, prima di iniziare la descrizione dell'implementazione, che essa è stata conseguita utilizzando il linguaggio Java, e non tramite l'alternativa
-per \glossterm{Python} ``PyFlink", sebbene questa scelta abbia comportato un aumento di complessità rispetto allo stadio precedente del progetto.\\
-Apache Flink è stato implementato attraverso l'utilizzo di due Job (ovvero due ``elaborazioni" di stream di dati) differenti, quali:
+
+\section{Implementazione di Flink}\label{sec:impl}
+È doveroso precisare, prima di iniziare la descrizione dell'implementazione, che quest'ultima è stata conseguita utilizzando il linguaggio Java e non tramite l'alternativa per \glossterm{Python} ``PyFlink'', sebbene questa scelta abbia comportato un aumento di complessità rispetto allo stadio precedente del progetto. Si possono di seguito individuare i motivi principali che hanno portato a questa decisione:
 \begin{itemize}
+\setlength\itemsep{0em}
+	\item PyFlink presenta una documentazione molto meno estesa rispetto alla controparte di Java, e gode di minor supporto esterno (forum, issue et similia); 
+	\item Rispetto alla versione in Java, PyFlink non è supportato allo stesso modo, risultando a tutti gli effetti in una versione peggiore, in talune circostanze obsoleta, che riceve aggiornamenti a posteriori rispetto alla controparte;
+	\item Risulta inoltre più complessa l'implementazione effettiva e il debugging della versione in Python siccome PyFlink è, a tutti gli effetti, un wrapper della versione in Java, facendo comunicare tra di loro gli elementi dei due linguaggi; ne risulta un ovvio aumento di complessità e l'aggiunta di un nuovo e completo dominio di problemi ed errori da affrontare.
+\end{itemize}
+Apache Flink è stato implementato attraverso l'utilizzo di due Job (ovvero due ``elaborazioni'' di stream di dati) differenti, quali:
+\begin{itemize}
+\setlength\itemsep{0em}
 	\item HeatIndexJob;
 	\item ParkingEfficiencyJob.
 \end{itemize}
-Per il primo Job si è sostanzialmente ricreata la query inizialmente generata su Grafana, che combinava i dati dei Kafka \glossterm{topic} Temperature e Humidity attraverso 
-la formula della temperatura percepita: entrambi i topic sono stati utilizzati come Kafka Sources, immettendo i dati all'interno di Flink, elaborandoli e poi scrivendoli 
-nel nuovo topic ``Heat Index". Essi vengono poi ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. \\
-Per il secondo Job, invece, come Sources vengono utilizzati i topic ``Parking" e ``Parking Payment", e il Job si occupa di calcolare l'efficienza monetaria del parcheggio, calcolata tramite 
-la formula:
-\begin{center}
-	$\frac{Total\_Revenue}{Total\_Arrivals * Average\_Price}$.
-\end{center}
-Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. 
+Per il primo Job si è sostanzialmente ricreata la query inizialmente generata su Grafana, che combinava i dati dei Kafka \glossterm{topic} Temperature e Humidity attraverso la formula della temperatura percepita: entrambi i topic sono stati utilizzati come Kafka Sources, immettendo i dati all'interno di Flink, elaborandoli e poi scrivendoli nel nuovo topic ``Heat Index''. Essi vengono poi ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. \\
+Per il secondo Job, invece, come Sources vengono utilizzati i topic ``Parking'' e ``Parking Payment'', e il Job si occupa di calcolare l'efficienza monetaria del parcheggio, ricavata tramite la formula Total\textunderscore Revenue / (Total\textunderscore Arrivals * Average\textunderscore Price). Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati all'interno degli appositi pannelli di Grafana.
 
 \subsection{Conclusioni}
-Alla luce delle cause, circostanze e discussioni rilevate finora, nonchè valutate le caratteristiche e ponderato il suggerimento proposto da parte della \glossterm{Proponente}, il team ha 
-deciso di optare per la tecnologia Apache Flink per l'implementazione dello stream processing all'interno del progetto ``SyncCity: Smart Monitoring System".
+Alla luce delle cause, circostanze e discussioni rilevate finora, nonchè valutate le caratteristiche e ponderato il suggerimento proposto da parte della \glossterm{Proponente}, il team ha optato per la tecnologia Apache Flink per l'implementazione dello stream processing all'interno del progetto ``SyncCity: Smart City Monitoring Platform'', secondo le modalità descritte alla sezione \ref{sec:impl}.
 \end{document}
