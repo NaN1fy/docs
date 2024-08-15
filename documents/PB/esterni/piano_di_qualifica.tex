@@ -1,4 +1,4 @@
-% changelog: "1.3.0, 2024-08-15, Linda Barbiero, Stesura iniziale paragrafi metriche qualità di prodotto."
+% changelog: "1.3.1, 2024-08-15, Linda Barbiero, Continuazione paragrafi metriche qualità di prodotto."
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -128,7 +128,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-        1.3.0 & 2024-08-15 & Stesura iniziale dei paragrafi metriche qualità di prodotto. & Linda Barbiero & \\\\
+        1.3.1 & 2024-08-15 & Completamento della stesura dei paragrafi metriche di qualità di prodotto. & Linda Barbiero & \\\\
+        1.3.0 & 2024-08-15 & Stesura iniziale dei paragrafi metriche di qualità di prodotto. & Linda Barbiero & \\\\
         1.2.0 & 2024-08-12 & Aggiornamento del tracciamento dei requisiti. & Davide Donanzan &  \\\\
         1.1.0 & 2024-08-09 & Aggiornamento metriche e test d'accettazione. & Davide Donanzan & Pietro Busato \\
 		\bottomrule
@@ -180,7 +181,7 @@ Questo documento offre una panoramica dettagliata delle strategie di verifica e 
 \\\\
 Il \textit{Piano di Qualifica}, dinamico e incrementale, illustra le pratiche per il controllo di qualità degli artefatti e dei processi, con particolare enfasi sulle metriche di valutazione del prodotto. È progettato per guidare l'adozione di processi mirati al miglioramento continuo, fornendo misure quantitative per valutare il progresso del progetto. Questo impegno costante per la qualità si riflette nel regolare aggiornamento del documento per adattarsi alle esigenze mutevoli del progetto, garantendo così la crescita e l'evoluzione sia del processo che del prodotto nel tempo.
 \subsection{Scopo del \glossterm{capitolato}}
-Lo scopo del capitolato C6 è proporre una soluzione per la creazione di una piattaforma di monitoraggio per una \glossterm{smart city}. Tale piattaforma deve raccogliere e analizzare in tempo reale una vasta gamma di dati, provenienti da sensori distribuiti nella città, riguardanti aspetti quali traffico, qualità dell'aria, consumi energetici e altro ancora. L'obiettivo è fornire alle autorità locali informazioni dettagliate per prendere decisioni informate sulla gestione delle risorse e l'implementazione dei servizi, coinvolgendo anche i cittadini attraverso la condivisione di dati e la partecipazione attiva. La soluzione proposta prevede l'utilizzo di tecnologie per il data streaming processing e la simulazione dei dati dei sensori, con l'obiettivo di fornire dashboard intuitive per la visualizzazione dei dati raccolti e l'analisi delle condizioni della città.\\
+Lo scopo del capitolato C6 è proporre una soluzione per la creazione di una piattaforma di monitoraggio per una \glossterm{smart city}. Tale piattaforma deve raccogliere e analizzare in tempo reale una vasta gamma di dati, provenienti da sensori distribuiti nella città, riguardanti aspetti quali traffico, qualità dell'aria, consumi energetici e altro ancora. L'obiettivo è fornire alle autorità locali informazioni dettagliate per prendere decisioni informate sulla gestione delle risorse e l'implementazione dei servizi, coinvolgendo anche i cittadini attraverso la condivisione di dati e la partecipazione attiva. La soluzione proposta prevede l'utilizzo di tecnologie per il data streaming processing e la simulazione dei dati dei sensori, con l'obiettivo di fornire \glossterm{dashboard} intuitive per la visualizzazione dei dati raccolti e l'analisi delle condizioni della città.\\
 L’applicativo sviluppato richiede una copertura dei \glossterm{test} di almeno l’80\%.
 
 \subsection{Glossario}
@@ -354,7 +355,7 @@ Si riferisce alle caratteristiche di un'entità risultante dallo sviluppo softwa
 		\midrule
 		MPD-BC & Branch Coverage (BC) & $\geq$ 80\% & 100\%\\\\
 		MPD-SC & Statement Coverage (SC) & $\geq$ 80\% & 100\% \\\\
-		MPD-FD & Failure Density (FD) & $\geq$ 80\% & 100\% \\\\
+		MPD-FD & Failure Density (FD) & $\leq$ 20\% & 0\% \\\\
 		MPD-PTCP & Passed Test Cases Percentage (PTCP) & 100\%  & 100\% \\
 		\bottomrule
 	\end{tabular}
@@ -584,7 +585,7 @@ Ogni test ha uno \textbf{Stato}, che puo essere:
     TS-02 & Verificare che l'amministratore pubblico visualizzi un messaggio di errore qualora le credenziali inserite non siano valide. & V\\
     \hline
     TS-03 & Verificare che l'amministratore pubblico possa visualizzare un menù di selezione delle
-    \glossterm{dashboard}, che permetta a sua volta di selezionare una dashboard tra: Sensori, Ambientale, Urbanistica e Soglie. & V\\
+    \glossterm{dashboard}, che permetta a sua volta di selezionare una \glossterm{dashboard} tra: Sensori, Ambientale, Urbanistica e Soglie. & V\\
     \hline
     TS-04 & Verificare che l'amministratore pubblico possa monitorare i dati
     provenienti dai sensori relativi alla \glossterm{dashboard} Sensori.
@@ -990,7 +991,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
     \begin{enumerate}
         \setlength\itemsep{0em}
         \item Aprire il menu di selezione delle \glossterm{dashboard};
-        \item Selezionare la dashboard dei sensori;
+        \item Selezionare la \glossterm{dashboard} dei sensori;
         \item Visualizzare la dashboard;
         \item Visualizzare un pannello con una mappa che indichi, mediante icone collocate presso le coordinate di ciascun \glossterm{sensore}, la loro posizione;
         \item Visualizzare un messaggio di avvertenza di dati mancanti, all’interno del pannello, nel caso il \glossterm{sistema} non riesca a reperire i dati.
@@ -1001,7 +1002,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
     \begin{enumerate}
         \setlength\itemsep{0em}
         \item Aprire il menu di selezione delle \glossterm{dashboard};
-        \item Selezionare la dashboard relativa ai dati ambientali;
+        \item Selezionare la \glossterm{dashboard} relativa ai dati ambientali;
         \item Visualizzare la dashboard;
         \item Visualizzare un pannello contenente un grafico, in formato \glossterm{time series}, che mostri i
             risultati delle rilevazioni delle temperature, espresse in gradi Celsius (°C),
@@ -1052,7 +1053,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
     \begin{enumerate}
         \setlength\itemsep{0em}
         \item Aprire il menu di selezione delle \glossterm{dashboard};
-        \item Selezionare la dashboard relativa ai dati urbanistici;
+        \item Selezionare la \glossterm{dashboard} relativa ai dati urbanistici;
         \item Visualizzare la dashboard;
         \item Visualizzare un pannello \glossterm{geomap} che mostri lo stato di disponibilità aggiornato dei
             parcheggi, espresso tramite valori \glossterm{boolean} rilevati dai singoli sensori;
@@ -1083,7 +1084,7 @@ Questa sezione presenta i test di accettazione del software, condotti da NaN1fy 
     \begin{enumerate}
         \setlength\itemsep{0em}
         \item Aprire il menu di selezione delle \glossterm{dashboard};
-        \item Selezionare la dashboard relativa al superamento delle soglie;
+        \item Selezionare la \glossterm{dashboard} relativa al superamento delle soglie;
         \item Visualizzare la dashboard;
         \item Visualizzare un pannello che notifica l'eventuale superamento delle soglie di temperatura entro le quali la temperatura è ritenuta accettabile;
         \item Visualizzare un pannello che notifica l'eventuale superamento della soglia d'intensità delle precipitazioni entro la quale l'intensità è ritenuta accettabile;
@@ -1546,21 +1547,147 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
 \textbf{\glossterm{RTB}:} Come mostrato dalla proiezione, il quarto \glossterm{Sprint} è stato soggetto ad un rischio non previsto particolarmente limitante. Su suggerimento della \glossterm{Proponente}, il team ha affrontato un profondo lavoro di \glossterm{refactoring} del codice prodotto fino a quel momento, che non solo ha comportato un certo dispendio di risorse destinate ad altre attività, ma ha anche limitato e modificato l'organizzazione che il team aveva precedentemente pianificato per il suddetto periodo. Ciononostante, grazie al lavoro svolto negli Sprint antecedenti e soprattutto alle accortezze adottate nelle fasi di pianificazione, il refactoring non ha comportato problematiche rispetto al preventivo e alle metriche di fornitura.\\
 Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli impegni personali e universitari si sono intensificati a tal punto da portare il team alla scelta di intraprendere un periodo di assestamento atto a mitigare il rischio occorso. Lo scopo è, quindi, quello di riprendere al più presto con il normale regime di avanzamento e produttività.\\
 \textbf{\glossterm{PB}:} Conseguentemente alla revisione RTB il team ha affrontato un periodo di pausa dovuto alle esigenze di studio. Ciò ha chiaramente comportato un rischio. Tale rischio era stato individuato ma non era stato considerato l'impatto che questo avrebbe avuto nello svolgimento del progetto. Per questo motivo viene definito non previsto. Dall'ottavo periodo in poi il problema è stato mitigato grazie alla collaborazione di tutto il team.
+\clearpage
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Funzionalità}
 \subsubsection{MPD-ROS Requisiti Obbligatori Soddisfatti}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/ROS.png}
+    \caption{Proiezione grafica dei requisiti obbligatori soddisfatti.}
+    \label{fig:Proiezione grafica dei requisiti obbligatori soddisfatti}
+\end{figure}
+\textbf{\glossterm{PB}:} Durante lo svolgimento del progetto si è cercato di mantenere costante il grado di soddisfazione dei requisiti obbligatori. Durante la presentazione del \glossterm{PoC} avvenuta in fase di \glossterm{RTB} il team aveva già integrato più della metà dei requisiti; inoltre, sono stati completamente soddisfatti durante lo Sprint 9, in relazione all'incontro di collaudo con la Proponente.
+\clearpage
 \subsubsection{MPD-RDS Requisiti Desiderabili Soddisfatti}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/RDS.png}
+    \caption{Proiezione grafica dei requisiti desiderabili soddisfatti.}
+    \label{fig:Proiezione grafica dei desiderabili obbligatori soddisfatti}
+\end{figure}
+\textbf{\glossterm{PB}:} L'integrazione dei requisiti desiderabili è avvenuta in parallelo rispetto ai requisiti obbligatori. Nonostante il team, per ovvi motivi, si sia dedicato più tardi su di essi, li ha comunque soddisfatti nel giro degli ultimi Sprint.
+\clearpage
 \subsubsection{MPD-ROPS Requisiti Opzionali Soddisfatti}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/ROPS.png}
+    \caption{Proiezione grafica dei requisiti opzionali soddisfatti.}
+    \label{fig:Proiezione grafica dei requisiti opzionali soddisfatti}
+\end{figure}
+\textbf{\glossterm{PB}:} A differenza dei requisiti precedenti, il team non è riuscito a raggiungere una percentuale di soddisfazione dei requisiti opzionali ottimale. Ciò è stato dovuto ovviamente alla priorità minore di integrazione e dal desiderio della stessa Proponente, la quale ha preferito l'integrazione e la concretizzazione di altri requisiti.
+\clearpage
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Affidabilità}
 \subsubsection{MPD-BC \glossterm{Branch} Coverage}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/BC.png}
+    \caption{Proiezione grafica della percentuale di branch coverage.}
+    \label{fig:Proiezione grafica della percentuale di branch coverage}
+\end{figure}
+\textbf{\glossterm{PB}:} Nonostante i test per i primi sensori implementati fossero pronti già in fase di \glossterm{RTB} è stato valutato immaturo iniziare i test relativi ad un \glossterm{PoC}. In fase iniziale del \glossterm{PB} i test sono iniziati dando esiti leggermente al di sotto delle aspettative, mostrando possibili ramificazioni condizionali mancanti. \\ Il team, quindi, ha dedicato maggiore attenzione sulla copertura del codice sorgente da test manuali e automatici. \\ Nonostante non sia riuscito ad ottenere il risultato ottimale desiderato, il team è comunque riuscito a ottenere un risultato accettabile, mantenendosi poco sotto il 90\% di copertura alla conclusione del progetto.
+\clearpage
 \subsubsection{MPD-SC \glossterm{Statement} Coverage}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/SC.png}
+    \caption{Proiezione grafica della percentuale di statement coverage.}
+    \label{fig:Proiezione grafica della percentuale di statement coverage}
+\end{figure}
+\textbf{\glossterm{PB}:} Come precedentemente scritto, è stato valutato immaturo iniziare i test relativi ad un \glossterm{PoC}. In fase iniziale del \glossterm{PB} i test sono iniziati mostrando una copertura delle istruzioni del codice accettabile. \\ Il team, quindi, ha dedicato il resto degli Sprint cercando di migliorare questa percentuale, in relazione con l'ampliazione del codice scritto. \\ Nonostante non sia riuscito ad ottenere il risultato ottimale desiderato, il team è comunque riuscito a ottenere un risultato accettabile, mantenendosi sopra il 90\% di copertura alla conclusione del progetto.
+\clearpage
 \subsubsection{MPD-FD Failure Density}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/FD.png}
+    \caption{Proiezione grafica della percentuale di failure density.}
+    \label{fig:Proiezione grafica della percentuale di failure density}
+\end{figure}
+\textbf{\glossterm{PB}:} Nella fase iniziale, il team aveva precedentemente sistemato i guasti di implementazione delle tecnologie e della scrittura del generatore di sensori. Tuttavia, durante la fase di implementazione dei nuovi sensori (livello dell'acqua, i guasti elettrici, eccetera) e del sistema di \glossterm{stream processing}, il team ha riscontrato seri \glossterm{bug} implementativi non previsti, i quali hanno comportato un aumento della metrica al di sopra della soglia massima accettabile.\\ In previsione della riunione di collaudo con la Proponente, il team si è impegnato alla risoluzione dei suddetti problemi, mantenendo poi una percentuale di densità dei guasti buona ma non ottimale come desiderato.
+\clearpage
 \subsubsection{MPD-PTCP Passed Test Cases Percentage}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/PTCP.png}
+    \caption{Proiezione grafica della percentuale di test passati.}
+    \label{fig:Proiezione grafica della percentuale di test passati}
+\end{figure}
+\textbf{\glossterm{PB}:} Come precedentemente enunciato, i test integrati prematuramente sono stati utilizzati in queste fasi iniziali, con una percentuale massima di successo. Il problema di implementazione dei nuovi sensori ha comportato la visualizzazione di test falliti (2/30), risolti nello Sprint successivo.\\Le migliorie apportate sul prodotto si sono comunque poco riflettute nei test, e il team ha ripristinato indi la percentuale massima di test passati.
+\clearpage
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Usabilità}
 \subsubsection{MPD-FU Facilità di Utilizzo}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/FU.png}
+    \caption{Proiezione grafica della facilità di utilizzo (numero medio di click).}
+    \label{fig:Proiezione grafica della facilità di utilizzo (numero medio di click)}
+\end{figure}
+\textbf{\glossterm{PB}:} Durante lo svolgimento degli Sprint il numero medio di click per raggiungere ogni funzionalità, nel nostro caso uno specifico panel, sono sempre rimasti 4: 2 per la sezione di login (compresa una parte di cambio password), 1 di scelta della \glossterm{dashboard} e 1 di selezione del panello preciso
+\clearpage
 \subsubsection{MPD-TA Tempo di Apprendimento}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/TA.png}
+    \caption{Proiezione grafica del tempo di apprendimento medio del prodotto.}
+    \label{fig:Proiezione grafica del tempo di apprendimento medio del prodotto}
+\end{figure}
+\textbf{\glossterm{PB}:} Così come il numero medio di click, anche il tempo di apprendimento è rimasto generalmente costante. Nonostante il team si aspettasse un tempo di apprendimento inferiore, l'interfaccia grafica integrata di Grafana è risultata leggermente più fuorviante del previsto.
+\clearpage
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Efficienza}
 \subsubsection{MPD-UR Utilizzo Risorse}
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{3.5cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3cm}|}
+    \hline
+    \rowcolor{white}
+    \textbf{Metrica - Risorsa} & \textbf{Valore Medio} & \textbf{Valore Accettabile} & \textbf{Valore Ottimo} \\
+    \hline
+    \endfirsthead 
+    \rowcolor{white}
+    \caption{Tabella dei valori medi dell'utilizzo di risorse} 
+    \label{table:Tabella dei valori medi dell'utilizzo di risorse}
+    \endlastfoot 
+    MPD-CPUU & $\sim$ 2,7 & $\leq$ 20\% & $\leq$ 5\% \\
+    \hline 
+    MPD-RAMU & $\sim$ 196.7MB & $\leq$ 500MB\% & $\leq$ 200MB\% \\
+    \hline 
+    MPD-TDE & $\sim$ 4.5s & $\leq$ 6s\% & $\leq$ 3s\% \\
+    \hline
+\end{longtable}
+\textbf{\glossterm{PB}:} Le metriche sono state calcolate utilizzando un elaboratore con 16GB RAM DDR4-3200 e processore AMD Ryzen 5 5600U 4,2GHz.\\ Grazie all'utilizzo di \glossterm{docker} per l'implementazione del sistema, si sono riusciti ad ottenere delle prestazioni ottime; il numero delle immagini ha tuttavia incrementato il tempo medio di avvio del sistema.
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Manutenibilità}
 \subsubsection{MPD-CC Complessità Ciclomatica}
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3cm}|}
+    \hline
+    \rowcolor{white}
+    \textbf{Metrica} & \textbf{Valore Medio} & \textbf{Valore Accettabile} & \textbf{Valore Ottimo} \\
+    \hline
+    \endfirsthead 
+    \rowcolor{white}
+    \caption{Tabella del valore medio di complessità ciclomatica.} 
+    \label{table:Tabella del valore medio di complessità ciclomatica}
+    \endlastfoot 
+    MPD-CC & $\sim$ 3.4 & 11-20 & 1-10 \\
+    \hline
+\end{longtable}
+\textbf{\glossterm{PB}:} Di 39 file esaminati, 36 sono stati valutati con un classe "A" (con livello di complessità 1-5), mentre 3 con classe "B" (con livello di complessità 6-10). Facendo dunque una media dei valori possibili delle due classi, si è valutato che l'intero progetto sia di classe "A".\\ Ciò vuol dire non solo che la complessità è ben al di sotto del valore accettabile, ma anche del valore ottimale, rendendo il codice di facile comprensione.
 \subsubsection{MPC-CS Code Smell}
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3cm}|}
+    \hline
+    \rowcolor{white}
+    \textbf{Metrica} & \textbf{Valore Medio} & \textbf{Valore Accettabile} & \textbf{Valore Ottimo} \\
+    \hline
+    \endfirsthead 
+    \rowcolor{white}
+    \caption{Tabella del valore di punteggio di code smell.} 
+    \label{table:Tabella del valore di punteggio di code smell}
+    \endlastfoot 
+    MPD-CS & $\sim$ 93.7\% & 100\% & 100\% \\
+    \hline
+\end{longtable}
+\textbf{\glossterm{PB}:} Esaminando il codice è risultato una percentuale di rating intorno al 93.7\%, con imperfezioni dovute prevalentemente a problemi di cattiva identazione o per stringhe di documentazioni mancanti. Ciò ha impedito di ottenere un risultato dal team considerato sia accettabile che ottimale.
+\clearpage
 \end{document}
