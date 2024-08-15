@@ -1,0 +1,194 @@
+% changelog: "1.0.0, 2024-08-15, Approvazione per PB"
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- IMPORTANTE -- %
+% utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
+% non utilizzare \glossterm nei verbali
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VALUTAZIONE DELL'UTILIZZO DI FLINK} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+% quando lo utilizi metti un // esterno al comando subsubsubsection{esempio} altrimenti è attacatto al titoletto, non modificare il comando (se metti //// nel comando è troppo spaziato quando ci sono table e figure
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Guglielmo Barison}\\}}
+			{\large{\textsc{Davide Donanzan\\}}}	
+			{\large{\textsc{Pietro Busato}}}
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Oscar Konieczny}\\}}  % massimo due 
+			{\large{\textsc{Veronica Tecchiati}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Valutazione dell'utilizzo di Flink\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{9.5cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]
+\hypersetup{hidelinks}
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{4cm} p{4cm} p{3cm}}
+		\toprule
+		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Redattori} & \textbf{Verificatori} \\
+		\midrule
+		  1.0.0 & 2024-08-15 & \textbf{Approvazione per PB} & & \\\\
+			0.1.0 & 2024-08-15 & Aggiunta sezione su PyFlink e correzione errori. & Davide Donanzan, Pietro Busato & Oscar Konieczny, Veronica Tecchiati \\\\
+      0.0.0 & 2024-08-09 & Prima stesura del file. & Davide Donanzan, Pietro Busato & Oscar Konieczny, Veronica Tecchiati \\
+		\bottomrule
+	\end{tabular}
+	\caption{Registro delle modifiche.}\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Introduzione}
+Questo documento viene scritto con il fine di individuare le circostanze e le motivazioni che si celano dietro e hanno portato alla scelta, da parte del team, di utilizzare come tecnologia di stream processing Apache Flink.\\
+``Valutazione dell'utilizzo di Flink'' è, quindi, a puro scopo descrittivo e narrativo, e come tale si riserva di essere letto.
+
+\section{Stream processing}
+L'implementazione all'interno del progetto di Apache Flink deriva dalla comprensione e necessità, da parte del team, di dover, in talune istanze, elaborare lo stream grezzo di dati ricevuto da Apache \glossterm{Kafka} tramite il mocking dei sensori di raccolta.\\
+I principali sentori di questa necessità e utilità sono emersi in due momenti distinti:
+\begin{itemize}
+\setlength\itemsep{0em}
+    \item Durante la creazione del \glossterm{sensore} di parcheggio e di pagamento dello stesso;
+    \item Durante la realizzazione, sulla piattaforma \glossterm{Grafana}, dei \glossterm{widget} di Heat Index (temperatura percepita).
+\end{itemize}
+Nel primo caso, il team si è ritrovato a dover collegare due stream di dati indipendenti dal punto di vista della raccolta (e quindi non comunicanti), ma strettamente legati l'uno con l'altro, sia per la loro mera esistenza (non esiste un pagamento senza un parcheggio occupato), sia che per la coerenza dei dati raccolti (uno stallo occupato da una macchina per una certa ora non può essere collegato a diversi pagamenti più corti nello stesso lasso di tempo).\\
+Nel secondo caso, invece, era chiaro come risultasse concettualmente sbagliato e in parte inefficiente ricavare alcuni tipi di dati, come quelli dell'Heat Index, lavorando direttamente quelli ``sporchi'', ricavati dagli stream di Temperature (Temperatura) e Humidity (Umidità) tramite query sul \glossterm{database} \glossterm{OLAP} \glossterm{Clickhouse}. Per quanto esso mostri vantaggi non ignorabili nell'analisi di dati in \glossterm{real-time}, per tali circostanze, interessate dal progetto, l'utilizzo dello stream processing è più indicato e più efficiente sul lungo termine.\\
+Dopo doverose riflessioni dunque, il team ha deciso di comune accordo di implementare lo stream processing; sebbene esso non fosse stato un requisito richiesto espressamente dalla \glossterm{Proponente} alla presentazione del \glossterm{Capitolato}, l'azienda si è rivelata però interessata a tale opportunità, suggerendo in particolare l'utilizzo della tecnologia Apache Flink.
+
+\section{Panoramica sulle caratteristiche di Apache Flink}
+\subsection{Cattarestiche favorevoli}
+\begin{itemize}
+\setlength\itemsep{0em}
+	\item Appoggiato dalla Proponente;
+	\item Supporta in particolar modo gli stream di dati event-driven; 
+	\item Gestisce facilmente l'ingresso di grandi quantità di dati;
+	\item Facilmente scalabile e resistente ai failure.
+\end{itemize}
+
+\subsection{Cattarestiche contrarie}
+\begin{itemize}
+\setlength\itemsep{0em}
+	\item Nuova tecnologia da studiare, imparare e implementare;
+	\item Previsto utilizzo di Java, non molto conosciuto dal team;
+	\item Grado di complessità elevato, amplificato dalla scarsa conoscenza precedentemente descritta;
+	\item Documentazione di supporto non completamente esaustiva e a volte insufficiente.
+\end{itemize}
+
+\section{Implementazione di Flink}\label{sec:impl}
+È doveroso precisare, prima di iniziare la descrizione dell'implementazione, che quest'ultima è stata conseguita utilizzando il linguaggio Java e non tramite l'alternativa per \glossterm{Python} ``PyFlink'', sebbene questa scelta abbia comportato un aumento di complessità rispetto allo stadio precedente del progetto. Si possono di seguito individuare i motivi principali che hanno portato a questa decisione:
+\begin{itemize}
+\setlength\itemsep{0em}
+	\item PyFlink presenta una documentazione molto meno estesa rispetto alla controparte di Java, e gode di minor supporto esterno (forum, issue et similia); 
+	\item Rispetto alla versione in Java, PyFlink non è supportato allo stesso modo, risultando a tutti gli effetti in una versione peggiore, in talune circostanze obsoleta, che riceve aggiornamenti a posteriori rispetto alla controparte;
+	\item Risulta inoltre più complessa l'implementazione effettiva e il debugging della versione in Python siccome PyFlink è, a tutti gli effetti, un wrapper della versione in Java, facendo comunicare tra di loro gli elementi dei due linguaggi; ne risulta un ovvio aumento di complessità e l'aggiunta di un nuovo e completo dominio di problemi ed errori da affrontare.
+\end{itemize}
+Apache Flink è stato implementato attraverso l'utilizzo di due Job (ovvero due ``elaborazioni'' di stream di dati) differenti, quali:
+\begin{itemize}
+\setlength\itemsep{0em}
+	\item HeatIndexJob;
+	\item ParkingEfficiencyJob.
+\end{itemize}
+Per il primo Job si è sostanzialmente ricreata la query inizialmente generata su Grafana, che combinava i dati dei Kafka \glossterm{topic} Temperature e Humidity attraverso la formula della temperatura percepita: entrambi i topic sono stati utilizzati come Kafka Sources, immettendo i dati all'interno di Flink, elaborandoli e poi scrivendoli nel nuovo topic ``Heat Index''. Essi vengono poi ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. \\
+Per il secondo Job, invece, come Sources vengono utilizzati i topic ``Parking'' e ``Parking Payment'', e il Job si occupa di calcolare l'efficienza monetaria del parcheggio, ricavata tramite la formula Total\textunderscore Revenue / (Total\textunderscore Arrivals * Average\textunderscore Price). Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati all'interno degli appositi pannelli di Grafana.
+
+\subsection{Conclusioni}
+Alla luce delle cause, circostanze e discussioni rilevate finora, nonchè valutate le caratteristiche e ponderato il suggerimento proposto da parte della \glossterm{Proponente}, il team ha optato per la tecnologia Apache Flink per l'implementazione dello stream processing all'interno del progetto ``SyncCity: Smart City Monitoring Platform'', secondo le modalità descritte alla sezione \ref{sec:impl}.
+\end{document}

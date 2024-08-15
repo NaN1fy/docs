@@ -1,4 +1,4 @@
-% changelog: "X.X.X, YYYY-MM-DD, Autore, Descrizione modifiche"
+% changelog: "1.0.0, 2024-06-03, Approvazione per RTB"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -44,12 +44,12 @@
 % non utilizzare \glossterm nei verbali
 
 % -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{VERBALE INTERNO DEL YYYY-MM-DD} % o ESTERNO
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-05-31} % o ESTERNO
 
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/NaN1fy_logo.png}} 
+  \fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
 	\fancyhead[L]{\leftmark} 
 	\renewcommand{\headrulewidth}{1pt} 
 	\fancyhead[L]{\customtitle} 
@@ -75,8 +75,10 @@
 \definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
 	\begin{tikzpicture}[remember picture, overlay]
-		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{images/logos/Universita_Padova_transparent.png}}; 
-		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{images/logos/NaN1fy_logo.png}};
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
 	\end{tikzpicture}
 	
 	\begin{minipage}[t]{0.47\textwidth}
@@ -90,17 +92,15 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
-			{\large{\textsc{XXXX XXXX}}}
-			
-			
-		}
+			{\\\large{\textsc{Linda Barbiero}\\}} % massimo due 
+		  {\large{\textsc{}}}
+    }
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
-			{\large{\textsc{XXXX XXXX}}}
+			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
+			{\large{\textsc{Davide Donanzan}}}
 			
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -108,11 +108,11 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\YYYY-MM-DD\\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-05-31\\}} % o ESTERNO
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{8 cm}
+	\vspace{8.2cm}
 	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
@@ -123,9 +123,10 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX &
-		--- \\\\ % spazio tra le righe
-		X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
+		1.0.0 & 2024-06-03 & \textbf{Approvazione per RTB} & & \\\\
+		0.0.2 & 2024-06-03 & Verifica e modifiche minori. & Davide Donanzan & Verificatore \\\\
+		0.0.1 & 2024-06-03 & Piccole modifiche. & Oscar Konieczny & Verificatore \\\\
+		0.0.0 & 2024-05-31 & Stesura documento. & Linda Barbiero & Redattore \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -141,9 +142,9 @@
 \subsection{Informazioni sulla riunione}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item\textbf{Luogo:} Chiamata XXXX;
-	\item\textbf{Ora di inizio:} XX:XX;
-	\item\textbf{Ora di fine:}  XX:XX.
+	\item\textbf{Luogo:} Chiamata Discord;
+	\item\textbf{Ora di inizio:} 16:40;
+  \item\textbf{Ora di fine:}  18:00;
 \end{itemize}
 \begin{table}[ht!]
 	\begin{minipage}[t]{0.5\linewidth}
@@ -152,73 +153,75 @@
 			\toprule
 			\textbf{Partecipante} & \textbf{Durata presenza} \\
 			\midrule
-			Guglielmo Barison & X.X h \\
-			Linda Barbiero &  X.X h \\
-			Pietro Busato & X.X h \\
-			Oscar Konieczny & X.X h \\
-			Davide Donanzan & X.X h \\
-			Veronica Tecchiati & X.X h \\
+			Guglielmo Barison & 1.3 h \\
+			Linda Barbiero &  1.3 h \\
+			Pietro Busato & 1.3 h \\
+			Oscar Konieczny & 1.3 h \\
+			Davide Donanzan & 1.3 h \\
+			Veronica Tecchiati & 1.3 h \\
 			\bottomrule
 		\end{tabular}
 		\caption{Partecipanti NaN1fy.}
 		\label{table:Partecipanti NaN1fy}
 	\end{minipage} 
-	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
-		\centering
-		\begin{tabular}{p{3cm} p{3cm}}
-			\toprule
-			\textbf{Partecipante} & \textbf{Durata presenza} \\
-			\midrule
-			XXXX XXXX & X.X h \\
-			XXXX XXXX &  X.X h \\
-			\bottomrule
-		\end{tabular}
-		\caption{Partecipanti XXXX}
-		\label{table:Partecipanti XXXX}
-	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
+	% \begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+	% 	\centering
+	% 	\begin{tabular}{p{3cm} p{3cm}}
+	% 		\toprule
+	% 		\textbf{Partecipante} & \textbf{Durata presenza} \\
+	% 		\midrule
+	% 		XXXX XXXX & X.X h \\
+	% 		XXXX XXXX &  X.X h \\
+	% 		\bottomrule
+	% 	\end{tabular}
+	% 	\caption{Partecipanti XXXX}
+	% 	\label{table:Partecipanti XXXX}
+	% \end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
 \end{table}
 \subsection{Ordine del giorno}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;	
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item ...
+    \item Discussione post SAL avvenuto in data 2024-05-31 con l'azienda SyncLab;
+    \item Retrospettiva del quarto Sprint concluso e consuntivo ore;
+	\item Pianificazione del quinto ed ultimo Sprint prima dell'RTB, suddivisione dei ruoli e calcolo preventivo ore.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-\lipsum[1] % -- togliere, testo per riempiere il template
+Alla luce delle riflessioni esposte durante l'ultimo ``Diario di Bordo", la riunione si è svolta
+successivamente al SAL tenutosi poco prima nel pomeriggio, con la consapevolezza del prossimo incontro di SAL in data 2024-06-07.
+\\
+L'incontro è iniziato valutando le considerazioni della proponente, in revisione dell'RTB,
+con scadenza ultima prevista per il giorno 2024-06-07. Il gruppo dunque conclude ufficialmente lo Sprint precedente valutando il fatto e le prossime rifiniture da apportare,
+oltre al calcolo del consuntivo relativo.
+Data la scadenza precedentemente esposta, lo Sprint imminente sarà dunque di una settimana, a differenza delle precedenti, e per tal motivo il gruppo ha valutato di mantenere lo stesso responsabile.\\
+La riunione si è infine conclusa effettuando lo sprint planning e il preventivo ore del prossimo Sprint.
+
 \subsection{Decisioni prese}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item ...
-	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
-	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+	\item Mantenimento dello stesso responsabile del Sprint precedente: Pietro Busato;
+	\item Suddivisione dei restanti ruoli e calcolo preventivo ore per lo Sprint con fine il
+      2024-06-07;
+	\item Suddivisione della revisione dei documenti e delle ultime rifiniture tra i membri.
+	\item Preparazione della presentazione dell'RTB.
 \end{itemize}
 \newpage
 \section{Attività da svolgere}
 \begin{table}[ht!]
 	\centering
-	% Utilizzare \href{link_alla_issue}{\underline{titolo_della_issue}} per indicare il Titolo della issue
-	% Aggiungere *\tnote{*} per indicare che la issue fa parte della repository SyncCity
-	\begin{tabular}{lcl}
+	\begin{tabular}{p{7cm}cp{7cm}}
 		\toprule
-		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Verificatori} \\
+		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
 		\midrule
-		Lorem ipsum dolor sit amet & - & Mario Rossi \\\\
-		Lorem ipsum dolor sit amet &  - & Mario Rossi \\\\
-		Lorem ipsum dolor sit amet & - & Mario Rossi \\
+		\href{https://github.com/NaN1fy/docs/issues/19}{\underline{Stesura lettera di presentazione RTB}} & 19 & Guglielmo Barison \\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/25}{\underline{Improvement Dashboard Urbanistica}} & 25*\tnote{*} & Guglielmo Barison \\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/27}{\underline{Improvement Dashboard Ambientale}} & 27*\tnote{*} & Linda Barbiero, Guglielmo Barison \\\\
 		\bottomrule
 	\end{tabular}
 	\begin{tablenotes}
 		\vspace{1em}
-		\item * indica che la issue fa parte della repository \texttt{SyncCity}
+		\item * indica che la issue fa parte della repository SyncCity
 	\end{tablenotes}
 	\caption{Attività da svolgere.}
 	\label{table:Attivita da svolgere}
 \end{table}
-% commentare per togliere la firma
-\signatureline{Padova, YYYY-MM-DD}
 \end{document}

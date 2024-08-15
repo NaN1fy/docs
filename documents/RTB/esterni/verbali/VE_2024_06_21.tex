@@ -1,5 +1,4 @@
-% changelog: "X.X.X, YYYY-MM-DD, Autore, Descrizione modifiche"
-
+% changelog: "1.0.0, 2024-06-23, Approvazione RTB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -20,7 +19,6 @@
 \usepackage{siunitx}
 \usepackage{amssymb} 
 \usepackage{tabularx}
-\usepackage{threeparttable}
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
@@ -39,17 +37,15 @@
 \usepackage{booktabs}
 \usepackage{varwidth}
 
-% -- IMPORTANTE -- %
-% utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
-% non utilizzare \glossterm nei verbali
+\usepackage{verbatim}
 
 % -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{VERBALE INTERNO DEL YYYY-MM-DD} % o ESTERNO
+\newcommand{\customtitle}{VERBALE ESTERNO DEL 2024-06-21} % o ESTERNO
 
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{images/logos/NaN1fy_logo.png}} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
 	\fancyhead[L]{\leftmark} 
 	\renewcommand{\headrulewidth}{1pt} 
 	\fancyhead[L]{\customtitle} 
@@ -65,18 +61,13 @@
 
 % -- PER IL GLOSSARIO -- %
 \newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
-
-% -- per abilitare 4x sottosezioni es 2.1.1.1
-% quando lo utilizi metti un // esterno al comando subsubsubsection{esempio} altrimenti è attacatto al titoletto, non modificare il comando (se metti //// nel comando è troppo spaziato quando ci sono table e figure
-\setcounter{secnumdepth}{4}
-\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
-
+ 
 \begin{document}
 \definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
 	\begin{tikzpicture}[remember picture, overlay]
-		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{images/logos/Universita_Padova_transparent.png}}; 
-		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{images/logos/NaN1fy_logo.png}};
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
 	\end{tikzpicture}
 	
 	\begin{minipage}[t]{0.47\textwidth}
@@ -90,17 +81,14 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
-			{\large{\textsc{XXXX XXXX}}}
-			
-			
+			{\\\large{\textsc{Veronica Tecchiati}\\}}
 		}
 		\vspace{8mm}
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{XXXX XXXX}\\}} % massimo due 
-			{\large{\textsc{XXXX XXXX}}}
+			{\\\large{\textsc{Davide Donanzan}\\}} % massimo due 
+			{\large{\textsc{Guglielmo Barison}}}
 			
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -108,14 +96,15 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\YYYY-MM-DD\\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Esterno Del\\2024-06-21\\}} % o ESTERNO
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{8 cm}
+	\vspace{8.5 cm}
 	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
+
 \section*{Registro delle Modifiche}
 \begin{table}[ht!]	
 	\centering
@@ -123,9 +112,10 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 		\midrule
-		X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX &
-		--- \\\\ % spazio tra le righe
-		X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
+		1.0.0 & 2024-06-23 & \textbf{Approvazione per RTB} & & \\\\
+		0.0.1 & 2024-06-23 & Verifica e correzioni minori. & Davide Donanzan, Guglielmo Barison & Verificatore \\\\
+		0.0.0 & 2024-06-23 & Stesura del verbale. & Veronica Tecchiati & Redattore \\ % spazio tra le righe
+		%X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -141,9 +131,9 @@
 \subsection{Informazioni sulla riunione}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item\textbf{Luogo:} Chiamata XXXX;
-	\item\textbf{Ora di inizio:} XX:XX;
-	\item\textbf{Ora di fine:}  XX:XX.
+	\item\textbf{Luogo:} Chiamata Google Meet;
+	\item\textbf{Ora di inizio:} 15:00;
+	\item\textbf{Ora di fine:}  15:45.
 \end{itemize}
 \begin{table}[ht!]
 	\begin{minipage}[t]{0.5\linewidth}
@@ -152,12 +142,12 @@
 			\toprule
 			\textbf{Partecipante} & \textbf{Durata presenza} \\
 			\midrule
-			Guglielmo Barison & X.X h \\
-			Linda Barbiero &  X.X h \\
-			Pietro Busato & X.X h \\
-			Oscar Konieczny & X.X h \\
-			Davide Donanzan & X.X h \\
-			Veronica Tecchiati & X.X h \\
+			Guglielmo Barison & 0 h \\
+			Linda Barbiero & 0.75 h \\
+			Pietro Busato & 0.5 h \\
+			Oscar Konieczny & 0.75 h \\
+			Davide Donanzan & 0.75 h \\
+			Veronica Tecchiati & 0.75 h \\
 			\bottomrule
 		\end{tabular}
 		\caption{Partecipanti NaN1fy.}
@@ -169,56 +159,35 @@
 			\toprule
 			\textbf{Partecipante} & \textbf{Durata presenza} \\
 			\midrule
-			XXXX XXXX & X.X h \\
-			XXXX XXXX &  X.X h \\
+			Andrea Dorigo & 0.75 h \\
+			Fabio Pallaro & 0.75 h \\
+			Daniele Zorzi & 0.75 h \\
 			\bottomrule
 		\end{tabular}
-		\caption{Partecipanti XXXX}
-		\label{table:Partecipanti XXXX}
+		\caption{Partecipanti SyncLab.}
+		\label{table:Partecipanti SyncLab}
 	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
 \end{table}
 \subsection{Ordine del giorno}
 \begin{itemize}
-	\setlength\itemsep{0em}
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;	
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item ...
+\setlength\itemsep{0em}
+	\item Revisione del lavoro svolto;
+    \item Esposizione di problematiche e dubbi riscontrati durante il sesto Sprint;
+	\item Definizione degli obiettivi per il prossimo Sprint.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-\lipsum[1] % -- togliere, testo per riempiere il template
+L'incontro è iniziato con la presentazione da parte del gruppo dell'avanzamento ottenuto durante lo Sprint appena concluso. Il team ha infatti esposto l'implementazione di nuove tipologie di simulatori di sensori ed una prima realizzazione di un sistema di notifica. \\
+La riunione è poi proseguita con la discussione degli ostacoli incontrati: in particolare il gruppo non ha potuto dedicare il quantitativo di ore previste allo svolgimento del progetto per via dell'inizio della sessione estiva di esami. Ciò ha comportato l'impossibilità di soddisfare alcune richieste della Proponente, tra cui l'esame delle casistiche in cui si rivela necessario l'utilizzo di piattaforme di stream processing. La soluzione trovata assieme all'azienda consiste quindi nel diminuire il carico di lavoro per lo Sprint successivo, aumentando contestualmente la durata dello stesso. Durante questo periodo, fornitore e cliente concorderanno assieme gli obiettivi da raggiungere, anche in vista della milestone di Product Baseline. 
+
 \subsection{Decisioni prese}
 \begin{itemize}
-	\setlength\itemsep{0em}
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item Lorem ipsum dolor sit amet, consectetur adipiscing elit;
-	\item ...
-	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
-	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+    \setlength\itemsep{0em}
+    \item Il gruppo dovrà valutare quali siano gli obiettivi raggiungibili durante il settimo Sprint. Procederà quindi ad inviare via mail alla Proponente una proposta, che sarà quindi oggetto di negoziazione fornitore-cliente;
+    \item Il settimo Sprint avrà una durata di tre settimane e mezzo, dunque il prossimo SAL è fissato alle ore 15:00 del giorno 2024-07-16.
 \end{itemize}
-\newpage
+
 \section{Attività da svolgere}
-\begin{table}[ht!]
-	\centering
-	% Utilizzare \href{link_alla_issue}{\underline{titolo_della_issue}} per indicare il Titolo della issue
-	% Aggiungere *\tnote{*} per indicare che la issue fa parte della repository SyncCity
-	\begin{tabular}{lcl}
-		\toprule
-		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Verificatori} \\
-		\midrule
-		Lorem ipsum dolor sit amet & - & Mario Rossi \\\\
-		Lorem ipsum dolor sit amet &  - & Mario Rossi \\\\
-		Lorem ipsum dolor sit amet & - & Mario Rossi \\
-		\bottomrule
-	\end{tabular}
-	\begin{tablenotes}
-		\vspace{1em}
-		\item * indica che la issue fa parte della repository \texttt{SyncCity}
-	\end{tablenotes}
-	\caption{Attività da svolgere.}
-	\label{table:Attivita da svolgere}
-\end{table}
-% commentare per togliere la firma
-\signatureline{Padova, YYYY-MM-DD}
+Viene indetta una riunione interna per delineare la pianificazione del settimo Sprint e le attività da svolgere fino al prossimo SAL.
+% togli il commento per la firma
+\signatureline{Padova, 2024-06-24}
 \end{document}

@@ -5,8 +5,6 @@ on:
     branches-ignore:
       - main
       - sources
-      - 14-glossario
-
 jobs:
   run_script:
     runs-on: ubuntu-latest
@@ -28,8 +26,8 @@ jobs:
         if: ${{ github.event_name == 'push' }}
         run: |
           git rm --cached documents/RTB/interni/glossario.csv
-          git fetch --depth=1 origin +refs/heads/sources:refs/remotes/origin/sources
-          git checkout origin/sources -- documents/RTB/interni/glossario.csv
+          git fetch --depth=1 origin +refs/heads/14-glossario:refs/remotes/origin/14-glossario
+          git checkout origin/14-glossario -- documents/RTB/interni/glossario.csv
           echo ${{ steps.changed-files.outputs.all_changed_files }} | tr "," "\n" | sort > .changed
           python3 .github/workflows/scripts/check_glossary.py $(sed -n 's/^\(.*\/\)\([^/]*\.tex\)$/\1\2/p' .changed)
           
