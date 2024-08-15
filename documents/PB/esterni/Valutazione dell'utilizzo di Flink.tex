@@ -178,7 +178,12 @@ l'utilizzo della tecnologia Apache Flink.
 \end{itemize}
 \section{implementazione di Flink}\\
 È doveroso precisare, prima di iniziare la descrizione dell'implementazione, che essa è stata conseguita utilizzando il linguaggio Java, e non tramite l'alternativa
-per \glossterm{Python} ``PyFlink", sebbene questa scelta abbia comportato un aumento di complessità rispetto allo stadio precedente del progetto.\\
+per \glossterm{Python} ``PyFlink", sebbene questa scelta abbia comportato un aumento di complessità rispetto allo stadio precedente del progetto. Si possono di seguito individuare i motivi principali che hanno portato a questa decisione:\\
+\begin{itemize}
+	\item PyFlink presenta una documentazione molto meno estesa rispetto alla controparte di Java, e anche dal punto di vista del supporto esterno (forum, issue et similia) lascia, tutto sommato, a desiderare; 
+	\item Rispetto alla versione in Java, PyFlink non è supportato allo stesso modo, risultando a tutti gli effetti in una versione peggiore, in talune circostanze obsoleta, che riceve aggiornamenti a posteriori rispetto alla controparte;
+	\item Risulta inoltre più complessa l'implementazione effettiva e il debugging della versione in Python perchè PyFlink è, a tutti gli effetti, un wrapper della versione in Java, facendo comunicare tra di loro gli elementi dei due linguaggi; ne riuslta un ovvio aumento di complessità e l'aggiunta di un nuovo e completo dominio di problemi ed errori da affrontare.  
+\end{itemize}
 Apache Flink è stato implementato attraverso l'utilizzo di due Job (ovvero due ``elaborazioni" di stream di dati) differenti, quali:
 \begin{itemize}
 	\item HeatIndexJob;
@@ -188,8 +193,8 @@ Per il primo Job si è sostanzialmente ricreata la query inizialmente generata s
 la formula della temperatura percepita: entrambi i topic sono stati utilizzati come Kafka Sources, immettendo i dati all'interno di Flink, elaborandoli e poi scrivendoli 
 nel nuovo topic ``Heat Index". Essi vengono poi ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. \\
 Per il secondo Job, invece, come Sources vengono utilizzati i topic ``Parking" e ``Parking Payment", e il Job si occupa di calcolare l'efficienza monetaria del parcheggio, calcolata tramite 
-la formula Total_Revenue / Total_Arrivals * Average_Price. Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. 
+la formula \display Total_Revenue / Total_Arrivals * Average_Price. Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. 
 
 \subsection{Conclusioni}
 Alla luce delle cause, circostanze e discussioni rilevate finora, nonchè valutate le caratteristiche e ponderato il suggerimento proposto da parte della Proponente, il team ha 
-deciso di optare per la tecnologia Apache Flink per l'implementazione dello stream processing all'interno del progetto ``SyncCity: Smart Monitoring System".
+deciso di optare per la tecnologia Apache Flink per l'implementazione dello stream processing all'interno del progetto ``SyncCity: Smart City Monitoring Platform".
