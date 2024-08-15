@@ -72,4 +72,3 @@ CA;Acronimo di ``Customer Acceptance", identifica la fase nella quale il prodott
 Bar chart; Particolare tipo di diagramma, si tratta di una variante dell'istogramma, in cui la frequenza assoluta è posizionata nell'asse delle ascisse, mentre le diverse variabili sono associate all'asse delle ordinate e rappresentate quindi come rettangoli a sviluppo orizzontale.
 Preventivo; Calcolo dei costi per un determinato lavoro o servizio, proposto da un professionista ad un'azienda o ad un privato.
 Stream Processing; Pipeline di elaborazione e trasporto dati; solitamente in real-time, i dati vengono recepiti da una fonte (sia stream di dati che batch), elaborati e successivamente inviati a destinazione.
-Flink; Piattaforma di stream processing nativa del framework Apache;
