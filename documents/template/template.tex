@@ -1,5 +1,4 @@
 % changelog: "X.X.X, YYYY-MM-DD, Autore, Descrizione modifiche"
-
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -20,7 +19,6 @@
 \usepackage{siunitx}
 \usepackage{amssymb} 
 \usepackage{tabularx}
-\usepackage{threeparttable}
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
 \usepackage{floatflt}
@@ -38,10 +36,6 @@
 \usepackage{capt-of}% 
 \usepackage{booktabs}
 \usepackage{varwidth}
-
-% -- IMPORTANTE -- %
-% utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
-% non utilizzare \glossterm nei verbali
 
 % -- TITOLO INTESTAZIONE -- %
 \newcommand{\customtitle}{VERBALE INTERNO DEL YYYY-MM-DD} % o ESTERNO
@@ -65,11 +59,6 @@
 
 % -- PER IL GLOSSARIO -- %
 \newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
-
-% -- per abilitare 4x sottosezioni es 2.1.1.1
-% quando lo utilizi metti un // esterno al comando subsubsubsection{esempio} altrimenti è attacatto al titoletto, non modificare il comando (se metti //// nel comando è troppo spaziato quando ci sono table e figure
-\setcounter{secnumdepth}{4}
-\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
 
 \begin{document}
 \definecolor{myblue}{RGB}{23,103,162}
@@ -160,7 +149,7 @@
 			Veronica Tecchiati & X.X h \\
 			\bottomrule
 		\end{tabular}
-		\caption{Partecipanti NaN1fy.}
+		\caption{Partecipanti NaN1fy}
 		\label{table:Partecipanti NaN1fy}
 	\end{minipage} 
 	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
@@ -201,8 +190,6 @@
 \section{Attività da svolgere}
 \begin{table}[ht!]
 	\centering
-	% Utilizzare \href{link_alla_issue}{\underline{titolo_della_issue}} per indicare il Titolo della issue
-	% Aggiungere *\tnote{*} per indicare che la issue fa parte della repository SyncCity
 	\begin{tabular}{lcl}
 		\toprule
 		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Verificatori} \\
@@ -212,11 +199,7 @@
 		Lorem ipsum dolor sit amet & - & Mario Rossi \\
 		\bottomrule
 	\end{tabular}
-	\begin{tablenotes}
-		\vspace{1em}
-		\item * indica che la issue fa parte della repository \texttt{SyncCity}
-	\end{tablenotes}
-	\caption{Attività da svolgere.}
+	\caption{Attività da svolgere}
 	\label{table:Attivita da svolgere}
 \end{table}
 % commentare per togliere la firma
