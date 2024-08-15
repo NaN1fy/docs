@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-06-03, Approvazione per RTB"
+% changelog: "2.0.0, 2024-08-15, Approvazione per PB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -33,7 +33,7 @@
 \captionsetup{font=footnotesize}
 \usepackage{fancyhdr} 
 \usepackage{graphicx}
-\usepackage{capt-of}% 
+\usepackage{capt-of} 
 \usepackage{booktabs}
 \usepackage{varwidth}
 \usepackage{csvsimple}
@@ -63,29 +63,39 @@
 	\fancyfoot[C]{\thepage} 
 }
 
+% -- Rimozione numeri sezioni -- %
+\renewcommand{\thesection}{}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\makeatletter
+\def\@seccntformat#1{\csname #1ignore\expandafter\endcsname\csname the#1\endcsname\quad}
+\let\sectionignore\@gobbletwo
+\let\latex@numberline\numberline
+\def\numberline#1{\if\relax#1\relax\else\latex@numberline{#1}\fi}
+\makeatother
+
 \setcounter{tocdepth}{1}
 
 \newcommand\myprevious{}%
 \newcommand\mycurrent{}%
 
-\newcommand{\creaGlossario}[2]{%%%
-	\DTLsetseparator{#1}%%%
-	\DTLloaddb{glossary}{#2}%%%
-	\DTLsort{termine}{glossary}%%%
-	\gdef\mycurrent{}%%%
-	\gdef\myprevious{}%%%
-	\DTLforeach{glossary}{\myterm=termine,\mydescription=descrizione}{%
-		\StrLeft{\myterm}{1}[\mycurrent]%%%
-		\IfStrEq{\mycurrent}{\myprevious}{}{%%%
-			\section*{\mycurrent}%%%
-			\addcontentsline{toc}{section}{\mycurrent}%%%
+\newcommand{\creaGlossario}[2]{
+	\DTLsetseparator{#1}
+	\DTLloaddb{glossary}{#2}
+	\DTLsort{termine}{glossary}
+	\gdef\mycurrent{}
+	\gdef\myprevious{}
+	\DTLforeach{glossary}{\myterm=termine,\mydescription=descrizione}{
+		\StrLeft{\myterm}{1}[\mycurrent]
+		\IfStrEq{\mycurrent}{\myprevious}{}{
+			\section*{\mycurrent}
+			\addcontentsline{toc}{section}{\mycurrent}
 			\global\let\myprevious=\mycurrent
-		}%%%
-		\subsection*{\myterm}%%%
+		}
+		\subsection*{\myterm}
 		\mydescription
 		%\par
-	}%%%
-}%%%
+	}
+}
 
 \begin{document}
 	\definecolor{myblue}{RGB}{23,103,162}
@@ -135,17 +145,29 @@
 	\section*{Registro delle Modifiche}
 	\begin{table}[ht!]	
 		\centering
+		\begin{tabular}{p{1.2cm} p{2cm} p{5cm} p{3cm} p{3cm}}
+			\toprule
+			\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
+			\midrule
+				2.0.0 & 2024-08-15 & \textbf{Approvazione per PB} & & \\\\
+				1.1.0 & 2024-08-15 & Aggiunta nuovi termini. & Oscar Konieczny & Veronica Tecchiati \\
+			\bottomrule
+		\end{tabular}
+		\caption{Registro delle modifiche.}
+		\label{table:Registro delle modifiche}
+	\end{table}
+	\clearpage
+	\begin{table}[ht!]	
+		\centering
 		\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
 			\toprule
 			\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
 			\midrule
-        1.0.0 & 2024-06-03 & \textbf{Approvazione per RTB} & & \\\\  
-      0.0.3 & 2024-06-03 & Verifica completa, correzioni minori & Veronica Tecchiati, Linda
-        Barbiero & Verificatore \\\\
-			0.0.2 & 2024-06-03 & Aggiunta numerosi termini in vista dell'RTB. & Oscar Konieczny & Redattore \\\\
-			0.0.1 & 2024-05-03 & Inserimento ``Topic", ``Smart City", ``Kafka", ``JSON", ``Budget At
-        Completion", ``Consuntivo" e ``Data pipeline".  & Guglielmo Barison & Redattore \\\\% spazio tra le righe
-    0.0.0 & 2024-04-06 & Struttura di base e aggiunta di alcuni termini.  & Guglielmo Barison & Redattore \\% spazio tra le righe
+        		1.0.0 & 2024-06-03 & \textbf{Approvazione per RTB} & & \\\\
+      			0.0.3 & 2024-06-03 & Verifica completa, correzioni minori & Veronica Tecchiati, Linda Barbiero & Verificatore \\\\
+				0.0.2 & 2024-06-03 & Aggiunta numerosi termini in vista dell'RTB. & Oscar Konieczny & Redattore \\\\
+				0.0.1 & 2024-05-03 & Inserimento ``Topic", ``Smart City", ``Kafka", ``JSON", ``Budget At Completion", ``Consuntivo" e ``Data pipeline".  & Guglielmo Barison & Redattore \\\\% spazio tra le righe
+    			0.0.0 & 2024-04-06 & Struttura di base e aggiunta di alcuni termini.  & Guglielmo Barison & Redattore \\% spazio tra le righe
 			\bottomrule
 			% Ruolo Redattore o Verificatore
 		\end{tabular}
