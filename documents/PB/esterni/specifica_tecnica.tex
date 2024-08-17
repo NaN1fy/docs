@@ -1,4 +1,4 @@
-% changelog: "0.5.0, 2024-08-15, Davide Donanzan, Stesura Architettura"
+% changelog: "0.6.0, 2024-08-16, Davide Donanzan, Stesura Architettura"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -129,6 +129,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
+  		    0.6.0 & 2024-08-16 & Completamento sezione \ref{sec:arc} e rifiniture. & Davide Donanzan &  \\\\
   		    0.5.0 & 2024-08-15 & Continuazione sezione \ref{sec:arc}. & Pietro Busato &  \\\\
   		    0.4.0 & 2024-08-12 & Stesura sezione \ref{sec:arc} e \ref{sec:dep}. & Pietro Busato & Veronica Tecchiati \\\\
   		    0.3.0 & 2024-08-10 & Completamento sezione \ref{sec:trac}. & Davide Donanzan & Pietro Busato \\\\
@@ -563,9 +564,9 @@ Il diagramma presentato qui di seguito rappresenta il percorso compiuto da una q
     \end{itemize}
     \item \textbf{Visualizzazione:} I dati, archiviati su \glossterm{ClickHouse}, vengono visualizzati da \glossterm{Grafana} tramite query sulle tabelle, generando \glossterm{dashboard} di visualizzazione per i risultati di tali query.
 \end{itemize}
+\clearpage
 \subsection{Architettura del generatore dati}
 Il generatore di dati in \glossterm{pyhton} è una componente che punta a simulare l'acquisizione di dati da parte di sensori fisici dislocati nel suolo cittadino. Non è parte effettiva dello stack tecnologico alla quale il \glossterm{capitolato} punta ma è parte necessaria per il corretto sviluppo dell'applicativo e per l'analisi del funzionamento delle tecnologie implementate. A seguito, verrà presentata l’architettura individuata mediante l’utilizzo di diagrammi delle classi e relative descrizioni e verranno motivate le scelte dei design pattern individuati in quanto scelte progettuali.
-\clearpage
 \subsubsection{Struttura generale}
 La struttura generale del simulatore prevede la presenza di tre moduli. Il modulo dei sensori genera i dati su richiesta del modulo dei thread che a sua volta invoca il modulo writer per inviare il dato generato a \glossterm{Kafka}.
 \begin{figure}[h!]
@@ -986,7 +987,445 @@ I sensori che forniscono più informazioni diverse presentano un messaggio nel f
         "seconda informazione": Valore
     }
 \end{verbatim}
+\clearpage
 \subsection{\glossterm{Flink}}
+Flink costituisce il layer di processamento dei dati. Esso infatti ha il compito di permettere l'elaborazione di stream differenti attraverso i job.  Tali job sono stati implementati in \glossterm{java}.
+\subsubsection{Job}
+I job costituiscono una serie di operazioni di trasformazione sui flussi di dati in tempo reale. Tipicamente sono formati da tre componenti:
+\begin{itemize}
+    \item \textbf{Sorgente:} ingresso del flusso dati;
+    \item \textbf{Trasformazioni:} operazioni che modificano i dati in ingresso;
+    \item \textbf{Sink:} punto d'uscita del flusso elaborato.
+\end{itemize}
+Nel nostro caso le sorgenti sono dei topic \glossterm{Kafka}. I flussi ottenuti da questi topic vengono elaborati e poi immessi in un nuovo topic apposito.
+Per la definizione dei job, Flink mette a disposizine due API: DataStream API, che lavora con gli stream e con maggior controllo sul flusso dati, e Table API, che permette un'approccio basato sulle tabelle con sintassi simile a \glossterm{SQL}.
+Al fine di meglio gestire i flussi di dati, è stato utilizzato DataStream API.
+\subsubsection{Watermark}
+I watermark sono un meccanismo utilizzato per tracciare l’avanzamento del
+tempo degli eventi. Essi sono marcatori di metadati che controllano l’aspetto temporale del flusso durante l’elaborazione. Possiedono un timestamp che specifica quando un evento si è verificato per poi essere confrontato con il tempo in cui tale evento viene elaborato. I watermark sono emessi da Flink nel flusso di dati di origine. In partciolare, un watermark indica che non devono arrivare altri eventi piu vecchi del timestamp del watermark stesso.
+\\Lo scopo è consentire l'elaborazione dei flussi in base al timestamp di produzione dell’evento, importante nel caso in cui gli eventi arrivino fuori ordine.
+Infine, i watermark agevolano le operazioni basate sul tempo, come l’utilizzo di funzioni di window, che consentono di raggruppare gli eventi in finestre temporali e calcolare risultati basati su tali finestre.
+Come intervallo di tempo massimo, prima di scartare i dati con watermark precedente al timestamp attuale, è stato definito un arco massimo di 10 secondi.
+\subsubsection{HeatIndex}
+Il calcolo della temperatura percepita avviene attraverso l'elaborazione degli stream dati provenienti dai sensori di temperatura e umidità relativa. Va definito che la presenza di un sensore di temperatura sul suolo cittadino corrisponde alla presenza di un correlato sensore di umidità. Per ogni coppia di sensori è quindi definito un gruppo di appartenenza. Tale scelta è dovuta a necessità empiriche per la comorensione dei fenomeni climatici in luoghi contingenti.
+\\Il job ottiene la temperatura e l’umidità, aggrega i dati dei sensori dello stesso gruppo e successivamente effettua il calcolo dell'heat index, attraverso la
+formula ideata da Blazejczyk, dove T è temperatura e R è umidità relativa:
+\begin{center}
+    $HI = c_1 + c_2T + c_3R + c_4T R + c_5T_2 + c_6R_2 + c_7T_2R + c_8TR_2 + c_9T_2R_2$
+\end{center}
+e i coefficienti $c_i$ sono:
+\begin{center}
+    $c_1 = -8.78469475556$ $c_2 = 1.61139411$ $c_3 = 2.33854883889$
+    \\$c_4 = -0.14611605$ $c_5 = -0.012308094$ $c_6 = -0.0164248277778$
+    \\$c_7 = 2.211732 × 10^{-3}$ $c_8 = 7.2546 × 10^{-4}$ $c_9 = -3.582 × 10^{-6}$
+\end{center}
+\clearpage
+\subsubsubsection{Architettura}
+Per l'implementazione del job è stata creata una classe dotata di un metodo \verb|main| che si occupa di inizializzare l’ambiente di esecuzione, definire sorgente e sink dei dati. Successivamente chiama i metodo \verb|exec| per eseguire il job vero e proprio. Come sorgente di dati, si definiscono i topic relativi
+alla temperatura e all’umidita, leggendo le variabili d’ambiente relative all’indirizzo del bootstrap server, deserializzate e fornite di watermark. L'esecuzione del job chiama poi le funzioni per l'elaborazione degli stream. Infine pubblica i risultati ad ogni intervallo di tempo definito dalla window, nel topic dedicato allo heat index.
+\\Per ciascuna fase di elaborazione dei dati viene definita una classe che estende la funzione necessaria all'operazione che si vuole effettuare.
+\\Sono stati implementati i seguenti pattern:
+\begin{itemize}
+    \item \textbf{Template Method:}
+    Questo pattern è presente nelle classi \verb|AbstractTopic| e \verb|ReadingFieldInterface|, le quali forniscono un interfaccia astratta permettendo lo sviluppo di comportamenti diversi nelle sottoclassi attraverso ridefinizione del metodo \verb|toString()|.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{HeatIndexJob}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{TEMPERATURE\_TOPIC: String[private static final]} - Nome del topic per la temperatura;
+            \item \textbf{HUMIDITY\_TOPIC: String[private static final]} - Nome del topic per l'umidità;
+            \item \textbf{HEAT\_INDEX\_TOPIC: String[private static final]} - Nome del topic per la temperatura percepita;
+            \item \textbf{GROUP\_ID: String[private static final]} - Nome del gruppo;
+            \item \textbf{temperatureSource: DataStream<TemperatureTopic>[private]} - Sorgente dati per la temperatura;
+            \item \textbf{humiditySource: DataStream<HumidityTopic>[private]} - Sorgente dati per l'umidità;
+            \item \textbf{heatIndexSink: KafkaSink<HeatIndexTopic>[private]} - Sink Kafka per la temperatura percepita.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{main(args: String[]): void[public,static]} - Metodo principale per inizializzare l'ambiente, definire sources e sink ed eseguire il job;
+            \item \textbf{exec(env: StreamExecutionEnvironment): void[public,static]} - Metodo che applica le trasformazioni.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{HeatIndexFunction}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{join(temp: TemperatureTopic, humidity: HumidityTopic): HeatIndexTopic[public]} - Metodo per la trasformazione dei topic di temperatura e umidità nel topic heat\_index;
+            \item \textbf{calculateHeatIndex(temperature: double, humidity: double): double[private]} - Metodo che calcola la temperatura percepita.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{TemperatureReading}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{type: String[public]} - Unità di misura;
+            \item \textbf{value: Double[public]} - Valore del dato.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato di temperatura.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{HumidityReading}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{type: String[public]} - Unità di misura;
+            \item \textbf{value: Double[public]} - Valore del dato.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato di umidità.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{HeatIndexReading}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{type: String[public]} - Unità di misura;
+            \item \textbf{value: Double[public]} - Valore del dato.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato di heat index.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{TemperatureTopic}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{readings: ArrayList<TemperatureReading>[public]} - Lista di misurazioni di temperatura.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic temperature.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{HumidityTopic}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{readings: ArrayList<HumidityReading>[public]} - Lista di misurazioni di umidità.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic humidity.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{HeatIndexTopic}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{readings: ArrayList<HeatIndexReading>[public]} - Lista di misurazioni di temperatura percepita.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic heat\_index.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{KafkaJsonTemperatureDeserializationSchema}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{serialVersionUID: long[private static final]} - Identificatore di controllo;
+            \item \textbf{objectMapper: ObjectMapper[private transient]} - Oggetto per la serializzazione e deserializzazione per stringhe JSON.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
+            \item \textbf{deserialize(message: byte[]): TemperatureTopic[public]} - Metodo per la deserializzazione del messaggio dal topic temperature.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{KafkaJsonHumidityDeserializationSchema}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{serialVersionUID: long[private static final]} - Identificatore di controllo;
+            \item \textbf{objectMapper: ObjectMapper[private transient]} - Oggetto per la serializzazione e deserializzazione per stringhe JSON.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
+            \item \textbf{deserialize(message: byte[]): HumidityTopic[public]} - Metodo per la deserializzazione del messaggio dal topic humidity.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{KafkaJsonHISerializationSchema}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{serialVersionUID: long[private static final]} - Identificatore di controllo;
+            \item \textbf{objectMapper: ObjectMapper[private transient]} - Oggetto per la serializzazione e deserializzazione per stringhe JSON.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
+            \item \textbf{serialize(element: HeatIndexTopic): byte[][public]} - Metodo che serializza il messaggio per il topic heat\_index e lancia un eccezione se fallisce.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\subsubsection{ParkingEfficiency}
+A partire dai dati riguardanti l'occupazione degli stalli di parcheggio e i pagamenti effettuati su tali stalli, è stato definito un job con il compito di calcolare l'efficienza di tali parcheggi. Anche in questo caso, i sensori riguardanti gli stalli dello stesso parcheggio e il sensore di pagamento per il suddetto fanno parte dello stesso gruppo di sensori.
+\\Il job calcola....
+\subsubsubsection{Architettura}
+L'architettura non esula da quanto specificato nel job per calcolare la temperatura percepita.
+\\Sono stati implementati i seguenti pattern:
+\begin{itemize}
+    \item \textbf{Template Method:}
+    Questo pattern è presente nelle classi \verb|AbstractTopic| e \verb|ReadingFieldInterface|, le quali forniscono un interfaccia astratta permettendo lo sviluppo di comportamenti diversi nelle sottoclassi attraverso ridefinizione del metodo \verb|toString()|.
+\end{itemize}
+\begin{itemize}
+    \item \textbf{ParkingEfficiencyJob}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{PARKING\_TOPIC: String[private static final]} - Nome del topic per i parcheggi;
+            \item \textbf{PAYMENT\_PARKING\_TOPIC: String[private static final]} - Nome del topic per i pagamenti dei parcheggi;
+            \item \textbf{PARKING\_EFFICIENCY\_TOPIC: String[private static final]} - Nome del topic per l'efficienza dei parcheggi;
+            \item \textbf{GROUP\_ID: String[private static final]} - Nome del gruppo;
+            \item \textbf{parkingSource: DataStream<ParkingTopic>[private]} - Sorgente dati per i parcheggi;
+            \item \textbf{paymentParkingSource: DataStream<PaymentParkingTopic>[private]} - Sorgente dati per i pagamenti;
+            \item \textbf{heatIndexSink: KafkaSink<ParkingEfficiencyTopic>[private]} - Sink Kafka per l'efficienza dei parcheggi.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{main(args: String[]): void[public,static]} - Metodo principale per inizializzare l'ambiente, definire sources e sink ed eseguire il job;
+            \item \textbf{exec(env: StreamExecutionEnvironment): void[public,static]} - Metodo che applica le trasformazioni.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{AvgParkingPaymentFunction}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per il calcolo del pagamento medio in un parcheggio.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{CountCarsFunction}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per il calcolo del conteggio delle macchine in un parcheggio.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{TotalParkingPaymentFunction}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per il calcolo del totale dei pagamenti in un parcheggio.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{FirstParkingEfficiencyFunction}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per il primo calcolo dell'efficienza di un parcheggio.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{SecondParkingEfficiencyFunction}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per l'effettivo calcolo dell'efficienza di un parcheggio.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{ParkingReading}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{type: String[public]} - Unità di misura;
+            \item \textbf{value: Double[public]} - Valore del dato.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato riguardante i parcheggi.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{PaymentParkingReading}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{type: String[public]} - Unità di misura;
+            \item \textbf{value: Double[public]} - Valore del dato.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato riguardante i pagamenti.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{TotalParkingReading}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{type: String[public]} - Unità di misura;
+            \item \textbf{value: Double[public]} - Valore del dato.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato riguardante la totalità dei parcheggi.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{ParkingEfficiencyReading}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{type: String[public]} - Unità di misura;
+            \item \textbf{value: Double[public]} - Valore del dato.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato riguardante l'efficienza dei parcheggi.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{ParkingEfficiencySupportReading}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{cars\_per\_avg\_bill: Double[public]} - Numero di macchine per pagamento medio.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{ParkingTopic}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{readings: ArrayList<ParkingReading>[public]} - Lista di dati riguardanti i parcheggi.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic parking.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{PaymentParkingTopic}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{readings: ArrayList<PaymentParkingReading>[public]} - Lista di dati riguardanti i pagamenti.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic payment\_parking.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{TotalParkingTopic}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{readings: ArrayList<TotalParkingReading>[public]} - Lista di dati riguardanti la totalità dei parcheggi.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic total\_parking.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{ParkingEfficiencyTopic}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{readings: ArrayList<ParkingEfficiencyReading>[public]} - Lista di dati riguardanti l'efficienza dei parcheggi.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic parking\_efficiency.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{ParkingEfficiencySupportTopic}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{readings: ArrayList<ParkingEfficiencySupportReading>[public]} - Lista di dati a supporto del calcolo dell'efficienza dei parcheggi.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic parking\_efficiency\_support.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{KafkaJsonParkingDeserializationSchema}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{serialVersionUID: long[private static final]} - Identificatore di controllo;
+            \item \textbf{objectMapper: ObjectMapper[private transient]} - Oggetto per la serializzazione e deserializzazione per stringhe JSON.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
+            \item \textbf{deserialize(message: byte[]): ParkingTopic[public]} - Metodo per la deserializzazione del messaggio dal topic parking.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{KafkaJsonPaymentParkingDeserializationSchema}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{serialVersionUID: long[private static final]} - Identificatore di controllo;
+            \item \textbf{objectMapper: ObjectMapper[private transient]} - Oggetto per la serializzazione e deserializzazione per stringhe JSON.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
+            \item \textbf{deserialize(message: byte[]): PaymentParkingTopic[public]} - Metodo per la deserializzazione del messaggio dal topic payent\_parking.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{KafkaJsonPPSerializationSchema}
+    \begin{itemize}
+        \item \textbf{Attributi:}
+        \begin{itemize}
+            \item \textbf{serialVersionUID: long[private static final]} - Identificatore di controllo;
+            \item \textbf{objectMapper: ObjectMapper[private transient]} - Oggetto per la serializzazione e deserializzazione per stringhe JSON.
+        \end{itemize}
+    \end{itemize}
+    \begin{itemize}
+        \item \textbf{Metodi:}
+        \begin{itemize}
+            \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
+            \item \textbf{serialize(element: ParkingEfficiencyTopic): byte[][public]} - Metodo che serializza il messaggio per il topic parking\_efficiency e lancia un eccezione se fallisce.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\clearpage
 \subsection{\glossterm{ClickHouse}}
 Il database ClickHouse ha come scopo quello di memorizzare i dati provenienti dai sensori in modo da poterli analizzare e visualizzare in seguito. I dati vengono acquisiti suddivisi per topic, uno per ogni tipo di sensore, e poi memorizzati nelle apposite tabelle.
 \subsubsection{Struttura}
