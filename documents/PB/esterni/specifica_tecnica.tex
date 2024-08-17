@@ -55,7 +55,7 @@
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
 	\fancyhf{} 
-	\fancyhead[R]{\includegraphics[height=1cm]{template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../template/images/logos/NaN1fy_logo.png}} 
 	\fancyhead[L]{\leftmark} 
 	\renewcommand{\headrulewidth}{1pt} 
 	\fancyhead[L]{\customtitle} 
@@ -80,8 +80,8 @@
 \definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
 	\begin{tikzpicture}[remember picture, overlay]
-		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{template/images/logos/Universita_Padova_transparent.png}}; 
-		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{template/images/logos/NaN1fy_logo.png}};
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../template/images/logos/NaN1fy_logo.png}};
 	\end{tikzpicture}
 	
 	\begin{minipage}[t]{0.47\textwidth}
@@ -546,7 +546,7 @@ L’architettura Kappa è un modello di elaborazione e processamento per la gest
 \subsubsection{Componenti di sistema}
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images_st/stack.png}
+    \includegraphics[width=0.8\textwidth]{images_st/stack.jpg}
     \caption{Stack tecnologico dell'applicativo.}
     \label{fig:Stack tecnologico dell'applicativo}
 \end{figure}
@@ -557,12 +557,11 @@ L’architettura Kappa è un modello di elaborazione e processamento per la gest
     \item \textbf{Storage layer:} Lo storage layer è costituito dal database colonnare \glossterm{ClickHouse}, che archivia i dati in arrivo dallo streaming layer e li rende disponibili per l’analisi e la visualizzazione sia in tempo reale che batch nel data visualization layer;
     \item \textbf{Data visualization layer:} Il data visualization layer è composto da \glossterm{Grafana}, piattaforma di visualizzazione dei dati che si occupa della rappresentazine degli stessi ottenuti dallo storage layer e della gestione delle notifiche in caso di anomalie.
 \end{itemize}
-\clearpage
 \subsection{Data-flow}
 Il diagramma presentato qui di seguito rappresenta il percorso compiuto da una qualsiasi unità di dati all'interno del sistema, a quali operazioni esso è sottoposto, come viene elaborato e dove viene infine archiviato e utilizzato. Il diagramma mostra dunque anche le connessioni tra le varie parti del sistema e come esse interagiscono tra di loro.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images_st/flusso.png}
+    \includegraphics[width=0.9\textwidth]{images_st/flusso.png}
     \caption{Diagramma delle classi del modulo sensori.}
     \label{fig:Diagramma delle classi del modulo sensori}
 \end{figure}
@@ -581,13 +580,14 @@ Il diagramma presentato qui di seguito rappresenta il percorso compiuto da una q
 Il generatore di dati in \glossterm{pyhton} è una componente che punta a simulare l'acquisizione di dati da parte di sensori fisici dislocati nel suolo cittadino. Non è parte effettiva dello stack tecnologico alla quale il \glossterm{capitolato} punta ma è parte necessaria per il corretto sviluppo dell'applicativo e per l'analisi del funzionamento delle tecnologie implementate. A seguito, verrà presentata l’architettura individuata mediante l’utilizzo di diagrammi delle classi e relative descrizioni e verranno motivate le scelte dei design pattern individuati in quanto scelte progettuali.
 \subsubsection{Struttura generale}
 La struttura generale del simulatore prevede la presenza di tre moduli. Il modulo dei sensori genera i dati su richiesta del modulo dei thread che a sua volta invoca il modulo writer per inviare il dato generato a \glossterm{Kafka}.
+Nella figura è presente solo la classe concreta \verb|TemperatureSensor| che implementa \verb|SensorInterface|, poiché le altre sono analoghe.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{images_st/overview.png}
+    \includegraphics[width=1\textwidth]{images_st/overview.png}
     \caption{Diagramma delle classi dell'architettura.}
     \label{fig:Diagramma delle classi dell'architettura}
 \end{figure}
-Nella figura è presente solo la classe concreta \verb|TemperatureSensor| che implementa \verb|SensorInterface|, poiché le altre sono analoghe.
+\clearpage
 \subsubsection{Modulo sensori}
 \begin{figure}[h!]
     \centering
@@ -967,7 +967,6 @@ Di questo toolkit evidenzieremo:
     \end{itemize}
     \item \textbf{jsonfy():} Funzione che permette la conversione dei dati di una simulazione in una stringa \glossterm{JSON}.
 \end{itemize}
-\clearpage
 \subsection{\glossterm{Kafka}}
 \subsubsection{Topic}
 I topic in \glossterm{Kafka} permettono di separare logicamente i diversi tipi di messaggi o eventi prodotti. Per separare le diverse misurazioni dei sensori è stato creato un topic dedicato per ogni tipologia di sensore.
@@ -1041,6 +1040,12 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
     \item \textbf{Template Method:}
     Questo pattern è presente nelle classi \verb|AbstractTopic| e \verb|ReadingFieldInterface|, le quali forniscono un interfaccia astratta permettendo lo sviluppo di comportamenti diversi nelle sottoclassi attraverso ridefinizione del metodo \verb|toString()|.
 \end{itemize}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images_st/heatindexjob.png}
+    \caption{Diagramma delle classi per l'heat index.}
+    \label{fig:Diagramma delle classi per l'heat index}
+\end{figure}
 \subsubsubsection{Classi implementate}
 \begin{itemize}
     \item \textbf{HeatIndexJob}
