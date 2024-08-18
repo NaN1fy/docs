@@ -187,8 +187,11 @@ Apache Flink è stato implementato attraverso l'utilizzo di due Job (ovvero due 
 	\item ParkingEfficiencyJob.
 \end{itemize}
 Per il primo Job si è sostanzialmente ricreata la query inizialmente generata su Grafana, che combinava i dati dei Kafka \glossterm{topic} Temperature e Humidity attraverso la formula della temperatura percepita: entrambi i topic sono stati utilizzati come Kafka Sources, immettendo i dati all'interno di Flink, elaborandoli e poi scrivendoli nel nuovo topic ``Heat Index''. Essi vengono poi ricevuti da Clickhouse e successivamente riportati sulle dovute dashboard di Grafana. \\
-Per il secondo Job, invece, come Sources vengono utilizzati i topic ``Parking'' e ``Parking Payment'', e il Job si occupa di calcolare l'efficienza monetaria del parcheggio, ricavata tramite la formula Total\textunderscore Revenue / (Total\textunderscore Arrivals * Average\textunderscore Price). Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati all'interno degli appositi pannelli di Grafana.
-
+Per il secondo Job, invece, come Sources vengono utilizzati i topic ``Parking'' e ``Parking Payment'', e il Job si occupa di calcolare l'efficienza monetaria del parcheggio, ricavata tramite la formula:
+\begin{center}
+	$Efficiency = \frac{Total\_Revenue}{Total\_Arrivals * Average\_Price}$
+\end{center}
+Dopodichè tali dati vengono ricevuti da Clickhouse e successivamente riportati all'interno degli appositi pannelli di Grafana.
 \subsection{Conclusioni}
 Alla luce delle cause, circostanze e discussioni rilevate finora, nonchè valutate le caratteristiche e ponderato il suggerimento proposto da parte della \glossterm{Proponente}, il team ha optato per la tecnologia Apache Flink per l'implementazione dello stream processing all'interno del progetto ``SyncCity: Smart City Monitoring Platform'', secondo le modalità descritte alla sezione \ref{sec:impl}.
 \end{document}

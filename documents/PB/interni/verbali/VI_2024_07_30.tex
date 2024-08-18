@@ -1,4 +1,4 @@
-% changelog: "1.0.0, Davide Donanzan, Approvazione per PB"
+% changelog: "1.0.0, Pietro Busato, Approvazione per PB"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -44,7 +44,7 @@
 % non utilizzare \glossterm nei verbali
 
 % -- TITOLO INTESTAZIONE -- %
-\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-07-25} % o ESTERNO
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-07-30} % o ESTERNO
 
 % -- STILE INTESTAZIONE -- %
 \fancypagestyle{mystyle}{
@@ -92,7 +92,7 @@
 	\begin{minipage}[t]{0.47\textwidth}\raggedleft
 		{\large{\textsc{Redattori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Veronica Tecchiati}}}
+			{\\\large{\textsc{Guglielmo Barison}}}
 			
 			
 		}
@@ -100,7 +100,7 @@
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Linda Barbiero}\\}} % massimo due 
+			{\\\large{\textsc{Pietro Busato}\\}} % massimo due 
 			{\large{\textsc{Davide Donanzan}}}
 			
 		}
@@ -109,7 +109,7 @@
 	\vspace{4cm}
 	\begin{center}
 		\begin{flushright}
-			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-07-25\\}} % o ESTERNO
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-07-30\\}} % o ESTERNO
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
@@ -124,8 +124,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-			1.0.0 & 2024-08-05 & \textbf{Approvazione per PB} & & \\\\
-			0.0.1 & 2024-07-30 & Stesura del verbale. & Veronica Tecchiati & Linda Barbiero, Davide Donanzan 
+			1.0.0 & 2024-08-18 & \textbf{Approvazione per PB} & & \\\\
+			0.0.0 & 2024-08-12 & Stesura del verbale. & Guglielmo Barison & Pietro Busato, Davide Donanzan
  			\\ % spazio tra le righe
 
 		\bottomrule
@@ -143,8 +143,8 @@
 \begin{itemize}
 	\setlength\itemsep{0em}
 	\item\textbf{Luogo:} Chiamata Discord;
-	\item\textbf{Ora di inizio:} 15:00;
-	\item\textbf{Ora di fine:}  16:00.
+	\item\textbf{Ora di inizio:} 16:00;
+	\item\textbf{Ora di fine:}  17:00.
 \end{itemize}
 \begin{table}[ht!]
 	\begin{minipage}[t]{0.5\linewidth}
@@ -153,11 +153,11 @@
 			\toprule
 			\textbf{Partecipante} & \textbf{Durata presenza} \\
 			\midrule
-			Guglielmo Barison & 0 h \\
+			Guglielmo Barison & 1 h \\
 			Linda Barbiero & 1 h \\
 			Pietro Busato & 1 h \\
 			Oscar Konieczny & 1 h \\
-			Davide Donanzan & 1 h \\
+			Davide Donanzan & 0 h \\
 			Veronica Tecchiati & 1 h \\
 			\bottomrule
 		\end{tabular}
@@ -168,21 +168,18 @@
 \subsection{Ordine del giorno}
 \begin{itemize}
 \setlength\itemsep{0em}
-    \item Valutazione dell'operato finora svolto;
-    \item Determinazione della data del collaudo con la Proponente.
+    \item Definizione delle rifiniture da apportare in vista del collaudo in data 2024-08-09.
 \end{itemize}
 \subsection{Sintesi dell'incontro}
-La riunione è iniziata con l'esposizione da parte di ciascun membro del gruppo di quanto realizzato sinora. Il team di Programmatori ha riscontrato alcune difficoltà nell'implementazione dello stream processing mediante tecnologia Apache Flink. Ciononostante, anche grazie al confronto con l'azienda, alcune problematiche sono state prontamente dipanate, configurando così la successiva risoluzione di quelle rimanenti entro il prossimo SAL. Anche i dubbi riguardanti la personalizzazione grafica dell'interfaccia di Grafana sono stati chiariti, perciò l'attività procede ora speditamente. \\ Gli Amministratori hanno poi esposto l'avanzamento della documentazione: il Manuale Utente è attualmente a buon punto, continua con l'usuale ritmo la stesura del Piano di Progetto, prosegue invece più lentamente la scrittura di Specifica Tecnica e le correzioni dei restanti documenti. \\ Nella seconda parte dell'incontro l'attenzione del team si è concentrata sulla definizione della data di collaudo, che avrà luogo nella sede di Padova della Proponente SyncLab. Alla luce dello stato attuale del prodotto e degli impegni di ognuno, il gruppo ha dunque optato per anticipare, rispetto a quanto inizialmente previsto, le scadenze degli obiettivi da raggiungere fino alla conclusione del progetto. In questo modo, il fornitore può presentare al cliente un Mininum Viable Product prima della chiusura dell'azienda per ferie. Il collaudo con la Proponente si terrà dunque il giorno 2024-08-09 alle ore 15:00. Tuttavia, questa decisione comporta la necessità di ridefinire le priorità delle attività da svolgere. In particolare, da questo momento fino alla data dell'incontro con l'azienda, è indispensabile dedicare le risorse disponibili esclusivamente all'ultimazione del software, poiché prioritaria rispetto alla redazione dei documenti.
-
+La riunione è iniziata definendo le rifiniture necessarie al completamento del prodotto. Attraverso un analisi approfondita dello stato di completamento del software, ad ogni membro del team è stato asseganto un compito da portare a termine entro la data prefissata per il collaudo. \\
+Gli ambiti di miglioramento individuati riguardano la sistemazione grafica delle dashboard e del funzionamento delle variabili, la personalizzazione dell'interfaccia di Grafana e il completamento della documentazione.
+Successivamente è stata discussa la possibilità di anticipare la presentazione alla revisione PB considerando le tempistiche a nostra disposizione.
+Infine è stata ideata la presentazione da esporre all'azienda distribuendone una parte ad ogni membro.
 \subsection{Decisioni prese}
 \begin{itemize}
 \setlength\itemsep{0em}
-    \item Entro il prossimo SAL, che si svolgerà il 2024-07-30, il gruppo deve concretizzare un avanzamento significativo del prodotto, così da essere in grado di ultimarlo entro il 2024-08-09. Per ottenere ciò, è necessario eseguire i seguenti compiti:
-    \begin{itemize}
-        \item Concludere le modifiche relative all'interfaccia grafica dell'applicativo;
-        \item Rifinire le dashboard di Grafana con l'aggiunta degli ultimi pannelli e dei ritocchi finali;
-        \item Realizzare lo stream processing in una sua prima forma elementare, da completare e raffinare la settimana successiva.
-    \end{itemize}  
+    \item Un membro contatterà i professori per informarsi sulle tempistiche riguardanti le revisioni PB;
+    \item Assegnazione delle parti di presentazione per ogni membro.
 \end{itemize}
 \newpage
 \section{Attività da svolgere}
@@ -193,8 +190,8 @@ La riunione è iniziata con l'esposizione da parte di ciascun membro del gruppo 
 		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
 		\midrule
         \href{https://github.com/NaN1fy/SyncCity/issues/35}{\underline{Personalizzazione grafica di Grafana}} & 35*\tnote{*} & Linda Barbiero \\\\
-        \href{https://github.com/NaN1fy/SyncCity/issues/36}{\underline{Implementazione Apache Flink}} & 36*\tnote{*} & Guglielmo Barison, Pietro Busato, Davide Donanzan \\\\
         \href{https://github.com/NaN1fy/SyncCity/issues/37}{\underline{Rifinitura dashboard e sensori}} & 37*\tnote{*} & Oscar Konieczny, Veronica Tecchiati \\\\
+        \href{https://github.com/NaN1fy/docs/issues/}{\underline{Stesura motivazione scelta Apache Flink per stream processing}} & 93 & Pietro Busato, Davide Donanzan, Guglielmo Barison \\\\
 		\bottomrule
 	\end{tabular}
 	\begin{tablenotes}
