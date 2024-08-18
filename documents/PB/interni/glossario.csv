@@ -75,3 +75,8 @@ Sistema;Insiemi di programmi che individuano prodotti software complessi. Questi
 Preventivo; Calcolo dei costi per un determinato lavoro o servizio, proposto da un professionista ad un'azienda o ad un privato.
 Stream Processing; Pipeline di elaborazione e trasporto dati; solitamente in real-time, i dati vengono recepiti da una fonte (sia stream di dati che batch), elaborati e successivamente inviati a destinazione.
 Flink;Stream-processing e batch-processing framework open-source, che offre uno streaming engine con alto throughput, bassa latenza.  Supporta event-time processing e state management.
+Apache Maven;Strumento di gestione di progetti software basati su Java e build automation.
+SQL;Linguaggio standardizzato per database basati sul modello relazionale che permette di creare, gestire e amministrare database.
+Java;Linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica.
+XML;Metalinguaggio per la definizione di linguaggi di markup, ovvero un linguaggio basato su un meccanismo sintattico che consente di definire e controllare il significato degli elementi contenuti in un documento o in un testo.
+YAML;Formato per la serializzazione di dati e gestione delle configurazioni.
