@@ -1,4 +1,4 @@
-% changelog: "0.1.0, 2024-08-10, Veronica Tecchiati, Stesura sezioni 2 e 3"
+% changelog: "1.0.0, 2024-08-18, Approvazione per PB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -103,8 +103,8 @@
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
 			{\\\large{\textsc{Veronica Tecchiati}\\}} 
-			{\large{\textsc{XXXX XXXX}\\}} 
-			{\large{\textsc{XXXX XXXX}\\}}
+			{\large{\textsc{Pietro Busato}\\}} 
+			{\large{\textsc{Oscar Konieczny}\\}}
 			
 		}
 		\vspace{2mm}\vspace{2mm}
@@ -127,7 +127,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-            0.1.0 & 2024-08-10 & Stesura sezioni \ref{sec:requirements} e \ref{sec:instructions}. & Veronica Tecchiati & - \\\\
+            1.0.0 & 2024-08-18 & \textbf{Approvazione per PB} & & 
+            0.1.0 & 2024-08-10 & Stesura sezioni \ref{sec:requirements} e \ref{sec:instructions}. & Veronica Tecchiati & Pietro Busato \\\\
 		    0.0.0 & 2024-07-01 & Stesura struttura e sezioni \ref{sec:intro} e \ref{sec:support}. & Davide Donanzan & Veronica Tecchiati \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
@@ -146,17 +147,17 @@
 \section{Introduzione}\label{sec:intro}
 \subsection{Scopo del documento}
 Il presente manuale è concepito per fornire un supporto agli utenti nell’utilizzo efficace del software, 
-consentendo loro di sfruttare appieno tutte le sue funzionalità al fine di garantire un’esperienza ottimale.
+consentendo loro di sfruttare appieno tutte le sue \glossterm{funzionalità}, al fine di garantire un’esperienza ottimale.
 In tal modo, si vuole informare l’amministratore pubblico dei requisiti minimi da soddisfare per
-poter usufruire del prodotto, degli step necessari per la sua installazione e di tutte le funzionalità a disposizione.
-% Poiché l’installazione del software è gestita da personale tecnico specializzato, questo
-% manuale non include istruzioni dettagliate per l’installazione, ma si concentra piuttosto sui
-% passaggi necessari per utilizzare il softwareG una volta installato correttamente
+poter usufruire del prodotto, degli step necessari per la sua installazione e di tutte le funzionalità a sua disposizione.
+ Poiché l’installazione del software è gestita da personale tecnico specializzato, questo
+ manuale non include istruzioni dettagliate per l’installazione, bensì si concentra piuttosto sui
+ passaggi necessari per utilizzare il software una volta installato correttamente.
 \subsection{Scopo del prodotto}
-L'obiettivo del progetto SyncCity è quello di creare una piattaforma atta al monitoraggio
-di sensori sparsi geograficamente nel territorio di una città. I sensori in questione
-permettono la misurazione e segnalazione di dati \glossterm{real-time} riguardanti le più disparate
-caratteristiche e necessità del territorio quali temperatura ed umidità esterna, occupazione di
+L'obiettivo del progetto ``SyncCity: \glossterm{Smart City} Monitoring Platform" è quello di creare una piattaforma atta al monitoraggio
+di \glossterm{sensori} geograficamente distribuiti nel territorio di una città. I sensori in questione
+permettono la misurazione e segnalazione di dati in \glossterm{real-time} riguardanti le più disparate
+caratteristiche e necessità del territorio, quali temperatura ed umidità esterna, occupazione di
 stalli di parcheggio, funzionamento o guasto elettrico di colonnine di ricarica, traffico stradale e via
 dicendo. La \glossterm{Proponente} richiede la simulazione di alcuni dei sensori nominati nonchè la
 gestione dei dati, della loro persistenza e della loro rappresentazione grafica attraverso \glossterm{widget} e
@@ -214,7 +215,7 @@ L'applicativo può essere eseguito su diversi sistemi operativi. Di seguito sono
         \item RHEL: 8.
     \end{itemize}
 \end{itemize}
-Si noti che l'applicazione può essere eseguita anche su sistemi operativi differenti da quelli indicati o meno aggiornati, tuttavia non è garantito supporto completo.
+Si noti che l'applicazione può essere eseguita anche su sistemi operativi differenti da quelli indicati o meno aggiornati, tuttavia non è garantito un supporto completo.
 \subsection{Requisiti browser}
 Essendo SyncCity un applicativo web, è richiesto l'utilizzo di un browser per la sua fruizione. Si riportano di seguito le versioni dei più comuni browser web che garantiscono il corretto funzionamento del prodotto:
 \begin{itemize}
@@ -224,7 +225,7 @@ Essendo SyncCity un applicativo web, è richiesto l'utilizzo di un browser per l
     \item \textbf{Microsoft Edge:} v123;
     \item \textbf{Safari:} v17.4;
 \end{itemize}
-Si noti che l'applicazione può essere eseguita anche su browser differenti da quelli indicati o meno aggiornati, tuttavia non è garantito supporto completo.
+Si noti che l'applicazione può essere eseguita anche su browser differenti da quelli indicati o meno aggiornati, tuttavia non è garantito un supporto completo.
 \newpage
 \section{Istruzioni all'uso} \label{sec:instructions}
 \setlength\parindent{0pt}
@@ -244,7 +245,7 @@ Qualora le credenziali inserite fossero errate verrà visualizzato un messaggio 
     \label{figure:Messaggio di errore inserimento credenziali errate.}
 \end{figure}
 \subsection{Home}
-Una volta effettuato l'accesso, l'utente viene indirizzato alla pagina ``Dashboards". 
+Una volta effettuato l'accesso, l'utente viene indirizzato alla pagina ``\glossterm{Dashboards}". 
 In questa schermata è possibile visualizzare tutte le dashboard che l'applicativo espone, elencate in ordine alfabetico. L'utente può dunque selezionarne una e verrà indirizzato ad una nuova pagina dove potrà visualizzare tutti i pannelli contenuti nel cruscotto di proprio interesse.
 \begin{figure}[H]
     \centering
@@ -308,7 +309,7 @@ Contiene diverse funzionalità che agevolano l'utente nella fruizione dell'appli
     \end{figure}
 \end{itemize}
 \subsection{Informazioni generali dashboard e pannelli}
-Una dashboard consiste in un cruscotto che racchiude al suo interno diversi widget, cioè pannelli. Ciascuno di essi permette di visualizzare i dati in tempo reale provenienti dai sensori oppure informazioni aggiuntive, ricavate aggregando ed elaborando le suddette misurazioni. 
+Una dashboard consiste in un cruscotto che racchiude al suo interno diversi \glossterm{widget}, cioè pannelli. Ciascuno di essi permette di visualizzare i dati in tempo reale provenienti dai sensori oppure informazioni aggiuntive, ricavate aggregando ed elaborando le suddette misurazioni. 
 \subsubsection{Strumenti dashboard}
 Una volta che l'utente avrà selezionato un cruscotto da visualizzare, nella barra degli strumenti saranno disponibili altre opzioni specifiche per le dashboard:
 \begin{itemize}
@@ -369,15 +370,15 @@ Un pannello, anche chiamato widget, consiste in un grafico adibito alla visualiz
 \end{itemize}
 I pannelli possono essere di diversi formati e dimensioni, in modo da trasmettere l'informazione d'interesse in maniera efficace e comprensibile all'utente. Di seguito sono descritte tutte le tipologie di pannelli presenti all'interno dell'applicativo.
 
-\subsubsubsection{Geomap}
-I widget in formato ``Geomap" consistono in mappe interattive che segnalano la posizione di un elemento di interesse, quale può essere ad esempio un sensore. È possibile visualizzare diverse aree della mappa tenendo premuto e trascinando il cursore, oltre a effettuare lo zoom grazie agli appositi pulsanti ``+" e ``-". 
-\subsubsubsection{Time series}
+\subsubsubsection{\glossterm{Geomap}}
+I widget in formato ``Geomap" consistono in mappe interattive che segnalano la posizione di un elemento di interesse, quale può essere ad esempio un sensore, all'interno dell'area geografica visualizzata. È possibile visualizzare diverse aree della mappa tenendo premuto e trascinando il cursore, oltre a effettuare lo zoom grazie agli appositi pulsanti ``+" e ``-". 
+\subsubsubsection{\glossterm{Time series}}
 I widget in formato ``Time series" consistono in grafici cartesiani che descrivono l'andamento nel tempo delle misurazioni effettuate dai sensori. In particolare, l'asse x riporta il momento in cui viene effettuata una rilevazione mentre sull'asse y vi sono i valori misurati. Ciascuna linea del grafico rappresenta un singolo sensore e posizionando il cursore su di essa è possibile vedere l'ora precisa del rilevamento e il valore esatto misurato. L'utente può inoltre restringere l'intervallo temporale mostrato dal singolo pannello selezionando la porzione di linea che si desidera visualizzare nel dettaglio.
 
-\subsubsubsection{Gauge}
+\subsubsubsection{\glossterm{Gauge}}
 I widget in formato ``Gauge" visualizzano un singolo valore numerico calcolato sulla base di una serie di misurazioni. Il pannello ricorda graficamente un manometro e il valore mostrato cambia colore a seconda che esso superi o meno le soglie impostate. Questo tipo di widget non è interattivo.
 
-\subsubsubsection{Bar chart}
+\subsubsubsection{\glossterm{Bar chart}}
 I widget in formato ``Bar chart" consistono in istogrammi che consentono all'utente di visualizzare in maniera immediata il confronto tra più dati categorici. In particolare, nell'applicativo vengono utilizzati per esprimere il paragone tra le rilevazioni minime e massime registrate, oltre che tra valori calcolati sulla base delle misurazioni come media aritmetica e moda. L'utente può posizionare il cursore sopra le colonne del grafico per visualizzarne i dettagli, quali nome del sensore coinvolto, categoria del dato e valore esatto.
 
 \subsubsubsection{Table}
@@ -401,7 +402,7 @@ La dashboard ``Sensors" ospita al suo interno un unico pannello, ovvero una mapp
     \label{fig:Dashboard ``Sensori"}
 \end{figure}
 \subsection{Dashboard ``Ambientale"}
-La dashboard ``Environmental Planning" consente di visualizzare i dati relativi all'ambiente, ovvero temperatura (effettiva e percepita), umidità, intensità delle precipitazioni, inquinamento atmosferico e livello di riempimento dei bacini idrici. La dashboard è suddivisa in sei righe, una per ogni tipologia di dato, contenenti da uno a più pannelli. Alle sezioni seguenti viene illustrato il contenuto di ciascuna riga.
+La dashboard ``Environmental Planning" consente di visualizzare i dati relativi all'ambiente, ovvero temperatura (effettiva e percepita), umidità, intensità delle precipitazioni, inquinamento atmosferico e livello di riempimento dei bacini idrici. La dashboard è suddivisa in sei righe, una per ogni tipologia di dato, contenenti uno o più pannelli. Alle sezioni seguenti viene illustrato il contenuto di ciascuna riga.
 \subsubsection{Temperatura}
 \begin{itemize}
 \setlength\itemsep{0em}
@@ -564,7 +565,7 @@ Contiene un unico pannello relativo al riempimento dei conferitori delle isole e
 \end{figure}
 
 \subsection{Allerte} \label{sec:alert}
-L'applicativo è dotato di un sistema di notifica, funzionalità che consiste, per l'appunto, nell'invio di notifiche all'utente qualora i valori misurati da alcune tipologie di sensori (descritti alla sezione \ref{sec:thresholds}) superassero le soglie di sicurezza impostate. L'utente viene dunque tempestivamente avvisato di eventuali criticità o eventi pericolosi, in modo da poter intraprendere strategie mitigative il prima possibile. L'utente può visualizzare le impostazioni del sistema di notifica alla pagina ``Alerting". \\ I messaggi di notifica vengono inviati via mail e sull'apposito server Discord, configurato dall'amministratore di sistema. All'interno dell'applicazione vi è anche una dashboard panoramica sullo stato delle allerte, anch'essa illustrata alla sezione \ref{sec:thresholds}.
+L'applicativo è dotato di un sistema di notifica, funzionalità che consiste, per l'appunto, nell'invio di notifiche all'utente qualora i valori misurati da alcune tipologie di sensori (descritti alla sezione \ref{sec:thresholds}) superassero le soglie di sicurezza impostate. L'utente viene dunque tempestivamente avvisato di eventuali criticità o eventi pericolosi, in modo da poter intraprendere strategie mitigative il prima possibile. L'utente può visualizzare le impostazioni del sistema di notifica alla pagina ``Alerting". \\ I messaggi di notifica vengono inviati via mail e sull'apposito server \glossterm{Discord}, configurato dall'amministratore di sistema. All'interno dell'applicazione vi è anche una dashboard panoramica sullo stato delle allerte, anch'essa illustrata alla sezione \ref{sec:thresholds}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=7cm]{images_mu/alerting.png}
