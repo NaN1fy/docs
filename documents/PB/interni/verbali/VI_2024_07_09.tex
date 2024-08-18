@@ -1,0 +1,211 @@
+% changelog: "1.0.0, 2024-08-05, Davide Donanzan, approvazione per PB"
+
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- IMPORTANTE -- %
+% utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
+% non utilizzare \glossterm nei verbali
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-07-09} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+  \fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+% quando lo utilizi metti un // esterno al comando subsubsubsection{esempio} altrimenti è attacatto al titoletto, non modificare il comando (se metti //// nel comando è troppo spaziato quando ci sono table e figure
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Linda Barbiero}}}
+			
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Davide Donanzan}\\}} % massimo due 
+			{\large{\textsc{Veronica Tecchiati}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-07-09\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8.5 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{5cm} p{3cm} p{3cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
+		\midrule
+			1.0.0 & 2024-08-05 & \textbf{Approvazione per PB} & & \\\\
+			0.0.1 & 2024-07-11 & Stesura verbale. & Linda Barbiero & Veronica Tecchiati, Davide Donanzan
+ 			\\ % spazio tra le righe
+
+		\bottomrule
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata Discord;
+	\item\textbf{Ora di inizio:} 15:00;
+	\item\textbf{Ora di fine:}  16:00.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 0 h \\
+			Linda Barbiero & 1 h \\
+			Pietro Busato & 1 h \\
+			Oscar Konieczny & 1 h \\
+			Davide Donanzan & 1 h \\
+			Veronica Tecchiati & 1 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy.}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlength\itemsep{0em}
+    \item Discussione sulla valutazione della revisione RTB;
+    \item Valutazione dell'operato durante il periodo di assestamento;
+    \item Definizione delle attività da svolgere in vista del prossimo SAL.
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+Concluso il periodo di assestamento, concordato assieme alla Proponente data l'occorrenza di impegni di studio, il gruppo si è incontrato per verificare lo stato delle attività portate a termine fino a quel momento e stabilire nuovi compiti da svolgere. \\
+% La parte che segue l'abbiamo fatta per ultima durante l'incontro, ma mi sono permessa di spostarla qui perché ho immaginato che Tullio avrebbe trovato "ragionevole" considerare le sue valutazioni PRIMA di fare qualsiasi altra cosa, in modo da impostare le attività alla luce delle modifiche da lui richieste, quindi lavorare "proattivamente" ed in ottica di miglioramento. Se si ritiene che questa sia una grande stronzata spostare pure dove si ritiene opportuno. Inoltre, questa parte spiega nel dettaglio il nostro dubbio. Se si ritiene che sia superfluo scendere così nei particolari (perché tanto glielo esponiamo già al DDB), tagliare tutta la spiegazione e lasciare solo che è emerso un dubbio che esporremo al prossimo DDB.
+La riunione è iniziata con l'analisi della valutazione dell'RTB, soffermandosi in particolar modo sugli aspetti da migliorare per quanto riguarda il way of working. Un dubbio emerso riguarda l'approccio da adottare sul versionamento dei documenti: il gruppo ha compreso come ogni "scatto" sia dovuto ad un via libera da parte del Verificatore. Pertanto, per rendere ancor più esplicita l'associazione tra un'azione di modifica e la corrispondente azione di verifica, alcuni membri del team hanno proposto di cambiare leggermente il layout della tabella di registro delle modifiche presente all'inizio di ogni documento. 
+%In particolare, l'idea consiste nell'eliminazione delle colonne ``Autore" e ``Ruolo" e, al suo posto, nell'aggiunta delle colonne ``Redattore" e ``Verificatore". METTERE QUESTA FRASE SOLO SE LA SI RITIENE INDISPENSABILE
+Tuttavia non è chiaro se sia più opportuno applicare questa correzione retroattivamente anche sui precedenti registri delle modifiche, oppure se mantenere una ``legacy" lasciando invariato quanto fatto in precedenza e mostrando l'adozione del nuovo stile soltanto in seguito al raggiungimento della milestone RTB, cioè a partire da ora. Il team ha dunque deciso di esporre questo dubbio nel prossimo ``Diario di Bordo", previsto in data 2024-07-15. \\
+La riunione è poi proseguita con l'esposizione di quanto svolto finora da parte di ciascuno dei membri. In particolare, il team di Programmatori ha apportato delle modifiche ai sensori precedentemente implementati e ha continuato la definizione delle regole relative al sistema di alerting. L'Amministratore ha iniziato anche la stesura introduttiva dei documenti di Specifiche Tecniche e Manuale Utente. Tuttavia, considerando le disponibilità date da ciascuno per questo Sprint, il team concorda sul fatto che sia attualmente prioritario concentrarsi sulla realizzazione dell'applicativo anziché proseguire la stesura della documentazione, cui il gruppo si dedicherà pienamente a partire dal prossimo periodo.\\ 
+Infine, esaminando le risorse temporali ed economiche a propria disposizione, il team ha stabilito gli obiettivi da conseguire entro il prossimo SAL con la Proponente. Essi saranno poi comunicati via mail al cliente che li approverà qualora li ritenga ragionevoli.
+
+\subsection{Decisioni prese}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Continuazione delle dashboard previste dall'Analisi dei Requisiti relative ai nuovi sensori;
+	\item Implementazione delle nuove regole relative al sistema di alerting.
+	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
+	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+\end{itemize}
+\newpage
+\section{Attività da svolgere}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{7cm}cp{7cm}}
+		\toprule
+		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
+		\midrule
+		\href{https://github.com/NaN1fy/SyncCity/issues/31}{\underline{Implementazione sistema di alerting}} & 31*\tnote{*} & Veronica Tecchiati, Linda Barbiero \\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/32}{\underline{Implementazione nuove dashboard Grafana}} & 32*\tnote{*} & Oscar Konieczny, Davide Donanzan \\\\
+		\bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+		\vspace{1em}
+		\item * indica che la issue fa parte della repository SyncCity
+	\end{tablenotes}
+	\caption{Attività da svolgere.}
+	\label{table:Attivita da svolgere}
+\end{table}
+\end{document}

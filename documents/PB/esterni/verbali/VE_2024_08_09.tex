@@ -1,0 +1,205 @@
+% changelog: "1.0.0, 2024-08-15, Linda Barbiero, Minor fix per approvazione per PB."
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+\setlength\parindent{0pt}
+% -- IMPORTANTE -- %
+% utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
+% non utilizzare \glossterm nei verbali
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VERBALE ESTERNO DEL 2024-08-09} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+  	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+% quando lo utilizi metti un // esterno al comando subsubsubsection{esempio} altrimenti è attacatto al titoletto, non modificare il comando (se metti //// nel comando è troppo spaziato quando ci sono table e figure
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Linda Barbiero}\\}}
+			
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Pietro Busato}\\}} % massimo due 
+			{\large{\textsc{Oscar Konieczny}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Esterno Del\\2024-08-09\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8.5 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{5cm} p{3cm} p{3cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
+		\midrule
+		1.0.0 & 2024-08-15 & \textbf{Approvazione per PB} & & \\\\
+		0.0.1 & 2024-08-14 & Prima stesura del verbale. & Linda Barbiero & Oscar Konieczny, Pietro Busato \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Sede di Synclab di Padova, Galleria Spagna, 28 35127 Padova (PD);
+	\item\textbf{Ora di inizio:} 15:00;
+	\item\textbf{Ora di fine:}  16:30.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 1.5 h \\
+			Linda Barbiero &  1.5 h \\
+			Pietro Busato & 1.5 h \\
+			Oscar Konieczny & 1.5 h \\
+			Davide Donanzan & 1.5 h \\
+			Veronica Tecchiati & 1.5 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy.}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+	\begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Andrea Dorigo & 1.5 h \\
+			Fabio Pallaro & 1.5 h \\
+			Daniele Zorzi & 1.5 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti SyncLab.}
+		\label{table:Partecipanti SyncLab}
+	\end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Collaudo finale del prodotto;	
+	\item Discussione riguardante criticità e modalità di svolgimento dell'intero progetto;
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+L'incontro si è svolto in sede della Proponente a Padova, in Galleria Spagna, 28 35127 Padova (PD). \\
+Il team si è occupato di presentare il proprio progetto seguendo un'ottica non prettamente tecnica, ma trattando la Proponente come un vero e proprio cliente: sono stati quindi discussi in primis le finalità del prodotto e le motivazioni di scelta delle tecnologie. Proseguendo poi con l'aspetto tecnico, si è mostrato il prodotto in sé discutendone le schermate visualizzate e spiegando cosa si stesse mostrando, passando dalle videate delle dashboard con i relativi sensori, fino alla parte di sistema di alerting e notifica.\\
+Conclusa la presentazione del prodotto, i membri dell'azienda Proponente hanno esposto alcune perplessità sorte e hanno fornito consigli sia riguardo eventuali migliorie da apportare, sia riguardo i punti tecnici da affrontare e/o approfondire per le presentazioni future con i docenti.\\
+L'incontro si è infine concluso discutendo riguardo opinioni e pareri sull'intero svolgimento del progetto, in particolar modo sulle modalità di pianificazione degli Sprint e sui canali di comunicazioni utilizzati.\\
+L'azienda ha certificato il collaudo con esito positivo verificando i requisiti pattuiti in capitolato.
+% -- togliere, testo per riempiere il template
+\subsection{Decisioni prese}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Viene presa la decisione di apportare le migliorie proposte dalla proponente, in particolar modo sulla visualizzazione dei pannelli;
+	\item Viene presa la decisione di integrare i consigli sugli argomenti da affrontare e/o approfondire in previsione dei prossimi incontri con i docenti.
+    % consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
+	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+\end{itemize}
+\section{Attività da svolgere}
+Il team si prepara quindi allo svolgimento del suo decimo e ultimo Sprint, pianificato precedentemente, prima dell'incontro riguardo il MVP con il docente Cardin.
+% commentare per togliere la firma
+% se revisionate il documento domani, cambiate la data.
+\signatureline{Padova, 2024-08-15}
+\end{document}
