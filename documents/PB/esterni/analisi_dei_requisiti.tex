@@ -1,4 +1,4 @@
-% changelog: "1.1.1, 2024-08-08, Stesura caso d'uso 3.12 e aggiunta requisiti, Veronica Tecchiati"
+% changelog: "2.0.0, 2024-08-18, Approvazione per PB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -37,6 +37,7 @@
 \usepackage{capt-of}
 \usepackage{booktabs}
 \usepackage{varwidth}
+\usepackage{verbatim}
 \usepackage{array}
 
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
@@ -98,11 +99,12 @@
 		
 		{\large{\textsc{Verificatori}}
 			\vspace{3mm}
-			{\\\large{\textsc{Oscar Konieczny}\\}} 
-			{\large{\textsc{Pietro Busato}\\}}
-			{\large{\textsc{Linda Barbiero}\\}}
-   {\large{\textsc{Veronica Tecchiati}}}
-			
+			{\\\large{\textsc{Linda Barbiero}\\}}
+                {\large{\textsc{Pietro Busato}\\}}
+                {\large{\textsc{Oscar Konieczny}\\}} 
+                {\large{\textsc{Davide Donanzan}\\}}
+                {\large{\textsc{Veronica Tecchiati}\\}}
+                {} %PER RIMUOVERE LO SPAZIO INDESIDERATO ALLA FINE DELL'ULTIMO NOME, ANDARE A CAPO E LASCIARE PARENTESI VUOTE (DIMINUIRE LO SPAZIO SOPRA ALLA MAIL DI CONSEGUENZA)
 		}
 		\vspace{2mm}\vspace{2mm}
 	\end{minipage}
@@ -113,7 +115,7 @@
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{8.5cm}
+	\vspace{8cm}
 	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{\color{black}nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
@@ -124,7 +126,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-                1.1.1 & 2024-08-08 & Stesura caso d'uso 3.12 e aggiunta requisiti. & Veronica Tecchiati & - \\\\
+            2.0.0 & 2024-08-18 & \textbf{Approvazione per PB} & &  \\\\
+            1.2.0 & 2024-08-10 & Stesura UC-0, UC-1 e UC-5.12. Aggiunta requisiti. & Veronica Tecchiati & Davide Donanzan \\\\
 			1.1.0 & 2024-08-08 & Correzioni in seguito alla valutazione RTB. & Oscar Konieczny & Veronica Tecchiati
  		    \\ % spazio tra le righe
 		\bottomrule
@@ -172,12 +175,12 @@ Il seguente documento ha come scopo quello di elencare in modo esaustivo i casi 
 del progetto ``SyncCity'' a seguito di un'attenta analisi del \glossterm{capitolato} C6 dell'azienda \glossterm{Proponente} SyncLab e di una successiva discussione con essa attraverso gli incontri svolti.
 \subsection{Glossario}
 Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini utilizzati nel seguente
-documento, viene fornito un \textit{Glossario v1.0.0} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati attraverso una G ad apice.
+documento, viene fornito un \textit{Glossario v2.0.0} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati attraverso una G ad apice.
 \subsection{Riferimenti}
 \subsubsection{Riferimenti Normativi}
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item \textit{Norme di Progetto v1.0.0};	
+	\item \textit{Norme di Progetto v2.0.0};
 	\item \textit{Verbale Esterno 2024-03-12};
 	\item \textit{Verbale Esterno 2024-04-03;}
   \item Presentazione e documentazione del capitolato C6 - SyncCity:
@@ -239,13 +242,12 @@ Il dominio tecnologico dell'applicativo comprende:
   \item \textbf{\glossterm{Grafana}:} piattaforma per monitorare e analizzare i dati in tempo reale attraverso la loro rappresentazione grafica.
 \end{itemize}
 
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+%\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
 \begin{figure}
+\begin{comment}
 \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
 %uncomment if require: \path (0,427); %set diagram left start at 0, and has height of 427
-
 %Image [id:dp8158510236522856] 
     \draw (225.23,191.41) node  {\includegraphics[width=78.34pt,height=36.62pt]{image_adr/kafka-icon-2048x935-cvu4503l.png}};
 %Image [id:dp09901368341649897] 
@@ -263,27 +265,23 @@ Il dominio tecnologico dell'applicativo comprende:
 %Straight Lines [id:da2205341167852083] 
 \draw [line width=1.5]    (425.91,190) -- (493.33,190) ;
 \draw [shift={(496.33,190)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=1.5]    (14.21,-4.28) .. controls (9.04,-1.82) and (4.3,-0.39) .. (0,0) .. controls (4.3,0.39) and (9.04,1.82) .. (14.21,4.28)   ;
-
 % Text Node
 \draw (345,116) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{52.74pt}\setlength\topsep{0pt}
 \begin{center}
 {\scriptsize Persistenza }\\{\scriptsize e Aggregazione}
 \end{center}
-
 \end{minipage}};
 % Text Node
 \draw (559,115) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{30.49pt}\setlength\topsep{0pt}
 \begin{center}
 {\scriptsize Analitica}\\{\scriptsize \glossterm{real-time}}
 \end{center}
-
 \end{minipage}};
 % Text Node
 \draw (207,115) node [anchor=north west][inner sep=0.75pt]   [align=left] {\begin{minipage}[lt]{36.06pt}\setlength\topsep{0pt}
 \begin{center}
 {\scriptsize Gathering }\\{\scriptsize dei dati}
 \end{center}
-
 \end{minipage}};
 % Text Node
 \draw (116,166) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\tiny dati}};
@@ -294,19 +292,21 @@ Il dominio tecnologico dell'applicativo comprende:
 % Text Node
 \draw (36,185) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\scriptsize Sensori}};
 \end{tikzpicture}
+\end{comment}
+\centering
+\includegraphics[width=\linewidth]{image_adr/stack.jpg}
 \caption{Stack tecnologico.}
 \end{figure}
 \newpage
-
 \section{Casi d'uso} \label{sec:use-case}
 \subsection{Introduzione}
 Di seguito sono elencati i casi d'uso individuati attraverso l'analisi del \glossterm{capitolato} e il
 confronto con la \glossterm{Proponente}. Ciascuno di essi è corredato di un codice identificativo, la cui
-struttura è descritta alla sezione \textit{2.3.2.4} del documento \textit{Norme di Progetto v1.0.0}. %INSERIRE RIMANDO SEZIONE CORRETTA
+struttura è descritta alla sezione \textit{2.3.2.4} del documento \textit{Norme di Progetto v2.0.0}. %INSERIRE RIMANDO SEZIONE CORRETTA
 \subsection{Attori}
 Gli attori che interagiscono con il \glossterm{sistema} sono i seguenti:
 \begin{itemize}
-    \item \textbf{Amministratore pubblico}: utente in grado di accedere al \glossterm{sistema} ed usufruire di tutte le sue \glossterm{funzionalità}. In particolare, può visualizzare la \glossterm{dashboard} contenente i dati provenienti dai sensori. L'applicativo non richiede autenticazione; %NOT SO SURE ABOUT DIS
+    \item \textbf{Amministratore pubblico}: utente in grado di accedere al \glossterm{sistema} ed usufruire di tutte le sue \glossterm{funzionalità}. In particolare, può visualizzare la \glossterm{dashboard} contenente i dati provenienti dai sensori. L'applicativo richiede autenticazione;
     \item \textbf{Sensore}: dispositivo in grado di rilevare dati dall'ambiente esterno e inviare le misurazioni effettuate al \glossterm{sistema}, in modo da consentirne l'archiviazione e la successiva visualizzazione.
 \end{itemize}
 \clearpage
@@ -318,8 +318,130 @@ Ad ogni caso d'uso è associato un codice univoco definito nel seguente formato:
 Dove \textbf{Numero} è un identificativo e \textbf{Specializzazione} si riferisce ad un caso specifico
 dello stesso caso d'uso.
 \subsection{Elenco dei casi d'uso}
-\subsubsection*{UC-0: Visualizzazione menu \glossterm{dashboard}}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-0: Visualizzazione menu \glossterm{dashboard}}
+% ------------------ ISTRUZIONI PER L'USO DEI COUNTER: ------------------
+% \the<nomecounter> ---> restituisce il valore ATTUALE del counter 
+% \<nomecounter>number ---> INCREMENTA di 1 il counter
+% \setcounter{<nomecounter>}{<numero>} ---> inizializza il counter al numero indicato. 
+
+\newcounter{uc} %numero dello Use Case
+\setcounter{uc}{-1}
+\newcommand{\ucnumber}{\stepcounter{uc}\arabic{uc}}
+\newcounter{specone} %primo numero del sottocaso
+\setcounter{specone}{0}
+\newcommand{\speconenumber}{\stepcounter{specone}\arabic{specone}}
+\newcounter{spectwo} %secondo numero del sottocaso
+\setcounter{spectwo}{0}
+\newcommand{\spectwonumber}{\stepcounter{spectwo}\arabic{spectwo}}
+
+\subsubsection*{UC-\ucnumber: Autenticazione} 
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Autenticazione}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} il \glossterm{sistema} è operativo e accessibile. L'amministratore pubblico è in possesso delle credenziali di accesso;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico ha accesso al \glossterm{sistema}.
+    \item \textbf{Scenario principale:} 
+        \begin{enumerate}
+        \item L'amministratore pubblico avvia l'applicativo web e visualizza la pagina di login;
+        \item L'amministratore pubblico digita le proprie credenziali (username e password) nei rispettivi campi di inserimento;
+        \item Il sistema invia i dati inseriti dall'amministratore pubblico a \glossterm{Grafana} per la loro verifica;
+        \item Le credenziali fornite vengono verificate.
+        \end{enumerate}
+        % immagine
+    \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al \glossterm{sistema} e visualizzare la pagina principale dell'applicazione web. Ciò è possibile soltanto dopo aver digitato correttamente le credenziali di accesso negli appositi campi di inserimento, presenti nella schermata di login.
+    \item \textbf{Specializzazioni:} [UC-\theuc .1], [UC-\theuc .1];
+    \item \textbf{Estensioni:} [UC-1].
+\end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-0]{UC-\theuc \\ Autenticazione}
+
+                \umlusecase[x=0, y=-3, width=80, name=UC-1]{UC-1 \\ Visualizzazione messaggio credenziali errate}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-0}
+                \umlextend{UC-1}{UC-0}
+        \end{tikzpicture}
+    \caption{UC-\theuc: Autenticazione.}
+    \label{fig:UC-\theuc: Autenticazione}
+\end{figure}
+
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento username} 
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento username}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} il \glossterm{sistema} è operativo e accessibile. L'amministratore pubblico è in possesso delle credenziali di accesso e sta visualizzando la pagina di login;
+    \item \textbf{Postcondizioni:} lo username dell'amministratore pubblico è stato inserito nel campo corrispondente.
+    \item \textbf{Scenario principale:} 
+        \begin{enumerate}
+        \item L'amministratore pubblico digita il proprio username nell'omonimo campo di inserimento.
+        \end{enumerate}
+        % immagine
+    \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero inserire il mio username nell'apposito campo per poter avere accesso al \glossterm{sistema}.
+\end{itemize}
+
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento password} 
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento password}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} il \glossterm{sistema} è operativo e accessibile. L'amministratore pubblico è in possesso delle credenziali di accesso e sta visualizzando la pagina di login;
+    \item \textbf{Postcondizioni:} la password dell'amministratore pubblico è stata inserita nel campo corrispondente.
+    \item \textbf{Scenario principale:} 
+        \begin{enumerate}
+        \item L'amministratore pubblico digita la propria password nell'omonimo campo di inserimento.
+        \end{enumerate}
+        % immagine
+    \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero inserire la mia password nell'apposito campo per poter avere accesso al \glossterm{sistema}.
+\end{itemize}
+
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=-1.25, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
+            \begin{umlsystem}[x=7, y=0]{UC-\theuc { }Autenticazione}
+                \umlusecase[x=0, y=0, width=80, name=UC-user]{UC-\theuc .1 \\ Inserimento username}
+
+                \umlusecase[x=0, y=-2.5, width=80, name=UC-psw]{UC-\theuc .2 \\ Inserimento password}
+
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-user}
+                \umlassoc{Amministratore pubblico}{UC-psw}
+        \end{tikzpicture}
+    \caption{Sottocasi UC-\theuc: Autenticazione.}
+    \label{fig:Sottocasi UC-\theuc: Autenticazione}
+\end{figure}
+
+\subsubsection*{UC-\ucnumber: Visualizzazione messaggio credenziali errate}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Visualizzazione messaggio credenziali errate}
+\begin{itemize}
+    \item \textbf{Attore principale:} amministratore pubblico;
+    \item \textbf{Precondizioni:} il \glossterm{sistema} è operativo e accessibile. L'amministratore pubblico ha inserito delle credenziali di accesso errate;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un messaggio di errore segnalante l'inesattezza dei dati digitati.
+    \item \textbf{Scenario principale:} 
+        \begin{enumerate}
+        \item Il \glossterm{sistema} verifica le credenziali inserite dall'amministratore pubblico;
+        \item Username o password non sono corretti, dunque viene visualizzato un messaggio di errore.
+        \end{enumerate}
+        % immagine
+    \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero essere notificato qualora l'autenticazione fallisse a causa dell'inserimento di dati errati.
+\end{itemize}
+\begin{figure}[ht!]
+    \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=0]{Amministratore pubblico}
+            \begin{umlsystem}[x=6, y=0]{SyncCity}
+                \umlusecase[x=0, y=0, width=80, name=UC-1]{UC-\theuc \\ Visualizzazione messaggio credenziali errate}
+            \end{umlsystem}
+                \umlassoc{Amministratore pubblico}{UC-1}
+        \end{tikzpicture}
+    \caption{UC-\theuc: Visualizzazione messaggio credenziali errate.}
+    \label{fig:UC-\theuc: Visualizzazione messaggio credenziali errate}
+\end{figure}
+
+\subsubsection*{UC-\ucnumber: Visualizzazione menu \glossterm{dashboard}}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Visualizzazione menu \glossterm{dashboard}}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} il \glossterm{sistema} è operativo e accessibile;
@@ -327,7 +449,7 @@ dello stesso caso d'uso.
         può scegliere una specifica \glossterm{dashboard}: Sensori, Ambientale, Urbanistica o Soglie.
     \item \textbf{Scenario principale:} 
         \begin{enumerate}
-        \item l'amministratore pubblico accede alla piattaforma di visualizzazione.
+        \item L'amministratore pubblico accede alla piattaforma di visualizzazione.
         \end{enumerate}
         % immagine
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere alla \glossterm{dashboard} per monitorare in tempo reale i dati raccolti dai vari sensori dislocati nella città. Questo mi permetterà di valutarne rapidamente lo stato complessivo e prendere decisioni informate e tempestive riguardo alla gestione delle risorse e all’implementazione dei servizi.
@@ -337,45 +459,47 @@ dello stesso caso d'uso.
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-0]{UC-0 \\ Visualizzazione menu \glossterm{dashboard}}
+                \umlusecase[x=0, y=0, width=80, name=UC-0]{UC-\theuc \\ Visualizzazione menu \glossterm{dashboard}}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-0}
         \end{tikzpicture}
-    \caption{UC-0: Visualizzazione menu \glossterm{dashboard}.}
-    \label{fig:UC-0: Visualizzazione menu dashboard}
+    \caption{UC-\theuc: Visualizzazione menu \glossterm{dashboard}.}
+    \label{fig:UC-\theuc: Visualizzazione menu dashboard}
 \end{figure}
-\subsubsection*{UC-1: Visualizzazione \glossterm{dashboard} sensori}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-1: Visualizzazione \glossterm{dashboard} sensori}
+
+\subsubsection*{UC-\ucnumber: Visualizzazione \glossterm{dashboard} sensori}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Visualizzazione \glossterm{dashboard} sensori}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} nessuna;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza una lista di pannelli contenenti dati relativi alle informazioni dei sensori;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello contenente dati relativi alle informazioni dei sensori;
     \item \textbf{Scenario principale:}
     \begin{enumerate}
-    \item l'amministratore pubblico accede alla piattaforma di visualizzazione;
-    \item l'amministratore pubblico seleziona la visualizzazione della \glossterm{dashboard} relativa ai sensori.
+    \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
+    \item L'amministratore pubblico seleziona la visualizzazione della \glossterm{dashboard} relativa ai sensori.
     \end{enumerate}
-    \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere alla \glossterm{dashboard} per visualizzare la tipologia e posizione dei sensori dislocati nella città;
-    \item \textbf{Specializzazioni:} [UC-1.1];
-    \item \textbf{Estensioni:} [UC-5];
+    \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere alla \glossterm{dashboard} per visualizzare la tipologia e la posizione dei sensori dislocati nella città;
+    \item \textbf{Specializzazioni:} [UC-\theuc .1];
+    \item \textbf{Estensioni:} [UC-7].
 \end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-1]{UC-1 \\ Visualizzazione \glossterm{dashboard} sensori}
+                \umlusecase[x=0, y=0, width=80, name=UC-1]{UC-\theuc \\ Visualizzazione \glossterm{dashboard} sensori}
 
-                \umlusecase[x=0, y=-3, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
+                \umlusecase[x=0, y=-3, width=80, name=UC-7]{UC-7 \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-1}
-                \umlextend{UC-5}{UC-1}
+                \umlextend{UC-7}{UC-1}
         \end{tikzpicture}
-    \caption{UC-1: Visualizzazione \glossterm{dashboard} sensori.}
-    \label{fig:UC-1: Visualizzazione dashboard sensori}
+    \caption{UC-\theuc: Visualizzazione \glossterm{dashboard} sensori.}
+    \label{fig:UC-\theuc: Visualizzazione dashboard sensori}
 \end{figure}
-\subsubsection*{UC-1.1: Visualizzazione pannello \glossterm{geomap} per posizione sensori}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-1.1: Visualizzazione pannello \glossterm{geomap} per visualizzazione sensori}
+\setcounter{specone}{0}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{geomap} per posizione sensori}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{geomap} per visualizzazione sensori}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione relativa al dominio dei sensori;
@@ -387,22 +511,22 @@ dello stesso caso d'uso.
       \item L'amministratore pubblico seleziona la visualizzazione del pannello \glossterm{geomap} per la posizione dei sensori.
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per conoscere le informazioni dei sensori dislocati nella città. La mappa deve indicare chiaramente la posizione di ciascun \glossterm{sensore} e deve essere etichettata in modo da consentire un riconoscimento immediato della tipologia di ogni sensore.
-    \item \textbf{Specializzazioni:} [UC-1.1.1];
+    \item \textbf{Specializzazioni:} [UC-\theuc .\thespecone .1].
 \end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
-            \begin{umlsystem}[x=6, y=0]{UC-1 Visualizzazione dashboard sensori}
-                \umlusecase[x=0, y=0, width=100, name=UC-position]{UC-1.1 \\ Visualizzazione pannello \glossterm{geomap} per posizione sensori}
+            \begin{umlsystem}[x=6, y=0]{UC-\theuc Visualizzazione dashboard sensori}
+                \umlusecase[x=0, y=0, width=100, name=UC-position]{UC-\theuc .\thespecone \\ Visualizzazione pannello \glossterm{geomap} per posizione sensori}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-position}
         \end{tikzpicture}
-    \caption{UC-1.1: Visualizzazione pannello \glossterm{geomap} per posizione sensori.}
-    \label{fig:UC-1.1: Visualizzazione pannello geomap per posizione sensori}
+    \caption{UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{geomap} per posizione sensori.}
+    \label{fig:UC-\theuc .\thespecone: Visualizzazione pannello geomap per posizione sensori}
 \end{figure}
-\subsubsection*{UC-1.1.1: Visualizzazione informazioni sensore}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-1.1.1: Visualizzazione informazioni sensore}
+\subsubsection*{UC-\theuc .\thespecone .\spectwonumber: Visualizzazione informazioni sensore}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone .\thespectwo: Visualizzazione informazioni sensore}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato un sensore visualizzato nel pannello \glossterm{geomap};
@@ -420,16 +544,16 @@ dello stesso caso d'uso.
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
-            \begin{umlsystem}[x=7.35, y=0]{{UC-1.1 Visualizzazione pannello geomap per posizione sensori}}
-                \umlusecase[x=0, y=0, width=100, name=UC-position]{UC-1.1.1 \\ Visualizzazione informazioni sensore}
+            \begin{umlsystem}[x=7.35, y=0]{{UC-\theuc .\thespecone { }Visualizzazione pannello geomap per posizione sensori}}
+                \umlusecase[x=0, y=0, width=100, name=UC-position]{UC-\theuc .\thespecone .\thespectwo \\ Visualizzazione informazioni sensore}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-position}
         \end{tikzpicture}
-    \caption{UC-1.1.1: Visualizzazione informazioni sensore.}
-    \label{fig:UC-1.1.1: Visualizzazione informazioni sensore}
+    \caption{UC-\theuc .\thespecone .\thespectwo: Visualizzazione informazioni sensore.}
+    \label{fig:UC-\theuc .\thespecone .\thespectwo: Visualizzazione informazioni sensore}
 \end{figure}
-\subsubsection*{UC-2: Visualizzazione \glossterm{dashboard} ambientale}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2: Visualizzazione \glossterm{dashboard} ambientale}
+\subsubsection*{UC-\ucnumber: Visualizzazione \glossterm{dashboard} ambientale}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Visualizzazione \glossterm{dashboard} ambientale}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }nessuna;
@@ -441,26 +565,27 @@ dello stesso caso d'uso.
     \item L'amministratore pubblico seleziona la visualizzazione della \glossterm{dashboard} relativa al dominio ambientale.
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere alla \glossterm{dashboard} per monitorare il dominio ambientale, nella quale è possibile visualizzare i dati relativi a: temperatura, umidità, temperatura percepita, intensità delle precipitazioni, inquinamento dell'aria e livello dell'acqua;
-    \item \textbf {Specializzazioni:} [UC-2.1], [UC-2.2], [UC-2.3], [UC-2.4], [UC-2.5], [UC-2.6], [UC-2.7], [UC-2.8], [UC-2.9], [UC-2.10], [UC-2.11], [UC-2.12], [UC-2.13], [UC-2.14];  
-    \item \textbf{Estensioni:} [UC-5].
+    \item \textbf {Specializzazioni:} [UC-\theuc .1], [UC-\theuc .2], [UC-\theuc .3], [UC-\theuc .4], [UC-\theuc .5], [UC-\theuc .6], [UC-\theuc .7], [UC-\theuc .8], [UC-\theuc .9], [UC-\theuc .10], [UC-\theuc .11], [UC-\theuc .12], [UC-\theuc .13], [UC-\theuc .14];  
+    \item \textbf{Estensioni:} [UC-7].
 \end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-2]{UC-2 \\ Visualizzazione dashboard ambientale}
+                \umlusecase[x=0, y=0, width=80, name=UC-2]{UC-\theuc \\ Visualizzazione dashboard ambientale}
 
-                \umlusecase[x=0, y=-3, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
+                \umlusecase[x=0, y=-3, width=80, name=UC-7]{UC-7 \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-2}
-                \umlextend{UC-5}{UC-2}
+                \umlextend{UC-7}{UC-2}
         \end{tikzpicture}
-    \caption{UC-2: Visualizzazione \glossterm{dashboard} ambientale.}
-    \label{fig:UC-2: Visualizzazione dashboard ambientale}
+    \caption{UC-\theuc: Visualizzazione \glossterm{dashboard} ambientale.}
+    \label{fig:UC-\theuc: Visualizzazione dashboard ambientale}
 \end{figure}
-\subsubsection*{UC-2.1: Visualizzazione pannello \glossterm{time series} per temperatura}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.1: Visualizzazione pannello \glossterm{time series} per temperatura}
+\setcounter{specone}{0}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{time series} per temperatura}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{time series} per temperatura}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
@@ -474,8 +599,8 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'andamento della temperatura. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.2: Visualizzazione pannello \glossterm{time series} per umidità}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.2: Visualizzazione pannello \glossterm{time series} per umidità}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{time series} per umidità}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{time series} per umidità}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l’amministratore pubblico ha selezionato la visualizzazione
@@ -492,8 +617,8 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'andamento dell'umidità relativa. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.3: Visualizzazione pannello \glossterm{time series} per temperatura percepita}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.3: Visualizzazione pannello \glossterm{time series} per temperatura percepita}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{time series} per temperatura percepita}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{time series} per temperatura percepita}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
@@ -508,8 +633,8 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'andamento della temperatura percepita. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.4: Visualizzazione pannello \glossterm{Gauge} per temperatura media}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.4: Visualizzazione pannello \glossterm{Gauge} per temperatura media}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per temperatura media}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per temperatura media}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
@@ -525,13 +650,13 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare la temperatura media. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.5: Visualizzazione pannello \glossterm{Gauge} per umidità media}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.5: Visualizzazione pannello \glossterm{Gauge} per umidità media}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per umidità media}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per umidità media}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media dell'umidità, in gradi Celsius (°C), in formato di diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della \glossterm{dashboard}.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra la media dell'umidità, espressa in percentuale, in formato di diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della \glossterm{dashboard}.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L’amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -541,8 +666,8 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'umidità media. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.6: Visualizzazione pannello \glossterm{Gauge} per temperatura percepita media}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.6: Visualizzazione pannello \glossterm{Gauge} per temperatura percepita media}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per temperatura percepita media}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per temperatura percepita media}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
@@ -558,8 +683,8 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare la temperatura percepita media. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.7: Visualizzazione pannello con grafico a barre per valori statistici di temperatura}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.7: Visualizzazione pannello \glossterm{bar chart} per valori statistici di temperatura}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello con grafico a barre per valori statistici di temperatura}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{bar chart} per valori statistici di temperatura}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
@@ -574,8 +699,8 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i valori statistici di temperatura in ogni zona della città. Questo pannello consente di comprendere lo stato attuale climatico della zona d'interesse con maggiore facilità.
 \end{itemize}
-\subsubsection*{UC-2.8: Visualizzazione pannello con grafico a barre per valori statistici di temperatura percepita}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.8: Visualizzazione pannello con grafico a barre per valori statistici di temperatura percepita}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello con grafico a barre per valori statistici di temperatura percepita}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello con grafico a barre per valori statistici di temperatura percepita}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
@@ -591,8 +716,8 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i valori statistici di temperatura percepita in ogni zona d'interesse della città.
 \end{itemize}
-\subsubsection*{UC-2.9: Visualizzazione pannello \glossterm{time series} per precipitazioni}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.9: Visualizzazione pannello \glossterm{time series} per precipitazioni}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{time series} per precipitazioni}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{time series} per precipitazioni}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }l'amministratore pubblico ha selezionato la visualizzazione
@@ -608,14 +733,14 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'intensità delle precipitazioni. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.10: Visualizzazione pannello \glossterm{time series} per inquinamento dell'aria}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.10: Visualizzazione pannello \glossterm{time series} per inquinamento dell'aria}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{time series} per inquinamento dell'aria}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{time series} per inquinamento dell'aria}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
     \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico
-        che mostra la quantità di polveri sottili presenti nell'aria, espressa in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), in formato \glossterm{time series}.
+        che mostra le quantità di polveri sottili presenti nell'aria (PM10, PM2.5, NO2, O3), espresse in microgrammi per metro cubo (µg / $\mbox{m}^{\mbox{3}}$), in formato \glossterm{time series}.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -626,8 +751,8 @@ dello stesso caso d'uso.
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare il livello di polveri sottili presenti nell'aria. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.11: Visualizzazione pannello \glossterm{time series} per livello di acqua}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.11: Visualizzazione pannello \glossterm{time series} per livello di acqua}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{time series} per livello di acqua}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{time series} per livello di acqua}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
@@ -643,8 +768,8 @@ dello stesso caso d'uso.
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare il livello dell'acqua. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.12: Visualizzazione pannello \glossterm{Gauge} per intensità attuale delle precipitazioni}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.12: Visualizzazione pannello \glossterm{Gauge} per intensità attuale delle precipitazioni}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per intensità attuale delle precipitazioni}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per intensità attuale delle precipitazioni}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
@@ -659,8 +784,8 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'intensità attuale delle precipitazioni. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.13: Visualizzazione pannello \glossterm{Gauge} per inquinamento attuale dell'aria}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.13: Visualizzazione pannello \glossterm{Gauge} per inquinamento attuale dell'aria}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per inquinamento attuale dell'aria}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per inquinamento attuale dell'aria}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
@@ -675,13 +800,13 @@ dello stesso caso d'uso.
     \end{enumerate}
 \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare l'inquinamento attuale dell'aria. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-2.14: Visualizzazione pannello \glossterm{Gauge} per livello attuale dell'acqua}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-2.14: Visualizzazione pannello \glossterm{Gauge} per livello attuale dell'acqua}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per livello attuale dell'acqua}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per livello attuale dell'acqua}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio ambientale;
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra il livello attuale dell'acqua, in percentuale, in formato di diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della \glossterm{dashboard}.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello con un grafico che mostra il livello attuale dell'acqua, espresso in percentuale, in formato di diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi all'interno della \glossterm{dashboard}.
     \item \textbf{Scenario principale}:
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -695,20 +820,20 @@ dello stesso caso d'uso.
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=-7.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
-            \begin{umlsystem}[x=9, y=0]{UC-2 Visualizzazione dashboard ambientale}
-                \umlusecase[x=0, y=0, width=100, name=UC-temp]{UC-2.1 \\ Visualizzazione pannello \glossterm{time series} per temperatura}
+            \begin{umlsystem}[x=9, y=0]{UC-\theuc { }Visualizzazione dashboard ambientale}
+                \umlusecase[x=0, y=0, width=100, name=UC-temp]{UC-\theuc.1 \\ Visualizzazione pannello \glossterm{time series} per temperatura}
 
-                \umlusecase[x=0, y=-2.5, width=100, name=UC-humid]{UC-2.2 \\ Visualizzazione pannello \glossterm{time series} per umidità}
+                \umlusecase[x=0, y=-2.5, width=100, name=UC-humid]{UC-\theuc.2 \\ Visualizzazione pannello \glossterm{time series} per umidità}
 
-                \umlusecase[x=0, y=-5, width=100, name=UC-temp-perc]{UC-2.3 \\ Visualizzazione pannello \glossterm{time series} per temperatura percepita}
+                \umlusecase[x=0, y=-5, width=100, name=UC-temp-perc]{UC-\theuc.3 \\ Visualizzazione pannello \glossterm{time series} per temperatura percepita}
 
-                \umlusecase[x=0, y=-7.5, width=100, name=UC-temp-avg]{UC-2.4 \\ Visualizzazione pannello \glossterm{Gauge} per temperatura media}
+                \umlusecase[x=0, y=-7.5, width=100, name=UC-temp-avg]{UC-\theuc.4 \\ Visualizzazione pannello \glossterm{Gauge} per temperatura media}
 
-                \umlusecase[x=0, y=-10, width=100, name=UC-humid-avg]{UC-2.5 \\ Visualizzazione pannello \glossterm{Gauge} per umidità media}
+                \umlusecase[x=0, y=-10, width=100, name=UC-humid-avg]{UC-\theuc.5 \\ Visualizzazione pannello \glossterm{Gauge} per umidità media}
 
-                \umlusecase[x=0, y=-12.5, width=100, name=UC-heat-avg]{UC-2.6 \\ Visualizzazione pannello \glossterm{Gauge} per temperatura percepita media}
+                \umlusecase[x=0, y=-12.5, width=100, name=UC-heat-avg]{UC-\theuc.6 \\ Visualizzazione pannello \glossterm{Gauge} per temperatura percepita media}
 
-                \umlusecase[x=0, y=-15, width=100, name=UC-temp-stat]{UC-2.7 \\ Visualizzazione pannello \glossterm{bar chart} per statistiche di temperatura}
+                \umlusecase[x=0, y=-15, width=100, name=UC-temp-stat]{UC-\theuc.7 \\ Visualizzazione pannello \glossterm{bar chart} per statistiche di temperatura}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-temp}
                 \umlassoc{Amministratore pubblico}{UC-humid}
@@ -718,28 +843,28 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-heat-avg}
                 \umlassoc{Amministratore pubblico}{UC-temp-stat}
         \end{tikzpicture}
-    \caption{Sottocasi UC-2: Visualizzazione \glossterm{dashboard} ambientale.}
-    \label{fig:Sottocasi UC-2: Visualizzazione dashboard ambientale}
+    \caption{Prima parte sottocasi UC-\theuc: Visualizzazione \glossterm{dashboard} ambientale.}
+    \label{fig:Prima parte sottocasi UC-\theuc: Visualizzazione dashboard ambientale}
 \end{figure}
 
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
-            \umlactor[x=0, y=-7.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
-            \begin{umlsystem}[x=9, y=0]{UC-2 Visualizzazione dashboard ambientale}
-                \umlusecase[x=0, y=0, width=100, name=UC-heat-stat]{UC-2.8 \\ Visualizzazione pannello \glossterm{bar chart} per statistiche di temperatura percepita}
+            \umlactor[x=0, y=-7.65, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
+            \begin{umlsystem}[x=9, y=0]{UC-\theuc { }Visualizzazione dashboard ambientale}
+                \umlusecase[x=0, y=0, width=100, name=UC-heat-stat]{UC-\theuc.8 \\ Visualizzazione pannello \glossterm{bar chart} per statistiche di temperatura percepita}
 
-                \umlusecase[x=0, y=-2.5, width=100, name=UC-rain]{UC-2.9 \\ Visualizzazione pannello \glossterm{time series} per precipitazioni}
+                \umlusecase[x=0, y=-2.75, width=100, name=UC-rain]{UC-\theuc.9 \\ Visualizzazione pannello \glossterm{time series} per precipitazioni}
 
-                \umlusecase[x=0, y=-5, width=100, name=UC-pollut]{UC-2.10 \\ Visualizzazione pannello \glossterm{time series} per inquinamento dell'aria}
+                \umlusecase[x=0, y=-5.2, width=100, name=UC-pollut]{UC-\theuc.10 \\ Visualizzazione pannello \glossterm{time series} per inquinamento dell'aria}
 
-                \umlusecase[x=0, y=-7.5, width=100, name=UC-water]{UC-2.11 \\ Visualizzazione pannello \glossterm{time series} per livello di acqua}
+                \umlusecase[x=0, y=-7.65, width=100, name=UC-water]{UC-\theuc.11 \\ Visualizzazione pannello \glossterm{time series} per livello di acqua}
 
-                \umlusecase[x=0, y=-10, width=100, name=UC-rain-act]{UC-2.12 \\ Visualizzazione pannello \glossterm{Gauge} per intensità attuale delle precipitazioni}
+                \umlusecase[x=0, y=-10.4, width=100, name=UC-rain-act]{UC-\theuc.12 \\ Visualizzazione pannello \glossterm{Gauge} per intensità attuale delle precipitazioni}
 
-                \umlusecase[x=0, y=-12.5, width=100, name=UC-pollut-act]{UC-2.13 \\ Visualizzazione pannello \glossterm{Gauge} per inquinamento attuale dell'aria}
+                \umlusecase[x=0, y=-13.1, width=100, name=UC-pollut-act]{UC-\theuc.13 \\ Visualizzazione pannello \glossterm{Gauge} per inquinamento attuale dell'aria}
 
-                \umlusecase[x=0, y=-15, width=100, name=UC-water-act]{UC-2.14 \\ Visualizzazione pannello \glossterm{Gauge} per livello attuale dell'acqua}
+                \umlusecase[x=0, y=-15.55, width=100, name=UC-water-act]{UC-\theuc.14 \\ Visualizzazione pannello \glossterm{Gauge} per livello attuale dell'acqua}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-heat-stat}
                 \umlassoc{Amministratore pubblico}{UC-rain}
@@ -749,13 +874,13 @@ dello stesso caso d'uso.
                 \umlassoc{Amministratore pubblico}{UC-pollut-act}
                 \umlassoc{Amministratore pubblico}{UC-water-act}
         \end{tikzpicture}
-    \caption{Sottocasi UC-2: Visualizzazione \glossterm{dashboard} ambientale.}
-    \label{fig:Sottocasi UC-2: Visualizzazione dashboard ambientale}
+    \caption{Seconda parte sottocasi UC-\theuc: Visualizzazione \glossterm{dashboard} ambientale.}
+    \label{fig:Seconda parte sottocasi UC-\theuc: Visualizzazione dashboard ambientale}
 \end{figure}
 \clearpage
 \newpage
-\subsubsection*{UC-3: Visualizzazione \glossterm{dashboard} urbanistica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3: Visualizzazione \glossterm{dashboard} urbanistica}
+\subsubsection*{UC-\ucnumber: Visualizzazione \glossterm{dashboard} urbanistica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Visualizzazione \glossterm{dashboard} urbanistica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni: }nessuna;
@@ -767,34 +892,34 @@ dello stesso caso d'uso.
     \item L'amministratore pubblico seleziona la visualizzazione della \glossterm{dashboard} relativa al dominio urbanistico.
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere alla \glossterm{dashboard} per monitorare il dominio urbanistico, nella quale è possibile visualizzare i dati relativi a: disponibilità e informazioni parcheggi, guasti elettrici, riempimento delle isole ecologiche e disponibilità e informazioni delle colonnine di ricarica;
-    \item \textbf {Specializzazioni:} [UC-3.1], [UC-3.2], [UC-3.3], [UC-3.4], [UC-3.5], [UC-3.6],
-        [UC-3.7], [UC-3.8], [UC-3.9], [UC-3.10], [UC-3.11];
-    \item \textbf{Estensioni:} [UC-5].
+    \item \textbf {Specializzazioni:} [UC-\theuc .1], [UC-\theuc .2], [UC-\theuc .3], [UC-\theuc .4], [UC-\theuc .5], [UC-\theuc .6], [UC-\theuc .7], [UC-\theuc .8], [UC-\theuc .9], [UC-\theuc .10], [UC-\theuc .11], [UC-\theuc .12];
+    \item \textbf{Estensioni:} [UC-7].
 \end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-3]{UC-3 \\ Visualizzazione dashboard urbanistica}
+                \umlusecase[x=0, y=0, width=80, name=UC-3]{UC-\theuc \\ Visualizzazione dashboard urbanistica}
 
-                \umlusecase[x=0, y=-3, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
+                \umlusecase[x=0, y=-3, width=80, name=UC-7]{UC-7 \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-3}
-                \umlextend{UC-5}{UC-3}
+                \umlextend{UC-7}{UC-3}
         \end{tikzpicture}
-    \caption{UC-3: Visualizzazione \glossterm{dashboard} urbanistica.}
-    \label{fig:UC-3: Visualizzazione dashboard urbanistica}
+    \caption{UC-\theuc: Visualizzazione \glossterm{dashboard} urbanistica.}
+    \label{fig:UC-\theuc: Visualizzazione dashboard urbanistica}
 \end{figure}
-\subsubsection*{UC-3.1: Visualizzazione pannello \glossterm{geomap} per disponibilità parcheggi}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.1: Visualizzazione pannello
+\setcounter{specone}{0}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{geomap} per disponibilità parcheggi}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello
 \glossterm{geomap} per disponibilità parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra lo
-        stato di occupazione dei parcheggi, in formato \glossterm{geomap};
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello \glossterm{geomap} che mostra lo
+        stato di occupazione dei parcheggi, espresso in percentuale;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -804,14 +929,14 @@ dello stesso caso d'uso.
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato di disponibilità dei singoli parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.2: Visualizzazione pannello tabellare per informazioni sui parcheggi}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.2: Visualizzazione pannello
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello tabellare per informazioni sui parcheggi}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello
 tabellare per informazioni sui parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le informazioni riguardanti i parcheggi, in formato tabellare;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le informazioni riguardanti i parcheggi, in formato tabellare. Per ciascuno stallo, è possibile visualizzarne lo stato e, nel caso in cui sia occupato, la targa della vettura parcheggiata, il timestamp di inizio e la durata della sosta;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -821,14 +946,12 @@ tabellare per informazioni sui parcheggi}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato dei singoli parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.3: Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.3: Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
-        relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le notifiche di pagamento relative al parcheggio.
-        contenenti dati relativi al dominio urbanistico;
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione relativa al dominio urbanistico.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le notifiche di pagamento relative al parcheggio;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -837,8 +960,8 @@ tabellare per informazioni sui parcheggi}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i pagamenti delle soste nei parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.4: Visualizzazione pannello \glossterm{geomap} per guasti elettrici}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.4: Visualizzazione pannello
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{geomap} per guasti elettrici}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello
 \glossterm{geomap} per guasti elettrici}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
@@ -854,8 +977,8 @@ tabellare per informazioni sui parcheggi}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato della fornitura elettrica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.5: Visualizzazione pannello \glossterm{time series} per riempimento isole ecologiche}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.5: Visualizzazione pannello \glossterm{time series} per stato riempimento isole ecologiche}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{time series} per riempimento isole ecologiche}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{time series} per stato riempimento isole ecologiche}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
@@ -869,8 +992,8 @@ tabellare per informazioni sui parcheggi}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare il livello di riempimento dei conferitori presenti nelle isole ecologiche. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.6: Visualizzazione pannello \glossterm{geomap} per disponibilità colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.6: Visualizzazione pannello
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{geomap} per disponibilità colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello
 \glossterm{geomap} per disponibilità colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
@@ -886,14 +1009,13 @@ tabellare per informazioni sui parcheggi}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare la disponibilità delle colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.7: Visualizzazione pannello tabellare per informazioni su colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.7: Visualizzazione pannello
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello tabellare per informazioni su colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello
 tabellare per disponibilità colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
-        relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra informazioni riguardanti le colonnine di ricarica, in formato tabellare;
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione relativa al dominio urbanistico.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra informazioni riguardanti le colonnine di ricarica, in formato tabellare. Per ciascuna di esse si riportano lo stato e, nel caso in cui sia occupata, la targa dell'auto attualmente collegata, il timestamp di inizio e la durata della ricarica;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -902,8 +1024,8 @@ tabellare per disponibilità colonnine di ricarica}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare le colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.8: Visualizzazione pannello \glossterm{time series} per consumi colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.8: Visualizzazione pannello \glossterm{time series} per consumi colonnine di ricarica}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{time series} per consumi colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{time series} per consumi colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -917,8 +1039,8 @@ tabellare per disponibilità colonnine di ricarica}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare i consumi delle colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.9: Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.9: Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -932,8 +1054,8 @@ tabellare per disponibilità colonnine di ricarica}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per monitorare lo stato dei pagamenti delle ricariche di veicoli elettrici effettuate grazie alle apposite colonnine. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.10: Visualizzazione pannello \glossterm{Gauge} per dati pagamento parcheggio}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.10: Visualizzazione pannello \glossterm{Gauge} per dati pagamento parcheggio}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per dati pagamento parcheggio}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per dati pagamento parcheggio}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -949,8 +1071,8 @@ tabellare per disponibilità colonnine di ricarica}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare lo stato dei pagamenti dei parcheggi. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.11: Visualizzazione pannello \glossterm{Gauge} per dati pagamento di colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.11: Visualizzazione pannello \glossterm{Gauge} per dati pagamento di colonnine di ricarica}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per dati pagamento di colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per dati pagamento di colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -966,8 +1088,8 @@ tabellare per disponibilità colonnine di ricarica}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al
         pannello per monitorare lo stato dei pagamenti delle colonnine di ricarica. Questo consente di semplificare la comprensione e la comparazione delle misurazioni.
 \end{itemize}
-\subsubsection*{UC-3.12: Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-3.12: Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico ha selezionato la visualizzazione
@@ -981,22 +1103,23 @@ tabellare per disponibilità colonnine di ricarica}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere al pannello per verificare l'efficienza monetaria di un parcheggio. Questo consente di analizzare l'utilizzo da parte dei cittadini del servizio offerto, nell'ottica di migliorarne la qualità e massimizzare il ricavo totale.
 \end{itemize}
+
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
-            \umlactor[x=0, y=-5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
-            \begin{umlsystem}[x=9, y=0]{UC-3 Visualizzazione dashboard urbanistica}
-                \umlusecase[x=0, y=0, width=100, name=UC-park-map]{UC-3.1 \\ Visualizzazione pannello \glossterm{geomap} per disponibilità parcheggi}
+            \umlactor[x=0, y=-5.9, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
+            \begin{umlsystem}[x=9, y=0]{UC-\theuc { }Visualizzazione dashboard urbanistica}
+                \umlusecase[x=0, y=0, width=100, name=UC-park-map]{UC-\theuc.1 \\ Visualizzazione pannello \glossterm{geomap} per disponibilità parcheggi}
 
-                \umlusecase[x=0, y=-2.5, width=100, name=UC-park-tab]{UC-3.2 \\ Visualizzazione pannello tabellare per informazione su parcheggi}
+                \umlusecase[x=0, y=-2.5, width=100, name=UC-park-tab]{UC-\theuc.2 \\ Visualizzazione pannello tabellare per informazione su parcheggi}
 
-                \umlusecase[x=0, y=-5, width=100, name=UC-paypark]{UC-3.3 \\ Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
+                \umlusecase[x=0, y=-5.25, width=100, name=UC-paypark]{UC-\theuc.3 \\ Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
 
-                \umlusecase[x=0, y=-7.5, width=100, name=UC-elec]{UC-3.4 \\ Visualizzazione pannello \glossterm{geomap} per guasti elettrici}
+                \umlusecase[x=0, y=-8, width=100, name=UC-elec]{UC-\theuc.4 \\ Visualizzazione pannello \glossterm{geomap} per guasti elettrici}
 
-                \umlusecase[x=0, y=-10, width=100, name=UC-eco]{UC-3.5 \\ Visualizzazione pannello \glossterm{time series} per riempimento isole ecologiche}
+                \umlusecase[x=0, y=-10.5, width=100, name=UC-eco]{UC-\theuc.5 \\ Visualizzazione pannello \glossterm{time series} per riempimento isole ecologiche}
                 
-                \umlusecase[x=0, y=-12.5, width=100, name=UC-charge-map]{UC-3.6 \\ Visualizzazione pannello \glossterm{geomap} per disponibilità colonnine di ricarica}
+                \umlusecase[x=0, y=-13, width=100, name=UC-charge-map]{UC-\theuc.6 \\ Visualizzazione pannello \glossterm{geomap} per disponibilità colonnine di ricarica}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-park-map}
                 \umlassoc{Amministratore pubblico}{UC-park-tab}
@@ -1005,25 +1128,26 @@ tabellare per disponibilità colonnine di ricarica}
                 \umlassoc{Amministratore pubblico}{UC-eco}
                 \umlassoc{Amministratore pubblico}{UC-charge-map}
                      \end{tikzpicture}
-    \caption{Prima parte Sottocasi UC-3: Visualizzazione \glossterm{dashboard} urbanistica.}
-    \label{fig:Prima parte Sottocasi UC-3: Visualizzazione dashboard urbanistica}
+    \caption{Prima parte Sottocasi UC-\theuc: Visualizzazione \glossterm{dashboard} urbanistica.}
+    \label{fig:Prima parte Sottocasi UC-\theuc: Visualizzazione dashboard urbanistica}
 \end{figure}
+
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=-6.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
-            \begin{umlsystem}[x=9, y=0]{UC-3 Visualizzazione dashboard urbanistica}
-                \umlusecase[x=0, y=-0, width=100, name=UC-charge-tab]{UC-3.7 \\ Visualizzazione pannello tabellare per informazioni su colonnine di ricarica}
+            \begin{umlsystem}[x=9, y=0]{UC-\theuc { }Visualizzazione dashboard urbanistica}
+                \umlusecase[x=0, y=-0, width=100, name=UC-charge-tab]{UC-\theuc.7 \\ Visualizzazione pannello tabellare per informazioni su colonnine di ricarica}
 
-                \umlusecase[x=0, y=-2.5, width=100, name=UC-cons]{UC-3.8 \\ Visualizzazione pannello \glossterm{time series} per consumi colonnine di ricarica}
+                \umlusecase[x=0, y=-2.7, width=100, name=UC-cons]{UC-\theuc.8 \\ Visualizzazione pannello \glossterm{time series} per consumi colonnine di ricarica}
 
-                \umlusecase[x=0, y=-5, width=100, name=UC-paycharge]{UC-3.9 \\ Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
+                \umlusecase[x=0, y=-5.4, width=100, name=UC-paycharge]{UC-\theuc.9 \\ Visualizzazione pannello in formato di registro per notifiche pagamento colonnine di ricarica}
                 
-                \umlusecase[x=0, y=-7.68, width=100, name=UC-paypark2]{UC-3.10 \\ Visualizzazione pannello \glossterm{Gauge} per dati pagamento parcheggio }
+                \umlusecase[x=0, y=-8.1, width=100, name=UC-paypark2]{UC-\theuc.10 \\ Visualizzazione pannello \glossterm{Gauge} per dati pagamento parcheggio }
 
-                \umlusecase[x=0, y=-10.35, width=100, name=UC-paycharge2]{UC-3.11 \\ Visualizzazione pannello \glossterm{Gauge} per dati pagamento colonnine di ricarica }
+                \umlusecase[x=0, y=-10.85, width=100, name=UC-paycharge2]{UC-\theuc.11 \\ Visualizzazione pannello \glossterm{Gauge} per dati pagamento colonnine di ricarica }
 
-                \umlusecase[x=0, y=-13, width=100, name=UC-parkefficiency]{UC-3.12 \\ Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
+                \umlusecase[x=0, y=-13.55, width=100, name=UC-parkefficiency]{UC-\theuc.12 \\ Visualizzazione pannello \glossterm{Gauge} per efficienza parcheggio}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-charge-tab}
                 \umlassoc{Amministratore pubblico}{UC-cons}
@@ -1032,13 +1156,13 @@ tabellare per disponibilità colonnine di ricarica}
                 \umlassoc{Amministratore pubblico}{UC-paycharge2}
                 \umlassoc{Amministratore pubblico}{UC-parkefficiency}
         \end{tikzpicture}
-    \caption{Seconda parte Sottocasi UC-3: Visualizzazione \glossterm{dashboard} urbanistica.}
-    \label{fig:Seconda parte Sottocasi UC-3: Visualizzazione dashboard urbanistica}
+    \caption{Seconda parte Sottocasi UC-\theuc: Visualizzazione \glossterm{dashboard} urbanistica.}
+    \label{fig:Seconda parte Sottocasi UC-\theuc: Visualizzazione dashboard urbanistica}
 \end{figure}
 \clearpage
 \newpage
-\subsubsection*{UC-4: Visualizzazione \glossterm{dashboard} superamento soglie}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4: Visualizzazione \glossterm{dashboard} superamento soglie}
+\subsubsection*{UC-\ucnumber: Visualizzazione \glossterm{dashboard} superamento soglie}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Visualizzazione \glossterm{dashboard} superamento soglie}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} nessuna;
@@ -1050,26 +1174,27 @@ tabellare per disponibilità colonnine di ricarica}
     \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero accedere alla \glossterm{dashboard} per assicurarmi che le misurazioni effettuate siano entro le soglie di sicurezza ed adottare rapidamente misure adeguate in caso contrario. \\
     In questa dashboard desidero essere notificato per le soglie relative a: temperatura, intensità delle precipitazioni, inquinamento dell'aria, livello dell'acqua e isole ecologiche;
-    \item \textbf{Specializzazioni:} [UC-4.1], [UC-4.2], [UC-4.3], [UC-4.4], [UC-4.5];
-    \item \textbf{Estensioni:} [UC-5].
+    \item \textbf{Specializzazioni:} [UC-\theuc .1], [UC-\theuc .2], [UC-\theuc .3], [UC-\theuc .4], [UC-\theuc .5];
+    \item \textbf{Estensioni:} [UC-7].
 \end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-4]{UC-4 \\ Visualizzazione dashboard superamento soglie}
+                \umlusecase[x=0, y=0, width=80, name=UC-4]{UC-\theuc \\ Visualizzazione dashboard superamento soglie}
 
-                \umlusecase[x=0, y=-3, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
+                \umlusecase[x=0, y=-3, width=80, name=UC-7]{UC-7 \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-4}
-                \umlextend{UC-5}{UC-4}
+                \umlextend{UC-7}{UC-4}
         \end{tikzpicture}
-    \caption{UC-4: Visualizzazione \glossterm{dashboard} superamento soglie.}
-    \label{fig:UC-4: Visualizzazione dashboard superamento soglie}
+    \caption{UC-\theuc: Visualizzazione \glossterm{dashboard} superamento soglie.}
+    \label{fig:UC-\theuc: Visualizzazione dashboard superamento soglie}
 \end{figure}
-\subsubsection*{UC-4.1: Visualizzazione pannello alert list superamento soglie temperatura}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4.1: Visualizzazione pannello alert list superamento soglie temperatura}
+\setcounter{specone}{0}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello alert list superamento soglie temperatura}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello alert list superamento soglie temperatura}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore ha selezionato la visualizzazione relativa al superamento delle soglie;
@@ -1082,8 +1207,8 @@ tabellare per disponibilità colonnine di ricarica}
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero essere notificato sul superamento delle soglie di temperatura per avvertire i cittadini ed adottare rapidamente misure adeguate.
 \end{itemize}
-\subsubsection*{UC-4.2: Visualizzazione pannello alert list superamento soglia precipitazioni}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4.2: Visualizzazione pannello alert list superamento soglia precipitazioni}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello alert list superamento soglia precipitazioni}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello alert list superamento soglia precipitazioni}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore ha selezionato la visualizzazione relativa al superamento delle soglie;
@@ -1096,8 +1221,8 @@ tabellare per disponibilità colonnine di ricarica}
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero essere notificato sul superamento delle soglia di intensità delle precipitazioni per avvertire i cittadini ed adottare rapidamente misure adeguate.
 \end{itemize}
-\subsubsection*{UC-4.3: Visualizzazione pannello alert list superamento soglia inquinamento dell'aria}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4.3: Visualizzazione pannello alert list superamento soglia inquinamento dell'aria}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello alert list superamento soglia inquinamento dell'aria}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello alert list superamento soglia inquinamento dell'aria}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore ha selezionato la visualizzazione relativa al superamento delle soglie;
@@ -1110,8 +1235,8 @@ tabellare per disponibilità colonnine di ricarica}
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero essere notificato sul superamento della soglia di quantità di polveri sottili presenti nell'aria per adottare rapidamente misure adeguate.
 \end{itemize}
-\subsubsection*{UC-4.4: Visualizzazione pannello alert list superamento soglia livello dell'acqua}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4.4: Visualizzazione pannello alert list superamento soglia livello dell'acqua}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello alert list superamento soglia livello dell'acqua}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello alert list superamento soglia livello dell'acqua}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore ha selezionato la visualizzazione relativa al superamento delle soglie;
@@ -1124,8 +1249,8 @@ tabellare per disponibilità colonnine di ricarica}
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero essere notificato sul superamento della soglia di livello dell'acqua per adottare rapidamente misure adeguate.
 \end{itemize}
-\subsubsection*{UC-4.5: Visualizzazione pannello alert list superamento soglia isole ecologiche}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-4.5: Visualizzazione pannello alert list superamento soglia isole ecologiche}
+\subsubsection*{UC-\theuc .\speconenumber: Visualizzazione pannello alert list superamento soglia isole ecologiche}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello alert list superamento soglia isole ecologiche}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore ha selezionato la visualizzazione relativa al superamento delle soglie;
@@ -1142,16 +1267,16 @@ tabellare per disponibilità colonnine di ricarica}
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=-5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
-            \begin{umlsystem}[x=7, y=0]{UC-4 Visualizzazione dashboard superamento soglie}
-                \umlusecase[x=0, y=0, width=110, name=UC-temp]{UC-4.1 \\ Visualizzazione pannello alert list superamento soglie temperatura}
+            \begin{umlsystem}[x=7, y=0]{UC-\theuc { }Visualizzazione dashboard superamento soglie}
+                \umlusecase[x=0, y=0, width=110, name=UC-temp]{UC-\theuc .1 \\ Visualizzazione pannello alert list superamento soglie temperatura}
 
-                \umlusecase[x=0, y=-2.5, width=110, name=UC-rain]{UC-4.2 \\ Visualizzazione pannello alert list superamento soglia precipitazioni}
+                \umlusecase[x=0, y=-2.5, width=110, name=UC-rain]{UC-\theuc .2 \\ Visualizzazione pannello alert list superamento soglia precipitazioni}
 
-                \umlusecase[x=0, y=-5, width=110, name=UC-air]{UC-4.3 \\ Visualizzazione pannello alert list superamento soglia inquinamento dell'aria}
+                \umlusecase[x=0, y=-5, width=110, name=UC-air]{UC-\theuc .3 \\ Visualizzazione pannello alert list superamento soglia inquinamento dell'aria}
 
-                \umlusecase[x=0, y=-7.5, width=110, name=UC-water]{UC-4.4 \\ Visualizzazione pannello alert list superamento soglia livello dell'acqua}
+                \umlusecase[x=0, y=-7.5, width=110, name=UC-water]{UC-\theuc .4 \\ Visualizzazione pannello alert list superamento soglia livello dell'acqua}
 
-                \umlusecase[x=0, y=-10, width=110, name=UC-eco]{UC-4.5 \\ Visualizzazione pannello alert list superamento soglia isole ecologiche}
+                \umlusecase[x=0, y=-10, width=110, name=UC-eco]{UC-\theuc .5 \\ Visualizzazione pannello alert list superamento soglia isole ecologiche}
      
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-temp}
@@ -1160,12 +1285,12 @@ tabellare per disponibilità colonnine di ricarica}
                 \umlassoc{Amministratore pubblico}{UC-water}
                 \umlassoc{Amministratore pubblico}{UC-eco}
         \end{tikzpicture}
-    \caption{Sottocasi UC-4: Visualizzazione \glossterm{dashboard} superamento soglie.}
-    \label{fig:Sottocasi UC-4: Visualizzazione dashboard superamento soglie}
+    \caption{Sottocasi UC-\theuc: Visualizzazione \glossterm{dashboard} superamento soglie.}
+    \label{fig:Sottocasi UC-\theuc: Visualizzazione dashboard superamento soglie}
 \end{figure}
 \newpage
-\subsubsection*{UC-5: Visualizzazione errore nessun dato}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-5: Visualizzazione errore nessun dato}
+\subsubsection*{UC-\ucnumber: Visualizzazione errore nessun dato}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Visualizzazione errore nessun dato}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} il \glossterm{sistema} di visualizzazione non ottiene alcun dato da mostrare all’interno di un pannello;
@@ -1182,15 +1307,16 @@ tabellare per disponibilità colonnine di ricarica}
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-5]{UC-5 \\ Visualizzazione errore nessun dato}
+                \umlusecase[x=0, y=0, width=80, name=UC-5]{UC-\theuc \\ Visualizzazione errore nessun dato}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-5}
         \end{tikzpicture}
-    \caption{UC-5: Visualizzazione errore nessun dato.}
-    \label{fig:UC-5: Visualizzazione errore nessun dato}
+    \caption{UC-\theuc: Visualizzazione errore nessun dato.}
+    \label{fig:UC-\theuc: Visualizzazione errore nessun dato}
 \end{figure}
-\subsubsection*{UC-6: Applicazione filtri}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-6: Applicazione filtri}
+\newpage
+\subsubsection*{UC-\ucnumber: Applicazione filtri}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Applicazione filtri}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico sta visualizzando uno o più pannelli con i dati;
@@ -1205,22 +1331,23 @@ applicato;
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero poter
         visualizzare i dati secondo criteri specifici, in modo tale da semplificare la comprensione
         delle informazioni.
-    \item \textbf{Specializzazioni:} [UC-6.1], [UC-6.2].
+    \item \textbf{Specializzazioni:} [UC-\theuc .1], [UC-\theuc .2].
 \end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-6]{UC-6 \\ Applicazione filtri}
+                \umlusecase[x=0, y=0, width=80, name=UC-6]{UC-\theuc \\ Applicazione filtri}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-6}
         \end{tikzpicture}
-    \caption{UC-6: Applicazione filtri.}
-    \label{fig:UC-6: Applicazione filtri}
+    \caption{UC-\theuc: Applicazione filtri.}
+    \label{fig:UC-\theuc: Applicazione filtri}
 \end{figure}
-\subsubsection*{UC-6.1: Filtro sotto-insieme di sensori su grafici \glossterm{time series}}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-6.1: Filtro sotto-insieme di sensori su grafici \glossterm{time series}}
+\setcounter{specone}{0}
+\subsubsection*{UC-\theuc .\speconenumber: Filtro sotto-insieme di sensori su grafici \glossterm{time series}}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Filtro sotto-insieme di sensori su grafici \glossterm{time series}}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:}
@@ -1229,7 +1356,7 @@ applicato;
         \item Il pannello offre la \glossterm{funzionalità} di filtro dei dati tramite selezione di uno o più sensori.
     \end{itemize}
     \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza solamente i dati relativi ai sensori
-selezionati, all’interno di tale.
+selezionati, all’interno di tale pannello.
     \item \textbf{Scenario principale: }l’amministratore pubblico seleziona il \glossterm{sensore} da
         visualizzare tramite la legenda.
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero poter
@@ -1237,8 +1364,8 @@ selezionati, all’interno di tale.
         delle informazioni. In particolare la possibilità di poter evidenziare/escludere i dati
         provenienti da determinati sensori.
 \end{itemize}
-\subsubsection*{UC-6.2: Filtro per intervallo temporale}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-6.2: Filtro per intervallo temporale}
+\subsubsection*{UC-\theuc .\speconenumber: Filtro per intervallo temporale}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Filtro per intervallo temporale}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:}
@@ -1258,20 +1385,20 @@ temporale selezionato, in tutti i pannelli della \glossterm{dashboard} dove è s
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=-1.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
-            \begin{umlsystem}[x=7, y=0]{UC-6 Applicazione filtri}
-                \umlusecase[x=0, y=0, width=80, name=UC-series]{UC-6.1 \\ Filtro sotto-insieme di sensori su grafici \glossterm{time series}}
+            \begin{umlsystem}[x=7, y=0]{UC-\theuc { }Applicazione filtri}
+                \umlusecase[x=0, y=0, width=80, name=UC-series]{UC-\theuc .1 \\ Filtro sotto-insieme di sensori su grafici \glossterm{time series}}
 
-                \umlusecase[x=0, y=-2.5, width=80, name=UC-time]{UC-6.2 \\ Filtro per intervallo temporale}
+                \umlusecase[x=0, y=-2.5, width=80, name=UC-time]{UC-\theuc .2 \\ Filtro per intervallo temporale}
 
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-series}
                 \umlassoc{Amministratore pubblico}{UC-time}
         \end{tikzpicture}
-    \caption{Sottocasi UC-6: Applicazione filtri.}
-    \label{fig:Sottocasi UC-6: Applicazione filtri}
+    \caption{Sottocasi UC-\theuc: Applicazione filtri.}
+    \label{fig:Sottocasi UC-\theuc: Applicazione filtri}
 \end{figure}
-\subsubsection*{UC-7: Rimozione filtri}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-7: Rimozione filtri}
+\subsubsection*{UC-\ucnumber: Rimozione filtri}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Rimozione filtri}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l’amministratore pubblico sta visualizzando uno o più pannelli con i dati ed è attivo almeno un criterio di selezione dei pannelli;
@@ -1288,15 +1415,15 @@ temporale selezionato, in tutti i pannelli della \glossterm{dashboard} dove è s
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-7]{UC-7 \\ Rimozione filtri}
+                \umlusecase[x=0, y=0, width=80, name=UC-7]{UC-\theuc \\ Rimozione filtri}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-7}
         \end{tikzpicture}
-    \caption{UC-7: Rimozione filtri.}
-    \label{fig:UC-7: Rimozione filtri}
+    \caption{UC-\theuc: Rimozione filtri.}
+    \label{fig:UC-\theuc: Rimozione filtri}
 \end{figure}
-\subsubsection*{UC-8: Modifica layout pannelli}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-8: Modifica layout pannelli}
+\subsubsection*{UC-\ucnumber: Modifica layout pannelli}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Modifica layout pannelli}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico sta visualizzando almeno un pannello;
@@ -1305,22 +1432,23 @@ temporale selezionato, in tutti i pannelli della \glossterm{dashboard} dove è s
         suo piacimento;
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero poter
         visualizzare i pannelli nella dimensione e posizione a me più congeniali;
-    \item \textbf{Specializzazioni:} [UC-8.1], [UC-8.2].
+    \item \textbf{Specializzazioni:} [UC-\theuc .1], [UC-\theuc .2].
 \end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Amministratore pubblico}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-8]{UC-8 \\ Modifica layout pannelli}
+                \umlusecase[x=0, y=0, width=80, name=UC-8]{UC-\theuc \\ Modifica layout pannelli}
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-8}
         \end{tikzpicture}
-    \caption{UC-8: Modifica layout pannelli.}
-    \label{fig:UC-8: Modifica layout pannelli}
+    \caption{UC-\theuc: Modifica layout pannelli.}
+    \label{fig:UC-\theuc: Modifica layout pannelli}
 \end{figure}
-\subsubsection*{UC-8.1: Ridimensionamento pannelli}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-8.1: Ridimensionamento pannelli}
+\setcounter{specone}{0}
+\subsubsection*{UC-\theuc .\speconenumber: Ridimensionamento pannelli}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Ridimensionamento pannelli}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico sta visualizzando almeno un pannello;
@@ -1330,8 +1458,8 @@ temporale selezionato, in tutti i pannelli della \glossterm{dashboard} dove è s
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero poter
         visualizzare i pannelli nella forma e dimensione a me più congeniali;
 \end{itemize}
-\subsubsection*{UC-8.2: Spostamento pannelli}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-8.2: Spostamento pannelli}
+\subsubsection*{UC-\theuc .\speconenumber: Spostamento pannelli}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Spostamento pannelli}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico sta visualizzando almeno un pannello;
@@ -1345,20 +1473,20 @@ temporale selezionato, in tutti i pannelli della \glossterm{dashboard} dove è s
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=-1.5, inner xsep=3em, inner ysep=3em]{Amministratore pubblico}
-            \begin{umlsystem}[x=7, y=0]{UC-8 Modifica layout pannelli}
-                \umlusecase[x=0, y=0, width=80, name=UC-dim]{UC-8.1 \\ Ridimensionamento pannelli}
+            \begin{umlsystem}[x=7, y=0]{UC-\theuc { }Modifica layout pannelli}
+                \umlusecase[x=0, y=0, width=80, name=UC-dim]{UC-\theuc .1 \\ Ridimensionamento pannelli}
 
-                \umlusecase[x=0, y=-2.5, width=80, name=UC-move]{UC-8.2 \\ Spostamento pannelli}
+                \umlusecase[x=0, y=-2.5, width=80, name=UC-move]{UC-\theuc .2 \\ Spostamento pannelli}
 
             \end{umlsystem}
                 \umlassoc{Amministratore pubblico}{UC-dim}
                 \umlassoc{Amministratore pubblico}{UC-move}
         \end{tikzpicture}
-    \caption{Sottocasi UC-8: Modifica layout pannelli.}
-    \label{fig:Sottocasi UC-8: Modifica layout pannelli}
+    \caption{Sottocasi UC-\theuc: Modifica layout pannelli.}
+    \label{fig:Sottocasi UC-\theuc: Modifica layout pannelli}
 \end{figure}
-\subsubsection*{UC-9: Inserimento dati \glossterm{sensore}}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9: Inserimento dati sensore}
+\subsubsection*{UC-\ucnumber: Inserimento dati \glossterm{sensore}}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc: Inserimento dati sensore}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1371,22 +1499,23 @@ temporale selezionato, in tutti i pannelli della \glossterm{dashboard} dove è s
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i
         dati rilevati.
-    \item \textbf{Specializzazioni:} [UC-9.1], [UC-9.2], [UC-9.3], [UC-9.4], [UC-9.5], [UC-9.6], [UC-9.7], [UC-9.8], [UC-9.9], [UC-9.10], [UC-9.11], [UC-9.12].
+    \item \textbf{Specializzazioni:} [UC-\theuc .1], [UC-\theuc .2], [UC-\theuc .3], [UC-\theuc .4], [UC-\theuc .5], [UC-\theuc .6], [UC-\theuc .7], [UC-\theuc .8], [UC-\theuc .9], [UC-\theuc .10], [UC-\theuc .11], [UC-\theuc .12].
 \end{itemize}
 \begin{figure}[ht!]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=0]{Sensore}
             \begin{umlsystem}[x=6, y=0]{SyncCity}
-                \umlusecase[x=0, y=0, width=80, name=UC-9]{UC-9 \\ Inserimento dati sensore}
+                \umlusecase[x=0, y=0, width=80, name=UC-9]{UC-\theuc \\ Inserimento dati sensore}
             \end{umlsystem}
                 \umlassoc{Sensore}{UC-9}
         \end{tikzpicture}
-    \caption{UC-9: Inserimento dati \glossterm{sensore}.}
-    \label{fig:UC-9: Inserimento dati sensore}
+    \caption{UC-\theuc: Inserimento dati \glossterm{sensore}.}
+    \label{fig:UC-\theuc: Inserimento dati sensore}
 \end{figure}
-\subsubsection*{UC-9.1: Inserimento dati temperatura}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.1: Inserimento dati temperatura}
+\setcounter{specone}{0}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati temperatura}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati temperatura}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1402,8 +1531,8 @@ coordinate geografiche;
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i
         dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.2: Inserimento dati umidità}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.2: Inserimento dati umidità}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati umidità}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati umidità}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1419,8 +1548,8 @@ coordinate geografiche;
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i
         dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.3: Inserimento dati precipitazioni}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.3: Inserimento dati precipitazioni}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati precipitazioni}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati precipitazioni}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1434,8 +1563,8 @@ coordinate geografiche;
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.4: Inserimento dati inquinamento dell'aria}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.4: Inserimento dati inquinamento dell'aria}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati inquinamento dell'aria}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati inquinamento dell'aria}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1443,15 +1572,15 @@ coordinate geografiche;
     \item \textbf{Scenario principale:}
         \begin{enumerate}
         \item Il sensore di inquinamento atmosferico effettua una rilevazione;
-        \item Il sensore formatta il messaggio da inviare al \glossterm{sistema}, in modo da mandare la quantità di polveri sottili presenti nell'aria, espressa in µg / $\mbox{m}^{\mbox{3}}$, il timestamp di rilevazione e le proprie
+        \item Il sensore formatta il messaggio da inviare al \glossterm{sistema}, in modo da mandare le quantità di polveri sottili presenti nell'aria (PM10, PM2.5, NO2, O3), espresse in µg / $\mbox{m}^{\mbox{3}}$, il timestamp di rilevazione e le proprie
 coordinate geografiche;
         \item Il sensore invia il messaggio al \glossterm{sistema}.
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i
         dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.5: Inserimento dati livello di acqua}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.5: Inserimento dati livello di acqua}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati livello di acqua}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati livello di acqua}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1464,8 +1593,8 @@ coordinate geografiche;
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.6: Inserimento dati disponibilità parcheggio}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.6: Inserimento dati disponibilità parcheggio}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati disponibilità parcheggio}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati disponibilità parcheggio}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1478,8 +1607,8 @@ coordinate geografiche;
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.7: Inserimento dati pagamenti parcheggio}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.7: Inserimento dati pagamenti parcheggio}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati pagamenti parcheggio}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati pagamenti parcheggio}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1492,8 +1621,8 @@ coordinate geografiche;
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.8: Inserimento dati guasti elettrici}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.8: Inserimento dati guasti elettrici}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati guasti elettrici}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati guasti elettrici}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1506,8 +1635,8 @@ coordinate geografiche;
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.9: Inserimento dati riempimento isole ecologiche}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.9: Inserimento dati isole ecologiche}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati riempimento isole ecologiche}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati isole ecologiche}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1520,8 +1649,8 @@ coordinate geografiche;
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.10: Inserimento dati disponibilità colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.10: Inserimento dati disponibilità colonnine di ricarica}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati disponibilità colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati disponibilità colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1534,8 +1663,8 @@ coordinate geografiche;
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.11: Inserimento dati consumi colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.11: Inserimento dati consumi colonnine di ricarica}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati consumi colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati consumi colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1548,8 +1677,8 @@ coordinate geografiche;
         \end{enumerate}
     \item \textbf{\glossterm{User Story} associata:} in qualità di sensore desidero poter inviare al \glossterm{sistema} i dati rilevati.
 \end{itemize}
-\subsubsection*{UC-9.12: Inserimento dati pagamenti colonnine di ricarica}
-\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-9.12: Inserimento dati pagamenti colonnine di ricarica}
+\subsubsection*{UC-\theuc .\speconenumber: Inserimento dati pagamenti colonnine di ricarica}
+\addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Inserimento dati pagamenti colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} \glossterm{sensore};
     \item \textbf{Precondizioni:} il sensore è collegato al \glossterm{sistema};
@@ -1566,21 +1695,20 @@ coordinate geografiche;
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=-5, inner xsep=1em, inner ysep=2em]{Sensore}
-            \begin{umlsystem}[x=6, y=0]{UC-9 Inserimento dati}
-                \umlusecase[x=0, y=-5, width=80, name=UC-9]{UC-9 \\ Inserimento dati sensore}
+            \begin{umlsystem}[x=6, y=0]{UC-\theuc { }Inserimento dati}
+                \umlusecase[x=0, y=-5, width=80, name=UC-9]{UC-\theuc \\ Inserimento dati sensore}
 
-                \umlusecase[x=6, y=0, width=100, name=UC-temp]{UC-9.1 \\ Inserimento dati temperatura}
+                \umlusecase[x=6, y=0, width=100, name=UC-temp]{UC-\theuc .1 \\ Inserimento dati temperatura}
 
-                \umlusecase[x=6, y=-2, width=100, name=UC-humid]{UC-9.2 \\ Inserimento dati umidità}
+                \umlusecase[x=6, y=-2, width=100, name=UC-humid]{UC-\theuc .2 \\ Inserimento dati umidità}
                 
-                \umlusecase[x=6, y=-4, width=100, name=UC-rain]{UC-
-                9.3 \\ Inserimento dati precipitazioni}
+                \umlusecase[x=6, y=-4, width=100, name=UC-rain]{UC-\theuc .3 \\ Inserimento dati precipitazioni}
 
-                \umlusecase[x=6, y=-6, width=100, name=UC-air]{UC-9.4 \\ Inserimento dati inquinamento dell'aria}
+                \umlusecase[x=6, y=-6, width=100, name=UC-air]{UC-\theuc .4 \\ Inserimento dati inquinamento dell'aria}
 
-                \umlusecase[x=6, y=-8, width=100, name=UC-water]{UC-9.5 \\ Inserimento dati livello di acqua}
+                \umlusecase[x=6, y=-8, width=100, name=UC-water]{UC-\theuc .5 \\ Inserimento dati livello di acqua}
 
-                \umlusecase[x=6, y=-10, width=100, name=UC-park]{UC-9.6 \\ Inserimento dati disponibilità parcheggio}
+                \umlusecase[x=6, y=-10, width=100, name=UC-park]{UC-\theuc .6 \\ Inserimento dati disponibilità parcheggio}
             \end{umlsystem}
                 \umlassoc{Sensore}{UC-9}
                 \umlinherit{UC-temp}{UC-9}
@@ -1590,27 +1718,27 @@ coordinate geografiche;
                 \umlinherit{UC-water}{UC-9}
                 \umlinherit{UC-park}{UC-9}
         \end{tikzpicture}
-    \caption{Prima parte sottocasi UC-9: Inserimento dati.}
-    \label{fig:Prima parte sottocasi UC-9: Inserimento dati}
+    \caption{Prima parte sottocasi UC-\theuc: Inserimento dati.}
+    \label{fig:Prima parte sottocasi UC-\theuc: Inserimento dati}
 \end{figure}
 \begin{figure}[p]
     \centering
         \begin{tikzpicture}
             \umlactor[x=0, y=-5.5, inner xsep=1em, inner ysep=2em]{Sensore}
-            \begin{umlsystem}[x=6, y=0]{UC-9 Inserimento dati}
-                \umlusecase[x=0, y=-5.5, width=80, name=UC-9]{UC-9 \\ Inserimento dati sensore}
+            \begin{umlsystem}[x=6, y=0]{UC-\theuc { }Inserimento dati}
+                \umlusecase[x=0, y=-5.5, width=80, name=UC-9]{UC-\theuc \\ Inserimento dati sensore}
 
-                \umlusecase[x=6, y=-0, width=100, name=UC-paypark]{UC-9.7 \\ Inserimento dati pagamenti parcheggio}
+                \umlusecase[x=6, y=-0, width=100, name=UC-paypark]{UC-\theuc .7 \\ Inserimento dati pagamenti parcheggio}
 
-                \umlusecase[x=6, y=-2, width=100, name=UC-elec]{UC-9.8 \\ Inserimento dati guasti elettrici}
+                \umlusecase[x=6, y=-2, width=100, name=UC-elec]{UC-\theuc .8 \\ Inserimento dati guasti elettrici}
 
-                \umlusecase[x=6, y=-4.2, width=100, name=UC-eco]{UC-9.9 \\ Inserimento dati riempimento isole ecologiche}
+                \umlusecase[x=6, y=-4.2, width=100, name=UC-eco]{UC-\theuc .9 \\ Inserimento dati riempimento isole ecologiche}
 
-                \umlusecase[x=6, y=-6.65, width=100, name=UC-charge]{UC-9.10 \\ Inserimento dati disponibilità colonnine di ricarica}
+                \umlusecase[x=6, y=-6.65, width=100, name=UC-charge]{UC-\theuc .10 \\ Inserimento dati disponibilità colonnine di ricarica}
 
-                \umlusecase[x=6, y=-8.8, width=100, name=UC-cons]{UC-9.11 \\ Inserimento dati consumi colonnine di ricarica}
+                \umlusecase[x=6, y=-8.8, width=100, name=UC-cons]{UC-\theuc .11 \\ Inserimento dati consumi colonnine di ricarica}
 
-                \umlusecase[x=6, y=-11, width=100, name=UC-paycharge]{UC-9.12 \\ Inserimento dati pagamenti colonnine di ricarica}
+                \umlusecase[x=6, y=-11, width=100, name=UC-paycharge]{UC-\theuc .12 \\ Inserimento dati pagamenti colonnine di ricarica}
             \end{umlsystem}
                 \umlassoc{Sensore}{UC-9}
                 \umlinherit{UC-paypark}{UC-9}
@@ -1620,8 +1748,8 @@ coordinate geografiche;
                 \umlinherit{UC-cons}{UC-9}
                 \umlinherit{UC-paycharge}{UC-9}
         \end{tikzpicture}
-    \caption{Seconda parte sottocasi UC-9: Inserimento dati.}
-    \label{fig:Seconda parte sottocasi UC-9: Inserimento dati}
+    \caption{Seconda parte sottocasi UC-\theuc: Inserimento dati.}
+    \label{fig:Seconda parte sottocasi UC-\theuc: Inserimento dati}
 \end{figure}
 \newpage 
 \section{Requisiti} \label{sec:requisiti}
@@ -1632,6 +1760,12 @@ A ciascun requisito è abbinato un codice univoco definito nel seguente modo:
 Dove \textbf{Tipologia} rappresenta il tipo di requisito e \textbf{[Numero]} è un identificativo progressivo.
 \subsection{Requisiti funzionali}
 Questa tipologia di requisiti definisce le \glossterm{funzionalità} del \glossterm{sistema}, ovvero i servizi che esso deve essere in grado di fornire al fine di soddisfare le esigenze dell'utente. Un requisito funzionale descrive quindi il comportamento del \glossterm{sistema}. \\ Di seguito sono elencati i requisiti funzionali individuati:
+\newcounter{row}
+\setcounter{row}{0}
+\newcommand{\rownumber}{\stepcounter{row}\arabic{row}}
+\setcounter{uc}{-1}
+\setcounter{specone}{0}
+\setcounter{spectwo}{0}
 \renewcommand{\arraystretch}{2.5}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
@@ -1643,86 +1777,91 @@ Questa tipologia di requisiti definisce le \glossterm{funzionalità} del \glosst
     \caption{Requisiti funzionali.}
 	\label{table:Requisiti funzionali}
  \endlastfoot
-            RF-1 & Obbligatorio & L'utente deve poter usufruire del \glossterm{sistema} senza dover effettuare l'autenticazione. & \glossterm{Capitolato} \\ \hline
-            RF-2 & Obbligatorio & Il \glossterm{sistema} deve permettere la visualizzazione in tempo reale dei dati provenienti dai sensori. & \glossterm{Capitolato} \\ \hline
-            RF-3 & Obbligatorio & Il \glossterm{sistema} deve integrare molteplici simulatori di sensori in grado di generare dati casuali ma comunque verosimili. & \glossterm{Capitolato} \\ \hline
-            RF-4 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi la temperatura, espressa in gradi Celsius. & \glossterm{Capitolato} \\ \hline
-            RF-5 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi l'umidità nell'aria, espressa in percentuale. & \glossterm{Capitolato} \\ \hline
-            RF-6 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi l'intensità delle precipitazioni, espressa in millimetri orari. & \glossterm{Capitolato} \\ \hline
-            RF-7 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi la quantità di polveri sottili presenti nell'aria, espressa in microgrammi per metro cubo. & \glossterm{Capitolato} \\ \hline
-            RF-8 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi il livello dell'acqua nella zona di installazione, espresso in percentuale. & \glossterm{Capitolato} \\ \hline
-            RF-9 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi lo stato di occupazione dei parcheggi, espresso mediante un valore binario. & \glossterm{Capitolato} \\ \hline    
-            RF-10 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che invii dati di pagamento per parcheggi. & \glossterm{Proponente} \\ \hline
-            RF-11 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi la presenza di guasti elettrici, espressa mediante un valore binario. & \glossterm{Capitolato} \\ \hline
-            RF-12 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi lo stato di riempimento delle isole ecologiche, espresso mediante un valore binario. & \glossterm{Capitolato} \\ \hline
-            RF-13 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi lo stato di utilizzo delle colonnine di ricarica, espresso mediante un valore binario. & \glossterm{Capitolato} \\ \hline
-            RF-14 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi il consumo di energia delle colonnine di ricarica. & \glossterm{Capitolato} \\ \hline
-            RF-15 & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che invii dati di pagamento per colonnine di ricarica. & \glossterm{Capitolato} \\ \hline
-            RF-16 & Obbligatorio & L'utente deve poter visualizzare un menu attraverso il quale selezionare la \glossterm{\glossterm{dashboard}} desiderata tra Sensori, Ambientale ed Urbanistica. & UC-0 \\ \hline
-            RF-17 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa allo stato dei sensori. & UC-1 \\ \hline
-            RF-18 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} contente una mappa su cui è indicata la posizione geografica dei sensori. & \glossterm{Capitolato}, UC-1.1 \\ \hline
-            RF-19 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio ambientale. & UC-2 \\ \hline
-            RF-20 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura in formato \glossterm{time series}. & UC-2.1 \\ \hline
-            RF-21 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni dell'umidità in formato \glossterm{time series}. & UC-2.2 \\ \hline
-            RF-22 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura percepita in formato \glossterm{time series}. & UC-2.3 \\ \hline
-            RF-23 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura media in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.4 \\ \hline
-            RF-24 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'umidità media in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.5 \\ \hline
-            RF-25 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura percepita media in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dalle coppie di sensori temperatura-umidità attivi. & UC-2.6 \\ \hline
-            RF-26 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura in formato diagramma a barre considerando ciascun \glossterm{sensore} attivo nell'intervallo di tempo. & UC-2.7 \\ \hline
-            RF-27 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura percepita in formato diagramma a barre considerando ciascuna coppia di valori di temperatura e umidità per ogni rispettivo \glossterm{sensore} attivo nell'intervallo di tempo. & UC-2.8 \\ \hline
-            RF-28 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità delle precipitazioni in formato \glossterm{time series}. & UC-2.9 \\ \hline
-            RF-29 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria in formato \glossterm{time series}. & UC-2.10 \\ \hline
-            RF-30 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua in formato \glossterm{time series}. & UC-2.11 \\ \hline
-            RF-31 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità attuale delle precipitazioni in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.12 \\ \hline
-            RF-32 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento attuale dell'aria in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.13 \\ \hline
-            RF-33 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello attuale dell'acqua in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-2.14 \\ \hline
-            RF-34 & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio urbanistico. & UC-3 \\ \hline
-            RF-35 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa che descrive lo stato di occupazione dei parcheggi. & \glossterm{Proponente}, UC-3.1 \\ \hline
-            RF-36 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive i parcheggi. & UC-3.2 \\ \hline
-            RF-37 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una lista di notifiche dei pagamenti dei parcheggi. & UC-3.3 \\ \hline
-            RF-38 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive i guasti alla fornitura elettrica. & UC-3.4 \\ \hline
-            RF-39 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra lo stato di riempimento delle isole ecologiche in formato \glossterm{time series}. & UC-3.5 \\ \hline
-            RF-40 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa che descrive la disponibilità colonnine di ricarica. & UC-3.6 \\ \hline
-            RF-41 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che le colonnine di ricarica. & UC-3.7 \\ \hline
-            RF-42 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra i consumi di elettricità delle colonnine di ricarica in formato \glossterm{time series}. & UC-3.8 \\ \hline
-            RF-43 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le notifiche di pagamento relative all'utilizzo delle colonnine di ricarica. & UC-3.9 \\ \hline
-            RF-44 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche relative ai pagamenti dovuti a parcheggi. & UC-3.10 \\ \hline
-            RF-45 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche relative ai pagamenti dovuti a colonnine di ricarica. & UC-3.11 \\ \hline
-            RF-46 & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'efficienza monetaria dei parcheggi. & UC-3.12 \\ \hline
-            RF-47 & Desiderabile & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al superamento delle soglie. & UC-4 \\ \hline
-            RF-48 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento delle soglie di temperatura. & UC-4.1 \\ \hline
-            RF-49 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di precipitazioni. & UC-4.2 \\ \hline
-            RF-50 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di inquinamento dell'aria. & UC-4.3 \\ \hline
-            RF-51 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di livello dell'acqua. & UC-4.4 \\ \hline
-            RF-52 & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di riempimento dei conferitori nelle isole ecologiche. & UC-4.5 \\ \hline
-            RF-53 & Obbligatorio & L'utente deve poter visualizzare un messaggio di errore qualora non sia possibile reperire i dati o vi sia un malfunzionamento nel \glossterm{sistema}. & UC-5 \\ \hline
-            RF-54 & Obbligatorio & L'utente deve poter applicare dei filtri per escludere alcuni dati dalla visualizzazione, secondo determinati criteri. & UC-6 \\ \hline
-            RF-55 & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati provenienti da alcune specifiche tipologie di sensori. & UC-6.1 \\ \hline
-            RF-56 & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati misurati in un determinato intervallo temporale. & UC-6.2 \\ \hline
-            RF-57 & Obbligatorio & L'utente deve poter rimuovere i filtri applicati in precedenza in modo da non escludere alcun dato dalla visualizzazione. & UC-7 \\ \hline
-            RF-58 & Desiderabile & L'utente deve poter modificare il layout dei \glossterm{widget} a proprio piacimento. & UC-8 \\ \hline
-            RF-59 & Desiderabile & L'utente deve poter ridimensionare i \glossterm{widget} a proprio piacimento. & UC-8.1 \\ \hline
-            RF-60 & Desiderabile & L'utente deve poter spostare i \glossterm{widget} a proprio piacimento. & UC-8.2 \\ \hline
-            RF-61 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati misurati, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9 \\ \hline
-            RF-62 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi alla temperatura, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.1 \\ \hline
-            RF-63 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi all'umidità, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.2 \\ \hline
-            RF-64 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi alle precipitazioni, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.3 \\ \hline
-            RF-65 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi all'inquinamento atmosferico, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.4 \\ \hline
-            RF-66 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi al livello dell'acqua, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.5 \\ \hline
-            RF-67 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi allo stato di occupazione dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.6 \\ \hline
-            RF-68 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai pagamenti dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.7 \\ \hline
-            RF-69 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai guasti elettrici, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.8 \\ \hline
-            RF-70 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi al livello di riempimento dei conferitori nelle isole ecologiche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.9 \\ \hline
-            RF-71 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi allo stato di occupazione delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.10 \\ \hline
-            RF-72 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai consumi di elettricità delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.11 \\ \hline
-            RF-73 & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai pagamenti delle ricariche effettuate mediante colonnine elettriche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-9.12 \\ \hline
-            RF-74 & Obbligatorio & Il \glossterm{sistema} consentire la correlazione di dati provenienti da sensori diversi. & \glossterm{Proponente} \\ \hline
-            RF-75 & Opzionale & Il \glossterm{sistema} consentire la previsione di eventi futuri attraverso l'analisi dei dati provenienti dai sensori. & \glossterm{Proponente} \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve effettuare l'autenticazione per poter usufruire del \glossterm{sistema}. Le credenziali di accesso sono fornite dall'amministratore del \glossterm{sistema}. & \glossterm{Proponente}, UC-\ucnumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve permettere la visualizzazione in tempo reale dei dati provenienti dai sensori. & \glossterm{Capitolato} \\ \hline 
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare molteplici simulatori di sensori in grado di generare dati casuali ma comunque verosimili. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi la temperatura, espressa in gradi Celsius. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi l'umidità nell'aria, espressa in percentuale. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi l'intensità delle precipitazioni, espressa in millimetri orari. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi la quantità di polveri sottili presenti nell'aria, espresse in microgrammi per metro cubo. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi il livello dell'acqua nella zona di installazione, espresso in percentuale. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi lo stato di occupazione dei parcheggi, espresso mediante un valore binario. & \glossterm{Capitolato} \\ \hline    
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che invii dati di pagamento per parcheggi. & \glossterm{Proponente} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi la presenza di guasti elettrici, espressa mediante un valore binario. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi lo stato di riempimento delle isole ecologiche, espresso mediante un valore binario. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi lo stato di utilizzo delle colonnine di ricarica, espresso mediante un valore binario. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che rilevi il consumo di energia delle colonnine di ricarica. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} deve integrare almeno un \glossterm{sensore} che invii dati di pagamento per colonnine di ricarica. & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter digitare il proprio username nel campo di inserimento corrispondente per accedere al \glossterm{sistema}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter digitare la propria password nel campo di inserimento corrispondente per accedere al \glossterm{sistema}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un messaggio di errore qualora le credenziali di accesso inserite fossero errate. & UC-\ucnumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un menu attraverso il quale selezionare la \glossterm{dashboard} desiderata tra Sensori, Ambientale ed Urbanistica. & UC-\ucnumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa allo stato dei sensori. & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} contente una mappa su cui è indicata la posizione geografica dei sensori. & \glossterm{Capitolato}, UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare il nome e le coordinate geografiche dei singoli sensori collocati all'interno del territorio urbano. & UC-\theuc .\thespecone .\spectwonumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio ambientale. & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura in formato \glossterm{time series}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni dell'umidità in formato \glossterm{time series}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le rilevazioni della temperatura percepita in formato \glossterm{time series}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura media in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'umidità media in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra la temperatura percepita media in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dalle coppie di sensori temperatura-umidità attivi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura in formato diagramma a barre considerando ciascun \glossterm{sensore} attivo nell'intervallo di tempo. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche di temperatura percepita in formato diagramma a barre considerando ciascuna coppia di valori di temperatura e umidità per ogni rispettivo \glossterm{sensore} attivo nell'intervallo di tempo. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità delle precipitazioni in formato \glossterm{time series}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento dell'aria in formato \glossterm{time series}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello dell'acqua in formato \glossterm{time series}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'intensità attuale delle precipitazioni in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'inquinamento attuale dell'aria in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra il livello attuale dell'acqua in formato diagramma di \glossterm{Gauge} considerando le ultime rilevazioni effettuate dai singoli sensori attivi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al dominio urbanistico. & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa che descrive lo stato di occupazione dei parcheggi. & \glossterm{Proponente}, UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive i parcheggi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una lista di notifiche dei pagamenti dei parcheggi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che descrive i guasti alla fornitura elettrica. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra lo stato di riempimento delle isole ecologiche in formato \glossterm{time series}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una mappa che descrive la disponibilità colonnine di ricarica. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra una tabella che le colonnine di ricarica. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra i consumi di elettricità delle colonnine di ricarica in formato \glossterm{time series}. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le notifiche di pagamento relative all'utilizzo delle colonnine di ricarica. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche relative ai pagamenti dovuti a parcheggi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra le statistiche relative ai pagamenti dovuti a colonnine di ricarica. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un \glossterm{widget} che mostra l'efficienza monetaria dei parcheggi. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare la \glossterm{dashboard} relativa al superamento delle soglie. & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento delle soglie di temperatura. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di precipitazioni. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di inquinamento dell'aria. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di livello dell'acqua. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter visualizzare un \glossterm{widget} che mostra che mostra una lista di notifiche riguardanti il superamento della soglia di riempimento dei conferitori nelle isole ecologiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter visualizzare un messaggio di errore qualora non sia possibile reperire i dati o vi sia un malfunzionamento nel \glossterm{sistema}. & UC-\ucnumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter applicare dei filtri per escludere alcuni dati dalla visualizzazione, secondo determinati criteri. & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati provenienti da alcune specifiche tipologie di sensori. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter applicare dei filtri per visualizzare solo i dati misurati in un determinato intervallo temporale. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & L'utente deve poter rimuovere i filtri applicati in precedenza in modo da non escludere alcun dato dalla visualizzazione. & UC-\ucnumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter modificare il layout dei \glossterm{widget} a proprio piacimento. & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & Desiderabile & L'utente deve poter ridimensionare i \glossterm{widget} a proprio piacimento. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Desiderabile & L'utente deve poter spostare i \glossterm{widget} a proprio piacimento. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati misurati, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi alla temperatura, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi all'umidità, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi alle precipitazioni, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi all'inquinamento atmosferico, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi al livello dell'acqua, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi allo stato di occupazione dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai pagamenti dei parcheggi, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai guasti elettrici, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi al livello di riempimento dei conferitori nelle isole ecologiche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi allo stato di occupazione delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai consumi di elettricità delle colonnine di ricarica, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sensore} deve poter inviare i dati relativi ai pagamenti delle ricariche effettuate mediante colonnine elettriche, assieme al timestamp di rilevazione e alle proprie coordinate geografiche. & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & Obbligatorio & Il \glossterm{sistema} consentire la correlazione di dati provenienti da sensori diversi. & \glossterm{Proponente} \\ \hline
+            RF-\rownumber & Opzionale & Il \glossterm{sistema} consentire la previsione di eventi futuri attraverso l'analisi dei dati provenienti dai sensori. & \glossterm{Proponente} \\ \hline
 \end{longtable}
 \clearpage
 \subsection{Requisiti qualitativi}
 Questa tipologia di requisiti definisce lo \glossterm{standard} di qualità che il prodotto deve rispettare. \\
 Di seguito sono elencati i requisiti qualitativi individuati:
+\setcounter{row}{0}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
     \hline
@@ -1734,20 +1873,21 @@ Di seguito sono elencati i requisiti qualitativi individuati:
     \caption{Requisiti qualitativi.}
 	\label{table:Requisiti qualitativi}
     \endlastfoot
-            RQ-1 & Obbligatorio & Devono essere rispettati i vincoli e le metriche descritti nel documento \textit{Piano di Qualifica v1.0.0}. & \textit{Norme di Progetto v1.0.0} \\ \hline
-            RQ-2 & Obbligatorio & Devono essere rispettate le norme specificate nel documento \textit{Norme di Progetto v1.0.0}. & \textit{Norme di Progetto v1.0.0} \\ \hline
-            RQ-3 & Obbligatorio & La copertura di test deve essere almeno dell'80\% e deve essere adeguatamente documentata. & \glossterm{Capitolato} \\ \hline
-            RQ-4 & Obbligatorio & La \glossterm{Proponente} deve essere in grado di accedere alla \glossterm{repository} \glossterm{GitHub} del prodotto ``SyncCity''. & \glossterm{Proponente} \\ \hline
-            RQ-5 & Obbligatorio & Il corretto funzionamento dei simulatori di sensori deve essere adeguatamente documentato. Esso deve essere descritto in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
-            RQ-6 & Obbligatorio & Le scelte implementative e progettuali devono essere motivate ed adeguatamente documentate. Esse dovranno essere descritte in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
-            RQ-7 & Obbligatorio & I problemi aperti e le eventuali soluzioni da esplorare devono essere adeguatamente documentati. Essi dovranno essere descritti in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
-            RQ-8 & Obbligatorio & Deve essere fornito il documento \textit{Manuale Utente} che illustra le funzionalità offerte dal \glossterm{sistema} e le modalità di fruizione delle stesse. & \glossterm{Capitolato} \\ \hline
-            RQ-9 & Obbligatorio & Deve essere fornito il documento \textit{Specifica Tecnica} che illustra le scelte architetturali e progettuali effettuate. & \glossterm{Capitolato} \\ \hline            
+            RQ-\rownumber & Obbligatorio & Devono essere rispettati i vincoli e le metriche descritti nel documento \textit{Piano di Qualifica v2.0.0}. & \textit{Norme di Progetto v2.0.0} \\ \hline
+            RQ-\rownumber & Obbligatorio & Devono essere rispettate le norme specificate nel documento \textit{Norme di Progetto v2.0.0}. & \textit{Norme di Progetto v2.0.0} \\ \hline
+            RQ-\rownumber & Obbligatorio & La copertura di test deve essere almeno dell'80\% e deve essere adeguatamente documentata. & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & Obbligatorio & La \glossterm{Proponente} deve essere in grado di accedere alla \glossterm{repository} \glossterm{GitHub} del prodotto ``SyncCity''. & \glossterm{Proponente} \\ \hline
+            RQ-\rownumber & Obbligatorio & Il corretto funzionamento dei simulatori di sensori deve essere adeguatamente documentato. Esso deve essere descritto in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & Obbligatorio & Le scelte implementative e progettuali devono essere motivate ed adeguatamente documentate. Esse dovranno essere descritte in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & Obbligatorio & I problemi aperti e le eventuali soluzioni da esplorare devono essere adeguatamente documentati. Essi dovranno essere descritti in un documento aggiuntivo appositamente redatto. & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & Obbligatorio & Deve essere fornito il documento \textit{Manuale Utente} che illustra le funzionalità offerte dal \glossterm{sistema} e le modalità di fruizione delle stesse. & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & Obbligatorio & Deve essere fornito il documento \textit{Specifica Tecnica} che illustra le scelte architetturali e progettuali effettuate. & \glossterm{Capitolato} \\ \hline            
 \end{longtable}
 \newpage
 \subsection{Requisiti di vincolo}
 Questa tipologia di requisiti indica i limiti imposti dal \glossterm{capitolato} che il prodotto deve rispettare. \\
 Di seguito sono elencati i requisiti di vincolo individuati:
+\setcounter{row}{0}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
     \hline
@@ -1759,20 +1899,21 @@ Di seguito sono elencati i requisiti di vincolo individuati:
     \caption{Requisiti di vincolo.}
 	\label{table:Requisiti di vincolo}
     \endlastfoot
-            RV-1 & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un \glossterm{database} \glossterm{OLAP} colonnare come \glossterm{ClickHouse}. & \glossterm{Capitolato} \\ \hline
-            RV-2 & Obbligatorio & Lo stream di dati deve essere gestito mediante un \glossterm{broker} come Apache \glossterm{Kafka}. & \glossterm{Capitolato} \\ \hline
-            RV-3 & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come \glossterm{Grafana}. & \glossterm{Capitolato} \\ \hline
-            RV-4 & Obbligatorio & Lo stream processing deve essere realizzato mediante la tecnologia Apache Kafka. & Decisione interna \\ \hline
-            RV-5 & Obbligatorio & Il \glossterm{sistema} deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & \glossterm{Proponente} \\ \hline
-            RV-6 & Obbligatorio & I dati generati dal simulatore devono essere in formato \glossterm{JSON}. & \textit{Norme di Progetto v1.0.0} \\ \hline
-            RV-7 & Obbligatorio & Il \glossterm{sistema} deve eseguire correttamente su dispositivi dotati di processore a 64 bit Quad-Core da 2.4 GHz, 6 GB di RAM, 4 GB di spazio di archiviazione libero su disco e una connessione ad internet stabile. & \glossterm{Proponente} \\ \hline
-            RV-8 & Obbligatorio & Il \glossterm{sistema} deve essere compatibile con le versioni più recenti dei browser web più comuni. Al momento della stesura del presente documento, sono supportate le seguenti versioni: Google Chrome v124, Mozilla Firefox v125, Microsoft Edge v123 e Safari v17.4. & \glossterm{Capitolato} \\ \hline
-            RV-9 & Obbligatorio & Il \glossterm{sistema} deve essere compatibile con le seguenti versioni dei più diffusi sistemi operativi: Windows 10 o 11 compatibile con WSL 2, MacOS 11.0 Big Sur, Ubuntu 22.94, Debian 12, Fedora 38, RHEL 8. & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un \glossterm{database} \glossterm{OLAP} colonnare come \glossterm{ClickHouse}. & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & Obbligatorio & Lo stream di dati deve essere gestito mediante un \glossterm{broker} come Apache \glossterm{Kafka}. & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come \glossterm{Grafana}. & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & Obbligatorio & Lo stream processing deve essere realizzato mediante la tecnologia Apache Kafka. & \textit{Valutazione dell'utilizzo di Flink v1.0.0} \\ \hline
+            RV-\rownumber & Obbligatorio & Il \glossterm{sistema} deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & \glossterm{Proponente} \\ \hline
+            RV-\rownumber & Obbligatorio & I dati generati dal simulatore devono essere in formato \glossterm{JSON}. & \textit{Norme di Progetto v2.0.0} \\ \hline
+            RV-\rownumber & Obbligatorio & Il \glossterm{sistema} deve eseguire correttamente su dispositivi dotati di processore a 64 bit Quad-Core da 2.4 GHz, 6 GB di RAM, 4 GB di spazio di archiviazione libero su disco e una connessione ad internet stabile. & \glossterm{Proponente} \\ \hline
+            RV-\rownumber & Obbligatorio & Il \glossterm{sistema} deve essere compatibile con le versioni più recenti dei browser web più comuni. Al momento della stesura del presente documento, sono supportate le seguenti versioni: Google Chrome v124, Mozilla Firefox v125, Microsoft Edge v123 e Safari v17.4. & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & Obbligatorio & Il \glossterm{sistema} deve essere compatibile con le seguenti versioni dei più diffusi sistemi operativi: Windows 10 o 11 compatibile con WSL 2, MacOS 11.0 Big Sur, Ubuntu 22.94, Debian 12, Fedora 38, RHEL 8. & \glossterm{Capitolato} \\ \hline
 \end{longtable}
 \clearpage
 \subsection{Requisiti prestazionali}
 Questa tipologia di requisiti specifica le prestazioni che il \glossterm{sistema} deve avere. \\
 Di seguito sono elencati i requisiti prestazionali individuati:
+\setcounter{row}{0}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
     \hline
@@ -1784,11 +1925,15 @@ Di seguito sono elencati i requisiti prestazionali individuati:
 \caption{Requisiti prestazionali.}
 	\label{table:Requisiti prestazionali}
   \endlastfoot
-            RP-1 & Obbligatorio & Il \glossterm{sistema} deve gestire un carico di dati in entrata non inferiore a 50 dati al secondo. & \glossterm{Proponente} \\ \hline
-            RP-2 & Obbligatorio & Il \glossterm{sistema} deve avere un tempo di elaborazione massimo di 10 secondi, dal momento in cui il dato viene inserito a quando viene effettivamente visualizzato. Non viene considerata la latenza di rete. & \glossterm{Proponente} \\ \hline
+            RP-\rownumber & Obbligatorio & Il \glossterm{sistema} deve gestire un carico di dati in entrata non inferiore a 50 dati al secondo per un sistema con almeno un processore Quad-Core da 2.4Ghz e 6GB di RAM. & \glossterm{Proponente} \\ \hline
+            RP-\rownumber & Obbligatorio & Il \glossterm{sistema} deve avere un tempo di elaborazione massimo di 10 secondi, dal momento in cui il dato viene inserito a quando viene effettivamente visualizzato. Non viene considerata la latenza di rete. & \glossterm{Proponente} \\ \hline
 \end{longtable}
 \subsection{Tracciamento} \label{sec:track}
 \subsubsection{Requisito - Fonte}
+\setcounter{row}{0}
+\setcounter{uc}{-1}
+\setcounter{specone}{0}
+\setcounter{spectwo}{0}
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{4cm}|}
 		\hline
@@ -1800,104 +1945,112 @@ Di seguito sono elencati i requisiti prestazionali individuati:
   \caption{Tracciamento requisito - fonte.}
 	\label{table:Tracciamento requisito - fonte}
  \endlastfoot
-            RF-1 & \glossterm{Capitolato} \\ \hline
-            RF-2 & \glossterm{Capitolato} \\ \hline
-            RF-3 & \glossterm{Capitolato} \\ \hline
-            RF-4 & \glossterm{Capitolato} \\ \hline
-            RF-5 & \glossterm{Capitolato} \\ \hline
-            RF-6 & \glossterm{Capitolato} \\ \hline
-            RF-7 & \glossterm{Capitolato} \\ \hline
-            RF-8 & \glossterm{Capitolato} \\ \hline
-            RF-9 & \glossterm{Capitolato} \\ \hline
-            RF-10 & \glossterm{Proponente} \\ \hline
-            RF-11 & \glossterm{Capitolato} \\ \hline
-            RF-12 & \glossterm{Capitolato} \\ \hline
-            RF-13 & \glossterm{Capitolato} \\ \hline
-            RF-14 & \glossterm{Capitolato} \\ \hline
-            RF-15 & \glossterm{Capitolato} \\ \hline
-            RF-16 & UC-0 \\ \hline
-            RF-17 & UC-1 \\ \hline
-            RF-18 & \glossterm{Capitolato}, UC-1.1 \\ \hline
-            RF-19 & UC-2 \\ \hline
-            RF-20 & UC-2.1 \\ \hline
-            RF-21 & UC-2.2 \\ \hline
-            RF-22 & UC-2.3 \\ \hline
-            RF-23 & UC-2.4 \\ \hline
-            RF-24 & UC-2.5 \\ \hline
-            RF-25 & UC-2.6 \\ \hline
-            RF-26 & UC-2.7 \\ \hline
-            RF-27 & UC-2.8 \\ \hline
-            RF-28 & UC-2.9 \\ \hline
-            RF-29 & UC-2.10 \\ \hline
-            RF-30 & UC-2.11 \\ \hline
-            RF-31 & UC-2.12 \\ \hline
-            RF-32 & UC-2.13 \\ \hline
-            RF-33 & UC-2.14 \\ \hline
-            RF-34 & UC-3 \\ \hline
-            RF-35 & \glossterm{Proponente}, UC-3.1 \\ \hline
-            RF-36 & UC-3.2 \\ \hline
-            RF-37 & UC-3.3 \\ \hline
-            RF-38 & UC-3.4 \\ \hline
-            RF-39 & UC-3.5 \\ \hline
-            RF-40 & UC-3.6 \\ \hline
-            RF-41 & UC-3.7 \\ \hline
-            RF-42 & UC-3.8 \\ \hline
-            RF-43 & UC-3.9 \\ \hline
-            RF-44 & UC-3.10 \\ \hline
-            RF-45 & UC-3.11 \\ \hline
-            RF-46 & UC-3.12 \\ \hline
-            RF-47 & UC-4 \\ \hline
-            RF-48 & UC-4.1 \\ \hline
-            RF-49 & UC-4.2 \\ \hline
-            RF-50 & UC-4.3 \\ \hline
-            RF-51 & UC-4.4 \\ \hline
-            RF-52 & UC-4.5 \\ \hline
-            RF-53 & UC-5 \\ \hline
-            RF-54 & UC-6 \\ \hline
-            RF-55 & UC-6.1 \\ \hline
-            RF-56 & UC-6.2 \\ \hline
-            RF-57 & UC-7 \\ \hline
-            RF-58 & UC-8 \\ \hline
-            RF-59 & UC-8.1 \\ \hline
-            RF-60 & UC-8.2 \\ \hline
-            RF-61 & UC-9 \\ \hline
-            RF-62 & UC-9.1 \\ \hline
-            RF-63 & UC-9.2 \\ \hline
-            RF-64 & UC-9.3 \\ \hline
-            RF-65 & UC-9.4 \\ \hline
-            RF-66 & UC-9.5 \\ \hline
-            RF-67 & UC-9.6 \\ \hline
-            RF-68 & UC-9.7 \\ \hline
-            RF-69 & UC-9.8 \\ \hline
-            RF-70 & UC-9.9 \\ \hline
-            RF-71 & UC-9.10 \\ \hline
-            RF-72 & UC-9.11 \\ \hline
-            RF-73 & UC-9.12 \\ \hline
-            RF-74 & \glossterm{Proponente} \\ \hline
-            RF-75 & \glossterm{Proponente} \\ \hline
-            RQ-1 & \textit{Norme di Progetto v1.0.0} \\ \hline
-            RQ-2 & \textit{Norme di Progetto v1.0.0} \\ \hline
-            RQ-3 & \glossterm{Capitolato} \\ \hline
-            RQ-4 & \glossterm{Proponente} \\ \hline
-            RQ-5 & \glossterm{Capitolato} \\ \hline
-            RQ-6 & \glossterm{Capitolato} \\ \hline
-            RQ-7 & \glossterm{Capitolato} \\ \hline
-            RQ-8 & \glossterm{Capitolato} \\ \hline
-            RQ-9 & \glossterm{Capitolato} \\ \hline
-            RV-1 & \glossterm{Capitolato} \\ \hline
-            RV-2 & \glossterm{Capitolato} \\ \hline
-            RV-3 & \glossterm{Capitolato} \\ \hline
-            RV-4 & \glossterm{Decisione interna} \\ \hline
-            RV-5 & \textit{Proponente} \\ \hline
-            RV-6 & \glossterm{Norme di Progetto v1.0.0} \\ \hline
-            RV-7 & \glossterm{Proponente} \\ \hline
-            RV-8 & \glossterm{Capitolato} \\ \hline
-            RV-9 & \textit{Capitolato} \\ \hline
-            RP-1 & \glossterm{Proponente} \\ \hline
-            RP-2 & \glossterm{Proponente} \\ \hline
+            RF-\rownumber & \glossterm{Proponente}, UC-\ucnumber \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Proponente} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & \glossterm{Capitolato} \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & \glossterm{Capitolato}, UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\thespecone .\spectwonumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & \glossterm{Proponente}, UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\ucnumber \\ \hline \setcounter{specone}{0}
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & UC-\theuc .\speconenumber \\ \hline
+            RF-\rownumber & \glossterm{Proponente} \\ \hline
+            RF-\rownumber & \glossterm{Proponente} \\ \hline \setcounter{row}{0}
+            RQ-\rownumber & \textit{Norme di Progetto v2.0.0} \\ \hline
+            RQ-\rownumber & \textit{Norme di Progetto v2.0.0} \\ \hline
+            RQ-\rownumber & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & \glossterm{Proponente} \\ \hline
+            RQ-\rownumber & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & \glossterm{Capitolato} \\ \hline
+            RQ-\rownumber & \glossterm{Capitolato} \\ \hline \setcounter{row}{0}
+            RV-\rownumber & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & \textit{Valutazione dell'utilizzo di Flink v1.0.0} \\ \hline
+            RV-\rownumber & \glossterm{Proponente} \\ \hline
+            RV-\rownumber & \textit{Norme di Progetto v2.0.0} \\ \hline
+            RV-\rownumber & \glossterm{Proponente} \\ \hline
+            RV-\rownumber & \glossterm{Capitolato} \\ \hline
+            RV-\rownumber & \glossterm{Capitolato} \\ \hline \setcounter{row}{0}
+            RP-\rownumber & \glossterm{Proponente} \\ \hline
+            RP-\rownumber & \glossterm{Proponente} \\ \hline
 \end{longtable}
 \clearpage
 \subsubsection{Fonte - Requisiti}
+\setcounter{uc}{-1}
+\setcounter{specone}{0}
+\setcounter{spectwo}{0}
+\setcounter{row}{0} %!!!
 \rowcolors{2}{gray!20}{white}
 \begin{longtable}{|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{7cm}|}
 		\hline
@@ -1907,69 +2060,74 @@ Di seguito sono elencati i requisiti prestazionali individuati:
   \endfirsthead
 \rowcolor{white}
   \caption{Tracciamento fonte - requisito.}
-	\label{table:Tracciamento requisito - fonte}
+	\label{table:Tracciamento fonte - requisito}
  \endlastfoot
-            \glossterm{Capitolato} & RF-1, RF-2, RF-3, RF-4, RF-5, RF-6, RF-7, RF-8, RF-9, RF-11, RF-12, RF-13, RF-14, RF-15, RF-18, RQ-3, RQ-5, RQ-6, RQ-7, RV-1, RV-2, RV-3, RV-8, RV-9 \\ \hline
-        \textit{Norme di Progetto v1.0.0} & RQ-1, RQ-2, RV-6 \\ \hline
-            \glossterm{Proponente} & RF-10, RF-35, RF-74, RF-75, RQ-4, RV-5, RV-7, RP-1, RP-2 \\ \hline
-            UC-0 & RF-16 \\ \hline
-            UC-1 & RF-17 \\ \hline
-            UC-1.1 & RF-18 \\ \hline
-            UC-2 & RF-19\\ \hline
-            UC-2.1 & RF-20\\ \hline
-            UC-2.2 & RF-21\\ \hline
-            UC-2.3 & RF-22\\ \hline
-            UC-2.4 & RF-23\\ \hline
-            UC-2.5 & RF-24\\ \hline
-            UC-2.6 & RF-25 \\ \hline
-            UC-2.7 & RF-26\\ \hline
-            UC-2.8 & RF-27\\ \hline
-            UC-2.9 & RF-28\\ \hline
-            UC-2.10 & RF-29\\ \hline
-            UC-2.11 & RF-30\\ \hline
-            UC-2.12 & RF-31\\ \hline
-            UC-2.13 & RF-32\\ \hline
-            UC-2.14 & RF-33\\ \hline
-            UC-3 & RF-34\\ \hline
-            UC-3.1 & RF-35\\ \hline
-            UC-3.2 & RF-36\\ \hline
-            UC-3.3 & RF-37\\ \hline
-            UC-3.4 & RF-38\\ \hline
-            UC-3.5 & RF-39\\ \hline
-            UC-3.6 & RF-40\\ \hline
-            UC-3.7 & RF-41\\ \hline
-            UC-3.8 & RF-42\\ \hline
-            UC-3.9 & RF-43\\ \hline
-            UC-3.10 & RF-44\\ \hline
-            UC-3.11 & RF-45\\ \hline
-            UC-3.12 & RF-46\\ \hline
-            UC-4 & RF-47\\ \hline
-            UC-4.1 & RF-48\\ \hline
-            UC-4.2 & RF-49\\ \hline
-            UC-4.3 & RF-50\\ \hline
-            UC-4.4 & RF-51\\ \hline
-            UC-4.5 & RF-52\\ \hline
-            UC-5 & RF-53\\ \hline
-            UC-6 & RF-54\\ \hline
-            UC-6.1 & RF-55\\ \hline
-            UC-6.2 & RF-56\\ \hline
-            UC-7 & RF-57\\ \hline
-            UC-8 & RF-58\\ \hline
-            UC-8.1 & RF-59\\ \hline
-            UC-8.2 & RF-60\\ \hline
-            UC-9 & RF-61\\ \hline
-            UC-9.1 & RF-62\\ \hline
-            UC-9.2 & RF-63\\ \hline
-            UC-9.3 & RF-64\\ \hline
-            UC-9.4 & RF-65\\ \hline
-            UC-9.5 & RF-66\\ \hline
-            UC-9.6 & RF-67\\ \hline
-            UC-9.7 & RF-68\\ \hline
-            UC-9.8 & RF-69\\ \hline
-            UC-9.9 & RF-70\\ \hline
-            UC-9.10 & RF-71\\ \hline
-            UC-9.11 & RF-72\\ \hline
-            UC-9.12 & RF-73\\ \hline
+            \glossterm{Capitolato} & RF-2, RF-3, RF-4, RF-5, RF-6, RF-7, RF-8, RF-9, RF-11, RF-12, RF-13, RF-14, RF-15, RF-21, RQ-3, RQ-5, RQ-6, RQ-7, RQ-8, RQ-9, RV-1, RV-2, RV-3, RV-8, RV-9 \\ \hline
+        \textit{Norme di Progetto v2.0.0} & RQ-1, RQ-2, RV-6 \\ \hline
+            \glossterm{Proponente} & RF-1, RF-10, RF-39, RF-78, RF-79, RQ-4, RV-5, RV-7, RP-1, RP-2 \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline \setcounter{row}{15}
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline \setcounter{specone}{0}
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\thespecone .\spectwonumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline \setcounter{specone}{0}
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline \setcounter{specone}{0}
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline \setcounter{specone}{0}
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline \setcounter{specone}{0}
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline \setcounter{specone}{0}
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\ucnumber & RF-\rownumber \\ \hline \setcounter{specone}{0}
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
+            UC-\theuc .\speconenumber & RF-\rownumber \\ \hline
 \end{longtable}
 \subsection{Riepilogo} \label{sec:recap}
 \rowcolors{2}{gray!20}{white}
@@ -1981,7 +2139,7 @@ Di seguito sono elencati i requisiti prestazionali individuati:
 		\hline
 		\textbf{Tipologia} & \textbf{Obbligatori} & \textbf{Desiderabili} & \textbf{Opzionali} & \textbf{Totale}\\
 		\hline
-            Funzionali & 55 & 19 & 1 & 75 \\ \hline
+            Funzionali & 59 & 19 & 1 & 79 \\ \hline
             Qualitativi & 9 & - & - & 9 \\ \hline
             Di vincolo & 9 & - & - & 9 \\ \hline
             Prestazionali & 2 & - & - & 2 \\ \hline
