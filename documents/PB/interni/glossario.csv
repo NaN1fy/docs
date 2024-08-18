@@ -57,7 +57,7 @@ Pull Request;Richiesta di fondere le modifiche eseguite su un branch con un'altr
 Modello a V;Modello di sviluppo software che mette in luce i legami esistenti tra fase di sviluppo e fase di verifica. Predispone inoltre la creazione e l'utilizzo dei test di pari passo alle altre fasi dello sviluppo.
 Planning;Pianificazione.
 OLAP;Acronimo di ``On-Line Analytical Processing", designa un insieme di tecniche software utili all'analisi interattiva e veloce di grandi moli di dati.
-Broker;Colui il quale, agendo indipendentemente, organizza ed esegue transazioni finanziarie per conto di terzi, interessati economicamente o tecnologicamente al prodotto.
+Broker;Nel contesto Kafka, è il nodo del cluster Kafka che riceve, memorizza, replica e distribuisce i messaggi ai consumatori.
 Time Series;Grafico nel quale l'asse delle ascisse è costituito da unità temporali.
 Stakeholder;Qualsiasi individuo, gruppo o organizzazione che ha un interesse diretto o indiretto in un'impresa, progetto o decisione.
 User Story;Breve descrizione, in linguaggio naturale, di una funzionalità desiderata dal punto di vista dell'utente finale o del cliente.
