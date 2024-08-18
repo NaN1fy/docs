@@ -1,4 +1,4 @@
-% changelog: "2.0.0, 2024-08-17, Approvazione per PB"
+% changelog: "2.0.0, 2024-08-18, Approvazione per PB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -126,7 +126,7 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-            2.0.0 & 2024-08-17 & \textbf{Approvazione per PB} & &  \\\\
+            2.0.0 & 2024-08-18 & \textbf{Approvazione per PB} & &  \\\\
             1.2.0 & 2024-08-10 & Stesura UC-0, UC-1 e UC-5.12. Aggiunta requisiti. & Veronica Tecchiati & Davide Donanzan \\\\
 			1.1.0 & 2024-08-08 & Correzioni in seguito alla valutazione RTB. & Oscar Konieczny & Veronica Tecchiati
  		    \\ % spazio tra le righe
@@ -936,7 +936,7 @@ tabellare per informazioni sui parcheggi}
     \item \textbf{Attore principale:} amministratore pubblico;
     \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
         relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le informazioni riguardanti i parcheggi, in formato tabellare;
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le informazioni riguardanti i parcheggi, in formato tabellare. Per ciascuno stallo, è possibile visualizzarne lo stato e, nel caso in cui sia occupato, la targa della vettura parcheggiata, il timestamp di inizio e la durata della sosta;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -950,10 +950,8 @@ tabellare per informazioni sui parcheggi}
 \addcontentsline{toc}{subsubsection}{\protect\numberline{}UC-\theuc .\thespecone: Visualizzazione pannello in formato di registro per notifiche pagamento parcheggi}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
-        relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le notifiche di pagamento relative al parcheggio.
-        contenenti dati relativi al dominio urbanistico;
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione relativa al dominio urbanistico.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra le notifiche di pagamento relative al parcheggio;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -1016,9 +1014,8 @@ tabellare per informazioni sui parcheggi}
 tabellare per disponibilità colonnine di ricarica}
 \begin{itemize}
     \item \textbf{Attore principale:} amministratore pubblico;
-    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione
-        relativa al dominio urbanistico.
-    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra informazioni riguardanti le colonnine di ricarica, in formato tabellare;
+    \item \textbf{Precondizioni:} l'amministratore pubblico ha selezionato la visualizzazione relativa al dominio urbanistico.
+    \item \textbf{Postcondizioni:} l'amministratore pubblico visualizza un pannello che mostra informazioni riguardanti le colonnine di ricarica, in formato tabellare. Per ciascuna di esse si riportano lo stato e, nel caso in cui sia occupata, la targa dell'auto attualmente collegata, il timestamp di inizio e la durata della ricarica;
     \item \textbf{Scenario principale:} 
     \begin{enumerate}
     \item L'amministratore pubblico accede alla piattaforma di visualizzazione;
@@ -1359,7 +1356,7 @@ applicato;
         \item Il pannello offre la \glossterm{funzionalità} di filtro dei dati tramite selezione di uno o più sensori.
     \end{itemize}
     \item \textbf{Postcondizioni:} l’amministratore pubblico visualizza solamente i dati relativi ai sensori
-selezionati, all’interno di tale.
+selezionati, all’interno di tale pannello.
     \item \textbf{Scenario principale: }l’amministratore pubblico seleziona il \glossterm{sensore} da
         visualizzare tramite la legenda.
     \item \textbf{\glossterm{User Story} associata:} in qualità di amministratore pubblico, desidero poter
