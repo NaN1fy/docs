@@ -1,4 +1,4 @@
-% changelog: "0.6.0, 2024-08-16, Davide Donanzan, Stesura Architettura"
+% changelog: "0.6.0, 2024-08-16, Davide Donanzan, Stesura Architettura. Verificato da Veronica Tecchiati"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -19,6 +19,7 @@
 \usepackage{wrapfig}
 \usepackage{siunitx}
 \usepackage{amssymb} 
+\usepackage{xurl}
 \usepackage{tabularx}
 \usepackage{adjustbox}
 \usepackage[document]{ragged2e}
@@ -46,6 +47,8 @@
 \usepackage{verbatim}
 \usepackage{enumitem}
 \setcounter{tocdepth}{4}
+
+\urlstyle{same}
 
 \newcommand{\customtitle}{SPECIFICA TECNICA}% o ESTERNO
 
@@ -305,8 +308,8 @@ Sono stati creati quattro ambienti di lavoro con focus operativi differenti.
     \item \textbf{Ambiente di produzione:}
     \begin{itemize}
         \item Ambiente dove i programmatori possono testare il codice nella produzione dei dati simulati;
-        \item Il focus è quello della produzione dei dati simulati nell'ottica della fruizione del servizio fornito dall'applicativo.
-        \item L'intera \glossterm{data pipeline} ad esclusione dello \glossterm{stream-processing}, è in funzione.
+        \item Il focus è quello della produzione dei dati simulati nell'ottica della fruizione del servizio fornito dall'applicativo;
+        \item L'intera \glossterm{data pipeline}, ad esclusione dello \glossterm{stream-processing}, è in funzione.
     \end{itemize}
     \item \textbf{Ambiente di development:}
     \begin{itemize}
@@ -329,10 +332,10 @@ Sono stati creati quattro ambienti di lavoro con focus operativi differenti.
 \subsubsection{Images}
 Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
 \begin{itemize}
-    \item \textbf{\glossterm{Python}}
+    \item \textbf{\glossterm{Python}:}
     \begin{itemize}
-        \item \textbf{Image:} python:3.11-bookworm
-        \item \textbf{Riferimento:}  \href{https://hub.docker.com/layers/library/python/3.11-bookworm/images/sha256-94c2dca43c9c127e42dfd021039cc83d8399752097612b49bdc7b00716b6d826}{\color{myblue}https://hub.docker.com/layers/library/python/3.11-bookworm/images/sha256-94c2dca43c9c127e42dfd021039cc83d8399752097612b49bdc7b00716b6d826} (Ultimo accesso: \today)
+        \item \textbf{Image:} python:3.11-bookworm;
+        \item \textbf{Riferimento:}  \href{https://hub.docker.com/layers/library/python/3.11-bookworm/images/sha256-94c2dca43c9c127e42dfd021039cc83d8399752097612b49bdc7b00716b6d826}{\color{myblue}\nolinkurl{https://hub.docker.com/layers/library/python/3.11-bookworm/images/sha256-94c2dca43c9c127e42dfd021039cc83d8399752097612b49bdc7b00716b6d826}} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
         \begin{itemize}
             \item Produzione;
@@ -341,9 +344,9 @@ Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
         \end{itemize}
     \end{itemize}
     \clearpage
-    \item \textbf{Apcahe \glossterm{Kafka}}
+    \item \textbf{Apcahe \glossterm{Kafka}:}
     \begin{itemize}
-        \item \textbf{Image:} bitnami/kafka:3.7.0
+        \item \textbf{Image:} bitnami/kafka:3.7.0;
         \item \textbf{Riferimento:}  \href{https://hub.docker.com/r/bitnami/kafka}{\color{myblue}https://hub.docker.com/r/bitnami/kafka} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
         \begin{itemize}
@@ -352,9 +355,9 @@ Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
             \item Stream processing.
         \end{itemize}
     \end{itemize}
-    \item \textbf{Apache \glossterm{Flink}}
+    \item \textbf{Apache \glossterm{Flink}:}
     \begin{itemize}
-        \item \textbf{Image:} flink:1.18.1-java17 
+        \item \textbf{Image:} flink:1.18.1-java17; 
         \item \textbf{Riferimento:} \href{https://hub.docker.com/_/flink}{\color{myblue}https://hub.docker.com/\_/flink} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
         \begin{itemize}
@@ -363,9 +366,9 @@ Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
             \item Stream processing.
         \end{itemize}
     \end{itemize}
-    \item \textbf{\glossterm{ClickHouse}}
+    \item \textbf{\glossterm{ClickHouse}:}
     \begin{itemize}
-        \item \textbf{Image:} clickhouse/clickhouse-server:latest
+        \item \textbf{Image:} clickhouse/clickhouse-server:latest;
         \item \textbf{Riferimento:} \href{https://hub.docker.com/r/clickhouse/clickhouse-server}{\color{myblue}https://hub.docker.com/r/clickhouse/clickhouse-server} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
         \begin{itemize}
@@ -375,9 +378,9 @@ Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
             \item Stream processing.
         \end{itemize}
     \end{itemize}
-    \item \textbf{\glossterm{Grafana}}
+    \item \textbf{\glossterm{Grafana}:}
     \begin{itemize}
-        \item \textbf{Image:} grafana/grafana-oss:latest
+        \item \textbf{Image:} grafana/grafana-oss:latest;
         \item \textbf{Riferimento:} \href{https://hub.docker.com/r/grafana/grafana-oss}{\color{myblue}https://hub.docker.com/r/grafana/grafana-oss} (Ultimo accesso: \today)
         \item \textbf{Ambiente:}
         \begin{itemize}
@@ -390,7 +393,7 @@ Di seguito sono elencate le immagini \glossterm{Docker} utilizzate:
 \subsubsection{\glossterm{Python}}
 Linguaggio di programmazione ad alto livello, interpretato e multi-paradigma.
 \begin{itemize}
-    \item \textbf{Versione:} 3.11
+    \item \textbf{Versione:} 3.11;
     \item \textbf{Documentazione:} \href{https://docs.python.org/3/}{\color{myblue}https://docs.python.org/3/} (Ultimo accesso: \today)
     \item \textbf{Utilizzo:} 
     \begin{itemize}
@@ -400,42 +403,42 @@ Linguaggio di programmazione ad alto livello, interpretato e multi-paradigma.
         \item Calcolo dei valori per metriche di qualità di prodotto.
     \end{itemize}
     \clearpage
-    \item \textbf{Librerie e framework:}   
+    \item \textbf{Librerie e \glossterm{framework}:}   
     \begin{itemize}
-        \item \textbf{pytest}
+        \item \textbf{pytest:}
         \begin{itemize}
-            \item \textbf{Versione:} 8.0.2
+            \item \textbf{Versione:} 8.0.2;
             \item \textbf{Documentazione:} \href{https://docs.pytest.org/en/7.1.x/contents.html}{\color{myblue}https://docs.pytest.org/en/7.1.x/contents.html} (Ultimo accesso: \today)
-            \item \textbf{Utilizzo:} Scrittura di codice per test d'integrazione agevolata grazie a funzioni di before\_test e after\_test e la gestione di fixture.
+            \item \textbf{Utilizzo:} scrittura di codice per test d'integrazione agevolata grazie a funzioni di before\_test e after\_test e la gestione di fixture.
         \end{itemize}
-        \item \textbf{unittest}
+        \item \textbf{unittest:}
         \begin{itemize}
-            \item \textbf{Versione:} 3.11
+            \item \textbf{Versione:} 3.11;
             \item \textbf{Documentazione:} \href{https://docs.python.org/3/library/unittest.html}{\color{myblue}https://docs.python.org/3/library/unittest.html} (Ultimo accesso: \today)
-            \item \textbf{Utilizzo:} Scrittura di script di test d'unità agevolati dall'uso di patch, asserzioni e set up di casistiche di testing.
+            \item \textbf{Utilizzo:} scrittura di script di test d'unità agevolati dall'uso di patch, asserzioni e set up di casistiche di testing.
         \end{itemize}
-        \item \textbf{numpy}
+        \item \textbf{numpy:}
         \begin{itemize}
-            \item \textbf{Versione:} 1.26.4
+            \item \textbf{Versione:} 1.26.4;
             \item \textbf{Documentazione:} \href{https://numpy.org/devdocs/user/}{\color{myblue}https://numpy.org/devdocs/user/} (Ultimo accesso: \today)
-            \item \textbf{Utilizzo:} Fornitura di strutture dati e operazioni matematiche e statistiche complesse.
+            \item \textbf{Utilizzo:} fornitura di strutture dati e operazioni matematiche e statistiche complesse.
         \end{itemize}
-        \item \textbf{confluent-kafka}
+        \item \textbf{confluent-kafka:}
         \begin{itemize}
-            \item \textbf{Versione:} 2.3.0
+            \item \textbf{Versione:} 2.3.0;
             \item \textbf{Documentazione:} \href{https://developer.confluent.io/get-started/python/}{\color{myblue}https://developer.confluent.io/get-started/python/} (Ultimo accesso: \today)
-            \item \textbf{Utilizzo:} Fornitura di strumenti per la produzione e consumo di messaggi da parte di Apache Kafka
+            \item \textbf{Utilizzo:} fornitura di strumenti per la produzione e consumo di messaggi da parte di Apache Kafka.
         \end{itemize}
-        \item \textbf{clickhouse-connect}
+        \item \textbf{clickhouse-connect:}
         \begin{itemize}
-            \item \textbf{Versione:} 0.7.2
+            \item \textbf{Versione:} 0.7.2;
             \item \textbf{Documentazione:} \href{https://clickhouse.com/docs/en/integrations/python}{\color{myblue}https://clickhouse.com/docs/en/integrations/python} (Ultimo accesso: \today)
-            \item \textbf{Utilizzo:} Fornitura di strumenti che semplificano l'interazione con il database ClickHouse permettendo query e inserimenti nel database.
+            \item \textbf{Utilizzo:} fornitura di strumenti che semplificano l'interazione con il \glossterm{database} \glossterm{ClickHouse} permettendo query e inserimenti nello stesso.
         \end{itemize}
     \end{itemize}
 \end{itemize}
 \subsubsection{\glossterm{SQL}}
-Linguaggio standard per la gestione e la manipolazione dei database.
+Linguaggio standard per la gestione e la manipolazione dei \glossterm{database}.
 \begin{itemize}
     \item \textbf{Utilizzo:}
     \begin{itemize}
@@ -449,18 +452,18 @@ Formato per lo scambio di dati, basato sui concetti di oggetto (insieme di coppi
     \item \textbf{Utilizzo:}
     \begin{itemize}
         \item Formato dei messaggi trasmessi dal simulatore dei sensori a \glossterm{Kafka};
-        \item Configurazione delle dashboard e dei pannelli in \glossterm{Grafana}.
+        \item Configurazione delle \glossterm{dashboard} e dei pannelli in \glossterm{Grafana}.
     \end{itemize}
 \end{itemize}
 \subsubsection{\glossterm{Java}}
-Linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica
+Linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica.
 \begin{itemize}
-    \item \textbf{Versione:} 17
+    \item \textbf{Versione:} 17;
     \item \textbf{Documentazione:} \href{https://docs.oracle.com/en/java/}{\color{myblue}https://docs.oracle.com/en/java/} (Ultimo accesso: \today)
     \item \textbf{Utilizzo:}
     \begin{itemize}
         \item Implementazione di \glossterm{Flink};
-        \item Gestione ed elaborazione di dati provenienti da topic di \glossterm{Kafka};
+        \item Gestione ed elaborazione di dati provenienti da \glossterm{topic} di \glossterm{Kafka};
         \item Reindirizzamento di dati elaborati verso un topic di Kafka.
     \end{itemize}
 \end{itemize}
@@ -486,46 +489,42 @@ Formato di serializzazione leggibile dall’uomo utilizzato per rappresentare da
 \end{itemize}
 \subsection{Servizi della pipeline}
 \subsubsection{Apache \glossterm{Kafka}}
-Apache Kafka è una piattaformaG open-source di streaming distribuito sviluppata
+Apache Kafka è una piattaforma open-source di streaming distribuito sviluppata
 dall’Apache Software Foundation. Progettata per gestire flussi di dati in tempo reale in modo scalabile e affidabile, è ampiamente utilizzata nel data streaming e nell’integrazione dei dati nelle moderne applicazioni.
 \begin{itemize}
-    \item \textbf{Versione:} 3.7.0
+    \item \textbf{Versione:} 3.7.0;
     \item \textbf{Documentazione:} \href{https://kafka.apache.org/20/documentation.html}{\color{myblue}https://kafka.apache.org/20/documentation.html} (Ultimo accesso: \today)
-    \item \textbf{Utilizzo} 
-    \\Nel nostro prodotto Kafka agisce da broker, ricevendo i dati dai produttori, ovvero il generatore di dati in \glossterm{python} e rendendoli disponibili ai consumer. I consumer sono due:
+    \item \textbf{Utilizzo:} nel nostro prodotto Kafka agisce da \glossterm{broker}, ricevendo i dati dai produttori, ovvero il generatore di dati in \glossterm{python} e rendendoli disponibili ai consumer. I consumer sono due:
     \begin{itemize}
-        \item \glossterm{ClickHouse:} i dati vengono resi disponibili per essere archiviati nel database suddivisi per topic;
+        \item \glossterm{ClickHouse:} i dati vengono resi disponibili per essere archiviati nel \glossterm{database} suddivisi per \glossterm{topic};
         \item \glossterm{Flink:} i dati sono resi disponibili per analisi e elaborazione in tempo reale attraverso \glossterm{stream processing}.
     \end{itemize}
     I dati provenienti dalle simulazioni dei sensori vengono inviati a Kafka come messaggi in formato JSON.
 \end{itemize}
 \subsubsection{Apache \glossterm{Flink}}
-Apache Flink è un framework per l'elaborazione di flussi e l'elaborazione in batch open-source sviluppato da Apache Software Foundation. Il nucleo di Flink è un motore di flusso di dati in streaming distribuito scritto in Java e Scala.
+Apache Flink è un \glossterm{framework} per l'elaborazione di flussi e l'elaborazione in batch open-source sviluppato da Apache Software Foundation. Il nucleo di Flink è un motore di flusso di dati in streaming distribuito scritto in Java e Scala.
 \begin{itemize}
-    \item \textbf{Versione:} 1.18.1
+    \item \textbf{Versione:} 1.18.1;
     \item \textbf{Documentazione:} \href{https://nightlies.apache.org/flink/flink-docs-stable/}{\color{myblue}https://nightlies.apache.org/flink/flink-docs-stable/} (Ultimo accesso: \today)
-    \item \textbf{Utilizzo}
-    \\Nel prodotto, Flink agisce da consumer degli stream dati simulati dal generatore \glossterm{python} e ottenuti da \glossterm{Kafka}, detto producer. Ottenuti gli stream li elabora e inserisce in un nuovo e apposito topic di Kafka.
+    \item \textbf{Utilizzo:} nel prodotto, Flink agisce da consumer degli stream dati simulati dal generatore \glossterm{python} e ottenuti da \glossterm{Kafka}, detto producer. Ottenuti gli stream li elabora e inserisce in un nuovo e apposito \glossterm{topic} di Kafka.
     \end{itemize}
 \subsubsection{\glossterm{ClickHouse}}
-Clickhouse è un \glossterm{sistema} di gestione di database (DBMS) di tipo colonnare,
-progettato per l’analisi di grandi volumi di dati grazie a query SQL in tempo reale.
+Clickhouse è un \glossterm{sistema} di gestione di \glossterm{database} (DBMS) di tipo colonnare,
+progettato per l’analisi di grandi volumi di dati grazie a query \glossterm{SQL} in tempo reale.
 \begin{itemize}
-    \item \textbf{Versione:} 24.2.1.2248
+    \item \textbf{Versione:} 24.2.1.2248;
     \item \textbf{Documentazione:} \href{https://clickhouse.com/docs/en/intro}{\color{myblue}https://clickhouse.com/docs/en/intro} (Ultimo accesso: \today)
-    \item \textbf{Utilizzo}
-    \\Nel progetto, Clickhouse ha in carico la persistenza dei dati provenienti dai sensori recuperarndo in tempo reale i dati da \glossterm{Kafka}, assicurandone l'immediata disponibilità per l’analisi.
-    Clickhouse è in grado di organizzare e grandi volumi di dati in modo rapido e incrementale, grazie all'architettura colonnare.
-    Grafana, infine, raccoglie tali dati per la rappresentazione grafica, tramite query SQL.
+    \item \textbf{Utilizzo:} nel progetto, Clickhouse ha in carico la persistenza dei dati provenienti dai sensori, recuperandoli in tempo reale da \glossterm{Kafka} e assicurandone l'immediata disponibilità per l’analisi.
+    Clickhouse è in grado di gestire grandi volumi di dati in modo rapido e incrementale, grazie all'architettura colonnare.
+    \glossterm{Grafana}, infine, raccoglie tali dati per la rappresentazione grafica, tramite query SQL.
 \end{itemize}
 \subsubsection{\glossterm{Grafana}}
-Grafana è una piattaforma open-source per la visualizzazione e l'analisi interattiva di dati, utilizzata per creare \glossterm{dashboard} e grafici da fonti di dati eterogenee
+Grafana è una piattaforma open-source per la visualizzazione e l'analisi interattiva di dati, utilizzata per creare \glossterm{dashboard} e grafici da fonti di dati eterogenee.
 \begin{itemize}
-    \item \textbf{Versione:} 10.4.0
+    \item \textbf{Versione:} 10.4.0;
     \item \textbf{Documentazione:} \href{https://grafana.com/docs/grafana/latest}{\color{myblue}https://grafana.com/docs/grafana/latest} (Ultimo accesso: \today)
-    \item \textbf{Utilizzo}
-    \\Nel progetto Grafana viene utilizzato per la visualizzazione dei dati tramite \glossterm{dashboard} e grafici interattivi consentendo il monitoraggio in tempo reale dei sensori.
-    Permette inoltre l'analisi di tali dati, fornendo strumenti statistici e opzioni di filtraggio. Infine, offre la possibilità di introdurre un sistema di alerting basato sul verificarsi condizioni anomale per un tempo prolungato, inviando una notifica sulla piattaforma \glossterm{Discord}.
+    \item \textbf{Utilizzo:} nel progetto, Grafana viene utilizzato per la visualizzazione dei dati tramite dashboard e grafici interattivi consentendo il monitoraggio in tempo reale dei sensori.
+    Permette inoltre l'analisi di tali dati, fornendo strumenti statistici e opzioni di filtraggio. Infine, offre la possibilità di introdurre un sistema di alerting basato sul verificarsi di condizioni anomale per un tempo prolungato, inviando una notifica sulla piattaforma \glossterm{Discord}.
 \end{itemize}
 \newpage
 \section{Architettura di sistema}\label{sec:arc}
@@ -562,8 +561,8 @@ Il diagramma presentato qui di seguito rappresenta il percorso compiuto da una q
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.9\textwidth]{images_st/flusso.png}
-    \caption{Diagramma delle classi del modulo sensori.}
-    \label{fig:Diagramma delle classi del modulo sensori}
+    \caption{Diagramma del flusso dei dati.}
+    \label{fig:Diagramma del flusso dei dati}
 \end{figure}
 \begin{itemize}
     \item \textbf{Generazione dati:} I dati, prodotti nella realtà dal rilevamento di sensori fisici, vengono qui simulati attraverso dei generatori verosimili nel loro funzionamento e campionamento. I dati generati vengono trasportati poi al broker \glossterm{Kafka} in formato \glossterm{JSON} e indirizzati ai rispettivi topic.
@@ -1781,7 +1780,7 @@ Per configurare Discord come canale di notifica è necessario:
 Le impostazioni di configurazione del canale di notifica sono esportabili in formato yaml e inseribili in ``/provisioning/alerting".
 \newpage
 \section{Architettura di deployment}\label{sec:dep}
-L’intero stack tecnologico è stato implementato e configurato attraverso un ambiente \glossterm{Docker} che ha permesso lo sviluppo del modello a layer precedentemente descritto e dei suoi servizi. I container che verranno descritti sono presenti nel file \textit{docker-compose.yaml} nella \glossterm{repository} del team.
+L’intero stack tecnologico è stato implementato e configurato attraverso un ambiente \glossterm{Docker} che ha permesso lo sviluppo del modello a layer precedentemente descritto e dei suoi servizi. I \glossterm{container} che verranno descritti sono presenti nel file \textit{docker-compose.yaml} nella \glossterm{repository} del team.
 \subsection{Data source}
 La sorgente dati presenta due container:
 \begin{itemize}
@@ -1791,15 +1790,17 @@ La sorgente dati presenta due container:
         \item Utilizzato per la produzione dei messaggi \glossterm{JSON} indirizzati allo streaming layer.
     \end{itemize}
     \item \textbf{Container pymocksensors-test:}
+    \begin{itemize}
         \item Esegue i test d'unità e d'integrazione.
+    \end{itemize}
 \end{itemize}
 \subsection{Streaming layer}
 \begin{itemize}
     \item \textbf{Container kafka:}
     \begin{itemize}
         \item Esegue \glossterm{Kafka} per la gestione del flusso dei dati;
-        \item Utilizzato in produzione dati, per i test d'integrazione e per il testing dello stream processing;
-        \item Accessibile agli altri container attraverso l'indirizo \textit{kafka:9092}.
+        \item Utilizzato in produzione dati per i test d'integrazione e per il testing dello stream processing;
+        \item Accessibile agli altri container attraverso l'indirizzo \textit{kafka:9092}.
     \end{itemize}
 \end{itemize}
 \subsection{Processing layer}
@@ -1807,15 +1808,15 @@ La sorgente dati presenta due container:
     \item \textbf{Container jobmanager:}
     \begin{itemize}
         \item Gestisce l'esecuzione dei job;
-        \item Centro nodale di coordinamento di Flink.
+        \item Centro nodale di coordinamento di \glossterm{Flink}.
     \end{itemize}
     \item \textbf{Container taskmanager:}
     \begin{itemize}
-        \item Gestisce le operazioni di stream processing definite.
+        \item Gestisce le operazioni di \glossterm{stream processing} definite.
     \end{itemize}
     \item \textbf{Container flink-deployer:}
     \begin{itemize}
-        \item Esegue \glossterm{Flink} e in particolare provvede all'inizializzazione del jobmanager e del taskmanager.
+        \item Esegue Flink e in particolare provvede all'inizializzazione del jobmanager e del taskmanager.
     \end{itemize}
 \end{itemize}
 \subsection{Storage layer}
@@ -1933,6 +1934,7 @@ Di seguito è riportato, per ogni requisito, il corrispondente codice, secondo l
 \end{longtable}
 \newpage
 \rowcolors{2}{gray!20}{white}
+\setcounter{row}{0}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
     \hline
     \rowcolor{white}
@@ -1955,6 +1957,7 @@ Di seguito è riportato, per ogni requisito, il corrispondente codice, secondo l
 \end{longtable}
 \newpage
 \rowcolors{2}{gray!20}{white}
+\setcounter{row}{0}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
     \hline
     \rowcolor{white}
@@ -1977,6 +1980,7 @@ Di seguito è riportato, per ogni requisito, il corrispondente codice, secondo l
 \end{longtable}
 \newpage
 \rowcolors{2}{gray!20}{white}
+\setcounter{row}{0}
 \begin{longtable}{|>{\centering\arraybackslash}p{1.2cm}|>{\centering\arraybackslash}p{2cm}|>{\centering\arraybackslash}p{8.5cm}|>{\centering\arraybackslash}p{3cm}|}
     \hline
     \rowcolor{white}
@@ -1991,12 +1995,11 @@ Di seguito è riportato, per ogni requisito, il corrispondente codice, secondo l
             RP-\rownumber & Obbligatorio & Il \glossterm{sistema} deve avere un tempo di elaborazione massimo di 10 secondi, dal momento in cui il dato viene inserito a quando viene effettivamente visualizzato. Non viene considerata la latenza di rete. & Soddisfatto \\ \hline
 \end{longtable}
 \subsection{Grafici requisiti soddisfatti}
-Di seguito è presentato il grafico dei requisiti soddisfatti. Si può vedere come il 99\% dei requisiti, ovvero tutti i requisiti obbligatori e desiderabili siano stati rispettati. L'unico requisito che non ha raggiunto lo stato di adempimento è quello designato come opzionale (RF-79).
+Di seguito è presentato il grafico dei requisiti soddisfatti. Si può vedere come il 99\% dei requisiti, ovvero tutti i requisiti obbligatori e desiderabili, siano stati rispettati. L'unico requisito che non ha raggiunto lo stato di adempimento è quello designato come opzionale (RF-79).
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images_st/torta.png}
     \caption{Grafico dei requisiti soddisfatti.}
     \label{fig:Grafico dei requisiti soddisfatti}
 \end{figure}
-
 \end{document}
