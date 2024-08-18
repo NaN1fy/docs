@@ -109,7 +109,7 @@
 			\vspace{3mm}
 			{\\\large{\textsc{Guglielmo Barison}\\}} 
 			{\large{\textsc{Veronica Tecchiati}\\}} 
-			{\large{\textsc{XXXX XXXX}\\}}
+			{\large{\textsc{Linda Barbiero}\\}}
 			
 		}
 		\vspace{2mm}\vspace{2mm}
@@ -132,8 +132,8 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-  		    0.6.0 & 2024-08-16 & Completamento sezione \ref{sec:arc} e rifiniture. & Davide Donanzan &  \\\\
-  		    0.5.0 & 2024-08-15 & Continuazione sezione \ref{sec:arc}. & Pietro Busato &  \\\\
+  		    0.6.0 & 2024-08-16 & Completamento sezione \ref{sec:arc} e rifiniture. & Davide Donanzan &  Linda Barbiero \\\\
+  		    0.5.0 & 2024-08-15 & Continuazione sezione \ref{sec:arc}. & Pietro Busato & Linda Barbiero \\\\
   		    0.4.0 & 2024-08-12 & Stesura sezione \ref{sec:arc} e \ref{sec:dep}. & Pietro Busato & Veronica Tecchiati \\\\
   		    0.3.0 & 2024-08-10 & Completamento sezione \ref{sec:trac}. & Davide Donanzan & Pietro Busato \\\\
   		    0.2.0 & 2024-08-09 & Continuazione sezione \ref{sec:tec} e stesura sezione \ref{sec:trac}. & Davide Donanzan & Pietro Busato \\\\
@@ -464,7 +464,7 @@ Linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizza
     \begin{itemize}
         \item Implementazione di \glossterm{Flink};
         \item Gestione ed elaborazione di dati provenienti da \glossterm{topic} di \glossterm{Kafka};
-        \item Reindirizzamento di dati elaborati verso un topic di Kafka.
+        \item Reindirizzamento di dati elaborati verso un \glossterm{topic} di Kafka.
     \end{itemize}
 \end{itemize}
 \subsubsection{\glossterm{YAML}}
@@ -494,7 +494,7 @@ dall’Apache Software Foundation. Progettata per gestire flussi di dati in temp
 \begin{itemize}
     \item \textbf{Versione:} 3.7.0;
     \item \textbf{Documentazione:} \href{https://kafka.apache.org/20/documentation.html}{\color{myblue}https://kafka.apache.org/20/documentation.html} (Ultimo accesso: \today)
-    \item \textbf{Utilizzo:} nel nostro prodotto Kafka agisce da \glossterm{broker}, ricevendo i dati dai produttori, ovvero il generatore di dati in \glossterm{python} e rendendoli disponibili ai consumer. I consumer sono due:
+    \item \textbf{Utilizzo:} nel nostro prodotto Kafka agisce da \glossterm{broker}, ricevendo i dati dai produttori, ovvero il generatore di dati in \glossterm{Python} e rendendoli disponibili ai consumer. I consumer sono due:
     \begin{itemize}
         \item \glossterm{ClickHouse:} i dati vengono resi disponibili per essere archiviati nel \glossterm{database} suddivisi per \glossterm{topic};
         \item \glossterm{Flink:} i dati sono resi disponibili per analisi e elaborazione in tempo reale attraverso \glossterm{stream processing}.
@@ -506,7 +506,7 @@ Apache Flink è un \glossterm{framework} per l'elaborazione di flussi e l'elabor
 \begin{itemize}
     \item \textbf{Versione:} 1.18.1;
     \item \textbf{Documentazione:} \href{https://nightlies.apache.org/flink/flink-docs-stable/}{\color{myblue}https://nightlies.apache.org/flink/flink-docs-stable/} (Ultimo accesso: \today)
-    \item \textbf{Utilizzo:} nel prodotto, Flink agisce da consumer degli stream dati simulati dal generatore \glossterm{python} e ottenuti da \glossterm{Kafka}, detto producer. Ottenuti gli stream li elabora e inserisce in un nuovo e apposito \glossterm{topic} di Kafka.
+    \item \textbf{Utilizzo:} nel prodotto, Flink agisce da consumer degli stream dati simulati dal generatore \glossterm{Python} e ottenuti da \glossterm{Kafka}, detto producer. Ottenuti gli stream li elabora e inserisce in un nuovo e apposito \glossterm{topic} di Kafka.
     \end{itemize}
 \subsubsection{\glossterm{ClickHouse}}
 Clickhouse è un \glossterm{sistema} di gestione di \glossterm{database} (DBMS) di tipo colonnare,
@@ -531,7 +531,7 @@ Grafana è una piattaforma open-source per la visualizzazione e l'analisi intera
 \subsection{Modello architetturale}
 L'applicativo basa il funzionamento sulla gestione e sull'elaborazione di stream continui di dati eterogenei in tempo reale ma fornendo, al tempo stesso, la possibilità di immagazzinare tali dati per un'analisi su più larga scala di batch dati. Per sviluppare tale \glossterm{sistema} abbiamo adottato la \glossterm{k-architecture}.
 \subsubsection{\glossterm{k-architecture}}
-L’architettura Kappa è un modello di elaborazione e processamento per la gestione di stream di dati che offre un’alternativa all’architettura Lambda. La caratteristica principale di questa architettura è permettere lo sviluppo sia di stream processing che di batch processing all’interno di un unico stack tecnologico, mantenendo il \glossterm{sistema} in real time.
+L’architettura Kappa è un modello di elaborazione e processamento per la gestione di stream di dati che offre un’alternativa all’architettura Lambda. La caratteristica principale di questa architettura è permettere lo sviluppo sia di \glossterm{stream processing} che di batch processing all’interno di un unico stack tecnologico, mantenendo il \glossterm{sistema} in real time.
 \subsubsection{Vantaggi}
 \begin{itemize}
     \item Minore complessità nell'implementazione e nella manutenzione;
@@ -565,9 +565,9 @@ Il diagramma presentato qui di seguito rappresenta il percorso compiuto da una q
     \label{fig:Diagramma del flusso dei dati}
 \end{figure}
 \begin{itemize}
-    \item \textbf{Generazione dati:} I dati, prodotti nella realtà dal rilevamento di sensori fisici, vengono qui simulati attraverso dei generatori verosimili nel loro funzionamento e campionamento. I dati generati vengono trasportati poi al broker \glossterm{Kafka} in formato \glossterm{JSON} e indirizzati ai rispettivi topic.
-    \item \textbf{Stream processing e instradamento:} Una volta arrivati su \glossterm{Kafka} e indirizzati sui topic di appartenenza, i dati vengono direttamente instradati e archiviati su \glossterm{ClickHouse} tramite Kafka Engine, materialized view e MergeTree. \\
-    Alcuni dati possono, tuttavia, venire elaborati tramite stream processing attraverso Apache \glossterm{Flink}, prima di venire reimmessi in un topic apposito e quindi archiviati sul database Clickhouse. Nel nostro caso i dati interessati sono: 
+    \item \textbf{Generazione dati:} I dati, prodotti nella realtà dal rilevamento di sensori fisici, vengono qui simulati attraverso dei generatori verosimili nel loro funzionamento e campionamento. I dati generati vengono trasportati poi al broker \glossterm{Kafka} in formato \glossterm{JSON} e indirizzati ai rispettivi \glossterm{topic}.
+    \item \textbf{Stream processing e instradamento:} Una volta arrivati su \glossterm{Kafka} e indirizzati sui \glossterm{topic} di appartenenza, i dati vengono direttamente instradati e archiviati su \glossterm{ClickHouse} tramite Kafka Engine, materialized view e MergeTree. \\
+    Alcuni dati possono, tuttavia, venire elaborati tramite \glossterm{stream processing} attraverso Apache \glossterm{Flink}, prima di venire reimmessi in un \glossterm{topic} apposito e quindi archiviati sul database Clickhouse. Nel nostro caso i dati interessati sono: 
     \begin{itemize}
     	\item Temperatura e umidità, sia inviati individualmente che combinati per creare un nuovo tipo di dato, ovvero la temperatura percepita;
     	\item Pagamenti e Soste di un parcheggio, sia inviati individualmente che combinati per creare un nuovo tipo di dato, ovvero l'efficienza parcheggio.
@@ -576,7 +576,7 @@ Il diagramma presentato qui di seguito rappresenta il percorso compiuto da una q
 \end{itemize}
 \clearpage
 \subsection{Architettura del generatore dati}
-Il generatore di dati in \glossterm{pyhton} è una componente che punta a simulare l'acquisizione di dati da parte di sensori fisici dislocati nel suolo cittadino. Non è parte effettiva dello stack tecnologico alla quale il \glossterm{capitolato} punta ma è parte necessaria per il corretto sviluppo dell'applicativo e per l'analisi del funzionamento delle tecnologie implementate. A seguito, verrà presentata l’architettura individuata mediante l’utilizzo di diagrammi delle classi e relative descrizioni e verranno motivate le scelte dei design pattern individuati in quanto scelte progettuali.
+Il generatore di dati in \glossterm{Pyhton} è una componente che punta a simulare l'acquisizione di dati da parte di sensori fisici dislocati nel suolo cittadino. Non è parte effettiva dello stack tecnologico alla quale il \glossterm{capitolato} punta ma è parte necessaria per il corretto sviluppo dell'applicativo e per l'analisi del funzionamento delle tecnologie implementate. A seguito, verrà presentata l’architettura individuata mediante l’utilizzo di diagrammi delle classi e relative descrizioni e verranno motivate le scelte dei design pattern individuati in quanto scelte progettuali.
 \subsubsection{Struttura generale}
 La struttura generale del simulatore prevede la presenza di tre moduli. Il modulo dei sensori genera i dati su richiesta del modulo dei thread che a sua volta invoca il modulo writer per inviare il dato generato a \glossterm{Kafka}.
 Nella figura è presente solo la classe concreta \verb|TemperatureSensor| che implementa \verb|SensorInterface|, poiché le altre sono analoghe.
@@ -607,7 +607,7 @@ Design pattern utilizzati:
 \end{itemize}
 Le classi implementate sono:
 \begin{itemize}
-    \item \textbf{SensorInterface}
+    \item \textbf{SensorInterface:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -626,7 +626,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{TemperatureSensor}
+    \item \textbf{TemperatureSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -639,7 +639,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{HumiditySensor}
+    \item \textbf{HumiditySensor:}
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
@@ -648,7 +648,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{PrecipitationIntensitySensor}
+    \item \textbf{PrecipitationIntensitySensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -665,7 +665,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{AirPollutionSensor}
+    \item \textbf{AirPollutionSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -681,7 +681,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{WaterLevelSensor}
+    \item \textbf{WaterLevelSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -694,7 +694,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ParkingSensor}
+    \item \textbf{ParkingSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -711,7 +711,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{PaymentParkingSensor}
+    \item \textbf{PaymentParkingSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -725,7 +725,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ElectricalFailureSensor}
+    \item \textbf{ElectricalFailureSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -740,7 +740,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{WasteFillingSensor}
+    \item \textbf{WasteFillingSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -758,7 +758,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ChargingStationSensor}
+    \item \textbf{ChargingStationSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -775,7 +775,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{PaymentStationSensor}
+    \item \textbf{PaymentStationSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -789,7 +789,7 @@ Le classi implementate sono:
             \item \textbf{getType(): string[public]} - Funzione che ritorna il tipo di sensore.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ChargeConsumptionSensor}
+    \item \textbf{ChargeConsumptionSensor:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -825,13 +825,13 @@ Design pattern utilizzati:
     \\Questo pattern è implementato nella classe astratta \verb|StreamWriterInterface| la quale offre diverse strategie per la scrittura dei dati. Sono state implementate due sottoclassi concrete:
     \begin{itemize}
         \item \textbf{StdoutStreamWriter:} Stampa il dato sul terminale;
-        \item \textbf{KafkaStreamWriter:} Invia messaggi ai topic di \glossterm{Kafka}. 
+        \item \textbf{KafkaStreamWriter:} Invia messaggi ai \glossterm{topic} di \glossterm{Kafka}. 
     \end{itemize}
     Quest'ultima classe permette la scrittura chiamando un producer. Con ottica di una possibile estensibilità è previsto che il producer chiamato sia un oggetto della classe \verb|KafkaProducer|, estensione della classe \verb|ProducerInterface|.
 \end{itemize}
 Le classi implementate sono:
 \begin{itemize}
-    \item \textbf{StreamWriterInterface}
+    \item \textbf{StreamWriterInterface:}
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
@@ -839,7 +839,7 @@ Le classi implementate sono:
             \item \textbf{write(data: string): void[public]} - Metodo astratto per la scrittura dei dati.
         \end{itemize}
     \end{itemize}
-    \item \textbf{StdoutStreamWriter}
+    \item \textbf{StdoutStreamWriter:}
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
@@ -847,32 +847,32 @@ Le classi implementate sono:
             \item \textbf{write(data: string): void[public]} - Metodo per la scrittura dei dati su terminale.
         \end{itemize}
     \end{itemize}
-    \item \textbf{KafkaStreamWriter}
+    \item \textbf{KafkaStreamWriter:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
             \item \textbf{producer: KafkaProducer[private]} - Producer Kafka;
-            \item \textbf{topic: string[private]} - Topic per Kafka.
+            \item \textbf{topic: string[private]} - \glossterm{topic} per Kafka.
         \end{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{accept(visitor, sensor, sim\_clss, config: Dict): void[public]} - Metodo per accettazione del visitor per Kafka ourtput;
-            \item \textbf{write(data: string): void[public]} - Metodo per l'invio di dati a topic di Kafka.
+            \item \textbf{write(data: string): void[public]} - Metodo per l'invio di dati a \glossterm{topic} di Kafka.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ProducerInterface}
+    \item \textbf{ProducerInterface:}
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{produce(data: string, callback: Callable): void[public]} - Metodo astratto per produrre messaggi per Kafka.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ProducerInterface}
+    \item \textbf{KafkaProducer:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
             \item \textbf{producer: Producer[private]} - Producer della libreria confluent-kafka;
-            \item \textbf{topic: string[private]} - Topic per Kafka.
+            \item \textbf{topic: string[private]} - \glossterm{topic} per Kafka.
         \end{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
@@ -897,7 +897,7 @@ Design pattern utilizzati:
 \end{itemize}
 Le classi implementate sono:
 \begin{itemize}
-    \item \textbf{SimulatorControllerFactory}
+    \item \textbf{SimulatorControllerFactory:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -915,7 +915,7 @@ Le classi implementate sono:
             \item \textbf{forgeContorller(): SimulatorController[public]} - Metodo per la creazione del controller e dei thread da esso gestiti.
         \end{itemize}
     \end{itemize}
-    \item \textbf{SimulatorController}
+    \item \textbf{SimulatorController:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -928,7 +928,7 @@ Le classi implementate sono:
             \item \textbf{handle\_interrupt(): void[public]} - Metodo che gestisce le interruzioni e ferma tutti i thread.
         \end{itemize}
     \end{itemize}
-    \item \textbf{SimulatorThread}
+    \item \textbf{SimulatorThread}.
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -949,12 +949,12 @@ Il toolkit è un'insieme di funzioni, classi e costanti che abbaimo utilizzato p
 Di questo toolkit evidenzieremo:
 \begin{itemize}
     \item \textbf{sensor\_type:} Enumerazione contenente tutti i tipi di sensori;
-    \item \textbf{Coordinates:} Classe che identifica un oggetto coordinata:
+    \item \textbf{Coordinates:} Classe che identifica un oggetto coordinata;
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
             \item \textbf{longitude: float[private]} - Longitudine;
-            \item \textbf{latitude: float[private]} - Latitudine;
+            \item \textbf{latitude: float[private]} - Latitudine.
         \end{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
@@ -968,7 +968,7 @@ Di questo toolkit evidenzieremo:
 \end{itemize}
 \subsection{\glossterm{Kafka}}
 \subsubsection{Topic}
-I topic in \glossterm{Kafka} permettono di separare logicamente i diversi tipi di messaggi o eventi prodotti. Per separare le diverse misurazioni dei sensori è stato creato un topic dedicato per ogni tipologia di sensore.
+I \glossterm{topic} in \glossterm{Kafka} permettono di separare logicamente i diversi tipi di messaggi o eventi prodotti. Per separare le diverse misurazioni dei sensori è stato creato un \glossterm{topic} dedicato per ogni tipologia di sensore.
 Ciò facilita la creazione all’interno del database \glossterm{ClickHouse} delle tabelle, le quali acquisiscono automaticamente i dati consumandoli da Kafka.
 \subsubsection{Formato messaggi}
 I messaggi trasmessi a \glossterm{Kafka} sono in formato \glossterm{JSON} e possiedono la seguente struttura:
@@ -1007,7 +1007,7 @@ I job costituiscono una serie di operazioni di trasformazione sui flussi di dati
     \item \textbf{Trasformazioni:} operazioni che modificano i dati in ingresso;
     \item \textbf{Sink:} punto d'uscita del flusso elaborato.
 \end{itemize}
-Nel nostro caso le sorgenti sono dei topic \glossterm{Kafka}. I flussi ottenuti da questi topic vengono elaborati e poi immessi in un nuovo topic apposito.
+Nel nostro caso le sorgenti sono dei \glossterm{topic} \glossterm{Kafka}. I flussi ottenuti da questi \glossterm{topic} vengono elaborati e poi immessi in un nuovo \glossterm{topic} apposito.
 Per la definizione dei job, Flink mette a disposizine due API: DataStream API, che lavora con gli stream e con maggior controllo sul flusso dati, e Table API, che permette un'approccio basato sulle tabelle con sintassi simile a \glossterm{SQL}.
 Al fine di meglio gestire i flussi di dati, è stato utilizzato DataStream API.
 \subsubsection{Watermark}
@@ -1031,8 +1031,8 @@ e i coefficienti $c_i$ sono:
 \end{center}
 \clearpage
 \subsubsubsection{Architettura}
-Per l'implementazione del job è stata creata una classe dotata di un metodo \verb|main| che si occupa di inizializzare l’ambiente di esecuzione e definire sorgente e sink dei dati. Successivamente chiama il metodo \verb|exec| per eseguire il job vero e proprio. Come sorgente di dati, si definiscono i topic relativi
-alla temperatura e all’umidita, leggendo le variabili d’ambiente relative all’indirizzo del bootstrap server, deserializzate e fornite di watermark. L'esecuzione del job chiama poi le funzioni per l'elaborazione degli stream. Infine pubblica i risultati ad ogni intervallo di tempo definito dalla window, nel topic dedicato allo heat index.
+Per l'implementazione del job è stata creata una classe dotata di un metodo \verb|main| che si occupa di inizializzare l’ambiente di esecuzione e definire sorgente e sink dei dati. Successivamente chiama il metodo \verb|exec| per eseguire il job vero e proprio. Come sorgente di dati, si definiscono i \glossterm{topic} relativi
+alla temperatura e all’umidita, leggendo le variabili d’ambiente relative all’indirizzo del bootstrap server, deserializzate e fornite di watermark. L'esecuzione del job chiama poi le funzioni per l'elaborazione degli stream. Infine pubblica i risultati ad ogni intervallo di tempo definito dalla window, nel \glossterm{topic} dedicato allo heat index.
 \\Per ciascuna fase di elaborazione dei dati viene definita una classe che estende la funzione necessaria all'operazione che si vuole effettuare.
 \\Sono stati implementati i seguenti pattern:
 \begin{itemize}
@@ -1047,13 +1047,13 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
 \end{figure}
 \subsubsubsection{Classi implementate}
 \begin{itemize}
-    \item \textbf{HeatIndexJob}
+    \item \textbf{HeatIndexJob:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
-            \item \textbf{TEMPERATURE\_TOPIC: String[private static final]} - Nome del topic per la temperatura;
-            \item \textbf{HUMIDITY\_TOPIC: String[private static final]} - Nome del topic per l'umidità;
-            \item \textbf{HEAT\_INDEX\_TOPIC: String[private static final]} - Nome del topic per la temperatura percepita;
+            \item \textbf{TEMPERATURE\_TOPIC: String[private static final]} - Nome del \glossterm{topic} per la temperatura;
+            \item \textbf{HUMIDITY\_TOPIC: String[private static final]} - Nome del \glossterm{topic} per l'umidità;
+            \item \textbf{HEAT\_INDEX\_TOPIC: String[private static final]} - Nome del \glossterm{topic} per la temperatura percepita;
             \item \textbf{GROUP\_ID: String[private static final]} - Nome del gruppo;
             \item \textbf{temperatureSource: DataStream<TemperatureTopic>[private]} - Sorgente dati per la temperatura;
             \item \textbf{humiditySource: DataStream<HumidityTopic>[private]} - Sorgente dati per l'umidità;
@@ -1067,15 +1067,15 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
             \item \textbf{exec(env: StreamExecutionEnvironment): void[public,static]} - Metodo che applica le trasformazioni.
         \end{itemize}
     \end{itemize}
-    \item \textbf{HeatIndexFunction}
+    \item \textbf{HeatIndexFunction}:
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{join(temp: TemperatureTopic, humidity: HumidityTopic): HeatIndexTopic[public]} - Metodo per il join dei dati dei topic di temperatura e umidità per la loro elaborazione e immissione nel topic heat\_index;
+            \item \textbf{join(temp: TemperatureTopic, humidity: HumidityTopic): HeatIndexTopic[public]} - Metodo per il join dei dati dei \glossterm{topic} di temperatura e umidità per la loro elaborazione e immissione nel \glossterm{topic} heat\_index;
             \item \textbf{calculateHeatIndex(temperature: double, humidity: double): double[private]} - Metodo che calcola la temperatura percepita.
         \end{itemize}
     \end{itemize}
-    \item \textbf{TemperatureReading}
+    \item \textbf{TemperatureReading:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1089,7 +1089,7 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
             \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato di temperatura.
         \end{itemize}
     \end{itemize}
-    \item \textbf{HumidityReading}
+    \item \textbf{HumidityReading:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1103,7 +1103,7 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
             \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato di umidità.
         \end{itemize}
     \end{itemize}
-    \item \textbf{HeatIndexReading}
+    \item \textbf{HeatIndexReading:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1117,7 +1117,7 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
             \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato di heat index.
         \end{itemize}
     \end{itemize}
-    \item \textbf{TemperatureTopic}
+    \item \textbf{TemperatureTopic:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1127,10 +1127,10 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con un messaggio per topic temperature.
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con un messaggio per \glossterm{topic} temperature.
         \end{itemize}
     \end{itemize}
-    \item \textbf{HumidityTopic}
+    \item \textbf{HumidityTopic:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1140,10 +1140,10 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con un messaggio per topic humidity.
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con un messaggio per \glossterm{topic} humidity.
         \end{itemize}
     \end{itemize}
-    \item \textbf{HeatIndexTopic}
+    \item \textbf{HeatIndexTopic:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1153,10 +1153,10 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con un messaggio per topic heat\_index.
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con un messaggio per \glossterm{topic} heat\_index.
         \end{itemize}
     \end{itemize}
-    \item \textbf{KafkaJsonTemperatureDeserializationSchema}
+    \item \textbf{KafkaJsonTemperatureDeserializationSchema:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1168,10 +1168,10 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
-            \item \textbf{deserialize(message: byte[]): TemperatureTopic[public]} - Metodo per la deserializzazione del messaggio dal topic temperature.
+            \item \textbf{deserialize(message: byte[]): TemperatureTopic[public]} - Metodo per la deserializzazione del messaggio dal \glossterm{topic} temperature.
         \end{itemize}
     \end{itemize}
-    \item \textbf{KafkaJsonHumidityDeserializationSchema}
+    \item \textbf{KafkaJsonHumidityDeserializationSchema:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1183,10 +1183,10 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
-            \item \textbf{deserialize(message: byte[]): HumidityTopic[public]} - Metodo per la deserializzazione del messaggio dal topic humidity.
+            \item \textbf{deserialize(message: byte[]): HumidityTopic[public]} - Metodo per la deserializzazione del messaggio dal \glossterm{topic} humidity.
         \end{itemize}
     \end{itemize}
-    \item \textbf{KafkaJsonHISerializationSchema}
+    \item \textbf{KafkaJsonHISerializationSchema:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1198,7 +1198,7 @@ alla temperatura e all’umidita, leggendo le variabili d’ambiente relative al
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
-            \item \textbf{serialize(element: HeatIndexTopic): byte[][public]} - Metodo che serializza il messaggio per il topic heat\_index e lancia un eccezione se fallisce.
+            \item \textbf{serialize(element: HeatIndexTopic): byte[][public]} - Metodo che serializza il messaggio per il \glossterm{topic} heat\_index e lancia un eccezione se fallisce.
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -1223,13 +1223,13 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
 \end{figure}
 \subsubsubsection{Classi implementate}
 \begin{itemize}
-    \item \textbf{ParkingEfficiencyJob}
+    \item \textbf{ParkingEfficiencyJob:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
-            \item \textbf{PARKING\_TOPIC: String[private static final]} - Nome del topic per i parcheggi;
-            \item \textbf{PAYMENT\_PARKING\_TOPIC: String[private static final]} - Nome del topic per i pagamenti dei parcheggi;
-            \item \textbf{PARKING\_EFFICIENCY\_TOPIC: String[private static final]} - Nome del topic per l'efficienza dei parcheggi;
+            \item \textbf{PARKING\_TOPIC: String[private static final]} - Nome del \glossterm{topic} per i parcheggi;
+            \item \textbf{PAYMENT\_PARKING\_TOPIC: String[private static final]} - Nome del \glossterm{topic} per i pagamenti dei parcheggi;
+            \item \textbf{PARKING\_EFFICIENCY\_TOPIC: String[private static final]} - Nome del \glossterm{topic} per l'efficienza dei parcheggi;
             \item \textbf{GROUP\_ID: String[private static final]} - Nome del gruppo;
             \item \textbf{parkingSource: DataStream<ParkingTopic>[private]} - Sorgente dati per i parcheggi;
             \item \textbf{paymentParkingSource: DataStream<PaymentParkingTopic>[private]} - Sorgente dati per i pagamenti;
@@ -1243,35 +1243,35 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
             \item \textbf{exec(env: StreamExecutionEnvironment): void[public,static]} - Metodo che applica le trasformazioni.
         \end{itemize}
     \end{itemize}
-    \item \textbf{AvgParkingPaymentFunction}
+    \item \textbf{AvgParkingPaymentFunction}:
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per il calcolo del pagamento medio in un parcheggio.
         \end{itemize}
     \end{itemize}
-    \item \textbf{CountCarsFunction}
+    \item \textbf{CountCarsFunction}:
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per il calcolo del conteggio delle soste effettuate in un parcheggio.
         \end{itemize}
     \end{itemize}
-    \item \textbf{TotalParkingPaymentFunction}
+    \item \textbf{TotalParkingPaymentFunction}:
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per il calcolo del ricavato totale di un parcheggio.
         \end{itemize}
     \end{itemize}
-    \item \textbf{FirstParkingEfficiencyFunction}
+    \item \textbf{FirstParkingEfficiencyFunction}:
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per il calcolo dell'efficienza di un parcheggio.
         \end{itemize}
     \end{itemize}
-    \item \textbf{SecondParkingEfficiencyFunction}
+    \item \textbf{SecondParkingEfficiencyFunction}:
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1284,7 +1284,7 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
             \item \textbf{apply(key: String, window: TimeWindow, input: Iterable<PaymentParkingTopic>, out: Collector<PaymentParkingTopic>): void[public]} - Metodo per l'effettivo calcolo dell'efficienza di un parcheggio.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ParkingReading}
+    \item \textbf{ParkingReading:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1298,7 +1298,7 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
             \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato riguardante i parcheggi.
         \end{itemize}
     \end{itemize}
-    \item \textbf{PaymentParkingReading}
+    \item \textbf{PaymentParkingReading:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1312,7 +1312,7 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
             \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato riguardante i pagamenti.
         \end{itemize}
     \end{itemize}
-    \item \textbf{TotalParkingReading}
+    \item \textbf{TotalParkingReading:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1326,7 +1326,7 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
             \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato riguardante dei parcheggi.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ParkingEfficiencyReading}
+    \item \textbf{ParkingEfficiencyReading:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1340,14 +1340,14 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
             \item \textbf{toString(): String[public]} - Metodo che ritorna una stringa con un dato riguardante l'efficienza dei parcheggi.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ParkingEfficiencySupportReading}
+    \item \textbf{ParkingEfficiencySupportReading:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
             \item \textbf{cars\_per\_avg\_bill: Double[public]} - Numero di macchine per pagamento medio.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ParkingTopic}
+    \item \textbf{ParkingTopic:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1357,10 +1357,10 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic parking.
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per \glossterm{topic} parking.
         \end{itemize}
     \end{itemize}
-    \item \textbf{PaymentParkingTopic}
+    \item \textbf{PaymentParkingTopic:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1370,10 +1370,10 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic payment\_parking.
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per \glossterm{topic} payment\_parking.
         \end{itemize}
     \end{itemize}
-    \item \textbf{TotalParkingTopic}
+    \item \textbf{TotalParkingTopic:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1383,10 +1383,10 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic total\_parking.
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per \glossterm{topic} total\_parking.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ParkingEfficiencyTopic}
+    \item \textbf{ParkingEfficiencyTopic:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1396,10 +1396,10 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic parking\_efficiency.
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per \glossterm{topic} parking\_efficiency.
         \end{itemize}
     \end{itemize}
-    \item \textbf{ParkingEfficiencySupportTopic}
+    \item \textbf{ParkingEfficiencySupportTopic:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1409,10 +1409,10 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
     \begin{itemize}
         \item \textbf{Metodi:}
         \begin{itemize}
-            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per topic parking\_efficiency\_support.
+            \item \textbf{toString(): String[public]} - Metodo ritorna stringa con messaggio per \glossterm{topic} parking\_efficiency\_support.
         \end{itemize}
     \end{itemize}
-    \item \textbf{KafkaJsonParkingDeserializationSchema}
+    \item \textbf{KafkaJsonParkingDeserializationSchema:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1424,10 +1424,10 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
-            \item \textbf{deserialize(message: byte[]): ParkingTopic[public]} - Metodo per la deserializzazione del messaggio dal topic parking.
+            \item \textbf{deserialize(message: byte[]): ParkingTopic[public]} - Metodo per la deserializzazione del messaggio dal \glossterm{topic} parking.
         \end{itemize}
     \end{itemize}
-    \item \textbf{KafkaJsonPaymentParkingDeserializationSchema}
+    \item \textbf{KafkaJsonPaymentParkingDeserializationSchema:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1439,10 +1439,10 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
-            \item \textbf{deserialize(message: byte[]): PaymentParkingTopic[public]} - Metodo per la deserializzazione del messaggio dal topic payent\_parking.
+            \item \textbf{deserialize(message: byte[]): PaymentParkingTopic[public]} - Metodo per la deserializzazione del messaggio dal \glossterm{topic} payent\_parking.
         \end{itemize}
     \end{itemize}
-    \item \textbf{KafkaJsonPPSerializationSchema}
+    \item \textbf{KafkaJsonPPSerializationSchema:}
     \begin{itemize}
         \item \textbf{Attributi:}
         \begin{itemize}
@@ -1454,7 +1454,7 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
         \item \textbf{Metodi:}
         \begin{itemize}
             \item \textbf{open(context: InitializationContext): void[public]} - Metodo che crea objectMapper dal contesto;
-            \item \textbf{serialize(element: ParkingEfficiencyTopic): byte[][public]} - Metodo che serializza il messaggio per il topic parking\_efficiency e lancia un eccezione se fallisce.
+            \item \textbf{serialize(element: ParkingEfficiencyTopic): byte[][public]} - Metodo che serializza il messaggio per il \glossterm{topic} parking\_efficiency e lancia un eccezione se fallisce.
         \end{itemize}
     \end{itemize}
 \end{itemize}
@@ -1463,7 +1463,7 @@ L'architettura non esula da quanto già specificato nel job per calcolare la tem
 Il database ClickHouse ha come scopo quello di memorizzare i dati provenienti dai sensori in modo da poterli analizzare e visualizzare in seguito. I dati vengono acquisiti suddivisi per topic, uno per ogni tipo di sensore, e poi memorizzati nelle apposite tabelle.
 \subsubsection{Struttura}
 \begin{itemize}
-    \item \textbf{Tabella per Kafka topic:} Per ogni tipo di sensore viene creata una tabella contenente una stringa di dati grezzi in formato \glossterm{JSON} per ogni messaggio proveniente dal topic dedicato. Questo tipo di tabelle vengono popolate tramite il ClickHouse Kafka Engine, che inserisce all’interno della tabella i messaggi con il topic corrispondente.
+    \item \textbf{Tabella per Kafka topic:} Per ogni tipo di sensore viene creata una tabella contenente una stringa di dati grezzi in formato \glossterm{JSON} per ogni messaggio proveniente dal \glossterm{topic} dedicato. Questo tipo di tabelle vengono popolate tramite il ClickHouse Kafka Engine, che inserisce all’interno della tabella i messaggi con il \glossterm{topic} corrispondente.
     \\La creazione di tale tabella avviene per provisioning tramite il seguente codice \glossterm{SQL} sostituendo il corretto tipo di sensore:
     \begin{verbatim}
     CREATE TABLE sc_database.topic_sensor_type
@@ -1471,7 +1471,7 @@ Il database ClickHouse ha come scopo quello di memorizzare i dati provenienti da
         rawJSON String
     ) ENGINE = Kafka('kafka:9092', 'sensor_type', 'SyncCity', 'JSONAsString');
     \end{verbatim}
-    \item \textbf{Materialized View:} La materialized view, attraverso funzioni di estrazione, estrapola i valori dai dati grezzi delle topic tables e li assegna alle corrispondenti chiavi. Questa view sarà poi fondamentale per la creazione della tabella effettiva del database contenente i dati archiviati. La materialized view è un meccanismo che agevola le query permettendo un accesso semplificato ai dati. 
+    \item \textbf{Materialized View:} La materialized view, attraverso funzioni di estrazione, estrapola i valori dai dati grezzi delle \glossterm{topic} tables e li assegna alle corrispondenti chiavi. Questa view sarà poi fondamentale per la creazione della tabella effettiva del database contenente i dati archiviati. La materialized view è un meccanismo che agevola le query permettendo un accesso semplificato ai dati. 
     \\Vengono create tramite il seguente codice \glossterm{SQL}, sostituendo il corretto tipo di sensore:
     \begin{verbatim}
         CREATE MATERIALIZED VIEW sc_database.sensor_type_mv
@@ -1511,7 +1511,7 @@ Il database ClickHouse ha come scopo quello di memorizzare i dati provenienti da
 \subsubsection{Motori di archiviazione}
 Nell'ottica dell'archiviazione dei dati provenienti da \glossterm{Kafka}, \glossterm{ClickHouse} offre vari engine. In particolare, due sono stati utilizzati per la creazione delle tabelle per la persistenza dei dati generati:
 \begin{itemize}
-    \item \textbf{Kafka Engine:} permette di leggere la stringa \glossterm{JSON} contenente i dati grezzi provenienti dal broker e di iniettarla all’interno delle topic tables;
+    \item \textbf{Kafka Engine:} permette di leggere la stringa \glossterm{JSON} contenente i dati grezzi provenienti dal broker e di iniettarla all’interno delle \glossterm{topic} tables;
     \item \textbf{MergeTree:} permette di effettuare operazioni di inserimento ed eliminazione in modo efficiente e di effettuare query su intervalli di tempo specifici. Inoltre permette il popolamento delle tabelle con i dati estrapolati nelle materialized view. 
 \end{itemize}
 \subsubsection{Sensore di temperatura}
@@ -1617,7 +1617,7 @@ Nella tabella per i sensori di consumo delle colonnine di ricarica viene salvato
     \label{fig:Schema tabelle di tipo charge_consumption}
 \end{figure}
 \subsubsection{Calcolo della temperatura percepita}
-Il calcolo della temperatura percepita avviene attraverso stream processing, elaborando gli stream di temperatura e di umidità. Lo stream uscente è poi passato a \glossterm{Kafka} come nuovo e dedicato topic e possiede quindi una sua tabella specifica. Il valore di temperatura percepita calcolato è salvato in ``readings".
+Il calcolo della temperatura percepita avviene attraverso \glossterm{stream processing}, elaborando gli stream di temperatura e di umidità. Lo stream uscente è poi passato a \glossterm{Kafka} come nuovo e dedicato \glossterm{topic} e possiede quindi una sua tabella specifica. Il valore di temperatura percepita calcolato è salvato in ``readings".
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images_st/tabelle_heat_index.png}
@@ -1626,7 +1626,7 @@ Il calcolo della temperatura percepita avviene attraverso stream processing, ela
 \end{figure}
 \clearpage
 \subsubsection{Calcolo dell'efficienza dei parcheggi}
-Il calcolo dell'efficienza dei parcheggi avviene attraverso stream processing, elaborando gli stream di occupazione e pagamento dei parcheggi. Lo stream uscente è poi passato a \glossterm{Kafka} come nuovo e dedicato topic e possiede quindi una sua tabella specifica. Il valore di efficienza calcolato è salvato in ``readings".
+Il calcolo dell'efficienza dei parcheggi avviene attraverso \glossterm{stream processing}, elaborando gli stream di occupazione e pagamento dei parcheggi. Lo stream uscente è poi passato a \glossterm{Kafka} come nuovo e dedicato \glossterm{topic} e possiede quindi una sua tabella specifica. Il valore di efficienza calcolato è salvato in ``readings".
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{images_st/tabelle_parking_efficiency.png}
@@ -1637,8 +1637,8 @@ Il calcolo dell'efficienza dei parcheggi avviene attraverso stream processing, e
 \subsection{\glossterm{Grafana}}
 \glossterm{Grafana} permette la creazione di svariati tipi di \glossterm{dashboard} e \glossterm{widget} per la rappresentazione grafica dei dati simulati. L'utilizzo di tali dashboard è schermato dalla necessità di autenticarsi attarverso le credenziali fornite dall'amministratore di \glossterm{sistema}:
 \begin{itemize}
-    \item \textbf{Username:} admin
-    \item \textbf{Password:} admin
+    \item \textbf{Username:} admin;
+    \item \textbf{Password:} admin.
 \end{itemize}
 \subsubsection{Datasource}
 Come sorgente dati è stato impostato un collegamento con il database \glossterm{ClickHouse} grazie ad un plug-in installato attraverso file yaml di configurazione presente in ``/provisioning/datasources". Questo plugin di grafana consente di connettersi a un’istanza di ClickHous, di visualizzarne i dati in tempo reale ed eseguire query personalizzate.
@@ -1728,18 +1728,18 @@ Ai fini di una migliore organizzazione dei dati visualizzati e di una più effic
     \end{itemize}
 \end{itemize}
 \subsubsubsection{Exceeding Thresholds}
-Quest'ultima \glossterm{dashboard} si concentra sulla visualizzazione degli alert attivi. I pannelli sono divisi in due categorie:
+Quest'ultima \glossterm{dashboard} si concentra sulla visualizzazione degli allarmi attivi. I pannelli sono divisi in due categorie:
 \begin{itemize}
     \item \textbf{Riga Environmental Planning:}
     \begin{itemize}
-        \item Pannello \glossterm{alertlist} per tracciare lo stato degli alert relativi alla temperatura percepita;
-        \item Pannello \glossterm{alertlist} per tracciare lo stato degli alert relativi all'intensità di precipitazione;
-        \item Pannello \glossterm{alertlist} per tracciare lo stato degli alert relativi all'inquinamento dell'aria da PM10;
-        \item Pannello \glossterm{alertlist} per tracciare lo stato degli alert relativi al livello dell'acqua.
+        \item Pannello \glossterm{alertlist} per tracciare lo stato degli allarmi relativi alla temperatura percepita;
+        \item Pannello \glossterm{alertlist} per tracciare lo stato degli allarmi relativi all'intensità di precipitazione;
+        \item Pannello \glossterm{alertlist} per tracciare lo stato degli allarmi relativi all'inquinamento dell'aria da PM10;
+        \item Pannello \glossterm{alertlist} per tracciare lo stato degli allarmi relativi al livello dell'acqua.
     \end{itemize}
     \item \textbf{Riga Urban Planning:}
     \begin{itemize}
-        \item Pannello \glossterm{alertlist} per tracciare lo stato degli alert relativi al riempimento delle isole ecologiche.
+        \item Pannello \glossterm{alertlist} per tracciare lo stato degli allarmi relativi al riempimento delle isole ecologiche.
     \end{itemize}
 \end{itemize}
 \subsubsection{Variables}
@@ -1747,23 +1747,23 @@ Le variabili in \glossterm{Grafana} rendono le \glossterm{dashboard} dinamiche e
 interattive. Grazie a valori scelti dall'utente permettono di visualizzare dati provenienti da sensori diversi operando da filtro ma anche da metodo di confronto tra sensori dello stesso tipo.
 \\Le variabili nel progetto sono state implementate attraverso i file di provisioning. Nello specifico, nei file \glossterm{JSON} che descrivono le dashboard è possibile definire i valori che le variabili nei \glossterm{widget} possono assumere.
 \\Le variabili utilizzate riguardano unicamente lo specifico sensore analizzato per tipologia: un tipo di sensore può quindi confrontare nello stesso pannello tutti i sensori della stessa tipologia o concentrarsi nel monitoraggio di uno in particolare. Questo aumenta la versatilità di utilizzo delle dashboard.
-\subsubsection{Alerts}
+\subsubsection{Allarmi (Alerts)}
 \glossterm{Grafana} offre un \glossterm{sistema} di notifica per avvisare della presenza di anomalie nei dati quando si verificano determinate condizioni. Le notifiche possono essere inviate tramite diversi canali, tra cui email, \glossterm{Telegram} e \glossterm{Discord}.
-\\La configurazione di un alert avviene impostando una alert rule tramite query. L’alert si attiva quando la condizione impostata viene soddisfatta. Gli alert sono configurati per i seguenti eventi:
+\\La configurazione di un allarme avviene impostando una regola tramite query. Esso si attiva quando la condizione impostata viene soddisfatta. Gli allarmi sono configurati per i seguenti eventi:
 \begin{itemize}
     \item Quando un sensore di temperatura segnala una temperatura superiore ai 40°C  inferiore ai -10°C;
     \item Quando un sensore di intensità di precipitazione segnala un'intensità superiore ai 30 mm/h;
     \item Quando un sensore di inquinamento dell'aria segnala un valore di inquinamento da PM10 superiore a 80 µg / $\mbox{m}^{\mbox{3}}$;
     \item Quando un sensore di rilevazione del livello dell'acqua segnala un livello superiore a 80\% della capacità del bacino;
-    \item Quando un sensore di riempimento delle isole ecologiche segnala un riempimento superiore a 80\% della capacità del conferitore;
+    \item Quando un sensore di riempimento delle isole ecologiche segnala un riempimento superiore a 80\% della capacità del conferitore.
 \end{itemize}
-Gli alert possono trovarsi i quattro stati:
+Gli allarmi possono trovarsi i quattro stati:
 \begin{itemize}
     \item \textbf{No data:} Non ci sono dati in arrivo dal database;
     \item \textbf{Error:} Ci sono errori nei dati o nelle query dei pannelli;
-    \item \textbf{Normal:} Indica che un alert è disattivato e la condizione di alert non è soddisfatta.
-    \item \textbf{Pending:}Indica che la condizione per l’attivazione dell’alert è stata soddisfatta, ma non è ancora trascorso il periodo di valutazione;
-    \item \textbf{Firing:} Indica che un alert è stato attivato, la condizione di alert è stata soddisfatta per il periodo di valutazione definito. Viene quindi inviata una notifica ai canali impostati.
+    \item \textbf{Normal:} Indica che un allarme è disattivato e la sua condizione non è soddisfatta;
+    \item \textbf{Pending:}Indica che la condizione per l’attivazione dell’allarme è stata soddisfatta, ma non è ancora trascorso il periodo di valutazione;
+    \item \textbf{Firing:} Indica che un allarme è stato attivato, la sua condizione è stata soddisfatta per il periodo di valutazione definito. Viene quindi inviata una notifica ai canali impostati.
 \end{itemize}
 Le regole sono configurabili tramite l’interfaccia grafica successivamente inserite in formato yaml in ``/provisioning/alerting".
 \subsubsection{Canali di notifica}
@@ -1799,8 +1799,8 @@ La sorgente dati presenta due container:
     \item \textbf{Container kafka:}
     \begin{itemize}
         \item Esegue \glossterm{Kafka} per la gestione del flusso dei dati;
-        \item Utilizzato in produzione dati per i test d'integrazione e per il testing dello stream processing;
-        \item Accessibile agli altri container attraverso l'indirizzo \textit{kafka:9092}.
+        \item Utilizzato in produzione dati, per i test d'integrazione e per il testing dello \glossterm{stream processing};
+        \item Accessibile agli altri container attraverso l'indirizo \textit{kafka:9092}.
     \end{itemize}
 \end{itemize}
 \subsection{Processing layer}
@@ -1971,7 +1971,7 @@ Di seguito è riportato, per ogni requisito, il corrispondente codice, secondo l
             RV-\rownumber & Obbligatorio & La persistenza dei dati deve essere realizzata grazie ad un \glossterm{database} \glossterm{OLAP} colonnare come \glossterm{ClickHouse}. & Soddisfatto \\ \hline
             RV-\rownumber & Obbligatorio & Lo stream di dati deve essere gestito mediante un \glossterm{broker} come Apache \glossterm{Kafka}. & Soddisfatto \\ \hline
             RV-\rownumber & Obbligatorio & La visualizzazione dei dati deve essere consentita utilizzando una piattaforma di data-visualization come \glossterm{Grafana}. & Soddisfatto \\ \hline
-            RV-\rownumber & Obbligatorio & Lo stream processing deve essere realizzato mediante la tecnologia Apache Kafka. & Soddisfatto \\ \hline
+            RV-\rownumber & Obbligatorio & Lo \glossterm{stream processing} deve essere realizzato mediante la tecnologia Apache Kafka. & Soddisfatto \\ \hline
             RV-\rownumber & Obbligatorio & Il \glossterm{sistema} deve essere installato all'interno di un \glossterm{container}, utilizzando un servizio di virtualizzazione come \glossterm{Docker}. & Soddisfatto \\ \hline
             RV-\rownumber & Obbligatorio & I dati generati dal simulatore devono essere in formato \glossterm{JSON}. & Soddisfatto \\ \hline
             RV-\rownumber & Obbligatorio & Il \glossterm{sistema} deve eseguire correttamente su dispositivi dotati di processore a 64 bit Quad-Core da 2.4 GHz, 6 GB di RAM, 4 GB di spazio di archiviazione libero su disco e una connessione ad internet stabile. & Soddisfatto \\ \hline
