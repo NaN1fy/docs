@@ -57,7 +57,7 @@ jobs:
           docker_image: ghcr.io/xu-cheng/texlive-small:latest
           pre_compile: |
             tlmgr update --self && tlmgr update --all
-            tlmgr install subfiles cbfonts-fd lipsum footmisc csquotes plex fontaxes mathabx textgreek makecell wrapfig siunitx adjustbox floatflt capt-of varwidth datatool xstring csvsimple 
+            tlmgr install subfiles cbfonts-fd lipsum footmisc csquotes plex fontaxes mathabx textgreek makecell wrapfig siunitx adjustbox floatflt capt-of varwidth datatool xstring csvsimple xstring csvsimple ragged2e adjustbox threeparttable pgf pgfopts datetime2 enumitem xurl tabularx
       - name: set timestamp and version for builds of changed files and replace the old ones in the local copy of `main`
         run: |
           shopt -s globstar
