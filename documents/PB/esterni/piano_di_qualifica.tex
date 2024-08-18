@@ -261,9 +261,9 @@ La base della qualità del processo risiede nell'idea che, per ottenere un prodo
 		\toprule
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
-		MPC-RSI & Requirements stability index (RSI) & $\geq $ 75\%  & $\leq$ 100\% \\\\
-		MPC-SFIN & Structural Fan-In (SFIN) & - & Va massimizzato\\\\
-		MPC-SFOUT & Structural Fan-Out (SFOUT) & - & Va minimizzato\\
+		MPC-RSI & Requirements Stability Index (RSI) & $\geq $ 75\%  & $\leq$ 100\% \\
+		% MPC-SFIN & Structural Fan-In (SFIN) & - & Va massimizzato\\\\
+		% MPC-SFOUT & Structural Fan-Out (SFOUT) & - & Va minimizzato\\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
 	\end{tabular}
@@ -293,8 +293,7 @@ La base della qualità del processo risiede nell'idea che, per ottenere un prodo
 		\toprule
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
-		MPC-CC & Code Coverage (CC) & $\geq$ 80\% & 100\% \\\\
-		MPC-PT & Passed Test cases percentage (PT) & 100\% & 100\% \\
+		MPC-CC & Code Coverage (CC) & $\geq$ 80\% & 100\% \\
 		\bottomrule
 	\end{tabular}
 	\caption{Metriche per il \glossterm{processo} di verifica.}
@@ -396,8 +395,8 @@ Si riferisce alle caratteristiche di un'entità risultante dallo sviluppo softwa
 		\toprule
 		\textbf{Metrica}& \textbf{Descrizione} & \textbf{Valore accettabile} & \textbf{Valore ottimo} \\
 		\midrule
-		MPD-CC & Complessità Ciclomatica (CC) & 11-20 & 1-10 \\\\
-		MPD-CS & Code Smell (CS) & 0 & 0 \\
+		MPD-CC & Complessità Ciclomatica (CC) & 11-20 & 1-10 \\
+		% MPD-CS & Code Smell (CS) & 0 & 0 \\
 		\bottomrule
 	\end{tabular}
 	\caption{Valori accettabili e ottimi per ogni metrica riguardante la manutenibilità del prodotto.}
@@ -1503,6 +1502,24 @@ Coerentemente con quanto indicato dall'EAC, il valore di CPI è rimasto al di fu
 \textbf{\glossterm{RTB}:} VAC indica la variazione relativa del budget pianificato, ovvero il BAC, rispetto al budget stimato dall'EAC. L'intervallo di accettazione di questa metrica è posto ad una differenza in percentuale del 10\% rispetto al BAC.\\
 Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggiore del -10\%, indicando un EAC eccessivamente superiore rispetto al BAC pianificato. Le accortezze adottate negli \glossterm{Sprint} successivi hanno avuto gli effetti desiderati, portando il valore di VAC all'interno dell'intervallo di accettazione dal terzo Sprint.\\
 \textbf{\glossterm{PB}:} Sempre in linea con le metriche EAC e CPI, anche il VAC raggiunge valori ottimali.
+\subsection{\glossterm{Qualità} di \glossterm{processo} - Sviluppo}
+\subsubsection{MPC-RSI Requirements Stability Index}
+\renewcommand{\arraystretch}{2.5}
+\rowcolors{2}{gray!20}{white}
+\begin{longtable}{|>{\centering}p{3cm}|>{\centering\arraybackslash}p{3cm}|}
+    \hline
+    \rowcolor{white}
+    \textbf{Requisiti iniziali} & \textbf{Requisiti Finali} \\
+    \hline
+    \endfirsthead 
+    \rowcolor{white}
+    \caption{Tabella del numero di requisiti del progetto.} 
+    \label{table:Tabella del numero di requisiti del progetto}
+    \endlastfoot 
+    89 & 99 \\
+    \hline
+\end{longtable}
+\textbf{\glossterm{PB}:} RSI rappresenta la facilità con cui i requisiti subiscono modifiche nell'avanzamento del progetto. Questa viene calcolata come rapporto tra i requisiti inizialmente definiti e i requisiti presenti in un determianto momento. Questo valore rientra nella soglia di accettazione ma nonarriva al valore ottimale. Questo poiché varie problematiche sorte e richieste della \glossterm{Proponente} hanno portato all'aumento dei requisiti richiesti da un valore inziale di 89 a un valore finale di 99.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{processo} - Documentazione}
 \subsubsection{Indice Gulpease}
@@ -1525,6 +1542,16 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
 \textbf{\glossterm{RTB}:} Il team ha costantemente effettuato un controllo approfondito della correttezza ortografica dei documenti prodotti. I redattori hanno il compito di assicurarsene prima ancora della verifica del documento da parte di membri terzi. Successivamente, in vista delle revisioni, questi vengono ricontrollati e approvati. In questo modo ogni documento viene sempre visionato e controllato da ogni membro del gruppo, ottenendo come risultato un esiguo numero di errori e, di conseguenza, l'ottima proiezione rappresentata.\\
 \textbf{\glossterm{PB}:} Conseguentemente alle poche modifiche apportate ai documenti fino all'ottavo Sprint, non si riscontrano particolari errori nella correttezza ortografica dei documenti. I nuovi documenti sono particolarmente sottoposti ad un controllo accurato.
 \clearpage
+\subsection{\glossterm{Qualità} di \glossterm{processo} - Verifica}
+\subsubsection{MPC-CC Code Coverage}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{images_pdq/CC.png}
+    \caption{Proiezione grafica del code coverage.}
+    \label{fig:Proiezione grafica del code coverage}
+\end{figure}
+\textbf{\glossterm{PB}:} Il Code Coverage consiste nella percentuale di codice eseguito durante l'esecuzione dei test. L'andamento del CC è sempre rimasto sopra la soglia di accettazione con un lieve calo nello Sprint 7, probabilmente dovuto all'opera di sistemazione di varie problematiche insorte. Nonostante questo la rifinitura del codice dei sensori ha portato ad aumentare questa percentuale.
+\clearpage
 \subsection{\glossterm{Qualità} di \glossterm{processo} - Gestione della qualità}
 \subsubsection{MPC-QMS Quality Metrics Satisfied}
 \begin{figure}[h!]
@@ -1534,7 +1561,7 @@ Coerentemente con quanto indicato dall'EAC, il valore di VAC è risultato maggio
     \label{fig:Proiezione grafica di QMS}
 \end{figure}
 \textbf{\glossterm{RTB}:} In linea con quanto già specificato, le metriche di EAC, CPI, VAC e IG non sono state soddisfatte fin da subito. Il VAC e l'indice Gulpease, in particolare per il \textit{Glossario}, sono rientrati nei valori accettabili solamente dal terzo \glossterm{Sprint}, mentre l'EAC e il CPI dal quarto. Nonostante le problematiche riscontrate nel quarto e sesto Sprint tutte le metriche rientrano nei valori di accettazione. \\Con ottica di retrospettiva, il team nota come è stata necessaria l'acquisizione di esperienza e accortezza nella pianificazione e organizzazione delle attività del gruppo, cause primarie della mancata tollerabilità delle metriche citate. Questo non deve distogliere il team dal mantenere l'andamento individuato, affiché tutte le metriche vengano rispettate, il prodotto venga sviluppato senza intoppi e il progetto possa essere portato a termine senza imprevisti.\\
-\textbf{\glossterm{PB}:} Le metriche mantengono un andamento ottimale comportando la mancanza di metriche non soddisfatte.
+\textbf{\glossterm{PB}:}  Tutte le altre metriche mantengono un andamento ottimale.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{processo} - Gestione dei processi}
 \subsubsection{MPC-NR Non-calculated Risk}
@@ -1574,7 +1601,7 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     \caption{Proiezione grafica dei requisiti opzionali soddisfatti.}
     \label{fig:Proiezione grafica dei requisiti opzionali soddisfatti}
 \end{figure}
-\textbf{\glossterm{PB}:} A differenza dei requisiti precedenti, il team non è riuscito a raggiungere una percentuale di soddisfazione dei requisiti opzionali ottimale. Ciò è stato dovuto ovviamente alla priorità minore di integrazione e dal desiderio della stessa Proponente, la quale ha preferito l'integrazione e la concretizzazione di altri requisiti.
+\textbf{\glossterm{PB}:} A differenza dei requisiti precedenti, il team non è riuscito a soddisfare i requisiti opzionali. Ciò è stato dovuto ovviamente alla priorità minore di integrazione e dal desiderio della stessa Proponente, la quale ha preferito l'integrazione e la concretizzazione di altri requisiti.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Affidabilità}
 \subsubsection{MPD-BC \glossterm{Branch} Coverage}
@@ -1584,7 +1611,7 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     \caption{Proiezione grafica della percentuale di branch coverage.}
     \label{fig:Proiezione grafica della percentuale di branch coverage}
 \end{figure}
-\textbf{\glossterm{PB}:} Nonostante i test per i primi sensori implementati fossero pronti già in fase di \glossterm{RTB} è stato valutato immaturo iniziare i test relativi ad un \glossterm{PoC}. In fase iniziale del \glossterm{PB} i test sono iniziati dando esiti leggermente al di sotto delle aspettative, mostrando possibili ramificazioni condizionali mancanti. \\ Il team, quindi, ha dedicato maggiore attenzione sulla copertura del codice sorgente da test manuali e automatici. \\ Nonostante non sia riuscito ad ottenere il risultato ottimale desiderato, il team è comunque riuscito a ottenere un risultato accettabile, mantenendosi poco sotto il 90\% di copertura alla conclusione del progetto.
+\textbf{\glossterm{PB}:} Il BC rappresenta la percentuale di percorsi eseguiti nella totalità dei percorsi possibili nel codice. Indica quanto il codice esplori le ramificazioni. Nonostante i test per i primi sensori implementati fossero pronti già in fase di \glossterm{RTB} è stato valutato immaturo iniziare i test relativi ad un \glossterm{PoC}. In fase iniziale del \glossterm{PB} i test sono iniziati dando esiti leggermente al di sotto delle aspettative, mostrando possibili ramificazioni condizionali mancanti. \\ Il team, quindi, ha dedicato maggiore attenzione sulla copertura del codice sorgente da test manuali e automatici. \\ Nonostante non sia riuscito ad ottenere il risultato ottimale desiderato, il team è comunque riuscito a ottenere un risultato accettabile, mantenendosi poco sotto il 90\% di copertura alla conclusione del progetto.
 \clearpage
 \subsubsection{MPD-SC \glossterm{Statement} Coverage}
 \begin{figure}[h!]
@@ -1593,7 +1620,7 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     \caption{Proiezione grafica della percentuale di statement coverage.}
     \label{fig:Proiezione grafica della percentuale di statement coverage}
 \end{figure}
-\textbf{\glossterm{PB}:} Come precedentemente scritto, è stato valutato immaturo iniziare i test relativi ad un \glossterm{PoC}. In fase iniziale del \glossterm{PB} i test sono iniziati mostrando una copertura delle istruzioni del codice accettabile. \\ Il team, quindi, ha dedicato il resto degli Sprint cercando di migliorare questa percentuale, in relazione con l'ampliazione del codice scritto. \\ Nonostante non sia riuscito ad ottenere il risultato ottimale desiderato, il team è comunque riuscito a ottenere un risultato accettabile, mantenendosi sopra il 90\% di copertura alla conclusione del progetto.
+\textbf{\glossterm{PB}:} SC indica la percentuale di istruzioni eseguite sulla totalità delle istruzioni presenti nel codice. Come precedentemente scritto, è stato valutato immaturo iniziare i test relativi ad un \glossterm{PoC}. In fase iniziale del \glossterm{PB} i test sono iniziati mostrando una copertura delle istruzioni del codice accettabile. \\ Il team, quindi, ha dedicato il resto degli Sprint cercando di migliorare questa percentuale, in relazione con l'ampliazione del codice scritto. \\ Nonostante non sia riuscito ad ottenere il risultato ottimale desiderato, il team è comunque riuscito a ottenere un risultato accettabile, mantenendosi sopra il 90\% di copertura alla conclusione del progetto.
 \clearpage
 \subsubsection{MPD-FD Failure Density}
 \begin{figure}[h!]
@@ -1602,7 +1629,7 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     \caption{Proiezione grafica della percentuale di failure density.}
     \label{fig:Proiezione grafica della percentuale di failure density}
 \end{figure}
-\textbf{\glossterm{PB}:} Nella fase iniziale, il team aveva precedentemente sistemato i guasti di implementazione delle tecnologie e della scrittura del generatore di sensori. Tuttavia, durante la fase di implementazione dei nuovi sensori (livello dell'acqua, i guasti elettrici, eccetera) e del sistema di \glossterm{stream processing}, il team ha riscontrato seri \glossterm{bug} implementativi non previsti, i quali hanno comportato un aumento della metrica al di sopra della soglia massima accettabile.\\ In previsione della riunione di collaudo con la Proponente, il team si è impegnato alla risoluzione dei suddetti problemi, mantenendo poi una percentuale di densità dei guasti buona ma non ottimale come desiderato.
+\textbf{\glossterm{PB}:} FD rappresenta il rapporto tra il numero di guasti in un determinato momento rispetto al numero di guasti presenti dopo aver aggiunto parti di codice. Deve quindi essere il meno possibile. Nella fase iniziale, il team aveva precedentemente sistemato i guasti di implementazione delle tecnologie e della scrittura del generatore di sensori. Tuttavia, durante la fase di implementazione dei nuovi sensori (livello dell'acqua, i guasti elettrici, eccetera) e del sistema di \glossterm{stream processing}, il team ha riscontrato seri \glossterm{bug} implementativi non previsti, i quali hanno comportato un aumento della metrica al di sopra della soglia massima accettabile.\\ In previsione della riunione di collaudo con la Proponente, il team si è impegnato alla risoluzione dei suddetti problemi, mantenendo poi una percentuale di densità dei guasti buona ma non ottimale come desiderato.
 \clearpage
 \subsubsection{MPD-PTCP Passed Test Cases Percentage}
 \begin{figure}[h!]
@@ -1611,7 +1638,7 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     \caption{Proiezione grafica della percentuale di test passati.}
     \label{fig:Proiezione grafica della percentuale di test passati}
 \end{figure}
-\textbf{\glossterm{PB}:} Come precedentemente enunciato, i test integrati prematuramente sono stati utilizzati in queste fasi iniziali, con una percentuale massima di successo. Il problema di implementazione dei nuovi sensori ha comportato la visualizzazione di test falliti (2/30), risolti nello Sprint successivo.\\Le migliorie apportate sul prodotto si sono comunque poco riflettute nei test, e il team ha ripristinato indi la percentuale massima di test passati.
+\textbf{\glossterm{PB}:} PTCP rappresenta la percentuale di test superati. Come precedentemente enunciato, i test integrati prematuramente sono stati utilizzati in queste fasi iniziali, con una percentuale massima di successo. Il problema di implementazione dei nuovi sensori ha comportato la visualizzazione di test falliti (2/30), risolti nello Sprint successivo.\\Le migliorie apportate sul prodotto si sono comunque poco riflettute nei test, e il team ha ripristinato indi la percentuale massima di test passati.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Usabilità}
 \subsubsection{MPD-FU Facilità di Utilizzo}
@@ -1621,7 +1648,7 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     \caption{Proiezione grafica della facilità di utilizzo (numero medio di click).}
     \label{fig:Proiezione grafica della facilità di utilizzo (numero medio di click)}
 \end{figure}
-\textbf{\glossterm{PB}:} Durante lo svolgimento degli Sprint il numero medio di click per raggiungere ogni funzionalità, nel nostro caso uno specifico panel, sono sempre rimasti 4: 2 per la sezione di login (compresa una parte di cambio password), 1 di scelta della \glossterm{dashboard} e 1 di selezione del panello preciso
+\textbf{\glossterm{PB}:} La facilità di utilizzo è definita dal numero di click medi per raggiungere ogni funzionalità. Durante lo svolgimento degli Sprint il numero medio di click per raggiungere uno specifico panel, sono sempre rimasti 4: 2 per la sezione di login (compresa una parte di cambio password), 1 di scelta della \glossterm{dashboard} e 1 di selezione del panello preciso
 \clearpage
 \subsubsection{MPD-TA Tempo di Apprendimento}
 \begin{figure}[h!]
@@ -1630,7 +1657,7 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     \caption{Proiezione grafica del tempo di apprendimento medio del prodotto.}
     \label{fig:Proiezione grafica del tempo di apprendimento medio del prodotto}
 \end{figure}
-\textbf{\glossterm{PB}:} Così come il numero medio di click, anche il tempo di apprendimento è rimasto generalmente costante. Nonostante il team si aspettasse un tempo di apprendimento inferiore, l'interfaccia grafica integrata di Grafana è risultata leggermente più fuorviante del previsto.
+\textbf{\glossterm{PB}:} Il TA si misura in minuti necessari all'apprendimento dell'utilizzo del prodotto. Così come il numero medio di click, anche il tempo di apprendimento è rimasto generalmente costante. Nonostante il team si aspettasse un tempo di apprendimento inferiore, l'interfaccia grafica integrata di Grafana è risultata leggermente più fuorviante del previsto.
 \clearpage
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Efficienza}
 \subsubsection{MPD-UR Utilizzo Risorse}
@@ -1646,14 +1673,14 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     \caption{Tabella dei valori medi dell'utilizzo di risorse} 
     \label{table:Tabella dei valori medi dell'utilizzo di risorse}
     \endlastfoot 
-    MPD-CPUU & $\sim$ 2,7 & $\leq$ 20\% & $\leq$ 5\% \\
+    MPD-CPUU & $\sim$ 2,7\% & $\leq$ 20\% & $\leq$ 5\% \\
     \hline 
-    MPD-RAMU & $\sim$ 196.7MB & $\leq$ 500MB\% & $\leq$ 200MB\% \\
+    MPD-RAMU & $\sim$ 196.7MB & $\leq$ 500MB & $\leq$ 200MB \\
     \hline 
-    MPD-TDE & $\sim$ 4.5s & $\leq$ 6s\% & $\leq$ 3s\% \\
+    MPD-TDE & $\sim$ 4.5s & $\leq$ 6s & $\leq$ 3s \\
     \hline
 \end{longtable}
-\textbf{\glossterm{PB}:} Le metriche sono state calcolate utilizzando un elaboratore con 16GB RAM DDR4-3200 e processore AMD Ryzen 5 5600U 4,2GHz.\\ Grazie all'utilizzo di \glossterm{docker} per l'implementazione del sistema, si sono riusciti ad ottenere delle prestazioni ottime; il numero delle immagini ha tuttavia incrementato il tempo medio di avvio del sistema.
+\textbf{\glossterm{PB}:} UR definisce la percentuale di risorse occupate nel utilizzare il prodotto. Le metriche sono state calcolate utilizzando un elaboratore con 16GB RAM DDR4-3200 e processore AMD Ryzen 5 5600U 4,2GHz.\\ Grazie all'utilizzo di \glossterm{docker} per l'implementazione del sistema, si sono riusciti ad ottenere delle prestazioni ottime; il numero delle immagini ha tuttavia incrementato il tempo medio di avvio del sistema.
 \subsection{\glossterm{Qualità} di \glossterm{prodotto} - Manutenibilità}
 \subsubsection{MPD-CC Complessità Ciclomatica}
 \renewcommand{\arraystretch}{2.5}
@@ -1671,23 +1698,23 @@ Un ulteriore rischio non previsto è stato riscontrato nel sesto Sprint. Gli imp
     MPD-CC & $\sim$ 3.4 & 11-20 & 1-10 \\
     \hline
 \end{longtable}
-\textbf{\glossterm{PB}:} Di 39 file esaminati, 36 sono stati valutati con un classe "A" (con livello di complessità 1-5), mentre 3 con classe "B" (con livello di complessità 6-10). Facendo dunque una media dei valori possibili delle due classi, si è valutato che l'intero progetto sia di classe "A".\\ Ciò vuol dire non solo che la complessità è ben al di sotto del valore accettabile, ma anche del valore ottimale, rendendo il codice di facile comprensione.
-\subsubsection{MPC-CS Code Smell}
-\renewcommand{\arraystretch}{2.5}
-\rowcolors{2}{gray!20}{white}
-\begin{longtable}{|>{\centering}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3cm}|}
-    \hline
-    \rowcolor{white}
-    \textbf{Metrica} & \textbf{Valore Medio} & \textbf{Valore Accettabile} & \textbf{Valore Ottimo} \\
-    \hline
-    \endfirsthead 
-    \rowcolor{white}
-    \caption{Tabella del valore di punteggio di code smell.} 
-    \label{table:Tabella del valore di punteggio di code smell}
-    \endlastfoot 
-    MPD-CS & $\sim$ 93.7\% & 100\% & 100\% \\
-    \hline
-\end{longtable}
-\textbf{\glossterm{PB}:} Esaminando il codice è risultato una percentuale di rating intorno al 93.7\%, con imperfezioni dovute prevalentemente a problemi di cattiva identazione o per stringhe di documentazioni mancanti. Ciò ha impedito di ottenere un risultato dal team considerato sia accettabile che ottimale.
-\clearpage
+\textbf{\glossterm{PB}:} La CC è costituita dal numero di cammini linearmente indipendenti percorribili nel codice e rappresenta quindi la complessità del codice. Deve di conseguenza essere minore possibile. Di 39 file esaminati, 36 sono stati valutati con un classe "A" (con livello di complessità 1-5), mentre 3 con classe "B" (con livello di complessità 6-10). Facendo dunque una media dei valori possibili delle due classi, si è valutato che l'intero progetto sia di classe "A".\\ Ciò vuol dire non solo che la complessità è ben al di sotto del valore accettabile, ma anche del valore ottimale, rendendo il codice di facile comprensione.
+% \subsubsection{MPC-CS Code Smell}
+% \renewcommand{\arraystretch}{2.5}
+% \rowcolors{2}{gray!20}{white}
+% \begin{longtable}{|>{\centering}p{3cm}|>{\centering\arraybackslash}p{3cm}|>{\centering\arraybackslash}p{3.5cm}|>{\centering\arraybackslash}p{3cm}|}
+%     \hline
+%     \rowcolor{white}
+%     \textbf{Metrica} & \textbf{Valore Medio} & \textbf{Valore Accettabile} & \textbf{Valore Ottimo} \\
+%     \hline
+%     \endfirsthead 
+%     \rowcolor{white}
+%     \caption{Tabella del valore di punteggio di code smell.} 
+%     \label{table:Tabella del valore di punteggio di code smell}
+%     \endlastfoot 
+%     MPD-CS & $\sim$ 93.7\% & 100\% & 100\% \\
+%     \hline
+% \end{longtable}
+% \textbf{\glossterm{PB}:} Percentuale di codice non esposto a possibili debolezze. Esaminando il codice è risultato una percentuale di rating intorno al 93.7\%, con imperfezioni dovute prevalentemente a problemi di cattiva identazione o per stringhe di documentazioni mancanti. Ciò ha impedito di ottenere un risultato dal team considerato sia accettabile che ottimale.
+% \clearpage
 \end{document}
