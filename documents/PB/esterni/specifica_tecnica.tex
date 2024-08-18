@@ -1636,29 +1636,10 @@ Il calcolo dell'efficienza dei parcheggi avviene attraverso stream processing, e
 \end{figure}
 \clearpage
 \subsection{\glossterm{Grafana}}
-\glossterm{Grafana} permette la creazione di svariati tipi di \glossterm{dashboard} e \glossterm{widget} per la rappresentazione grafica dei dati simulati. L'utilizzo di tali dashboard è schermato dalla necessità di autenticarsi attarverso le credenziali fornite dall'amministratore di \glossterm{sistema}.
-\subsubsection{User}
-L’accesso a Grafana è vincolato a due utenze:
+\glossterm{Grafana} permette la creazione di svariati tipi di \glossterm{dashboard} e \glossterm{widget} per la rappresentazione grafica dei dati simulati. L'utilizzo di tali dashboard è schermato dalla necessità di autenticarsi attarverso le credenziali fornite dall'amministratore di \glossterm{sistema}:
 \begin{itemize}
-    \item Amministratore di \glossterm{sistema}: 
-    \begin{itemize}
-        \item Manutenzione e modifiche della piattaforma;
-        \item Non accessibile in produzione;
-        \item Credenziali:
-        \begin{itemize}
-            \item \textbf{Username:} admin
-            \item \textbf{Password:} admin
-        \end{itemize}
-    \end{itemize}
-    \item User: 
-    \begin{itemize}
-        \item Amministratore pubblico o autorità locale per la visualizzazione e il monitoraggio dei dati;
-        \item Credenziali:
-        \begin{itemize}
-            \item \textbf{Username:} user
-            \item \textbf{Password:} user
-        \end{itemize}
-    \end{itemize}
+    \item \textbf{Username:} admin
+    \item \textbf{Password:} admin
 \end{itemize}
 \subsubsection{Datasource}
 Come sorgente dati è stato impostato un collegamento con il database \glossterm{ClickHouse} grazie ad un plug-in installato attraverso file yaml di configurazione presente in ``/provisioning/datasources". Questo plugin di grafana consente di connettersi a un’istanza di ClickHous, di visualizzarne i dati in tempo reale ed eseguire query personalizzate.
