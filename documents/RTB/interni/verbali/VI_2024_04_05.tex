@@ -1,0 +1,201 @@
+% changelog: "1.0.0, 2024-04-16, Approvazione per RTB"
+
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-04-05} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
+			{\large{\textsc{}}}
+			
+			
+		}
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Guglielmo Barison}\\}} % massimo due 
+			{\large{\textsc{Pietro Busato}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-04-05\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8 cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione} & \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+  		1.0.0 & 2024-04-22 & \textbf{Approvazione per RTB} \\\\
+    	0.0.3 & 2024-04-22 & Verifica completa. & Pietro Busato & Verificatore \\\\
+		0.0.2 & 2024-04-16 & Ampliamento attività da svolgere, correzioni punteggiatura. & Guglielmo Barison & Verificatore \\\\ 
+		0.0.1 & 2024-04-16 & Correzioni varie. & Oscar Konieczny & Redattore \\\\ % spazio tra le righe
+		0.0.0 & 2024-04-05 & Prima stesura del verbale. & Oscar Konieczny & Redattore \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata Discord;
+	\item\textbf{Ora di inizio:} 15:00;
+	\item\textbf{Ora di fine:}  16:30.
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 1.5 h \\
+			Linda Barbiero &  0.0 h \\
+			Pietro Busato & 1.5 h \\
+			Oscar Konieczny & 1.5 h \\
+			Davide Donanzan & 1.5 h \\
+			Veronica Tecchiati & 1.5 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy.}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage}
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Discussione a riguardo degli incontri avvenuti il giorno precedente;
+	\item Organizzazione del lavoro in vista del RTB.
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+La riunione è iniziata con la discussione degli incontri avvenuti il giorno precedente. In particolare si è discusso su come procedere in vista del prossimo SAL fissato con SyncLab. Successivamente sono stati assegnati i ruoli per le seguenti due settimane, corrispondenti al primo sprint. Si sono infine stabiliti i vari redattori per i vari documenti che necessitano la stesura.
+\subsection{Decisioni prese}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Suddivisione ruoli per lo sprint, la cui fine cade il 2024-04-19;
+    \item La possibilità di eseguire modifiche direttamente sul ramo principale delle varie repository è stata bloccata. Da adesso in poi, ogni aggiornamento dovrà essere richiesto tramite ``pull-request" e approvato da un terzo, il verificatore;
+    \item \textit{Viene adottato} il procedimento di iniziare ad associare le decisioni prese in seguito alle riunioni che scatenano delle azioni con le loro corrispondenti issue tramite collegamento ipertestuale. A differenza del colore utilizzato negli altri testi, nella tabella Attività da svolgere (\ref{table:Attivita da svolgere}) i collegamenti ipertestuali verranno indicati con sottolineatura;
+	\item Assegnamento delle nuove attività da svolgere.
+	% consigliata la forma \textit{Viene adottato} quando viene adottato un certo modo di fare/strumento
+	% per nomi di aziene e capitolati usare \texttt{}, e.g \texttt{Easy meal} \texttt{C6} 
+\end{itemize}
+\newpage
+\section{Attività da svolgere}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{lcl}
+		\toprule
+		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
+		\midrule
+		\href{https://github.com/NaN1fy/docs/issues/14}{\underline{Stesura ``Glossario"}} & 14 & Guglielmo Barison, Oscar Konieczny\\\\
+		\href{https://github.com/NaN1fy/docs/issues/15}{\underline{Stesura ``Analisi dei requisiti"}} & 15 & Davide Donanzan, Veronica Tecchiati\\\\
+		\href{https://github.com/NaN1fy/docs/issues/16}{\underline{Stesura ``Piano di progetto"}}  & 16 & Linda Barbiero, Veronica Tecchiati\\\\
+		\href{https://github.com/NaN1fy/docs/issues/17}{\underline{Stesura ``Piano di qualifica"}} & 17 & Davide Donanzan, Guglielmo Barison\\\\
+		\href{https://github.com/NaN1fy/docs/issues/20}{\underline{Stesura ``Norme di progetto"}} & 20 & Linda Barbiero, Pietro Busato\\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/1}{\underline{Stesura codice generatore dati Python}} & 1*\tnote{*} & Pietro Busato, Guglielmo Barison\\
+		\bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+		\vspace{1em}
+		\item * indica che la issue fa parte della repository SyncCity
+	\end{tablenotes}
+	\caption{Attività da svolgere.}
+	\label{table:Attivita da svolgere}
+\end{table}
+\end{document}

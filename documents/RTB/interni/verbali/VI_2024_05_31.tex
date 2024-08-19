@@ -1,0 +1,227 @@
+% changelog: "1.0.0, 2024-06-03, Approvazione per RTB"
+
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+
+% -- IMPORTANTE -- %
+% utilizzare `` " per le virgolette (``esempio") altrimenit non si chiudono
+% non utilizzare \glossterm nei verbali
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{VERBALE INTERNO DEL 2024-05-31} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+  \fancyhead[R]{\includegraphics[height=1cm]{../../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+% quando lo utilizi metti un // esterno al comando subsubsubsection{esempio} altrimenti è attacatto al titoletto, non modificare il comando (se metti //// nel comando è troppo spaziato quando ci sono table e figure
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
+\begin{document}
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east)
+      {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current
+      page.south west) {\includegraphics[width=4cm]{../../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.47\textwidth}\raggedleft
+		{\large{\textsc{Redattori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Linda Barbiero}\\}} % massimo due 
+		  {\large{\textsc{}}}
+    }
+		\vspace{8mm}
+		
+		{\large{\textsc{Verificatori}}
+			\vspace{3mm}
+			{\\\large{\textsc{Oscar Konieczny}\\}} % massimo due 
+			{\large{\textsc{Davide Donanzan}}}
+			
+		}
+		\vspace{4mm}\vspace{4mm}
+	\end{minipage}
+	\vspace{4cm}
+	\begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Verbale Interno Del\\2024-05-31\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{8.2cm}
+	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+		1.0.0 & 2024-06-03 & \textbf{Approvazione per RTB} & & \\\\
+		0.0.2 & 2024-06-03 & Verifica e modifiche minori. & Davide Donanzan & Verificatore \\\\
+		0.0.1 & 2024-06-03 & Piccole modifiche. & Oscar Konieczny & Verificatore \\\\
+		0.0.0 & 2024-05-31 & Stesura documento. & Linda Barbiero & Redattore \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+\tableofcontents
+\clearpage
+\newpage
+\justifying
+\section{Contenuti del Verbale}
+\subsection{Informazioni sulla riunione}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item\textbf{Luogo:} Chiamata Discord;
+	\item\textbf{Ora di inizio:} 16:40;
+  \item\textbf{Ora di fine:}  18:00;
+\end{itemize}
+\begin{table}[ht!]
+	\begin{minipage}[t]{0.5\linewidth}
+		\centering
+		\begin{tabular}{p{3cm} p{3cm}}
+			\toprule
+			\textbf{Partecipante} & \textbf{Durata presenza} \\
+			\midrule
+			Guglielmo Barison & 1.3 h \\
+			Linda Barbiero &  1.3 h \\
+			Pietro Busato & 1.3 h \\
+			Oscar Konieczny & 1.3 h \\
+			Davide Donanzan & 1.3 h \\
+			Veronica Tecchiati & 1.3 h \\
+			\bottomrule
+		\end{tabular}
+		\caption{Partecipanti NaN1fy.}
+		\label{table:Partecipanti NaN1fy}
+	\end{minipage} 
+	% \begin{minipage}[t]{0.5\linewidth} % -- COMMENTA/DECOMMENTA DA QUI
+	% 	\centering
+	% 	\begin{tabular}{p{3cm} p{3cm}}
+	% 		\toprule
+	% 		\textbf{Partecipante} & \textbf{Durata presenza} \\
+	% 		\midrule
+	% 		XXXX XXXX & X.X h \\
+	% 		XXXX XXXX &  X.X h \\
+	% 		\bottomrule
+	% 	\end{tabular}
+	% 	\caption{Partecipanti XXXX}
+	% 	\label{table:Partecipanti XXXX}
+	% \end{minipage} % -- A QUI PER TOGLIERE AGGIUNGERE
+\end{table}
+\subsection{Ordine del giorno}
+\begin{itemize}
+	\setlength\itemsep{0em}
+    \item Discussione post SAL avvenuto in data 2024-05-31 con l'azienda SyncLab;
+    \item Retrospettiva del quarto Sprint concluso e consuntivo ore;
+	\item Pianificazione del quinto ed ultimo Sprint prima dell'RTB, suddivisione dei ruoli e calcolo preventivo ore.
+\end{itemize}
+\subsection{Sintesi dell'incontro}
+Alla luce delle riflessioni esposte durante l'ultimo ``Diario di Bordo", la riunione si è svolta
+successivamente al SAL tenutosi poco prima nel pomeriggio, con la consapevolezza del prossimo incontro di SAL in data 2024-06-07.
+\\
+L'incontro è iniziato valutando le considerazioni della proponente, in revisione dell'RTB,
+con scadenza ultima prevista per il giorno 2024-06-07. Il gruppo dunque conclude ufficialmente lo Sprint precedente valutando il fatto e le prossime rifiniture da apportare,
+oltre al calcolo del consuntivo relativo.
+Data la scadenza precedentemente esposta, lo Sprint imminente sarà dunque di una settimana, a differenza delle precedenti, e per tal motivo il gruppo ha valutato di mantenere lo stesso responsabile.\\
+La riunione si è infine conclusa effettuando lo sprint planning e il preventivo ore del prossimo Sprint.
+
+\subsection{Decisioni prese}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Mantenimento dello stesso responsabile del Sprint precedente: Pietro Busato;
+	\item Suddivisione dei restanti ruoli e calcolo preventivo ore per lo Sprint con fine il
+      2024-06-07;
+	\item Suddivisione della revisione dei documenti e delle ultime rifiniture tra i membri.
+	\item Preparazione della presentazione dell'RTB.
+\end{itemize}
+\newpage
+\section{Attività da svolgere}
+\begin{table}[ht!]
+	\centering
+	\begin{tabular}{p{7cm}cp{7cm}}
+		\toprule
+		\textbf{Titolo} & \textbf{\# Issue} & \textbf{Redattori} \\
+		\midrule
+		\href{https://github.com/NaN1fy/docs/issues/19}{\underline{Stesura lettera di presentazione RTB}} & 19 & Guglielmo Barison \\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/25}{\underline{Improvement Dashboard Urbanistica}} & 25*\tnote{*} & Guglielmo Barison \\\\
+		\href{https://github.com/NaN1fy/SyncCity/issues/27}{\underline{Improvement Dashboard Ambientale}} & 27*\tnote{*} & Linda Barbiero, Guglielmo Barison \\\\
+		\bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+		\vspace{1em}
+		\item * indica che la issue fa parte della repository SyncCity
+	\end{tablenotes}
+	\caption{Attività da svolgere.}
+	\label{table:Attivita da svolgere}
+\end{table}
+\end{document}
