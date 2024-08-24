@@ -1,4 +1,4 @@
-% changelog: "1.0.0, 2024-06-4, Approvazione per RTB"
+% changelog: "2.0.0, 2024-08-18, Approvazione per PB"
 
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
@@ -101,9 +101,10 @@
    {\\\large{\textsc{Guglielmo Barison}\\}}
    {\large{\textsc{Veronica Tecchiati}\\}} 
    {\large{\textsc{Davide Donanzan}\\}}
+   {\large{\textsc{Linda Barbiero}\\}}
 
   }
-  \vspace{3mm}
+  %\vspace{3mm}
  \end{minipage}
 
 
@@ -611,13 +612,13 @@ Vengono di seguito elencate le \glossterm{best practice} utilizzate durante la p
     \item \textbf{Analisi:} si assicura che il prodotto venga progettato e sviluppato soltanto dopo una attenta e approfondita analisi dei requisiti, funzionali e non, stabiliti insieme alla \glossterm{Proponente}; 
     \item \textbf{Affidabilità:} si assicura che il software svolga correttamente e in maniera prevedibile e verificabile le proprie funzioni;
     \item \textbf{Coesione:} si assicura un ottimizzazione dei singoli componenti del software a livello di coesione, garantendo il più possibile che essi lavorino su una singola responsabilità ben definita;
-    \item \textbf{Chiarezza:} si assicura che sia il prodotto sia la documentazione di sostegno siano facilmente comprensibili, chiari e completi di immagini, diagrammi UML, descrizioni, spiegazioni e commenti;
-    \item \textbf{Decoupling:} si assicura un ottimizzazione dei singoli componenti del software a livello di accoppiamento, garantendo il più possibile che essi lavorino indipendentemente gli uni con gli altri, riucendo interazioni e dipendenze, imgliorando così manutenibilità e flessibilità del sistema;
+    \item \textbf{Chiarezza:} si assicura che sia il prodotto sia la documentazione di sostegno siano facilmente comprensibili, chiari e completi di immagini, diagrammi \glossterm{UML}, descrizioni, spiegazioni e commenti;
+    \item \textbf{Decoupling:} si assicura un ottimizzazione dei singoli componenti del software a livello di accoppiamento, garantendo il più possibile che essi lavorino indipendentemente gli uni con gli altri, riducendo interazioni e dipendenze, migliorando così manutenibilità e flessibilità del \glossterm{sistema};
     \item \textbf{Flessibilità:} si assicura la possibilità di adattare o estendere facilmente il prodotto per soddisfare nuovi requisiti senza dover modificare in maniera estensiva il prodotto;
     \item \textbf{Incapsulamento:} si assicura l'occultamento, all'interno del prodotto, dei dettagli implementativi dei singoli componenti, se visti dall'esterno, consentendo l'accesso e l'utilizzo solo in maniere predefinite;
     \item \textbf{Modularità:} si assicura la suddivisione dell'architettura in moduli indipendenti e ben definiti, in maniera tale da consentire coesione e decoupling e facilitando scalabilità, flessibilità e manutenzione;
     \item \textbf{Riusabilità:} si assicura, attraverso astrazione, incapsulamento et similia la possibilità di poter riutilizzare in contesti diversi e non taluni parti di codice o architettura, per quanto possibile;
-    \item \textbf{Scalabilità:} si assicura la progettazione dell'architettura in maniera tale da poter gestire, senza problemi e in modo efficiente, aumenti di carico e aggiunte di nuove funzionalità;
+    \item \textbf{Scalabilità:} si assicura la progettazione dell'architettura in maniera tale da poter gestire, senza problemi e in modo efficiente, aumenti di carico e aggiunte di nuove \glossterm{funzionalità};
     \item \textbf{Semplicità:} si assicura un ottimizzazione dei singoli componenti e del prodotto a livello di semplicità, garantendo il più possibile un codice e un'architettura puliti e privi di sezioni nebulose o inutilmente complesse;
     \item \textbf{Sufficienza:} si assicura l'adempimento del più alto numero possibile di requisiti, funzionali e non, pattuiti con l'azienda \glossterm{Proponente}.
 \end{itemize}
@@ -661,7 +662,7 @@ Una classe viene rappresentata graficamente come un rettangolo, diviso in tre se
                     \item $+$: visibilità pubblica;
                     \item $\sim$: visibilità di package. 
                 \end{itemize}
-            \item \textbf{Nome:} rappresenta l'identificativo del metodo e descrive in maniera esplicita il suo obbiettivo o funzionalità;
+            \item \textbf{Nome:} rappresenta l'identificativo del metodo e descrive in maniera esplicita il suo obiettivo o funzionalità;
             \item \textbf{Parametri formali:} separati tramite virgole, rappresentano i vari parametri richiesti dal metodo;
             \item \textbf{Tipo di Ritorno:} determina l'eventuale tipo di ritorno del metodo.
             \end{itemize}
@@ -810,10 +811,10 @@ Ogni documento viene redatto e manutenuto secondo questo \glossterm{processo:}
 \end{enumerate}
 Note: \\
 \begin{enumerate}
-    \item Dalla conclusione dell'RTB questo metodo è deprecato; ora il campo \textbf{[membro del team]} è sostituito da \textbf{[Redattori]}, mentre il campo \textbf{[ruolo]} viene sostituito da \textbf{[Verificatori]};
+    \item Dalla conclusione dell'\glossterm{RTB} questo metodo è deprecato; ora il campo \textbf{[membro del team]} è sostituito da \textbf{[Redattori]}, mentre il campo \textbf{[ruolo]} viene sostituito da \textbf{[Verificatori]};
     \item Il periodo massimo consentito per l'ultimazione di un documento non mantenuto nel tempo o per la modifica di un qualsiasi documento è della durata di una settimana, se non altrimenti specificato.
 \end{enumerate}
-    Il ciclo di vita dei documenti e delle loro issue consiste nei seguenti quattro stati:
+    Il ciclo di vita dei documenti e delle loro \glossterm{issue} consiste nei seguenti quattro stati:
 \begin{itemize} 
     \item \textbf{Stato ``to-do":} il documento deve essere iniziato;
     \item \textbf{Stato ``in progress":} il documento sta venendo scritto, completato o aggiornato;
