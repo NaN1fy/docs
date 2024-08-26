@@ -1,4 +1,4 @@
-% changelog: "1.4.0, 2024-08-14, Veronica Tecchiati, Stesura sezioni 3 e 4"
+% changelog: "2.0.0, 2024-08-18, Approvazione per PB"
 \documentclass[8pt]{article}
 \usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
@@ -98,6 +98,7 @@
 			\vspace{3mm}
 			{\\\large{\textsc{Guglielmo Barison}\\}}
 			{\large{\textsc{Davide Donanzan}\\}}
+   {\large{\textsc{Linda Barbiero}\\}}
       {\large{\textsc{Veronica Tecchiati}\\}}
 		}
 		\vspace{4mm}\vspace{4mm}
@@ -107,7 +108,7 @@
 		\begin{flushright}
 			{\fontsize{30pt}{52pt}\selectfont \textbf{Piano di Progetto\\}} % o ESTERNO
 		\end{flushright}
-		\vspace{3cm}
+		\vspace{2cm}
 	\end{center}
 	\vspace{7.5cm}
 	{\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{\color{black}nan1fyteam.unipd@gmail.com}}}
@@ -121,12 +122,14 @@
 		\toprule
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
-            1.4.0 & 2024-08-14 & Stesura sezioni \ref{sec:calendar} e \ref{sec:cost}. & Veronica Tecchiati & - \\\\
-            1.3.2 & 2024-08-13 & Conclusione stesura nono periodo. & Linda Barbiero & - \\\\
-            1.3.1 & 2024-08-12 & Sistemazione valori incorretti di preventivi e consuntivi, istogrammi dei preventivi. & Linda Barbiero & - \\\\
-            1.3.0 & 2024-07-26 & Stesura \glossterm{preventivo} nono periodo. & Linda Barbiero & -
+            2.0.0 & 2024-08-18 & \textbf{Approvazione per PB} & & \\\\
+            1.5.0 & 2024-08-18 & Stesura preventivo e consuntivo decimo periodo. & Guglielmo Barison, Pietro Busato & Veronica Tecchiati \\\\
+            1.4.0 & 2024-08-14 & Stesura sezioni \ref{sec:calendar} e \ref{sec:cost}. & Veronica Tecchiati & Davide Donanzan \\\\
+            1.3.2 & 2024-08-13 & Conclusione stesura nono periodo. & Linda Barbiero & Davide Donanzan \\\\
+            1.3.1 & 2024-08-12 & Sistemazione valori incorretti di preventivi e consuntivi, istogrammi dei preventivi. & Linda Barbiero & Davide Donanzan \\\\
+            1.3.0 & 2024-07-26 & Stesura \glossterm{preventivo} nono periodo. & Linda Barbiero & Davide Donanzan
  		    \\\\
-            1.2.0 & 2024-07-26 & Stesura \glossterm{preventivo} ottavo periodo. & Veronica Tecchiati & -
+            1.2.0 & 2024-07-26 & Stesura \glossterm{preventivo} ottavo periodo. & Veronica Tecchiati & Linda Barbiero
  		    \\\\
 			1.1.0 & 2024-07-17 & Stesura settimo periodo. & Oscar Konieczny & Veronica Tecchiati
  		    \\ % spazio tra le righe
@@ -1736,13 +1739,11 @@ Questo Sprint, antecedente al collaudo finale con la Proponente, prevede la rifi
 I rischi attesi del periodo descritto sono:
 \begin{itemize}
     \setlength\itemsep{0em}
-        \item \textbf{RT-1:} Inesperienza;
         \item \textbf{RP-1:} Stima errata delle tempistiche di progetto;
         \item \textbf{RP-3:} Stima errata dei tempi di completamento di un'attività.
     \end{itemize}
 \clearpage
-\subsubsection{\glossterm{Preventivo}}
-\begin{table}[ht!]
+\subsubsection{\glossterm{Preventivo}}\begin{table}[ht!]
 	\centering
 	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
 		\toprule
@@ -1868,36 +1869,83 @@ Lo Sprint è stato pianificato per concludere il progetto e preparare la present
 \textbf{Inizio:} 2024-08-10\\
 \textbf{Fine prevista:} 2024-08-18
 \subsubsection{Pianificazione}
-Conseguente all'approvazione del prodotto, in sede di collaudo, da parte della \glossterm{Proponente}, il decimo Sprint viene dedicato interamente all'ultimazione della documentazione. Ne consegue dunque un periodo di intenso lavoro di stesura, verifica e correzione, in vista del primo colloquio con i professori, in particolare con il Prof. Cardin, in data 08/19.\\Le attività dunque prevedono:
+Conseguentemente all'approvazione del prodotto da parte della \glossterm{Proponente}, avvenuta in sede di collaudo, il decimo \glossterm{Sprint} viene dedicato interamente all'ultimazione della documentazione. Ne consegue dunque un periodo di intenso lavoro di stesura, verifica e correzione, in vista dei colloqui con i professori, in particolare il primo con il prof. Cardin, che si terrà in data 2024-08-19.\\Le attività dunque prevedono:
 \begin{itemize}
-    \item Minute modifiche al prodotto consigliate dalla Proponente;
+\setlength\itemsep{0em}
+    \item Piccoli ritocchi al prodotto consigliati dalla Proponente;
     \item Ultimazione dei documenti rimasti in sospeso, quali \textit{Specifica Tecnica}, \textit{Manuale Utente}, \textit{Valutazione sull'utilizzo di Flink};
     \item Rifinitura ultima dei documenti già pronti, quali \textit{Norme di Progetto}, \textit{Glosssario}, \textit{Analisi dei Requisiti}, \textit{Piano di Qualifica}, \textit{Piano di Progetto} (eccettuata, per ovvie ragioni, quest'ultima parte);
-    \item Ultimazione preparativi per lo svolgimento dei colloqui con i professori.
+    \item Ultimazione dei preparativi per lo svolgimento dei colloqui con i professori.
 \end{itemize} 
+Per portare a termine queste attività è necessaria però una revisione delle ore previste in fase di preventivo iniziale del progetto. Infatti, durante il calcolo del preventivo per questo decimo Sprint, il gruppo ha riscontrato una leggera eccedenza di ore da Responsabile e Progettista, contrariamente all'insufficienza di ore dei restanti ruoli. Trattandosi di poche ore ma comunque essenziali per concludere tutte le attività previste, il team ha quindi deciso di calcolare un preventivo orario non totalmente in linea con quanto inizialmente dichiarato nel documento di \textit{Preventivo Costi e Assunzione Impegni}, avendo però cura di rientrare comunque nel limite di 95 ore produttive per ciascun membro e nel budget economico prefissato. Di seguito è riportata la ridistribuzione del monte ore e dei ruoli nel dettaglio per membro, confrontata con quanto inizialmente previsto:
+\begin{table}[H]   
+	\centering
+	\begin{tabular}{C{3cm} C{1cm} C{1cm} C{1cm} C{1cm} C{1cm} C{1cm}}
+		\toprule
+		\textbf{Membro} & 
+		\textbf{Amm.} & 
+		\textbf{Res.} & 
+		\textbf{Prj.} &
+		\textbf{Ana.} &
+		\textbf{Prg.} &
+		\textbf{Ver.}\\
+		\midrule
+		Linda Barbiero & 7 & 8  & 20  & 13 & 24  & 23 \\\\ 
+		Guglielmo Barison & 7 & 9 & 20 & 12 & 24 & 23 \\\\ 
+		Pietro Busato & 9 & 8 & 20 & 12 & 23 & 23 \\\\ 
+		Davide Donanzan & 9 & 8 & 20 & 12 & 24 & 22 \\\\ 
+		Oscar Konieczny & 8 & 7 & 20 & 12 & 24 & 24 \\\\ 
+		Veronica Tecchiati & 8 & 8 & 20 & 11 & 25 & 23 \\\\ 
+		\bottomrule
+	\end{tabular}
+	\caption{Suddivisione ore per membro iniziale.}
+	\label{table:suddivisioneRuoliMembriIniziale}
+\end{table}
+\begin{table}[H]   
+	\centering
+	\begin{tabular}{C{3cm} C{1.5cm} C{1.5cm} C{1.5cm} C{2cm} C{1.5cm} C{1.5cm}}
+		\toprule
+		\textbf{Membro} & 
+		\textbf{Amm.} & 
+		\textbf{Res.} & 
+		\textbf{Prj.} &
+		\textbf{Ana.} &
+		\textbf{Prg.} &
+		\textbf{Ver.}\\
+		\midrule
+		Linda Barbiero & 7 & 8  & 20  & 13 & 24  & 23 \\\\ 
+		Guglielmo Barison & 7 & 9 & 20 & 12 & 24 & 23 \\\\ 
+		Pietro Busato & 9 & 8 & 20 & 12 & 23 & 23 \\\\ 
+		Davide Donanzan & 9 & 6 \textcolor{teal}{(-2)} & 21 \textcolor{red}{(+1)} & 12 & 24 & 23 \textcolor{red}{(+1)} \\\\ 
+		Oscar Konieczny & 10 \textcolor{red}{(+2)} & 4 \textcolor{teal}{(-3)} & 19 \textcolor{teal}{(-1)} & 12 & 26 \textcolor{red}{(+2)} & 24 \\\\ 
+		Veronica Tecchiati & 11 \textcolor{red}{(+3)} & 6,5 \textcolor{teal}{(-1,5)} & 14 \textcolor{teal}{(-6)} & 12,5 \textcolor{red}{(+1,5)} & 25 & 26 \textcolor{red}{(+3)} \\\\ 
+		\bottomrule
+	\end{tabular}
+	\caption{Suddivisione ore per membro rivista.}
+	\label{table:suddivisioneRuoliMembriRivista}
+\end{table}
 \subsubsection{Rischi attesi}
 I rischi attesi del periodo descritto sono:
 \begin{itemize}
     \setlength\itemsep{0em}
-        \item \textbf{RT-1:} Inesperienza;
         \item \textbf{RC-4:} Confusione nella rotazione dei ruoli;
-        \item \textbf{RP-3:} Stima errata dei tempi di completamento di un'attività.
+        \item \textbf{RP-1:} Stima errata delle tempistiche di progetto;
+        \item \textbf{RP-2:} Stima errata dei costi di progetto.
     \end{itemize}
 \clearpage
-\subsubsection{\glossterm{Preventivo}}
-\begin{table}[ht!]
+\subsubsection{\glossterm{Preventivo}}\begin{table}[ht!]
 	\centering
 	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
 		\toprule
         \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruoli}} & \textbf{Totale (persona)}\\
 		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
 		\midrule
-        Linda Barbiero & 2 & 0 & 1 & 1 & 0 & 1 & 5 \\ 
-        Gugliemo Barison & 1 & 3,5 & 0 & 0 & 0 & 0,5 & 5 \\ 
-        Pietro Busato & 0 & 0 & 0 & 0,5 & 1,5 & 5 & 7 \\ 
-        Davide Donanzan & 2 & 0 & 0 & 0 & 0 & 2,5 & 4,5 \\ 
-        Oscar Konieczny & 2 & 0 & 0 & 0 & 2 & 3,5 & 7,5 \\ 
-        Veronica Tecchiati & 3 & 0 & 0 & 1,5 & 3 & 3 & 10,5 \\
+        Linda Barbiero & 2 & - & 1 & 1 & - & 1 & 5 \\ 
+        Gugliemo Barison & 1 & 3,5 & - & - & - & 0,5 & 5 \\ 
+        Pietro Busato & - & - & - & 0,5 & 1,5 & 5 & 7 \\ 
+        Davide Donanzan & 2 & - & - & - & - & 2,5 & 4,5 \\ 
+        Oscar Konieczny & 2 & - & - & - & 2 & 3,5 & 7,5 \\ 
+        Veronica Tecchiati & 3 & - & - & 1,5 & 3 & 3 & 10,5 \\
         \midrule
         \textbf{Totale (ruolo)} & 10 & 3,5 & 1 & 3 & 6,5 & 15,5 & 39,5 \\ 
 	\bottomrule
@@ -1935,7 +1983,7 @@ I rischi attesi del periodo descritto sono:
 \end{table}
 \subsubsection{\glossterm{Consuntivo}}
 \subsubsubsection{Consuntivo orario}
-\begin{table}[ht!]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{p{4cm} *{6}{l} p{3cm}}
 		\toprule
@@ -1943,12 +1991,12 @@ I rischi attesi del periodo descritto sono:
         (persona)}\\
 		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
 		\midrule
-        Linda Barbiero     & 2 & 0   & 1 & 1   & 0   & 1   & 5 \\  
-        Gugliemo Barison   & 1 & 3,5 & 0 & 0   & 0   & 0,5 & 5 \\ 
-        Pietro Busato      & 0 & 0   & 0 & 0,5 & 1,5 & 5   & 7 \\ 
-        Davide Donanzan    & 2 & 0   & 0 & 0   & 0   & 2,5 & 4,5 \\ 
-        Oscar Konieczny    & 2 & 0   & 0 & 0   & 2   & 3,5 & 7,5 \\ 
-        Veronica Tecchiati & 3 & 0   & 0 & 1,5 & 3   & 3   & 10,5 \\ 
+        Linda Barbiero     & 2 & -   & 1 & 1   & -   & 1   & 5 \\  
+        Gugliemo Barison   & 1 & 3,5 & - & -   & -   & 0,5 & 5 \\ 
+        Pietro Busato      & - & -   & - & 0,5 & 1,5 & 5   & 7 \\ 
+        Davide Donanzan    & 2 & -   & - & -   & -   & 2,5 & 4,5 \\ 
+        Oscar Konieczny    & 2 & -   & - & -   & 2   & 3,5 & 7,5 \\ 
+        Veronica Tecchiati & 3 & -   & - & 1,5 & 3   & 3   & 10,5 \\ 
         \midrule
         \textbf{Totale (ruolo)} & 10 & 3,5 & 1 & 3 & 6,5 & 15,5 & 39,5 \\ 
 		\bottomrule
@@ -1956,26 +2004,7 @@ I rischi attesi del periodo descritto sono:
 	\caption{Distribuzione delle ore del decimo Sprint secondo ruolo e membro.}
 	\label{table:Distribuzione delle ore del decimo Sprint secondo ruolo e membro}
 \end{table}
-\begin{table}[ht!]
-	\centering
-	\begin{tabular}{p{4cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{1cm} p{3cm}}
-		\toprule
-        \textbf{Membro} & \multicolumn{6}{c}{\textbf{Ruolo}} & \textbf{Totale (persona)}\\
-		& \textbf{AM} & \textbf{RE} & \textbf{PT} & \textbf{AN} & \textbf{PR} & \textbf{VE}\\
-		\midrule
-        Linda Barbiero & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
-        Gugliemo Barison & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
-        Pietro Busato & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\ 
-        Davide Donanzan & 0 & 2 & -1 & 0 & 0 & -1 & 0 \\ 
-        Oscar Konieczny & -2 & 3 & 1 & 0 & -2 & 0 & 0 \\ 
-        Veronica Tecchiati & -3 & 1,5 & 6 & -1,5 & 0 & -3 & 0 \\ 
-        \midrule
-        \textbf{Totale (ruolo)} & -5 & 6,5 & 6 & -1,5 &-2 & -4 & 0 \\
-        \bottomrule
-	\end{tabular}
-	\caption{Ore rimaste dopo il decimo Sprint secondo ruolo e membro.}
-	\label{table:Ore rimaste dopo il decimo Sprint secondo ruolo e membro}
-\end{table}
+Trattandosi dell'ultimo Sprint, ciascun membro del gruppo ha esaurito la propria disponibilità oraria e pertanto non vi sono ore produttive rimanenti.
 \subsubsubsection{Consuntivo economico}
 \begin{table}[ht!]
     \centering
@@ -1997,14 +2026,13 @@ I rischi attesi del periodo descritto sono:
     \label{table:Preventivo a finire dei costi del decimo Sprint secondo ruolo}
 \end{table}
 \subsubsubsection{Rischi occorsi, impatto e loro mitigazione} \\
-Effettivamente identificato come rischio, si è registrato, durante lo Sprint, un tutto sommato ignorabile divario tra le ore inizialmente identificate per i ruoli e quelle effettivamente svolte degli stessi al completamento del progetto: viene definito ignorabile perchè il team è riuscito senza problemi a convertire le ore rimanenti in ore, economicamente equivalenti, di altri ruoli, spese invece concretamente per la realizzazione del progetto. Per il resto, non si sono incontrati problemi rilevanti di sorta, e anche il colloquio con il Prof. Cardin si è svolto senza particolari intralci. In attesa del responso del Professore, il team si occuperà, nel tempo restante, a prepararsi per il colloquio finale con il Prof. Vardanega.
+Durante la fase di pianificazione, il team ha dovuto rivedere le previsioni iniziali per riuscire a portare a termine tutte le attività individuate. La definizione del preventivo di questo Sprint si è rivelata dunque essere cruciale, in quanto un calcolo non accurato avrebbe comportato un costo complessivo del progetto superiore al limite invalicabile prefissato. Tuttavia, ciò non si è verificato e il gruppo è riuscito a concludere il progetto rispettando le scadenze stabilite e rientrando nei costi previsti. 
 \subsubsection{Retrospettiva}
 Questo Sprint, che segna la sostanziale conclusione del progetto, si è svolto senza intoppi rilevanti, impegnando il gruppo in un periodo di lavoro di calibro abbastanza leggero: considerando tutto il lavoro precedentemente svolto, risulta abbastanza scontato e anzi, si può affermare che il team abbia spinto proprio in questa direzione, considerate le difficoltà, di natura sia personale che universitaria e lavorativa, che si sarebbero aggiunte  per tutti i componenti in caso di allungamento del progetto fino agli esordi di settembre.   
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=15cm]{./images_pdp/gantt10.png}
+    \includegraphics[width=13cm]{./images_pdp/gantt10.png}
     \caption{Diagramma di Gantt rappresentativo del decimo periodo.}
-    \label{figure:Diagramma di Gantt rappresentativo del decimo periodo}
 \end{figure}
 \clearpage
 \newpage
