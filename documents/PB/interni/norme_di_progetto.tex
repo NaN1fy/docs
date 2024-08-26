@@ -1,0 +1,1552 @@
+% changelog: "2.0.0, 2024-08-18, Approvazione per PB"
+
+\documentclass[8pt]{article}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[letterpaper, left=1in, right=1in, bottom=0.75in, top=0.75in]{geometry}
+\usepackage{amsmath}
+\usepackage{subfiles}
+\usepackage{lipsum}
+\usepackage{csquotes}
+\usepackage{amsfonts}
+\usepackage[sfdefault]{plex-sans}
+\usepackage{float}
+\usepackage{pifont}
+\usepackage{mathabx}
+\usepackage[euler]{textgreek}
+\usepackage{makecell}
+\usepackage{tikz, ifthen, xstring, calc, pgfkeys, pgfopts, tikz-uml}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{amssymb} 
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[document]{ragged2e}
+\usepackage{floatflt}
+\usepackage{graphicx}
+\setcounter{tocdepth}{4}
+\usepackage{caption}
+\usepackage{multicol}
+\usepackage{tikz}
+\setlength\parindent{0pt}
+\captionsetup{font=footnotesize}
+\usepackage{fancyhdr} 
+\usepackage{graphicx}
+\usepackage{capt-of}% 
+\usepackage{booktabs}
+\usepackage{varwidth}
+\usepackage[hidelinks]{hyperref}
+% [colorlinks=true,linkcolor=nan1fyblue,urlcolor=nan1fyblue]
+\tikzumlset{fill usecase=white}
+
+% -- TITOLO INTESTAZIONE -- %
+\newcommand{\customtitle}{NORME DI PROGETTO} % o ESTERNO
+
+% -- STILE INTESTAZIONE -- %
+\fancypagestyle{mystyle}{
+	\fancyhf{} 
+	\fancyhead[R]{\includegraphics[height=1cm]{../../template/images/logos/NaN1fy_logo.png}} 
+	\fancyhead[L]{\leftmark} 
+	\renewcommand{\headrulewidth}{1pt} 
+	\fancyhead[L]{\customtitle} 
+	\renewcommand{\headsep}{1.3cm} 
+	\fancyfoot[C]{\thepage} 
+}
+
+% -- PER LA FIRMA -- %
+\newcommand{\signatureline}[1]{%
+	 \par\vspace{0.5cm}
+	\noindent\makebox[\linewidth][r]{\rule{0.2\textwidth}{0.5pt}\hspace{3cm}\makebox[0pt][r]{\vspace{3pt}\footnotesize #1}}%
+}
+
+% -- PER IL GLOSSARIO -- %
+\newcommand{\glossterm}[1]{#1\textsuperscript{G}} % inserisci \glossterm{termine}
+
+% -- per abilitare 4x sottosezioni es 2.1.1.1
+\setcounter{secnumdepth}{4}
+\newcommand{\subsubsubsection}[1]{\paragraph{#1}\mbox{}\\}
+
+\begin{document}
+
+\definecolor{myblue}{RGB}{23,103,162}
+\begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
+		\node[anchor=north west, opacity=1, yshift = 4.2cm, xshift= 1.4cm, scale=1.6] at (current page.south west) {\includegraphics[width=4cm]{../../template/images/logos/NaN1fy_logo.png}};
+	\end{tikzpicture}
+	
+	\begin{minipage}[t]{0.47\textwidth}
+		{\large{\textsc{Destinatari}}
+			\vspace{3mm}
+			\\ \large{\textsc{Prof. Tullio Vardanega}}
+			\\ \large{\textsc{Prof. Riccardo Cardin}}
+		}
+	\end{minipage}
+	\hfill
+\begin{minipage}[t]{0.47\textwidth}\raggedleft
+  {\large{\textsc{Redattori}}
+   \vspace{3mm}
+   {\\\large{\textsc{Pietro Busato}\\}}
+    {\large{\textsc{Linda Barbiero\\}}}
+ {\large{\textsc{Guglielmo Barison\\}}}
+    {\large{\textsc{Veronica Tecchiati}\\}}
+ {\large{\textsc{Davide Donanzan\\}}}
+   {\large{\textsc{Oscar Konieczny\\}}}
+    }
+  \vspace{8mm}
+  
+  {\large{\textsc{Verificatori}}
+   \vspace{3mm}
+   {\\\large{\textsc{Guglielmo Barison}\\}}
+   {\large{\textsc{Veronica Tecchiati}\\}} 
+   {\large{\textsc{Davide Donanzan}\\}}
+   {\large{\textsc{Linda Barbiero}\\}}
+
+  }
+  %\vspace{3mm}
+ \end{minipage}
+
+
+    \vspace{4cm}
+	  \begin{center}
+		\begin{flushright}
+			{\fontsize{30pt}{52pt}\selectfont \textbf{Norme di Progetto\\}} % o ESTERNO
+		\end{flushright}
+		\vspace{3cm}
+	\end{center}
+	\vspace{7.5cm}
+    {\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
+\end{titlepage}
+\pagestyle{mystyle}
+\section*{Registro delle Modifiche}
+\begin{table}[ht!]
+    \hypersetup{hidelinks}	
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{5cm} p{3cm} p{3cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
+		\midrule
+            2.0.0 & 2024-08-18 & \textbf{Approvazione per PB} & &  \\\\
+            1.2.0 & 2024-08-24 & Ultime correzioni. & Pietro Busato & Davide Donanzan \\\\
+            1.1.1 & 2024-08-18 & Correzioni e sistemazioni finali. & Davide Donanzan & Linda Barbiero \\\\
+            1.2.0 & 2024-08-18 & Correzione metriche qualità di processo e di prodotto. & Pietro Busato & Linda Barbiero \\\\
+            1.1.0 & 2024-08-16 & Aggiunta sezione \ref{sec:specifica_tecnica} e aggiunta verbali mancanti. & Pietro Busato & Linda Barbiero \\\\
+			1.0.1 & 2024-08-09 & Correzioni generali. & Pietro Busato & Linda Barbiero \\
+ 		     % spazio tra le righe
+		\bottomrule
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\clearpage
+\begin{table}[ht!]
+\hypersetup{hidelinks}
+	\centering
+	\begin{tabular}{p{1.2cm} p{2cm} p{6cm} p{3cm} p{2cm}}
+		\toprule
+		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Autore} & \textbf{Ruolo} \\
+		\midrule
+      1.0.0 & 2024-06-04 & \textbf{Approvazione per RTB} & & \\\\
+      0.11.0 &  2024-06-04 & Verifica completa, correzioni varie. & Guglielmo Barison, Veronica Tecchiati, Davide
+      Donanzan & Verificatore \\\\  
+      0.10.0 & 2024-05-30 & Stesura sezione \ref{sec:metriche_prodotto}. & Pietro Busato, Davide Donanzan & Redattore \\\\
+      0.9.0 & 2024-05-30 & Stesura sottosezione \ref{sec:doc}. & Pietro Busato & Redattore \\\\
+		0.8.1 & 2024-05-30 & Correzioni minori. & Oscar Konieczny, Guglielmo Barison & Redattore \\\\
+		0.8.0 & 2024-05-29 & Stesura sottosezione \ref{sec:ar1}. & Oscar Konieczny, Pietro Busato & Redattore \\\\ 
+        0.7.1 & 2024-05-29 & Aggiunta diagrammi \glossterm{UML} in sezione \ref{sec:analisi-rischi}. & Veronica Tecchiati & Redattore \\\\
+      0.7.0 & 2024-05-29 & Aggiunta sottosezioni \ref{sec:gestione} e \ref{sec:verifica}. & Oscar Konieczny & Redattore \\\\
+		0.6.1 & 2024-05-22 & Aggiunta descrizione dettagliata e eventuale formula per ogni metrica. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
+      0.6.0 & 2024-05-21 & Stesura sottosezione \ref{sec:progettazione} e \ref{sec:codifica}. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
+      0.5.0 & 2024-05-21 & Stesura sottosezione \ref{sec:gestione_qualita}. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
+      0.4.0 & 2024-04-30 & Stesura sottosezioni \ref{sec:gestione_task} e \ref{sec:metodo_lavoro}. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
+		0.3.0 & 2024-04-29 & Continuazione sottosezione \ref{sec:coordinamento} e
+      stesura sezioni \ref{sec:miglioramento} e \ref{sec:formazione} & Linda Barbiero & Redattore \\\\ % spazio tra le righe
+      0.2.0 & 2024-04-28 & Stesura sottosezione \ref{sec:coordinamento} e \ref{sec:pianificazione}. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
+      0.1.0 & 2024-04-27 & Stesura sottosezione \ref{sec:infrastruttura}. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
+		0.0.0 & 2024-04-27 & Stesura del file. & Linda Barbiero & Redattore \\ % spazio tra le righe
+		% X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
+		\bottomrule
+		% Ruolo Redattore o Verificatore
+	\end{tabular}
+	\caption{Registro delle modifiche.}
+	\label{table:Registro delle modifiche}
+\end{table}
+\newpage
+{\hypersetup{hidelinks} \tableofcontents}
+\clearpage
+\newpage
+{\hypersetup{hidelinks} \listoffigures}
+\newpage
+{\hypersetup{hidelinks} \listoftables}
+\newpage
+\justifying
+\section{Introduzione} \label{sec:intro}
+\subsection{Scopo del documento}
+Il seguente documento ha come scopo quello di elencare le norme che ogni membro del gruppo NaN1fy è
+tenuto a rispettare durante lo svolgimento del progetto SyncCity presentato dall'azienda
+\glossterm{Proponente} SyncLab.\\
+Inoltre, si delineano le convenzioni relative all'utilizzo dei diversi strumenti selezionati per l'implementazione del prodotto, esponendo dettagliatamente i procedimenti adottati.
+\subsection{Obiettivi del prodotto}
+L'obiettivo del progetto SyncCity è quello di creare una piattaforma atta al monitoraggio
+di sensori sparsi geograficamente nel territorio di una città. I sensori in questione
+permettono la misurazione e segnalazione di dati \glossterm{real-time} riguardanti le più disparate
+caratteristiche e necessità del territorio quali temperatura ed umidità esterna, occupazione di
+stalli di parcheggio, funzionamento o guasto elettrico di colonnine di ricarica, traffico stradale e via
+dicendo. La \glossterm{Proponente} richiede la simulazione di alcuni dei sensori nominati nonchè la
+gestione dei dati, della loro persistenza e della loro rappresentazione grafica attraverso
+\glossterm{widget} e
+grafici. \\\\SyncCity permetterà un miglioramento della \glossterm{qualità} dei servizi offerti dalla città attraverso il continuo monitoraggio della stessa, ottenendo, gestendo e successivamente condividendo i dati con gli utenti. 
+\\\\
+Il prodotto si struttura nelle seguenti \glossterm{funzionalità} principali:
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item Raccolta dati;
+	\item Persistenza e strutturazione dati;
+	\item Rappresentazione grafica dati.
+\end{itemize}
+\subsection{Glossario} 
+Al fine di ovviare a possibili ambiguità dovute al linguaggio e ai termini utilizzati nel seguente
+documento, viene fornito un \textit{Glossario v2.0.0} contenente le definizioni dei termini utilizzati aventi un significato specifico. Tali termini saranno evidenziati dalla presenza di una G ad apice.
+\subsection{Riferimenti}
+\subsubsection{Riferimenti Normativi}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item \textit{Norme di Progetto v2.0.0};
+    \item \textit{Verbale Esterno 2024-03-12};
+	\item \textit{Verbale Esterno 2024-04-19};
+	\item \textit{Verbale Esterno 2024-04-03};
+  \item Presentazione e documentazione del \glossterm{capitolato} d'appalto C6 - SyncCity:
+	\begin{itemize}
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{\color{myblue}https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf} (Ultimo accesso: \today)
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf} (Ultimo accesso: \today)
+  \end{itemize}
+  \item Regolamento progetto didattico:
+      \begin{itemize}
+          \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/PD2.pdf} (Ultimo accesso: \today)
+    \end{itemize}
+\end{itemize}
+\subsubsection{Riferimenti Informativi}
+\begin{itemize}
+    \setlength\itemsep{0em}
+    \item Documentazione \glossterm{git:} 
+      \begin{itemize}
+          \item \href{https://git-scm.com/docs}{\color{myblue}https://git-scm.com/docs} (Ultimo accesso: \today)
+      \end{itemize}
+    \item Documentazione \glossterm{GitHub:} 
+      \begin{itemize}
+          \item \href{https://docs.github.com/en}{\color{myblue}https://docs.github.com/en} (Ultimo accesso: \today)
+      \end{itemize}
+    \item Documentazione \glossterm{\LaTeX:} 
+      \begin{itemize}
+          \item \href{https://www.guitex.org/home/documentazione}{\color{myblue}https://www.guitex.org/home/documentazione} (Ultimo accesso: \today)
+      \end{itemize}
+\end{itemize}
+\newpage
+
+\section{Processi Primari} \label{sec:processi_primari}
+
+\subsection{Fornitura}
+
+\subsubsection{Introduzione} 
+Il \glossterm{processo} primario di fornitura, definito dallo \glossterm{standard}
+\glossterm{ISO}/\glossterm{IEC} 12207-1995 (con ultima versione datata 2017), individua l'insieme di
+attività atte alla realizzazione di un prodotto software che soddisfi pienamente, a partire dalla
+formulazione della proposta al \glossterm{Committente} fino alla sua ultimazione e consegna, i requisiti e le necessità a cui deve rispondere, garantendo un percorso consono, strutturato ed efficiente, oltre che efficace.
+
+\subsubsection{Attività}
+Tali sono le attività definite nel processo primario di fornitura:
+
+\begin{itemize}
+    \item \textbf{Acquisizione e preparazione:} si individuano le necessità del cliente e vengono definiti eventuali requisiti, con associate analisi dei costi pecuniari e temporali (\glossterm{preventivo}), e valutazione delle varie opzioni;
+    \item \textbf{Contrattazione:} vengono negoziati tra fornitore e cliente i termini e le condizioni contrattuali, e vengono stipulati di comune accordo obiettivi, costi, tempistiche e responsabilitá di entrambe le parti;
+    \item \textbf{Pianificazione:} vengono pianificate le attività e le stesure dei documenti utili alla realizzazione del progetto nel rispetto degli accordi fatti;
+    \item \textbf{Attuazione e controllo:} vengono eseguite le attività pianificate, controllando regolarmente e consistentemente lo stato di avanzamento e il rispetto degli impegni prefissati conformemente al costo, alle tempistiche e ai requisiti accordati in precedenza;
+    \item \textbf{Revisione e valutazione:} vengono effettuate revisioni periodiche e confronti con il cliente, per assicurare il corretto svolgimento del progetto secondo i termini prefissati e risolvere dubbi, incertezze e rischi occorsi;
+    \item \textbf{Completamento e consegna:} una volta completato il progetto, viene consegnato al cliente il prodotto finale, secondo quanto stipulato nel contratto.
+\end{itemize}
+
+\subsubsection{Rapporti con la \glossterm{Proponente}} 
+L'azienda SyncLab si è resa disponibile per realizzare un canale di comunicazione costante e
+tempestivo, attraverso il quale è possibile colloquiare con i responsabili del progetto affidato al
+team per dubbi, consigli, organizzazione; tale canale, istituito sulla piattaforma
+\glossterm{Discord}, è accompagnato anche dalla possibilità di comunicare con la Proponente tramite
+posta elettronica. È stato concordato con i responsabili di organizzare periodicamente delle
+riunioni di Stato Avanzamento Lavori (\glossterm{SAL}), fissate solitamente ogni due settimane, il
+venerdì alle 15:00 (con variazione di orario/data in base a eventuali inconvenienze riscontrate):
+tali riunioni, che coincidono con la fine dello \glossterm{Sprint} corrente e l'inizio del
+successivo, consistono nell'esposizione dell'operato svolto dal team durante lo Sprint medesimo, con
+feedback da parte dell'azienda e conseguente discussione di eventuali dubbi o problemi
+riscontrati e pianificazione del prossimo Sprint.
+La Proponente mette anche a disposizione la possibilità di effettuare incontri di formazione
+riguardo alle tecnologie proposte, tenuta da membri esperti dell'azienda e con struttura ``deep
+dive", nei quali chiarire dubbi e delucidare alcuni aspetti delle tecnologie utilizzate. 
+Possono essere infine richieste delle riunioni speciali per risolvere tempestivamente possibili
+problematiche relative ai requisiti di progetto e ai vincoli imposti dalla Proponente, o per
+aggiornare la stessa.
+\clearpage
+\subsubsection{Documentazione fornita}
+A corredo delle attività volte alla realizzazione del progetto, vengono stesi e resi disponibili
+all'azienda propronente SyncLab e ai Committenti Prof. Vardanega e Prof. Cardin i seguenti documenti:
+\subsubsubsection{Analisi dei Requisiti} \label{sec:ar1}
+Il documento \textit{Analisi dei Requisiti v2.0.0} illustra e descrive in dettaglio i casi d'uso e i requisiti del progetto, nonchè le \glossterm{funzionalità} che ci si aspetta che il prodotto finale abbia, sulla base degli obiettivi posti riguardo al progetto. Tale documento funge quindi anche da base preliminare per la progettazione del software, contenente:
+\begin{itemize}
+    \item Insieme dei casi d'uso, ovvero di tutti gli scenari possibili di utilizzo del software da
+        parte degli utenti. Per ogni caso d'uso si individuano e si analizzano: 
+    \begin{itemize}
+        \item Scenario;
+        \item Attori;
+        \item Azioni.
+    \end{itemize} 
+    \item Lista dei requisiti e dei vincoli definiti e concordati con l'azienda \glossterm{Proponente}, volti alla realizzazione del prodotto finale.
+\end{itemize}
+
+\subsubsubsection{Dichiarazione Impegni}
+Tale documento manifesta la volontà, da parte del team di sviluppo, di impegnarsi nella realizzazione del prodotto di un dato \glossterm{capitolato} (in particolare nel nostro caso di SyncCity, proposto dall'azienda SyncLab); tale documento fornisce inoltre:
+\begin{itemize}
+    \item Una suddivisione del monte ore e dei singoli ruoli tra i vari membri del gruppo;
+    \item Una descrizione dei ruoli e del loro rapporto relativo alle specifiche del progetto;
+    \item Una analisi preliminare dei rischi e dei dubbi sorti durante il processo di vaglio dei capitolati;
+    \item Preventivo preliminare dei costi;
+    \item Scadenza prefissata previsa;
+\end{itemize}
+
+\subsubsubsection{Glossario}
+Ai fini di disambiguare ogni possibile dubbio o incertezza, nonchè per rispondere preventivamente e
+in maniera esaustiva a possibili domande di natura tecnico-linguistica/etimologica da parte dei
+membri del gruppo, o di chiunque abbia la possibilità e la necessità in futuro di leggere i
+documenti relativi a tale progetto, viene istituito un \textit{Glossario v2.0.0}, contenente una definizione chiara e univoca di tutti quei termini rilevanti che portano con sè un significato specifico, onde evitare interpretazioni arbitrarie e fraintendimenti riguardo tali specifici concetti.
+
+\subsubsubsection{Lettera di Presentatione}
+La \textit{Lettera di Presentazione} è un documento che accompagna la documentazione e il prodotto forniti all'azienda proponente durante le fasi di revisione del progetto, il cui scopo è quello di dare un veloce contesto intorno allo stato di avanzamento dei lavori (o del loro inizio, per quanto concerne la lettera di presentazione per i capitolati), e fornire una breve panoramica della documentazione redatta fino a quel momento. 
+
+\subsubsubsection{Manuale Utente}
+Il documento noto come \textit{Manuale Utente v1.0.0} descrive i requisiti minimi e le istruzioni utili all'installazione/operazione del prodotto finale. Descrive inoltre le funzionalità del prodotto e di come l'utente può usufruirne.
+
+\subsubsubsection{Norme di Progetto}
+La finalità del documento noto come \textit{Norme di Progetto v2.0.0} è quello di redigere e definire un insieme di \glossterm{standard} e regole rigurado ai processi e la loro normazione (o \glossterm{Way of Working}), da seguire imperativamente da parte del team di sviluppo, durante tutto il ciclo di vita del progetto, in modo da garantirne la \glossterm{qualità} e la conformità agli obiettivi e requisiti prefissati con il cliente. I contenuti sono divisi in:
+\begin{itemize}
+    \item Processi primari;
+    \item Processi di supporto;
+    \item Processi organizzativi;
+    \item Metriche di qualità.
+\end{itemize}
+
+\subsubsubsection{Piano Di Progetto}
+Il documento \textit{Piano di Progetto v2.0.0}, redatto dal responsabile del team, si occupa di delineare la pianificazione e la gestione delle attività volte alla realizzazione del progetto; tra queste si ha in particolare:
+\begin{itemize}
+    \item Analisi dei rischi e delle eventuali problematiche sorte durante lo sviluppo del software, con conseguenti metodi per la loro possibile risoluzione o mitigazione;
+    \item Modello di sviluppo adottato dal team, ovvero descrizione della metodologia e dell'organizzazione delle attività e dei processi utilizzate durante tutto lo sviluppo del software; 
+    \item Preventivo dei costi stimati per ciascun periodo e relativo \glossterm{consuntivo} con conseguente;
+    \item Aggiornamento costante sullo stato di avanzamento dei lavori, corredato di diagrammi di \glossterm{Gantt} che descrivono lo stato di ogni singolo documento o attività relativa al progetto successivo allo \glossterm{Sprint} appena percorso.
+\end{itemize}
+
+\subsubsubsection{Piano di Qualifica}
+Il documento \textit{Piano di Qualifica v2.0.0} offre una panoramica dettagliata delle strategie di verifica e validazione adottate per assicurare la \glossterm{qualità} del prodotto e dei processi del progetto in questione. Costantemente aggiornato per riflettere l'evoluzione del progetto, si pone come documento dinamico e incrementale che illustra le pratiche per il controllo di qualità degli artefatti e dei processi, con particolare enfasi sulle metriche di valutazione del prodotto. Progettato per guidare l'adozione di processi mirati al miglioramento continuo, si compone di:
+\begin{itemize}
+    \item \textbf{Qualità di processo:} di fondamentale importanza è assicurarsi, attraverso controlli rigorosi e regolari, che i processi che supportano il prodotto siano ottimali. Applicato a tutte le attività, pratiche e metodologie, svoltesi durante l'intero ciclo di vita del software, si mira a integrare la qualità nel prodotto stesso;
+    \item \textbf{Qualità di prodotto:} caratteristiche del prodotto che individuano la sua capacità di soddisfare le esigenze e le richieste del progetto. Concentrandosi su aspetti quali affidabilità, \glossterm{funzionalità}, manutenibilità e usabilità, si assicura di garantire che il software non solo soddisfi le richieste del cliente e funzioni correttamente, ma che lo faccia conformemente agli standard di \glossterm{qualità} adottati;
+    \item \textbf{\glossterm{Test}:} piano di testing che verrà utilizzato per garantire la correttezza finale del prodotto, comprendente test di unità, di integrazione, di \glossterm{sistema} e di accettazione.
+\end{itemize} 
+
+\subsubsubsection{Specifica Tecnica} \label{sec:specifica_tecnica}
+Il documento \textit{Specifica Tecnica v2.0.0} viene scritto al fine di descrivere e far comprendere gli aspetti
+tecnici chiave del progetto, oltre che a fungere da guida per la codifica e la manutenzione dello stesso. La sua finalità primaria è dunque fornire una descrizione
+dettagliata e approfondita dell'\glossterm{architettura} implementativa del \glossterm{sistema}, fino alle sue radici più profonde, andando quiindi ad esporre dettagliatamente anche il codice e i \glossterm{design pattern} utilizzati. 
+Tale documento ha inifine anche il compito di monitorare la copertura dei requisiti identificati nel documento \textit{Analisi dei Requisiti}.
+
+\subsubsubsection{Valutazione capitolati}
+Il documento \textit{Valutazione Capitolati v1.0.0} ha il puro scopo informativo di elencare le
+motivazioni per le quali si è scelto di proporsi per un determinato progetto tra i vari selezionati,
+soppesando i requisiti della Proponente e ponderando le criticità del progetto per ognuno di questi.  
+
+\subsubsubsection{Valutazione dell'utilizzo di Flink}
+Tale documento, di natura descrittivo-narrativa, spiega il contesto e le motivazioni che hanno portato all'implementazione dello \glossterm{stream processing} tramite Apache Flink, e di come esso sia stato implementato.
+
+\subsubsubsection{Verbali interni}
+Viene riportata, sottoforma di verbale, la documentazione concernente le riunioni interne del team
+di sviluppo, attuate tramite la piattaforma comunicativa \glossterm{Discord} a cadenza settimanale,
+il cui scopo è quello di fissare per iscritto:
+\begin{itemize}
+    \item Riassunto dell'andamento dell'ultimo periodo;
+    \item Discussioni, dubbi, proposte, eventuali problemi riscontrati;
+    \item Organizzazione per il prossimo periodo.
+\end{itemize}
+\subsubsubsection{Verbali esterni}
+Viene riportata, sottoforma di verbale, la documentazione concernente le riunioni tenutesi con i
+rappresentanti dell'azienda proponente (\glossterm{SAL}), attuate tramite la piattaforma comunicativa Google Meet ogni due settimane, il cui scopo è di fissare per iscritto:
+\begin{itemize}
+    \item Resoconto del lavoro svolto durante l'ultimo \glossterm{Sprint} con feedback della controparte;
+    \item Discussioni, dubbi, proposte, eventuali problemi riscontrati;
+    \item Organizzazione e obiettivi per il prossimo Sprint.
+Al contrario dei verbali interni, i verbali esterni verranno, una volta stesi, inviati
+        telematicamente alla \glossterm{Proponente} per una loro verifica e convalida del documento.
+\end{itemize} 
+
+\subsubsection{Strumenti} 
+Di seguito viene riportata una lista di strumenti utilizzati per i processi di fornitura:
+\begin{itemize}
+    \item \textbf{\glossterm{Discord}:} come piattaforma per comunicare da remoto tra membri del gruppo e per raccogliere informazioni e dati utili, come link, appunti et al., oltre che per comunicare in maniera asincrona con l'azienda proponente;
+    \item \textbf{\glossterm{Github}:} come piattaforma dove condividere il codice del prodotto e i documenti da stendere;
+    \item \textbf{Gmail:} come mezzo aggiuntivo e alternativo per la comunicazione asincrona con l'azienda;
+    \item \textbf{Google Calendar:} utilizzato dalla \glossterm{Proponente} per segnare le date dei vari incontri fissati;
+    \item \textbf{Google Meet:} come piattaforma dove vengono svolti gli incontri con l'azienda e i responsabili del progetto; 
+    \item \textbf{Microsoft Excel:} dove vengono inseriti e organizzati i dati relativi a preventivi e consuntivi dei vari periodi; 
+    \item \textbf{\glossterm{Telegram}:} come piattaforma per comunicare in maniera asincrona tra membri del gruppo. 
+\end{itemize}
+
+%\subsection{Sviluppo Analisi dei Requisiti}
+\subsection{Sviluppo}
+
+\subsubsection{Introduzione} 
+Il \glossterm{processo} di sviluppo comprende tutte le attività da svolgere, da parte dei membri del team di sviluppo, il cui fine è quello di ottenere un prodotto in linea con le esigenze e i requisiti fissati dalla \glossterm{Proponente}; in particolare si compone di:
+\begin{itemize}
+    \item Analisi dei requisiti;
+    \item Progettazione;
+    \item Codifica.
+\end{itemize} 
+\subsubsection{Analisi dei Requisiti} \label{sec:analisi-rischi}
+
+\subsubsubsection{Descrizione}
+Lo scopo del documento di \textit{Analisi dei Requisiti v2.0.0} è quello di definire esaustivamente i casi d'uso, i requisiti e i vincoli concordati insieme alla \glossterm{Proponente}, per garantire una corretta codifica e implementazione del prodotto software da parte del team.\\
+L'\textit{Analisi dei Requisiti v2.0.0}, redatta dagli Analisti, contiene:
+\begin{itemize}
+    \item Una descrizione esplicita delle \glossterm{funzionalità} attese dal prodotto;
+    \item L'insieme degli attori, ovvero gli utilizzatori del prodotto finale;
+    \item L'insieme dei casi d'uso, ovvero le interazioni tra gli attori e il \glossterm{sistema};
+    \item L'insieme dei requisiti e delle caratteristiche da soddisfare.
+\end{itemize}
+\subsubsubsection{Obiettivo}
+Tale processo si propone di comprendere in maniera ultima le esigenze degli utenti, le caratteristiche del prodotto e le condizioni in cui esso dovrà operare.\\
+Questa attività di analisi comporta:
+\begin{itemize}
+    \item L'identificazione, in armonia con le esigenze e le proposte dell'azienda, degli obiettivi e delle finalità del prodotto che si intende sviluppare;
+    \item La fornitura di una base chiara e comprensibile ai progettisti per definire più facilmente l'architettura e il design del sistema;
+    \item La facilitazione della comunicazione tra fornitori e \glossterm{stakeholder}.
+\end{itemize}
+\subsubsubsection{Diagrammi \glossterm{UML} dei casi d'uso}
+Un diagramma di caso d'uso è uno strumento di modellazione utilizzato nella documentazione e descrizione delle funzionalità di un sistema. La sua utilità si manifesta nella possibilità di rappresentare visivamente, e quindi in maniera veloce e comprensibile, l'interazione tra utente e sistema in uno specifico scenario. Gli scenari d'uso descrivono le azioni atte a consentire all'utente di eseguire con successo una specifica attività; essi sono interconnessi mediante linee. La rappresentazione fornita dai diagrammi dei casi d'uso non si occupa di spiegare eventuali dettagli implementativi, poichè esula dallo scopo principale del documento.\\
+\\\\
+I diagrammi dei casi d'uso sono composti da:\\
+\begin{itemize}
+    \item \textbf{Attore:} agente estraneo che interagisce con il sistema per soddisfare una sua necessità;
+    %Attore
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \umlactor{Attore}
+            \end{tikzpicture}
+            \caption{Rappresentazione UML di un attore.}
+            \label{fig:Rappresentazione UML di un attore}
+        \end{figure}
+    \item \textbf{Caso d'uso:} \glossterm{funzionalità} messa a disposizione da parte del sistema, con la quale l'attore può interagire;
+    %Caso d'uso
+        \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \umlusecase[width=80]{UC-X Titolo caso d'uso}
+        \end{tikzpicture}
+        \caption{Rappresentazione UML di un caso d'uso.}
+        \label{fig:Rappresentazione UML di un caso d'uso}
+        \end{figure}
+    \item \textbf{Sottocasi:} i sottocasi espongono in maniera più dettagliata e specifica alcune istanze di casi d'uso più generali; 
+    %Sottocasi
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \umlactor[x=0, y=-1]{Attore}
+            \begin{umlsystem}[x=6, y=0]{UC-X Titolo caso d'uso}
+                \umlusecase[x=0, y=0, width=80, name=UC-X1]{UC-X.1 \\ Titolo sottocaso d'uso}
+                \umlusecase[x=0, y=-2, width=80, name=UC-X2]{UC-X.2\\ Titolo sottocaso d'uso}
+            \end{umlsystem}
+                \umlassoc{Attore}{UC-X1}
+                \umlassoc{Attore}{UC-X2}
+        \end{tikzpicture}
+        \caption{Rappresentazione UML sottocasi d'uso.}
+        \label{fig:Rappresentazione UML sottocasi d'uso}
+    \end{figure}
+\item \glossterm{\textbf{Sistema}:} identifica il prodotto software in produzione, e contiene al suo interno i casi d'uso; al di fuori di esso saranno invece posizionati gli attori (esterni);
+        %Sistema
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \begin{umlsystem}{Sistema}\end{umlsystem}
+            \end{tikzpicture}
+            \caption{Rappresentazione UML di un sistema.}
+            \label{fig:Rappresentazione UML di un sistema}
+        \end{figure}
+    \item \textbf{Relazione tra attori e casi d'uso:} tale relazione esplica l'interazione tra un attore, ovvero l'utilizzo di una \glossterm{funzionalità} del sistema, e un caso d'uso specifico, ovvero la funzionalitá stessa;
+    %Relazioni tra attori e casi d'uso
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \umlactor{Attore}
+                \umlusecase[x=5, y=0, width=80, name=UC-X]{UC-X Titolo caso d'uso}
+                \umlassoc{Attore}{UC-X}
+            \end{tikzpicture}  
+            \caption{Rappresentazione UML relazione di associazione.}
+            \label{fig:Rappresentazione UML relazione di associazione}
+        \end{figure}
+    \item \textbf{Generalizzazione tra attori:} tale relazione identifica un rapporto di tipo ereditario tra due o più attori, uno dei quali (attore specializzato) ottiene caratteristiche e comportamenti da parte dell'attore ``padre" (attore base), stabilendo una gerarchia tra gli attori facenti parte dell'interazione con il sistema;
+    %Relazioni tra attori
+        \begin{figure}[H]
+            \centering
+            \begin{tikzpicture}
+                \umlactor[x=0, y=0]{Attore padre}
+                \umlactor[x=0, y=-4]{Attore figlio}
+                \umlinherit{Attore figlio}{Attore padre}
+            \end{tikzpicture}  
+            \caption{Rappresentazione UML generalizzazione tra attori.}
+            \label{fig:Rappresentazione UML generalizzazione tra attori}
+        \end{figure}
+    \item \textbf{Relazioni tra casi d'uso:} 
+        \begin{itemize}
+        \item \textbf{Inclusione:} un caso d'uso viene definito ``includente'' quando, nell'interazione tra un attore e tale caso d'uso, viene eseguito come parte integrante del \glossterm{processo} un altro caso d'uso, detto ``incluso''. Attraverso questa relazione si evita il problema della duplicazione di casi d'uso superflui; 
+        %Inclusione
+            \begin{figure}[H]
+                \centering
+                    \begin{tikzpicture}
+                        \umlactor[x=0, y=0]{Attore}
+                        \begin{umlsystem}[x=6, y=0]{Sistema}
+                            \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                            \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+                        \end{umlsystem}
+                            \umlassoc{Attore}{UC-X}
+                            \umlinclude{UC-X}{UC-Y}
+                    \end{tikzpicture}
+                \caption{Rappresentazione UML relazione di inclusione.}
+                \label{fig:Rappresentazione UML relazione di inclusione}
+            \end{figure}
+        \item \textbf{Estensione:} un caso d'uso viene definito ``estendente" quando,
+            nell'interazione tra un attore e tale caso d'uso, al verificarsi di determinate
+                condizioni può essere eseguito un altro caso d'uso, detto ``esteso", a complemento o arricchimento del processo in atto. Attraverso tale relazione si è in grado di gestire situazioni particolari senza satollare lo scenario principale di eccezioni e condizioni particolari;
+        %Estensione
+            \begin{figure}[H]
+                \centering
+                    \begin{tikzpicture}
+                        \umlactor[x=0, y=0]{Attore}
+                        \begin{umlsystem}[x=6, y=0]{Sistema}
+                            \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                            \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+                        \end{umlsystem}
+                            \umlassoc{Attore}{UC-X}
+                            \umlextend{UC-Y}{UC-X}
+                    \end{tikzpicture}
+                \caption{Rappresentazione UML relazione di estensione.}
+                \label{fig:Rappresentazione UML relazione di estensione}
+            \end{figure}
+        \item \textbf{Generalizzazione:} nel contesto di una generalizzazione un caso d'uso specifico eredita il proprio comportamento da parte di un altro caso d'uso piú generico. 
+        %Generalizzazione
+            \begin{figure}[H]
+                \centering
+                    \begin{tikzpicture}
+                        \umlactor[x=0, y=0]{Attore}
+                        \begin{umlsystem}[x=6, y=0]{Sistema}
+                            \umlusecase[x=0, y=0, width=80, name=UC-X]{UC-X \\ Titolo caso d'uso}
+                            \umlusecase[x=0, y=-3, width=80, name=UC-Y]{UC-Y \\ Titolo caso d'uso}
+                        \end{umlsystem}
+                            \umlassoc{Attore}{UC-X}
+                            \umlinherit{UC-Y}{UC-X}
+                    \end{tikzpicture}
+                \caption{Rappresentazione UML relazione di generalizzazione.}
+                \label{fig:Rappresentazione UML relazione di generalizzazione}
+            \end{figure}
+        \end{itemize}
+\end{itemize}
+\subsubsubsection{Codice dei casi d'uso}
+Ad ogni caso d'uso è associato un codice univoco definito nel seguente formato:
+\begin{center}
+    \textbf{UC-[Numero].[Specializzazione]}
+\end{center}
+Dove \textbf{Numero} è un identificativo e \textbf{Specializzazione} si riferisce ad un caso specifico
+dello stesso caso d'uso.
+\clearpage
+\subsubsubsection{Requisiti}
+I requisiti di un prodotto software, concordati a inizio progetto insieme alla Proponente, identificano in maniera dettagliata le \glossterm{funzionalità}, le prestazioni, i vincoli e tutte le specifiche che tale prodotto deve soddisfare. Fungono quindi da guida per lo sviluppo, il testing e la valutazione finale del prodotto, garantendo la sua conformità alle esigenze e agli obiettivi prefissati.\\
+Di seguito vengono elencati i vari tipi di requisito:
+\begin{itemize} 
+    \item \textbf{Funzionali:} questa tipologia di requisiti definisce le funzionalità del \glossterm{sistema}, ovvero i servizi che esso deve essere in grado di fornire al fine di soddisfare le esigenze dell'utente. Un requisito funzionale descrive quindi il comportamento del sistema;
+    \item \textbf{Qualità:} questa tipologia di requisiti definisce lo \glossterm{standard} di qualità che il prodotto deve rispettare;
+    \item \textbf{Vincolo:} questa tipologia di requisiti indica i limiti imposti dal \glossterm{capitolato} che il prodotto deve rispettare;
+    \item \textbf{Prestazionali:} questa tipologia di requisiti specifica le prestazioni che il sistema deve avere. 
+\end{itemize}
+
+\subsubsubsection{Codice dei requisiti}
+A ciascun requisito è abbinato un codice univoco definito nel seguente modo:
+\begin{center}
+    \textbf{R[Tipologia]-[Numero]}
+\end{center}
+Dove \textbf{Tipologia} rappresenta il tipo di requisito e \textbf{[Numero]} è un identificativo progressivo.
+
+% \subsection{Progettazione e Codifica}
+\subsubsection{Progettazione} \label{sec:progettazione}
+Lo scopo della progettazione è definire una soluzione possibile ai requisiti dichiarati nell'\textit{Analisi dei Requisiti v2.0.0}.
+\subsubsubsection{Descrizione}
+Svolta dai Progettisti, la progettazione è soggetta a due parti:
+\begin{itemize}
+    \item{\textbf{Progettazione logica}:} tecnologie, \glossterm{framework} e \glossterm{librerie}, utilizzate per la realizzazione del prodotto, dimostrando la sua adeguatezza utilizzando il \glossterm{PoC}.
+    \begin{itemize}
+        \item Framework e tencologie utilizzate;
+        \item \glossterm{Proof of Concept};
+        \item Diagrammi \glossterm{UML}.
+    \end{itemize}
+    \item{\textbf{Progettazione di dettaglio}:} base architetturale del prodotto basandosi sulla Progettazione logica.
+    \begin{itemize}
+        \item Diagrammi delle classi;
+        \item Tracciamento delle classi;
+        \item Design Pattern;
+        \item Test di unità per componente.
+    \end{itemize}
+\end{itemize}
+La progettazione risulta anche nella stesura del documento \textit{Specifica Tecnica v1.0.0}, contenente:
+\begin{itemize}
+    \item Descrizione approfondita delle tecnologie utilizzate;
+    \item Descrizione dell'architettura implementata;
+    \item Spiegazione motivazioni alla base delle scelte di design;
+    \item Panoramica dei requisiti e dell'ottemperanza degli stessi.
+\end{itemize}
+\subsubsubsection{Vincoli di \glossterm{qualità}}
+Vengono di seguito elencate le \glossterm{best practice} utilizzate durante la progettazione e lo sviluppo del prodotto:
+\begin{itemize}
+    \item \textbf{Analisi:} si assicura che il prodotto venga progettato e sviluppato soltanto dopo una attenta e approfondita analisi dei requisiti, funzionali e non, stabiliti insieme alla \glossterm{Proponente}; 
+    \item \textbf{Affidabilità:} si assicura che il software svolga correttamente e in maniera prevedibile e verificabile le proprie funzioni;
+    \item \textbf{Coesione:} si assicura un ottimizzazione dei singoli componenti del software a livello di coesione, garantendo il più possibile che essi lavorino su una singola responsabilità ben definita;
+    \item \textbf{Chiarezza:} si assicura che sia il prodotto sia la documentazione di sostegno siano facilmente comprensibili, chiari e completi di immagini, diagrammi \glossterm{UML}, descrizioni, spiegazioni e commenti;
+    \item \textbf{Decoupling:} si assicura un ottimizzazione dei singoli componenti del software a livello di accoppiamento, garantendo il più possibile che essi lavorino indipendentemente gli uni con gli altri, riducendo interazioni e dipendenze, migliorando così manutenibilità e flessibilità del \glossterm{sistema};
+    \item \textbf{Flessibilità:} si assicura la possibilità di adattare o estendere facilmente il prodotto per soddisfare nuovi requisiti senza dover modificare in maniera estensiva il prodotto;
+    \item \textbf{Incapsulamento:} si assicura l'occultamento, all'interno del prodotto, dei dettagli implementativi dei singoli componenti, se visti dall'esterno, consentendo l'accesso e l'utilizzo solo in maniere predefinite;
+    \item \textbf{Modularità:} si assicura la suddivisione dell'architettura in moduli indipendenti e ben definiti, in maniera tale da consentire coesione e decoupling e facilitando scalabilità, flessibilità e manutenzione;
+    \item \textbf{Riusabilità:} si assicura, attraverso astrazione, incapsulamento et similia la possibilità di poter riutilizzare in contesti diversi e non taluni parti di codice o architettura, per quanto possibile;
+    \item \textbf{Scalabilità:} si assicura la progettazione dell'architettura in maniera tale da poter gestire, senza problemi e in modo efficiente, aumenti di carico e aggiunte di nuove \glossterm{funzionalità};
+    \item \textbf{Semplicità:} si assicura un ottimizzazione dei singoli componenti e del prodotto a livello di semplicità, garantendo il più possibile un codice e un'architettura puliti e privi di sezioni nebulose o inutilmente complesse;
+    \item \textbf{Sufficienza:} si assicura l'adempimento del più alto numero possibile di requisiti, funzionali e non, pattuiti con l'azienda \glossterm{Proponente}.
+\end{itemize}
+
+\subsubsubsection{Diagrammi delle classi}
+Vengono utilizzati, a complemento della progettazione del prodotto, i diagrammi delle classi, necessari per definire caratteristiche e relazioni tra componenti del sistema.\\\\ 
+Una classe viene rappresentata graficamente come un rettangolo, diviso in tre sezioni:
+\begin{enumerate}
+    \item \textbf{Nome della classe:} nome identificativo della classe; esso viene rappresentato in grassetto per la convenzione PascalCase, ad eccezione dei nomi delle classi astratte, scritti invece in corsivo. Il nome deve essere chiaro e indicare le funzionalità/responsabilità della classe;
+    \item \textbf{Attributi:} campi dati della classe, vengono rappresentati singolarmente, divisi in righe, secondo il seguente formato:
+    \begin{center}
+    
+\begin{center}\texttt{Visibilità Nome: Tipo<T> [Molteplicità] = Valore/i di Default}\end{center}
+    \end{center}
+          dove:\\
+          \begin{itemize}
+            \item \textbf{Visibilità:} precede ogni attributo, e segue questi indicativi:
+                \begin{itemize}
+                    \item $-$: visibilità privata;
+                    \item $\#$: visibilità protetta;
+                    \item $+$: visibilità pubblica;
+                    \item $\sim$: visibilità di package. 
+                \end{itemize}
+            \item \textbf{Nome:} nome univoco dell'attributo, viene scritto in camelCase per il linguaggio \glossterm{Java}, e in underscore per il linguaggio \glossterm{Python}. Nel caso di costanti, il nome è scritto in Maiuscolo;
+            \item \textbf{Tipo:} indica il tipo, primitivo o meno, dell'attributo;
+            \item \textbf{$<$T$>$:} indica il tipo di oggetto contenuto nel caso di sequenze o container di elementi, come liste o array;
+            \item \textbf{Molteplicità:} indica la lunghezza nel caso di sequenze o container di elementi, come liste o array; se non si conosce a priori la lunghezza degli elementi, si indica con ``[*]". In caso di singolo elemento, questo dato è opzionale;                  
+            \item \textbf{Valore/i di Default:} ogni campo dati può essere inizializzato con un valore di default.
+          \end{itemize}
+    \item \textbf{Firme dei Metodi:} descrivono il comportamento generale dei singoli metodi. Tutti i metodi, anch'essi rappresentati singolarmente in righe separate, seguono il seguente formato:\\
+    \begin{center}
+    \begin{center} \texttt{Visibilità Nome (Parametri Formali): Tipo di Ritorno} \end{center}
+    \end{center}
+    
+          dove:\\
+          \begin{itemize}
+            \item \textbf{Visibilità:} precede ogni metodo, e segue questi indicativi:
+                \begin{itemize}
+                    \item $-$: visibilità privata;
+                    \item $\#$: visibilità protetta;
+                    \item $+$: visibilità pubblica;
+                    \item $\sim$: visibilità di package. 
+                \end{itemize}
+            \item \textbf{Nome:} rappresenta l'identificativo del metodo e descrive in maniera esplicita il suo obiettivo o funzionalità;
+            \item \textbf{Parametri formali:} separati tramite virgole, rappresentano i vari parametri richiesti dal metodo;
+            \item \textbf{Tipo di Ritorno:} determina l'eventuale tipo di ritorno del metodo.
+            \end{itemize}
+    \end{enumerate}
+        Per convenzione, la maggior parte dei metodi getter/setter e dei costruttori non vengono rappresentati, e l'assenza di attributi o metodi indica una loro assenza all'interno della classe o, nel caso di eredità, eventuali metodi ripetuti che si possono ignorare.  
+ \subsubsubsection{Relazioni tra classi}
+ Le classi sono collegate tra loro mediante frecce di varia natura, che rappresentano i rispettivi tipi di relazione e dipendenza che le classi possono avere.\\
+ Qui di seguito vengono individuate le possibili relazioni:
+         \clearpage
+ \begin{itemize}
+    \item \textbf{Dipendenza:}\\ si dice che una classe dipende da un'altra classe esterna quando la prima utilizza servizi, metodi o membri forniti dalla seconda classe; tale relazione viene rappresentata con una freccia tratteggiata, che può presentare, in taluni contesti, i testi:
+        \begin{itemize}
+            \item $\ll$use$\gg$: quando la classe chiama semplicemente metodi o utilizza attributi dell'altra classe;
+            \item $\ll$create$\gg$: quando la classe, prima di chiamare metodi o utilizzare attributi dell'altra classe, istanzia un costruttore per tale classe.
+        \end{itemize}
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=0.72\textwidth]{images_ndp/dependency.png}
+            \caption{Esempio di dipendenza.}
+            \label{fig:Esempio di dipendenza}
+        \end{figure}
+    \item \textbf{Associazione:}\\ si dice che una classe è associata ad un'altra quando la prima contiene campi o istanze della seconda; le molteplicità possono venire espresse tramite valori posizionati di fianco alla freccia, che risulta essere una linea continua e orientata; è da notare che se la moltiplicità è uno(1), essa può venire ignorata nel diagramma;
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.72\textwidth]{images_ndp/association.png}
+        \caption{Esempio di associazione.}
+        \label{fig:Esempio di associazione}
+    \end{figure}
+    \item \textbf{Aggregazione:}\\ si dice che una classe è aggregata ad un'altra quando la seconda ha una relazione ``Part of" rispetto alla prima (ovvero quest'ultima è composta anche dalla prima), ma le parti possono esistere indipendentemente dalla classe principale. L'aggregazione viene rappresentata tramite una freccia che inizia con un diamante vuoto;
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.72\textwidth]{images_ndp/aggregation.png}
+        \caption{Esempio di aggregazione.}
+        \label{fig:Esempio di aggregazione}
+    \end{figure}
+       \clearpage
+    \item \textbf{Composizione:}\\ si dice che una classe è composita con un'altra classe quando la seconda è ``Part of" della prima, ma le classi di cui la prima è composta sono dipendenti da essa e non possono esistere indipendentemente. La composizione viene indicata tramite freccia che inizia con un diamante pieno;
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.72\textwidth]{images_ndp/composition.png}
+        \caption{Esempio di composizione.}
+        \label{fig:Esempio di composizione}
+    \end{figure}
+
+    \item \textbf{Generalizzazione:}\\ si dice che una classe(detta sottoclasse o figlia) generalizza un'altra (eredita da essa, detta superclasse o genitore) quando la prima ha una relazione ``Is a" rispetto alla seconda, acquisendone attributi e metodi. La generalizzazione viene indicata con una freccia continua vuota;
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.72\textwidth]{images_ndp/inheritance.png}
+        \caption{Esempio di generalizzazione.}
+        \label{fig:Esempio di generalizzazione}
+    \end{figure}
+    \item \textbf{Interface Realization:}\\ si dice che una classe realizza un'interfaccia qunado essa fornisce l'implementazione dei metodi definiti in tale specifica interfaccia. Questa relazione è importante quando si vuole mostrare come una classe concreta soddisfi i requisiti di un'interfaccia definendo e implementando i suoi metodi. La classe interessata viene collegata tramite una semplice linea con l'interfaccia, che viene invece rappresentata da un cerchio.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{images_ndp/interface.png}
+        \caption{Esempio di realizzazione di interfaccia.}
+        \label{fig:Esempio di realizzazione di interfaccia}
+    \end{figure}
+\end{itemize}
+\subsubsubsection{Design Pattern}
+Un design pattern rappresenta una soluzione consolidata e riconosciuta per problemi comuni di progettazione, tendenti a presentarsi durante tutto il processo di sviluppo software.
+Esso costituisce un modello guida che offre un metodo ben organizzato e testato per risolvere un determinato problema di progettazione, che può essere riutilizzato in diverse situazioni.
+I design pattern sono sviluppati su base empirica e sono progettati per migliorare efficienza, qualità e manutenibilità del software su cui vengono utilizzati.
+Ogni design pattern deve includere una descrizione della sua importanza e utilità all'interno dell'architettura, per un'esegesi completa sul suo ruolo e utilizzo.
+\clearpage
+\subsubsubsection{Test}
+L'insieme complessivo dei test ha il ruolo di assicurare la qualità del prodotto, sia durante le sue fasi di progettazione e implementazione, sia nello stadio finale.
+Durante la stesura dei test, vengono delineati i requisiti per il testing, definiti i casi di test e i criteri di accettazione, che servono a validare il software. L'obiettivo
+principale dei test è quello di individuare e correggere errori, bug e difetti presenti nel software prima che esso venga rilasciato.
+Inoltre, il processo di testing è essenziale per garantire che il software soddisfi le specifiche e i requisiti delineati con il cliente.
+
+\subsubsection{Codifica} \label{sec:codifica} 
+Lo scopo della codifica, lavoro dei Porgrammatori, è implementare le specifiche individuate concretizzandole su un prodotto utilizzabile. Tale prodotto dovrà poi soddisfare taluni punti, quali:\\
+\begin{itemize}
+    \item Test di unità;
+    \item Conformità di utilizzo dei metodi di codifica e degli standard applicati;
+    \item Test di integrazione;
+    \item Operatività e manutenibilità del prodotto finale.
+\end{itemize}
+\subsubsubsection{Stile di Codifica}
+Di seguito vengono riportate le norme adottate dal team di sviluppo durante la stesura del codice del prodotto:
+\begin{itemize}
+    \item La lingua adottata per il codice è, ovviamente, l'inglese, mentre per i commenti è consigliato, sebbene non obbligatorio, l'utilizzo dell'italiano;
+    \item Nel caso in cui sia necessario documentare porzioni di codice tramite commenti mirati, è d'obbligo che essi siano concisi e chiari;
+    \item I nomi dei file devono essere univoci ma soprattutto esplicativi, dichiarando con parole chiave il loro contenuto;
+    \item I nomi delle classi e dei metodi (ad eccezione dell'overriding) devono essere univoci; per quanto riguarda la tipologia di nomenclatura, essa varia in base al linguaggio utilizzato (underscore per \glossterm{Python}, camelCase per \glossterm{Java});
+    \item L'indentazione è fissa a 4 spazi per ogni sorgente;
+    \item La nomenclatura per le costanti è tutta in maiuscolo, con gli spazi sostituiti da underscore;
+    \item Il corpo delle classi e dei metodi deve rimanere il più pulito, compatto e comprensibile possibile;
+    \item L'iterazione è preferita alla ricorsione poichè rende più facile il lavoro di verifica del codice;
+    \item Ogni metodo può contenere un numero massimo di 3 cicli annidati, per non appesantire e complicare il codice.
+\end{itemize}
+\newpage
+\section{Processi di Supporto} \label{sec:processi_supporto}
+\subsection{Documentazione} \label{sec:doc}
+\subsubsection{Introduzione}
+Viene denominato ``documentazione" l'insieme di tutti i documenti a corredo del progetto software,
+che forniscono tutte le informazioni e i dettagli utili a sviluppatori, utenti e distributori
+riguardanti il prodotto. Utilizzata prevalentemente dal team di sviluppo per facilitare
+l'organizzazione e svolgimento delle attività durante il ciclo di vita del software, essa viene
+mantenuta coerente grazie al tracciamento di tutti i processi e attività che la coinvolgono, in maniera tale da migliorarne costantemente lo stato e semplificare la manutenzione.
+\subsubsection{Lista dei documenti}
+Di seguito viene elencato l'insieme dei documenti redatti:
+\begin{itemize}
+    \item \textit{Analisi dei Requisiti v2.0.0};
+    \item \textit{Dichiarazione Impegni v2.0.0};
+    \item \textit{Glossario v2.0.0};
+    \item \textit{Lettera di Presentatione};
+    \item \textit{Manuale Utente v1.0.0};
+    \item \textit{Norme di Progetto v2.0.0};
+    \item \textit{Piano di Progetto v2.0.0};
+    \item \textit{Piano di Qualifica v2.0.0};
+    \item \textit{Specifica Tecnica v1.0.0};
+    \item \textit{Valutazione Capitolati v1.0.0};
+    \item \textit{Valutazione dell'utilizzo di Flink v1.0.0};
+    \item Verbali Esterni;
+    \item Verbali Interni.
+\end{itemize}
+
+\subsubsection{Documentation as Code}
+Riguardo la documentazione viene adottata la \glossterm{Way of Working} del ``Documentation as
+Code", che prevede la stesura, la gestione e la distribuzione dei documenti utilizzando pratiche e strumenti solitamente utilizzati nello sviluppo di codice o, più in generale, di software. I punti principali di tale Way of Working sono:
+\begin{itemize}
+    \item Automazione;
+    \item Collaborazione;
+    \item Distribuzione;
+    \item Integrazione incrementale;
+    \item \glossterm{Versionamento}.
+\end{itemize}
+\subsubsection{Ciclo di vita dei documenti}
+Ogni documento viene redatto e manutenuto secondo questo \glossterm{processo:}
+\begin{enumerate}
+    \item Viene creata una \glossterm{branch} per la stesura del documento nella \glossterm{repository} docs: se il file è un verbale, allora viene clonato il template relativo nel branch;
+    \item Vengono assegnati i membri del gruppo che dovranno redigere il documento; 
+    \item Ogni volta che una sezione o comunque parte del documento viene completata, viene aggiunto
+        nel registro delle modifiche del file una riga in coda, nel formato \textbf{[versione
+        x.y.z]}, \textbf{[data]}, \textbf{[oggetto]}, \textbf{[membro del team]}, \textbf{[ruolo]}(1);  
+    \item Viene poi caricata nella repository tramite \glossterm{commit} sul branch adeguato;
+    \item Può venire richiesta una \glossterm{pull request} per fondere le modifiche fatte fino a quel momento
+        nel branch ``main", in maniera tale da costituire una \glossterm{milestone} per i singoli documenti, senza ovviamente chiudere il branch;
+    \item Una volta completato il documento(2), viene richiesta la verifica del contenuto e della forma
+        da parte di almeno due membri del gruppo, prima di procedere con il \glossterm{merge} finale e la chiusura della branch; 
+    \item A richiesta dei verificatori, possono essere ripetute parti del processo, in vista di una ottimizzazione del documento;
+    \item Una volta dichiarato finito il documento, la sua branch viene chiusa e la rispettiva \glossterm{issue} viene marcata come ``closed";
+    \item A discrezione del team di sviluppo, la branch di un documento che si ritiene debba essere aggiornato ulteriormente, manutenuto o modificato, previa valida motivazione, può essere riaperto, e il processo ripreso. 
+\end{enumerate}
+Note: \\
+\begin{enumerate}
+    \item Dalla conclusione dell'\glossterm{RTB} questo metodo è deprecato; ora il campo \textbf{[membro del team]} è sostituito da \textbf{[Redattori]}, mentre il campo \textbf{[ruolo]} viene sostituito da \textbf{[Verificatori]};
+    \item Il periodo massimo consentito per l'ultimazione di un documento non mantenuto nel tempo o per la modifica di un qualsiasi documento è della durata di una settimana, se non altrimenti specificato.
+\end{enumerate}
+    Il ciclo di vita dei documenti e delle loro \glossterm{issue} consiste nei seguenti quattro stati:
+\begin{itemize} 
+    \item \textbf{Stato ``to-do":} il documento deve essere iniziato;
+    \item \textbf{Stato ``in progress":} il documento sta venendo scritto, completato o aggiornato;
+    \item \textbf{Stato ``verify'':} il documento è in attesa di essere posto sotto scrutinio;
+    \item \textbf{Stato ``done'':} il documento è completo e verificato;
+\end{itemize}
+Un documento che deve passare il vaglio per una \glossterm{milestone} principale, quale \glossterm{RTB} o \glossterm{PB} (o eventi straordinari che assumono la stessa ``gravitas"), viene controllato e verificato un'ultima volta, in separata sede, da tutti i membri del team.
+In corrispondenza di questo ultimo controllo, il documento subisce uno scatto di versione (da 0.x.y a 1.x.y, o 2.x.y, e cosí via) che determina la versione definitiva di quel periodo.
+
+\subsubsection{Template Verbali}
+Per semplificare, velocizzare e standardizzare la stesura del documento piú comune prodotto dal
+team, ovvero i verbali, indipendentemente dal loro essere esterni o interni, è stato sviluppato un template in \glossterm{\LaTeX}, con il quale essi vengono omologati e verificati molto facilmente.
+\subsubsection{Nomenclatura}
+Per riferirsi a un documento prodotto dal team, la formulazione del nome è la seguente:
+\begin{center}
+\textbf{[nome\_del\_file]} + \_ + \textbf{[versione]} (aggiunta in automatico). 
+\end{center}
+Per i verbali viene utilizzato invece una nomenclatura del tipo:
+\begin{center}
+\textbf{[VE]} (se esterno) / \textbf{[VI]} (se interno) + \_ + \textbf{[data\_verbale]}
+\end{center}
+(con data verbale nel formato ``YYYY\_MM\_DD", dove YYYY indica l'anno, MM il mese e DD il giorno). 
+
+\subsubsection{\glossterm{Versionamento}}
+Il versionamento, necessario per il tracciamento delle modifiche dei documenti, è strutturato nel
+formato \textbf{X.Y.Z}, come convenzione della versione dei documenti, dove:
+\begin{itemize}
+    \item \textbf{X:} cifra che viene incrementata quando avviene un rilascio, che nel caso del progetto corrisponde ai raggiungimenti di \glossterm{RTB}, \glossterm{PB} e \glossterm{CA};
+    \item \textbf{Y:} rappresenta un'aggiunta o modifica sostanziale, come ad esempio l'aggiunta di una sezione;
+    \item \textbf{Z:} indica una piccola modifica, come per esempio la correzione di errori o aggiunte di piccole dimensioni.
+\end{itemize}
+Un documento parte sempre dalla versione 0.0.0. Ogni modifica di un numero di versione, comporta l'azzeramento di tutti i numeri alla sua destra.
+\subsubsection{Struttura}
+Ogni file segue una rigorosa struttura delle pagine, organizzata come segue.
+\subsubsubsection{Prima Pagina}
+Nella prima pagina di ogni documento sono presenti, partendo dall'alto e proseguendo verso destra:
+\begin{itemize}
+    \item Destinatari del documento;
+    \item Redattori;
+    \item Verificatori;
+    \item Nome del file; 
+    \item Logo del team;
+    \item Logo dell'università di Padova;
+    \item Mail ufficiale del team.
+\end{itemize}
+Al contenuto di ogni pagina, esclusa la prima, precede un'intestazione con nome del file a sinistra e logo del team a destra, mentre segue un piè di pagina contenente semplicemente il numero della pagina. 
+\subsubsubsection{Registro delle modifiche}
+Alla prima pagina segue la pagina contenente il changelog del documento; esso è strutturato sottoforma di tabella, ogni riga della quale contiene i seguenti dati:
+\begin{itemize}
+    \item Versione del documento;
+    \item Data dell'evento;
+    \item Breve descrizione dell'evento;
+    \item Membri che hanno funto da redattori;
+    \item Membri che hanno funto da verificatori.
+\end{itemize}
+Nel caso di una revisione per \glossterm{milestone} prinicipale (RTB, PB et similia), essendo che tutti i membri del gruppo vi partecipano, non vengono specificati né redattori né verificatori. 
+\subsubsubsection{Indice}
+Nella pagina successiva al Registro Modifiche, viene reso disponibile, grazie alla scrittura in \glossterm{\LaTeX}, un indice interattivo che segna ogni sezione e sottosezione del contenuto del documento, comprendente la possibilità di navigare nel file tramite click sulla sezione interessata.
+\subsubsubsection{Contenuto del documento}
+Le restanti pagine del documento sono riservate al contenuto del documento stesso, che non segue una precisa organizzazione trasversale tra i documenti, data la loro eterogeneità di contenuti e forma.
+Unica eccezione sono i verbali, interni ed esterni, che presentano una struttura omologata e omogenea:
+\begin{itemize}
+    \item \textbf{Informazioni generali:} riguardanti l'incontro e i partecipanti all'incontro;
+    \item \textbf{Ordine del giorno:} in cui si descrive brevemente lo scopo dell'incontro;
+    \item \textbf{Sintesi dell'incontro:} in cui si descrive ciò che è stato detto durante l'incontro;
+    \item \textbf{Conclusioni:} in cui si espone le scelte decise durante l'incontro;
+    \item \textbf{Attività da svolgere:} in cui si dichiara gli impegni e le attività da svolgere decise sulla base delle conclusioni tratte dall'incontro.
+\end{itemize}
+Nell'ultima pagina dei verbali viene poi apposta, nel corrispettivo spazio dedicatogli, la firma da parte di un rappresenante della \glossterm{Proponente}, da porre dopo la visione e conferma di tale documento della controparte.
+\subsubsection{Convenzioni stilistiche}
+\subsubsubsection{Registro modifiche}
+All'interno della sezione ``Descrizione", nel registro delle modifiche di un documento, ogni entry deve terminare con un punto.
+\subsubsubsection{Elenchi puntati}
+Le voci di ogni elenco, salvo eccezioni, iniziano con lettera maiuscola e terminano con punto e
+virgola `;', eccetto l'ultima voce che termina con punto normale `.'.
+\subsubsubsection{Descrizione immagini}
+Ogni immagine o tabella presenta una descrizione associata, utile a fornire una breve descrizione o spiegazione del contenuto visivo.
+\subsubsubsection{Formato delle date}
+Viene adottato il formato \textbf{YYYY-MM-DD}, dove YYYY indica l'anno (4 cifre), MM il mese (2
+cifre), e DD il giorno (2 cifre).
+\subsubsubsection{Abbreviazioni}
+Numerosi sono i casi in cui vengono utilizzate sigle relative a entità e artefatti relativi al progetto. Tra questi ci sono:
+\begin{itemize}
+    \item \textbf{Concetti chiave del progetto:}
+        \begin{itemize}
+            \item \textbf{\glossterm{CA}:} Customer Acceptance;
+            \item \textbf{\glossterm{PoC}:} \glossterm{Proof of Concept};
+            \item \textbf{\glossterm{MVP}:} Minimum Viable Product;
+            \item \textbf{\glossterm{PB:}} Product \glossterm{Baseline};
+            \item \textbf{\glossterm{RTB:}} Requirements and Technology Baseline.
+        \end{itemize}
+    \item \textbf{Ruoli del progetto:}
+        \begin{itemize}
+            \item \textbf{Am:} Amministratore;
+            \item \textbf{An:} Analista;
+            \item \textbf{Pr:} Programmatore;
+            \item \textbf{Pt:} Progettista;
+            \item \textbf{Re:} Responsabile;
+            \item \textbf{Ve:} Verificatore.
+        \end{itemize}
+\end{itemize}
+\subsubsection{Strumenti}
+Di seguito vengono elencati tutti gli strumenti unitariamente utilizzati dal team per la stesura, scrittura, manutenzione e verifica dei documenti:
+\begin{itemize}
+    \item \textbf{\glossterm{GitHub}:} piattaforma di hosting di codice sorgente, utilizzato per la condivisione dei file, della loro verifica e del loro \glossterm{versionamento}, nonché per la automatizzazione di taluni processi, in conformità al concetto di ``Documentation as Code";  
+    \item \textbf{\LaTeX:} linguaggio di markup, molto famoso in ambito accademico/scientifico, utilizzato per la stesura dei documenti in maniera pulita ed efficiente.
+\end{itemize}
+
+\subsection{Gestione della configurazione} \label{sec:gestione}
+\vspace{1em}
+\subsubsection{Introduzione}
+Attuato durante tutto il ciclo di vita di un progetto software, il processo di gestione della configurazione norma il tracciamento e il controllo delle modifiche a documenti e codice prodotti, in maniera da rendere organizzata la procedura di modifica di tali artefatti e la loro evoluzione.
+% Expand the introduction a bit
+
+\subsubsection{Tecnologie Utilizzate}
+
+\begin{itemize}
+    \item \textbf{Git:} software utilizzato per il controllo di versione dei Configuration Item;
+    \item \textbf{GitHub:} piattaforma web per il controllo di versione utilizzata per l'hosting e coordinamento delle operazioni. Offre anche un \glossterm{Issue} Tracking System.
+\end{itemize}
+
+\subsubsection{\glossterm{Versionamento}}
+
+Il versionamento è necessario per il tracciamento delle modifiche che avvengono ai documenti. Grazie al versionamento è possibile visualizzare le modifiche che un file ha subito e, nel caso fosse necessario, far regredire il documento ad una versione precedente. \\
+Il gruppo utilizza il formato X.Y.Z come convenzione della versione dei documenti, dove:
+\begin{itemize}
+    \item \textbf{X:} cifra che viene incrementata quando avviene un rilascio, che nel caso del progetto corrisponde ai raggiungimenti di \glossterm{RTB}, \glossterm{PB} e \glossterm{CA};
+    \item \textbf{Y:} rappresenta un'aggiunta o modifica sostanziale, come ad esempio l'aggiunta di una sezione;
+    \item \textbf{Z:} indica una piccola modifica, come per esempio la correzione di errori o aggiunte di piccole dimensioni.
+\end{itemize}
+Un documento parte sempre dalla versione 0.0.0. \\
+Ogni modifica di un numero di versione, comporta l'azzeramento di tutti i numeri alla sua destra.
+
+\subsubsection{\glossterm{Repository}}
+Il gruppo NaN1fy utilizza le seguenti repository facenti parte della organizzazione NaN1fy in \glossterm{Github}.
+\subsubsubsection{Lista repository}
+\begin{itemize}
+    \item \textbf{docs:} repository dedicata alla documentazione del progetto;
+    \item \textbf{SyncCity:} repository dedicata alla scrittura e implementazione del progetto software;
+    \item \textbf{NaN1fy.github.io:} repository del sito vetrina.
+\end{itemize}
+\subsubsubsection{Struttura repository docs}
+Questo repository è suddiviso in due \glossterm{branch} principali:
+\begin{itemize}
+    \item \textbf{main:} branch contenente tutti la documentazione prodotta in formato .pdf;
+    \item \textbf{sources:} branch contenente i file .tex dei rispettivi documenti della repository
+        precedente. Quando vengono aggiunti o modificati dei file in questa branch, vengono
+        automaticamente compilati, caricando il risultato nella branch main, cosicchè possano essere visualizzati da chiunque.
+\end{itemize}
+Di seguito viene riportata la struttura della repository, i termini in \textbf{grassetto} indicano il nome di una directory:
+ \begin{itemize}
+    \item \textbf{PB:}
+    \begin{itemize}
+        \item \textbf{Esterni:}
+        \begin{itemize}
+            \item \textbf{Verbali};
+            \item Analisi dei Requisiti (v2.0.0);
+            \item Manuale Utente (v1.0.0);
+            \item Piano di Progetto (v2.0.0);
+            \item Piano di Qualifica (v2.0.0);
+            \item Specifica Tecnica (v1.0.0);
+            \item Valutazione dell'utilizzo di Flink (v1.0.0).
+        \end{itemize}
+        \item \textbf{Interni:}
+        \begin{itemize}
+            \item \textbf{Verbali};
+            \item Glossario (v2.0.0);
+            \item Norme di Progetto (v2.0.0).
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{RTB:}
+    \begin{itemize}
+        \item \textbf{Esterni:}
+        \begin{itemize}
+            \item \textbf{Verbali};
+            \item Analisi dei Requisiti (v1.0.0);
+            \item Piano di Progetto (v1.0.0);
+            \item Piano di Qualifica (v1.0.0).
+        \end{itemize}
+        \item \textbf{Interni:}
+        \begin{itemize}
+            \item \textbf{Verbali};
+            \item Glossario (v1.0.0);
+            \item Norme di Progetto (v1.0.0).
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Candidatura:}
+    \begin{itemize}
+        \item \textbf{Verbali:}
+        \begin{itemize}
+            \item \textbf{Esterni};
+            \item \textbf{Interni};
+        \end{itemize}
+        \item Dichiarazione impegni (v2.0.0);
+        \item Lettera di presentazione;
+        \item Valutazione capitolati (v1.0.0).
+    \end{itemize}
+ \end{itemize}
+
+\subsubsubsection{Struttura Repository SyncCity}
+Di seguito viene riportata la struttura della repository, i termini in \textbf{grassetto} indicano il nome di una directory:
+\begin{itemize}
+    \item \textbf{\glossterm{ClickHouse}:} directory contenente i config e codice necessario per l'utilizzo di ClickHouse;
+    \item \textbf{\glossterm{Grafana}:} directory contenente i config di Grafana;
+    \item \textbf{\glossterm{Flink}:} directory contenente i config e codice necessario per l'utilizzo di Flink;
+    \item \textbf{PyMockSensors:} directory contenente il codice sorgente di PyMockSensors, ovvero il generatore simulato di dati provenienti da sensori;
+    \item docker-compose.yaml: file di configurazione per l'utilizzo di \glossterm{Docker Compose}.
+\end{itemize}
+
+\subsubsubsection{Sito Vetrina}
+La repository NaN1fy.github.io (raggiungibile all'omonimo link) contiene il codice del sito del progetto, il cui scopo è quello di fornire una veloce e intuitiva interfaccia, nella quale poter visualizzare ergonomicamente e in maniera organizzata i documenti relativi al progetto stesso. \\
+Il sito vetrina propone anche la visualizzazione diretta del \textit{Glossario v2.0.0}, contenente una definizione chiara e univoca di tutti i termini rilevanti, onde evitare interpretazioni arbitrarie e fraintendimenti riguardo tali specifici concetti. \\
+Il codice del sito comprende una \glossterm{funzionalità} di auto aggiornamento dei documenti contenuti nella vetrina e nel \textit{Glossario v2.0.0}.
+
+\subsubsection{Sincronizzazione}
+Attraverso la piattaforma \glossterm{GitHub}, ogni attività prevista viene affiancata da una \glossterm{issue} a
+cui corrisponde una \glossterm{branch}, separata e parallela alle altre; tale suddivisione permette lo svolgimento in maniera autonoma e sicura di ogni singola attività, garantendo un'avanzamento simultaneo dei lavori.
+
+\subsubsubsection{Branching}
+La suddivisione in \glossterm{branch}, già precedentemente esposta, presuppone l'utilizzo della metodologia single-purpose, che prevede l'utilizzo di una branch solo ed esclusivamente per lo svolgimento di una singola attività. In tale modo, il lavoro viene parcelizzato, garantendo un flusso stabile di lavoro. \\
+Una volta che una data attività viene portata a termine, la corrispondente branch viene unita alla branch principale e successivamente cancellata.
+
+\subsubsubsection{\glossterm{Pull request}}
+Al termine di un'attività (o al completamento di una sua parte), il membro a cui è stata assegnata questa attività (o uno di essi), si assume la responsabilità di aprire una Pull Request indicando i verificatori. Questi ultimi, dopo aver confermato la correttezza delle modifiche, hanno il compito di fare il merge della pull request, chiudendo poi la issue.
+
+\subsection{Verifica} \label{sec:verifica}
+
+\subsubsection{Introduzione}
+La verifica è un \glossterm{processo} svolto, caso per caso, da una parte dei membri del team, con lo scopo di garantire l'efficienza e la correttezza di ogni attività sottoposta a scrutinio. \\
+È un processo presente per l'intera durata del ciclo di vita del software e abbraccia, nella sua esecuzione, sia la documentazione che il prodotto in sè: la sua attuazione, difatti, non è organizzata ricorrentemente, ma viene effetuata in occasione del completamento di un'attività, documento o parte significativa del prodotto. \\
+Questo processo trae le sue basi dai vincoli di \glossterm{qualità} e dalle linee guida individuate all'interno
+del documento \textit{Piano di Qualifica v2.0.0}, basi che il verificatore è tenuto a rispettare per garantire uniformità, coerenza e ripetibilità al processo di verifica.
+
+\subsubsection{Analisi statica}
+L'analisi statica è una modalità di analisi che prevede una verifica del prodotto e/o dei documenti senza la necessità di esecuzione o di mediazione di terze parti. \\
+Le due metodologie principali per condurre l'analisi statica, sono: l'inspection e il walkthrough.
+
+\subsubsubsection{Inspection}
+Tale metodologia utilizza un'approccio metodologico e ben strutturato per rilevare possibili difetti nel prodotto e nella documentazione; questi difetti vengono definiti e specificati a priori in delle liste, cosidette di controllo, le quali verranno poi utilizzate in maniera programmatica nella valutazione del documento e codice del prodotto.
+
+\subsubsubsection{Walkthrough}
+Contrariamente al metodo inspection, il walkthrough si preoccupa della verifica del documento o del codice tramite un maggiore dialogo tra il verificatore e l'autore, eseguendo una verifica più sostanziale e profonda, non alla ricerca di problemi specifici, bensì di una correttezza più generica e adattiva. In tale maniera, pur risultando in un maggiore impiego di risorse, garantisce una correttezza maggiore. \\
+Per questo progetto il team NaN1fy si propone di utilizzare per la documentazione un'approccio di questo tipo, principalmente considerando che l'approccio di tipo inspection è fin troppo rigido per poter garantire una corretta valutazione di un'insieme così eterogeneo e variegato di dati, quale è la documentazione del progetto.
+
+\subsubsection{Analisi dinamica}
+La metodologia analisi dinamica pone l'attenzione sul comportamento del codice e suoi eventuali difetti durante l'esecuzione dello stesso. \\
+Tale metodologia è specifica per ogni progetto in sè, in quanto l'insieme di attività di verifica, composte da \glossterm{test}, dipendono esclusivamente dal contenuto del codice e dai requisiti del progetto. \\
+Tali test garantiscono, grazie alla loro ripetibilità, una valutazione oggettiva del codice e delle funzionalità del prodotto, in quanto in grado, dato un'insieme di caratteristiche, di generare lo stesso risultato più volte, indipendentemente da fattori esterni o casuali.
+La definizione e l'esecuzione dei test seguono i principi del \glossterm{Modello a V}.
+
+\subsubsubsection{Test di unità}
+Test che hanno come obiettivo la verifica delle singole unità del \glossterm{sistema}, che possono essere funzioni o metodi esulando dal resto del sistema. \\
+I test di unità si dividono in due categorie:
+\begin{itemize}
+    \item \textbf{Test funzionali:} verificano che l'output corrisposta al valore atteso;
+    \item \textbf{Test strutturali:} verificano la struttura interna dell'unità e il flusso dei dati.
+\end{itemize}
+
+\subsubsubsection{Test di integrazione}
+Test che hanno come obiettivo la valutazione del comportamento delle unità quando vengono combinate tra di loro identificando eventuali problemi dell'interazione tra le componenti integrate e verificando l'efficacia e il soddisfacimento dei requisiti posti dal progetto.
+
+\subsubsubsection{Test di sistema}
+Test che hanno come obiettivo di valutare il sistema come singola e unica entità verificando la corretta esecuzione e completezza del prodotto, in linea con i requisiti fissati nel documento di \textit{Analisi dei Requisiti v2.0.0}.
+
+\subsubsubsection{Test di accettazione}
+Test il cui obiettivo è di mostrare la conformità del software rispetto le richieste e aspettative della \glossterm{Proponente}, garantendo il soddisfacimento di quest'ultima riguardo il prodotto finale.
+
+\subsubsubsection{Identificazione dei test}
+Ogni singolo test possiede un codice univoco identificativo con il seguente formato:
+\begin{center}
+	\textbf{T[Tipologia]-[Numero]}
+\end{center}
+Dove \textbf{Tipologia} indica la tipologia del test: 
+\begin{itemize}
+    \item \textbf{U:} di unità;
+	\item \textbf{I:} di integrazione;
+	\item \textbf{S:} di sistema;
+	\item \textbf{A:} di accettazione.
+\end{itemize}
+
+\subsubsubsection{Stato dei test}
+I test possiedono anche uno stato:
+\begin{itemize}
+	\item \textbf{V:} Verificato. Il test ha esito positivo;
+	\item \textbf{NV:} Non Verificato. Il test ha esito negativo; 
+	\item \textbf{NI:} Non Implementato.
+\end{itemize}
+
+\subsection{Gestione \glossterm{Qualità}}
+L'obiettivo è assicurarsi che i processi e il prodotto rispettino le esigenze del cliente e lo facciano con il massimo livello di qualità possibile, monitorando anche futuri progressi attraverso verifiche retrospettive.
+
+\subsubsection{Piano di Qualifica}
+Il documento \textit{Piano di Qualifica v2.0.0} è fondamentale per il completamento degli obiettivi di questo \glossterm{processo}. 
+\\Il documento comprende:
+\begin{itemize}
+    \item Fissare gli obiettivi di qualità;
+    \item Definire le metriche di visione quantitativa;
+    \item Definire test di qualità e funzionamento e relativa documentazione;
+    \item Avere una visione dello stato attuale del prodotto e del progetto;
+    \item Fornire margine di retrospettiva ai fini di miglioramento.
+\end{itemize}
+
+\subsubsection{Testing}
+Il documento \textit{Piano di Qualifica v2.0.0} fornisce obiettivi di qualità sia del processo che del prodotto. Le metriche relative garantiscono la verifica sugli aspetti di accessibilità; i test invece garantiscono la qualità generale del software. 
+\\Le categorie interessate sono le seguenti:
+\begin{itemize}
+	\item \textbf{Test di unità:} si verifica il corretto funzionamento delle unità componenti il \glossterm{sistema}. Un’unità rappresenta un elemento indivisibile e indipendente del \glossterm{sistema}; 
+	\item \textbf{Test di integrazione:} si verifica il corretto funzionamento di più unità che cooperano per svolgere uno specifico compito (tali unità devono certamente aver superato i loro test di unità precedentemente);
+	\item \textbf{\glossterm{Test di sistema}:} si verifica il corretto funzionamento del \glossterm{sistema} nella sua interezza. I requisiti funzionali obbligatori, di vincolo, di \glossterm{qualità} e di prestazione, precedentemente concordati con la \glossterm{Proponente} mediante stipulazione del contratto, devono essere soddisfatti per intero;
+	\item \textbf{Test di accettazione:} si verifica il soddisfacimento della Proponente rispetto al prodotto software. Il loro superamento permette di procedere con il rilascio del prodotto.
+\end{itemize}
+Per ogni test vengono indicati i risultati del test di qualità del processo e della qualità del prodotto software.
+
+\subsubsection{Metriche}
+Il documento \textit{Piano di Qualifica v2.0.0} fornisce le metriche da applicare all'esecuzione dei test di qualità.
+\\Ogni metrica è codificata come segue:
+\begin{center}
+    \textbf{M[Tipologia metrica]-[Sigla identificativa Metrica]}
+\end{center}
+in particolar modo:
+\begin{itemize}
+	\item\textbf{Tipologia metrica:} l'effettiva categoria di appartenenza della
+      \glossterm{metrica};
+	\begin{itemize}
+    \item \textbf{PC:} Processo;
+		\item \textbf{PD:} Prodotto.
+	\end{itemize}
+	\item\textbf{Sigla identificativa metrica:} sigla di indentificazione della specifica metrica.
+\end{itemize}
+\subsubsubsection{Gestione della \glossterm{qualità}} \label{sec:gestione_qualita}
+\begin{table}[H]	
+	\centering
+	\begin{tabular}{p{2cm} p{3cm} p{6cm} p{4cm}}
+		\toprule
+		\textbf{Metrica}& \textbf{Sigla} & \textbf{Descrizione} & \textbf{Formula} \\
+		\midrule
+		MPC-QMS & Quality Metrics Satisfied (QMS) & Numero di metriche di qualità soddisfatte. & - \\
+		\bottomrule
+	\end{tabular}
+	\caption{Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
+	\label{table:Valori accettabili e ottimi per ogni metrica riguardante il processo di gestione della qualità.}
+\end{table}
+
+\subsubsection{Aspettative}
+A seguito di questo processo, le aspettative attese sono le seguenti:
+\begin{itemize}
+    \item Ottima qualità del prodotto realizzato;
+    \item Ottima qualità dei processi di sviluppo e di comunicazione;
+    \item Buona visione quantitativa dello stato di avanzamento dei lavori;
+    \item Test con alta frequenza e predicibili;
+    \item Miglioramento generale costante;
+    \item Soddisfazione delle aspettative del \glossterm{Proponente}.
+\end{itemize}
+\clearpage
+\section{Processi Organizzativi} \label{sec:processi_organizzativi}
+
+\subsection{Gestione di Processo}
+
+\subsubsection{Coordinamento} \label{sec:coordinamento}
+
+\subsubsubsection{Comunicazioni interne}
+Le comunicazioni interne avvengono principalmente tra membri del gruppo di pari livello. Si rimanda alla sezione \hypersetup{hidelinks}\ref{sec:infrastruttura} per approfondire gli strumenti utilizzati.
+\begin{itemize}
+  \item{\textbf{\glossterm{Discord}}}
+  \begin{itemize}
+    \item \textbf{Informazioni:} comunicazioni semi-formali per la condivisione di risorse;
+    \item \textbf{Canali Testuali:} comunicazioni semi-formali per la condivisione di appunti sugli
+        incontri;
+    \item \textbf{Canali Vocali:} comunicazioni semi-formali per le riunioni interne; informali per argomenti non inerenti al progetto.
+  \end{itemize}
+  \item{\textbf{\glossterm{Telegram}}}
+  \begin{itemize}
+    \item \textbf{Chat di gruppo:} comunicazioni semi-formali, brevi, inerenti al progetto;
+    \item \textbf{Chat individuali:} comunicazioni informali, inerenti al progetto.
+  \end{itemize}
+  \item{\textbf{Google Calendar}}
+  \begin{itemize}
+    \item{Comunicazioni informali, brevi, inerenti all'evento di calendario relativo.}
+  \end{itemize}
+\end{itemize}
+
+\subsubsubsection{Comunicazioni esterne}
+Le comunicazioni esterne con il \glossterm{Committente} e \glossterm{Proponente} vengono considerate ovviamente di importanza maggiore, dunque trattate col rispetto dovuto.\\
+Il registro utilizzato è esclusivamente formale, cercando di adottare vocaboli consoni e concisi.
+\begin{itemize}
+  \item Discord;
+  \item Google Meet;
+  \item Gmail: indirizzo e-mail condiviso
+      \href{nan1fyteam.unipd@gmail.com}{\color{black}{nan1fyteam.unipd@gmail.com}}.
+\end{itemize}
+
+\subsubsubsection{Riunioni interne}
+Le riunioni interne avvengono tra i membri del gruppo, settimanalmente, con cadenza al giovedì ore 15 esclusi casi eccezionali, con durata media di 1 ora / 1 ora e mezza. Dalla fine dell'RTB le riunioni interne sono state spostate, di conseguenza alla variazione delle date del SAL con la \textbf{Proponente}, al martedì, con orario invariato.\\
+In caso di mancata partecipazione da parte di uno dei membri, oltre alla sezione di appunti presente nei canali di comunicazione, è comunque possibile accedere ai verbali degli incontri.\\
+I verbali vengono redatti dai membri a rotazione, così come la verifica di esse.\\
+Ogni riunione ha un tema principale, ``l'ordine del giorno", su cui implicitamente si basano le discussioni principali.
+Oltre a ciò, generalmente le riunioni avvengono nella seguente modalità:
+\begin{itemize}
+  \item Discussione da parte di ognuno sulle proprie \glossterm{task} assegnate con retrospettiva in merito
+      (quel che si è fatto e quel che c'è da fare);
+  \item Discussione su temi venuti fuori durante lo svolgimento delle task;
+  \item Controllo generale della task \glossterm{board} e delle scadenze imminenti.
+\end{itemize}
+
+\subsubsubsection{Riunioni esterne}
+Le riunioni esterne avvengono prevalentemente tra \glossterm{committente} e \glossterm{Proponente} ogni due
+settimane. Vengono utilizzate come incontri di \glossterm{SAL}, e come deadline degli \glossterm{Sprint}.\\
+La durata media è intorno ai 40 minuti, ed è compito dei membri del gruppo esporre in modo conciso e preparato lo stato di avanzamento dei lavori ed eventuali dubbi sorti.\\
+Vengono successivamente redatti i relativi verbali, consegnati all'azienda per poter essere validati, approvati e firmati.
+
+\subsubsubsection{Reperibilità}
+Ciascun componente del gruppo gode dell'autonomia di pianificare il proprio orario di lavoro individuale in modo asincrono, conformemente agli obblighi accademici, personali e alle disposizioni stabilite nel programma preventivamente concordato.
+In un accordo mirato a bilanciare l'efficacia della comunicazione asincrona con la tutela del tempo personale, i partecipanti si impegnano a garantire la propria disponibilità per questioni inerenti al progetto didattico durante il seguente intervallo orario: dal lunedì al venerdì, dalle 9:00 alle 13:00 e dalle 15:00 alle 19:00. Qualsiasi modifica agli orari o ai giorni di disponibilità può essere concordata previamente tra i membri del gruppo. È importante sottolineare che questo intervallo di disponibilità non deve essere interpretato come tempo di lavoro attivo, ma un limite temporale entro il quale i membri si impegnano a essere raggiungibili per eventuali necessità connesse al progetto.
+
+\subsubsection{Pianificazione} \label{sec:pianificazione}
+
+\subsubsubsection{Ruoli del Progetto}
+I ruoli sono stati distribuiti equamente tra tutti i componenti del gruppo e saranno:
+\begin{itemize}
+	\item \textbf{Responsabile del progetto:} Guida il team nel rispetto delle scadenze, nell'allocazione delle risorse e nella pianificazione generale, assicurando che il progetto proceda in modo efficiente e soddisfi gli obiettivi.
+	\begin{itemize}
+    \item Pianifica lo \glossterm{Sprint} definendo le task relative, definendo il preventivo ore e costi;
+    \item Calcola il \glossterm{consuntivo} delle ore e costi alla fine dello Sprint;
+    \item Tiene traccia dello stato generale di progresso dell'intero progetto;
+    \item Fa da intermediario tra il gruppo e l'azienda \glossterm{Proponente}.
+  \end{itemize}
+	\item \textbf{Amministratore:} Gestisce l'infrastruttura e le risorse necessarie per il progetto, inclusi gli strumenti e le tecnologie che definiscono il modo di lavorare del team.
+	\begin{itemize}
+    \item Gestisce l'infrastruttura del progetto e i suoi strumenti;
+    \item Automatizza i processi e ne individua punti di miglioramento;
+    \item Si occupa dell'effettiva redazione dei documenti che definiscono il \glossterm{Way of
+        Working} del gruppo.
+	\end{itemize}
+  \item \textbf{Programmatore:} Responsabile della scrittura del codice seguendo le specifiche del progetto e traducendo i requisiti in un'applicazione funzionante.
+	\begin{itemize}
+    \item Si occupa della stesura del codice in conformità ai requisiti e alla sua manutenibilità;
+    \item Scrive i \glossterm{test} per il codice prodotto;
+    \item Si occupa della documentazione relativa alla comprensione del codice, sia da parte
+        dell'utente che da parte del programmatore.
+  \end{itemize}
+  \item \textbf{Progettista:} Definisce l'architettura del software, pianifica la sua struttura e l'organizzazione nel dettaglio.
+	\begin{itemize}
+    \item Sviluppa l'architettura in conformità ai requisiti e alla sua manutenibilità, al minimo
+        livello di dipendenze possibili;
+    \item Approfondisce le conoscenze e strumenti tecnici utili allo sviluppo.
+  \end{itemize}
+  \item \textbf{Verificatore:} Garantisce la \glossterm{qualità} del software eseguendo test e controlli per assicurare il corretto funzionamento e il rispetto degli \glossterm{standard} di qualità.
+	\begin{itemize}
+    \item Verifica il livello atteso e il rispetto della qualità in ambito tecnico;
+    \item Verifica il livello atteso e il rispetto della qualità in ambito funzionale;
+    \item Verifica il livello atteso e il rispetto della qualità in ambito organizzativo.
+  \end{itemize}
+  \item \textbf{Analista:} Si concentra sull'analisi dei requisiti, aiuta a definire le \glossterm{funzionalità} del software e si assicura di comprendere i bisogni del cliente.
+  \begin{itemize}
+    \item Valuta il dominio applicativo delle richieste del \glossterm{Proponente};
+    \item Scompone le richieste ed esigenze del Proponente in sotto attività così da poter essere
+        risolte individualmente e/o parallelamente.
+  \end{itemize}
+\end{itemize}
+
+\subsubsubsection{Gestione delle \glossterm{task}} \label{sec:gestione_task}
+Durante la fase di \glossterm{Sprint} \glossterm{Planning} vengono definite tutte le attività, le quali saranno poi associate alle relative task.\\
+Ognuna di esse viene assegnata ad almeno un membro, il quale si occuperà del suo ciclo di vita. Vengono assegnate in modo da poter essere svolte il più parallelamente e asincronamente possibile.\\
+Per le task di processi primari (sviluppo) e di supporto (documentazione) viene utilizzato \glossterm{GitHub}.
+Il ciclo di vita di una task è come segue:
+\begin{itemize}
+    \item \textbf{Creazione:} la task definita viene aperta come \glossterm{issue} su GitHub;
+    \item \textbf{Assegnazione:} la task viene assegnata ad uno o più membri del gruppo;
+    \item \textbf{Completamento:} la task viene completata, prevalentemente su un \glossterm{branch} distinto
+      dal principale;
+  \item \textbf{Pull request:} viene fatta una \glossterm{pull request} del \glossterm{branch} di sviluppo
+      dell'attività completata, collegando la richiesta alla relativa \glossterm{issue};
+  \item \textbf{Verifica:} almeno due verificatori effettuano il controllo \glossterm{qualità};
+  \item \textbf{Accettazione:} quando la fase di verifica è conclusa senza intoppi, viene approvata la pull request, si chiude la issue relativa e viene cancellato il branch relativo all'attività.
+\end{itemize}
+Per ulteriori dettagli si rimanda alla sezione \hypersetup{hidelinks}\ref{sec:infrastruttura}. La dimensione e importanza
+dell'attività dipendono dal \glossterm{processo} (primario, di supporto o organizzativo) di cui fa parte.
+All'apertura della sua \glossterm{task} relativa viene valutato il tempo ragionevole di svolgimento e 
+La tracciabilità dei cambiamenti, eventuali commenti e il generale stato dell'attività sono presenti nella piattaforma, nelle pagine della issue collegata.
+
+\subsubsubsection{Metodo di Lavoro} \label{sec:metodo_lavoro}
+Per lo svolgimento dell'attività il gruppo ha scelto di adottare la modalità Agile \glossterm{SCRUM}. \\
+Ciò permette la suddivisione del tempo di lavoro in intervalli di tempo (\glossterm{Sprint}), in modo da definire attività da svolgere, quel che è stato fatto e si è fatto, e avere scadenze tangibili durante lo svolgimento del progetto.
+Ogni Sprint, della durata media di almeno due settimane, prevede le seguente fasi:
+\begin{itemize}
+  \item \textbf{Sprint Planning:} Pianificazione dello Sprint, in concomitanza con il suo inizio.
+      Gli incontri di \glossterm{SAL} vengono utilizzati come punto di riferimento di conclusione
+        dello Sprint e inizio del successivo.
+  \begin{itemize}
+    \item Discussione sui nuovi obiettivi post incontro di SAL da completare;
+    \item Discussione di quel che rimane da fare dal precedente Sprint e con quale priorità;
+    \item Definizione di obiettivi concreti e di \glossterm{issue} relative, definendole su
+        \glossterm{GitHub};
+    \item Preventivo ore da parte di ogni membro, in base alle attività da svolgere e i ruoli da assegnare, e preventivo dei costi in base alle ore dichiarate.
+  \end{itemize}
+  \item \textbf{Sprint Review:} Revisione dello Sprint nel suo ultimo giorno.
+  \begin{itemize}
+    \item \glossterm{Consuntivo} ore secondo la produttività individuale, sia in difetto che in eccesso, e consuntivo costi in base alle ore dichiarate;
+    \item Discussione sugli obiettivi raggiunti e non di ogni membro. Gli obiettivi non raggiunti verranno presentati allo Sprint successivo.
+  \end{itemize}
+  \item \textbf{Sprint Retrospective:} Retrospettiva effettivamente conclusiva dello Sprint,
+      valutandone l'andamento generale. Viene valutato ciò che è andato positivamente e cosa
+        negativamente, così da poter avere delle linee guida sul come proseguire al meglio;
+  \begin{itemize}
+      \item \textbf{Good:} ciò che effettivamente è andato bene durante lo svolgimento dello Sprint;
+      \item \textbf{To Improve:} ciò che invece va migliorato per i Sprint successivi.
+  \end{itemize}
+\end{itemize} 
+
+\subsection{Infrastruttura}\label{sec:infrastruttura}
+Fanno parte dell'infrastruttura organizzativa tutti gli strumenti che permettono al gruppo di attuare in modo efficace ed efficiente i processi organizzativi. In particolare tali strumenti permettono la \textbf{comunicazione}, il \textbf{coordinamento} e la \textbf{pianificazione}.
+
+\subsubsection{Strumenti}
+
+\subsubsubsection{\glossterm{GitHub}}
+È il principale servizio di hosting della \glossterm{repository} di gruppo e di controllo della versione distribuita. 
+\\\\
+Generalmente il workflow adottato dal gruppo è il GitHub Flow, che sinteticamente segue il seguente schema:
+\begin{itemize}
+  \item Riallineamento della repository locale con quella remota;
+  \item Creazione di un \glossterm{branch} locale su cui effettuare le modifiche;
+  \item Push del branch locale verso repository remota;
+  \item Creazione di una \glossterm{pull request};
+  \item Verifica da parte di due membri del gruppo e successivo merge del branch con le modifiche;
+  \item Eliminazione del branch utilizzato dalla repository remota.
+\end{itemize}
+Per i dettagli consultare la documentazione ufficiale: 
+\begin{center}
+ \href{https://docs.github.com/en/get-started/quickstart/github-flow}{{https://docs.github.com/en/get-started/quickstart/github-flow}}
+    (ultimo accesso: \today)
+\end{center}
+\medskip
+Viene utilizzato anche il \glossterm{sistema} di \textbf{project management} fornito. \\\\
+La \textbf{\glossterm{board} principale} è divisa nelle seguenti liste:
+\begin{itemize}
+    \item \textbf{Todo:} contiene \glossterm{task} da fare in base allo \glossterm{Sprint} corrente. Durante la fase di Sprint \glossterm{Planning} sono state definite ed ognuna preassegnata ad almeno un membro, il quale si occuperà del suo ciclo di vita;
+  \item \textbf{In Progress:} contiene task in corso. Ogni task che non sia relativa alla stesura dei verbali viene assegnata ad almeno due membri, così che possano lavorarci asincronamente;
+  \item \textbf{Verify:} contiene task completate che necessitano di verifica. Qualsiasi membro del
+      gruppo può autonomamente diventare verificatore di una task aggiungendosi a essa, con la
+        precondizione che non sia la stessa persona che l'ha svolta. Questa fase avviene in
+        parallelo con la relativa \glossterm{Pull Request}, dove ulteriori due membri devono verificare ed
+        approvare lo svolgimento della task. Nel caso di modifiche lievi sarà discrezione del
+        verificatore apportarle; nel caso di modifiche più importanti sarà premura del Responsabile
+        valutare la situazione.\\In generale, in caso di esito negativo la pull request viene
+        annullata e si ritorna in fase ``In Progress". Nel caso invece sia conforme viene approvata
+        e spostata in fase ``Done";
+  \item \textbf{Done:} contiene task completate, verificate e accettate. In prossimità del prossimo
+      Sprint, vengono archiviate le task completate relative a Sprint precedenti così da non Sprint la \glossterm{board}.
+\end{itemize}
+\medskip
+Per quanto riguarda le \textbf{task}, ognuna è costituita da:
+\begin{itemize}
+  \item \textbf{Titolo:} breve descrizione sintentica su cosa consiste la task;
+  \item \textbf{Descrizione:} opzionale e breve per dettagli importanti;
+  \item \textbf{Membro/i:} elementi del gruppo coinvolti nella task;
+  \item \textbf{\glossterm{Milestone}:} a quale milestone fanno riferimento.
+\end{itemize}
+Si vuole far notare che, nonostante tutto, le task non vengono mai cancellate ma soltanto archiviate. \\Per navigare più facilmente nella bacheca è possibile impostare dei filtri, ad esempio per membro o milestone.
+
+\subsubsubsection{\glossterm{Discord}}
+Principale strumento di \textbf{comunicazione interna sincrona} e \textbf{asincrona}. Vengono utilizzati 3 categorie di canali:
+\begin{itemize}
+  \item \textbf{Informazioni:} prevalentemente utilizzato per la condivisione di risorse;
+  \item \textbf{Canali Testuali:} utilizzato per la condivisione di appunti su incontri interni ed esterni, e simili;
+  \item \textbf{Canali Vocali:} comunicazioni vocali tra i membri del gruppo, con possibilità di condivisione schermo.
+\end{itemize}
+\medskip
+Viene utilizzato questo strumento anche per la \textbf{comunicazione asincrona} con l'azienda
+\glossterm{Proponente} nel loro canale personale.
+
+\subsubsubsection{\glossterm{Telegram}}
+Principale strumento di \textbf{comunicazione interna testuale asincrona}. Viene utilizzato in due modalità:
+\begin{itemize}
+  \item \textbf{Gruppo:} chat condivisa utilizzata, con parsimonia, per comunicazioni rivolte a tutti i membri;
+  \item \textbf{Individuale:} ogni membro del gruppo può essere contattato singolarmente.
+\end{itemize}
+\medskip
+
+\subsubsubsection{Google Calendar}
+Calendario condiviso del gruppo utilizzato per tenere traccia di:
+\begin{itemize}
+    \item \textbf{Meeting Esterni:} con \glossterm{Proponente} o \glossterm{Committente};
+  \item Qualsiasi altra attività o evento che può essere collocato in un tempo specifico.
+\end{itemize}
+ 
+\subsubsubsection{Google Drive}
+Strumento utilizzato come:
+\begin{itemize}
+  \item \textbf{Directory condivisa} dai membri del gruppo per documenti temporanei o non ufficiali;
+  \item Accesso alla \textbf{suite Google:} Docs, Sheets, Slides.
+\end{itemize}
+
+\subsubsubsection{Google Meet}
+Strumento di videochiamata utilizzato principalmente per la comunicazione esterna con committente e
+\glossterm{Proponente}.
+
+\subsubsubsection{Google Mail}
+Utilizzo dell'indirizzo e-mail condiviso nan1fyteam.unipd@gmail.com per le \textbf{comunicazione esterna} come gruppo con i proponenti e il committente.
+
+\subsection{Miglioramento} \label{sec:miglioramento}
+Nel corso della redazione della documentazione e dello sviluppo del software, il gruppo si impegnerà a perseguire un miglioramento costante delle attività, con l'obiettivo di evitare di ripetere errori precedentemente commessi e di fornire soluzioni ottimali, con un riguardo particolari sui temi quali:
+\begin{itemize}
+  \item Organizzazione;
+  \item Ruoli;
+  \item Strumenti di lavoro.
+\end{itemize}
+\subsection{Formazione} \label{sec:formazione}
+Al fine di promuovere un ambiente di lavoro asincrono efficiente e equo, garantendo un progresso organizzato e uniforme senza lasciare alcun membro indietro, si richiede a ciascun componente del gruppo di assumersi autonomamente la responsabilità di colmare eventuali lacune relative agli strumenti e alle tecnologie impiegate per la documentazione e lo sviluppo del progetto. Questo può avvenire mediante lo studio individuale o, alternativamente, con la condivisione delle proprie conoscenze con gli altri membri al fine di accelerare il \glossterm{processo} di apprendimento.
+\\Di seguito sono elencati gli strumenti e le tecnologie utilizzati, insieme ai principali riferimenti adottati dal gruppo:
+\begin{itemize}
+    \item \textbf{LaTeX:} \href{https://www.overleaf.com/learn}{https://www.overleaf.com/learn}
+        (ultimo accesso: \today);
+    \item \textbf{\glossterm{Git}:}
+        \href{https://docs.github.com/en/get-started/using-git/about-git.}{https://docs.github.com/en/get-started/using-git/about-git}
+        (ultimo accesso: \today);
+    \item \textbf{\glossterm{GitHub}:} \href{https://docs.github.com}{https://docs.github.com} (ultimo accesso: \today);
+    \item \textbf{GitHub Flow:}
+        \href{https://docs.github.com/en/get-started/quickstart/github-flow}{https://docs.github.com/en/get-started/quickstart/github-flow}
+        (ultimo accesso: \today).
+\end{itemize}
+\clearpage
+
+\section{Metriche per il prodotto} \label{sec:metriche_prodotto}
+
+\subsection{Introduzione}
+Al fine di garantire una valutazione oggettiva e misurabile del prodotto e dei processi che lo compongono rispetto agli \glossterm{standard} fissati, oltre che per fornire una guida atta al miglioramento del prodotto in sè e dei suoi processi, verrano utilizzate le seguenti metriche di product management. 
+
+\subsection{Metriche per la qualità di \glossterm{processo}}
+\begin{itemize}
+   \item \textbf{Fornitura}
+        \begin{itemize}
+            \item \textbf{MPC-EV:} Earned Value - Rappresenta il valore del lavoro prodotto fino ad un dato momento;
+                \begin{equation}
+                EV = \glossterm{BAC} \times \%lavoro\_prodotto
+                \end{equation}
+            \item \textbf{MPC-PV:} Planned Value - Rappresenta il valore del lavoro pianificato fino ad un dato momento;
+                \begin{equation}
+                PV = \glossterm{BAC} \times \%lavoro\_pianificato
+                \end{equation}
+            \item \textbf{MPC-AC:} Actual Cost - Rappresenta il costo effettivamente sostenuto fino ad un dato momento. Il suo valore è reperibile nel \textit{Piano di Progetto v2.0.0};
+            \item \textbf{MPC-CPI:} Cost Performance Index - Rappresenta l'indice di produzione rispetto al costo sostenuto;
+                \begin{equation}
+                CPI = \frac{EV}{AC}
+                \end{equation}
+            \item \textbf{MPC-EAC:} Estimate At Completion - Rappresenta il valore stimato per il completamento del progetto in un dato momento;
+                \begin{equation}
+                EAC = \frac{\glossterm{BAC}}{CPI}
+                \end{equation}
+            \item \textbf{MPC-ETC:} Estimate To Completion - Rappresenta il valore stimato per completare il progetto;
+                \begin{equation}
+                ETC = EAC - AC
+                \end{equation}
+            \item \textbf{MPC-VAC:} Variance At Completion - Rappresenta la variazione relativa del budget stimato rispetto al budget pianificato;
+                \begin{equation}
+                VAC = \frac{BAC - EAC}{BAC}
+                \end{equation}
+            \item \textbf{MPC-SV:} Schedule Variance - Rappresenta la variazione relativa del valore prodotto rispetto a quello pianificato;
+                \begin{equation}
+                SV = \frac{EV - PV}{BAC}
+                \end{equation}
+            \item \textbf{MPC-BV:} Budget Variance - Rappresenta la variazione relativa tra il valore pianificato e i costi sostenuti.
+                \begin{equation}
+                BV = \frac{PV - AC}{BAC}
+                \end{equation}
+        \end{itemize}        
+       \clearpage
+    \item \textbf{Sviluppo}
+        \begin{itemize}
+            \item \textbf{MPC-RSI:} Requirements Stability Index - Rappresenta l'inclinazione del progetto di subire modifiche alla quantità di requisiti, espresso in percentuale.
+            % \item \textbf{MPC-SFIN:} Structural Fan In - Rappresenta il riutilizzo del codice, espresso sulla base delle chiamate che riceve una determinata porzione di codice (classe o metodo);
+            % \item \textbf{MPC-SFOUT:} Structural Fan Out - Rappresenta l'accoppiamento del codice, espresso sulla base delle chiamate che esegue una determinata porzione di codice (classe o metodo).
+        \end{itemize}
+   \item \textbf{Documentazione}
+        \begin{itemize}
+            \item \textbf{MPC-IG:} Indice Gulpease - Indice di leggibilità di un testo tarato sulla
+                lingua italiana, considera la lunghezza delle parole e della frase rispetto al
+                numero di lettere nella frase stessa.
+                \begin{equation}
+                GULPEASE = 89 + \left(\frac{{300 \times \text{numero\_frasi} - 10 \times \text{numero\_lettere}}}{{\text{numero\_parole}}}\right)
+                \end{equation}
+                Il risultato è un numero compreso tra 0 e 100, dove ``100'' indica la leggibilità più alta e ``0'' quella più bassa. Vi sono alcune soglie che sono ufficialmente considerate rilevanti, in particolare:
+                \begin{itemize}
+                    \item Testi con risultato inferiore all'80 sono considerati di difficile lettura per chi possiede la licenza elementare;
+                    \item Testi con risultato inferiore all'60 sono considerati di difficile lettura per chi possiede la licenza media;
+                    \item Testi con risultato inferiore all'40 sono considerati di difficile lettura per chi possiede la licenza superiore.
+                \end{itemize}
+            \item \textbf{MPC-CO:} Correttezza Ortografica - Numero di errori ortografici e grammaticali presenti nel documento.
+        \end{itemize}
+    \item \textbf{Verifica}
+        \begin{itemize}
+            \item \textbf{MPC-CC:} Code Coverage - Rappresenta la percentuale di codice eseguito durante l'esecuzione di un cluster di test.
+        \end{itemize}
+    \item \textbf{Gestione della qualità}
+        \begin{itemize}
+            \item \textbf{MPC-QMS:} Quality Metrics Satisfied - Rappresenta il numero di metriche che sono state soddisfatte in un determinato momento.
+        \end{itemize}
+    \item \textbf{Gestione dei processi}
+        \begin{itemize}
+            \item \textbf{MPC-NR:} Non-calculated Risks - Rappresenta il numero di rischi non calcolati incontrati fino ad un dato momento.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Metriche per la qualità di prodotto}
+\begin{itemize}
+    \item \textbf{Funzionalità:}
+        \begin{itemize}
+            \item \textbf{MPD-ROS:} Requisiti Obbligatori Soddisfatti - Rappresenta la percentuale di requisiti obbligatori soddisfatti;
+            \item \textbf{MPD-RDS:} Requisiti Desiderabili Soddisfatti - Rappresenta la percentuale di requisiti desiderabili soddisfatti;
+            \item \textbf{MPD-ROPS:} Requisiti Opzionali Soddisfatti - Rappresenta la percentuale di requisiti opzionali soddisfatti.
+        \end{itemize}
+    \item \textbf{Affidabilità:}
+        \begin{itemize}
+            \item \textbf{MPD-BC:} Branch Coverage - Rappresenta la percentuale di percorsi possibili eseguiti almeno una volta nel codice;
+            \item \textbf{MPD-SC:} Statement Coverage - Rappresenta la percentuale di istruzioni eseguite nel codice;
+            \item \textbf{MPD-FD:} Failure Density - Rappresenta il rapporto tra la quantità di guasti già presenti nel codice rispetto alla quantità presente all'inserimento di nuovo codice;
+            \item \textbf{MPD-PTCP:} Passed Test Cases Percentage - Rappresenta la percentuale di test eseguiti con esito positivo.
+        \end{itemize}
+    \item \textbf{Usabilità:}
+        \begin{itemize}
+            \item \textbf{MPD-FU:} Facilità di Utilizzo - Rappresenta il numero medio di click necessario per raggiungere ogni funzionalità;
+            \item \textbf{MPD-TA:} Tempo di Apprendimento - Rappresenta il numero di minuti necessario all'apprendimento del prodotto.
+        \end{itemize}
+    \item \textbf{Efficienza:}
+        \begin{itemize}
+            \item \textbf{MPD-UR:} Utilizzo Risorse - Rappresenta la quantità di risorse utilizzate per l'esecuzione del Software (CPU, RAM, TE).
+        \end{itemize}
+    \item \textbf{Manutenibilità:}
+        \begin{itemize}
+            \item \textbf{MPD-CC:} Complessità Ciclomatica - Rappresenta la complessità di programma determinata dal numero di cammini linearmente indipendenti attraversabili.
+            % \item \textbf{MPD-CS:} Code Smell - Rappresenta la percentuale di codice esente da debolezze di progettazione.
+        \end{itemize}
+\end{itemize}
+
+% togli il commento per la firma
+% \signatureline{Padova, YYYY-MM-DD}
+%\signatureline{Padova, YYYY-MM-DD}
+\end{document}
