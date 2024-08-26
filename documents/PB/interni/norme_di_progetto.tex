@@ -35,8 +35,8 @@
 \usepackage{capt-of}% 
 \usepackage{booktabs}
 \usepackage{varwidth}
-\usepackage[colorlinks=true,linkcolor=nan1fyblue,urlcolor=nan1fyblue]{hyperref}
-
+\usepackage[hidelinks]{hyperref}
+% [colorlinks=true,linkcolor=nan1fyblue,urlcolor=nan1fyblue]
 \tikzumlset{fill usecase=white}
 
 % -- TITOLO INTESTAZIONE -- %
@@ -68,8 +68,7 @@
 
 \begin{document}
 
-\definecolor{nan1fyblue}{RGB}{23,103,162}
-
+\definecolor{myblue}{RGB}{23,103,162}
 \begin{titlepage}
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[anchor=south east, opacity=0.2, yshift = -4cm, xshift= 2em] at (current page.south east) {\includegraphics[width=0.7\textwidth, trim=0cm 0cm 5cm 0cm, clip]{../../template/images/logos/Universita_Padova_transparent.png}}; 
@@ -89,9 +88,9 @@
    \vspace{3mm}
    {\\\large{\textsc{Pietro Busato}\\}}
     {\large{\textsc{Linda Barbiero\\}}}
-
  {\large{\textsc{Guglielmo Barison\\}}}
     {\large{\textsc{Veronica Tecchiati}\\}}
+ {\large{\textsc{Davide Donanzan\\}}}
    {\large{\textsc{Oscar Konieczny\\}}}
     }
   \vspace{8mm}
@@ -115,9 +114,8 @@
 		\end{flushright}
 		\vspace{3cm}
 	\end{center}
-	\vspace{8.3cm}
-    {\small \textsc{\href{mailto:
-    nan1fyteam.unipd@gmail.com}{\color{black}{nan1fyteam.unipd@gmail.com}}}}
+	\vspace{7.5cm}
+    {\small \textsc{\href{mailto: nan1fyteam.unipd@gmail.com}{nan1fyteam.unipd@gmail.com}}}
 \end{titlepage}
 \pagestyle{mystyle}
 \section*{Registro delle Modifiche}
@@ -129,12 +127,12 @@
 		\textbf{Versione}& \textbf{Data} & \textbf{Descrizione} & \textbf{Redattore} & \textbf{Verificatore} \\
 		\midrule
             2.0.0 & 2024-08-18 & \textbf{Approvazione per PB} & &  \\\\
-            1.2.0 & 2024-08-24 & Ultime correzioni. & Pietro Busato & Linda Barbiero \\\\
-            1.1.1 & 2024-08-18 & Correzioni e sistemazioni finali & Davide Donanzan & Linda Barbiero \\\\
+            1.2.0 & 2024-08-24 & Ultime correzioni. & Pietro Busato & Davide Donanzan \\\\
+            1.1.1 & 2024-08-18 & Correzioni e sistemazioni finali. & Davide Donanzan & Linda Barbiero \\\\
             1.2.0 & 2024-08-18 & Correzione metriche qualità di processo e di prodotto. & Pietro Busato & Linda Barbiero \\\\
             1.1.0 & 2024-08-16 & Aggiunta sezione \ref{sec:specifica_tecnica} e aggiunta verbali mancanti. & Pietro Busato & Linda Barbiero \\\\
-			1.0.1 & 2024-08-09 & Correzioni generali. & Pietro Busato & Linda Barbiero \\\\
- 		    \\ % spazio tra le righe
+			1.0.1 & 2024-08-09 & Correzioni generali. & Pietro Busato & Linda Barbiero \\
+ 		     % spazio tra le righe
 		\bottomrule
 	\end{tabular}
 	\caption{Registro delle modifiche.}
@@ -165,7 +163,7 @@
       stesura sezioni \ref{sec:miglioramento} e \ref{sec:formazione} & Linda Barbiero & Redattore \\\\ % spazio tra le righe
       0.2.0 & 2024-04-28 & Stesura sottosezione \ref{sec:coordinamento} e \ref{sec:pianificazione}. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
       0.1.0 & 2024-04-27 & Stesura sottosezione \ref{sec:infrastruttura}. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
-		0.0.0 & 2024-04-27 & Stesura del file. & Linda Barbiero & Redattore \\\\ % spazio tra le righe
+		0.0.0 & 2024-04-27 & Stesura del file. & Linda Barbiero & Redattore \\ % spazio tra le righe
 		% X.X.X & YYYY-MM-DD & Lorem ipsum dolor sit amet, consectetur adipiscing elit.  & XXXX XXXX & --- \\
 		\bottomrule
 		% Ruolo Redattore o Verificatore
@@ -219,12 +217,12 @@ documento, viene fornito un \textit{Glossario v2.0.0} contenente le definizioni 
 	\item \textit{Verbale Esterno 2024-04-03};
   \item Presentazione e documentazione del \glossterm{capitolato} d'appalto C6 - SyncCity:
 	\begin{itemize}
-		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf} (Ultimo accesso: \today)
-		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf} (Ultimo accesso: \today)
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6p.pdf}{\color{myblue}https://www.math.unipd.it\textasciitilde{}tullio/IS-1/2023/Progetto/C6p.pdf} (Ultimo accesso: \today)
+		\item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Progetto/C6.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Progetto/C6.pdf} (Ultimo accesso: \today)
   \end{itemize}
   \item Regolamento progetto didattico:
       \begin{itemize}
-          \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/PD2.pdf} (Ultimo accesso: \today)
+          \item \href{https://www.math.unipd.it/~tullio/IS-1/2023/Dispense/PD2.pdf}{\color{myblue}https://www.math.unipd.it/\textasciitilde{}tullio/IS-1/2023/Dispense/PD2.pdf} (Ultimo accesso: \today)
     \end{itemize}
 \end{itemize}
 \subsubsection{Riferimenti Informativi}
@@ -232,15 +230,15 @@ documento, viene fornito un \textit{Glossario v2.0.0} contenente le definizioni 
     \setlength\itemsep{0em}
     \item Documentazione \glossterm{git:} 
       \begin{itemize}
-          \item \href{https://git-scm.com/docs}{https://git-scm.com/docs} (Ultimo accesso: \today)
+          \item \href{https://git-scm.com/docs}{\color{myblue}https://git-scm.com/docs} (Ultimo accesso: \today)
       \end{itemize}
     \item Documentazione \glossterm{GitHub:} 
       \begin{itemize}
-          \item \href{https://docs.github.com/en}{https://docs.github.com/en} (Ultimo accesso: \today)
+          \item \href{https://docs.github.com/en}{\color{myblue}https://docs.github.com/en} (Ultimo accesso: \today)
       \end{itemize}
     \item Documentazione \glossterm{\LaTeX:} 
       \begin{itemize}
-          \item \href{https://www.guitex.org/home/documentazione}{https://www.guitex.org/home/documentazione} (Ultimo accesso: \today)
+          \item \href{https://www.guitex.org/home/documentazione}{\color{myblue}https://www.guitex.org/home/documentazione} (Ultimo accesso: \today)
       \end{itemize}
 \end{itemize}
 \newpage
@@ -351,7 +349,7 @@ Il documento \textit{Piano di Qualifica v2.0.0} offre una panoramica dettagliata
 \end{itemize} 
 
 \subsubsubsection{Specifica Tecnica} \label{sec:specifica_tecnica}
-Il documento noto come ``Specifica Tecnica" viene scritto al fine di descrivere e far comprendere gli aspetti
+Il documento \textit{Specifica Tecnica v2.0.0} viene scritto al fine di descrivere e far comprendere gli aspetti
 tecnici chiave del progetto, oltre che a fungere da guida per la codifica e la manutenzione dello stesso. La sua finalità primaria è dunque fornire una descrizione
 dettagliata e approfondita dell'\glossterm{architettura} implementativa del \glossterm{sistema}, fino alle sue radici più profonde, andando quiindi ad esporre dettagliatamente anche il codice e i \glossterm{design pattern} utilizzati. 
 Tale documento ha inifine anche il compito di monitorare la copertura dei requisiti identificati nel documento \textit{Analisi dei Requisiti}.
@@ -1144,7 +1142,6 @@ in particolar modo:
 	\end{itemize}
 	\item\textbf{Sigla identificativa metrica:} sigla di indentificazione della specifica metrica.
 \end{itemize}
-\clearpage
 \subsubsubsection{Gestione della \glossterm{qualità}} \label{sec:gestione_qualita}
 \begin{table}[H]	
 	\centering
@@ -1484,9 +1481,9 @@ Al fine di garantire una valutazione oggettiva e misurabile del prodotto e dei p
        \clearpage
     \item \textbf{Sviluppo}
         \begin{itemize}
-            \item \textbf{MPC-RSI:} Requirements Stability Index - Rappresenta l'inclinazione del progetto di subire modifiche alla quantità di requisiti, espresso in percentuale;
-            \item \textbf{MPC-SFIN:} Structural Fan In - Rappresenta il riutilizzo del codice, espresso sulla base delle chiamate che riceve una determinata porzione di codice (classe o metodo);
-            \item \textbf{MPC-SFOUT:} Structural Fan Out - Rappresenta l'accoppiamento del codice, espresso sulla base delle chiamate che esegue una determinata porzione di codice (classe o metodo).
+            \item \textbf{MPC-RSI:} Requirements Stability Index - Rappresenta l'inclinazione del progetto di subire modifiche alla quantità di requisiti, espresso in percentuale.
+            % \item \textbf{MPC-SFIN:} Structural Fan In - Rappresenta il riutilizzo del codice, espresso sulla base delle chiamate che riceve una determinata porzione di codice (classe o metodo);
+            % \item \textbf{MPC-SFOUT:} Structural Fan Out - Rappresenta l'accoppiamento del codice, espresso sulla base delle chiamate che esegue una determinata porzione di codice (classe o metodo).
         \end{itemize}
    \item \textbf{Documentazione}
         \begin{itemize}
@@ -1544,8 +1541,8 @@ Al fine di garantire una valutazione oggettiva e misurabile del prodotto e dei p
         \end{itemize}
     \item \textbf{Manutenibilità:}
         \begin{itemize}
-            \item \textbf{MPD-CC:} Complessità Ciclomatica - Rappresenta la complessità di programma determinata dal numero di cammini linearmente indipendenti attraversabili;
-            \item \textbf{MPD-CS:} Code Smell - Rappresenta la percentuale di codice esente da debolezze di progettazione.
+            \item \textbf{MPD-CC:} Complessità Ciclomatica - Rappresenta la complessità di programma determinata dal numero di cammini linearmente indipendenti attraversabili.
+            % \item \textbf{MPD-CS:} Code Smell - Rappresenta la percentuale di codice esente da debolezze di progettazione.
         \end{itemize}
 \end{itemize}
 
